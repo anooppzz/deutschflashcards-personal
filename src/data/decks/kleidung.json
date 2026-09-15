@@ -1,0 +1,294 @@
+[
+  {
+    "type": "n",
+    "gender": "die",
+    "front": "die Kleidung",
+    "sub": "kein Plural",
+    "english": "clothing / clothes",
+    "example": "Die Kleidung ist im Schrank.",
+    "exampleEn": "The clothes are in the wardrobe.",
+    "level": "A1"
+  },
+  {
+    "type": "n",
+    "gender": "die",
+    "front": "die Bluse",
+    "sub": "Pl. -n",
+    "english": "blouse",
+    "example": "Die Bluse ist sehr schön.",
+    "exampleEn": "The blouse is very pretty.",
+    "level": "A1"
+  },
+  {
+    "type": "n",
+    "gender": "die",
+    "front": "die Jacke",
+    "sub": "Pl. -n",
+    "english": "jacket",
+    "example": "Zieh die Jacke an, es ist kalt.",
+    "exampleEn": "Put on the jacket, it's cold.",
+    "level": "A1"
+  },
+  {
+    "type": "n",
+    "gender": "der",
+    "front": "der Gürtel",
+    "sub": "Pl. -",
+    "english": "belt",
+    "example": "Der Gürtel ist aus Leder.",
+    "exampleEn": "The belt is made of leather.",
+    "level": "A2"
+  },
+  {
+    "type": "n",
+    "gender": "das",
+    "front": "das Hemd",
+    "sub": "Pl. -en",
+    "english": "shirt",
+    "example": "Er trägt ein weißes Hemd.",
+    "exampleEn": "He is wearing a white shirt.",
+    "level": "A1"
+  },
+  {
+    "type": "n",
+    "gender": "die",
+    "front": "die Hose",
+    "sub": "Pl. -n",
+    "english": "trousers / pants",
+    "example": "Die Hose ist zu lang.",
+    "exampleEn": "The trousers are too long.",
+    "level": "A1"
+  },
+  {
+    "type": "n",
+    "gender": "der",
+    "front": "der Hut",
+    "sub": "Pl. ¨-e",
+    "english": "hat",
+    "example": "Der Hut gefällt mir gut.",
+    "exampleEn": "I really like the hat.",
+    "level": "A1"
+  },
+  {
+    "type": "n",
+    "gender": "das",
+    "front": "das Kleid",
+    "sub": "Pl. -er",
+    "english": "dress",
+    "example": "Sie kauft ein neues Kleid.",
+    "exampleEn": "She is buying a new dress.",
+    "level": "A1"
+  },
+  {
+    "type": "n",
+    "gender": "der",
+    "front": "der Mantel",
+    "sub": "Pl. ¨",
+    "english": "coat",
+    "example": "Im Winter trage ich einen Mantel.",
+    "exampleEn": "In winter I wear a coat.",
+    "level": "A1"
+  },
+  {
+    "type": "n",
+    "gender": "die",
+    "front": "die Mütze",
+    "sub": "Pl. -n · A: Haube, CH: Kappe",
+    "english": "cap / beanie",
+    "example": "Die Mütze hält den Kopf warm.",
+    "exampleEn": "The cap keeps your head warm.",
+    "level": "A2",
+    "acceptableAlternates": [
+      "Haube",
+      "Kappe"
+    ]
+  },
+  {
+    "type": "n",
+    "gender": "der",
+    "front": "der Pullover",
+    "sub": "Pl. -",
+    "english": "pullover / sweater",
+    "example": "Der Pullover ist sehr warm.",
+    "exampleEn": "The pullover is very warm.",
+    "level": "A1"
+  },
+  {
+    "type": "n",
+    "gender": "der",
+    "front": "der Rock",
+    "sub": "Pl. ¨-e · CH: der Jupe, -s",
+    "english": "skirt",
+    "example": "Der Rock ist zu kurz.",
+    "exampleEn": "The skirt is too short.",
+    "level": "A1"
+  },
+  {
+    "type": "n",
+    "gender": "der",
+    "front": "der Schuh",
+    "sub": "Pl. -e",
+    "english": "shoe",
+    "example": "Meine Schuhe sind schmutzig.",
+    "exampleEn": "My shoes are dirty.",
+    "level": "A1"
+  },
+  {
+    "type": "n",
+    "gender": "die",
+    "front": "die Socke",
+    "sub": "Pl. -n",
+    "english": "sock",
+    "example": "Wo ist meine zweite Socke?",
+    "exampleEn": "Where is my second sock?",
+    "level": "A1"
+  },
+  {
+    "type": "n",
+    "gender": "der",
+    "front": "der Strumpf",
+    "sub": "Pl. ¨-e",
+    "english": "stocking",
+    "example": "Die Strümpfe sind aus Wolle.",
+    "exampleEn": "The stockings are made of wool.",
+    "level": "A2"
+  },
+  {
+    "type": "n",
+    "gender": "die",
+    "front": "die Strumpfhose",
+    "sub": "Pl. -n",
+    "english": "tights / pantyhose",
+    "example": "Sie trägt eine schwarze Strumpfhose.",
+    "exampleEn": "She is wearing black tights.",
+    "level": "A2"
+  },
+  {
+    "type": "n",
+    "gender": "das",
+    "front": "das T-Shirt",
+    "sub": "Pl. -s",
+    "english": "T-shirt",
+    "example": "Im Sommer trage ich ein T-Shirt.",
+    "exampleEn": "In summer I wear a T-shirt.",
+    "level": "A1"
+  },
+  {
+    "type": "n",
+    "gender": "der",
+    "front": "der Text",
+    "sub": "Pl. -e",
+    "english": "text",
+    "example": "Lies bitte den Text laut.",
+    "exampleEn": "Please read the text aloud.",
+    "level": "A1"
+  },
+  {
+    "type": "v",
+    "front": "an·haben",
+    "sub": "hat angehabt",
+    "english": "to have on / be wearing",
+    "example": "Sie hat ein rotes Kleid an.",
+    "exampleEn": "She has a red dress on.",
+    "level": "A1"
+  },
+  {
+    "type": "v",
+    "front": "an·ziehen",
+    "sub": "hat angezogen",
+    "english": "to put on",
+    "example": "Ich habe die Jacke angezogen.",
+    "exampleEn": "I put on the jacket.",
+    "level": "A1"
+  },
+  {
+    "type": "v",
+    "front": "erzählen",
+    "sub": "hat erzählt",
+    "english": "to tell / narrate",
+    "example": "Er hat eine Geschichte erzählt.",
+    "exampleEn": "He told a story.",
+    "level": "A2"
+  },
+  {
+    "type": "adj",
+    "front": "klug",
+    "sub": "↔ dumm",
+    "english": "clever / smart",
+    "example": "Das Kind ist sehr klug.",
+    "exampleEn": "The child is very clever.",
+    "level": "A2"
+  },
+  {
+    "type": "sonst",
+    "front": "als",
+    "sub": "Vergleich (nach Komparativ)",
+    "english": "than",
+    "example": "Er ist größer als ich.",
+    "exampleEn": "He is taller than me.",
+    "level": "A2"
+  },
+  {
+    "type": "sonst",
+    "front": "schöner als",
+    "sub": "Komparativ + als",
+    "english": "more beautiful than",
+    "example": "Die Bluse ist schöner als das Hemd.",
+    "exampleEn": "The blouse is prettier than the shirt.",
+    "level": "A2"
+  },
+  {
+    "type": "sonst",
+    "front": "(genau)so … wie",
+    "sub": "Gleichheit",
+    "english": "(just) as … as",
+    "example": "Die Jacke ist so warm wie der Mantel.",
+    "exampleEn": "The jacket is as warm as the coat.",
+    "level": "A2"
+  },
+  {
+    "type": "sonst",
+    "front": "(genau)so schön wie",
+    "sub": "Gleichheit",
+    "english": "(just) as beautiful as",
+    "example": "Der Rock ist genauso schön wie das Kleid.",
+    "exampleEn": "The skirt is just as pretty as the dress.",
+    "level": "A2"
+  },
+  {
+    "type": "sonst",
+    "front": "zuletzt",
+    "sub": "Adverb",
+    "english": "lastly / finally",
+    "example": "Zuletzt habe ich die Schuhe angezogen.",
+    "exampleEn": "Lastly I put on the shoes.",
+    "level": "A2"
+  },
+  {
+    "type": "sonst",
+    "front": "zurzeit",
+    "sub": "Adverb",
+    "english": "currently / at the moment",
+    "example": "Zurzeit suche ich eine neue Jacke.",
+    "exampleEn": "At the moment I'm looking for a new jacket.",
+    "level": "A2"
+  },
+  {
+    "type": "sonst",
+    "front": "Klasse!",
+    "sub": "A/CH: Super!",
+    "english": "Great! / Awesome!",
+    "example": "Das T-Shirt ist Klasse!",
+    "exampleEn": "The T-shirt is great!",
+    "level": "A1"
+  },
+  {
+    "type": "sonst",
+    "front": "Toll!",
+    "sub": "Ausruf",
+    "english": "Great! / Cool!",
+    "example": "Toll, der Mantel passt perfekt!",
+    "exampleEn": "Great, the coat fits perfectly!",
+    "level": "A1"
+  }
+]

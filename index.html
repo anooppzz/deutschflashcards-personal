@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="de" translate="no" class="notranslate">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="google" content="notranslate" />
+  <title>Deutsch Flashcards</title>
+  <meta name="description" content="German A1/A2 vocabulary flashcard trainer — cards, quiz, and article (der/die/das) practice, with EN/SQ/AR/UK/HI translations." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🇩🇪</text></svg>" />
+</head>
+<body class="notranslate" translate="no">
+  <div id="loading">Lädt…</div>
+  <div id="fatal-error">
+    <h2>⚠️ Etwas ist schiefgelaufen</h2>
+    <p>The app could not start. Try reloading the page — if this keeps happening, your browser may be missing a feature this app needs.</p>
+    <button onclick="location.reload()">Reload</button>
+  </div>
+  <div id="root"></div>
+  <script>
+    window.addEventListener('error', function () {
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('fatal-error').style.display = 'flex';
+    });
+  </script>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+</html>

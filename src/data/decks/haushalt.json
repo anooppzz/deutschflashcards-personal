@@ -1,0 +1,138 @@
+[
+  {
+    "type": "n",
+    "gender": "der",
+    "front": "der Abfall",
+    "sub": "Pl. die Abfälle",
+    "english": "rubbish / waste",
+    "example": "Der Abfall ist im Eimer.",
+    "exampleEn": "The rubbish is in the bin.",
+    "level": "A2"
+  },
+  {
+    "type": "n",
+    "gender": "der",
+    "front": "der Boden",
+    "sub": "Pl. die Böden",
+    "english": "floor / ground",
+    "example": "Der Boden ist schmutzig.",
+    "exampleEn": "The floor is dirty.",
+    "level": "A1"
+  },
+  {
+    "type": "n",
+    "gender": "das",
+    "front": "das Geschirr",
+    "sub": "kein Plural",
+    "english": "dishes / crockery",
+    "example": "Ich spüle das Geschirr.",
+    "exampleEn": "I'm washing the dishes.",
+    "level": "A1"
+  },
+  {
+    "type": "n",
+    "gender": "der",
+    "front": "der Haushalt",
+    "sub": "Pl. die Haushalte",
+    "english": "household",
+    "example": "Sie macht den Haushalt allein.",
+    "exampleEn": "She runs the household alone.",
+    "level": "A2"
+  },
+  {
+    "type": "n",
+    "gender": "die",
+    "front": "die Ordnung",
+    "sub": "↔ die Unordnung",
+    "english": "order / tidiness",
+    "example": "Alles ist in Ordnung.",
+    "exampleEn": "Everything is in order.",
+    "level": "A2"
+  },
+  {
+    "type": "n",
+    "gender": "die",
+    "front": "die Spülmaschine",
+    "sub": "Pl. -n · CH: Abwaschmaschine",
+    "english": "dishwasher",
+    "example": "Die Spülmaschine ist voll.",
+    "exampleEn": "The dishwasher is full.",
+    "level": "A2",
+    "acceptableAlternates": [
+      "Abwaschmaschine"
+    ]
+  },
+  {
+    "type": "n",
+    "gender": "die",
+    "front": "die Wäsche",
+    "sub": "kein Plural",
+    "english": "laundry / washing",
+    "example": "Ich mache heute die Wäsche.",
+    "exampleEn": "I'm doing the laundry today.",
+    "level": "A1"
+  },
+  {
+    "type": "v",
+    "front": "ab·trocknen",
+    "sub": "hat abgetrocknet",
+    "english": "to dry (the dishes)",
+    "example": "Er hat das Geschirr abgetrocknet.",
+    "exampleEn": "He dried the dishes.",
+    "level": "A2"
+  },
+  {
+    "type": "v",
+    "front": "ab·waschen",
+    "sub": "hat abgewaschen",
+    "english": "to wash up",
+    "example": "Ich habe abgewaschen.",
+    "exampleEn": "I washed up.",
+    "level": "A2"
+  },
+  {
+    "type": "v",
+    "front": "spülen",
+    "sub": "hat gespült",
+    "english": "to rinse / wash",
+    "example": "Sie spült das Geschirr.",
+    "exampleEn": "She rinses the dishes.",
+    "level": "A2"
+  },
+  {
+    "type": "v",
+    "front": "waschen",
+    "sub": "hat gewaschen",
+    "english": "to wash",
+    "example": "Ich habe die Wäsche gewaschen.",
+    "exampleEn": "I washed the laundry.",
+    "level": "A1"
+  },
+  {
+    "type": "adj",
+    "front": "ordentlich",
+    "sub": "↔ unordentlich",
+    "english": "tidy / neat",
+    "example": "Sein Zimmer ist ordentlich.",
+    "exampleEn": "His room is tidy.",
+    "level": "A2"
+  },
+  {
+    "type": "adj",
+    "front": "sauber",
+    "sub": "↔ schmutzig",
+    "english": "clean",
+    "example": "Der Boden ist sauber.",
+    "exampleEn": "The floor is clean.",
+    "level": "A1"
+  },
+  {
+    "type": "adj",
+    "front": "schmutzig",
+    "sub": "↔ sauber",
+    "english": "dirty",
+    "example": "Das Geschirr ist schmutzig.",
+    "exampleEn": "The dishes are dirty.",
+    "level": "A1"
+  }
+]

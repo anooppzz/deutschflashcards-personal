@@ -1,0 +1,62 @@
+[
+  {
+    "infinitiv": "erkennen",
+    "partizip": "erkannt",
+    "english": "to recognize",
+    "example": "Ich habe das Schild sofort erkannt.",
+    "exampleEn": "I recognized the sign immediately.",
+    "level": "A2"
+  },
+  {
+    "infinitiv": "gefallen",
+    "partizip": "gefallen",
+    "english": "to please / be liked",
+    "example": "Das Picknick hat mir gut gefallen.",
+    "exampleEn": "I really liked the picnic.",
+    "tip": "Reversed logic: the thing pleases YOU → 'Es gefällt mir' = I like it.",
+    "level": "A2"
+  },
+  {
+    "infinitiv": "bekommen",
+    "partizip": "bekommen",
+    "english": "to receive / get",
+    "example": "Ich habe einen Helm bekommen.",
+    "exampleEn": "I got a helmet.",
+    "tip": "False friend - NOT 'to become'. That's 'werden'.",
+    "level": "A1"
+  },
+  {
+    "infinitiv": "vergessen",
+    "partizip": "vergessen",
+    "english": "to forget",
+    "example": "Ich habe die Regel vergessen.",
+    "exampleEn": "I forgot the rule.",
+    "level": "A1"
+  },
+  {
+    "infinitiv": "entschuldigen",
+    "partizip": "entschuldigt",
+    "english": "to excuse / apologize",
+    "example": "Er hat sich entschuldigt.",
+    "exampleEn": "He apologized.",
+    "level": "A1"
+  },
+  {
+    "infinitiv": "gehören",
+    "partizip": "gehört",
+    "english": "to belong to",
+    "example": "Der Hund gehört meinem Nachbarn.",
+    "exampleEn": "The dog belongs to my neighbor.",
+    "tip": "Takes Dativ: gehört mir / dir / ihm.",
+    "level": "A2"
+  },
+  {
+    "infinitiv": "verstehen",
+    "partizip": "verstanden",
+    "english": "to understand",
+    "example": "Das habe ich nicht verstanden.",
+    "exampleEn": "I didn't understand that.",
+    "tip": "Reflexive 'sich beschweren' (to complain) works the same: hat sich beschwert.",
+    "level": "A1"
+  }
+]

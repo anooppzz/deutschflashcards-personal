@@ -1,0 +1,20 @@
+/* Global styles - kept minimal since the app is styled via inline React
+   styles throughout. This file only holds what has to exist outside the
+   React tree: page-level reset + the loading/error fallback shown before
+   React has mounted. */
+html, body { margin: 0; padding: 0; background: #0e1419; }
+body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+
+#loading {
+  min-height: 100vh; display: flex; align-items: center; justify-content: center;
+  color: #7d8d9c; font-size: 14px;
+}
+#fatal-error {
+  display: none; min-height: 100vh; flex-direction: column; align-items: center;
+  justify-content: center; color: #cdd8e2; font-size: 14px; text-align: center; padding: 24px;
+}
+#fatal-error h2 { color: #f2f5f8; font-size: 18px; margin-bottom: 8px; }
+#fatal-error button {
+  margin-top: 16px; padding: 10px 22px; border-radius: 10px; border: none;
+  background: #e0833b; color: #0e1419; font-weight: 700; font-size: 14px; cursor: pointer;
+}

@@ -1,0 +1,281 @@
+[
+  {
+    "group": "a – i – a",
+    "infinitiv": "fangen",
+    "präteritum": "fing",
+    "partizip": "gefangen",
+    "english": "to catch",
+    "example": "Die Katze hat eine Maus gefangen.",
+    "level": "A2"
+  },
+  {
+    "group": "a – i – a",
+    "infinitiv": "fallen",
+    "präteritum": "fiel",
+    "partizip": "gefallen",
+    "english": "to fall",
+    "example": "Das Kind ist auf die Wiese gefallen.",
+    "level": "A1"
+  },
+  {
+    "group": "a – i – a",
+    "infinitiv": "halten",
+    "präteritum": "hielt",
+    "partizip": "gehalten",
+    "english": "to hold / stop",
+    "example": "Das Auto hat an der Ampel gehalten.",
+    "level": "A1"
+  },
+  {
+    "group": "a – i – a",
+    "infinitiv": "lassen",
+    "präteritum": "ließ",
+    "partizip": "gelassen",
+    "english": "to let / leave",
+    "example": "Ich habe das Fahrrad zu Hause gelassen.",
+    "level": "A1"
+  },
+  {
+    "group": "a – i – a",
+    "infinitiv": "raten",
+    "präteritum": "riet",
+    "partizip": "geraten",
+    "english": "to advise / guess",
+    "example": "Er hat mir geraten, langsam zu fahren.",
+    "level": "A2"
+  },
+  {
+    "group": "a – i – a",
+    "infinitiv": "schlafen",
+    "präteritum": "schlief",
+    "partizip": "geschlafen",
+    "english": "to sleep",
+    "example": "Ich habe acht Stunden geschlafen.",
+    "level": "A1"
+  },
+  {
+    "group": "a – u – a",
+    "infinitiv": "fahren",
+    "präteritum": "fuhr",
+    "partizip": "gefahren",
+    "english": "to drive / go",
+    "example": "Wir sind nach Stuttgart gefahren.",
+    "level": "A1"
+  },
+  {
+    "group": "a – u – a",
+    "infinitiv": "tragen",
+    "präteritum": "trug",
+    "partizip": "getragen",
+    "english": "to carry / wear",
+    "example": "Sie hat einen Helm getragen.",
+    "level": "A1"
+  },
+  {
+    "group": "a – u – a",
+    "infinitiv": "schlagen",
+    "präteritum": "schlug",
+    "partizip": "geschlagen",
+    "english": "to hit / beat",
+    "example": "Er hat gegen die Tür geschlagen.",
+    "level": "A2"
+  },
+  {
+    "group": "a – u – a",
+    "infinitiv": "waschen",
+    "präteritum": "wusch",
+    "partizip": "gewaschen",
+    "english": "to wash",
+    "example": "Ich habe das Auto gewaschen.",
+    "level": "A1"
+  },
+  {
+    "group": "a – u – a",
+    "infinitiv": "wachsen",
+    "präteritum": "wuchs",
+    "partizip": "gewachsen",
+    "english": "to grow",
+    "example": "Das Gras ist schnell gewachsen.",
+    "level": "A2"
+  },
+  {
+    "group": "e – a – e",
+    "infinitiv": "essen",
+    "präteritum": "aß",
+    "partizip": "gegessen",
+    "english": "to eat",
+    "example": "Wir haben im Park gegessen.",
+    "level": "A1"
+  },
+  {
+    "group": "e – a – e",
+    "infinitiv": "geben",
+    "präteritum": "gab",
+    "partizip": "gegeben",
+    "english": "to give",
+    "example": "Kannst du mir ein Beispiel geben?",
+    "level": "A1"
+  },
+  {
+    "group": "e – a – e",
+    "infinitiv": "lesen",
+    "präteritum": "las",
+    "partizip": "gelesen",
+    "english": "to read",
+    "example": "Ich habe das Schild gelesen.",
+    "level": "A1"
+  },
+  {
+    "group": "e – a – e",
+    "infinitiv": "sehen",
+    "präteritum": "sah",
+    "partizip": "gesehen",
+    "english": "to see",
+    "example": "Hast du den Hund gesehen?",
+    "level": "A1"
+  },
+  {
+    "group": "e – a – o",
+    "infinitiv": "nehmen",
+    "präteritum": "nahm",
+    "partizip": "genommen",
+    "english": "to take",
+    "example": "Ich habe den Bus genommen.",
+    "level": "A1"
+  },
+  {
+    "group": "e – a – o",
+    "infinitiv": "sprechen",
+    "präteritum": "sprach",
+    "partizip": "gesprochen",
+    "english": "to speak",
+    "example": "Wir haben über die Regeln gesprochen.",
+    "level": "A1"
+  },
+  {
+    "group": "e – a – o",
+    "infinitiv": "treffen",
+    "präteritum": "traf",
+    "partizip": "getroffen",
+    "english": "to meet / hit",
+    "example": "Ich habe ihn am Krankenhaus getroffen.",
+    "level": "A2"
+  },
+  {
+    "group": "e – a – o",
+    "infinitiv": "helfen",
+    "präteritum": "half",
+    "partizip": "geholfen",
+    "english": "to help",
+    "example": "Er hat mir geholfen.",
+    "level": "A1"
+  },
+  {
+    "group": "i – a – u",
+    "infinitiv": "finden",
+    "präteritum": "fand",
+    "partizip": "gefunden",
+    "english": "to find",
+    "example": "Ich habe einen Parkplatz gefunden.",
+    "level": "A1"
+  },
+  {
+    "group": "i – a – u",
+    "infinitiv": "trinken",
+    "präteritum": "trank",
+    "partizip": "getrunken",
+    "english": "to drink",
+    "example": "Wir haben Wasser getrunken.",
+    "level": "A1"
+  },
+  {
+    "group": "i – a – u",
+    "infinitiv": "singen",
+    "präteritum": "sang",
+    "partizip": "gesungen",
+    "english": "to sing",
+    "example": "Die Kinder haben gesungen.",
+    "level": "A2"
+  },
+  {
+    "group": "ie – o – o",
+    "infinitiv": "schieben",
+    "präteritum": "schob",
+    "partizip": "geschoben",
+    "english": "to push",
+    "example": "Er hat das Fahrrad geschoben.",
+    "level": "A2"
+  },
+  {
+    "group": "ie – o – o",
+    "infinitiv": "fliegen",
+    "präteritum": "flog",
+    "partizip": "geflogen",
+    "english": "to fly",
+    "example": "Wir sind nach Indien geflogen.",
+    "level": "A2"
+  },
+  {
+    "group": "ie – o – o",
+    "infinitiv": "schließen",
+    "präteritum": "schloss",
+    "partizip": "geschlossen",
+    "english": "to close",
+    "example": "Ich habe die Tür geschlossen.",
+    "level": "A2"
+  },
+  {
+    "group": "ei – ie – ie",
+    "infinitiv": "bleiben",
+    "präteritum": "blieb",
+    "partizip": "geblieben",
+    "english": "to stay",
+    "example": "Wir sind zu Hause geblieben.",
+    "level": "A1"
+  },
+  {
+    "group": "ei – ie – ie",
+    "infinitiv": "schreiben",
+    "präteritum": "schrieb",
+    "partizip": "geschrieben",
+    "english": "to write",
+    "example": "Ich habe einen Brief geschrieben.",
+    "level": "A1"
+  },
+  {
+    "group": "ei – ie – ie",
+    "infinitiv": "steigen",
+    "präteritum": "stieg",
+    "partizip": "gestiegen",
+    "english": "to climb / get on",
+    "example": "Sie ist in den Zug gestiegen.",
+    "level": "A2"
+  },
+  {
+    "group": "Mischverben",
+    "infinitiv": "sitzen",
+    "präteritum": "saß",
+    "partizip": "gesessen",
+    "english": "to sit",
+    "example": "Wir haben im Park gesessen.",
+    "level": "A1"
+  },
+  {
+    "group": "Mischverben",
+    "infinitiv": "stehen",
+    "präteritum": "stand",
+    "partizip": "gestanden",
+    "english": "to stand",
+    "example": "Das Auto hat an der Wiese gestanden.",
+    "level": "A1"
+  },
+  {
+    "group": "Mischverben",
+    "infinitiv": "gehen",
+    "präteritum": "ging",
+    "partizip": "gegangen",
+    "english": "to go / walk",
+    "example": "Ich bin zu Fuß gegangen.",
+    "level": "A1"
+  }
+]

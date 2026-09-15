@@ -1,0 +1,114 @@
+[
+  {
+    "key": "artikel-nominativ",
+    "level": "A1",
+    "title": { "de": "Artikel im Nominativ", "en": "Articles in the Nominative Case" },
+    "explanation": {
+      "de": "Jedes deutsche Nomen hat einen Artikel: der (maskulin), die (feminin), das (neutral). Der Artikel im Nominativ steht beim Subjekt des Satzes - der Person oder Sache, die die Handlung ausführt. Es gibt keine feste Regel, welches Nomen welchen Artikel hat - am besten lernt man Nomen immer zusammen mit ihrem Artikel.",
+      "en": "Every German noun has an article: der (masculine), die (feminine), das (neuter). The nominative article marks the subject of the sentence - the person or thing performing the action. There's no fixed rule for which noun takes which article - the best approach is always learning a noun together with its article."
+    },
+    "examples": [
+      { "de": "Der Mann trinkt Kaffee.", "en": "The man is drinking coffee." },
+      { "de": "Die Frau liest ein Buch.", "en": "The woman is reading a book." },
+      { "de": "Das Kind spielt im Garten.", "en": "The child is playing in the garden." }
+    ]
+  },
+  {
+    "key": "possessivartikel",
+    "level": "A1",
+    "title": { "de": "Possessivartikel", "en": "Possessive Articles" },
+    "explanation": {
+      "de": "Possessivartikel zeigen, wem etwas gehört: mein (my), dein (your), sein (his), ihr (her), unser (our), euer (your, pl.), ihr (their). Sie passen sich wie 'ein' an das Nomen an - im Nominativ bekommt das feminine und Plural-Nomen ein zusätzliches -e (meine, deine...).",
+      "en": "Possessive articles show who something belongs to: mein (my), dein (your), sein (his), ihr (her), unser (our), euer (your, pl.), ihr (their). They inflect like 'ein' - in the nominative, feminine and plural nouns take an extra -e (meine, deine...)."
+    },
+    "examples": [
+      { "de": "Das ist mein Bruder.", "en": "That is my brother." },
+      { "de": "Wie heißt deine Schwester?", "en": "What is your sister's name?" },
+      { "de": "Ihr Auto ist neu.", "en": "Her car is new." }
+    ]
+  },
+  {
+    "key": "praesens-regelmaessig",
+    "level": "A1",
+    "title": { "de": "Präsens - regelmäßige Verben", "en": "Present Tense - Regular Verbs" },
+    "explanation": {
+      "de": "Regelmäßige Verben im Präsens: man nimmt den Stamm des Verbs (Infinitiv minus -en) und fügt die Endung hinzu: ich -e, du -st, er/sie/es -t, wir -en, ihr -t, sie/Sie -en. Beispiel 'wohnen': ich wohne, du wohnst, er wohnt, wir wohnen, ihr wohnt, sie wohnen.",
+      "en": "Present tense of regular verbs: take the verb stem (infinitive minus -en) and add the ending: ich -e, du -st, er/sie/es -t, wir -en, ihr -t, sie/Sie -en. Example 'wohnen' (to live): ich wohne, du wohnst, er wohnt, wir wohnen, ihr wohnt, sie wohnen."
+    },
+    "examples": [
+      { "de": "Ich wohne in Berlin.", "en": "I live in Berlin." },
+      { "de": "Wohnst du auch hier?", "en": "Do you live here too?" },
+      { "de": "Wir wohnen seit zwei Jahren hier.", "en": "We've lived here for two years." }
+    ]
+  },
+  {
+    "key": "perfekt",
+    "level": "A2",
+    "title": { "de": "Perfekt (Vergangenheit)", "en": "Perfekt (Past Tense)" },
+    "explanation": {
+      "de": "Das Perfekt ist die häufigste Vergangenheitsform im gesprochenen Deutsch. Es wird gebildet mit haben oder sein (konjugiert) + Partizip II am Satzende. Die meisten Verben nehmen haben; Verben der Bewegung (gehen, fahren, kommen) und Zustandsänderung (werden, bleiben) nehmen sein. Regelmäßige Partizip II: ge- + Stamm + -t (gemacht). Unregelmäßige Verben haben oft eine andere Stammform (gegangen, gesprochen) - diese muss man einzeln lernen.",
+      "en": "The Perfekt is the most common past tense in spoken German. It's formed with haben or sein (conjugated) + the past participle at the end of the sentence. Most verbs take haben; verbs of motion (gehen, fahren, kommen) and change of state (werden, bleiben) take sein. Regular past participles: ge- + stem + -t (gemacht). Irregular verbs often have a different stem form (gegangen, gesprochen) - these have to be learned individually."
+    },
+    "examples": [
+      { "de": "Ich habe gestern Deutsch gelernt.", "en": "I studied German yesterday." },
+      { "de": "Wir sind letzte Woche nach Berlin gefahren.", "en": "We went to Berlin last week." },
+      { "de": "Hast du das Buch schon gelesen?", "en": "Have you already read the book?" }
+    ]
+  },
+  {
+    "key": "modalverben",
+    "level": "A2",
+    "title": { "de": "Modalverben", "en": "Modal Verbs" },
+    "explanation": {
+      "de": "Modalverben (können, müssen, wollen, dürfen, sollen, mögen) verändern die Bedeutung eines anderen Verbs, das im Infinitiv ans Satzende rückt. Modalverben sind unregelmäßig konjugiert und haben oft keine Endung in der ich-/er-Form: ich kann, ich muss, ich will, ich darf.",
+      "en": "Modal verbs (können, müssen, wollen, dürfen, sollen, mögen) change the meaning of another verb, which moves to the infinitive at the end of the sentence. Modal verbs are irregularly conjugated and often have no ending in the ich-/er- form: ich kann, ich muss, ich will, ich darf."
+    },
+    "examples": [
+      { "de": "Ich kann heute nicht kommen.", "en": "I can't come today." },
+      { "de": "Du musst das Formular ausfüllen.", "en": "You have to fill out the form." },
+      { "de": "Darf ich hier parken?", "en": "May I park here?" }
+    ]
+  },
+  {
+    "key": "wortstellung-hauptsatz",
+    "level": "A1",
+    "title": { "de": "Wortstellung im Hauptsatz", "en": "Word Order in Main Clauses" },
+    "explanation": {
+      "de": "Im deutschen Hauptsatz steht das konjugierte Verb immer an Position 2 - egal, was an Position 1 steht (Subjekt, Zeitangabe, Ortsangabe...). Das Subjekt rückt dann einfach hinter das Verb. Dieses Prinzip gilt auch, wenn der Satz nicht mit dem Subjekt beginnt.",
+      "en": "In a German main clause, the conjugated verb always stands in position 2 - no matter what comes first (subject, time expression, place expression...). The subject then simply moves to right after the verb. This rule applies even when the sentence doesn't start with the subject."
+    },
+    "examples": [
+      { "de": "Ich fahre morgen nach München.", "en": "I'm going to Munich tomorrow." },
+      { "de": "Morgen fahre ich nach München.", "en": "Tomorrow I'm going to Munich." },
+      { "de": "Nach München fahre ich morgen.", "en": "To Munich I'm going tomorrow." }
+    ]
+  },
+  {
+    "key": "komparativ-superlativ",
+    "level": "A2",
+    "title": { "de": "Komparativ und Superlativ", "en": "Comparative and Superlative" },
+    "explanation": {
+      "de": "Komparativ (Vergleich): Adjektiv + -er + als. Superlativ (höchste Stufe): am + Adjektiv + -sten. Viele einsilbige Adjektive mit a, o, u bekommen einen Umlaut (groß → größer → am größten). Gleichheit wird mit (genau)so ... wie ausgedrückt, ohne Steigerung.",
+      "en": "Comparative (comparison): adjective + -er + als (than). Superlative (highest degree): am + adjective + -sten. Many one-syllable adjectives with a, o, u take an umlaut (groß → größer → am größten). Equality is expressed with (genau)so ... wie (as ... as), without any comparison ending."
+    },
+    "examples": [
+      { "de": "Der Zug ist schneller als der Bus.", "en": "The train is faster than the bus." },
+      { "de": "Im Winter ist es am kältesten.", "en": "It's coldest in winter." },
+      { "de": "Die Jacke ist so warm wie der Mantel.", "en": "The jacket is as warm as the coat." }
+    ]
+  },
+  {
+    "key": "wechselpraepositionen",
+    "level": "A2",
+    "title": { "de": "Wechselpräpositionen (Dativ/Akkusativ)", "en": "Two-Way Prepositions (Dative/Accusative)" },
+    "explanation": {
+      "de": "Neun Präpositionen (an, auf, hinter, in, neben, über, unter, vor, zwischen) stehen je nach Bedeutung mit Dativ oder Akkusativ. Dativ bei einer Position (Wo? - keine Bewegung, oder Bewegung innerhalb eines Ortes). Akkusativ bei einer Richtung (Wohin? - Bewegung von einem Ort zu einem anderen). Merksatz: Wo? = Dativ (ruhig), Wohin? = Akkusativ (Richtung).",
+      "en": "Nine prepositions (an, auf, hinter, in, neben, über, unter, vor, zwischen) take either dative or accusative depending on meaning. Dative for a position (Wo? / Where? - no movement, or movement within one place). Accusative for a direction (Wohin? / Where to? - movement from one place to another). Memory aid: Wo? = dative (static), Wohin? = accusative (direction)."
+    },
+    "examples": [
+      { "de": "Das Buch liegt auf dem Tisch.", "en": "The book lies on the table. (Wo? - Dativ)" },
+      { "de": "Ich lege das Buch auf den Tisch.", "en": "I'm putting the book on the table. (Wohin? - Akkusativ)" },
+      { "de": "Die Katze schläft unter dem Bett.", "en": "The cat sleeps under the bed. (Wo? - Dativ)" }
+    ]
+  }
+]

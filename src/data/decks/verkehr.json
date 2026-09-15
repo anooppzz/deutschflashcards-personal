@@ -1,0 +1,349 @@
+[
+  {
+    "type": "n",
+    "gender": "der",
+    "front": "der Fahrer",
+    "sub": "Pl. - · Auto- / Fahrrad-",
+    "english": "driver",
+    "example": "Der Fahrer wartet an der Ampel.",
+    "exampleEn": "The driver waits at the traffic light.",
+    "level": "A2"
+  },
+  {
+    "type": "n",
+    "gender": "die",
+    "front": "die Regel",
+    "sub": "Pl. -n",
+    "english": "rule",
+    "example": "Im Verkehr gibt es viele Regeln.",
+    "exampleEn": "In traffic there are many rules.",
+    "level": "A2"
+  },
+  {
+    "type": "n",
+    "gender": "das",
+    "front": "das Schild",
+    "sub": "Pl. -er",
+    "english": "sign",
+    "example": "Das Schild zeigt: 30 km/h.",
+    "exampleEn": "The sign shows: 30 km/h.",
+    "level": "A2"
+  },
+  {
+    "type": "n",
+    "gender": "der",
+    "front": "der Verkehr",
+    "sub": "kein Plural",
+    "english": "traffic",
+    "example": "Am Morgen ist viel Verkehr.",
+    "exampleEn": "In the morning there is a lot of traffic.",
+    "level": "A2"
+  },
+  {
+    "type": "n",
+    "gender": "der",
+    "front": "der Straßenverkehr",
+    "sub": "kein Plural",
+    "english": "road traffic",
+    "example": "Im Straßenverkehr muss man aufpassen.",
+    "exampleEn": "In road traffic you have to be careful.",
+    "level": "A2"
+  },
+  {
+    "type": "n",
+    "gender": "die",
+    "front": "die Wiese",
+    "sub": "Pl. -n",
+    "english": "meadow",
+    "example": "Die Kinder spielen auf der Wiese.",
+    "exampleEn": "The children play on the meadow.",
+    "level": "A2"
+  },
+  {
+    "type": "n",
+    "gender": "der",
+    "front": "der Helm",
+    "sub": "Pl. -e",
+    "english": "helmet",
+    "example": "Beim Radfahren trage ich einen Helm.",
+    "exampleEn": "When cycling I wear a helmet.",
+    "level": "A2"
+  },
+  {
+    "type": "n",
+    "gender": "das",
+    "front": "das Beispiel",
+    "sub": "Pl. -e",
+    "english": "example",
+    "example": "Kannst du mir ein Beispiel geben?",
+    "exampleEn": "Can you give me an example?",
+    "level": "A1"
+  },
+  {
+    "type": "n",
+    "gender": "der",
+    "front": "der Hund",
+    "sub": "Pl. -e",
+    "english": "dog",
+    "example": "Der Hund läuft über die Straße.",
+    "exampleEn": "The dog runs across the street.",
+    "level": "A1"
+  },
+  {
+    "type": "n",
+    "gender": "das",
+    "front": "das Krankenhaus",
+    "sub": "Pl. ¨-er · CH/A: Spital",
+    "english": "hospital",
+    "example": "Sie arbeitet im Krankenhaus.",
+    "exampleEn": "She works in the hospital.",
+    "level": "A1",
+    "acceptableAlternates": [
+      "Spital"
+    ]
+  },
+  {
+    "type": "n",
+    "gender": "das",
+    "front": "das Picknick",
+    "sub": "Pl. -e und -s",
+    "english": "picnic",
+    "example": "Wir machen ein Picknick auf der Wiese.",
+    "exampleEn": "We have a picnic on the meadow.",
+    "level": "A2"
+  },
+  {
+    "type": "v",
+    "front": "achten",
+    "sub": "hat geachtet",
+    "english": "to pay attention",
+    "example": "Achte auf die Autos!",
+    "exampleEn": "Watch out for the cars!",
+    "level": "A2"
+  },
+  {
+    "type": "v",
+    "front": "hupen",
+    "sub": "hat gehupt",
+    "english": "to honk",
+    "example": "Das Auto hat laut gehupt.",
+    "exampleEn": "The car honked loudly.",
+    "level": "A2"
+  },
+  {
+    "type": "v",
+    "front": "parken",
+    "sub": "hat geparkt · CH: parkieren",
+    "english": "to park",
+    "example": "Hier darf man nicht parken.",
+    "exampleEn": "You may not park here.",
+    "level": "A2"
+  },
+  {
+    "type": "v",
+    "front": "schieben",
+    "sub": "hat geschoben · CH: stossen",
+    "english": "to push",
+    "example": "Er hat das Fahrrad geschoben.",
+    "exampleEn": "He pushed the bicycle.",
+    "level": "A2"
+  },
+  {
+    "type": "v",
+    "front": "stehen bleiben",
+    "sub": "ist stehen geblieben",
+    "english": "to stop / stand still",
+    "example": "Bei Rot bleibe ich stehen.",
+    "exampleEn": "At red I stop.",
+    "level": "A2"
+  },
+  {
+    "type": "v",
+    "front": "tragen",
+    "sub": "du trägst, er trägt · hat getragen",
+    "english": "to wear / carry",
+    "example": "Sie trägt einen Helm.",
+    "exampleEn": "She wears a helmet.",
+    "level": "A1"
+  },
+  {
+    "type": "v",
+    "front": "auf·stehen",
+    "sub": "ist aufgestanden",
+    "english": "to get up",
+    "example": "Ich bin um sieben Uhr aufgestanden.",
+    "exampleEn": "I got up at seven o'clock.",
+    "level": "A1"
+  },
+  {
+    "type": "v",
+    "front": "baden",
+    "sub": "hat gebadet",
+    "english": "to bathe / swim",
+    "example": "Im Sommer baden wir im See.",
+    "exampleEn": "In summer we swim in the lake.",
+    "level": "A1"
+  },
+  {
+    "type": "v",
+    "front": "dürfen",
+    "sub": "ich darf, du darfst, er darf",
+    "english": "to be allowed to / may",
+    "example": "Darf ich hier sitzen?",
+    "exampleEn": "May I sit here?",
+    "level": "A1"
+  },
+  {
+    "type": "v",
+    "front": "grillen",
+    "sub": "hat gegrillt · CH: grillieren / bräteln",
+    "english": "to grill / barbecue",
+    "example": "Am Wochenende grillen wir im Garten.",
+    "exampleEn": "At the weekend we grill in the garden.",
+    "level": "A2"
+  },
+  {
+    "type": "v",
+    "front": "klingeln",
+    "sub": "hat geklingelt",
+    "english": "to ring (a bell)",
+    "example": "Der Radfahrer hat geklingelt.",
+    "exampleEn": "The cyclist rang the bell.",
+    "level": "A2"
+  },
+  {
+    "type": "v",
+    "front": "müssen",
+    "sub": "ich muss, du musst, er muss",
+    "english": "must / to have to",
+    "example": "Ich muss langsam fahren.",
+    "exampleEn": "I have to drive slowly.",
+    "level": "A1"
+  },
+  {
+    "type": "v",
+    "front": "sitzen",
+    "sub": "hat gesessen · A: ist gesessen",
+    "english": "to sit",
+    "example": "Wir haben im Park gesessen.",
+    "exampleEn": "We sat in the park.",
+    "level": "A1"
+  },
+  {
+    "type": "v",
+    "front": "verstehen",
+    "sub": "hat verstanden",
+    "english": "to understand",
+    "example": "Das verstehe ich nicht.",
+    "exampleEn": "I don't understand that.",
+    "level": "A1"
+  },
+  {
+    "type": "adj",
+    "front": "langsam",
+    "sub": "↔ schnell",
+    "english": "slow",
+    "example": "Fahr bitte langsam!",
+    "exampleEn": "Please drive slowly!",
+    "level": "A2"
+  },
+  {
+    "type": "adj",
+    "front": "erlaubt",
+    "sub": "↔ verboten",
+    "english": "allowed / permitted",
+    "example": "Parken ist hier erlaubt.",
+    "exampleEn": "Parking is allowed here.",
+    "level": "A2"
+  },
+  {
+    "type": "adj",
+    "front": "verboten",
+    "sub": "↔ erlaubt",
+    "english": "forbidden",
+    "example": "Hupen ist hier verboten.",
+    "exampleEn": "Honking is forbidden here.",
+    "level": "A2"
+  },
+  {
+    "type": "adj",
+    "front": "gefährlich",
+    "sub": "↔ sicher",
+    "english": "dangerous",
+    "example": "Die Straße ist sehr gefährlich.",
+    "exampleEn": "The street is very dangerous.",
+    "level": "A2"
+  },
+  {
+    "type": "adj",
+    "front": "schlimm",
+    "sub": "",
+    "english": "bad / serious",
+    "example": "Der Unfall war nicht schlimm.",
+    "exampleEn": "The accident was not bad.",
+    "level": "A2"
+  },
+  {
+    "type": "adj",
+    "front": "leise",
+    "sub": "↔ laut",
+    "english": "quiet / soft",
+    "example": "Sei bitte leise!",
+    "exampleEn": "Please be quiet!",
+    "level": "A2"
+  },
+  {
+    "type": "sonst",
+    "front": "zu Fuß",
+    "sub": "Wendung",
+    "english": "on foot",
+    "example": "Ich gehe zu Fuß zur Schule.",
+    "exampleEn": "I go to school on foot.",
+    "level": "A1"
+  },
+  {
+    "type": "sonst",
+    "front": "in Ordnung",
+    "sub": "Wendung",
+    "english": "okay / all right",
+    "example": "Alles ist in Ordnung.",
+    "exampleEn": "Everything is all right.",
+    "level": "A1"
+  },
+  {
+    "type": "sonst",
+    "front": "zum Beispiel",
+    "sub": "Wendung (z. B.)",
+    "english": "for example",
+    "example": "Ich mag Obst, zum Beispiel Äpfel.",
+    "exampleEn": "I like fruit, for example apples.",
+    "level": "A1"
+  },
+  {
+    "type": "sonst",
+    "front": "Das verstehe ich nicht.",
+    "sub": "Wendung",
+    "english": "I don't understand that.",
+    "example": "Das verstehe ich nicht.",
+    "exampleEn": "I don't understand that.",
+    "level": "A1"
+  },
+  {
+    "type": "sonst",
+    "front": "für",
+    "sub": "Präposition + Akk.",
+    "english": "for",
+    "example": "Das Geschenk ist für dich.",
+    "exampleEn": "The present is for you.",
+    "level": "A1"
+  },
+  {
+    "type": "sonst",
+    "front": "gegen",
+    "sub": "Präposition + Akk.",
+    "english": "against",
+    "example": "Das Auto fährt gegen den Baum.",
+    "exampleEn": "The car drives against the tree.",
+    "level": "A1"
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "kleidung": {
+    "label": "Kleidung",
+    "icon": "👕"
+  },
+  "verkehr": {
+    "label": "Straßenverkehr",
+    "icon": "🚦"
+  },
+  "haushalt": {
+    "label": "Haushalt",
+    "icon": "🧹"
+  },
+  "irregular": {
+    "label": "Irregular",
+    "icon": "🎵"
+  },
+  "inseparable": {
+    "label": "Nicht trennbar",
+    "icon": "🔑"
+  }
+}
