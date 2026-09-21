@@ -9446,5 +9446,336 @@
         "source": "Menschen A2 · Einheit 8"
       }
     ]
+  },
+  {
+    "key": "arbeitsleben",
+    "icon": "🏭",
+    "label": "Arbeitsleben",
+    "note": "Arbeitsleben, Betrieb, Wirtschaft",
+    "cards": [
+      {
+        "type": "n",
+        "gender": "der/die",
+        "front": "der/die Angestellte",
+        "sub": "Pl. -n",
+        "english": "employee",
+        "example": "Er ist Angestellter bei einer großen Firma.",
+        "exampleEn": "He is an employee at a large company.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 9"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Arbeiter",
+        "sub": "Pl. -",
+        "english": "worker",
+        "example": "Die Arbeiter beginnen um sechs Uhr.",
+        "exampleEn": "The workers start at six o'clock.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 9"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Bedingung",
+        "sub": "Pl. -en · die Arbeitsbedingungen",
+        "english": "condition",
+        "example": "Die Arbeitsbedingungen in diesem Betrieb sind gut.",
+        "exampleEn": "The working conditions at this company are good.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 9"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Betrieb",
+        "sub": "Pl. -e",
+        "english": "company, business, operation",
+        "example": "Ich arbeite seit fünf Jahren in diesem Betrieb.",
+        "exampleEn": "I've worked at this company for five years.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 9"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Erfolg",
+        "sub": "Pl. -e",
+        "english": "success",
+        "example": "Das neue Produkt war ein großer Erfolg.",
+        "exampleEn": "The new product was a great success.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 9"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Export",
+        "sub": "Pl. -e",
+        "english": "export",
+        "example": "Der Export nach China ist wichtig für die Firma.",
+        "exampleEn": "Export to China is important for the company.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 9"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Halle",
+        "sub": "Pl. -n",
+        "english": "hall, warehouse",
+        "example": "Die Maschinen stehen in der großen Halle.",
+        "exampleEn": "The machines are in the large hall.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 9"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Import",
+        "sub": "Pl. -e",
+        "english": "import",
+        "example": "Der Import von Rohstoffen ist gestiegen.",
+        "exampleEn": "The import of raw materials has increased.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 9"
+      },
+      {
+        "type": "n",
+        "gender": "das",
+        "front": "das Lager",
+        "sub": "Pl. -",
+        "english": "warehouse, storage",
+        "example": "Die Waren liegen im Lager.",
+        "exampleEn": "The goods are in the warehouse.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 9"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Lkw",
+        "sub": "Pl. -s · CH: der Lastwagen",
+        "english": "truck",
+        "example": "Der Lkw bringt die Ware zum Kunden.",
+        "exampleEn": "The truck delivers the goods to the customer.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 9"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Lohn",
+        "sub": "Pl. ¨-e",
+        "english": "wage",
+        "example": "Der Lohn wird am Monatsende bezahlt.",
+        "exampleEn": "The wage is paid at the end of the month.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 9"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Maschine",
+        "sub": "Pl. -n",
+        "english": "machine",
+        "example": "Diese Maschine ist schon zehn Jahre alt.",
+        "exampleEn": "This machine is already ten years old.",
+        "level": "A1",
+        "source": "Menschen A2 · Einheit 9"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Mitarbeiter",
+        "sub": "Pl. -",
+        "english": "employee, colleague",
+        "example": "Die Firma hat über hundert Mitarbeiter.",
+        "exampleEn": "The company has over a hundred employees.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 9"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Produktion",
+        "sub": "Pl. -en",
+        "english": "production",
+        "example": "Die Produktion läuft rund um die Uhr.",
+        "exampleEn": "Production runs around the clock.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 9"
+      },
+      {
+        "type": "n",
+        "gender": "das",
+        "front": "das Prozent",
+        "sub": "Pl. -e",
+        "english": "percent",
+        "example": "Der Umsatz ist um zehn Prozent gestiegen.",
+        "exampleEn": "Revenue has risen by ten percent.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 9"
+      },
+      {
+        "type": "n",
+        "gender": "das",
+        "front": "das Team",
+        "sub": "Pl. -s",
+        "english": "team",
+        "example": "Ich arbeite gern in einem internationalen Team.",
+        "exampleEn": "I like working in an international team.",
+        "level": "A1",
+        "source": "Menschen A2 · Einheit 9"
+      },
+      {
+        "type": "n",
+        "gender": "das",
+        "front": "das Werk",
+        "sub": "Pl. -e",
+        "english": "factory, plant",
+        "example": "Das neue Werk wird nächstes Jahr eröffnet.",
+        "exampleEn": "The new plant will open next year.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 9"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Wirtschaft",
+        "sub": "kein Plural",
+        "english": "economy",
+        "example": "Die Wirtschaft wächst langsam.",
+        "exampleEn": "The economy is growing slowly.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 9"
+      },
+      {
+        "type": "v",
+        "front": "sinken",
+        "sub": "ist gesunken",
+        "english": "to sink, decrease",
+        "example": "Die Preise sind im letzten Jahr gesunken.",
+        "exampleEn": "Prices have decreased over the last year.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 9"
+      },
+      {
+        "type": "v",
+        "front": "sparen",
+        "sub": "hat gespart",
+        "english": "to save",
+        "example": "Wir sparen Geld für den Urlaub.",
+        "exampleEn": "We're saving money for the vacation.",
+        "level": "A1",
+        "source": "Menschen A2 · Einheit 9"
+      },
+      {
+        "type": "v",
+        "front": "steigen",
+        "sub": "ist gestiegen",
+        "english": "to rise, increase",
+        "example": "Die Kosten steigen jedes Jahr.",
+        "exampleEn": "Costs rise every year.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 9"
+      },
+      {
+        "type": "adj",
+        "front": "selbstständig",
+        "sub": "",
+        "english": "self-employed, independent",
+        "example": "Sie ist seit zwei Jahren selbstständig.",
+        "exampleEn": "She has been self-employed for two years.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 9"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Bericht",
+        "sub": "Pl. -e",
+        "english": "report",
+        "example": "Ich schreibe morgen den Bericht.",
+        "exampleEn": "I'm writing the report tomorrow.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 9"
+      },
+      {
+        "type": "n",
+        "gender": "das",
+        "front": "das Jahrzehnt",
+        "sub": "Pl. -e",
+        "english": "decade",
+        "example": "Das Unternehmen gibt es seit drei Jahrzehnten.",
+        "exampleEn": "The company has existed for three decades.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 9"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Kontakt",
+        "sub": "Pl. -e",
+        "english": "contact",
+        "example": "Wir haben guten Kontakt zu unseren Kunden.",
+        "exampleEn": "We have good contact with our customers.",
+        "level": "A1",
+        "source": "Menschen A2 · Einheit 9"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Reparatur",
+        "sub": "Pl. -en",
+        "english": "repair",
+        "example": "Die Reparatur der Maschine dauert zwei Tage.",
+        "exampleEn": "The repair of the machine takes two days.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 9"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Wagen",
+        "sub": "Pl. -",
+        "english": "car, vehicle",
+        "example": "Der Wagen steht vor der Halle.",
+        "exampleEn": "The vehicle is parked in front of the hall.",
+        "level": "A1",
+        "source": "Menschen A2 · Einheit 9"
+      },
+      {
+        "type": "v",
+        "front": "erklären",
+        "sub": "hat erklärt",
+        "english": "to explain",
+        "example": "Können Sie mir das bitte erklären?",
+        "exampleEn": "Can you please explain that to me?",
+        "level": "A1",
+        "source": "Menschen A2 · Einheit 9"
+      },
+      {
+        "type": "adj",
+        "front": "international",
+        "sub": "",
+        "english": "international",
+        "example": "Die Firma ist international bekannt.",
+        "exampleEn": "The company is known internationally.",
+        "level": "A1",
+        "source": "Menschen A2 · Einheit 9"
+      },
+      {
+        "type": "adj",
+        "front": "dringend",
+        "sub": "",
+        "english": "urgent(ly)",
+        "example": "Ich brauche dringend Ihre Antwort.",
+        "exampleEn": "I urgently need your answer.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 9"
+      }
+    ]
   }
 ]
