@@ -71,5 +71,7 @@ register it in `src/data/decks/_deck-manifest.json`.
 [`vite-plugin-singlefile`](https://github.com/richardtallent/vite-plugin-singlefile),
 so the result can be hosted anywhere static — or just opened as a local file.
 
-The workflow in `.github/workflows/deploy.yml` builds that file and publishes it to
-GitHub Pages on every push to `main`.
+The workflow in `.github/workflows/build.yml` runs the tests and builds that file on
+every push to `main`. The built `index.html` is attached to each run as the
+`deutschflashcards-html` artifact: open the run under the Actions tab and download it
+from the Artifacts section at the bottom.
