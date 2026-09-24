@@ -9777,5 +9777,298 @@
         "source": "Menschen A2 · Einheit 9"
       }
     ]
+  },
+  {
+    "key": "restaurant",
+    "icon": "🍽️",
+    "label": "Im Restaurant",
+    "note": "Im Restaurant: Besteck, Speisen bestellen, Rechnung",
+    "cards": [
+      {
+        "type": "n",
+        "gender": "das",
+        "front": "das Besteck",
+        "sub": "kein Plural",
+        "english": "cutlery",
+        "example": "Das Besteck liegt neben dem Teller.",
+        "exampleEn": "The cutlery is next to the plate.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 10"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Gabel",
+        "sub": "Pl. -n",
+        "english": "fork",
+        "example": "Die Gabel liegt links vom Teller.",
+        "exampleEn": "The fork is to the left of the plate.",
+        "level": "A1",
+        "source": "Menschen A2 · Einheit 10"
+      },
+      {
+        "type": "n",
+        "gender": "das",
+        "front": "das Glas",
+        "sub": "Pl. ¨-er",
+        "english": "glass",
+        "example": "Bitte noch ein Glas Wasser.",
+        "exampleEn": "Another glass of water, please.",
+        "level": "A1",
+        "source": "Menschen A2 · Einheit 10"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Kanne",
+        "sub": "Pl. -n · CH: der Krug, ¨-e",
+        "english": "pot / jug",
+        "example": "Die Kanne ist noch halb voll.",
+        "exampleEn": "The pot is still half full.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 10"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Löffel",
+        "sub": "Pl. -",
+        "english": "spoon",
+        "example": "Er isst die Suppe mit einem Löffel.",
+        "exampleEn": "He eats the soup with a spoon.",
+        "level": "A1",
+        "source": "Menschen A2 · Einheit 10"
+      },
+      {
+        "type": "n",
+        "gender": "das",
+        "front": "das Lokal",
+        "sub": "Pl. -e · A: Gasthaus, ¨er / Beisel, -",
+        "english": "restaurant, pub (informal)",
+        "example": "Wir gehen heute Abend in ein nettes Lokal.",
+        "exampleEn": "We're going to a nice restaurant tonight.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 10"
+      },
+      {
+        "type": "n",
+        "gender": "das",
+        "front": "das Messer",
+        "sub": "Pl. -",
+        "english": "knife",
+        "example": "Das Messer ist sehr scharf.",
+        "exampleEn": "The knife is very sharp.",
+        "level": "A1",
+        "source": "Menschen A2 · Einheit 10"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Rechnung",
+        "sub": "Pl. -en",
+        "english": "bill / invoice",
+        "example": "Können wir bitte die Rechnung haben?",
+        "exampleEn": "Could we have the bill, please?",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 10"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Tasse",
+        "sub": "Pl. -n",
+        "english": "cup",
+        "example": "Ich trinke eine Tasse Kaffee.",
+        "exampleEn": "I'm drinking a cup of coffee.",
+        "level": "A1",
+        "source": "Menschen A2 · Einheit 10"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Teller",
+        "sub": "Pl. -",
+        "english": "plate",
+        "example": "Der Teller ist noch leer.",
+        "exampleEn": "The plate is still empty.",
+        "level": "A1",
+        "source": "Menschen A2 · Einheit 10"
+      },
+      {
+        "type": "sonst",
+        "front": "Die Rechnung, bitte!",
+        "sub": "",
+        "english": "The bill, please!",
+        "example": "Entschuldigung, die Rechnung, bitte!",
+        "exampleEn": "Excuse me, the bill, please!",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 10"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Essig",
+        "sub": "kein Plural",
+        "english": "vinegar",
+        "example": "Auf den Salat kommt Essig und Öl.",
+        "exampleEn": "Vinegar and oil go on the salad.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 10"
+      },
+      {
+        "type": "n",
+        "gender": "das",
+        "front": "das Hähnchen",
+        "sub": "Pl. - · CH: das Poulet, -s",
+        "english": "chicken",
+        "example": "Ich hätte gern ein halbes Hähnchen.",
+        "exampleEn": "I'd like a half chicken, please.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 10"
+      },
+      {
+        "type": "n",
+        "gender": "das",
+        "front": "das Öl",
+        "sub": "Pl. -e",
+        "english": "oil",
+        "example": "Das Öl ist zum Braten.",
+        "exampleEn": "The oil is for frying.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 10"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Pommes frites",
+        "sub": "nur Pl.",
+        "english": "fries / chips",
+        "example": "Zum Schnitzel gibt es Pommes frites.",
+        "exampleEn": "There are fries with the schnitzel.",
+        "level": "A1",
+        "source": "Menschen A2 · Einheit 10"
+      },
+      {
+        "type": "n",
+        "gender": "das",
+        "front": "das Salz",
+        "sub": "kein Plural",
+        "english": "salt",
+        "example": "Kannst du mir das Salz geben?",
+        "exampleEn": "Can you pass me the salt?",
+        "level": "A1",
+        "source": "Menschen A2 · Einheit 10"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Soße",
+        "sub": "Pl. -n",
+        "english": "sauce",
+        "example": "Die Soße schmeckt sehr gut.",
+        "exampleEn": "The sauce tastes very good.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 10"
+      },
+      {
+        "type": "n",
+        "gender": "das",
+        "front": "das Schnitzel",
+        "sub": "Pl. -",
+        "english": "schnitzel",
+        "example": "Ich nehme das Schnitzel mit Pommes.",
+        "exampleEn": "I'll have the schnitzel with fries.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 10"
+      },
+      {
+        "type": "n",
+        "gender": "das",
+        "front": "das Steak",
+        "sub": "Pl. -s",
+        "english": "steak",
+        "example": "Das Steak ist perfekt gebraten.",
+        "exampleEn": "The steak is cooked perfectly.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 10"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Zucker",
+        "sub": "kein Plural",
+        "english": "sugar",
+        "example": "Nimmst du Zucker in den Kaffee?",
+        "exampleEn": "Do you take sugar in your coffee?",
+        "level": "A1",
+        "source": "Menschen A2 · Einheit 10"
+      },
+      {
+        "type": "v",
+        "front": "reservieren",
+        "sub": "hat reserviert",
+        "english": "to reserve, book",
+        "example": "Ich möchte einen Tisch für zwei Personen reservieren.",
+        "exampleEn": "I'd like to reserve a table for two.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 10"
+      },
+      {
+        "type": "v",
+        "front": "reagieren",
+        "sub": "hat reagiert",
+        "english": "to react",
+        "example": "Der Kellner hat sofort reagiert.",
+        "exampleEn": "The waiter reacted immediately.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 10"
+      },
+      {
+        "type": "sonst",
+        "front": "getrennt zahlen",
+        "sub": "↔ zusammen zahlen",
+        "english": "to pay separately / together",
+        "example": "Zahlen wir getrennt oder zusammen?",
+        "exampleEn": "Shall we pay separately or together?",
+        "level": "A2",
+        "acceptableAlternates": [
+          "zusammen zahlen"
+        ],
+        "source": "Menschen A2 · Einheit 10"
+      },
+      {
+        "type": "sonst",
+        "front": "Stimmt so.",
+        "sub": "",
+        "english": "Keep the change.",
+        "example": "Das macht zwölf Euro. – Stimmt so.",
+        "exampleEn": "That's twelve euros. – Keep the change.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 10"
+      },
+      {
+        "type": "sonst",
+        "front": "Einen Moment, bitte.",
+        "sub": "",
+        "english": "One moment, please.",
+        "example": "Einen Moment, bitte, ich komme gleich.",
+        "exampleEn": "One moment, please, I'll be right there.",
+        "level": "A1",
+        "acceptableAlternates": [
+          "Einen Augenblick, bitte."
+        ],
+        "source": "Menschen A2 · Einheit 10"
+      },
+      {
+        "type": "sonst",
+        "front": "Verzeihen Sie.",
+        "sub": "",
+        "english": "Excuse me. / I beg your pardon.",
+        "example": "Verzeihen Sie, wo ist die Toilette?",
+        "exampleEn": "Excuse me, where is the restroom?",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 10"
+      }
+    ]
   }
 ]
