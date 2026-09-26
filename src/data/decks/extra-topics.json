@@ -10116,5 +10116,31 @@
         "source": "Menschen A2 · Einheit 10"
       }
     ]
+  },
+  {
+    "key": "persoenlich",
+    "icon": "⭐",
+    "label": "Meine Wörter",
+    "note": "Persönliche Ergänzungen",
+    "cards": [
+      {
+        "type": "adj",
+        "front": "gemeinsam",
+        "sub": "",
+        "english": "together, shared",
+        "example": "Wir lernen gemeinsam Deutsch.",
+        "exampleEn": "We're learning German together.",
+        "level": "A2"
+      },
+      {
+        "type": "adj",
+        "front": "angenehm",
+        "sub": "↔ unangenehm",
+        "english": "pleasant, comfortable",
+        "example": "Das Wetter ist heute sehr angenehm.",
+        "exampleEn": "The weather is very pleasant today.",
+        "level": "A2"
+      }
+    ]
   }
 ]
