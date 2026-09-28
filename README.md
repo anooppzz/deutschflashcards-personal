@@ -70,8 +70,20 @@ A card can carry an optional `note`, a one-line tip shown on the back of the car
 
 ## Grammar links
 
-Grammar topics live in `src/data/grammar/topics.json`. Cards are linked to topics in
-two ways, and a linked card shows a 📖 chip that opens its topic. Each topic in turn
+Grammar topics live in `src/data/grammar/topics.json`. Each topic has a one-line
+`summary` and a list of `sections`, so it can be scanned rather than read:
+
+- `table` - a `head` and `rows`; use it for forms that change by person, gender or
+  degree (verb endings, articles, comparatives)
+- `points` - short bullet `items`, one idea each
+- `warning` - one `text` for an exception
+
+All text is `{ "de": …, "en": … }`; a table cell may also be a plain string, since
+German forms are the same in every language. `**x**` highlights `x`, e.g. an ending:
+`wohn**st**`. A test checks every topic has both languages, full table rows and
+matching `**` pairs.
+
+Cards are linked to topics in two ways, and a linked card shows a 📖 chip that opens its topic. Each topic in turn
 lists the words it covers under "Deine Wörter".
 
 **Rules.** A topic's `match` is one rule or a list of rules (any may match). A rule

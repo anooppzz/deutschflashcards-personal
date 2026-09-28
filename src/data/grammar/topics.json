@@ -2,137 +2,535 @@
   {
     "key": "artikel-nominativ",
     "level": "A1",
-    "title": { "de": "Artikel im Nominativ", "en": "Articles in the Nominative Case" },
-    "explanation": {
-      "de": "Jedes deutsche Nomen hat einen Artikel: der (maskulin), die (feminin), das (neutral). Der Artikel im Nominativ steht beim Subjekt des Satzes - der Person oder Sache, die die Handlung ausführt. Für die meisten Nomen gibt es keine feste Regel - am besten lernt man Nomen immer zusammen mit ihrem Artikel. Manche Endungen verraten den Artikel aber sicher, z. B. -ung → die (siehe „Genus nach Endung“).",
-      "en": "Every German noun has an article: der (masculine), die (feminine), das (neuter). The nominative article marks the subject of the sentence - the person or thing performing the action. For most nouns there's no fixed rule - the best approach is always learning a noun together with its article. Some endings do reliably give the article away, e.g. -ung → die (see \"Gender by Ending\")."
+    "title": {"de": "Artikel im Nominativ", "en": "Articles in the Nominative Case"},
+    "summary": {
+      "de": "Jedes Nomen hat einen Artikel: **der**, **die** oder **das**.",
+      "en": "Every noun has an article: **der**, **die** or **das**."
     },
+    "sections": [
+      {
+        "type": "table",
+        "head": ["", {"de": "bestimmt", "en": "the"}, {"de": "unbestimmt", "en": "a"}, {"de": "verneint", "en": "no"}],
+        "rows": [
+          [{"de": "maskulin", "en": "masculine"}, "der", "ein", "kein"],
+          [{"de": "feminin", "en": "feminine"}, "die", "ein**e**", "kein**e**"],
+          [{"de": "neutral", "en": "neuter"}, "das", "ein", "kein"],
+          [{"de": "Plural", "en": "plural"}, "die", "–", "kein**e**"]
+        ]
+      },
+      {
+        "type": "points",
+        "items": [
+          {
+            "de": "Nominativ = das Subjekt: **wer** oder **was** handelt?",
+            "en": "Nominative = the subject: **who** or **what** is doing something?"
+          },
+          {"de": "Plural: immer **die**, egal welches Genus.", "en": "Plural: always **die**, whatever the gender."},
+          {
+            "de": "Meist gibt es keine Regel: Lerne jedes Nomen **mit Artikel** (der Tisch, nicht nur Tisch).",
+            "en": "Mostly there's no rule: learn every noun **with its article** (der Tisch, not just Tisch)."
+          },
+          {
+            "de": "Manche Endungen verraten den Artikel: -ung → die (siehe „Genus nach Endung“).",
+            "en": "Some endings give it away: -ung → die (see \"Gender by Ending\")."
+          }
+        ]
+      }
+    ],
     "examples": [
-      { "de": "Der Mann trinkt Kaffee.", "en": "The man is drinking coffee." },
-      { "de": "Die Frau liest ein Buch.", "en": "The woman is reading a book." },
-      { "de": "Das Kind spielt im Garten.", "en": "The child is playing in the garden." }
+      {"de": "Der Mann trinkt Kaffee.", "en": "The man is drinking coffee."},
+      {"de": "Die Frau liest ein Buch.", "en": "The woman is reading a book."},
+      {"de": "Das Kind spielt im Garten.", "en": "The child is playing in the garden."}
     ]
   },
   {
     "key": "genus-endungen",
     "level": "A2",
-    "title": { "de": "Genus nach Endung", "en": "Gender by Ending" },
-    "explanation": {
-      "de": "Bei manchen Endungen ist der Artikel immer gleich: Nomen auf -ung, -heit, -keit, -ion und -schaft sind feminin, sie haben immer den Artikel die. Der Plural endet dann immer auf -en: die Zeitung → die Zeitungen, die Möglichkeit → die Möglichkeiten. Viele dieser Nomen kommen von Verben oder Adjektiven: zeichnen → die Zeichnung, frei → die Freiheit. Vorsicht: Die Regel gilt für die Endung, nicht für jedes Wort, das zufällig so aufhört - der Sprung ist maskulin, weil -ung hier zum Wortstamm gehört, und das Stadion ist ein Fremdwort.",
-      "en": "Some endings always come with the same article: nouns ending in -ung, -heit, -keit, -ion and -schaft are feminine, so they always take die. Their plural always ends in -en: die Zeitung → die Zeitungen, die Möglichkeit → die Möglichkeiten. Many of these nouns come from verbs or adjectives: zeichnen (to draw) → die Zeichnung, frei (free) → die Freiheit. Careful: the rule is about the suffix, not every word that happens to end that way - der Sprung (jump) is masculine because the -ung is part of the stem, and das Stadion is a loanword."
+    "title": {"de": "Genus nach Endung", "en": "Gender by Ending"},
+    "summary": {
+      "de": "Nomen auf **-ung**, **-heit**, **-keit**, **-ion**, **-schaft** sind immer feminin: **die**.",
+      "en": "Nouns ending in **-ung**, **-heit**, **-keit**, **-ion**, **-schaft** are always feminine: **die**."
     },
+    "sections": [
+      {
+        "type": "table",
+        "head": [{"de": "Endung", "en": "Ending"}, "Singular: die …", "Plural: die …"],
+        "rows": [
+          ["-ung", "Zeit**ung**", "Zeitung**en**"],
+          ["-heit", "Frei**heit**", "Freiheit**en**"],
+          ["-keit", "Möglich**keit**", "Möglichkeit**en**"],
+          ["-ion", "Informat**ion**", "Information**en**"],
+          ["-schaft", "Mann**schaft**", "Mannschaft**en**"]
+        ]
+      },
+      {
+        "type": "points",
+        "items": [
+          {"de": "Plural immer mit **-en**.", "en": "Plural always adds **-en**."},
+          {
+            "de": "Oft aus Verben oder Adjektiven: zeichnen → die Zeichn**ung**, frei → die Frei**heit**.",
+            "en": "Often made from verbs or adjectives: zeichnen (to draw) → die Zeichn**ung**, frei (free) → die Frei**heit**."
+          }
+        ]
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "Nur die echte Endung zählt: **der** Sprung (-ung gehört zum Wortstamm), **das** Stadion (Fremdwort).",
+          "en": "Only the real suffix counts: **der** Sprung (jump; the -ung is part of the stem), **das** Stadion (loanword)."
+        }
+      }
+    ],
     "examples": [
-      { "de": "Die Zeitung liegt auf dem Tisch.", "en": "The newspaper is on the table." },
-      { "de": "Die Freiheit ist wichtig.", "en": "Freedom is important." },
-      { "de": "Das ist eine gute Möglichkeit.", "en": "That's a good opportunity." },
-      { "de": "Die Mannschaft hat gewonnen.", "en": "The team won." }
+      {"de": "Die Zeitung liegt auf dem Tisch.", "en": "The newspaper is on the table."},
+      {"de": "Die Freiheit ist wichtig.", "en": "Freedom is important."},
+      {"de": "Das ist eine gute Möglichkeit.", "en": "That's a good opportunity."},
+      {"de": "Die Mannschaft hat gewonnen.", "en": "The team won."}
     ],
     "hint": {
       "de": "Nomen auf -{ending} sind immer feminin: die.",
       "en": "Nouns ending in -{ending} are always feminine: die."
     },
-    "match": { "type": "n", "gender": "die", "endings": ["ung", "heit", "keit", "ion", "schaft"] }
+    "match": {"type": "n", "gender": "die", "endings": ["ung", "heit", "keit", "ion", "schaft"]}
   },
   {
     "key": "possessivartikel",
     "level": "A1",
-    "title": { "de": "Possessivartikel", "en": "Possessive Articles" },
-    "explanation": {
-      "de": "Possessivartikel zeigen, wem etwas gehört: mein (my), dein (your), sein (his), ihr (her), unser (our), euer (your, pl.), ihr (their). Sie passen sich wie 'ein' an das Nomen an - im Nominativ bekommt das feminine und Plural-Nomen ein zusätzliches -e (meine, deine...).",
-      "en": "Possessive articles show who something belongs to: mein (my), dein (your), sein (his), ihr (her), unser (our), euer (your, pl.), ihr (their). They inflect like 'ein' - in the nominative, feminine and plural nouns take an extra -e (meine, deine...)."
+    "title": {"de": "Possessivartikel", "en": "Possessive Articles"},
+    "summary": {
+      "de": "Possessivartikel zeigen, **wem** etwas gehört: mein Buch, deine Tasche.",
+      "en": "Possessive articles show **who owns** something: mein Buch (my book), deine Tasche (your bag)."
     },
+    "sections": [
+      {
+        "type": "table",
+        "title": {"de": "Wer besitzt?", "en": "Who owns it?"},
+        "head": ["Person", {"de": "Artikel", "en": "Article"}, {"de": "Englisch", "en": "English"}],
+        "rows": [
+          ["ich", "mein", "my"],
+          ["du", "dein", "your"],
+          ["er / es", "sein", "his / its"],
+          ["sie", "ihr", "her"],
+          ["wir", "unser", "our"],
+          ["ihr", "euer", "your (plural)"],
+          ["sie", "ihr", "their"],
+          ["Sie", "Ihr", "your (formal)"]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Endungen im Nominativ – wie bei ein", "en": "Nominative endings – just like ein"},
+        "head": ["", "ein", "mein", "unser"],
+        "rows": [
+          [{"de": "maskulin", "en": "masculine"}, "ein", "mein", "unser"],
+          [{"de": "feminin", "en": "feminine"}, "ein**e**", "mein**e**", "unser**e**"],
+          [{"de": "neutral", "en": "neuter"}, "ein", "mein", "unser"],
+          [{"de": "Plural", "en": "plural"}, "–", "mein**e**", "unser**e**"]
+        ]
+      },
+      {
+        "type": "points",
+        "items": [
+          {
+            "de": "Der **Besitzer** bestimmt das Wort, das **Nomen** die Endung: sein**e** Mutter – sein, weil es seine ist; -e, weil die Mutter.",
+            "en": "The **owner** picks the word, the **noun** picks the ending: sein**e** Mutter (his mother) – sein because it's his, -e because die Mutter."
+          }
+        ]
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "euer + -e → **eure** (das zweite e fällt weg): eure Tochter.",
+          "en": "euer + -e → **eure** (the second e drops out): eure Tochter (your daughter)."
+        }
+      }
+    ],
     "examples": [
-      { "de": "Das ist mein Bruder.", "en": "That is my brother." },
-      { "de": "Wie heißt deine Schwester?", "en": "What is your sister's name?" },
-      { "de": "Ihr Auto ist neu.", "en": "Her car is new." }
+      {"de": "Das ist mein Bruder.", "en": "That is my brother."},
+      {"de": "Wie heißt deine Schwester?", "en": "What is your sister's name?"},
+      {"de": "Ihr Auto ist neu.", "en": "Her car is new."}
     ]
   },
   {
     "key": "praesens-regelmaessig",
     "level": "A1",
-    "title": { "de": "Präsens - regelmäßige Verben", "en": "Present Tense - Regular Verbs" },
-    "explanation": {
-      "de": "Regelmäßige Verben im Präsens: man nimmt den Stamm des Verbs (Infinitiv minus -en) und fügt die Endung hinzu: ich -e, du -st, er/sie/es -t, wir -en, ihr -t, sie/Sie -en. Beispiel 'wohnen': ich wohne, du wohnst, er wohnt, wir wohnen, ihr wohnt, sie wohnen.",
-      "en": "Present tense of regular verbs: take the verb stem (infinitive minus -en) and add the ending: ich -e, du -st, er/sie/es -t, wir -en, ihr -t, sie/Sie -en. Example 'wohnen' (to live): ich wohne, du wohnst, er wohnt, wir wohnen, ihr wohnt, sie wohnen."
+    "title": {"de": "Präsens - regelmäßige Verben", "en": "Present Tense - Regular Verbs"},
+    "summary": {
+      "de": "**Stamm + Endung**: wohnen → wohn- → ich wohn**e**.",
+      "en": "**Stem + ending**: wohnen → wohn- → ich wohn**e**."
     },
+    "sections": [
+      {
+        "type": "table",
+        "head": ["Person", {"de": "Endung", "en": "Ending"}, "wohnen", "lernen"],
+        "rows": [
+          ["ich", "-e", "wohn**e**", "lern**e**"],
+          ["du", "-st", "wohn**st**", "lern**st**"],
+          ["er/sie/es", "-t", "wohn**t**", "lern**t**"],
+          ["wir", "-en", "wohn**en**", "lern**en**"],
+          ["ihr", "-t", "wohn**t**", "lern**t**"],
+          ["sie/Sie", "-en", "wohn**en**", "lern**en**"]
+        ]
+      },
+      {
+        "type": "points",
+        "items": [
+          {
+            "de": "Stamm = Infinitiv ohne **-en**: wohn|en, lern|en, mach|en.",
+            "en": "Stem = infinitive minus **-en**: wohn|en, lern|en, mach|en."
+          },
+          {
+            "de": "**wir** und **sie/Sie** sehen aus wie der Infinitiv.",
+            "en": "**wir** and **sie/Sie** look exactly like the infinitive."
+          },
+          {"de": "**er/sie/es** und **ihr** haben beide **-t**.", "en": "**er/sie/es** and **ihr** both take **-t**."}
+        ]
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "Stamm auf -t / -d: extra **-e-** (du arbeit**est**, er arbeit**et**). Stamm auf -s / -ß / -z: bei du nur **-t** (du heiß**t**).",
+          "en": "Stem ends in -t / -d: add an extra **-e-** (du arbeit**est**, er arbeit**et**). Stem ends in -s / -ß / -z: du takes just **-t** (du heiß**t**)."
+        }
+      }
+    ],
     "examples": [
-      { "de": "Ich wohne in Berlin.", "en": "I live in Berlin." },
-      { "de": "Wohnst du auch hier?", "en": "Do you live here too?" },
-      { "de": "Wir wohnen seit zwei Jahren hier.", "en": "We've lived here for two years." }
+      {"de": "Ich wohne in Berlin.", "en": "I live in Berlin."},
+      {"de": "Wohnst du auch hier?", "en": "Do you live here too?"},
+      {"de": "Wir wohnen seit zwei Jahren hier.", "en": "We've lived here for two years."}
     ]
   },
   {
     "key": "perfekt",
     "level": "A2",
-    "title": { "de": "Perfekt (Vergangenheit)", "en": "Perfekt (Past Tense)" },
-    "explanation": {
-      "de": "Das Perfekt ist die häufigste Vergangenheitsform im gesprochenen Deutsch. Es wird gebildet mit haben oder sein (konjugiert) + Partizip II am Satzende. Die meisten Verben nehmen haben; Verben der Bewegung (gehen, fahren, kommen) und Zustandsänderung (werden, bleiben) nehmen sein. Regelmäßige Partizip II: ge- + Stamm + -t (gemacht). Unregelmäßige Verben haben oft eine andere Stammform (gegangen, gesprochen) - diese muss man einzeln lernen. Verben auf -ieren und Verben mit untrennbarem Präfix (be-, emp-, ent-, er-, ge-, miss-, ver-, zer-) bilden das Partizip II ohne ge-: reserviert, bekommen, verstanden.",
-      "en": "The Perfekt is the most common past tense in spoken German. It's formed with haben or sein (conjugated) + the past participle at the end of the sentence. Most verbs take haben; verbs of motion (gehen, fahren, kommen) and change of state (werden, bleiben) take sein. Regular past participles: ge- + stem + -t (gemacht). Irregular verbs often have a different stem form (gegangen, gesprochen) - these have to be learned individually. Verbs ending in -ieren and verbs with an inseparable prefix (be-, emp-, ent-, er-, ge-, miss-, ver-, zer-) form the past participle without ge-: reserviert, bekommen, verstanden."
+    "title": {"de": "Perfekt (Vergangenheit)", "en": "Perfekt (Past Tense)"},
+    "summary": {
+      "de": "Perfekt = **haben / sein** (Position 2) + **Partizip II** (am Ende).",
+      "en": "Perfekt = **haben / sein** (position 2) + **past participle** (at the end)."
     },
-    "examples": [
-      { "de": "Ich habe gestern Deutsch gelernt.", "en": "I studied German yesterday." },
-      { "de": "Wir sind letzte Woche nach Berlin gefahren.", "en": "We went to Berlin last week." },
-      { "de": "Hast du das Buch schon gelesen?", "en": "Have you already read the book?" }
+    "sections": [
+      {
+        "type": "table",
+        "title": {"de": "haben oder sein?", "en": "haben or sein?"},
+        "head": [
+          {"de": "Hilfsverb", "en": "Helper verb"},
+          {"de": "Wann?", "en": "When?"},
+          {"de": "Beispiel", "en": "Example"}
+        ],
+        "rows": [
+          ["**haben**", {"de": "die meisten Verben", "en": "most verbs"}, "ich **habe** gelernt"],
+          [
+            "**sein**",
+            {"de": "Bewegung: gehen, fahren, kommen", "en": "movement: gehen, fahren, kommen"},
+            "ich **bin** gefahren"
+          ],
+          [
+            "**sein**",
+            {
+              "de": "Zustandsänderung: werden, sterben – und bleiben",
+              "en": "change of state: werden, sterben – and bleiben"
+            },
+            "ich **bin** geblieben"
+          ]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Partizip II bilden", "en": "Forming the past participle"},
+        "head": [{"de": "Verb", "en": "Verb"}, {"de": "Muster", "en": "Pattern"}, {"de": "Beispiel", "en": "Example"}],
+        "rows": [
+          [{"de": "regelmäßig", "en": "regular"}, "ge- … -t", "machen → **ge**mach**t**"],
+          [
+            {"de": "unregelmäßig", "en": "irregular"},
+            {"de": "ge- … -en, oft neuer Stamm", "en": "ge- … -en, often a new stem"},
+            "gehen → **ge**gang**en**"
+          ],
+          [
+            {"de": "trennbar", "en": "separable"},
+            {"de": "Präfix + ge + …", "en": "prefix + ge + …"},
+            "einkaufen → ein**ge**kauft"
+          ],
+          [{"de": "auf -ieren", "en": "-ieren verbs"}, {"de": "ohne ge-", "en": "no ge-"}, "reservieren → reserviert"],
+          [{"de": "untrennbar", "en": "inseparable"}, {"de": "ohne ge-", "en": "no ge-"}, "bekommen → bekommen"]
+        ]
+      },
+      {
+        "type": "points",
+        "items": [
+          {
+            "de": "Die häufigste Vergangenheit im **gesprochenen** Deutsch.",
+            "en": "The most common past tense in **spoken** German."
+          },
+          {
+            "de": "Untrennbare Präfixe: be-, emp-, ent-, er-, ge-, miss-, ver-, zer- (verstehen → verstanden).",
+            "en": "Inseparable prefixes: be-, emp-, ent-, er-, ge-, miss-, ver-, zer- (verstehen → verstanden)."
+          },
+          {
+            "de": "Unregelmäßige Partizipien einzeln lernen – z. B. im Deck „Irregular“.",
+            "en": "Learn irregular participles one by one – e.g. in the \"Irregular\" deck."
+          }
+        ]
+      }
     ],
-    "match": [
-      { "type": "v", "decks": ["irregular", "inseparable"] },
-      { "type": "v", "subPattern": "(^|[·,] )(hat|ist) \\S" }
-    ]
+    "examples": [
+      {"de": "Ich habe gestern Deutsch gelernt.", "en": "I studied German yesterday."},
+      {"de": "Wir sind letzte Woche nach Berlin gefahren.", "en": "We went to Berlin last week."},
+      {"de": "Hast du das Buch schon gelesen?", "en": "Have you already read the book?"}
+    ],
+    "match": [{"type": "v", "decks": ["irregular", "inseparable"]}, {"type": "v", "subPattern": "(^|[·,] )(hat|ist) \\S"}]
   },
   {
     "key": "modalverben",
     "level": "A2",
-    "title": { "de": "Modalverben", "en": "Modal Verbs" },
-    "explanation": {
-      "de": "Modalverben (können, müssen, wollen, dürfen, sollen, mögen) verändern die Bedeutung eines anderen Verbs, das im Infinitiv ans Satzende rückt. Modalverben sind unregelmäßig konjugiert und haben oft keine Endung in der ich-/er-Form: ich kann, ich muss, ich will, ich darf.",
-      "en": "Modal verbs (können, müssen, wollen, dürfen, sollen, mögen) change the meaning of another verb, which moves to the infinitive at the end of the sentence. Modal verbs are irregularly conjugated and often have no ending in the ich-/er- form: ich kann, ich muss, ich will, ich darf."
+    "title": {"de": "Modalverben", "en": "Modal Verbs"},
+    "summary": {
+      "de": "Modalverb auf **Position 2**, das zweite Verb im **Infinitiv am Ende**.",
+      "en": "Modal verb in **position 2**, the other verb as an **infinitive at the end**."
     },
+    "sections": [
+      {
+        "type": "table",
+        "head": [{"de": "Modalverb", "en": "Modal verb"}, {"de": "Bedeutung", "en": "Meaning"}],
+        "rows": [
+          ["können", {"de": "Fähigkeit, Möglichkeit", "en": "can, be able to"}],
+          ["müssen", {"de": "Pflicht, Notwendigkeit", "en": "must, have to"}],
+          ["dürfen", {"de": "Erlaubnis", "en": "may, be allowed to"}],
+          ["wollen", {"de": "Wunsch, Plan", "en": "want to"}],
+          ["sollen", {"de": "Auftrag, Rat", "en": "should, be supposed to"}],
+          ["mögen", {"de": "gern haben", "en": "like"}],
+          ["möchten", {"de": "höflicher Wunsch", "en": "would like"}]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Konjugation", "en": "Conjugation"},
+        "head": ["", "können", "müssen", "dürfen", "wollen"],
+        "rows": [
+          ["ich", "**kann**", "**muss**", "**darf**", "**will**"],
+          ["du", "kannst", "musst", "darfst", "willst"],
+          ["er/sie/es", "**kann**", "**muss**", "**darf**", "**will**"],
+          ["wir", "können", "müssen", "dürfen", "wollen"],
+          ["ihr", "könnt", "müsst", "dürft", "wollt"],
+          ["sie/Sie", "können", "müssen", "dürfen", "wollen"]
+        ]
+      },
+      {
+        "type": "table",
+        "head": ["", "sollen", "mögen", "möchten"],
+        "rows": [
+          ["ich", "**soll**", "**mag**", "**möchte**"],
+          ["du", "sollst", "magst", "möchtest"],
+          ["er/sie/es", "**soll**", "**mag**", "**möchte**"],
+          ["wir", "sollen", "mögen", "möchten"],
+          ["ihr", "sollt", "mögt", "möchtet"],
+          ["sie/Sie", "sollen", "mögen", "möchten"]
+        ]
+      },
+      {
+        "type": "points",
+        "items": [
+          {
+            "de": "**ich** und **er/sie/es** sind gleich (ich kann, er kann).",
+            "en": "**ich** and **er/sie/es** are the same (ich kann, er kann)."
+          },
+          {
+            "de": "Im Singular ändert sich oft der Vokal: können → ich k**a**nn, müssen → ich m**u**ss.",
+            "en": "The singular often changes the vowel: können → ich k**a**nn, müssen → ich m**u**ss."
+          }
+        ]
+      }
+    ],
     "examples": [
-      { "de": "Ich kann heute nicht kommen.", "en": "I can't come today." },
-      { "de": "Du musst das Formular ausfüllen.", "en": "You have to fill out the form." },
-      { "de": "Darf ich hier parken?", "en": "May I park here?" }
+      {"de": "Ich kann heute nicht kommen.", "en": "I can't come today."},
+      {"de": "Du musst das Formular ausfüllen.", "en": "You have to fill out the form."},
+      {"de": "Darf ich hier parken?", "en": "May I park here?"}
     ]
   },
   {
     "key": "wortstellung-hauptsatz",
     "level": "A1",
-    "title": { "de": "Wortstellung im Hauptsatz", "en": "Word Order in Main Clauses" },
-    "explanation": {
-      "de": "Im deutschen Hauptsatz steht das konjugierte Verb immer an Position 2 - egal, was an Position 1 steht (Subjekt, Zeitangabe, Ortsangabe...). Das Subjekt rückt dann einfach hinter das Verb. Dieses Prinzip gilt auch, wenn der Satz nicht mit dem Subjekt beginnt.",
-      "en": "In a German main clause, the conjugated verb always stands in position 2 - no matter what comes first (subject, time expression, place expression...). The subject then simply moves to right after the verb. This rule applies even when the sentence doesn't start with the subject."
+    "title": {"de": "Wortstellung im Hauptsatz", "en": "Word Order in Main Clauses"},
+    "summary": {
+      "de": "Das konjugierte Verb steht **immer auf Position 2**.",
+      "en": "The conjugated verb is **always in position 2**."
     },
+    "sections": [
+      {
+        "type": "table",
+        "head": [
+          {"de": "Position 1", "en": "Position 1"},
+          {"de": "Position 2: Verb", "en": "Position 2: verb"},
+          {"de": "Rest", "en": "Rest"}
+        ],
+        "rows": [
+          ["Ich", "**trinke**", "morgens Kaffee."],
+          ["Morgens", "**trinke**", "ich Kaffee."],
+          ["Am Montag um 8 Uhr", "**trinke**", "ich Kaffee."]
+        ]
+      },
+      {
+        "type": "points",
+        "items": [
+          {
+            "de": "Position 1 = Subjekt, Zeit, Ort … – was du betonen willst.",
+            "en": "Position 1 = subject, time, place … – whatever you want to stress."
+          },
+          {
+            "de": "Steht etwas anderes auf Position 1, kommt das Subjekt **direkt nach dem Verb**.",
+            "en": "If something else takes position 1, the subject comes **right after the verb**."
+          },
+          {
+            "de": "Position 1 kann aus mehreren Wörtern bestehen: Am Montag um 8 Uhr …",
+            "en": "Position 1 can be several words long: Am Montag um 8 Uhr …"
+          }
+        ]
+      }
+    ],
     "examples": [
-      { "de": "Ich fahre morgen nach München.", "en": "I'm going to Munich tomorrow." },
-      { "de": "Morgen fahre ich nach München.", "en": "Tomorrow I'm going to Munich." },
-      { "de": "Nach München fahre ich morgen.", "en": "To Munich I'm going tomorrow." }
+      {"de": "Ich fahre morgen nach München.", "en": "I'm going to Munich tomorrow."},
+      {"de": "Morgen fahre ich nach München.", "en": "Tomorrow I'm going to Munich."},
+      {"de": "Nach München fahre ich morgen.", "en": "To Munich I'm going tomorrow."}
     ]
   },
   {
     "key": "komparativ-superlativ",
     "level": "A2",
-    "title": { "de": "Komparativ und Superlativ", "en": "Comparative and Superlative" },
-    "explanation": {
-      "de": "Komparativ (Vergleich): Adjektiv + -er + als. Superlativ (höchste Stufe): am + Adjektiv + -sten. Viele einsilbige Adjektive mit a, o, u bekommen einen Umlaut (groß → größer → am größten). Einige Formen sind unregelmäßig: gut → besser → am besten, viel → mehr → am meisten, gern → lieber → am liebsten. Gleichheit wird mit (genau)so ... wie ausgedrückt, ohne Steigerung.",
-      "en": "Comparative (comparison): adjective + -er + als (than). Superlative (highest degree): am + adjective + -sten. Many one-syllable adjectives with a, o, u take an umlaut (groß → größer → am größten). Some forms are irregular: gut → besser → am besten (good), viel → mehr → am meisten (much), gern → lieber → am liebsten (gladly). Equality is expressed with (genau)so ... wie (as ... as), without any comparison ending."
+    "title": {"de": "Komparativ und Superlativ", "en": "Comparative and Superlative"},
+    "summary": {
+      "de": "Komparativ: **-er + als**. Superlativ: **am … -sten**.",
+      "en": "Comparative: **-er + als**. Superlative: **am … -sten**."
     },
+    "sections": [
+      {
+        "type": "table",
+        "title": {"de": "Regelmäßig", "en": "Regular"},
+        "head": [
+          {"de": "Grundform", "en": "Base"},
+          {"de": "Komparativ", "en": "Comparative"},
+          {"de": "Superlativ", "en": "Superlative"}
+        ],
+        "rows": [
+          ["schnell", "schnell**er**", "am schnell**sten**"],
+          ["klein", "klein**er**", "am klein**sten**"],
+          ["warm", "w**ä**rm**er**", "am w**ä**rm**sten**"],
+          ["alt", "**ä**lt**er**", "am **ä**lt**esten**"],
+          ["groß", "gr**ö**ß**er**", "am gr**ö**ß**ten**"]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Unregelmäßig", "en": "Irregular"},
+        "head": [
+          {"de": "Grundform", "en": "Base"},
+          {"de": "Komparativ", "en": "Comparative"},
+          {"de": "Superlativ", "en": "Superlative"}
+        ],
+        "rows": [
+          ["gut", "**besser**", "am **besten**"],
+          ["viel", "**mehr**", "am **meisten**"],
+          ["gern", "**lieber**", "am **liebsten**"]
+        ]
+      },
+      {
+        "type": "points",
+        "items": [
+          {
+            "de": "Vergleich mit **als**: Der Zug ist schneller **als** der Bus.",
+            "en": "Comparing with **als** (than): Der Zug ist schneller **als** der Bus."
+          },
+          {
+            "de": "Gleich: **(genau)so … wie** – so warm **wie** der Mantel.",
+            "en": "Equal: **(genau)so … wie** (as … as) – so warm **wie** der Mantel."
+          },
+          {
+            "de": "Kurze Adjektive mit a, o, u bekommen oft einen **Umlaut**: alt → älter, groß → größer, jung → jünger.",
+            "en": "Short adjectives with a, o, u often take an **umlaut**: alt → älter, groß → größer, jung → jünger."
+          }
+        ]
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "Auf -d, -t, -s, -ß, -z: Superlativ mit **-esten** (am ältesten, am heißesten). Ausnahme: groß → am größten.",
+          "en": "Ending in -d, -t, -s, -ß, -z: superlative with **-esten** (am ältesten, am heißesten). Exception: groß → am größten."
+        }
+      }
+    ],
     "examples": [
-      { "de": "Der Zug ist schneller als der Bus.", "en": "The train is faster than the bus." },
-      { "de": "Im Winter ist es am kältesten.", "en": "It's coldest in winter." },
-      { "de": "Die Jacke ist so warm wie der Mantel.", "en": "The jacket is as warm as the coat." }
+      {"de": "Der Zug ist schneller als der Bus.", "en": "The train is faster than the bus."},
+      {"de": "Im Winter ist es am kältesten.", "en": "It's coldest in winter."},
+      {"de": "Die Jacke ist so warm wie der Mantel.", "en": "The jacket is as warm as the coat."}
     ]
   },
   {
     "key": "wechselpraepositionen",
     "level": "A2",
-    "title": { "de": "Wechselpräpositionen (Dativ/Akkusativ)", "en": "Two-Way Prepositions (Dative/Accusative)" },
-    "explanation": {
-      "de": "Neun Präpositionen (an, auf, hinter, in, neben, über, unter, vor, zwischen) stehen je nach Bedeutung mit Dativ oder Akkusativ. Dativ bei einer Position (Wo? - keine Bewegung, oder Bewegung innerhalb eines Ortes). Akkusativ bei einer Richtung (Wohin? - Bewegung von einem Ort zu einem anderen). Merksatz: Wo? = Dativ (ruhig), Wohin? = Akkusativ (Richtung).",
-      "en": "Nine prepositions (an, auf, hinter, in, neben, über, unter, vor, zwischen) take either dative or accusative depending on meaning. Dative for a position (Wo? / Where? - no movement, or movement within one place). Accusative for a direction (Wohin? / Where to? - movement from one place to another). Memory aid: Wo? = dative (static), Wohin? = accusative (direction)."
+    "title": {"de": "Wechselpräpositionen (Dativ/Akkusativ)", "en": "Two-Way Prepositions (Dative/Accusative)"},
+    "summary": {
+      "de": "**Wo?** → Dativ. **Wohin?** → Akkusativ.",
+      "en": "**Wo?** (where) → dative. **Wohin?** (where to) → accusative."
     },
+    "sections": [
+      {
+        "type": "points",
+        "items": [
+          {
+            "de": "Die neun: **an, auf, hinter, in, neben, über, unter, vor, zwischen**.",
+            "en": "The nine: **an, auf, hinter, in, neben, über, unter, vor, zwischen**."
+          }
+        ]
+      },
+      {
+        "type": "table",
+        "head": [{"de": "Frage", "en": "Question"}, {"de": "Fall", "en": "Case"}, {"de": "Beispiel", "en": "Example"}],
+        "rows": [
+          [
+            {"de": "**Wo?** – Position, keine Bewegung", "en": "**Wo?** – position, no movement"},
+            {"de": "Dativ", "en": "dative"},
+            "Das Buch liegt auf **dem** Tisch."
+          ],
+          [
+            {"de": "**Wohin?** – Richtung, Bewegung zu einem Ziel", "en": "**Wohin?** – direction, moving to a place"},
+            {"de": "Akkusativ", "en": "accusative"},
+            "Ich lege das Buch auf **den** Tisch."
+          ]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Artikel nach Fall", "en": "Articles by case"},
+        "head": ["", {"de": "Wo? → Dativ", "en": "Wo? → dative"}, {"de": "Wohin? → Akkusativ", "en": "Wohin? → accusative"}],
+        "rows": [
+          ["der", "d**em**", "d**en**"],
+          ["die", "d**er**", "die"],
+          ["das", "d**em**", "das"],
+          [{"de": "die (Plural)", "en": "die (plural)"}, "d**en** (+ -n)", "die"]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Verbpaare", "en": "Verb pairs"},
+        "head": [{"de": "Wo? + Dativ", "en": "Wo? + dative"}, {"de": "Wohin? + Akkusativ", "en": "Wohin? + accusative"}],
+        "rows": [["liegen", "legen"], ["stehen", "stellen"], ["sitzen", "setzen"], ["hängen", "hängen"]]
+      },
+      {
+        "type": "points",
+        "items": [
+          {
+            "de": "Bewegung **innerhalb** eines Ortes = Wo? → Dativ: Wir laufen **im** Park.",
+            "en": "Moving around **within** one place = Wo? → dative: Wir laufen **im** Park (we run in the park)."
+          },
+          {
+            "de": "Kurzformen: in dem → **im**, an dem → **am**, in das → **ins**, an das → **ans**.",
+            "en": "Short forms: in dem → **im**, an dem → **am**, in das → **ins**, an das → **ans**."
+          }
+        ]
+      }
+    ],
     "examples": [
-      { "de": "Das Buch liegt auf dem Tisch.", "en": "The book lies on the table. (Wo? - Dativ)" },
-      { "de": "Ich lege das Buch auf den Tisch.", "en": "I'm putting the book on the table. (Wohin? - Akkusativ)" },
-      { "de": "Die Katze schläft unter dem Bett.", "en": "The cat sleeps under the bed. (Wo? - Dativ)" }
+      {"de": "Das Buch liegt auf dem Tisch.", "en": "The book lies on the table. (Wo? - Dativ)"},
+      {"de": "Ich lege das Buch auf den Tisch.", "en": "I'm putting the book on the table. (Wohin? - Akkusativ)"},
+      {"de": "Die Katze schläft unter dem Bett.", "en": "The cat sleeps under the bed. (Wo? - Dativ)"}
     ]
   }
 ]
