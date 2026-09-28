@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useContext } from "react";
 import { GENDER_COLORS } from "../../constants";
 import { DECK_META, GRAMMAR_TOPICS } from "../../data";
-import { idOf, translateText, submitCorrection, getCachedAiExample, grammarLinksFor, grammarHintFor } from "../../engine";
+import { idOf, translateText, submitCorrection, getCachedAiExample, grammarHintFor } from "../../engine";
 import { GrammarNavCtx } from "../../context/GrammarNavCtx";
 import { speak } from "../../engine/speech";
 import { faceStyle, badgeStyle, iconBtn } from "../../components/cardStyles";
@@ -16,7 +16,7 @@ function ArticleTrainer({ nouns, idx, choice, score, onChoose, onNext, totalAvai
   const [correcting, setCorrecting] = useState(false);
   const [correctionText, setCorrectionText] = useState("");
   const exampleRef = useRef(null);
-  const { openGrammar } = useContext(GrammarNavCtx);
+  const { openGrammar, linksFor } = useContext(GrammarNavCtx);
   useEffect(() => {
     setAiEx(null);
     setPeek(false);
@@ -70,8 +70,13 @@ function ArticleTrainer({ nouns, idx, choice, score, onChoose, onNext, totalAvai
     );
   }
   const word = card.front.replace(/^(der|die|das)\s+/i, "");
-  // after a wrong answer, a rule that covers this noun (e.g. -ung -> die)
-  const tipLinks = choice && choice !== card.gender ? grammarLinksFor(card, GRAMMAR_TOPICS) : [];
+  // after a wrong answer, the tip of a rule that covers this noun (e.g.
+  // -ung -> die); only topics with a hint have one
+  const tips = choice && choice !== card.gender
+    ? linksFor(idOf(card.deck, card.front))
+        .map((l) => ({ key: l.key, text: grammarHintFor(l, GRAMMAR_TOPICS, lang) }))
+        .filter((t) => t.text)
+    : [];
   const arts = [["der", "#4f86c6"], ["die", "#c6534f"], ["das", "#c69a3b"]];
   const displayMeaning = lang !== "en" && transMeaning ? transMeaning : card.english;
   const shownExample = card.example ? { de: card.example, en: card.exampleEn } : aiEx;
@@ -161,12 +166,12 @@ function ArticleTrainer({ nouns, idx, choice, score, onChoose, onNext, totalAvai
             {card.sub && (
               <div style={{ marginTop: 4, fontSize: 12, color: "#9ab0c2" }}>{card.sub}</div>
             )}
-            {tipLinks.map((l) => (
-              <div key={l.key} style={{ marginTop: 10, fontSize: 12, color: "#8fb8d8", textAlign: "center", lineHeight: 1.4 }}>
-                💡 {grammarHintFor(l, GRAMMAR_TOPICS, lang)}
+            {tips.map((t) => (
+              <div key={t.key} style={{ marginTop: 10, fontSize: 12, color: "#8fb8d8", textAlign: "center", lineHeight: 1.4 }}>
+                💡 {t.text}
                 {openGrammar && (
                   <button
-                    onClick={() => openGrammar(l.key)}
+                    onClick={() => openGrammar(t.key)}
                     style={{ marginLeft: 6, background: "none", border: "none", color: "#8fb8d8", fontSize: 12, fontWeight: 700, cursor: "pointer", textDecoration: "underline" }}
                   >📖 Regel</button>
                 )}

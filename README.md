@@ -70,12 +70,24 @@ A card can carry an optional `note`, a one-line tip shown on the back of the car
 
 ## Grammar links
 
-Grammar topics live in `src/data/grammar/topics.json`. A topic with a `match` rule is
-linked automatically to every card it covers: the card shows a 📖 chip that opens the
-topic, and the Artikel trainer shows the topic's `hint` after a wrong answer. For
-example, `"match": { "type": "n", "gender": "die", "endings": ["ung", …] }` links every
-feminine noun ending in -ung. A card is only linked when its own gender agrees with
-the rule, so words like *der Sprung* never get a contradicting tip.
+Grammar topics live in `src/data/grammar/topics.json`. Cards are linked to topics in
+two ways, and a linked card shows a 📖 chip that opens its topic. Each topic in turn
+lists the words it covers under "Deine Wörter".
+
+**Rules.** A topic's `match` is one rule or a list of rules (any may match). A rule
+can check `type`, `gender`, `decks`, `endings` (the word ends in one of them) and
+`subPattern` (a regex tested against the card's sub line). For example:
+
+- `{ "type": "n", "gender": "die", "endings": ["ung", …] }` links feminine nouns ending
+  in -ung. A card is only linked when its own gender agrees with the rule, so words
+  like *der Sprung* never get a contradicting tip.
+- `{ "type": "v", "subPattern": "(^|[·,] )(hat|ist) \\S" }` links verbs whose sub line
+  shows a Perfekt form, like `hat reserviert`.
+
+A topic's optional `hint` is shown in the Artikel trainer after a wrong answer.
+
+**Tags.** Anything a rule can't express is tagged by hand on the card:
+`"grammar": ["modalverben"]`. A test checks that every tag names an existing topic.
 
 ## Deployment
 

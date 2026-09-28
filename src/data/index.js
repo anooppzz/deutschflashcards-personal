@@ -38,6 +38,18 @@ export const DECK_SOURCE = {
 export const EXTRA_KEYS = EXTRA_TOPICS.map((t) => t.key);
 export const EXTRA_BY_KEY = Object.fromEntries(EXTRA_TOPICS.map((t) => [t.key, t]));
 
+// Every card in the app, across ALL decks and topics, in one flat shape:
+// { deck, front, type, gender?, english, sub?, grammar? }. The irregular and
+// inseparable decks get the same `sub` text their cards display. Used to
+// link cards to grammar topics (both directions) - see engine/grammarLinks.js.
+export const ALL_CARDS = [
+  ...IRREGULAR_VERBS.map((v) => ({ deck: "irregular", front: v.infinitiv, type: "v", english: v.english, sub: `${v.präteritum} · ${v.partizip}`, grammar: v.grammar })),
+  ...INSEPARABLE_VERBS.map((v) => ({ deck: "inseparable", front: v.infinitiv, type: "v", english: v.english, sub: `hat ${v.partizip}`, grammar: v.grammar })),
+  ...[["haushalt", HAUSHALT], ["verkehr", VERKEHR], ["kleidung", KLEIDUNG]].flatMap(([deck, cards]) =>
+    cards.map((w) => ({ deck, front: w.front, type: w.type, gender: w.gender, english: w.english, sub: w.sub, grammar: w.grammar }))),
+  ...EXTRA_TOPICS.flatMap((t) => t.cards.map((c) => ({ deck: t.key, front: c.front, type: c.type, gender: c.gender, english: c.english, sub: c.sub, grammar: c.grammar }))),
+];
+
 // A flat index of every single vocabulary word in the app - {front,
 // english, deck} - spanning ALL decks and ALL topics, not just whatever's
 // currently selected. Computed once at module load since it doesn't depend
@@ -45,11 +57,4 @@ export const EXTRA_BY_KEY = Object.fromEntries(EXTRA_TOPICS.map((t) => [t.key, t
 // difference between "you typed nonsense" and "you typed a real German
 // word you learned elsewhere, just not the one this sentence uses" - see
 // modes/cloze/buildRound.js's findAlternateWordMatch.
-export const ALL_WORDS = [
-  ...IRREGULAR_VERBS.map((v) => ({ front: v.infinitiv, english: v.english, deck: "irregular" })),
-  ...INSEPARABLE_VERBS.map((v) => ({ front: v.infinitiv, english: v.english, deck: "inseparable" })),
-  ...HAUSHALT.map((w) => ({ front: w.front, english: w.english, deck: "haushalt" })),
-  ...VERKEHR.map((w) => ({ front: w.front, english: w.english, deck: "verkehr" })),
-  ...KLEIDUNG.map((w) => ({ front: w.front, english: w.english, deck: "kleidung" })),
-  ...EXTRA_TOPICS.flatMap((t) => t.cards.map((c) => ({ front: c.front, english: c.english, deck: t.key }))),
-];
+export const ALL_WORDS = ALL_CARDS.map(({ front, english, deck }) => ({ front, english, deck }));

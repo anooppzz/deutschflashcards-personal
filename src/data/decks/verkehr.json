@@ -191,7 +191,10 @@
     "english": "to be allowed to / may",
     "example": "Darf ich hier sitzen?",
     "exampleEn": "May I sit here?",
-    "level": "A1"
+    "level": "A1",
+    "grammar": [
+      "modalverben"
+    ]
   },
   {
     "type": "v",
@@ -218,7 +221,10 @@
     "english": "must / to have to",
     "example": "Ich muss langsam fahren.",
     "exampleEn": "I have to drive slowly.",
-    "level": "A1"
+    "level": "A1",
+    "grammar": [
+      "modalverben"
+    ]
   },
   {
     "type": "v",

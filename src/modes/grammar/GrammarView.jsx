@@ -22,8 +22,15 @@ const levelColor = (level) => (level === "A1" ? "#5fa85f" : "#e0833b");
 
 const localize = (field, lang) => field[lang] || field.en || field.de;
 
-function GrammarTopicCard({ topic, lang, open, onToggle }) {
+// how many of "Deine Wörter" show before "Alle N zeigen"
+const WORDS_PREVIEW = 12;
+
+// words: the learner's cards this topic covers (see buildGrammarIndex), so
+// a rule can be read next to the vocabulary it applies to.
+function GrammarTopicCard({ topic, words = [], lang, open, onToggle }) {
   const [audioErr, setAudioErr] = useState(false);
+  const [showAllWords, setShowAllWords] = useState(false);
+  const shownWords = showAllWords ? words : words.slice(0, WORDS_PREVIEW);
   const panelId = `grammar-panel-${topic.key}`;
   const title = localize(topic.title, lang);
   const explanation = localize(topic.explanation, lang);
@@ -44,7 +51,12 @@ function GrammarTopicCard({ topic, lang, open, onToggle }) {
           </span>
           <span style={{ fontSize: 14, fontWeight: 700, color: "#f2f5f8" }}>{title}</span>
         </span>
-        <span aria-hidden="true" style={{ color: "#7d8d9c", fontSize: 14, transform: open ? "rotate(180deg)" : "none", transition: "transform .2s" }}>▾</span>
+        <span style={{ display: "flex", alignItems: "center", gap: 8, flexShrink: 0 }}>
+          {words.length > 0 && (
+            <span style={{ fontSize: 11, color: "#7d8d9c" }}>{words.length} {words.length === 1 ? "Wort" : "Wörter"}</span>
+          )}
+          <span aria-hidden="true" style={{ color: "#7d8d9c", fontSize: 14, transform: open ? "rotate(180deg)" : "none", transition: "transform .2s" }}>▾</span>
+        </span>
       </button>
       {open && (
         <div id={panelId} role="region" style={{ padding: "0 16px 16px" }}>
@@ -62,6 +74,33 @@ function GrammarTopicCard({ topic, lang, open, onToggle }) {
               <div style={{ fontSize: 12, color: "#7d8d9c", marginTop: 2 }}>{ex.en}</div>
             </div>
           ))}
+          {words.length > 0 && (
+            <div style={{ marginTop: 16 }}>
+              <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 0.5, color: "#7d8d9c", marginBottom: 8 }}>
+                DEINE WÖRTER ({words.length})
+              </div>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(140px, 1fr))", gap: 6 }}>
+                {shownWords.map((w) => (
+                  <button
+                    key={w.front}
+                    onClick={() => speak(w.front, () => setAudioErr(true))}
+                    aria-label={`Aussprechen: ${w.front}`}
+                    style={{ textAlign: "left", padding: "6px 10px", borderRadius: 8, border: "1px solid #2c3a47", background: "#0e1419", cursor: "pointer" }}
+                  >
+                    <div style={{ fontSize: 13, fontWeight: 600, color: "#f2f5f8" }}>{w.front}</div>
+                    <div style={{ fontSize: 11, color: "#7d8d9c", marginTop: 1 }}>{w.english}</div>
+                  </button>
+                ))}
+              </div>
+              {words.length > WORDS_PREVIEW && (
+                <button
+                  onClick={() => setShowAllWords((v) => !v)}
+                  aria-expanded={showAllWords}
+                  style={{ display: "block", margin: "10px auto 0", background: "none", border: "none", color: "#8fb8d8", fontSize: 12, fontWeight: 600, cursor: "pointer", textDecoration: "underline" }}
+                >{showAllWords ? "Weniger zeigen ▴" : `Alle ${words.length} zeigen ▾`}</button>
+              )}
+            </div>
+          )}
           {audioErr && (
             <div style={{ marginTop: 8, fontSize: 11, color: "#c6925a", textAlign: "center" }}>
               🔇 Audio in dieser Umgebung blockiert
@@ -72,6 +111,12 @@ function GrammarTopicCard({ topic, lang, open, onToggle }) {
     </div>
   );
 }
+
+const grammarWordShape = PropTypes.shape({
+  front: PropTypes.string.isRequired,
+  english: PropTypes.string,
+  decks: PropTypes.arrayOf(PropTypes.string),
+});
 
 const localizedTextShape = PropTypes.objectOf(PropTypes.string);
 
@@ -85,6 +130,7 @@ GrammarTopicCard.propTypes = {
       PropTypes.shape({ de: PropTypes.string.isRequired, en: PropTypes.string.isRequired })
     ).isRequired,
   }).isRequired,
+  words: PropTypes.arrayOf(grammarWordShape),
   lang: PropTypes.string,
   open: PropTypes.bool.isRequired,
   onToggle: PropTypes.func.isRequired,
@@ -93,7 +139,7 @@ GrammarTopicCard.propTypes = {
 // focus: { key, n } - set when a card's grammar chip opened this view; the
 // topic is expanded and scrolled to. n changes on every open, so tapping the
 // same chip twice still re-focuses. onBack: return to where the chip was.
-function GrammarView({ topics, lang = "en", focus, onBack }) {
+function GrammarView({ topics, words = {}, lang = "en", focus, onBack }) {
   const [openKey, setOpenKey] = useState(focus ? focus.key : null);
   useEffect(() => {
     if (!focus) return;
@@ -116,6 +162,7 @@ function GrammarView({ topics, lang = "en", focus, onBack }) {
         <GrammarTopicCard
           key={topic.key}
           topic={topic}
+          words={words[topic.key]}
           lang={lang}
           open={openKey === topic.key}
           onToggle={() => setOpenKey((k) => (k === topic.key ? null : topic.key))}
@@ -127,6 +174,7 @@ function GrammarView({ topics, lang = "en", focus, onBack }) {
 
 GrammarView.propTypes = {
   topics: PropTypes.arrayOf(GrammarTopicCard.propTypes.topic).isRequired,
+  words: PropTypes.objectOf(PropTypes.arrayOf(grammarWordShape)),
   lang: PropTypes.string,
   focus: PropTypes.shape({ key: PropTypes.string.isRequired, n: PropTypes.number }),
   onBack: PropTypes.func,

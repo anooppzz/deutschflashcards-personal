@@ -1103,7 +1103,10 @@
         "english": "my",
         "example": "Das ist mein Bruder.",
         "exampleEn": "That is my brother.",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "possessivartikel"
+        ]
       },
       {
         "type": "sonst",
@@ -1112,7 +1115,10 @@
         "english": "your",
         "example": "Wie heißt dein Vater?",
         "exampleEn": "What is your father's name?",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "possessivartikel"
+        ]
       }
     ]
   },
@@ -1225,7 +1231,10 @@
         "english": "big",
         "example": "Das Zimmer ist sehr groß.",
         "exampleEn": "The room is very big.",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "komparativ-superlativ"
+        ]
       },
       {
         "type": "adj",
@@ -1261,7 +1270,10 @@
         "english": "short",
         "example": "Der Weg zur Arbeit ist kurz.",
         "exampleEn": "The way to work is short.",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "komparativ-superlativ"
+        ]
       },
       {
         "type": "adj",
@@ -1270,7 +1282,10 @@
         "english": "long",
         "example": "Der Tisch ist zu lang für das Zimmer.",
         "exampleEn": "The table is too long for the room.",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "komparativ-superlativ"
+        ]
       },
       {
         "type": "adj",
@@ -2660,7 +2675,10 @@
         "english": "can / to be able",
         "example": "Kannst du mir bitte helfen?",
         "exampleEn": "Can you please help me?",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "modalverben"
+        ]
       },
       {
         "type": "sonst",
@@ -2714,7 +2732,10 @@
         "english": "gladly / like to",
         "example": "Ich höre gern Musik.",
         "exampleEn": "I like listening to music.",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "komparativ-superlativ"
+        ]
       },
       {
         "type": "sonst",
@@ -3777,7 +3798,10 @@
         "english": "to like",
         "example": "Ich mag keinen Fisch.",
         "exampleEn": "I don't like fish.",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "modalverben"
+        ]
       },
       {
         "type": "v",
@@ -3843,7 +3867,10 @@
         "english": "would like",
         "example": "Ich möchte gern einen Kaffee.",
         "exampleEn": "I would like a coffee.",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "modalverben"
+        ]
       },
       {
         "type": "v",
@@ -4223,7 +4250,10 @@
         "english": "a lot / much",
         "example": "Wir haben viel Gepäck dabei.",
         "exampleEn": "We have a lot of luggage with us.",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "komparativ-superlativ"
+        ]
       },
       {
         "type": "sonst",
@@ -4232,7 +4262,10 @@
         "english": "on",
         "example": "Das Gepäck steht auf dem Bahnsteig.",
         "exampleEn": "The luggage is on the platform.",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "wechselpraepositionen"
+        ]
       },
       {
         "type": "sonst",
@@ -5189,7 +5222,10 @@
         "english": "at / on",
         "example": "Das Hotel liegt an der Ecke.",
         "exampleEn": "The hotel is on the corner.",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "wechselpraepositionen"
+        ]
       },
       {
         "type": "sonst",
@@ -5198,7 +5234,10 @@
         "english": "behind",
         "example": "Die Bank steht hinter dem Museum.",
         "exampleEn": "The bench stands behind the museum.",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "wechselpraepositionen"
+        ]
       },
       {
         "type": "sonst",
@@ -5207,7 +5246,10 @@
         "english": "in",
         "example": "Wir wohnen in der Innenstadt.",
         "exampleEn": "We live in the city center.",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "wechselpraepositionen"
+        ]
       },
       {
         "type": "sonst",
@@ -5216,7 +5258,10 @@
         "english": "next to",
         "example": "Das Café liegt neben der Kirche.",
         "exampleEn": "The café is next to the church.",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "wechselpraepositionen"
+        ]
       },
       {
         "type": "sonst",
@@ -5225,7 +5270,10 @@
         "english": "above / over",
         "example": "Der Vogel fliegt über das Haus.",
         "exampleEn": "The bird flies over the house.",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "wechselpraepositionen"
+        ]
       },
       {
         "type": "sonst",
@@ -5234,7 +5282,10 @@
         "english": "under",
         "example": "Die Katze schläft unter dem Tisch.",
         "exampleEn": "The cat sleeps under the table.",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "wechselpraepositionen"
+        ]
       },
       {
         "type": "sonst",
@@ -5243,7 +5294,10 @@
         "english": "in front of",
         "example": "Das Auto steht vor dem Haus.",
         "exampleEn": "The car is parked in front of the house.",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "wechselpraepositionen"
+        ]
       },
       {
         "type": "sonst",
@@ -5252,7 +5306,10 @@
         "english": "between",
         "example": "Die Bank steht zwischen den Bäumen.",
         "exampleEn": "The bench stands between the trees.",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "wechselpraepositionen"
+        ]
       },
       {
         "type": "n",
@@ -6135,7 +6192,10 @@
         "english": "cold",
         "example": "Es ist heute sehr kalt.",
         "exampleEn": "It's very cold today.",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "komparativ-superlativ"
+        ]
       },
       {
         "type": "adj",
@@ -6334,7 +6394,10 @@
         "english": "to want",
         "example": "Ich will nächstes Jahr studieren.",
         "exampleEn": "I want to study next year.",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "modalverben"
+        ]
       },
       {
         "type": "sonst",
@@ -6781,7 +6844,10 @@
         "english": "warm",
         "example": "Im Sommer ist es sehr warm.",
         "exampleEn": "In summer it's very warm.",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "komparativ-superlativ"
+        ]
       },
       {
         "type": "adj",
@@ -8957,7 +9023,10 @@
         "example": "Das Café liegt zwischen der Post und der Bank.",
         "exampleEn": "The café is between the post office and the bank.",
         "level": "A1",
-        "source": "Menschen A2 · Einheit 7"
+        "source": "Menschen A2 · Einheit 7",
+        "grammar": [
+          "wechselpraepositionen"
+        ]
       },
       {
         "type": "sonst",

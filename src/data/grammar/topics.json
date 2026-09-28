@@ -66,13 +66,17 @@
     "level": "A2",
     "title": { "de": "Perfekt (Vergangenheit)", "en": "Perfekt (Past Tense)" },
     "explanation": {
-      "de": "Das Perfekt ist die häufigste Vergangenheitsform im gesprochenen Deutsch. Es wird gebildet mit haben oder sein (konjugiert) + Partizip II am Satzende. Die meisten Verben nehmen haben; Verben der Bewegung (gehen, fahren, kommen) und Zustandsänderung (werden, bleiben) nehmen sein. Regelmäßige Partizip II: ge- + Stamm + -t (gemacht). Unregelmäßige Verben haben oft eine andere Stammform (gegangen, gesprochen) - diese muss man einzeln lernen.",
-      "en": "The Perfekt is the most common past tense in spoken German. It's formed with haben or sein (conjugated) + the past participle at the end of the sentence. Most verbs take haben; verbs of motion (gehen, fahren, kommen) and change of state (werden, bleiben) take sein. Regular past participles: ge- + stem + -t (gemacht). Irregular verbs often have a different stem form (gegangen, gesprochen) - these have to be learned individually."
+      "de": "Das Perfekt ist die häufigste Vergangenheitsform im gesprochenen Deutsch. Es wird gebildet mit haben oder sein (konjugiert) + Partizip II am Satzende. Die meisten Verben nehmen haben; Verben der Bewegung (gehen, fahren, kommen) und Zustandsänderung (werden, bleiben) nehmen sein. Regelmäßige Partizip II: ge- + Stamm + -t (gemacht). Unregelmäßige Verben haben oft eine andere Stammform (gegangen, gesprochen) - diese muss man einzeln lernen. Verben auf -ieren und Verben mit untrennbarem Präfix (be-, emp-, ent-, er-, ge-, miss-, ver-, zer-) bilden das Partizip II ohne ge-: reserviert, bekommen, verstanden.",
+      "en": "The Perfekt is the most common past tense in spoken German. It's formed with haben or sein (conjugated) + the past participle at the end of the sentence. Most verbs take haben; verbs of motion (gehen, fahren, kommen) and change of state (werden, bleiben) take sein. Regular past participles: ge- + stem + -t (gemacht). Irregular verbs often have a different stem form (gegangen, gesprochen) - these have to be learned individually. Verbs ending in -ieren and verbs with an inseparable prefix (be-, emp-, ent-, er-, ge-, miss-, ver-, zer-) form the past participle without ge-: reserviert, bekommen, verstanden."
     },
     "examples": [
       { "de": "Ich habe gestern Deutsch gelernt.", "en": "I studied German yesterday." },
       { "de": "Wir sind letzte Woche nach Berlin gefahren.", "en": "We went to Berlin last week." },
       { "de": "Hast du das Buch schon gelesen?", "en": "Have you already read the book?" }
+    ],
+    "match": [
+      { "type": "v", "decks": ["irregular", "inseparable"] },
+      { "type": "v", "subPattern": "(^|[·,] )(hat|ist) \\S" }
     ]
   },
   {
@@ -108,8 +112,8 @@
     "level": "A2",
     "title": { "de": "Komparativ und Superlativ", "en": "Comparative and Superlative" },
     "explanation": {
-      "de": "Komparativ (Vergleich): Adjektiv + -er + als. Superlativ (höchste Stufe): am + Adjektiv + -sten. Viele einsilbige Adjektive mit a, o, u bekommen einen Umlaut (groß → größer → am größten). Gleichheit wird mit (genau)so ... wie ausgedrückt, ohne Steigerung.",
-      "en": "Comparative (comparison): adjective + -er + als (than). Superlative (highest degree): am + adjective + -sten. Many one-syllable adjectives with a, o, u take an umlaut (groß → größer → am größten). Equality is expressed with (genau)so ... wie (as ... as), without any comparison ending."
+      "de": "Komparativ (Vergleich): Adjektiv + -er + als. Superlativ (höchste Stufe): am + Adjektiv + -sten. Viele einsilbige Adjektive mit a, o, u bekommen einen Umlaut (groß → größer → am größten). Einige Formen sind unregelmäßig: gut → besser → am besten, viel → mehr → am meisten, gern → lieber → am liebsten. Gleichheit wird mit (genau)so ... wie ausgedrückt, ohne Steigerung.",
+      "en": "Comparative (comparison): adjective + -er + als (than). Superlative (highest degree): am + adjective + -sten. Many one-syllable adjectives with a, o, u take an umlaut (groß → größer → am größten). Some forms are irregular: gut → besser → am besten (good), viel → mehr → am meisten (much), gern → lieber → am liebsten (gladly). Equality is expressed with (genau)so ... wie (as ... as), without any comparison ending."
     },
     "examples": [
       { "de": "Der Zug ist schneller als der Bus.", "en": "The train is faster than the bus." },

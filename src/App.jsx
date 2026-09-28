@@ -34,7 +34,7 @@ import {
 import {
   IRREGULAR_VERBS, INSEPARABLE_VERBS, HAUSHALT, VERKEHR, KLEIDUNG,
   EXTRA_TOPICS, DECK_META, GRAMMAR_TOPICS,
-  DECK_SOURCE, EXTRA_KEYS, EXTRA_BY_KEY,
+  DECK_SOURCE, EXTRA_KEYS, EXTRA_BY_KEY, ALL_CARDS,
 } from "./data";
 import {
   storage,
@@ -45,6 +45,7 @@ import {
   weightedSample, shuffled, matches,
   validateGermanWord,
   distinctLevels, distinctSources, passesGlobalFilters,
+  buildGrammarIndex,
 } from "./engine";
 import {
   FlipCard, Controls, NoResults, CategoryFilter,
@@ -99,6 +100,11 @@ EXTRA_TOPICS.forEach((t) => {
 // Converts all deck shapes (irregular, inseparable, typed, extra topics) into one consistent output.
 // Design goal: every learning mode reads the same fields, same optional-field structure.
 // No display logic (accent/badge) is computed here — components handle that.
+// Card <-> grammar topic links for every card, built once: cards look up
+// their 📖 chips by card id, and each grammar topic lists its words.
+const GRAMMAR_INDEX = buildGrammarIndex(ALL_CARDS, GRAMMAR_TOPICS);
+const grammarLinksById = (id) => GRAMMAR_INDEX.linksById[id] || [];
+
 function normalizeCard(deckKey, c) {
   // irregular verbs: { group, infinitiv, präteritum, partizip, english, example }
   if (deckKey === "irregular") {
@@ -746,7 +752,7 @@ function App() {
     setGrammarFocus({ key, n: Date.now() });
     setMode(MODE.GRAMMAR);
   }, [mode]);
-  const grammarNav = useMemo(() => ({ openGrammar }), [openGrammar]);
+  const grammarNav = useMemo(() => ({ openGrammar, linksFor: grammarLinksById }), [openGrammar]);
   // Entering a training mode normally starts a new round (see the
   // round-building effect below). "← Zurück" from the Grammatik tab should
   // instead return to the round in progress, so it sets this ref and that
@@ -1406,6 +1412,7 @@ function App() {
         ) : mode === MODE.GRAMMAR ? (
           <GrammarView
             topics={GRAMMAR_TOPICS}
+            words={GRAMMAR_INDEX.wordsByTopic}
             lang={lang}
             focus={grammarFocus}
             onBack={grammarFrom ? backFromGrammar : undefined}
@@ -1506,8 +1513,6 @@ function App() {
                   lang={lang}
                   level={hausWord.level}
                   source={hausWord.source}
-                  type={hausWord.type}
-                  gender={hausWord.gender}
                   note={hausWord.note}
                 />
                 <Controls index={hausIdx % filteredHaus.length} total={filteredHaus.length}
@@ -1544,8 +1549,6 @@ function App() {
                   lang={lang}
                   level={verkWord.level}
                   source={verkWord.source}
-                  type={verkWord.type}
-                  gender={verkWord.gender}
                   note={verkWord.note}
                 />
                 <Controls index={verkIdx % filteredVerk.length} total={filteredVerk.length}
@@ -1582,8 +1585,6 @@ function App() {
                   lang={lang}
                   level={kleidWord.level}
                   source={kleidWord.source}
-                  type={kleidWord.type}
-                  gender={kleidWord.gender}
                   note={kleidWord.note}
                 />
                 <Controls index={kleidIdx % filteredKleid.length} total={filteredKleid.length}

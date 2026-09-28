@@ -1,7 +1,9 @@
 import { describe, it, expect } from "vitest";
-import { grammarLinksFor, grammarHintFor } from "./grammarLinks";
+import { grammarLinksFor, grammarHintFor, buildGrammarIndex } from "./grammarLinks";
+import { idOf } from "./fsrs";
 import GRAMMAR_TOPICS from "../data/grammar/topics.json";
 import EXTRA_TOPICS from "../data/decks/extra-topics.json";
+import { ALL_CARDS } from "../data";
 
 const noun = (front, gender) => ({ type: "n", front, gender });
 const keysFor = (card) => grammarLinksFor(card, GRAMMAR_TOPICS).map((l) => l.key);
@@ -46,6 +48,95 @@ describe("grammarLinksFor", () => {
     const personal = EXTRA_TOPICS.find((t) => t.key === "persoenlich");
     const zeichnung = personal.cards.find((c) => c.front === "die Zeichnung");
     expect(keysFor(zeichnung)).toEqual(["genus-endungen"]);
+  });
+});
+
+describe("grammarLinksFor - Perfekt rule", () => {
+  const verb = (front, sub, deck = "restaurant") => ({ type: "v", front, sub, deck });
+
+  it("links verbs whose sub line shows a Perfekt form", () => {
+    expect(keysFor(verb("reservieren", "hat reserviert"))).toEqual(["perfekt"]);
+    expect(keysFor(verb("sinken", "ist gesunken"))).toEqual(["perfekt"]);
+    expect(keysFor(verb("laufen", "du läufst, ist gelaufen"))).toEqual(["perfekt"]);
+    expect(keysFor(verb("beraten", "du berätst, er berät · hat beraten"))).toEqual(["perfekt"]);
+  });
+
+  it("links every verb in the irregular and inseparable decks", () => {
+    expect(keysFor(verb("fangen", "fing · gefangen", "irregular"))).toEqual(["perfekt"]);
+    expect(keysFor(verb("bekommen", "hat bekommen", "inseparable"))).toEqual(["perfekt"]);
+  });
+
+  it("uses the short topic title as the chip label", () => {
+    expect(grammarLinksFor(verb("reservieren", "hat reserviert"), GRAMMAR_TOPICS))
+      .toEqual([{ key: "perfekt", label: "Perfekt" }]);
+  });
+
+  it("does not link verbs without a Perfekt form, or non-verbs", () => {
+    expect(keysFor(verb("stimmen", "Stimmt so!"))).toEqual([]);
+    expect(keysFor(verb("mögen", "du magst, er mag"))).toEqual([]);
+    expect(keysFor(verb("kochen", ""))).toEqual([]);
+    expect(keysFor({ type: "sonst", front: "hat", sub: "hat recht" })).toEqual([]);
+  });
+});
+
+describe("grammarLinksFor - hand-tagged cards", () => {
+  it("links a card to the topics listed in its grammar field", () => {
+    expect(grammarLinksFor({ type: "v", front: "können", grammar: ["modalverben"] }, GRAMMAR_TOPICS))
+      .toEqual([{ key: "modalverben", label: "Modalverben" }]);
+    expect(keysFor({ type: "sonst", front: "neben", grammar: ["wechselpraepositionen"] }))
+      .toEqual(["wechselpraepositionen"]);
+  });
+
+  it("ignores tags for topics that do not exist", () => {
+    expect(keysFor({ type: "v", front: "können", grammar: ["nope"] })).toEqual([]);
+  });
+
+  it("lists a topic once when both a rule and a tag link it", () => {
+    expect(keysFor({ type: "v", front: "reservieren", sub: "hat reserviert", grammar: ["perfekt"] }))
+      .toEqual(["perfekt"]);
+  });
+
+  it("links a card to several topics", () => {
+    expect(keysFor({ type: "v", front: "müssen", sub: "hat gemusst", grammar: ["modalverben"] }))
+      .toEqual(["perfekt", "modalverben"]);
+  });
+});
+
+describe("real data", () => {
+  it("every grammar tag on a card names an existing topic", () => {
+    const keys = new Set(GRAMMAR_TOPICS.map((t) => t.key));
+    const bad = ALL_CARDS.flatMap((c) => (c.grammar || []).filter((k) => !keys.has(k)).map((k) => `${c.deck}/${c.front}: ${k}`));
+    expect(bad).toEqual([]);
+  });
+
+  it("every subPattern in the grammar data is a valid regex", () => {
+    const rules = GRAMMAR_TOPICS.flatMap((t) => (Array.isArray(t.match) ? t.match : t.match ? [t.match] : []));
+    for (const r of rules) if (r.subPattern) expect(() => new RegExp(r.subPattern)).not.toThrow();
+  });
+});
+
+describe("buildGrammarIndex", () => {
+  const { linksById, wordsByTopic } = buildGrammarIndex(ALL_CARDS, GRAMMAR_TOPICS);
+
+  it("maps card ids to their links", () => {
+    expect(linksById[idOf("persoenlich", "die Zeichnung")].map((l) => l.key)).toEqual(["genus-endungen"]);
+    expect(linksById[idOf("freizeit", "können")].map((l) => l.key)).toEqual(["modalverben"]);
+    expect(linksById[idOf("persoenlich", "gemeinsam")]).toBeUndefined();
+  });
+
+  it("lists each topic's words once, with every deck they appear in", () => {
+    const rechnung = wordsByTopic["genus-endungen"].filter((w) => w.front === "die Rechnung");
+    expect(rechnung).toHaveLength(1);
+    expect(rechnung[0].decks).toEqual(expect.arrayContaining(["buero", "restaurant"]));
+  });
+
+  it("sorts words alphabetically, ignoring the article", () => {
+    const fronts = wordsByTopic.modalverben.map((w) => w.front);
+    expect(fronts).toEqual(["dürfen", "können", "möchten", "mögen", "müssen", "wollen"]);
+  });
+
+  it("has no entry for topics nothing links to", () => {
+    expect(wordsByTopic["wortstellung-hauptsatz"]).toBeUndefined();
   });
 });
 

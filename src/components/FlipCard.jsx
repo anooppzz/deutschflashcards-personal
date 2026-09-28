@@ -1,8 +1,8 @@
 import { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import { GENDER_COLORS, TYPE_META } from "../constants";
-import { DECK_META, GRAMMAR_TOPICS } from "../data";
-import { statusOfFsrs, dueLabel, submitCorrection, getCachedAiExample, translateText, grammarLinksFor } from "../engine";
+import { DECK_META } from "../data";
+import { statusOfFsrs, dueLabel, submitCorrection, getCachedAiExample, translateText } from "../engine";
 import { speak } from "../engine/speech";
 import { ProgressCtx } from "../context/ProgressCtx";
 import { GrammarNavCtx } from "../context/GrammarNavCtx";
@@ -10,7 +10,7 @@ import { faceStyle, badgeStyle, iconBtn } from "./cardStyles";
 
 function FlipCard({ front, sub, back, english, example, exampleEn, accent, badge, type, gender, deck, cardId, lang = "en", level, source, note }) {
   const { progress, mark } = useContext(ProgressCtx);
-  const { openGrammar } = useContext(GrammarNavCtx);
+  const { openGrammar, linksFor } = useContext(GrammarNavCtx);
   const entry = cardId ? progress[cardId] : undefined;
   const status = statusOfFsrs(entry);
   const [flipped, setFlipped] = useState(false);
@@ -69,8 +69,8 @@ function FlipCard({ front, sub, back, english, example, exampleEn, accent, badge
   // extract opposite from sub (old format) or use the opposite field directly (new format)
   const opposite = sub && sub.includes("↔") ? sub.split("↔").pop().trim() : null;
   const stop = (fn) => (e) => { e.stopPropagation(); fn(); };
-  // grammar topics whose rule covers this word, e.g. -ung -> "Genus nach Endung"
-  const grammarLinks = grammarLinksFor({ type, gender, front }, GRAMMAR_TOPICS);
+  // grammar topics linked to this card, e.g. -ung -> "Genus nach Endung"
+  const grammarLinks = cardId ? linksFor(cardId) : [];
 
   const shown = example ? { de: example, en: exampleEn } : ai;
   useEffect(() => {
