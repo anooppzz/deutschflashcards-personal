@@ -14,7 +14,10 @@
     "example": "Das Picknick hat mir gut gefallen.",
     "exampleEn": "I really liked the picnic.",
     "tip": "Reversed logic: the thing pleases YOU → 'Es gefällt mir' = I like it.",
-    "level": "A2"
+    "level": "A2",
+    "grammar": [
+      "fragewoerter-kasus"
+    ]
   },
   {
     "infinitiv": "bekommen",
@@ -48,7 +51,10 @@
     "example": "Der Hund gehört meinem Nachbarn.",
     "exampleEn": "The dog belongs to my neighbor.",
     "tip": "Takes Dativ: gehört mir / dir / ihm.",
-    "level": "A2"
+    "level": "A2",
+    "grammar": [
+      "fragewoerter-kasus"
+    ]
   },
   {
     "infinitiv": "verstehen",

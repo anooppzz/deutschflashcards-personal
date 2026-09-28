@@ -117,7 +117,10 @@
         "english": "who …?",
         "example": "Wer ist die Frau dort drüben?",
         "exampleEn": "Who is the woman over there?",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "fragewoerter-kasus"
+        ]
       },
       {
         "type": "sonst",
@@ -474,7 +477,10 @@
         "english": "what …?",
         "example": "Was machst du beruflich?",
         "exampleEn": "What do you do for work?",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "fragewoerter-kasus"
+        ]
       },
       {
         "type": "n",
@@ -741,7 +747,10 @@
         "english": "to believe",
         "example": "Ich glaube, das ist richtig.",
         "exampleEn": "I believe that's correct.",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "fragewoerter-kasus"
+        ]
       },
       {
         "type": "v",
@@ -1462,7 +1471,10 @@
         "english": "to say",
         "example": "Kannst du mir bitte die Wahrheit sagen?",
         "exampleEn": "Can you please tell me the truth?",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "fragewoerter-kasus"
+        ]
       },
       {
         "type": "sonst",
@@ -2010,7 +2022,10 @@
         "english": "to write",
         "example": "Kannst du deinen Namen schreiben?",
         "exampleEn": "Can you write your name?",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "fragewoerter-kasus"
+        ]
       },
       {
         "type": "sonst",
@@ -3067,7 +3082,10 @@
         "english": "to thank",
         "example": "Ich danke dir für deine Hilfe.",
         "exampleEn": "I thank you for your help.",
-        "level": "A2"
+        "level": "A2",
+        "grammar": [
+          "fragewoerter-kasus"
+        ]
       },
       {
         "type": "v",
@@ -3076,7 +3094,10 @@
         "english": "to be missing",
         "example": "Mir fehlt die Zeit für Sport.",
         "exampleEn": "I'm missing the time for sports.",
-        "level": "A2"
+        "level": "A2",
+        "grammar": [
+          "fragewoerter-kasus"
+        ]
       },
       {
         "type": "adj",
@@ -3810,7 +3831,10 @@
         "english": "to taste",
         "example": "Die Suppe schmeckt sehr gut.",
         "exampleEn": "The soup tastes very good.",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "fragewoerter-kasus"
+        ]
       },
       {
         "type": "sonst",
@@ -4205,7 +4229,10 @@
         "english": "to bring along",
         "example": "Kannst du bitte Brot mitbringen?",
         "exampleEn": "Can you please bring some bread?",
-        "level": "A2"
+        "level": "A2",
+        "grammar": [
+          "fragewoerter-kasus"
+        ]
       },
       {
         "type": "v",
@@ -5970,7 +5997,10 @@
         "english": "to bring",
         "example": "Können Sie mir bitte die Speisekarte bringen?",
         "exampleEn": "Can you please bring me the menu?",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "fragewoerter-kasus"
+        ]
       },
       {
         "type": "v",
@@ -6006,7 +6036,10 @@
         "english": "to send",
         "example": "Ich schicke Ihnen die Rechnung per E-Mail.",
         "exampleEn": "I'll send you the invoice by email.",
-        "level": "A2"
+        "level": "A2",
+        "grammar": [
+          "fragewoerter-kasus"
+        ]
       },
       {
         "type": "adj",
@@ -6070,7 +6103,10 @@
         "english": "to suit / be convenient",
         "example": "Passt dir Montag um zehn Uhr?",
         "exampleEn": "Does Monday at ten o'clock suit you?",
-        "level": "A2"
+        "level": "A2",
+        "grammar": [
+          "fragewoerter-kasus"
+        ]
       },
       {
         "type": "adj",
@@ -7002,7 +7038,10 @@
         "english": "to congratulate",
         "example": "Ich gratuliere dir zum neuen Job!",
         "exampleEn": "Congratulations on your new job!",
-        "level": "A2"
+        "level": "A2",
+        "grammar": [
+          "fragewoerter-kasus"
+        ]
       },
       {
         "type": "v",
@@ -7011,7 +7050,10 @@
         "english": "to give (as a gift)",
         "example": "Er schenkt ihr Blumen zum Geburtstag.",
         "exampleEn": "He gives her flowers for her birthday.",
-        "level": "A2"
+        "level": "A2",
+        "grammar": [
+          "fragewoerter-kasus"
+        ]
       },
       {
         "type": "v",
@@ -7020,7 +7062,10 @@
         "english": "to answer",
         "example": "Kannst du mir bitte antworten?",
         "exampleEn": "Can you please answer me?",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "fragewoerter-kasus"
+        ]
       },
       {
         "type": "v",
@@ -8137,7 +8182,10 @@
         "example": "Kannst du mir den Weg zeigen?",
         "exampleEn": "Can you show me the way?",
         "level": "A1",
-        "source": "Menschen A2 · Einheit 5"
+        "source": "Menschen A2 · Einheit 5",
+        "grammar": [
+          "fragewoerter-kasus"
+        ]
       },
       {
         "type": "adj",
@@ -8848,7 +8896,10 @@
         "example": "Können Sie mir ein gutes Restaurant empfehlen?",
         "exampleEn": "Can you recommend a good restaurant?",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 7"
+        "source": "Menschen A2 · Einheit 7",
+        "grammar": [
+          "fragewoerter-kasus"
+        ]
       },
       {
         "type": "v",
@@ -8858,7 +8909,10 @@
         "example": "Kannst du mir dein Fahrrad leihen?",
         "exampleEn": "Can you lend me your bike?",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 7"
+        "source": "Menschen A2 · Einheit 7",
+        "grammar": [
+          "fragewoerter-kasus"
+        ]
       },
       {
         "type": "v",
@@ -9823,7 +9877,10 @@
         "example": "Können Sie mir das bitte erklären?",
         "exampleEn": "Can you please explain that to me?",
         "level": "A1",
-        "source": "Menschen A2 · Einheit 9"
+        "source": "Menschen A2 · Einheit 9",
+        "grammar": [
+          "fragewoerter-kasus"
+        ]
       },
       {
         "type": "adj",

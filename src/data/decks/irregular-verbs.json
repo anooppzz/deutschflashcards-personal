@@ -114,7 +114,10 @@
     "partizip": "gegeben",
     "english": "to give",
     "example": "Kannst du mir ein Beispiel geben?",
-    "level": "A1"
+    "level": "A1",
+    "grammar": [
+      "fragewoerter-kasus"
+    ]
   },
   {
     "group": "e – a – e",
@@ -168,7 +171,10 @@
     "partizip": "geholfen",
     "english": "to help",
     "example": "Er hat mir geholfen.",
-    "level": "A1"
+    "level": "A1",
+    "grammar": [
+      "fragewoerter-kasus"
+    ]
   },
   {
     "group": "i – a – u",
@@ -240,7 +246,10 @@
     "partizip": "geschrieben",
     "english": "to write",
     "example": "Ich habe einen Brief geschrieben.",
-    "level": "A1"
+    "level": "A1",
+    "grammar": [
+      "fragewoerter-kasus"
+    ]
   },
   {
     "group": "ei – ie – ie",

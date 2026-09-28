@@ -532,5 +532,105 @@
       {"de": "Ich lege das Buch auf den Tisch.", "en": "I'm putting the book on the table. (Wohin? - Akkusativ)"},
       {"de": "Die Katze schläft unter dem Bett.", "en": "The cat sleeps under the bed. (Wo? - Dativ)"}
     ]
+  },
+  {
+    "key": "fragewoerter-kasus",
+    "level": "A2",
+    "title": {"de": "Fragewörter: wer, wen, wem, was", "en": "Question Words: wer, wen, wem, was"},
+    "summary": {
+      "de": "Das Fragewort hat den Kasus der Antwort: **wer** → der, **wen** → den, **wem** → dem.",
+      "en": "The question word takes the case of the answer: **wer** → der, **wen** → den, **wem** → dem."
+    },
+    "sections": [
+      {
+        "type": "table",
+        "head": [{"de": "Kasus", "en": "Case"}, {"de": "Person", "en": "Person"}, {"de": "Sache", "en": "Thing"}],
+        "rows": [
+          [{"de": "Nominativ (Subjekt)", "en": "nominative (subject)"}, "**Wer?**", "**Was?**"],
+          [{"de": "Akkusativ (Objekt)", "en": "accusative (object)"}, "**Wen?**", "**Was?**"],
+          [{"de": "Dativ", "en": "dative"}, "**Wem?**", "–"]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Endung wie bei der und er", "en": "Same ending as der and er"},
+        "head": [
+          {"de": "Fragewort", "en": "Question"},
+          {"de": "Artikel", "en": "Article"},
+          {"de": "Pronomen", "en": "Pronoun"}
+        ],
+        "rows": [
+          ["we**r**", "de**r**", "e**r**"],
+          ["we**n**", "de**n**", "ih**n**"],
+          ["we**m**", "de**m**", "ih**m**"],
+          ["wa**s**", "da**s**", "e**s**"]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Welches Fragewort?", "en": "Which question word?"},
+        "head": [
+          {"de": "Die Person ist …", "en": "The person is …"},
+          {"de": "Verben", "en": "Verbs"},
+          {"de": "Frage", "en": "Question"}
+        ],
+        "rows": [
+          [{"de": "Subjekt", "en": "the subject"}, "kommen, wohnen, arbeiten", "**Wer** kommt?"],
+          [
+            {"de": "Akkusativ-Objekt", "en": "accusative object"},
+            "sehen, treffen, fragen, lieben",
+            "**Wen** triffst du?"
+          ],
+          [{"de": "Dativ-Objekt", "en": "dative object"}, "helfen, gehören, danken, gefallen", "**Wem** hilfst du?"]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Präposition + Fragewort", "en": "Preposition + question word"},
+        "head": [
+          {"de": "Präposition", "en": "Preposition"},
+          {"de": "Fragewort", "en": "Question word"},
+          {"de": "Beispiel", "en": "Example"}
+        ],
+        "rows": [
+          ["mit, bei, von, zu, aus, nach, seit", "+ **wem**", "**Mit wem** gehst du ins Kino?"],
+          ["für, ohne, durch, gegen, um", "+ **wen**", "**Für wen** kaufst du das Geschenk?"]
+        ]
+      },
+      {
+        "type": "points",
+        "items": [
+          {
+            "de": "Die Antwort hat dieselbe Endung: **Wen** fragst du? – **Den** Lehrer.",
+            "en": "The answer has the same ending: **Wen** fragst du? – **Den** Lehrer."
+          },
+          {
+            "de": "geben, schenken, zeigen …: Person im Dativ, Sache im Akkusativ – **Wem** schenkst du **was**?",
+            "en": "geben, schenken, zeigen …: the person is dative, the thing accusative – **Wem** schenkst du **was**?"
+          },
+          {
+            "de": "Dativ-Verben merken: helfen, danken, gehören, gefallen, antworten, gratulieren, glauben, passen, schmecken, fehlen.",
+            "en": "Dative verbs to memorize: helfen, danken, gehören, gefallen, antworten, gratulieren, glauben, passen, schmecken, fehlen."
+          },
+          {
+            "de": "Im Dativ fragt man nur nach Personen (Lebewesen), nicht nach Sachen.",
+            "en": "The dative only asks about people (living beings), not things."
+          }
+        ]
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "**wen** (Akkusativ) ≠ **wenn** (falls, sobald). Und: **Wem** gehört …? – gehören steht immer mit Dativ.",
+          "en": "**wen** (whom) ≠ **wenn** (if / when). And: **Wem** gehört …? – gehören always takes the dative."
+        }
+      }
+    ],
+    "examples": [
+      {"de": "Wer ist der Mann?", "en": "Who is the man?"},
+      {"de": "Wen hat er getroffen?", "en": "Who did he meet?"},
+      {"de": "Wem möchte er die Sachen geben?", "en": "Who does he want to give the things to?"},
+      {"de": "Für wen hat er die Sachen gekauft?", "en": "Who did he buy the things for?"}
+    ]
   }
 ]
