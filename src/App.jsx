@@ -1278,12 +1278,17 @@ function App() {
         )}
 
         {/* MODE SWITCH + PROGRESS */}
-        <div style={{ display: "flex", gap: 6, marginBottom: 14 }}>
+        {/* Seven tabs whose one-word labels (Grammatik, Wortgitter) can't
+            wrap, so the row scales with the screen: text is 12px from 390px
+            up and shrinks below that; gaps grow with the width up to 6px.
+            If a screen is narrower still, only this row scrolls, never the
+            page. */}
+        <div style={{ display: "flex", gap: "clamp(3px, 1.1vw, 6px)", marginBottom: 14, overflowX: "auto" }}>
           {MODE_TABS(articleNouns.length, clozePool.length, wsPool.length).map(([m, lbl]) => (
             <button
               key={m}
               onClick={() => { setMode(m); setGrammarFocus(null); setGrammarFrom(null); }}
-              style={{ flex: 1, padding: "9px 0", borderRadius: 12, border: "1px solid #2c3a47", background: mode === m ? "#e0833b" : "#1a232b", color: mode === m ? "#0e1419" : "#9ab0c2", fontSize: 12, fontWeight: 700, cursor: "pointer" }}
+              style={{ flex: 1, padding: "9px 0", borderRadius: 12, border: "1px solid #2c3a47", background: mode === m ? "#e0833b" : "#1a232b", color: mode === m ? "#0e1419" : "#9ab0c2", fontSize: "clamp(10px, 3.1vw, 12px)", fontWeight: 700, cursor: "pointer" }}
             >{lbl}</button>
           ))}
         </div>
