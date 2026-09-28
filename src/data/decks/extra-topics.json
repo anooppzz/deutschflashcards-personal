@@ -10140,6 +10140,16 @@
         "example": "Das Wetter ist heute sehr angenehm.",
         "exampleEn": "The weather is very pleasant today.",
         "level": "A2"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Zeichnung",
+        "sub": "Pl. -en",
+        "english": "drawing, sketch",
+        "example": "Das Kind zeigt mir seine Zeichnung.",
+        "exampleEn": "The child shows me their drawing.",
+        "level": "A2"
       }
     ]
   }
