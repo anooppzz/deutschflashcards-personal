@@ -4,14 +4,34 @@
     "level": "A1",
     "title": { "de": "Artikel im Nominativ", "en": "Articles in the Nominative Case" },
     "explanation": {
-      "de": "Jedes deutsche Nomen hat einen Artikel: der (maskulin), die (feminin), das (neutral). Der Artikel im Nominativ steht beim Subjekt des Satzes - der Person oder Sache, die die Handlung ausführt. Es gibt keine feste Regel, welches Nomen welchen Artikel hat - am besten lernt man Nomen immer zusammen mit ihrem Artikel.",
-      "en": "Every German noun has an article: der (masculine), die (feminine), das (neuter). The nominative article marks the subject of the sentence - the person or thing performing the action. There's no fixed rule for which noun takes which article - the best approach is always learning a noun together with its article."
+      "de": "Jedes deutsche Nomen hat einen Artikel: der (maskulin), die (feminin), das (neutral). Der Artikel im Nominativ steht beim Subjekt des Satzes - der Person oder Sache, die die Handlung ausführt. Für die meisten Nomen gibt es keine feste Regel - am besten lernt man Nomen immer zusammen mit ihrem Artikel. Manche Endungen verraten den Artikel aber sicher, z. B. -ung → die (siehe „Genus nach Endung“).",
+      "en": "Every German noun has an article: der (masculine), die (feminine), das (neuter). The nominative article marks the subject of the sentence - the person or thing performing the action. For most nouns there's no fixed rule - the best approach is always learning a noun together with its article. Some endings do reliably give the article away, e.g. -ung → die (see \"Gender by Ending\")."
     },
     "examples": [
       { "de": "Der Mann trinkt Kaffee.", "en": "The man is drinking coffee." },
       { "de": "Die Frau liest ein Buch.", "en": "The woman is reading a book." },
       { "de": "Das Kind spielt im Garten.", "en": "The child is playing in the garden." }
     ]
+  },
+  {
+    "key": "genus-endungen",
+    "level": "A2",
+    "title": { "de": "Genus nach Endung", "en": "Gender by Ending" },
+    "explanation": {
+      "de": "Bei manchen Endungen ist der Artikel immer gleich: Nomen auf -ung, -heit, -keit, -ion und -schaft sind feminin, sie haben immer den Artikel die. Der Plural endet dann immer auf -en: die Zeitung → die Zeitungen, die Möglichkeit → die Möglichkeiten. Viele dieser Nomen kommen von Verben oder Adjektiven: zeichnen → die Zeichnung, frei → die Freiheit. Vorsicht: Die Regel gilt für die Endung, nicht für jedes Wort, das zufällig so aufhört - der Sprung ist maskulin, weil -ung hier zum Wortstamm gehört, und das Stadion ist ein Fremdwort.",
+      "en": "Some endings always come with the same article: nouns ending in -ung, -heit, -keit, -ion and -schaft are feminine, so they always take die. Their plural always ends in -en: die Zeitung → die Zeitungen, die Möglichkeit → die Möglichkeiten. Many of these nouns come from verbs or adjectives: zeichnen (to draw) → die Zeichnung, frei (free) → die Freiheit. Careful: the rule is about the suffix, not every word that happens to end that way - der Sprung (jump) is masculine because the -ung is part of the stem, and das Stadion is a loanword."
+    },
+    "examples": [
+      { "de": "Die Zeitung liegt auf dem Tisch.", "en": "The newspaper is on the table." },
+      { "de": "Die Freiheit ist wichtig.", "en": "Freedom is important." },
+      { "de": "Das ist eine gute Möglichkeit.", "en": "That's a good opportunity." },
+      { "de": "Die Mannschaft hat gewonnen.", "en": "The team won." }
+    ],
+    "hint": {
+      "de": "Nomen auf -{ending} sind immer feminin: die.",
+      "en": "Nouns ending in -{ending} are always feminine: die."
+    },
+    "match": { "type": "n", "gender": "die", "endings": ["ung", "heit", "keit", "ion", "schaft"] }
   },
   {
     "key": "possessivartikel",

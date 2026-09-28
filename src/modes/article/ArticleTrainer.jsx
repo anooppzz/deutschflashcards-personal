@@ -1,7 +1,8 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
 import { GENDER_COLORS } from "../../constants";
-import { DECK_META } from "../../data";
-import { idOf, translateText, submitCorrection, getCachedAiExample } from "../../engine";
+import { DECK_META, GRAMMAR_TOPICS } from "../../data";
+import { idOf, translateText, submitCorrection, getCachedAiExample, grammarLinksFor, grammarHintFor } from "../../engine";
+import { GrammarNavCtx } from "../../context/GrammarNavCtx";
 import { speak } from "../../engine/speech";
 import { faceStyle, badgeStyle, iconBtn } from "../../components/cardStyles";
 import { FloatingNext } from "../../components";
@@ -15,6 +16,7 @@ function ArticleTrainer({ nouns, idx, choice, score, onChoose, onNext, totalAvai
   const [correcting, setCorrecting] = useState(false);
   const [correctionText, setCorrectionText] = useState("");
   const exampleRef = useRef(null);
+  const { openGrammar } = useContext(GrammarNavCtx);
   useEffect(() => {
     setAiEx(null);
     setPeek(false);
@@ -68,6 +70,8 @@ function ArticleTrainer({ nouns, idx, choice, score, onChoose, onNext, totalAvai
     );
   }
   const word = card.front.replace(/^(der|die|das)\s+/i, "");
+  // after a wrong answer, a rule that covers this noun (e.g. -ung -> die)
+  const tipLinks = choice && choice !== card.gender ? grammarLinksFor(card, GRAMMAR_TOPICS) : [];
   const arts = [["der", "#4f86c6"], ["die", "#c6534f"], ["das", "#c69a3b"]];
   const displayMeaning = lang !== "en" && transMeaning ? transMeaning : card.english;
   const shownExample = card.example ? { de: card.example, en: card.exampleEn } : aiEx;
@@ -157,6 +161,17 @@ function ArticleTrainer({ nouns, idx, choice, score, onChoose, onNext, totalAvai
             {card.sub && (
               <div style={{ marginTop: 4, fontSize: 12, color: "#9ab0c2" }}>{card.sub}</div>
             )}
+            {tipLinks.map((l) => (
+              <div key={l.key} style={{ marginTop: 10, fontSize: 12, color: "#8fb8d8", textAlign: "center", lineHeight: 1.4 }}>
+                💡 {grammarHintFor(l, GRAMMAR_TOPICS, lang)}
+                {openGrammar && (
+                  <button
+                    onClick={() => openGrammar(l.key)}
+                    style={{ marginLeft: 6, background: "none", border: "none", color: "#8fb8d8", fontSize: 12, fontWeight: 700, cursor: "pointer", textDecoration: "underline" }}
+                  >📖 Regel</button>
+                )}
+              </div>
+            ))}
             {/* A3: example sentence, static or cached - folded into the back face, same content that used to sit in a separate panel below */}
             {shownExample ? (
               <>

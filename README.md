@@ -65,6 +65,18 @@ round builders.
 Decks are plain JSON under `src/data/decks/`. To add one, create the JSON file and
 register it in `src/data/decks/_deck-manifest.json`.
 
+A card can carry an optional `note`, a one-line tip shown on the back of the card
+(e.g. `"note": "von zeichnen (to draw)"`).
+
+## Grammar links
+
+Grammar topics live in `src/data/grammar/topics.json`. A topic with a `match` rule is
+linked automatically to every card it covers: the card shows a 📖 chip that opens the
+topic, and the Artikel trainer shows the topic's `hint` after a wrong answer. For
+example, `"match": { "type": "n", "gender": "die", "endings": ["ung", …] }` links every
+feminine noun ending in -ung. A card is only linked when its own gender agrees with
+the rule, so words like *der Sprung* never get a contradicting tip.
+
 ## Deployment
 
 `npm run build` inlines all JS and CSS into `dist/index.html` via

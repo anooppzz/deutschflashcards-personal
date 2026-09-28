@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { speak } from "../../engine/speech";
 import { iconBtn } from "../../components/cardStyles";
@@ -28,7 +28,7 @@ function GrammarTopicCard({ topic, lang, open, onToggle }) {
   const title = localize(topic.title, lang);
   const explanation = localize(topic.explanation, lang);
   return (
-    <div style={{ marginBottom: 10, borderRadius: 12, border: "1px solid #2c3a47", background: "#161d24", overflow: "hidden" }}>
+    <div id={`grammar-topic-${topic.key}`} style={{ marginBottom: 10, borderRadius: 12, border: "1px solid #2c3a47", background: "#161d24", overflow: "hidden", scrollMarginTop: 52 }}>
       <button
         onClick={onToggle}
         aria-expanded={open}
@@ -90,10 +90,25 @@ GrammarTopicCard.propTypes = {
   onToggle: PropTypes.func.isRequired,
 };
 
-function GrammarView({ topics, lang = "en" }) {
-  const [openKey, setOpenKey] = useState(null);
+// focus: { key, n } - set when a card's grammar chip opened this view; the
+// topic is expanded and scrolled to. n changes on every open, so tapping the
+// same chip twice still re-focuses. onBack: return to where the chip was.
+function GrammarView({ topics, lang = "en", focus, onBack }) {
+  const [openKey, setOpenKey] = useState(focus ? focus.key : null);
+  useEffect(() => {
+    if (!focus) return;
+    setOpenKey(focus.key);
+    const el = document.getElementById(`grammar-topic-${focus.key}`);
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [focus]);
   return (
     <>
+      {onBack && (
+        <button
+          onClick={onBack}
+          style={{ position: "sticky", top: 8, zIndex: 2, marginBottom: 12, background: "#1a232b", border: "1px solid #2c3a47", borderRadius: 10, padding: "6px 12px", color: "#9ab0c2", fontSize: 12, fontWeight: 600, cursor: "pointer", boxShadow: "0 4px 12px rgba(0,0,0,.4)" }}
+        >← Zurück</button>
+      )}
       <div style={{ background: "#16202a", borderRadius: 12, padding: "10px 16px", marginBottom: 16, fontSize: 12, color: "#8fb8d8", textAlign: "center" }}>
         📖 Grammatik-Referenz · {topics.length} Themen · Tippe zum Aufklappen
       </div>
@@ -113,6 +128,8 @@ function GrammarView({ topics, lang = "en" }) {
 GrammarView.propTypes = {
   topics: PropTypes.arrayOf(GrammarTopicCard.propTypes.topic).isRequired,
   lang: PropTypes.string,
+  focus: PropTypes.shape({ key: PropTypes.string.isRequired, n: PropTypes.number }),
+  onBack: PropTypes.func,
 };
 
 export default GrammarView;

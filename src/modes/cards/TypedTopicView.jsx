@@ -43,6 +43,9 @@ function TypedTopicView({ topic, slice, setSlice, query, lang, levelFilter, sour
             lang={lang}
             level={card.level}
             source={card.source}
+            type={card.type}
+            gender={card.gender}
+            note={card.note}
           />
           <Controls
             index={slice.idx % total}

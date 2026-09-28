@@ -13,3 +13,4 @@ export * from "./translation/chain";
 export * from "./translation/cache";
 export * from "./translation/correctionCache";
 export * from "./translation/exampleCache";
+export * from "./grammarLinks";

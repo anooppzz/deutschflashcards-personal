@@ -23,7 +23,7 @@
    anyone.
    ============================================================ */
 
-import React, { useState, useCallback, useEffect, useMemo } from "react";
+import React, { useState, useCallback, useEffect, useMemo, useRef } from "react";
 import {
   STORAGE_KEYS,
   GENDER_COLORS, TYPE_META, GROUP_COLORS,
@@ -52,6 +52,7 @@ import {
   badgeStyle, ctrlBtn,
 } from "./components";
 import { ProgressCtx } from "./context/ProgressCtx";
+import { GrammarNavCtx } from "./context/GrammarNavCtx";
 import {
   TypedTopicView,
   ArticleTrainer, ArticleSummary,
@@ -159,6 +160,9 @@ function normalizeCard(deckKey, c) {
   // existing generic search find every card from a given chapter across
   // ALL topics at once, regardless of which thematic deck it landed in.
   if (c.source) normalized.source = c.source;
+
+  // optional: a short per-card note shown on the back (e.g. "von zeichnen")
+  if (c.note) normalized.note = c.note;
 
   // optional: plural (nouns) or opposite (adjectives) — both stored in c.sub
   if (c.sub) {
@@ -733,6 +737,30 @@ function App() {
 
   // ---- study mode: cards | article | quiz ----
   const [mode, setMode] = useState(MODE.CARDS);
+  // grammar links: a card's 📖 chip opens the Grammatik tab on that topic,
+  // remembering which mode it came from so "← Zurück" can return there.
+  const [grammarFocus, setGrammarFocus] = useState(null);
+  const [grammarFrom, setGrammarFrom] = useState(null);
+  const openGrammar = useCallback((key) => {
+    setGrammarFrom(mode === MODE.GRAMMAR ? null : mode);
+    setGrammarFocus({ key, n: Date.now() });
+    setMode(MODE.GRAMMAR);
+  }, [mode]);
+  const grammarNav = useMemo(() => ({ openGrammar }), [openGrammar]);
+  // Entering a training mode normally starts a new round (see the
+  // round-building effect below). "← Zurück" from the Grammatik tab should
+  // instead return to the round in progress, so it sets this ref and that
+  // effect skips one rebuild.
+  const resumeRoundRef = useRef(false);
+  // the cards changed while on the Grammatik tab -> that round is stale, so
+  // drop the way back to it; switching tabs then starts a fresh round
+  useEffect(() => { setGrammarFrom(null); }, [selectionCards]);
+  const backFromGrammar = () => {
+    resumeRoundRef.current = true;
+    setMode(grammarFrom);
+    setGrammarFrom(null);
+    setGrammarFocus(null);
+  };
   // #2: language toggle - EN/RU/AR, personal + persisted
   const [lang, setLang] = useState("en");
   const [customLangs, setCustomLangs] = useState([]);
@@ -857,6 +885,7 @@ function App() {
   const [wsRevealed, setWsRevealed] = useState(false);
   const [wsFinished, setWsFinished] = useState(false);
   useEffect(() => {
+    if (resumeRoundRef.current) { resumeRoundRef.current = false; return; }
     if (mode === MODE.ARTICLE) {
       const n = resolveArticleRoundSize(articleSizePref, articleNouns.length);
       setAOrder(buildArticleRoundStratified(articleNouns, progress, n)); setAIdx(0); setAChoice(null); setAScore({ right: 0, total: 0 });
@@ -1078,6 +1107,7 @@ function App() {
 
   return (
     <ProgressCtx.Provider value={{ progress, mark }}>
+    <GrammarNavCtx.Provider value={grammarNav}>
     <div style={{ minHeight: "100vh", background: "#0e1419", fontFamily: "system-ui, sans-serif", padding: "28px 16px" }}>
       <div style={{ maxWidth: 480, margin: "0 auto" }}>
         <div style={{ position: "relative", minHeight: 40 }}>
@@ -1246,7 +1276,7 @@ function App() {
           {MODE_TABS(articleNouns.length, clozePool.length, wsPool.length).map(([m, lbl]) => (
             <button
               key={m}
-              onClick={() => setMode(m)}
+              onClick={() => { setMode(m); setGrammarFocus(null); setGrammarFrom(null); }}
               style={{ flex: 1, padding: "9px 0", borderRadius: 12, border: "1px solid #2c3a47", background: mode === m ? "#e0833b" : "#1a232b", color: mode === m ? "#0e1419" : "#9ab0c2", fontSize: 12, fontWeight: 700, cursor: "pointer" }}
             >{lbl}</button>
           ))}
@@ -1374,7 +1404,12 @@ function App() {
             />
           )
         ) : mode === MODE.GRAMMAR ? (
-          <GrammarView topics={GRAMMAR_TOPICS} lang={lang} />
+          <GrammarView
+            topics={GRAMMAR_TOPICS}
+            lang={lang}
+            focus={grammarFocus}
+            onBack={grammarFrom ? backFromGrammar : undefined}
+          />
         ) : (
         <>
         {single && onlyTab === "irregular" && (
@@ -1471,6 +1506,9 @@ function App() {
                   lang={lang}
                   level={hausWord.level}
                   source={hausWord.source}
+                  type={hausWord.type}
+                  gender={hausWord.gender}
+                  note={hausWord.note}
                 />
                 <Controls index={hausIdx % filteredHaus.length} total={filteredHaus.length}
                   onPrev={() => step(setHausIdx, filteredHaus.length)(-1)}
@@ -1506,6 +1544,9 @@ function App() {
                   lang={lang}
                   level={verkWord.level}
                   source={verkWord.source}
+                  type={verkWord.type}
+                  gender={verkWord.gender}
+                  note={verkWord.note}
                 />
                 <Controls index={verkIdx % filteredVerk.length} total={filteredVerk.length}
                   onPrev={() => step(setVerkIdx, filteredVerk.length)(-1)}
@@ -1541,6 +1582,9 @@ function App() {
                   lang={lang}
                   level={kleidWord.level}
                   source={kleidWord.source}
+                  type={kleidWord.type}
+                  gender={kleidWord.gender}
+                  note={kleidWord.note}
                 />
                 <Controls index={kleidIdx % filteredKleid.length} total={filteredKleid.length}
                   onPrev={() => step(setKleidIdx, filteredKleid.length)(-1)}
@@ -1590,6 +1634,7 @@ function App() {
                   lang={lang}
                   level={comboCard.level}
                   source={comboCard.source}
+                  note={comboCard.note}
                 />
                 <Controls index={comboIdx % filteredCombo.length} total={filteredCombo.length}
                   onPrev={() => step(setComboIdx, filteredCombo.length)(-1)}
@@ -1621,6 +1666,7 @@ function App() {
       )}
       {showHelp && <HelpModal lang={lang} onClose={() => setShowHelp(false)} />}
     </div>
+    </GrammarNavCtx.Provider>
     </ProgressCtx.Provider>
   );
 }
