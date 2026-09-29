@@ -265,7 +265,10 @@
     "english": "lastly / finally",
     "example": "Zuletzt habe ich die Schuhe angezogen.",
     "exampleEn": "Lastly I put on the shoes.",
-    "level": "A2"
+    "level": "A2",
+    "grammar": [
+      "konnektoren-adverbien"
+    ]
   },
   {
     "type": "sonst",

@@ -905,12 +905,26 @@
     "key": "konnektoren-adverbien",
     "level": "A2",
     "group": {"de": "Konnektoren", "en": "Connectors"},
-    "title": {"de": "deshalb, trotzdem, dann, danach …", "en": "deshalb, trotzdem, dann, danach …"},
+    "title": {"de": "deshalb, sonst, dann, danach (Position 1)", "en": "deshalb, sonst, dann, danach (position 1)"},
     "summary": {
-      "de": "Diese Wörter stehen auf **Position 1** – das Verb kommt **direkt danach**.",
-      "en": "These words take **position 1** – the verb comes **right after them**."
+      "de": "Diese Wörter verbinden zwei Hauptsätze und stehen auf **Position 1** – dann kommt das **Verb**, danach das **Subjekt**.",
+      "en": "These words join two main clauses and take **position 1** – then comes the **verb**, then the **subject**."
     },
     "sections": [
+      {
+        "type": "table",
+        "title": {"de": "Satzbau: 1 – 2 – 3", "en": "Word order: 1 – 2 – 3"},
+        "head": [
+          {"de": "1: Konnektor", "en": "1: connector"},
+          {"de": "2: Verb", "en": "2: verb"},
+          {"de": "3: Subjekt …", "en": "3: subject …"}
+        ],
+        "rows": [
+          ["Deshalb", "**habe**", "ich viel Zeit für dich."],
+          ["Sonst", "**bin**", "ich so allein."],
+          ["Dann", "**gehen**", "wir ins Kino."]
+        ]
+      },
       {
         "type": "table",
         "title": {"de": "Grund, Gegensatz, Folge", "en": "Reason, contrast, result"},
@@ -940,8 +954,16 @@
         "title": {"de": "So merkst du es dir", "en": "How to remember"},
         "items": [
           {
+            "de": "Formel **1 – 2 – 3**: Konnektor – **Verb** – Subjekt – Rest.",
+            "en": "Formula **1 – 2 – 3**: connector – **verb** – subject – rest."
+          },
+          {
             "de": "Das Wort **zählt als Position 1** – dann kommt sofort das Verb, danach das Subjekt: Deshalb **bleibe ich** …",
             "en": "The word **counts as position 1** – so the verb comes next, then the subject: Deshalb **bleibe ich** …"
+          },
+          {
+            "de": "**sonst** = „wenn nicht …, dann …“: Ich brauche Geld, sonst **kann** ich nichts kaufen. (= Wenn ich kein Geld habe, kann ich nichts kaufen.)",
+            "en": "**sonst** = \"if not …, then …\": Ich brauche Geld, sonst **kann** ich nichts kaufen. (= If I have no money, I can't buy anything.)"
           },
           {
             "de": "**deswegen** und **darum** bedeuten dasselbe wie deshalb.",
@@ -958,6 +980,10 @@
         "title": {"de": "Wann benutzen?", "en": "When to use it"},
         "items": [
           {
+            "de": "Drei Bedeutungen: **deshalb** → Folge · **sonst** → Warnung, Alternative · **dann, danach** → Zeit.",
+            "en": "Three meanings: **deshalb** → result · **sonst** → warning, alternative · **dann, danach** → time."
+          },
+          {
             "de": "Zum Erzählen (Tagesablauf, Urlaub): **zuerst → dann → danach → später → zum Schluss**.",
             "en": "For telling a story (daily routine, holiday): **zuerst → dann → danach → später → zum Schluss**."
           },
@@ -968,6 +994,36 @@
           {
             "de": "**trotzdem** = etwas passiert, obwohl es nicht passt: Ich bin müde, trotzdem **lerne** ich.",
             "en": "**trotzdem** = something happens even though it doesn't fit: Ich bin müde, trotzdem **lerne** ich."
+          },
+          {
+            "de": "**sonst** oft nach einer Bitte: Komm zu mir, sonst **bin** ich so allein.",
+            "en": "**sonst** often follows a request: Komm zu mir, sonst **bin** ich so allein (or I'll be so alone)."
+          },
+          {
+            "de": "**zum Schluss / zuletzt** = der letzte Schritt · **endlich** = nach langem Warten: Endlich **ist** der Bus da!",
+            "en": "**zum Schluss / zuletzt** = the last step · **endlich** = at last, after a long wait: Endlich **ist** der Bus da!"
+          }
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "Gut zu wissen", "en": "Good to know"},
+        "items": [
+          {
+            "de": "Punkt oder Komma – beides geht: Ich brauche Geld. Deshalb arbeite ich. · Ich brauche Geld, deshalb arbeite ich.",
+            "en": "Full stop or comma – both work: Ich brauche Geld. Deshalb arbeite ich. · Ich brauche Geld, deshalb arbeite ich."
+          },
+          {
+            "de": "Mit **und** davor: und zählt nicht mit – Ich koche, und dann **gehen** wir ins Kino.",
+            "en": "With **und** in front: und doesn't count – Ich koche, und dann **gehen** wir ins Kino."
+          },
+          {
+            "de": "**dann** auch nach einem wenn-Satz: Wenn es regnet, dann **bleibe** ich zu Hause.",
+            "en": "**dann** also follows a wenn clause: Wenn es regnet, dann **bleibe** ich zu Hause."
+          },
+          {
+            "de": "**vorher** (davor) ↔ **nachher** (danach, später): Ich rufe dich vorher an. · Bis nachher!",
+            "en": "**vorher** (before that) ↔ **nachher** (afterwards, later): Ich rufe dich vorher an. · Bis nachher! (see you later)"
           }
         ]
       },
@@ -976,6 +1032,13 @@
         "text": {
           "de": "❌ Deshalb ich bleibe zu Hause. ✅ Deshalb **bleibe** ich zu Hause. – Das Subjekt kommt **nach** dem Verb.",
           "en": "❌ Deshalb ich bleibe zu Hause. ✅ Deshalb **bleibe** ich zu Hause. – the subject comes **after** the verb."
+        }
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "**sonst** ≠ **sondern**: Beeil dich, **sonst** verpassen wir den Zug (otherwise). · Nicht heute, **sondern** morgen (but rather – nur nach nicht / kein).",
+          "en": "**sonst** ≠ **sondern**: Beeil dich, **sonst** verpassen wir den Zug (otherwise). · Nicht heute, **sondern** morgen (but rather – only after nicht / kein)."
         }
       },
       {
@@ -996,7 +1059,13 @@
     "examples": [
       {"de": "Ich habe keine Zeit, deshalb komme ich nicht.", "en": "I don't have time, so I'm not coming."},
       {"de": "Es ist kalt, trotzdem gehen wir schwimmen.", "en": "It's cold, but we're going swimming anyway."},
-      {"de": "Zuerst kaufe ich ein, danach koche ich.", "en": "First I go shopping, then I cook."}
+      {"de": "Zuerst kaufe ich ein, danach koche ich.", "en": "First I go shopping, then I cook."},
+      {
+        "de": "Ich arbeite heute nicht. Deshalb habe ich viel Zeit für dich.",
+        "en": "I'm not working today. So I have lots of time for you."
+      },
+      {"de": "Komm zu mir. Sonst bin ich so allein.", "en": "Come over. Otherwise I'll be so alone."},
+      {"de": "Ich koche für uns. Dann gehen wir ins Kino.", "en": "I'll cook for us. Then we'll go to the cinema."}
     ]
   },
   {

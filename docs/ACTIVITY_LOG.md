@@ -19,6 +19,13 @@ was done, newest first. Every change adds a log entry here in the same commit
 ## Log
 
 ### 2026-09-29
+- **Textbook page "Deshalb, sonst, dann, danach – Hauptsätze verbinden (Position 1)"**
+  was already covered by the Konnektoren topic (key `konnektoren-adverbien`), so it was
+  extended instead of duplicated: renamed "deshalb, sonst, dann, danach (Position 1)",
+  the book's 1–2–3 table and sentences, the three meanings (Folge / sonst = wenn nicht
+  … dann … / Zeit), plus sonst ≠ sondern, endlich vs zum Schluss, "und dann",
+  "Wenn …, dann …", full stop or comma, vorher / nachher. Linked *zuletzt* and
+  *endlich*; *deshalb* accepts *deswegen / darum*; new cards *vorher*, *nachher*.
 - **Konnektoren section** (new group, 4 topics): overview of the three types (verb stays /
   goes to the end / comes right after), *und, aber, oder, denn, sondern* (ADUSO,
   sondern vs aber, two-part connectors), *Nebensätze: dass, weil, wenn, ob, als*

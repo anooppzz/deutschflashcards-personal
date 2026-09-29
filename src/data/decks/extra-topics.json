@@ -7192,7 +7192,10 @@
         "english": "finally",
         "example": "Endlich sind die Ferien da!",
         "exampleEn": "Finally the holidays are here!",
-        "level": "A2"
+        "level": "A2",
+        "grammar": [
+          "konnektoren-adverbien"
+        ]
       },
       {
         "type": "adj",
@@ -9652,12 +9655,16 @@
       {
         "type": "sonst",
         "front": "deshalb",
-        "sub": "",
+        "sub": "= deswegen, darum",
         "english": "therefore, that's why",
         "example": "Ich bin krank, deshalb bleibe ich im Bett.",
         "exampleEn": "I'm sick, that's why I'm staying in bed.",
         "level": "A1",
         "source": "Menschen A2 · Einheit 8",
+        "acceptableAlternates": [
+          "deswegen",
+          "darum"
+        ],
         "grammar": [
           "konnektoren-adverbien"
         ]
@@ -10644,6 +10651,32 @@
         "example": "Beeil dich, sonst verpassen wir den Zug.",
         "exampleEn": "Hurry up, otherwise we'll miss the train.",
         "note": "Sonst noch etwas? = Anything else?",
+        "level": "A2",
+        "grammar": [
+          "konnektoren-adverbien"
+        ]
+      },
+      {
+        "type": "sonst",
+        "front": "vorher",
+        "sub": "↔ nachher",
+        "english": "before, beforehand",
+        "example": "Ich komme morgen, aber ich rufe dich vorher an.",
+        "exampleEn": "I'm coming tomorrow, but I'll call you beforehand.",
+        "note": "≈ davor",
+        "level": "A2",
+        "grammar": [
+          "konnektoren-adverbien"
+        ]
+      },
+      {
+        "type": "sonst",
+        "front": "nachher",
+        "sub": "↔ vorher",
+        "english": "afterwards, later",
+        "example": "Ich muss jetzt los. Wir sehen uns nachher!",
+        "exampleEn": "I have to go now. See you later!",
+        "note": "Bis nachher! = See you later!",
         "level": "A2",
         "grammar": [
           "konnektoren-adverbien"
