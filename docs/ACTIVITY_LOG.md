@@ -6,10 +6,6 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 ## Pending
 
-- [ ] **Turn on GitHub Pages (learner, once):** Settings → Pages → Build and deployment
-  → Source: **GitHub Actions**. Then re-run the latest "Build and deploy" run (or push)
-  and check https://anooppzz.github.io/deutschflashcards-personal/ opens. Until then the
-  workflow skips the deploy and leaves a notice; it doesn't fail.
 - [ ] **Cloze skips words that start or end with an umlaut** (e.g. *das Öl*): the
   JavaScript `\b` in `findClozeSpan` (`src/modes/cloze/buildRound.js`) doesn't count
   Ä/Ö/Ü/ß as letters. Fix with Unicode-aware boundaries and a test.
@@ -26,10 +22,13 @@ was done, newest first. Every change adds a log entry here in the same commit
 ## Log
 
 ### 2026-09-29
+- **GitHub Pages on:** the learner switched Pages on (source: GitHub Actions); the app
+  is live at https://anooppzz.github.io/deutschflashcards-personal/ and redeploys on
+  every push to `main`.
 - **Handoff system:** `CLAUDE.md` (overview, formats, rules), this log, `AGENTS.md`.
 - **Live link instead of HTML files:** repo is public now; the workflow builds, tests
-  and deploys to GitHub Pages when Pages is on (see Pending), and still attaches the
-  HTML as a download. Agents stop sending the HTML file.
+  and deploys to GitHub Pages (skipping the deploy with a notice if Pages is off), and
+  still attaches the HTML as a download. Agents stop sending the HTML file.
 - `b5f83eb` Im Restaurant: 13 phrase cards from the textbook's Kommunikation box
   (bestellen, reklamieren, bezahlen); chapter now 44 cards.
 - `2ac6d4d` Grammar topic "Nebensatz mit dass"; *reiten* added to Meine Wörter.
