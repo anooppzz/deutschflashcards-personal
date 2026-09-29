@@ -1688,7 +1688,10 @@
         "english": "made of glass/wood/metal",
         "example": "Der Ring ist aus Glas.",
         "exampleEn": "The ring is made of glass.",
-        "level": "A2"
+        "level": "A2",
+        "grammar": [
+          "praep-dativ"
+        ]
       },
       {
         "type": "n",
@@ -2375,7 +2378,10 @@
         "english": "with",
         "example": "Ich gehe mit meinem Kollegen essen.",
         "exampleEn": "I'm going to eat with my colleague.",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "praep-dativ"
+        ]
       },
       {
         "type": "sonst",
@@ -3133,7 +3139,11 @@
         "english": "at … (o'clock)",
         "example": "Wir treffen uns um vier Uhr.",
         "exampleEn": "We're meeting at four o'clock.",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "praep-akkusativ",
+          "praep-zeit"
+        ]
       },
       {
         "type": "sonst",
@@ -4193,7 +4203,11 @@
         "english": "at home",
         "example": "Am Wochenende bleibe ich zu Hause.",
         "exampleEn": "On the weekend I stay at home.",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "praep-dativ",
+          "praep-ort"
+        ]
       },
       {
         "type": "sonst",
@@ -4301,7 +4315,10 @@
         "english": "until",
         "example": "Wir warten bis der Zug kommt.",
         "exampleEn": "We're waiting until the train comes.",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "praep-akkusativ"
+        ]
       }
     ]
   },
@@ -4421,7 +4438,11 @@
         "english": "from / off",
         "example": "Ab morgen arbeite ich wieder.",
         "exampleEn": "From tomorrow I'm working again.",
-        "level": "A2"
+        "level": "A2",
+        "grammar": [
+          "praep-dativ",
+          "praep-zeit"
+        ]
       },
       {
         "type": "sonst",
@@ -4430,7 +4451,10 @@
         "english": "from … to",
         "example": "Ich arbeite von neun bis fünf.",
         "exampleEn": "I work from nine to five.",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "praep-zeit"
+        ]
       },
       {
         "type": "n",
@@ -4670,7 +4694,10 @@
         "english": "in winter / spring",
         "example": "Im Winter ist es sehr kalt.",
         "exampleEn": "In winter it's very cold.",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "praep-zeit"
+        ]
       },
       {
         "type": "n",
@@ -4936,7 +4963,11 @@
         "english": "since / for",
         "example": "Ich wohne seit drei Jahren hier.",
         "exampleEn": "I've lived here for three years.",
-        "level": "A2"
+        "level": "A2",
+        "grammar": [
+          "praep-dativ",
+          "praep-zeit"
+        ]
       },
       {
         "type": "sonst",
@@ -5168,7 +5199,11 @@
         "english": "to the left",
         "example": "Biegen Sie nach links ab.",
         "exampleEn": "Turn to the left.",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "praep-dativ",
+          "praep-ort"
+        ]
       },
       {
         "type": "sonst",
@@ -5177,7 +5212,11 @@
         "english": "to the right",
         "example": "Biegen Sie nach rechts ab.",
         "exampleEn": "Turn to the right.",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "praep-dativ",
+          "praep-ort"
+        ]
       },
       {
         "type": "adj",
@@ -6576,7 +6615,10 @@
         "english": "without",
         "example": "Ich trinke meinen Kaffee ohne Zucker.",
         "exampleEn": "I drink my coffee without sugar.",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "praep-akkusativ"
+        ]
       }
     ]
   },
@@ -8660,7 +8702,10 @@
         "example": "Wir bleiben über das Wochenende dort.",
         "exampleEn": "We're staying there over the weekend.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 6"
+        "source": "Menschen A2 · Einheit 6",
+        "grammar": [
+          "praep-zeit"
+        ]
       },
       {
         "type": "sonst",
@@ -8670,7 +8715,10 @@
         "example": "Das Festival dauert vom ersten bis zum dritten Juli.",
         "exampleEn": "The festival runs from the first to the third of July.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 6"
+        "source": "Menschen A2 · Einheit 6",
+        "grammar": [
+          "praep-zeit"
+        ]
       },
       {
         "type": "sonst",
@@ -8680,7 +8728,10 @@
         "example": "Von morgen an arbeite ich wieder.",
         "exampleEn": "From tomorrow onward I'm working again.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 6"
+        "source": "Menschen A2 · Einheit 6",
+        "grammar": [
+          "praep-zeit"
+        ]
       },
       {
         "type": "n",
@@ -9230,7 +9281,10 @@
         "example": "Ich komme zwischen sieben und Viertel nach sieben.",
         "exampleEn": "I'll arrive between seven and quarter past seven.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 7"
+        "source": "Menschen A2 · Einheit 7",
+        "grammar": [
+          "praep-zeit"
+        ]
       }
     ]
   },

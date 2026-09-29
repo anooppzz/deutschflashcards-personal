@@ -305,7 +305,10 @@
     "english": "on foot",
     "example": "Ich gehe zu Fuß zur Schule.",
     "exampleEn": "I go to school on foot.",
-    "level": "A1"
+    "level": "A1",
+    "grammar": [
+      "praep-dativ"
+    ]
   },
   {
     "type": "sonst",
@@ -341,7 +344,10 @@
     "english": "for",
     "example": "Das Geschenk ist für dich.",
     "exampleEn": "The present is for you.",
-    "level": "A1"
+    "level": "A1",
+    "grammar": [
+      "praep-akkusativ"
+    ]
   },
   {
     "type": "sonst",
@@ -350,6 +356,9 @@
     "english": "against",
     "example": "Das Auto fährt gegen den Baum.",
     "exampleEn": "The car drives against the tree.",
-    "level": "A1"
+    "level": "A1",
+    "grammar": [
+      "praep-akkusativ"
+    ]
   }
 ]

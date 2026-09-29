@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Fragment } from "react";
 import PropTypes from "prop-types";
 import { speak } from "../../engine/speech";
 import { iconBtn } from "../../components/cardStyles";
@@ -124,6 +124,7 @@ GrammarTopicCard.propTypes = {
   topic: PropTypes.shape({
     key: PropTypes.string.isRequired,
     title: localizedTextShape.isRequired,
+    group: localizedTextShape,
     level: PropTypes.oneOf(["A1", "A2"]).isRequired,
     // structured body (see GrammarSections.jsx), or a plain explanation
     summary: localizedTextShape,
@@ -161,16 +162,28 @@ function GrammarView({ topics, words = {}, lang = "en", focus, onBack }) {
       <div style={{ background: "#16202a", borderRadius: 12, padding: "10px 16px", marginBottom: 16, fontSize: 12, color: "#8fb8d8", textAlign: "center" }}>
         📖 Grammatik-Referenz · {topics.length} Themen · Tippe zum Aufklappen
       </div>
-      {topics.map((topic) => (
-        <GrammarTopicCard
-          key={topic.key}
-          topic={topic}
-          words={words[topic.key]}
-          lang={lang}
-          open={openKey === topic.key}
-          onToggle={() => setOpenKey((k) => (k === topic.key ? null : topic.key))}
-        />
-      ))}
+      {topics.map((topic, i) => {
+        // topics are ordered by group; a heading starts each group
+        const group = topic.group ? localize(topic.group, lang) : null;
+        const prev = i > 0 && topics[i - 1].group ? localize(topics[i - 1].group, lang) : null;
+        const count = group ? topics.filter((t) => t.group && localize(t.group, lang) === group).length : 0;
+        return (
+          <Fragment key={topic.key}>
+            {group && group !== prev && (
+              <h3 style={{ margin: i === 0 ? "0 2px 8px" : "20px 2px 8px", fontSize: 12, fontWeight: 800, letterSpacing: 0.6, textTransform: "uppercase", color: "#e0833b" }}>
+                {group} <span style={{ color: "#7d8d9c", fontWeight: 600 }}>· {count}</span>
+              </h3>
+            )}
+            <GrammarTopicCard
+              topic={topic}
+              words={words[topic.key]}
+              lang={lang}
+              open={openKey === topic.key}
+              onToggle={() => setOpenKey((k) => (k === topic.key ? null : topic.key))}
+            />
+          </Fragment>
+        );
+      })}
     </>
   );
 }

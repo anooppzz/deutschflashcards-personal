@@ -44,6 +44,23 @@ const textsOf = (topic) => {
   return out;
 };
 
+describe("grammar topic groups", () => {
+  it("every topic has a group in German and English", () => {
+    const bad = GRAMMAR_TOPICS.filter((t) => !(t.group && t.group.de && t.group.en)).map((t) => t.key);
+    expect(bad).toEqual([]);
+  });
+
+  it("each group's topics sit together (headings show where the group changes)", () => {
+    const order = GRAMMAR_TOPICS.map((t) => t.group.de).filter((g, i, all) => i === 0 || g !== all[i - 1]);
+    expect(order).toEqual([...new Set(order)]);
+  });
+
+  it("topic keys are unique", () => {
+    const keys = GRAMMAR_TOPICS.map((t) => t.key);
+    expect(keys).toEqual([...new Set(keys)]);
+  });
+});
+
 describe("grammar topics data", () => {
   it.each(GRAMMAR_TOPICS.map((t) => [t.key, t]))("%s is structured", (key, topic) => {
     expect(topic.summary).toBeTruthy();

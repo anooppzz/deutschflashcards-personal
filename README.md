@@ -70,7 +70,9 @@ A card can carry an optional `note`, a one-line tip shown on the back of the car
 
 ## Grammar links
 
-Grammar topics live in `src/data/grammar/topics.json`. Each topic has a one-line
+Grammar topics live in `src/data/grammar/topics.json`. Each topic belongs to a
+`group` (Nouns & Articles, Verbs, Prepositions, …), shown as a heading in the Grammatik
+tab; topics of one group sit together in the file. Each topic has a one-line
 `summary` and a list of `sections`, so it can be scanned rather than read:
 
 - `table` - a `head` and `rows`; use it for forms that change by person, gender or

@@ -2,6 +2,7 @@
   {
     "key": "artikel-nominativ",
     "level": "A1",
+    "group": {"de": "Nomen & Artikel", "en": "Nouns & Articles"},
     "title": {"de": "Artikel im Nominativ", "en": "Articles in the Nominative Case"},
     "summary": {
       "de": "Jedes Nomen hat einen Artikel: **der**, **die** oder **das**.",
@@ -46,6 +47,7 @@
   {
     "key": "genus-endungen",
     "level": "A2",
+    "group": {"de": "Nomen & Artikel", "en": "Nouns & Articles"},
     "title": {"de": "Genus nach Endung", "en": "Gender by Ending"},
     "summary": {
       "de": "Nomen auf **-ung**, **-heit**, **-keit**, **-ion**, **-schaft** sind immer feminin: **die**.",
@@ -96,6 +98,7 @@
   {
     "key": "possessivartikel",
     "level": "A1",
+    "group": {"de": "Nomen & Artikel", "en": "Nouns & Articles"},
     "title": {"de": "Possessivartikel", "en": "Possessive Articles"},
     "summary": {
       "de": "Possessivartikel zeigen, **wem** etwas gehört: mein Buch, deine Tasche.",
@@ -154,6 +157,7 @@
   {
     "key": "praesens-regelmaessig",
     "level": "A1",
+    "group": {"de": "Verben", "en": "Verbs"},
     "title": {"de": "Präsens - regelmäßige Verben", "en": "Present Tense - Regular Verbs"},
     "summary": {
       "de": "**Stamm + Endung**: wohnen → wohn- → ich wohn**e**.",
@@ -203,6 +207,7 @@
   {
     "key": "perfekt",
     "level": "A2",
+    "group": {"de": "Verben", "en": "Verbs"},
     "title": {"de": "Perfekt (Vergangenheit)", "en": "Perfekt (Past Tense)"},
     "summary": {
       "de": "Perfekt = **haben / sein** (Position 2) + **Partizip II** (am Ende).",
@@ -282,6 +287,7 @@
   {
     "key": "modalverben",
     "level": "A2",
+    "group": {"de": "Verben", "en": "Verbs"},
     "title": {"de": "Modalverben", "en": "Modal Verbs"},
     "summary": {
       "de": "Modalverb auf **Position 2**, das zweite Verb im **Infinitiv am Ende**.",
@@ -347,54 +353,9 @@
     ]
   },
   {
-    "key": "wortstellung-hauptsatz",
-    "level": "A1",
-    "title": {"de": "Wortstellung im Hauptsatz", "en": "Word Order in Main Clauses"},
-    "summary": {
-      "de": "Das konjugierte Verb steht **immer auf Position 2**.",
-      "en": "The conjugated verb is **always in position 2**."
-    },
-    "sections": [
-      {
-        "type": "table",
-        "head": [
-          {"de": "Position 1", "en": "Position 1"},
-          {"de": "Position 2: Verb", "en": "Position 2: verb"},
-          {"de": "Rest", "en": "Rest"}
-        ],
-        "rows": [
-          ["Ich", "**trinke**", "morgens Kaffee."],
-          ["Morgens", "**trinke**", "ich Kaffee."],
-          ["Am Montag um 8 Uhr", "**trinke**", "ich Kaffee."]
-        ]
-      },
-      {
-        "type": "points",
-        "items": [
-          {
-            "de": "Position 1 = Subjekt, Zeit, Ort … – was du betonen willst.",
-            "en": "Position 1 = subject, time, place … – whatever you want to stress."
-          },
-          {
-            "de": "Steht etwas anderes auf Position 1, kommt das Subjekt **direkt nach dem Verb**.",
-            "en": "If something else takes position 1, the subject comes **right after the verb**."
-          },
-          {
-            "de": "Position 1 kann aus mehreren Wörtern bestehen: Am Montag um 8 Uhr …",
-            "en": "Position 1 can be several words long: Am Montag um 8 Uhr …"
-          }
-        ]
-      }
-    ],
-    "examples": [
-      {"de": "Ich fahre morgen nach München.", "en": "I'm going to Munich tomorrow."},
-      {"de": "Morgen fahre ich nach München.", "en": "Tomorrow I'm going to Munich."},
-      {"de": "Nach München fahre ich morgen.", "en": "To Munich I'm going tomorrow."}
-    ]
-  },
-  {
     "key": "komparativ-superlativ",
     "level": "A2",
+    "group": {"de": "Adjektive", "en": "Adjectives"},
     "title": {"de": "Komparativ und Superlativ", "en": "Comparative and Superlative"},
     "summary": {
       "de": "Komparativ: **-er + als**. Superlativ: **am … -sten**.",
@@ -463,79 +424,56 @@
     ]
   },
   {
-    "key": "wechselpraepositionen",
-    "level": "A2",
-    "title": {"de": "Wechselpräpositionen (Dativ/Akkusativ)", "en": "Two-Way Prepositions (Dative/Accusative)"},
+    "key": "wortstellung-hauptsatz",
+    "level": "A1",
+    "group": {"de": "Satz & Fragen", "en": "Sentences & Questions"},
+    "title": {"de": "Wortstellung im Hauptsatz", "en": "Word Order in Main Clauses"},
     "summary": {
-      "de": "**Wo?** → Dativ. **Wohin?** → Akkusativ.",
-      "en": "**Wo?** (where) → dative. **Wohin?** (where to) → accusative."
+      "de": "Das konjugierte Verb steht **immer auf Position 2**.",
+      "en": "The conjugated verb is **always in position 2**."
     },
     "sections": [
       {
-        "type": "points",
-        "items": [
-          {
-            "de": "Die neun: **an, auf, hinter, in, neben, über, unter, vor, zwischen**.",
-            "en": "The nine: **an, auf, hinter, in, neben, über, unter, vor, zwischen**."
-          }
-        ]
-      },
-      {
         "type": "table",
-        "head": [{"de": "Frage", "en": "Question"}, {"de": "Fall", "en": "Case"}, {"de": "Beispiel", "en": "Example"}],
+        "head": [
+          {"de": "Position 1", "en": "Position 1"},
+          {"de": "Position 2: Verb", "en": "Position 2: verb"},
+          {"de": "Rest", "en": "Rest"}
+        ],
         "rows": [
-          [
-            {"de": "**Wo?** – Position, keine Bewegung", "en": "**Wo?** – position, no movement"},
-            {"de": "Dativ", "en": "dative"},
-            "Das Buch liegt auf **dem** Tisch."
-          ],
-          [
-            {"de": "**Wohin?** – Richtung, Bewegung zu einem Ziel", "en": "**Wohin?** – direction, moving to a place"},
-            {"de": "Akkusativ", "en": "accusative"},
-            "Ich lege das Buch auf **den** Tisch."
-          ]
+          ["Ich", "**trinke**", "morgens Kaffee."],
+          ["Morgens", "**trinke**", "ich Kaffee."],
+          ["Am Montag um 8 Uhr", "**trinke**", "ich Kaffee."]
         ]
-      },
-      {
-        "type": "table",
-        "title": {"de": "Artikel nach Fall", "en": "Articles by case"},
-        "head": ["", {"de": "Wo? → Dativ", "en": "Wo? → dative"}, {"de": "Wohin? → Akkusativ", "en": "Wohin? → accusative"}],
-        "rows": [
-          ["der", "d**em**", "d**en**"],
-          ["die", "d**er**", "die"],
-          ["das", "d**em**", "das"],
-          [{"de": "die (Plural)", "en": "die (plural)"}, "d**en** (+ -n)", "die"]
-        ]
-      },
-      {
-        "type": "table",
-        "title": {"de": "Verbpaare", "en": "Verb pairs"},
-        "head": [{"de": "Wo? + Dativ", "en": "Wo? + dative"}, {"de": "Wohin? + Akkusativ", "en": "Wohin? + accusative"}],
-        "rows": [["liegen", "legen"], ["stehen", "stellen"], ["sitzen", "setzen"], ["hängen", "hängen"]]
       },
       {
         "type": "points",
         "items": [
           {
-            "de": "Bewegung **innerhalb** eines Ortes = Wo? → Dativ: Wir laufen **im** Park.",
-            "en": "Moving around **within** one place = Wo? → dative: Wir laufen **im** Park (we run in the park)."
+            "de": "Position 1 = Subjekt, Zeit, Ort … – was du betonen willst.",
+            "en": "Position 1 = subject, time, place … – whatever you want to stress."
           },
           {
-            "de": "Kurzformen: in dem → **im**, an dem → **am**, in das → **ins**, an das → **ans**.",
-            "en": "Short forms: in dem → **im**, an dem → **am**, in das → **ins**, an das → **ans**."
+            "de": "Steht etwas anderes auf Position 1, kommt das Subjekt **direkt nach dem Verb**.",
+            "en": "If something else takes position 1, the subject comes **right after the verb**."
+          },
+          {
+            "de": "Position 1 kann aus mehreren Wörtern bestehen: Am Montag um 8 Uhr …",
+            "en": "Position 1 can be several words long: Am Montag um 8 Uhr …"
           }
         ]
       }
     ],
     "examples": [
-      {"de": "Das Buch liegt auf dem Tisch.", "en": "The book lies on the table. (Wo? - Dativ)"},
-      {"de": "Ich lege das Buch auf den Tisch.", "en": "I'm putting the book on the table. (Wohin? - Akkusativ)"},
-      {"de": "Die Katze schläft unter dem Bett.", "en": "The cat sleeps under the bed. (Wo? - Dativ)"}
+      {"de": "Ich fahre morgen nach München.", "en": "I'm going to Munich tomorrow."},
+      {"de": "Morgen fahre ich nach München.", "en": "Tomorrow I'm going to Munich."},
+      {"de": "Nach München fahre ich morgen.", "en": "To Munich I'm going tomorrow."}
     ]
   },
   {
     "key": "fragewoerter-kasus",
     "level": "A2",
+    "group": {"de": "Satz & Fragen", "en": "Sentences & Questions"},
     "title": {"de": "Fragewörter: wer, wen, wem, was", "en": "Question Words: wer, wen, wem, was"},
     "summary": {
       "de": "Das Fragewort hat den Kasus der Antwort: **wer** → der, **wen** → den, **wem** → dem.",
@@ -631,6 +569,569 @@
       {"de": "Wen hat er getroffen?", "en": "Who did he meet?"},
       {"de": "Wem möchte er die Sachen geben?", "en": "Who does he want to give the things to?"},
       {"de": "Für wen hat er die Sachen gekauft?", "en": "Who did he buy the things for?"}
+    ]
+  },
+  {
+    "key": "praep-ueberblick",
+    "level": "A2",
+    "group": {"de": "Präpositionen", "en": "Prepositions"},
+    "title": {"de": "Präpositionen: Überblick", "en": "Prepositions: Overview"},
+    "summary": {
+      "de": "Die Präposition bestimmt den Fall: **Akkusativ**, **Dativ** oder **Genitiv** – nie Nominativ.",
+      "en": "The preposition decides the case: **accusative**, **dative** or **genitive** – never nominative."
+    },
+    "sections": [
+      {
+        "type": "table",
+        "title": {"de": "Welcher Fall?", "en": "Which case?"},
+        "head": [{"de": "Fall", "en": "Case"}, {"de": "Präpositionen", "en": "Prepositions"}],
+        "rows": [
+          [{"de": "Akkusativ", "en": "accusative"}, "bis, durch, für, gegen, ohne, um"],
+          [{"de": "Dativ", "en": "dative"}, "aus, bei, mit, nach, seit, von, zu, gegenüber, ab, außer"],
+          [{"de": "Wechsel", "en": "two-way"}, "an, auf, hinter, in, neben, über, unter, vor, zwischen"],
+          [{"de": "Genitiv", "en": "genitive"}, "wegen, während, trotz, statt"],
+          [
+            {"de": "Nominativ", "en": "nominative"},
+            {"de": "keine – nur nach als / wie (Vergleich)", "en": "none – only after als / wie (comparisons)"}
+          ]
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "So merkst du es dir", "en": "How to remember"},
+        "items": [
+          {
+            "de": "Akkusativ: **DOGFU** – **d**urch, **o**hne, **g**egen, **f**ür, **u**m – dazu **bis**.",
+            "en": "Accusative: **DOGFU** – **d**urch, **o**hne, **g**egen, **f**ür, **u**m – plus **bis**."
+          },
+          {
+            "de": "Dativ: singen – **aus-bei-mit-nach-seit-von-zu**.",
+            "en": "Dative: sing it – **aus-bei-mit-nach-seit-von-zu**."
+          },
+          {
+            "de": "Wechsel: **Wo?** → Dativ, **Wohin?** → Akkusativ.",
+            "en": "Two-way: **Wo?** (where) → dative, **Wohin?** (where to) → accusative."
+          },
+          {
+            "de": "Genitiv: **W-W-T-S** – **w**egen, **w**ährend, **t**rotz, **s**tatt.",
+            "en": "Genitive: **W-W-T-S** – **w**egen, **w**ährend, **t**rotz, **s**tatt."
+          }
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "So findest du den Fall", "en": "How to find the case"},
+        "items": [
+          {
+            "de": "**Feste Präposition?** Dann gilt immer ihr Fall: mit → Dativ, für → Akkusativ.",
+            "en": "**Fixed-case preposition?** It always takes its case: mit → dative, für → accusative."
+          },
+          {
+            "de": "**Wechselpräposition?** Frag **Wo?** (Dativ) oder **Wohin?** (Akkusativ).",
+            "en": "**Two-way preposition?** Ask **Wo?** (dative) or **Wohin?** (accusative)."
+          },
+          {
+            "de": "Der Fall ändert **Artikel und Pronomen** – das Nomen bleibt meist gleich (nur Dativ Plural **+ -n**, Genitiv **+ -s**).",
+            "en": "The case changes the **article and pronoun** – the noun mostly stays the same (only dative plural **+ -n**, genitive **+ -s**)."
+          }
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "der, die, das nach Fall", "en": "der, die, das by case"},
+        "head": ["", "m", "f", "n", "Plural"],
+        "rows": [
+          ["Nom.", "der", "die", "das", "die"],
+          ["Akk.", "de**n**", "die", "das", "die"],
+          ["Dat.", "de**m**", "de**r**", "de**m**", "de**n** + -n"],
+          ["Gen.", "de**s** + -s", "de**r**", "de**s** + -s", "de**r**"]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "ein / kein / mein nach Fall", "en": "ein / kein / mein by case"},
+        "head": ["", "m", "f", "n", "Plural"],
+        "rows": [
+          ["Nom.", "ein", "ein**e**", "ein", "kein**e**"],
+          ["Akk.", "ein**en**", "ein**e**", "ein", "kein**e**"],
+          ["Dat.", "ein**em**", "ein**er**", "ein**em**", "kein**en**"],
+          ["Gen.", "ein**es**", "ein**er**", "ein**es**", "kein**er**"]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Pronomen nach Fall: für mich, mit mir", "en": "Pronouns by case: für mich, mit mir"},
+        "head": ["Nom.", "Akk.", "Dat."],
+        "rows": [
+          ["ich", "mich", "mir"],
+          ["du", "dich", "dir"],
+          ["er", "ihn", "ihm"],
+          ["sie", "sie", "ihr"],
+          ["es", "es", "ihm"],
+          ["wir", "uns", "uns"],
+          ["ihr", "euch", "euch"],
+          ["sie/Sie", "sie/Sie", "ihnen/Ihnen"]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Kurzformen", "en": "Short forms"},
+        "head": [{"de": "lang", "en": "long"}, {"de": "kurz", "en": "short"}, {"de": "Beispiel", "en": "Example"}],
+        "rows": [
+          ["zu dem", "**zum**", "zum Arzt"],
+          ["zu der", "**zur**", "zur Schule"],
+          ["bei dem", "**beim**", "beim Bäcker"],
+          ["von dem", "**vom**", "vom Bahnhof"],
+          ["an dem", "**am**", "am Montag"],
+          ["in dem", "**im**", "im Kino"],
+          ["an das", "**ans**", "ans Meer"],
+          ["in das", "**ins**", "ins Kino"]
+        ]
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "Es gibt **keine** Präpositionen mit Nominativ. Nur nach **als** und **wie** (Vergleich) bleibt der Nominativ: Er ist so groß **wie der** Vater.",
+          "en": "There are **no** prepositions with the nominative. Only after **als** and **wie** (comparisons) does the nominative stay: Er ist so groß **wie der** Vater (as tall as his father)."
+        }
+      }
+    ],
+    "examples": [
+      {"de": "Ich fahre mit dem Bus zur Arbeit.", "en": "I take the bus to work."},
+      {"de": "Das Geschenk ist für dich.", "en": "The present is for you."},
+      {"de": "Ich stelle die Vase auf den Tisch.", "en": "I'm putting the vase on the table."},
+      {"de": "Wegen des Regens bleiben wir zu Hause.", "en": "Because of the rain we're staying at home."}
+    ]
+  },
+  {
+    "key": "praep-akkusativ",
+    "level": "A1",
+    "group": {"de": "Präpositionen", "en": "Prepositions"},
+    "title": {"de": "Präpositionen mit Akkusativ", "en": "Prepositions with the Accusative"},
+    "summary": {
+      "de": "**bis, durch, für, gegen, ohne, um** – immer mit **Akkusativ**.",
+      "en": "**bis, durch, für, gegen, ohne, um** – always with the **accusative**."
+    },
+    "sections": [
+      {
+        "type": "table",
+        "head": [
+          {"de": "Präposition", "en": "Preposition"},
+          {"de": "Englisch", "en": "English"},
+          {"de": "Beispiel", "en": "Example"}
+        ],
+        "rows": [
+          ["bis", "until, by, as far as", "bis Montag · bis morgen"],
+          ["durch", "through", "durch **den** Park"],
+          ["für", "for", "ein Geschenk für **dich**"],
+          ["gegen", "against; around (time)", "gegen **den** Wind · gegen 8 Uhr"],
+          ["ohne", "without", "ohne **meinen** Schlüssel"],
+          ["um", "around; at (clock time)", "um **den** See · um 8 Uhr"]
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "So merkst du es dir", "en": "How to remember"},
+        "items": [
+          {
+            "de": "**DOGFU**: **d**urch, **o**hne, **g**egen, **f**ür, **u**m – dazu **bis**.",
+            "en": "**DOGFU**: **d**urch, **o**hne, **g**egen, **f**ür, **u**m – plus **bis**."
+          },
+          {
+            "de": "Nur maskulin ändert sich: der → **den**, ein → **einen**. die, das und Plural bleiben gleich.",
+            "en": "Only masculine changes: der → **den**, ein → **einen**. die, das and plural stay the same."
+          },
+          {
+            "de": "Pronomen: für **mich**, **dich**, **ihn**, **sie**, **uns**, **euch**.",
+            "en": "Pronouns: für **mich**, **dich**, **ihn**, **sie**, **uns**, **euch**."
+          }
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "Wann benutzen?", "en": "When to use it"},
+        "items": [
+          {
+            "de": "**um** + genaue Uhrzeit: um 8 Uhr. **gegen** + ungefähre Zeit: gegen 8 Uhr (etwa um 8).",
+            "en": "**um** + exact time: um 8 Uhr (at 8). **gegen** + rough time: gegen 8 Uhr (around 8)."
+          },
+          {
+            "de": "**für** + geplanter Zeitraum: Ich fahre für zwei Wochen nach Spanien.",
+            "en": "**für** + a planned period: Ich fahre für zwei Wochen nach Spanien (for two weeks)."
+          },
+          {
+            "de": "**bis** meist ohne Artikel: bis Freitag, bis Berlin.",
+            "en": "**bis** usually has no article: bis Freitag, bis Berlin."
+          }
+        ]
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "bis + Artikel → **bis zum / bis zur** – dann bestimmt **zu** den Fall (Dativ): bis zum Bahnhof.",
+          "en": "bis + article → **bis zum / bis zur** – then **zu** decides the case (dative): bis zum Bahnhof (as far as the station)."
+        }
+      }
+    ],
+    "examples": [
+      {"de": "Wir gehen durch den Park.", "en": "We're walking through the park."},
+      {"de": "Ohne dich ist es langweilig.", "en": "It's boring without you."},
+      {"de": "Der Kurs beginnt um 9 Uhr.", "en": "The course starts at 9."}
+    ]
+  },
+  {
+    "key": "praep-dativ",
+    "level": "A1",
+    "group": {"de": "Präpositionen", "en": "Prepositions"},
+    "title": {"de": "Präpositionen mit Dativ", "en": "Prepositions with the Dative"},
+    "summary": {
+      "de": "**aus, bei, mit, nach, seit, von, zu** – immer mit **Dativ**.",
+      "en": "**aus, bei, mit, nach, seit, von, zu** – always with the **dative**."
+    },
+    "sections": [
+      {
+        "type": "table",
+        "head": [
+          {"de": "Präposition", "en": "Preposition"},
+          {"de": "Englisch", "en": "English"},
+          {"de": "Beispiel", "en": "Example"}
+        ],
+        "rows": [
+          ["aus", "out of; from (origin)", "aus **dem** Haus · aus Indien"],
+          ["bei", "at (someone's place, a company); near", "bei **meiner** Oma · bei Siemens"],
+          ["mit", "with; by (transport)", "mit **dir** · mit **dem** Bus"],
+          ["nach", "to (cities, countries); after", "nach Berlin · nach **dem** Essen"],
+          ["seit", "since; for (until now)", "seit **einem** Jahr"],
+          ["von", "from; of; by", "von **der** Arbeit · von 9 bis 5"],
+          ["zu", "to (people, places)", "zu**m** Arzt · zu**r** Schule"],
+          ["gegenüber", "opposite", "gegenüber **dem** Bahnhof"],
+          ["ab", "from (a time on)", "ab Montag · ab **dem** 1. Mai"],
+          ["außer", "except", "alle außer **mir**"]
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "So merkst du es dir", "en": "How to remember"},
+        "items": [
+          {
+            "de": "Singen hilft: **aus – bei – mit – nach – seit – von – zu**, immer im gleichen Rhythmus (Melodie: „An der schönen blauen Donau“).",
+            "en": "Sing it: **aus – bei – mit – nach – seit – von – zu**, always in the same rhythm (tune: the Blue Danube waltz)."
+          },
+          {
+            "de": "Artikel: der/das → **dem**, die → **der**, Plural → **den** + -n (mit den Kinder**n**).",
+            "en": "Articles: der/das → **dem**, die → **der**, plural → **den** + -n (mit den Kinder**n**)."
+          },
+          {
+            "de": "Pronomen: mit **mir**, **dir**, **ihm**, **ihr**, **uns**, **euch**, **ihnen**.",
+            "en": "Pronouns: mit **mir**, **dir**, **ihm**, **ihr**, **uns**, **euch**, **ihnen**."
+          }
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "Wann benutzen?", "en": "When to use it"},
+        "items": [
+          {
+            "de": "**seit** + Präsens für etwas, das noch andauert: Ich wohne **seit** zwei Jahren hier.",
+            "en": "**seit** + present tense for something still going on: Ich wohne **seit** zwei Jahren hier (I've lived here for two years)."
+          },
+          {
+            "de": "**mit** + Verkehrsmittel: mit dem Bus, mit dem Zug – aber **zu Fuß**.",
+            "en": "**mit** + transport: mit dem Bus, mit dem Zug – but **zu Fuß** (on foot)."
+          },
+          {
+            "de": "**aus** = Herkunft: Ich komme aus Indien. **von** = Startpunkt: Ich komme von der Arbeit.",
+            "en": "**aus** = origin: Ich komme aus Indien. **von** = starting point: Ich komme von der Arbeit."
+          }
+        ]
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "**nach Hause** (Wohin?) ≠ **zu Hause** (Wo?): Ich gehe nach Hause. Ich bin zu Hause.",
+          "en": "**nach Hause** (going home) ≠ **zu Hause** (at home): Ich gehe nach Hause. Ich bin zu Hause."
+        }
+      }
+    ],
+    "examples": [
+      {"de": "Ich fahre mit dem Zug nach Hamburg.", "en": "I'm taking the train to Hamburg."},
+      {"de": "Nach dem Essen gehen wir spazieren.", "en": "After the meal we go for a walk."},
+      {"de": "Sie wohnt bei ihren Eltern.", "en": "She lives with her parents."}
+    ]
+  },
+  {
+    "key": "wechselpraepositionen",
+    "level": "A2",
+    "group": {"de": "Präpositionen", "en": "Prepositions"},
+    "title": {"de": "Wechselpräpositionen (Dativ/Akkusativ)", "en": "Two-Way Prepositions (Dative/Accusative)"},
+    "summary": {
+      "de": "**Wo?** → Dativ. **Wohin?** → Akkusativ.",
+      "en": "**Wo?** (where) → dative. **Wohin?** (where to) → accusative."
+    },
+    "sections": [
+      {
+        "type": "table",
+        "title": {"de": "Die neun", "en": "The nine"},
+        "head": [{"de": "Präposition", "en": "Preposition"}, "Wo? (Dat.)", "Wohin? (Akk.)"],
+        "rows": [
+          ["**an** – at, on (side)", "am Fenster", "ans Fenster"],
+          ["**auf** – on (top)", "auf dem Tisch", "auf den Tisch"],
+          ["**hinter** – behind", "hinter dem Haus", "hinter das Haus"],
+          ["**in** – in, into", "im Kino", "ins Kino"],
+          ["**neben** – next to", "neben dem Bett", "neben das Bett"],
+          ["**über** – above, over", "über dem Sofa", "über das Sofa"],
+          ["**unter** – under", "unter dem Bett", "unter das Bett"],
+          ["**vor** – in front of", "vor der Tür", "vor die Tür"],
+          ["**zwischen** – between", "zwischen den Stühlen", "zwischen die Stühle"]
+        ]
+      },
+      {
+        "type": "table",
+        "head": [{"de": "Frage", "en": "Question"}, {"de": "Fall", "en": "Case"}, {"de": "Beispiel", "en": "Example"}],
+        "rows": [
+          [
+            {"de": "**Wo?** – Position, keine Bewegung", "en": "**Wo?** – position, no movement"},
+            {"de": "Dativ", "en": "dative"},
+            "Das Buch liegt auf **dem** Tisch."
+          ],
+          [
+            {"de": "**Wohin?** – Richtung, Bewegung zu einem Ziel", "en": "**Wohin?** – direction, moving to a place"},
+            {"de": "Akkusativ", "en": "accusative"},
+            "Ich lege das Buch auf **den** Tisch."
+          ]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Artikel nach Fall", "en": "Articles by case"},
+        "head": ["", {"de": "Wo? → Dativ", "en": "Wo? → dative"}, {"de": "Wohin? → Akkusativ", "en": "Wohin? → accusative"}],
+        "rows": [
+          ["der", "d**em**", "d**en**"],
+          ["die", "d**er**", "die"],
+          ["das", "d**em**", "das"],
+          [{"de": "die (Plural)", "en": "die (plural)"}, "d**en** (+ -n)", "die"]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Verbpaare", "en": "Verb pairs"},
+        "head": [{"de": "Wo? + Dativ", "en": "Wo? + dative"}, {"de": "Wohin? + Akkusativ", "en": "Wohin? + accusative"}],
+        "rows": [["liegen", "legen"], ["stehen", "stellen"], ["sitzen", "setzen"], ["hängen", "hängen"]]
+      },
+      {
+        "type": "points",
+        "items": [
+          {
+            "de": "Bewegung **innerhalb** eines Ortes = Wo? → Dativ: Wir laufen **im** Park.",
+            "en": "Moving around **within** one place = Wo? → dative: Wir laufen **im** Park (we run in the park)."
+          },
+          {
+            "de": "Kurzformen: in dem → **im**, an dem → **am**, in das → **ins**, an das → **ans**.",
+            "en": "Short forms: in dem → **im**, an dem → **am**, in das → **ins**, an das → **ans**."
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {"de": "Das Buch liegt auf dem Tisch.", "en": "The book lies on the table. (Wo? - Dativ)"},
+      {"de": "Ich lege das Buch auf den Tisch.", "en": "I'm putting the book on the table. (Wohin? - Akkusativ)"},
+      {"de": "Die Katze schläft unter dem Bett.", "en": "The cat sleeps under the bed. (Wo? - Dativ)"}
+    ]
+  },
+  {
+    "key": "praep-genitiv",
+    "level": "A2",
+    "group": {"de": "Präpositionen", "en": "Prepositions"},
+    "title": {"de": "Präpositionen mit Genitiv", "en": "Prepositions with the Genitive"},
+    "summary": {
+      "de": "**wegen, während, trotz, statt** – mit **Genitiv**: des / der.",
+      "en": "**wegen, während, trotz, statt** – with the **genitive**: des / der."
+    },
+    "sections": [
+      {
+        "type": "table",
+        "head": [
+          {"de": "Präposition", "en": "Preposition"},
+          {"de": "Englisch", "en": "English"},
+          {"de": "Beispiel", "en": "Example"}
+        ],
+        "rows": [
+          ["wegen", "because of", "wegen **des** Regen**s**"],
+          ["während", "during", "während **der** Arbeit"],
+          ["trotz", "despite", "trotz **des** Wetter**s**"],
+          ["(an)statt", "instead of", "statt **eines** Auto**s**"],
+          ["innerhalb", "within, inside", "innerhalb **einer** Woche"],
+          ["außerhalb", "outside (of)", "außerhalb **der** Stadt"]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Artikel im Genitiv", "en": "Articles in the genitive"},
+        "head": ["", "m", "f", "n", "Plural"],
+        "rows": [
+          [{"de": "bestimmt", "en": "definite"}, "de**s**", "de**r**", "de**s**", "de**r**"],
+          [{"de": "unbestimmt", "en": "indefinite"}, "ein**es**", "ein**er**", "ein**es**", "–"]
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "So merkst du es dir", "en": "How to remember"},
+        "items": [
+          {
+            "de": "**W-W-T-S**: **w**egen, **w**ährend, **t**rotz, **s**tatt.",
+            "en": "**W-W-T-S**: **w**egen, **w**ährend, **t**rotz, **s**tatt."
+          },
+          {
+            "de": "Maskulin und neutral: **des** + Nomen **-s / -es**: des Tag**es**, des Auto**s**.",
+            "en": "Masculine and neuter: **des** + noun with **-s / -es**: des Tag**es**, des Auto**s**."
+          },
+          {
+            "de": "Feminin und Plural: **der** – das Nomen bleibt gleich: während der Pause.",
+            "en": "Feminine and plural: **der** – the noun stays the same: während der Pause."
+          }
+        ]
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "Im gesprochenen Deutsch hört man oft Dativ: **wegen dem** Wetter. Beim Schreiben und in Prüfungen: Genitiv – **wegen des** Wetters.",
+          "en": "In spoken German you often hear the dative: **wegen dem** Wetter. In writing and exams use the genitive: **wegen des** Wetters."
+        }
+      }
+    ],
+    "examples": [
+      {"de": "Wegen des Staus komme ich zu spät.", "en": "Because of the traffic jam I'm late."},
+      {"de": "Während der Pause trinken wir Kaffee.", "en": "During the break we drink coffee."},
+      {"de": "Trotz des Regens gehen wir spazieren.", "en": "Despite the rain we go for a walk."}
+    ]
+  },
+  {
+    "key": "praep-zeit",
+    "level": "A1",
+    "group": {"de": "Präpositionen", "en": "Prepositions"},
+    "title": {"de": "Präpositionen der Zeit", "en": "Prepositions of Time"},
+    "summary": {
+      "de": "**um** + Uhrzeit, **am** + Tag, **im** + Monat / Jahreszeit.",
+      "en": "**um** + clock time, **am** + day, **im** + month / season."
+    },
+    "sections": [
+      {
+        "type": "table",
+        "head": [
+          {"de": "Wann?", "en": "When?"},
+          {"de": "Präposition", "en": "Preposition"},
+          {"de": "Beispiel", "en": "Example"}
+        ],
+        "rows": [
+          [{"de": "Uhrzeit", "en": "clock time"}, "**um**", "um 8 Uhr"],
+          [
+            {"de": "Tag, Datum, Tageszeit", "en": "day, date, part of day"},
+            "**am**",
+            "am Montag · am 3. Mai · am Abend"
+          ],
+          [{"de": "Monat, Jahreszeit", "en": "month, season"}, "**im**", "im Mai · im Winter"],
+          [{"de": "Jahr", "en": "year"}, {"de": "– (kein Wort)", "en": "– (no word)"}, "2026 · im Jahr 2026"],
+          [{"de": "von damals bis jetzt", "en": "from then until now"}, "**seit**", "seit einem Jahr"],
+          [{"de": "vor jetzt (= ago)", "en": "before now (ago)"}, "**vor**", "vor einer Woche"],
+          [{"de": "nach jetzt (Zukunft)", "en": "from now (future)"}, "**in**", "in einer Stunde"],
+          [{"de": "ab einem Zeitpunkt", "en": "from a point on"}, "**ab**", "ab Montag"],
+          [{"de": "Anfang und Ende", "en": "start and end"}, "**von … bis**", "von 9 bis 17 Uhr"],
+          [
+            {"de": "vor / nach etwas", "en": "before / after something"},
+            "**vor** / **nach**",
+            "vor dem Essen · nach der Arbeit"
+          ]
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "So merkst du es dir", "en": "How to remember"},
+        "items": [
+          {
+            "de": "Von klein zu groß: **um** (Uhrzeit) → **am** (Tag) → **im** (Monat, Jahreszeit).",
+            "en": "From small to big: **um** (time) → **am** (day) → **im** (month, season)."
+          },
+          {
+            "de": "Jahreszahlen meist **ohne** Präposition: Ich bin 1995 geboren.",
+            "en": "Years usually take **no** preposition: Ich bin 1995 geboren (I was born in 1995)."
+          },
+          {
+            "de": "**seit, vor, in, ab, nach** + Zeit: Dativ (seit einem Jahr, vor einer Woche).",
+            "en": "**seit, vor, in, ab, nach** + time: dative (seit einem Jahr, vor einer Woche)."
+          }
+        ]
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "Ausnahme: **in der Nacht** (nicht am Nacht). Und: **vor** einer Woche = a week ago.",
+          "en": "Exception: **in der Nacht** (at night, not am Nacht). And **vor** einer Woche means a week ago."
+        }
+      }
+    ],
+    "examples": [
+      {"de": "Der Kurs beginnt am Montag um 18 Uhr.", "en": "The course starts on Monday at 6 pm."},
+      {"de": "Ich lerne seit einem Jahr Deutsch.", "en": "I've been learning German for a year."},
+      {"de": "Vor zwei Wochen war ich in Berlin.", "en": "Two weeks ago I was in Berlin."}
+    ]
+  },
+  {
+    "key": "praep-ort",
+    "level": "A2",
+    "group": {"de": "Präpositionen", "en": "Prepositions"},
+    "title": {"de": "Woher? Wo? Wohin? – Orte", "en": "Woher? Wo? Wohin? – Places"},
+    "summary": {
+      "de": "**Woher?** aus / von · **Wo?** in / bei / an · **Wohin?** nach / zu / in.",
+      "en": "**Woher?** (from) aus / von · **Wo?** (where) in / bei / an · **Wohin?** (to) nach / zu / in."
+    },
+    "sections": [
+      {
+        "type": "table",
+        "head": [{"de": "Ort", "en": "Place"}, "Wo?", "Wohin?"],
+        "rows": [
+          [{"de": "Stadt, Land ohne Artikel", "en": "city, country (no article)"}, "in Berlin", "**nach** Berlin"],
+          [{"de": "Land mit Artikel", "en": "country with article"}, "in der Schweiz", "**in die** Schweiz"],
+          [{"de": "Person, Arzt", "en": "person, doctor"}, "**beim** Arzt", "**zum** Arzt"],
+          [{"de": "Gebäude (hinein)", "en": "building (going in)"}, "im Kino", "**ins** Kino"],
+          [{"de": "Zuhause", "en": "home"}, "**zu** Hause", "**nach** Hause"],
+          [{"de": "Meer, See, Fluss", "en": "sea, lake, river"}, "am Meer", "**ans** Meer"],
+          [{"de": "Party, Insel, Markt", "en": "party, island, market"}, "auf der Party", "**auf die** Party"]
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "Wann benutzen?", "en": "When to use it"},
+        "items": [
+          {
+            "de": "**Woher?** **aus** bei Städten, Ländern, Gebäuden (aus Berlin, aus dem Kino) – **von** bei Personen und Orten wie zu Hause, Meer, Party (vom Arzt, von zu Hause).",
+            "en": "**Woher?** (from where): **aus** for cities, countries, buildings (aus Berlin, aus dem Kino) – **von** for people and places like home, sea, party (vom Arzt, von zu Hause)."
+          },
+          {
+            "de": "**nach**: nur Städte, Länder ohne Artikel, nach Hause – und Richtungen: nach links.",
+            "en": "**nach**: only cities, countries without an article, nach Hause – and directions: nach links."
+          },
+          {
+            "de": "**zu**: Personen und Orte, zu denen man geht: zum Arzt, zur Bank.",
+            "en": "**zu**: people and places you go to: zum Arzt, zur Bank."
+          },
+          {
+            "de": "**in** + Akkusativ, wenn man hineingeht: ins Kino, in die Stadt.",
+            "en": "**in** + accusative when you go inside: ins Kino, in die Stadt."
+          }
+        ]
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "Nicht **nach** dem Arzt, sondern **zum** Arzt! nach + Artikel heißt „danach“: nach dem Essen.",
+          "en": "Not **nach** dem Arzt – say **zum** Arzt! nach + article means after: nach dem Essen (after the meal)."
+        }
+      }
+    ],
+    "examples": [
+      {"de": "Ich komme aus Indien und wohne in Berlin.", "en": "I'm from India and live in Berlin."},
+      {"de": "Morgen fahre ich nach Hamburg.", "en": "Tomorrow I'm going to Hamburg."},
+      {"de": "Ich gehe heute zum Arzt.", "en": "I'm going to the doctor today."}
     ]
   }
 ]
