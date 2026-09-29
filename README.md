@@ -1,5 +1,10 @@
 # Deutsch Flashcards
 
+**Live app:** https://anooppzz.github.io/deutschflashcards-personal/
+
+Working on this project (human or AI agent)? Start with [`CLAUDE.md`](CLAUDE.md) and
+[`docs/ACTIVITY_LOG.md`](docs/ACTIVITY_LOG.md).
+
 A German A1/A2 vocabulary trainer that runs entirely in the browser. No account, no
 backend — progress is stored in `localStorage`, and the production build is a single
 self-contained HTML file that also works straight from `file://`.
@@ -109,7 +114,10 @@ A topic's optional `hint` is shown in the Artikel trainer after a wrong answer.
 [`vite-plugin-singlefile`](https://github.com/richardtallent/vite-plugin-singlefile),
 so the result can be hosted anywhere static — or just opened as a local file.
 
-The workflow in `.github/workflows/build.yml` runs the tests and builds that file on
-every push to `main`. The built `index.html` is attached to each run as the
-`deutschflashcards-html` artifact: open the run under the Actions tab and download it
-from the Artifacts section at the bottom.
+The workflow in `.github/workflows/build.yml` runs on every push to `main`: it installs,
+tests and builds, then publishes the app to GitHub Pages at the link above. The built
+`index.html` is also attached to each run as the `deutschflashcards-html` artifact.
+
+Pages has to be switched on once: Settings → Pages → Build and deployment → Source:
+**GitHub Actions**. While it's off, the workflow skips the deploy and leaves a notice on
+the run instead of failing.
