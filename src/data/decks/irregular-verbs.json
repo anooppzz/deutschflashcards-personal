@@ -183,7 +183,10 @@
     "partizip": "gefunden",
     "english": "to find",
     "example": "Ich habe einen Parkplatz gefunden.",
-    "level": "A1"
+    "level": "A1",
+    "grammar": [
+      "nebensatz-dass"
+    ]
   },
   {
     "group": "i – a – u",

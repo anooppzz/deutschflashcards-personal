@@ -749,7 +749,8 @@
         "exampleEn": "I believe that's correct.",
         "level": "A1",
         "grammar": [
-          "fragewoerter-kasus"
+          "fragewoerter-kasus",
+          "nebensatz-dass"
         ]
       },
       {
@@ -1462,7 +1463,10 @@
         "english": "to find",
         "example": "Wir finden das Sofa sehr bequem.",
         "exampleEn": "We find the sofa very comfortable.",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "nebensatz-dass"
+        ]
       },
       {
         "type": "v",
@@ -3378,7 +3382,10 @@
         "english": "to know (a fact)",
         "example": "Ich weiß die Antwort nicht.",
         "exampleEn": "I don't know the answer.",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "nebensatz-dass"
+        ]
       },
       {
         "type": "sonst",
@@ -4556,7 +4563,10 @@
         "english": "to think",
         "example": "Ich denke oft an meine Familie.",
         "exampleEn": "I often think about my family.",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "nebensatz-dass"
+        ]
       },
       {
         "type": "v",
@@ -7179,7 +7189,10 @@
         "english": "a pity / too bad",
         "example": "Schade, dass du nicht kommen kannst.",
         "exampleEn": "Too bad you can't come.",
-        "level": "A2"
+        "level": "A2",
+        "grammar": [
+          "nebensatz-dass"
+        ]
       },
       {
         "type": "sonst",
@@ -7643,7 +7656,10 @@
         "example": "Ich hoffe, das Wetter wird schön.",
         "exampleEn": "I hope the weather will be nice.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 4"
+        "source": "Menschen A2 · Einheit 4",
+        "grammar": [
+          "nebensatz-dass"
+        ]
       },
       {
         "type": "sonst",
@@ -10283,7 +10299,10 @@
         "example": "Ich finde, dass das Restaurant zu laut ist.",
         "exampleEn": "I think that the restaurant is too loud.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 10"
+        "source": "Menschen A2 · Einheit 10",
+        "grammar": [
+          "nebensatz-dass"
+        ]
       },
       {
         "type": "sonst",
@@ -10330,6 +10349,16 @@
         "example": "Das Kind zeigt mir seine Zeichnung.",
         "exampleEn": "The child shows me their drawing.",
         "note": "von zeichnen (to draw)",
+        "level": "A2"
+      },
+      {
+        "type": "v",
+        "front": "reiten",
+        "sub": "ritt · ist geritten",
+        "english": "to ride (a horse)",
+        "example": "Meine Tochter reitet gern.",
+        "exampleEn": "My daughter likes riding.",
+        "note": "nur für Tiere – Fahrrad, Auto: fahren",
         "level": "A2"
       }
     ]

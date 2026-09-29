@@ -460,6 +460,10 @@
           {
             "de": "Position 1 kann aus mehreren Wörtern bestehen: Am Montag um 8 Uhr …",
             "en": "Position 1 can be several words long: Am Montag um 8 Uhr …"
+          },
+          {
+            "de": "Im Nebensatz mit **dass** steht das Verb dagegen **am Ende** (siehe „Nebensatz mit dass“).",
+            "en": "In a **dass** clause, on the other hand, the verb goes **to the end** (see \"Subordinate Clauses with dass\")."
           }
         ]
       }
@@ -468,6 +472,114 @@
       {"de": "Ich fahre morgen nach München.", "en": "I'm going to Munich tomorrow."},
       {"de": "Morgen fahre ich nach München.", "en": "Tomorrow I'm going to Munich."},
       {"de": "Nach München fahre ich morgen.", "en": "To Munich I'm going tomorrow."}
+    ]
+  },
+  {
+    "key": "nebensatz-dass",
+    "level": "A2",
+    "group": {"de": "Satz & Fragen", "en": "Sentences & Questions"},
+    "title": {"de": "Nebensatz mit dass", "en": "Subordinate Clauses with dass"},
+    "summary": {
+      "de": "Nach **dass** steht das konjugierte Verb **am Ende**.",
+      "en": "After **dass**, the conjugated verb goes to the **end**."
+    },
+    "sections": [
+      {
+        "type": "table",
+        "title": {"de": "Hauptsatz → dass-Satz", "en": "Main clause → dass clause"},
+        "head": [{"de": "Hauptsatz", "en": "Main clause"}, {"de": "mit dass", "en": "with dass"}],
+        "rows": [
+          ["Es **gibt** keine Pizza.", "Schade, dass es keine Pizza **gibt**."],
+          ["Ich **nehme** den Fisch.", "Ich denke, dass ich den Fisch **nehme**."],
+          ["Sie **haben** Pommes.", "Ich hoffe, dass sie Pommes **haben**."],
+          ["Du **hast** reserviert.", "Gut, dass du reserviert **hast**."]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Satzbau", "en": "Word order"},
+        "head": ["", "dass", {"de": "Mitte", "en": "Middle"}, {"de": "Verb", "en": "Verb"}],
+        "rows": [
+          ["Ich hoffe,", "dass", "sie Pommes", "**haben**."],
+          ["Gut,", "dass", "du reserviert", "**hast**."],
+          ["Ich weiß,", "dass", "er nicht kommen", "**kann**."]
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "Typische Satzanfänge", "en": "Typical openers"},
+        "items": [
+          {
+            "de": "Meinung: Ich **denke / glaube / finde**, dass …",
+            "en": "Opinion: Ich **denke / glaube / finde**, dass … (I think / believe / find that …)"
+          },
+          {
+            "de": "Wissen und Hoffnung: Ich **weiß**, dass … · Ich **hoffe**, dass …",
+            "en": "Knowing and hoping: Ich **weiß**, dass … (I know that) · Ich **hoffe**, dass … (I hope that)"
+          },
+          {
+            "de": "Gefühl: **Gut / Schön / Schade**, dass …",
+            "en": "Feeling: **Gut / Schön / Schade**, dass … (good / nice / a pity that …)"
+          },
+          {
+            "de": "Vermutung: **Kann es sein**, dass …?",
+            "en": "Guessing: **Kann es sein**, dass …? (Could it be that …?)"
+          }
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "So merkst du es dir", "en": "How to remember"},
+        "items": [
+          {
+            "de": "**dass** schickt das Verb **ans Ende** – wie ein Magnet.",
+            "en": "**dass** sends the verb **to the end** – like a magnet."
+          },
+          {"de": "Vor dass steht immer ein **Komma**.", "en": "There's always a **comma** before dass."},
+          {
+            "de": "Zwei Verben? Das **konjugierte** Verb steht ganz hinten: …, dass du reserviert **hast** · …, dass er kommen **kann**.",
+            "en": "Two verbs? The **conjugated** one goes last: …, dass du reserviert **hast** · …, dass er kommen **kann**."
+          },
+          {
+            "de": "Trennbare Verben kommen wieder zusammen: Er **kauft** heute **ein**. → …, dass er heute **einkauft**.",
+            "en": "Separable verbs join up again: Er **kauft** heute **ein**. → …, dass er heute **einkauft**."
+          }
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "Gut zu wissen", "en": "Good to know"},
+        "items": [
+          {
+            "de": "Im Gespräch fällt dass nach denken, glauben, hoffen oft weg – dann bleibt das Verb auf Position 2: Ich denke, ich **nehme** den Fisch.",
+            "en": "In speech, dass is often dropped after denken, glauben, hoffen – then the verb stays in position 2: Ich denke, ich **nehme** den Fisch."
+          },
+          {
+            "de": "**nicht** steht vor dem Verb am Ende: …, dass er heute **nicht kommt**.",
+            "en": "**nicht** goes before the verb at the end: …, dass er heute **nicht kommt**."
+          }
+        ]
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "Häufigster Fehler – ❌ …, dass ich nehme den Fisch. ✅ …, dass ich den Fisch **nehme**.",
+          "en": "Most common mistake – ❌ …, dass ich nehme den Fisch. ✅ …, dass ich den Fisch **nehme**."
+        }
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "**dass** (Konjunktion) ≠ **das** (Artikel / Pronomen): Ich weiß, **dass das** Essen gut ist. Trick: Passt „dieses“ oder „welches“? Dann **das** – sonst **dass**.",
+          "en": "**dass** (conjunction) ≠ **das** (article / pronoun): Ich weiß, **dass das** Essen gut ist. Trick: can you swap in „dieses“ or „welches“? Then write **das** – otherwise **dass**."
+        }
+      }
+    ],
+    "examples": [
+      {"de": "Schade, dass es keine Pizza gibt.", "en": "Too bad there's no pizza."},
+      {"de": "Ich hoffe, dass sie wenigstens Pommes haben.", "en": "I hope they at least have fries."},
+      {"de": "Gut, dass du reserviert hast.", "en": "Good thing you booked a table."},
+      {"de": "Kann es sein, dass die Suppe kalt ist?", "en": "Could it be that the soup is cold?"}
     ]
   },
   {
