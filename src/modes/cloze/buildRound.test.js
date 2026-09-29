@@ -24,6 +24,24 @@ describe("findClozeSpan", () => {
     expect(span).toBeNull();
   });
 
+  it("matches words that start or end with an umlaut or ß", () => {
+    expect(findClozeSpan("das Öl", "Das Öl ist zum Braten.").matched).toBe("Öl");
+    expect(findClozeSpan("Österreich", "Meine Familie kommt aus Österreich.").matched).toBe("Österreich");
+    expect(findClozeSpan("groß", "Das Zimmer ist sehr groß.").matched).toBe("groß");
+    expect(findClozeSpan("über", "Der Vogel fliegt über das Haus.").matched).toBe("über");
+  });
+
+  it("does not match a word inside a longer word", () => {
+    expect(findClozeSpan("über", "Das ist überhaupt nicht gut.")).toBeNull();
+    expect(findClozeSpan("das Öl", "Das Olivenöl ist teuer.")).toBeNull();
+  });
+
+  it("leaves whole phrases that end like a sentence out of Cloze", () => {
+    expect(findClozeSpan("Achtung!", "Achtung! Der Zug fährt ab.")).toBeNull();
+    expect(findClozeSpan("Ich komme gleich.", "Einen Augenblick, bitte. Ich komme gleich.")).toBeNull();
+    expect(findClozeSpan("Zusammen oder getrennt?", "Zusammen oder getrennt? – Getrennt, bitte.")).toBeNull();
+  });
+
   it("returns null for missing inputs instead of throwing", () => {
     expect(findClozeSpan("", "Ein Satz.")).toBeNull();
     expect(findClozeSpan("Wort", "")).toBeNull();

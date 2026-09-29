@@ -35,9 +35,15 @@ export const findClozeSpan = (front, example) => {
   if (!front || !example) return null;
   const bare = bareForm(front);
   if (!bare) return null;
+  // A front that ends like a sentence ("Achtung!", "Ich komme gleich.") is a
+  // whole phrase - typing it back, punctuation included, isn't a gap-fill.
+  if (/[.!?]$/.test(bare)) return null;
 
-  // 1. literal whole-word match (handles nouns, adjectives, most phrases)
-  const literalRe = new RegExp(`\\b${bare.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "i");
+  // 1. literal whole-word match (handles nouns, adjectives, most phrases).
+  //    Word edges are Unicode-aware: JavaScript's \b only knows A-Z, so it
+  //    never matched words starting or ending in Ä/Ö/Ü/ß (das Öl, groß).
+  const escaped = bare.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const literalRe = new RegExp(`(?<![\\p{L}\\p{N}_])${escaped}(?![\\p{L}\\p{N}_])`, "iu");
   const literalMatch = example.match(literalRe);
   if (literalMatch) return { matched: literalMatch[0], index: literalMatch.index };
 

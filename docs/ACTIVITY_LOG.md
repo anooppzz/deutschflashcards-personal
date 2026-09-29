@@ -6,9 +6,6 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 ## Pending
 
-- [ ] **Cloze skips words that start or end with an umlaut** (e.g. *das Öl*): the
-  JavaScript `\b` in `findClozeSpan` (`src/modes/cloze/buildRound.js`) doesn't count
-  Ä/Ö/Ü/ß as letters. Fix with Unicode-aware boundaries and a test.
 - [ ] **Old repo leftovers:** branch `claude/epic-meitner-f5b32y` in
   `anooppzz/deutschflashcards` couldn't be deleted by the agent (403). The learner can
   delete it on GitHub or leave it.
@@ -22,6 +19,14 @@ was done, newest first. Every change adds a log entry here in the same commit
 ## Log
 
 ### 2026-09-29
+- **Three fixes the learner reported:**
+  - Cloze: word edges are Unicode-aware, so words starting or ending in Ä/Ö/Ü/ß/é
+    reach Cloze (11 cards, e.g. *das Öl*, *groß*, *Österreich*). Phrases ending in
+    . ! ? stay out on purpose (you'd have to type the whole sentence).
+  - Mode tabs: a uniform grid, two rows of four (icon over label, counts as corner
+    badges, Grammatik spans the last two cells) instead of uneven flex buttons.
+  - Grammatik: opening a topic scrolls its title to the top; before, closing the topic
+    above pushed the new one off-screen.
 - **GitHub Pages on:** the learner switched Pages on (source: GitHub Actions); the app
   is live at https://anooppzz.github.io/deutschflashcards-personal/ and redeploys on
   every push to `main`.

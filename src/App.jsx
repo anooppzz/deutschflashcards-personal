@@ -1278,19 +1278,40 @@ function App() {
         )}
 
         {/* MODE SWITCH + PROGRESS */}
-        {/* Seven tabs whose one-word labels (Grammatik, Wortgitter) can't
-            wrap, so the row scales with the screen: text is 12px from 390px
-            up and shrinks below that; gaps grow with the width up to 6px.
-            If a screen is narrower still, only this row scrolls, never the
-            page. */}
-        <div style={{ display: "flex", gap: "clamp(3px, 1.1vw, 6px)", marginBottom: 14, overflowX: "auto" }}>
-          {MODE_TABS(articleNouns.length, clozePool.length, wsPool.length).map(([m, lbl]) => (
-            <button
-              key={m}
-              onClick={() => { setMode(m); setGrammarFocus(null); setGrammarFrom(null); }}
-              style={{ flex: 1, padding: "9px 0", borderRadius: 12, border: "1px solid #2c3a47", background: mode === m ? "#e0833b" : "#1a232b", color: mode === m ? "#0e1419" : "#9ab0c2", fontSize: "clamp(10px, 3.1vw, 12px)", fontWeight: 700, cursor: "pointer" }}
-            >{lbl}</button>
-          ))}
+        {/* Seven tabs in two even rows of four, the same on every screen
+            (the column is at most 480px, too narrow for seven in a row):
+            every button is icon over label, counts are corner badges, and
+            Grammatik - the reference, not a practice mode - fills the last
+            two cells. */}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, minmax(0, 1fr))", gap: 6, marginBottom: 14 }}>
+          {MODE_TABS(articleNouns.length, clozePool.length, wsPool.length).map((tab) => {
+            const active = mode === tab.mode;
+            return (
+              <button
+                key={tab.mode}
+                onClick={() => { setMode(tab.mode); setGrammarFocus(null); setGrammarFrom(null); }}
+                aria-pressed={active}
+                aria-label={tab.count !== undefined ? `${tab.label} (${tab.count})` : tab.label}
+                style={{
+                  position: "relative", gridColumn: tab.mode === MODE.GRAMMAR ? "span 2" : undefined,
+                  display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 2,
+                  minHeight: 52, padding: "6px 4px", borderRadius: 12, border: "1px solid #2c3a47",
+                  background: active ? "#e0833b" : "#1a232b", color: active ? "#0e1419" : "#9ab0c2",
+                  cursor: "pointer",
+                }}
+              >
+                <span aria-hidden="true" style={{ fontSize: 16, lineHeight: 1 }}>{tab.icon}</span>
+                <span style={{ fontSize: "clamp(11px, 3.3vw, 12px)", fontWeight: 700, whiteSpace: "nowrap" }}>{tab.label}</span>
+                {tab.count !== undefined && (
+                  <span aria-hidden="true" style={{
+                    position: "absolute", top: 4, right: 4, minWidth: 16, padding: "0 4px", borderRadius: 8,
+                    fontSize: 10, fontWeight: 700, lineHeight: "15px", textAlign: "center",
+                    background: active ? "rgba(14,20,25,.22)" : "#2c3a47", color: active ? "#0e1419" : "#cdd8e2",
+                  }}>{tab.count}</span>
+                )}
+              </button>
+            );
+          })}
         </div>
         {mode === MODE.CARDS && selectionCards.length > 0 && <ProgressBar known={knownCount} total={selectionCards.length} due={dueCount} />}
         {mode === MODE.ARTICLE && !aFinished && (

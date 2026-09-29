@@ -1,4 +1,4 @@
-import { useState, useEffect, Fragment } from "react";
+import { useState, useEffect, useRef, Fragment } from "react";
 import PropTypes from "prop-types";
 import { speak } from "../../engine/speech";
 import { iconBtn } from "../../components/cardStyles";
@@ -151,6 +151,21 @@ function GrammarView({ topics, words = {}, lang = "en", focus, onBack }) {
     const el = document.getElementById(`grammar-topic-${focus.key}`);
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   }, [focus]);
+  // Opening a topic closes the open one; if that one was above, the page
+  // shifts and the new topic's start ends up off-screen. So after opening,
+  // bring its title to the top. (Closing a topic doesn't scroll.)
+  const scrollOnOpen = useRef(false);
+  const toggle = (key) => {
+    const opening = openKey !== key;
+    scrollOnOpen.current = opening;
+    setOpenKey(opening ? key : null);
+  };
+  useEffect(() => {
+    if (!scrollOnOpen.current || !openKey) return;
+    scrollOnOpen.current = false;
+    const el = document.getElementById(`grammar-topic-${openKey}`);
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [openKey]);
   return (
     <>
       {onBack && (
@@ -179,7 +194,7 @@ function GrammarView({ topics, words = {}, lang = "en", focus, onBack }) {
               words={words[topic.key]}
               lang={lang}
               open={openKey === topic.key}
-              onToggle={() => setOpenKey((k) => (k === topic.key ? null : topic.key))}
+              onToggle={() => toggle(topic.key)}
             />
           </Fragment>
         );
