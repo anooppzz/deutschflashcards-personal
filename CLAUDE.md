@@ -38,7 +38,9 @@ npm run dev     # local dev server
    Chromium work in this environment) at **360px and 390px** width: no table or page may
    scroll sideways.
 4. **After pushing,** point the learner to the live link. **Don't send the built HTML
-   file** unless they ask for it. Check the Actions run finished green.
+   file** unless they ask for it. Check the Actions run finished green, including the
+   `deploy` job. (Cloud agent sandboxes may not reach `github.io`; the deploy job's
+   result is the check then.)
 5. **Update `docs/ACTIVITY_LOG.md` in the same commit:** add a log entry, and add or
    close items under "Pending".
 6. **Never duplicate cards.** Search all decks for a word before adding it. Words may
