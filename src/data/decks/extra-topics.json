@@ -10313,6 +10313,139 @@
         "exampleEn": "I don't want fish, but rather a schnitzel.",
         "level": "A2",
         "source": "Menschen A2 · Einheit 10"
+      },
+      {
+        "type": "sonst",
+        "front": "Entschuldigung!",
+        "sub": "den Kellner rufen",
+        "english": "Excuse me! (to call the waiter)",
+        "example": "Entschuldigung! Können wir bitte bestellen?",
+        "exampleEn": "Excuse me! Can we order, please?",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 10"
+      },
+      {
+        "type": "sonst",
+        "front": "Wir würden gern bestellen.",
+        "sub": "auch: Ich möchte bitte bestellen.",
+        "english": "We'd like to order.",
+        "example": "Wir würden gern bestellen. – Einen Moment, bitte.",
+        "exampleEn": "We'd like to order. – One moment, please.",
+        "note": "höflich: würden gern + Infinitiv",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 10"
+      },
+      {
+        "type": "sonst",
+        "front": "Ich komme gleich.",
+        "sub": "auch: Sofort!",
+        "english": "I'll be right with you.",
+        "example": "Einen Augenblick, bitte. Ich komme gleich.",
+        "exampleEn": "Just a moment, please. I'll be right with you.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 10"
+      },
+      {
+        "type": "sonst",
+        "front": "Was kann ich Ihnen bringen?",
+        "sub": "auch: Sie bekommen?",
+        "english": "What can I get you?",
+        "example": "Guten Abend! Was kann ich Ihnen bringen?",
+        "exampleEn": "Good evening! What can I get you?",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 10"
+      },
+      {
+        "type": "sonst",
+        "front": "Ich hätte gern …",
+        "sub": "auch: Ich nehme …",
+        "english": "I'd like …",
+        "example": "Ich hätte gern ein Schnitzel mit Salat.",
+        "exampleEn": "I'd like a schnitzel with salad.",
+        "note": "höflicher als „Ich will …“",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 10"
+      },
+      {
+        "type": "sonst",
+        "front": "Bringen Sie mir lieber …",
+        "sub": "",
+        "english": "Bring me … instead",
+        "example": "Bringen Sie mir lieber ein Wasser.",
+        "exampleEn": "Bring me a water instead.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 10"
+      },
+      {
+        "type": "sonst",
+        "front": "nicht mit …, sondern mit …",
+        "sub": "",
+        "english": "not with …, but with …",
+        "example": "Das Steak, aber nicht mit Pommes, sondern mit Reis.",
+        "exampleEn": "The steak, but with rice instead of fries.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 10"
+      },
+      {
+        "type": "sonst",
+        "front": "Könnten Sie mir … bringen?",
+        "sub": "",
+        "english": "Could you bring me …?",
+        "example": "Könnten Sie mir etwas Essig und Öl bringen?",
+        "exampleEn": "Could you bring me some vinegar and oil?",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 10"
+      },
+      {
+        "type": "sonst",
+        "front": "Könnte ich ein anderes bekommen?",
+        "sub": "",
+        "english": "Could I have another one?",
+        "example": "Das Messer ist nicht sauber. Könnte ich ein anderes bekommen?",
+        "exampleEn": "The knife isn't clean. Could I have another one?",
+        "note": "das Messer → ein anderes · der Löffel → einen anderen · die Gabel → eine andere",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 10"
+      },
+      {
+        "type": "adj",
+        "front": "versalzen",
+        "sub": "",
+        "english": "too salty",
+        "example": "Die Kartoffeln waren versalzen.",
+        "exampleEn": "The potatoes were too salty.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 10"
+      },
+      {
+        "type": "sonst",
+        "front": "Ich gebe es an die Küche weiter.",
+        "sub": "weiter·geben",
+        "english": "I'll pass it on to the kitchen.",
+        "example": "Das tut mir leid. Ich gebe es an die Küche weiter.",
+        "exampleEn": "I'm sorry. I'll pass it on to the kitchen.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 10"
+      },
+      {
+        "type": "sonst",
+        "front": "Wir würden gern zahlen.",
+        "sub": "auch: Die Rechnung, bitte!",
+        "english": "We'd like to pay.",
+        "example": "Entschuldigung, wir würden gern zahlen.",
+        "exampleEn": "Excuse me, we'd like to pay.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 10"
+      },
+      {
+        "type": "sonst",
+        "front": "Zusammen oder getrennt?",
+        "sub": "Zusammen. / Getrennt.",
+        "english": "Together or separately?",
+        "example": "Zusammen oder getrennt? – Getrennt, bitte.",
+        "exampleEn": "Together or separately? – Separately, please.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 10"
       }
     ]
   },
