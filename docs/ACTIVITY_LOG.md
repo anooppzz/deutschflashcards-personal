@@ -19,6 +19,16 @@ was done, newest first. Every change adds a log entry here in the same commit
 ## Log
 
 ### 2026-09-29
+- **Konnektoren section** (new group, 4 topics): overview of the three types (verb stays /
+  goes to the end / comes right after), *und, aber, oder, denn, sondern* (ADUSO,
+  sondern vs aber, two-part connectors), *Nebensätze: dass, weil, wenn, ob, als*
+  (replaces "Nebensatz mit dass", key `nebensatz`; adds wenn/als/ob, indirect questions,
+  "verb, verb"), *deshalb, trotzdem, dann, danach …* (storytelling order, danach vs
+  nachdem, *also* false friend). B1 connectors (obwohl, damit, bevor, nachdem,
+  während) are only mentioned.
+  - 10 new cards in Meine Wörter: denn, wenn, als (time), ob, trotzdem, dann, danach,
+    zuerst, zum Schluss, sonst. 21 connector cards linked in total; the comparison
+    *als* (Kleidung) now links to Komparativ; *sondern* got a note (≠ aber).
 - **Three fixes the learner reported:**
   - Cloze: word edges are Unicode-aware, so words starting or ending in Ä/Ö/Ü/ß/é
     reach Cloze (11 cards, e.g. *das Öl*, *groß*, *Österreich*). Phrases ending in

@@ -226,7 +226,10 @@
     "english": "than",
     "example": "Er ist größer als ich.",
     "exampleEn": "He is taller than me.",
-    "level": "A2"
+    "level": "A2",
+    "grammar": [
+      "komparativ-superlativ"
+    ]
   },
   {
     "type": "sonst",

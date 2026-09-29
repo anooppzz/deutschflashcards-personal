@@ -335,7 +335,10 @@
         "english": "and",
         "example": "Er spricht Deutsch und Englisch.",
         "exampleEn": "He speaks German and English.",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "konnektoren-aduso"
+        ]
       },
       {
         "type": "sonst",
@@ -750,7 +753,7 @@
         "level": "A1",
         "grammar": [
           "fragewoerter-kasus",
-          "nebensatz-dass"
+          "nebensatz"
         ]
       },
       {
@@ -805,7 +808,10 @@
         "english": "but",
         "example": "Ich mag Kaffee, aber keinen Tee.",
         "exampleEn": "I like coffee, but not tea.",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "konnektoren-aduso"
+        ]
       },
       {
         "type": "sonst",
@@ -1465,7 +1471,7 @@
         "exampleEn": "We find the sofa very comfortable.",
         "level": "A1",
         "grammar": [
-          "nebensatz-dass"
+          "nebensatz"
         ]
       },
       {
@@ -2394,7 +2400,10 @@
         "english": "or",
         "example": "Möchtest du Kaffee oder Tee?",
         "exampleEn": "Would you like coffee or tea?",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "konnektoren-aduso"
+        ]
       },
       {
         "type": "sonst",
@@ -3384,7 +3393,7 @@
         "exampleEn": "I don't know the answer.",
         "level": "A1",
         "grammar": [
-          "nebensatz-dass"
+          "nebensatz"
         ]
       },
       {
@@ -4271,7 +4280,10 @@
         "english": "so / therefore",
         "example": "Ich habe keine Zeit, also komme ich später.",
         "exampleEn": "I don't have time, so I'll come later.",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "konnektoren-adverbien"
+        ]
       },
       {
         "type": "sonst",
@@ -4565,7 +4577,7 @@
         "exampleEn": "I often think about my family.",
         "level": "A1",
         "grammar": [
-          "nebensatz-dass"
+          "nebensatz"
         ]
       },
       {
@@ -7191,7 +7203,7 @@
         "exampleEn": "Too bad you can't come.",
         "level": "A2",
         "grammar": [
-          "nebensatz-dass"
+          "nebensatz"
         ]
       },
       {
@@ -7658,7 +7670,7 @@
         "level": "A2",
         "source": "Menschen A2 · Einheit 4",
         "grammar": [
-          "nebensatz-dass"
+          "nebensatz"
         ]
       },
       {
@@ -8026,7 +8038,10 @@
         "example": "Außerdem gibt es hier einen schönen Strand.",
         "exampleEn": "Besides, there's a beautiful beach here.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 3"
+        "source": "Menschen A2 · Einheit 3",
+        "grammar": [
+          "konnektoren-adverbien"
+        ]
       },
       {
         "type": "sonst",
@@ -8417,7 +8432,10 @@
         "example": "Wir sehen uns später.",
         "exampleEn": "We'll see each other later.",
         "level": "A1",
-        "source": "Menschen A2 · Einheit 5"
+        "source": "Menschen A2 · Einheit 5",
+        "grammar": [
+          "konnektoren-adverbien"
+        ]
       }
     ]
   },
@@ -9626,7 +9644,10 @@
         "example": "Ich bleibe zu Hause, weil ich krank bin.",
         "exampleEn": "I'm staying home because I'm sick.",
         "level": "A1",
-        "source": "Menschen A2 · Einheit 8"
+        "source": "Menschen A2 · Einheit 8",
+        "grammar": [
+          "nebensatz"
+        ]
       },
       {
         "type": "sonst",
@@ -9636,7 +9657,10 @@
         "example": "Ich bin krank, deshalb bleibe ich im Bett.",
         "exampleEn": "I'm sick, that's why I'm staying in bed.",
         "level": "A1",
-        "source": "Menschen A2 · Einheit 8"
+        "source": "Menschen A2 · Einheit 8",
+        "grammar": [
+          "konnektoren-adverbien"
+        ]
       }
     ]
   },
@@ -10301,7 +10325,7 @@
         "level": "A2",
         "source": "Menschen A2 · Einheit 10",
         "grammar": [
-          "nebensatz-dass"
+          "nebensatz"
         ]
       },
       {
@@ -10311,8 +10335,12 @@
         "english": "but (rather)",
         "example": "Ich möchte keinen Fisch, sondern ein Schnitzel.",
         "exampleEn": "I don't want fish, but rather a schnitzel.",
+        "note": "nur nach nicht / kein · ≠ aber",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 10"
+        "source": "Menschen A2 · Einheit 10",
+        "grammar": [
+          "konnektoren-aduso"
+        ]
       },
       {
         "type": "sonst",
@@ -10493,6 +10521,133 @@
         "exampleEn": "My daughter likes riding.",
         "note": "nur für Tiere – Fahrrad, Auto: fahren",
         "level": "A2"
+      },
+      {
+        "type": "sonst",
+        "front": "denn",
+        "sub": "",
+        "english": "because (normal word order)",
+        "example": "Ich esse nichts, denn ich habe keinen Hunger.",
+        "exampleEn": "I'm not eating anything because I'm not hungry.",
+        "note": "wie weil – aber das Verb bleibt auf Position 2",
+        "level": "A2",
+        "grammar": [
+          "konnektoren-aduso"
+        ]
+      },
+      {
+        "type": "sonst",
+        "front": "wenn",
+        "sub": "",
+        "english": "if; when(ever)",
+        "example": "Wenn es regnet, bleibe ich zu Hause.",
+        "exampleEn": "If it rains, I stay at home.",
+        "note": "Verb am Ende · einmal in der Vergangenheit: als",
+        "level": "A2",
+        "grammar": [
+          "nebensatz"
+        ]
+      },
+      {
+        "type": "sonst",
+        "front": "als",
+        "sub": "Zeit: einmal in der Vergangenheit",
+        "english": "when (once, in the past)",
+        "example": "Als ich klein war, hatte ich einen Hund.",
+        "exampleEn": "When I was little, I had a dog.",
+        "note": "Verb am Ende · immer / Zukunft: wenn",
+        "level": "A2",
+        "grammar": [
+          "nebensatz"
+        ]
+      },
+      {
+        "type": "sonst",
+        "front": "ob",
+        "sub": "",
+        "english": "whether, if",
+        "example": "Ich weiß nicht, ob er heute kommt.",
+        "exampleEn": "I don't know whether he's coming today.",
+        "note": "Ja/Nein-Frage im Satz · Verb am Ende",
+        "level": "A2",
+        "grammar": [
+          "nebensatz"
+        ]
+      },
+      {
+        "type": "sonst",
+        "front": "trotzdem",
+        "sub": "",
+        "english": "still, anyway, nevertheless",
+        "example": "Es regnet, trotzdem gehen wir spazieren.",
+        "exampleEn": "It's raining, but we're going for a walk anyway.",
+        "note": "Position 1 → Verb direkt danach",
+        "level": "A2",
+        "grammar": [
+          "konnektoren-adverbien"
+        ]
+      },
+      {
+        "type": "sonst",
+        "front": "dann",
+        "sub": "",
+        "english": "then",
+        "example": "Zuerst frühstücke ich, dann dusche ich.",
+        "exampleEn": "First I have breakfast, then I shower.",
+        "level": "A1",
+        "grammar": [
+          "konnektoren-adverbien"
+        ]
+      },
+      {
+        "type": "sonst",
+        "front": "danach",
+        "sub": "",
+        "english": "afterwards, after that",
+        "example": "Ich esse zu Mittag. Danach gehe ich spazieren.",
+        "exampleEn": "I have lunch. Afterwards I go for a walk.",
+        "note": "≠ nachdem (Nebensatz, Verb am Ende)",
+        "level": "A2",
+        "grammar": [
+          "konnektoren-adverbien"
+        ]
+      },
+      {
+        "type": "sonst",
+        "front": "zuerst",
+        "sub": "",
+        "english": "first, at first",
+        "example": "Zuerst kaufe ich ein, dann koche ich.",
+        "exampleEn": "First I go shopping, then I cook.",
+        "level": "A2",
+        "grammar": [
+          "konnektoren-adverbien"
+        ]
+      },
+      {
+        "type": "sonst",
+        "front": "zum Schluss",
+        "sub": "",
+        "english": "finally, at the end",
+        "example": "Zum Schluss sehen wir einen Film.",
+        "exampleEn": "Finally we watch a film.",
+        "level": "A2",
+        "grammar": [
+          "konnektoren-adverbien"
+        ]
+      },
+      {
+        "type": "sonst",
+        "front": "sonst",
+        "sub": "",
+        "english": "otherwise, or else",
+        "example": "Beeil dich, sonst verpassen wir den Zug.",
+        "exampleEn": "Hurry up, otherwise we'll miss the train.",
+        "note": "Sonst noch etwas? = Anything else?",
+        "level": "A2",
+        "grammar": [
+          "konnektoren-adverbien"
+        ]
       }
     ]
   }

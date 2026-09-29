@@ -126,7 +126,7 @@ found in the example are left out of Cloze, which is fine for phrases).
 - Every text is `{de, en}`; a table cell may be a plain string (German forms).
   `**x**` highlights x (use it for endings: `wohn**st**`). Use ❌/✅ for wrong/right.
 - Topics of one `group` must sit together; groups are headings in the Grammatik tab:
-  Nomen & Artikel · Verben · Adjektive · Satz & Fragen · Präpositionen.
+  Nomen & Artikel · Verben · Adjektive · Satz & Fragen · Konnektoren · Präpositionen.
 - Tables must fit a 360px phone: at most ~4 short columns; put long text in bullets.
 - `match` rules link cards automatically: `type`, `gender`, `decks`, `endings`,
   `subPattern` (regex on `sub`). Gender rules only link cards whose gender agrees.

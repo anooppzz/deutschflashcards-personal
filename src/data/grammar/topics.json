@@ -462,8 +462,8 @@
             "en": "Position 1 can be several words long: Am Montag um 8 Uhr …"
           },
           {
-            "de": "Im Nebensatz mit **dass** steht das Verb dagegen **am Ende** (siehe „Nebensatz mit dass“).",
-            "en": "In a **dass** clause, on the other hand, the verb goes **to the end** (see \"Subordinate Clauses with dass\")."
+            "de": "Im Nebensatz (dass, weil, wenn …) steht das Verb dagegen **am Ende** (siehe „Konnektoren“).",
+            "en": "In a subordinate clause (dass, weil, wenn …), on the other hand, the verb goes **to the end** (see \"Connectors\")."
           }
         ]
       }
@@ -472,114 +472,6 @@
       {"de": "Ich fahre morgen nach München.", "en": "I'm going to Munich tomorrow."},
       {"de": "Morgen fahre ich nach München.", "en": "Tomorrow I'm going to Munich."},
       {"de": "Nach München fahre ich morgen.", "en": "To Munich I'm going tomorrow."}
-    ]
-  },
-  {
-    "key": "nebensatz-dass",
-    "level": "A2",
-    "group": {"de": "Satz & Fragen", "en": "Sentences & Questions"},
-    "title": {"de": "Nebensatz mit dass", "en": "Subordinate Clauses with dass"},
-    "summary": {
-      "de": "Nach **dass** steht das konjugierte Verb **am Ende**.",
-      "en": "After **dass**, the conjugated verb goes to the **end**."
-    },
-    "sections": [
-      {
-        "type": "table",
-        "title": {"de": "Hauptsatz → dass-Satz", "en": "Main clause → dass clause"},
-        "head": [{"de": "Hauptsatz", "en": "Main clause"}, {"de": "mit dass", "en": "with dass"}],
-        "rows": [
-          ["Es **gibt** keine Pizza.", "Schade, dass es keine Pizza **gibt**."],
-          ["Ich **nehme** den Fisch.", "Ich denke, dass ich den Fisch **nehme**."],
-          ["Sie **haben** Pommes.", "Ich hoffe, dass sie Pommes **haben**."],
-          ["Du **hast** reserviert.", "Gut, dass du reserviert **hast**."]
-        ]
-      },
-      {
-        "type": "table",
-        "title": {"de": "Satzbau", "en": "Word order"},
-        "head": ["", "dass", {"de": "Mitte", "en": "Middle"}, {"de": "Verb", "en": "Verb"}],
-        "rows": [
-          ["Ich hoffe,", "dass", "sie Pommes", "**haben**."],
-          ["Gut,", "dass", "du reserviert", "**hast**."],
-          ["Ich weiß,", "dass", "er nicht kommen", "**kann**."]
-        ]
-      },
-      {
-        "type": "points",
-        "title": {"de": "Typische Satzanfänge", "en": "Typical openers"},
-        "items": [
-          {
-            "de": "Meinung: Ich **denke / glaube / finde**, dass …",
-            "en": "Opinion: Ich **denke / glaube / finde**, dass … (I think / believe / find that …)"
-          },
-          {
-            "de": "Wissen und Hoffnung: Ich **weiß**, dass … · Ich **hoffe**, dass …",
-            "en": "Knowing and hoping: Ich **weiß**, dass … (I know that) · Ich **hoffe**, dass … (I hope that)"
-          },
-          {
-            "de": "Gefühl: **Gut / Schön / Schade**, dass …",
-            "en": "Feeling: **Gut / Schön / Schade**, dass … (good / nice / a pity that …)"
-          },
-          {
-            "de": "Vermutung: **Kann es sein**, dass …?",
-            "en": "Guessing: **Kann es sein**, dass …? (Could it be that …?)"
-          }
-        ]
-      },
-      {
-        "type": "points",
-        "title": {"de": "So merkst du es dir", "en": "How to remember"},
-        "items": [
-          {
-            "de": "**dass** schickt das Verb **ans Ende** – wie ein Magnet.",
-            "en": "**dass** sends the verb **to the end** – like a magnet."
-          },
-          {"de": "Vor dass steht immer ein **Komma**.", "en": "There's always a **comma** before dass."},
-          {
-            "de": "Zwei Verben? Das **konjugierte** Verb steht ganz hinten: …, dass du reserviert **hast** · …, dass er kommen **kann**.",
-            "en": "Two verbs? The **conjugated** one goes last: …, dass du reserviert **hast** · …, dass er kommen **kann**."
-          },
-          {
-            "de": "Trennbare Verben kommen wieder zusammen: Er **kauft** heute **ein**. → …, dass er heute **einkauft**.",
-            "en": "Separable verbs join up again: Er **kauft** heute **ein**. → …, dass er heute **einkauft**."
-          }
-        ]
-      },
-      {
-        "type": "points",
-        "title": {"de": "Gut zu wissen", "en": "Good to know"},
-        "items": [
-          {
-            "de": "Im Gespräch fällt dass nach denken, glauben, hoffen oft weg – dann bleibt das Verb auf Position 2: Ich denke, ich **nehme** den Fisch.",
-            "en": "In speech, dass is often dropped after denken, glauben, hoffen – then the verb stays in position 2: Ich denke, ich **nehme** den Fisch."
-          },
-          {
-            "de": "**nicht** steht vor dem Verb am Ende: …, dass er heute **nicht kommt**.",
-            "en": "**nicht** goes before the verb at the end: …, dass er heute **nicht kommt**."
-          }
-        ]
-      },
-      {
-        "type": "warning",
-        "text": {
-          "de": "Häufigster Fehler – ❌ …, dass ich nehme den Fisch. ✅ …, dass ich den Fisch **nehme**.",
-          "en": "Most common mistake – ❌ …, dass ich nehme den Fisch. ✅ …, dass ich den Fisch **nehme**."
-        }
-      },
-      {
-        "type": "warning",
-        "text": {
-          "de": "**dass** (Konjunktion) ≠ **das** (Artikel / Pronomen): Ich weiß, **dass das** Essen gut ist. Trick: Passt „dieses“ oder „welches“? Dann **das** – sonst **dass**.",
-          "en": "**dass** (conjunction) ≠ **das** (article / pronoun): Ich weiß, **dass das** Essen gut ist. Trick: can you swap in „dieses“ or „welches“? Then write **das** – otherwise **dass**."
-        }
-      }
-    ],
-    "examples": [
-      {"de": "Schade, dass es keine Pizza gibt.", "en": "Too bad there's no pizza."},
-      {"de": "Ich hoffe, dass sie wenigstens Pommes haben.", "en": "I hope they at least have fries."},
-      {"de": "Gut, dass du reserviert hast.", "en": "Good thing you booked a table."},
-      {"de": "Kann es sein, dass die Suppe kalt ist?", "en": "Could it be that the soup is cold?"}
     ]
   },
   {
@@ -681,6 +573,430 @@
       {"de": "Wen hat er getroffen?", "en": "Who did he meet?"},
       {"de": "Wem möchte er die Sachen geben?", "en": "Who does he want to give the things to?"},
       {"de": "Für wen hat er die Sachen gekauft?", "en": "Who did he buy the things for?"}
+    ]
+  },
+  {
+    "key": "konnektoren-ueberblick",
+    "level": "A2",
+    "group": {"de": "Konnektoren", "en": "Connectors"},
+    "title": {"de": "Konnektoren: Überblick", "en": "Connectors: Overview"},
+    "summary": {
+      "de": "Drei Typen – und jeder macht etwas anderes mit dem **Verb**.",
+      "en": "Three types – and each one does something different to the **verb**."
+    },
+    "sections": [
+      {
+        "type": "table",
+        "title": {"de": "Die drei Typen", "en": "The three types"},
+        "head": [{"de": "Typ", "en": "Type"}, {"de": "Wörter", "en": "Words"}, {"de": "Verb", "en": "Verb"}],
+        "rows": [
+          [
+            {"de": "Verbinder", "en": "joiners"},
+            "und, aber, oder, denn, sondern",
+            {"de": "bleibt auf **Position 2**", "en": "stays in **position 2**"}
+          ],
+          [
+            {"de": "Nebensatz", "en": "subordinate clause"},
+            "dass, weil, wenn, ob, als",
+            {"de": "geht **ans Ende**", "en": "goes to the **end**"}
+          ],
+          [
+            {"de": "Adverb", "en": "adverb"},
+            "deshalb, trotzdem, dann, danach …",
+            {"de": "kommt **direkt danach**", "en": "comes **right after it**"}
+          ]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Gleiche Idee, drei Satzbauten", "en": "Same idea, three word orders"},
+        "head": [{"de": "Wort", "en": "Word"}, {"de": "Satz", "en": "Sentence"}],
+        "rows": [
+          ["denn", "Ich bleibe zu Hause, denn ich **bin** krank."],
+          ["weil", "Ich bleibe zu Hause, weil ich krank **bin**."],
+          ["deshalb", "Ich bin krank, deshalb **bleibe** ich zu Hause."]
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "So erkennst du den Typ", "en": "How to tell the type"},
+        "items": [
+          {
+            "de": "**ADUSO** merken: **a**ber, **d**enn, **u**nd, **s**ondern, **o**der – diese fünf ändern nichts.",
+            "en": "Memorize **ADUSO**: **a**ber, **d**enn, **u**nd, **s**ondern, **o**der – these five change nothing."
+          },
+          {
+            "de": "Steht das Wort allein vorne und das Verb folgt sofort? → Adverb: Deshalb **bleibe** ich …",
+            "en": "Does the word stand alone at the front with the verb right after it? → adverb: Deshalb **bleibe** ich …"
+          },
+          {
+            "de": "Fast alle anderen Wörter, die einen Satzteil einleiten (dass, weil, wenn, ob, als …), schicken das Verb ans Ende.",
+            "en": "Almost every other word that starts a clause (dass, weil, wenn, ob, als …) sends the verb to the end."
+          },
+          {
+            "de": "Vor Konnektoren steht meist ein **Komma** – nur vor **und** / **oder** oft nicht.",
+            "en": "Connectors usually have a **comma** before them – only **und** / **oder** often go without."
+          }
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "Gut zu wissen", "en": "Good to know"},
+        "items": [
+          {
+            "de": "Später (B1) kommen dazu: **obwohl**, **damit**, **bevor**, **nachdem**, **während** – alle mit Verb am Ende.",
+            "en": "Coming later (B1): **obwohl**, **damit**, **bevor**, **nachdem**, **während** – all with the verb at the end."
+          }
+        ]
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "Häufigster Fehler – ❌ …, weil ich bin krank. ✅ …, weil ich krank **bin**. Im Alltag hört man ❌ oft, beim Schreiben und im Test zählt ✅.",
+          "en": "Most common mistake – ❌ …, weil ich bin krank. ✅ …, weil ich krank **bin**. You'll hear ❌ in everyday speech, but in writing and exams ✅ counts."
+        }
+      }
+    ],
+    "examples": [
+      {"de": "Ich lerne Deutsch, denn ich wohne in Berlin.", "en": "I'm learning German because I live in Berlin."},
+      {"de": "Ich lerne Deutsch, weil ich in Berlin wohne.", "en": "I'm learning German because I live in Berlin."},
+      {"de": "Ich wohne in Berlin, deshalb lerne ich Deutsch.", "en": "I live in Berlin, so I'm learning German."}
+    ]
+  },
+  {
+    "key": "konnektoren-aduso",
+    "level": "A1",
+    "group": {"de": "Konnektoren", "en": "Connectors"},
+    "title": {"de": "und, aber, oder, denn, sondern", "en": "und, aber, oder, denn, sondern"},
+    "summary": {
+      "de": "Diese Wörter verbinden zwei Sätze – die **Wortstellung bleibt normal**.",
+      "en": "These words join two sentences – the **word order stays normal**."
+    },
+    "sections": [
+      {
+        "type": "table",
+        "head": [{"de": "Wort", "en": "Word"}, {"de": "Englisch", "en": "English"}, {"de": "Beispiel", "en": "Example"}],
+        "rows": [
+          ["und", "and", "Ich koche und du **spülst**."],
+          ["aber", "but", "Es ist teuer, aber es **schmeckt** gut."],
+          ["oder", "or", "Kommst du mit oder **bleibst** du hier?"],
+          ["denn", "because", "Ich esse nichts, denn ich **habe** keinen Hunger."],
+          ["sondern", "but rather (after nicht / kein)", "Wir fahren nicht, sondern wir **gehen** zu Fuß."]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "sondern oder aber?", "en": "sondern or aber?"},
+        "head": ["", {"de": "Bedeutung", "en": "Meaning"}, {"de": "Beispiel", "en": "Example"}],
+        "rows": [
+          [
+            "**sondern**",
+            {"de": "nicht X – **stattdessen** Y", "en": "not X – Y **instead**"},
+            "Das ist nicht teuer, sondern billig."
+          ],
+          [
+            "**aber**",
+            {"de": "X **und auch** Y – beides stimmt", "en": "X **and also** Y – both are true"},
+            "Das ist nicht teuer, aber gut."
+          ]
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "So merkst du es dir", "en": "How to remember"},
+        "items": [
+          {
+            "de": "**ADUSO**: **a**ber, **d**enn, **u**nd, **s**ondern, **o**der – sie stehen auf „Position 0“ und zählen nicht mit.",
+            "en": "**ADUSO**: **a**ber, **d**enn, **u**nd, **s**ondern, **o**der – they sit at \"position 0\" and don't count."
+          },
+          {
+            "de": "Test für sondern: Ersetzt der zweite Teil den ersten? → **sondern**. Stimmt beides? → **aber**.",
+            "en": "Test for sondern: does the second part replace the first? → **sondern**. Are both true? → **aber**."
+          },
+          {
+            "de": "**denn** = weil, aber mit normaler Wortstellung – und denn steht nie am Satzanfang.",
+            "en": "**denn** = weil, but with normal word order – and denn never starts a sentence."
+          }
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "Zweiteilige Verbinder", "en": "Two-part connectors"},
+        "items": [
+          {
+            "de": "**nicht nur … sondern auch**: Sie spricht nicht nur Deutsch, sondern auch Arabisch.",
+            "en": "**nicht nur … sondern auch** (not only … but also): Sie spricht nicht nur Deutsch, sondern auch Arabisch."
+          },
+          {
+            "de": "**entweder … oder**: Wir fahren entweder mit dem Bus oder mit dem Zug.",
+            "en": "**entweder … oder** (either … or): Wir fahren entweder mit dem Bus oder mit dem Zug."
+          }
+        ]
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "Kein nicht / kein davor → kein **sondern**: ❌ Ich mag Fisch, sondern … ✅ Ich mag Fisch, **aber** …",
+          "en": "No nicht / kein before it → no **sondern**: ❌ Ich mag Fisch, sondern … ✅ Ich mag Fisch, **aber** …"
+        }
+      }
+    ],
+    "examples": [
+      {"de": "Ich möchte keinen Fisch, sondern ein Schnitzel.", "en": "I don't want fish, but a schnitzel instead."},
+      {"de": "Ich komme heute nicht, denn ich muss arbeiten.", "en": "I'm not coming today because I have to work."},
+      {"de": "Möchtest du Tee oder Kaffee?", "en": "Would you like tea or coffee?"}
+    ]
+  },
+  {
+    "key": "nebensatz",
+    "level": "A2",
+    "group": {"de": "Konnektoren", "en": "Connectors"},
+    "title": {"de": "Nebensätze: dass, weil, wenn, ob, als", "en": "Subordinate Clauses: dass, weil, wenn, ob, als"},
+    "summary": {
+      "de": "Nach **dass, weil, wenn, ob, als** steht das konjugierte Verb **am Ende**.",
+      "en": "After **dass, weil, wenn, ob, als**, the conjugated verb goes to the **end**."
+    },
+    "sections": [
+      {
+        "type": "table",
+        "head": [{"de": "Wort", "en": "Word"}, {"de": "Englisch", "en": "English"}, {"de": "Beispiel", "en": "Example"}],
+        "rows": [
+          ["dass", "that", "Ich hoffe, dass du **kommst**."],
+          ["weil", "because", "Ich bleibe hier, weil ich krank **bin**."],
+          ["wenn", "if; when(ever)", "Wenn es **regnet**, bleibe ich zu Hause."],
+          ["ob", "whether, if", "Ich weiß nicht, ob er **kommt**."],
+          ["als", "when (once, in the past)", "Als ich klein **war**, …"],
+          ["wo, wann, wie …", "where, when, how …", "Weißt du, wo er **wohnt**?"]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Hauptsatz → Nebensatz", "en": "Main clause → subordinate clause"},
+        "head": [{"de": "Hauptsatz", "en": "Main clause"}, {"de": "Nebensatz", "en": "Subordinate clause"}],
+        "rows": [
+          ["Es **gibt** keine Pizza.", "Schade, dass es keine Pizza **gibt**."],
+          ["Ich **bin** krank.", "…, weil ich krank **bin**."],
+          ["Du **hast** reserviert.", "Gut, dass du reserviert **hast**."],
+          ["**Kommt** er?", "Ich weiß nicht, ob er **kommt**."]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Satzbau", "en": "Word order"},
+        "head": ["", {"de": "Nebensatz", "en": "Clause"}, {"de": "Verb am Ende", "en": "Verb at the end"}],
+        "rows": [
+          ["Ich hoffe,", "dass sie Pommes", "**haben**."],
+          ["Ich weiß,", "dass er nicht kommen", "**kann**."],
+          ["Gut,", "dass du reserviert", "**hast**."],
+          ["…,", "weil der Zug", "**ankommt**."]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "wenn, als oder ob?", "en": "wenn, als or ob?"},
+        "head": [{"de": "Wort", "en": "Word"}, {"de": "Wann?", "en": "When?"}, {"de": "Beispiel", "en": "Example"}],
+        "rows": [
+          [
+            "**wenn**",
+            {"de": "Bedingung; immer wenn; Zukunft", "en": "condition; whenever; future"},
+            "Wenn ich Zeit habe, …"
+          ],
+          ["**als**", {"de": "einmal in der Vergangenheit", "en": "one time in the past"}, "Als ich in Berlin war, …"],
+          ["**ob**", {"de": "Ja/Nein-Frage im Satz", "en": "yes/no question inside a sentence"}, "Ich frage, ob …"]
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "Typische Satzanfänge", "en": "Typical openers"},
+        "items": [
+          {
+            "de": "Meinung: Ich **denke / glaube / finde**, dass …",
+            "en": "Opinion: Ich **denke / glaube / finde**, dass … (I think / believe / find that …)"
+          },
+          {
+            "de": "Wissen und Hoffnung: Ich **weiß**, dass … · Ich **hoffe**, dass …",
+            "en": "Knowing and hoping: Ich **weiß**, dass … (I know that) · Ich **hoffe**, dass … (I hope that)"
+          },
+          {
+            "de": "Gefühl: **Gut / Schön / Schade**, dass … · Vermutung: **Kann es sein**, dass …?",
+            "en": "Feeling: **Gut / Schön / Schade**, dass … (good / nice / a pity that) · Guessing: **Kann es sein**, dass …?"
+          },
+          {
+            "de": "Höflich fragen: **Können Sie mir sagen**, wo der Bahnhof **ist**? · Ich weiß nicht, **ob** …",
+            "en": "Asking politely: **Können Sie mir sagen**, wo der Bahnhof **ist**? · Ich weiß nicht, **ob** … (I don't know whether …)"
+          }
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "So merkst du es dir", "en": "How to remember"},
+        "items": [
+          {
+            "de": "Das Wort schickt das Verb **ans Ende** – wie ein Magnet.",
+            "en": "The connector sends the verb **to the end** – like a magnet."
+          },
+          {
+            "de": "Vor dem Nebensatz steht immer ein **Komma**.",
+            "en": "There's always a **comma** before the subordinate clause."
+          },
+          {
+            "de": "Zwei Verben? Das **konjugierte** steht ganz hinten: …, dass du reserviert **hast** · …, weil er arbeiten **muss**.",
+            "en": "Two verbs? The **conjugated** one goes last: …, dass du reserviert **hast** · …, weil er arbeiten **muss**."
+          },
+          {
+            "de": "Trennbare Verben kommen wieder zusammen: Der Zug **kommt** spät **an**. → …, weil der Zug spät **ankommt**.",
+            "en": "Separable verbs join up again: Der Zug **kommt** spät **an**. → …, weil der Zug spät **ankommt**."
+          },
+          {
+            "de": "Nebensatz zuerst? Dann **Verb, Verb** am Komma: Wenn es **regnet**, **bleibe** ich zu Hause.",
+            "en": "Subordinate clause first? Then **verb, verb** around the comma: Wenn es **regnet**, **bleibe** ich zu Hause."
+          }
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "Gut zu wissen", "en": "Good to know"},
+        "items": [
+          {
+            "de": "**weil** oder **denn**? Gleiche Bedeutung – **weil** schickt das Verb ans Ende, **denn** nicht.",
+            "en": "**weil** or **denn**? Same meaning – **weil** sends the verb to the end, **denn** doesn't."
+          },
+          {
+            "de": "Im Gespräch fällt dass nach denken, glauben, hoffen oft weg – dann bleibt das Verb auf Position 2: Ich denke, ich **nehme** den Fisch.",
+            "en": "In speech, dass is often dropped after denken, glauben, hoffen – then the verb stays in position 2: Ich denke, ich **nehme** den Fisch."
+          },
+          {
+            "de": "**nicht** steht vor dem Verb am Ende: …, dass er heute **nicht kommt**.",
+            "en": "**nicht** goes before the verb at the end: …, dass er heute **nicht kommt**."
+          }
+        ]
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "Häufigster Fehler – ❌ …, dass ich nehme den Fisch. ✅ …, dass ich den Fisch **nehme**.",
+          "en": "Most common mistake – ❌ …, dass ich nehme den Fisch. ✅ …, dass ich den Fisch **nehme**."
+        }
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "„if“ als Frage (= whether) ist **ob**, nicht wenn: Ich weiß nicht, **ob** er kommt. Und **als** nur für **einmal** in der Vergangenheit – für „immer, wenn“ auch in der Vergangenheit: **wenn**.",
+          "en": "\"if\" as a question (= whether) is **ob**, not wenn: Ich weiß nicht, **ob** er kommt. And **als** only for **one time** in the past – for \"whenever\", even in the past: **wenn**."
+        }
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "**dass** (Konnektor) ≠ **das** (Artikel / Pronomen): Ich weiß, **dass das** Essen gut ist. Trick: Passt „dieses“ oder „welches“? Dann **das** – sonst **dass**.",
+          "en": "**dass** (connector) ≠ **das** (article / pronoun): Ich weiß, **dass das** Essen gut ist. Trick: can you swap in „dieses“ or „welches“? Then write **das** – otherwise **dass**."
+        }
+      }
+    ],
+    "examples": [
+      {"de": "Schade, dass es keine Pizza gibt.", "en": "Too bad there's no pizza."},
+      {"de": "Ich bleibe zu Hause, weil ich krank bin.", "en": "I'm staying at home because I'm sick."},
+      {"de": "Wenn es regnet, fahre ich mit dem Bus.", "en": "When it rains, I take the bus."},
+      {"de": "Als ich klein war, hatte ich einen Hund.", "en": "When I was little, I had a dog."},
+      {"de": "Können Sie mir sagen, wo der Bahnhof ist?", "en": "Can you tell me where the station is?"}
+    ]
+  },
+  {
+    "key": "konnektoren-adverbien",
+    "level": "A2",
+    "group": {"de": "Konnektoren", "en": "Connectors"},
+    "title": {"de": "deshalb, trotzdem, dann, danach …", "en": "deshalb, trotzdem, dann, danach …"},
+    "summary": {
+      "de": "Diese Wörter stehen auf **Position 1** – das Verb kommt **direkt danach**.",
+      "en": "These words take **position 1** – the verb comes **right after them**."
+    },
+    "sections": [
+      {
+        "type": "table",
+        "title": {"de": "Grund, Gegensatz, Folge", "en": "Reason, contrast, result"},
+        "head": [{"de": "Wort", "en": "Word"}, {"de": "Englisch", "en": "English"}, {"de": "Beispiel", "en": "Example"}],
+        "rows": [
+          ["deshalb", "that's why, so", "Ich bin krank, deshalb **bleibe** ich zu Hause."],
+          ["trotzdem", "still, anyway", "Es regnet, trotzdem **gehen** wir spazieren."],
+          ["außerdem", "besides, also", "Außerdem **ist** das Hotel billig."],
+          ["also", "so, therefore", "Es ist spät, also **gehen** wir."],
+          ["sonst", "otherwise, or else", "Beeil dich, sonst **verpassen** wir den Zug."]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Der Reihe nach erzählen", "en": "Telling things in order"},
+        "head": [{"de": "Wort", "en": "Word"}, {"de": "Englisch", "en": "English"}, {"de": "Beispiel", "en": "Example"}],
+        "rows": [
+          ["zuerst", "first", "Zuerst **frühstücke** ich."],
+          ["dann", "then", "Dann **dusche** ich."],
+          ["danach", "afterwards", "Danach **gehe** ich zur Arbeit."],
+          ["später", "later", "Später **treffe** ich Freunde."],
+          ["zum Schluss", "finally", "Zum Schluss **sehe** ich fern."]
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "So merkst du es dir", "en": "How to remember"},
+        "items": [
+          {
+            "de": "Das Wort **zählt als Position 1** – dann kommt sofort das Verb, danach das Subjekt: Deshalb **bleibe ich** …",
+            "en": "The word **counts as position 1** – so the verb comes next, then the subject: Deshalb **bleibe ich** …"
+          },
+          {
+            "de": "**deswegen** und **darum** bedeuten dasselbe wie deshalb.",
+            "en": "**deswegen** and **darum** mean the same as deshalb."
+          },
+          {
+            "de": "Sie können auch in der Satzmitte stehen: Ich bleibe **deshalb** zu Hause.",
+            "en": "They can also go in the middle: Ich bleibe **deshalb** zu Hause."
+          }
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "Wann benutzen?", "en": "When to use it"},
+        "items": [
+          {
+            "de": "Zum Erzählen (Tagesablauf, Urlaub): **zuerst → dann → danach → später → zum Schluss**.",
+            "en": "For telling a story (daily routine, holiday): **zuerst → dann → danach → später → zum Schluss**."
+          },
+          {
+            "de": "Grund oder Folge? **weil** + Grund (Verb am Ende) · **deshalb** + Folge (Verb direkt danach).",
+            "en": "Reason or result? **weil** + reason (verb at the end) · **deshalb** + result (verb right after)."
+          },
+          {
+            "de": "**trotzdem** = etwas passiert, obwohl es nicht passt: Ich bin müde, trotzdem **lerne** ich.",
+            "en": "**trotzdem** = something happens even though it doesn't fit: Ich bin müde, trotzdem **lerne** ich."
+          }
+        ]
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "❌ Deshalb ich bleibe zu Hause. ✅ Deshalb **bleibe** ich zu Hause. – Das Subjekt kommt **nach** dem Verb.",
+          "en": "❌ Deshalb ich bleibe zu Hause. ✅ Deshalb **bleibe** ich zu Hause. – the subject comes **after** the verb."
+        }
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "**danach** (Adverb) ≠ **nachdem** (Nebensatz, Verb am Ende): Ich esse. Danach **gehe** ich. · Nachdem ich gegessen **habe**, gehe ich.",
+          "en": "**danach** (adverb) ≠ **nachdem** (subordinate clause, verb at the end): Ich esse. Danach **gehe** ich. · Nachdem ich gegessen **habe**, gehe ich."
+        }
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "Falscher Freund: **also** heißt so / deshalb. Das englische „also“ ist **auch**.",
+          "en": "False friend: **also** means so / therefore. English \"also\" is **auch**."
+        }
+      }
+    ],
+    "examples": [
+      {"de": "Ich habe keine Zeit, deshalb komme ich nicht.", "en": "I don't have time, so I'm not coming."},
+      {"de": "Es ist kalt, trotzdem gehen wir schwimmen.", "en": "It's cold, but we're going swimming anyway."},
+      {"de": "Zuerst kaufe ich ein, danach koche ich.", "en": "First I go shopping, then I cook."}
     ]
   },
   {
