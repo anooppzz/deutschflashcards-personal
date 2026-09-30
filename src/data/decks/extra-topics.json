@@ -11052,19 +11052,6 @@
         "grammar": [
           "konnektoren-adverbien"
         ]
-      },
-      {
-        "type": "v",
-        "front": "streiten",
-        "sub": "stritt · hat gestritten",
-        "english": "to argue, to quarrel",
-        "example": "Die Kinder streiten sich schon wieder.",
-        "exampleEn": "The kids are arguing again.",
-        "note": "oft sich streiten (mit + Dat., über + Akk.) · der Streit = the argument",
-        "level": "A2",
-        "grammar": [
-          "reflexive-verben"
-        ]
       }
     ]
   }

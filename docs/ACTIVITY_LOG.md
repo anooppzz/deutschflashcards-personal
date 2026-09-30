@@ -17,12 +17,12 @@ was done, newest first. Every change adds a log entry here in the same commit
   languages fall back to English).
 - [ ] Offered, not requested yet: a grammar topic "Verben mit Präposition" (warten auf,
   denken an, sprechen über …).
-- [ ] Asked, no answer yet: remove *streiten* from Meine Wörter now that
-  *streiten (sich)* is in Firma & Produkte? (Kept both until the learner says so.)
 
 ## Log
 
 ### 2026-09-30
+- *streiten* removed from Meine Wörter (learner's choice); it lives on as
+  *streiten (sich)* in Firma & Produkte. Meine Wörter: 16 cards.
 - **Grammar topic "Reflexive Verben"** (`reflexive-verben`, group Verben, after
   Modalverben): pronoun table (Akk./Dat.), how to remember, the learner's 12 verbs with
   their prepositions and cases, where *sich* goes (7 sentence types), with/without *sich*,
