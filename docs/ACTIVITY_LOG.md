@@ -15,10 +15,20 @@ was done, newest first. Every change adds a log entry here in the same commit
 - [ ] Ideas, not requested yet: tapping a word under "Deine Wörter" could open its card
   (now it only speaks it); grammar text exists only in German and English (other app
   languages fall back to English).
+- [ ] Offered, not requested yet: a grammar topic "Reflexive Verben" (sich freuen,
+  sich erinnern an, sich streiten mit … – about 12 cards would link) and "Verben mit
+  Präposition".
 
 ## Log
 
 ### 2026-09-30
+- **Chapter "Firma & Produkte"** 🏢 (`firma-produkte`, Menschen A2 · Einheit 11,
+  Lernwortschatz page): 31 cards – In der Firma, Produkte, Glückwünsche, weitere
+  wichtige Wörter. The page names no chapter title, so the label is by content.
+  *viel Erfolg / viel Glück* are phrase cards next to the existing nouns *der Erfolg*,
+  *das Glück*; *streiten (sich)* is in the chapter as the book lists it, and also stays in
+  Meine Wörter. *jung, stark* link to Komparativ; *meiner Meinung nach* to Wortstellung
+  and Dativ. A buildGrammarIndex test no longer depends on a topic having no words.
 - **Perfekt on every verb card** (the learner asked whether Partizip II and Perfekt are
   on the cards). Before, the irregular deck showed the Partizip II without *hat/ist*, and
   70 chapter verbs showed no Perfekt at all.

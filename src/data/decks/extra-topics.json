@@ -10490,6 +10490,366 @@
     ]
   },
   {
+    "key": "firma-produkte",
+    "icon": "🏢",
+    "label": "Firma & Produkte",
+    "note": "In der Firma, Produkte, Glückwünsche",
+    "cards": [
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Kunde",
+        "sub": "Pl. -n · die Kundin, -nen",
+        "english": "customer, client",
+        "example": "Der Kunde möchte mit dem Chef sprechen.",
+        "exampleEn": "The customer would like to speak to the boss.",
+        "note": "n-Deklination: den / dem / des Kunden",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 11"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Notiz",
+        "sub": "Pl. -en",
+        "english": "note",
+        "example": "Ich mache mir schnell eine Notiz.",
+        "exampleEn": "I'll quickly make a note.",
+        "note": "sich Notizen machen = to take notes",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 11"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Notizblock",
+        "sub": "Pl. ¨-e",
+        "english": "notepad",
+        "example": "Hast du einen Notizblock für mich?",
+        "exampleEn": "Do you have a notepad for me?",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 11"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Werkstatt",
+        "sub": "Pl. ¨-en (die Werkstätten)",
+        "english": "workshop; (car) repair shop",
+        "example": "Mein Auto ist in der Werkstatt.",
+        "exampleEn": "My car is at the repair shop.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 11"
+      },
+      {
+        "type": "v",
+        "front": "her·stellen",
+        "sub": "hat hergestellt",
+        "english": "to produce, to manufacture",
+        "example": "Die Firma stellt Taschen aus alten Stoffen her.",
+        "exampleEn": "The company makes bags from old fabrics.",
+        "note": "trennbar: Sie stellt … her · der Hersteller = manufacturer",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 11"
+      },
+      {
+        "type": "v",
+        "front": "organisieren",
+        "sub": "hat organisiert",
+        "english": "to organize",
+        "example": "Wer organisiert die Weihnachtsfeier?",
+        "exampleEn": "Who is organizing the Christmas party?",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 11"
+      },
+      {
+        "type": "v",
+        "front": "verwenden",
+        "sub": "hat verwendet",
+        "english": "to use",
+        "example": "Wir verwenden nur alte Materialien.",
+        "exampleEn": "We only use old materials.",
+        "note": "≈ benutzen",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 11"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Briefumschlag",
+        "sub": "Pl. ¨-e · A: das Kuvert, -s · CH: das Couvert, -s",
+        "english": "envelope",
+        "example": "Ich stecke den Brief in den Briefumschlag.",
+        "exampleEn": "I put the letter in the envelope.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 11"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Handtasche",
+        "sub": "Pl. -n",
+        "english": "handbag",
+        "example": "Meine Handtasche ist aus altem Stoff.",
+        "exampleEn": "My handbag is made of old fabric.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 11"
+      },
+      {
+        "type": "v",
+        "front": "weg·werfen",
+        "sub": "du wirfst weg, er wirft weg · hat weggeworfen",
+        "english": "to throw away",
+        "example": "Wirf die alten Zeitungen nicht weg!",
+        "exampleEn": "Don't throw the old newspapers away!",
+        "note": "trennbar: Ich werfe … weg",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 11"
+      },
+      {
+        "type": "sonst",
+        "front": "Viel Erfolg!",
+        "sub": "",
+        "english": "Good luck! (for work, an exam, a project)",
+        "example": "Morgen ist deine Prüfung? Viel Erfolg!",
+        "exampleEn": "Your exam is tomorrow? Good luck!",
+        "note": "Erfolg = success you work for · Viel Erfolg bei … (+ Dat.)",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 11"
+      },
+      {
+        "type": "sonst",
+        "front": "Viel Glück!",
+        "sub": "",
+        "english": "Good luck!",
+        "example": "Du spielst Lotto? Viel Glück!",
+        "exampleEn": "You're playing the lottery? Good luck!",
+        "note": "Glück = luck, chance – and happiness",
+        "level": "A1",
+        "source": "Menschen A2 · Einheit 11"
+      },
+      {
+        "type": "v",
+        "front": "bedanken (sich)",
+        "sub": "hat sich bedankt",
+        "english": "to say thank you",
+        "example": "Ich möchte mich für die Einladung bedanken.",
+        "exampleEn": "I'd like to say thank you for the invitation.",
+        "note": "sich bedanken bei + Dat. für + Akk.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 11"
+      },
+      {
+        "type": "v",
+        "front": "wünschen",
+        "sub": "hat gewünscht",
+        "english": "to wish",
+        "example": "Ich wünsche dir alles Gute zum Geburtstag!",
+        "exampleEn": "I wish you all the best for your birthday!",
+        "note": "jemandem (Dat.) etwas (Akk.) wünschen",
+        "level": "A1",
+        "source": "Menschen A2 · Einheit 11"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Artikel",
+        "sub": "Pl. -",
+        "english": "article (newspaper); article (der, die, das)",
+        "example": "Hast du den Artikel in der Zeitung gelesen?",
+        "exampleEn": "Did you read the article in the newspaper?",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 11"
+      },
+      {
+        "type": "n",
+        "gender": "der/die",
+        "front": "der/die Erwachsene",
+        "sub": "Pl. -n · ein Erwachsener",
+        "english": "adult",
+        "example": "Für Erwachsene kostet der Eintritt zehn Euro.",
+        "exampleEn": "Admission is ten euros for adults.",
+        "note": "wie ein Adjektiv: der Erwachsene, ein Erwachsener, eine Erwachsene",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 11"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Grund",
+        "sub": "Pl. ¨-e",
+        "english": "reason",
+        "example": "Aus welchem Grund bist du nicht gekommen?",
+        "exampleEn": "For what reason didn't you come?",
+        "note": "aus diesem Grund = deshalb",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 11"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Meinung",
+        "sub": "Pl. -en",
+        "english": "opinion",
+        "example": "Was ist deine Meinung?",
+        "exampleEn": "What's your opinion?",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 11"
+      },
+      {
+        "type": "sonst",
+        "front": "meiner Meinung nach",
+        "sub": "",
+        "english": "in my opinion",
+        "example": "Meiner Meinung nach ist das zu teuer.",
+        "exampleEn": "In my opinion, that's too expensive.",
+        "note": "nach steht hinten · danach kommt das Verb: Meiner Meinung nach ist …",
+        "grammar": [
+          "wortstellung-hauptsatz",
+          "praep-dativ"
+        ],
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 11"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Schmuck",
+        "sub": "kein Plural",
+        "english": "jewelry",
+        "example": "Sie trägt gern Schmuck aus Silber.",
+        "exampleEn": "She likes wearing silver jewelry.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 11"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Stoff",
+        "sub": "Pl. -e",
+        "english": "fabric, material",
+        "example": "Die Tasche ist aus Stoff.",
+        "exampleEn": "The bag is made of fabric.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 11"
+      },
+      {
+        "type": "v",
+        "front": "erinnern (sich)",
+        "sub": "hat sich erinnert",
+        "english": "to remember",
+        "example": "Erinnerst du dich an unseren Urlaub?",
+        "exampleEn": "Do you remember our vacation?",
+        "note": "sich erinnern an + Akk.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 11"
+      },
+      {
+        "type": "v",
+        "front": "fühlen (sich)",
+        "sub": "hat sich gefühlt",
+        "english": "to feel",
+        "example": "Ich fühle mich heute nicht so gut.",
+        "exampleEn": "I don't feel so good today.",
+        "note": "Ich fühle mich stark / müde / wohl.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 11"
+      },
+      {
+        "type": "v",
+        "front": "streiten (sich)",
+        "sub": "stritt · hat sich gestritten",
+        "english": "to argue, to quarrel",
+        "example": "Die Kinder streiten sich schon wieder.",
+        "exampleEn": "The kids are arguing again.",
+        "note": "sich streiten mit + Dat. über + Akk. · der Streit",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 11"
+      },
+      {
+        "type": "v",
+        "front": "unterhalten (sich)",
+        "sub": "du unterhältst dich, er unterhält sich · hat sich unterhalten",
+        "english": "to talk, to chat",
+        "example": "Wir haben uns lange über den Film unterhalten.",
+        "exampleEn": "We talked about the film for a long time.",
+        "note": "sich unterhalten mit + Dat. über + Akk. · Partizip = Infinitiv",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 11"
+      },
+      {
+        "type": "v",
+        "front": "verlieren",
+        "sub": "hat verloren",
+        "english": "to lose",
+        "example": "Ich habe meinen Schlüssel verloren.",
+        "exampleEn": "I've lost my key.",
+        "note": "↔ finden · ein Spiel verlieren ↔ gewinnen",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 11"
+      },
+      {
+        "type": "adj",
+        "front": "froh",
+        "sub": "↔ traurig",
+        "english": "glad, happy",
+        "example": "Ich bin froh, dass du da bist.",
+        "exampleEn": "I'm glad you're here.",
+        "note": "Frohe Weihnachten! = Merry Christmas!",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 11"
+      },
+      {
+        "type": "adj",
+        "front": "jung",
+        "sub": "↔ alt",
+        "english": "young",
+        "example": "Meine Schwester ist noch sehr jung.",
+        "exampleEn": "My sister is still very young.",
+        "note": "jünger – am jüngsten",
+        "grammar": [
+          "komparativ-superlativ"
+        ],
+        "level": "A1",
+        "source": "Menschen A2 · Einheit 11"
+      },
+      {
+        "type": "adj",
+        "front": "schrecklich",
+        "sub": "↔ wunderbar",
+        "english": "terrible, awful",
+        "example": "Das Wetter ist heute schrecklich.",
+        "exampleEn": "The weather is terrible today.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 11"
+      },
+      {
+        "type": "adj",
+        "front": "stark",
+        "sub": "↔ schwach",
+        "english": "strong",
+        "example": "Nach dem Training fühle ich mich stark.",
+        "exampleEn": "After training I feel strong.",
+        "note": "stärker – am stärksten",
+        "grammar": [
+          "komparativ-superlativ"
+        ],
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 11"
+      },
+      {
+        "type": "adj",
+        "front": "willkommen",
+        "sub": "Herzlich willkommen!",
+        "english": "welcome",
+        "example": "Herzlich willkommen in unserer Firma!",
+        "exampleEn": "Welcome to our company!",
+        "level": "A1",
+        "source": "Menschen A2 · Einheit 11"
+      }
+    ]
+  },
+  {
     "key": "persoenlich",
     "icon": "⭐",
     "label": "Meine Wörter",

@@ -148,7 +148,9 @@ describe("buildGrammarIndex", () => {
   });
 
   it("has no entry for topics nothing links to", () => {
-    expect(wordsByTopic["wortstellung-hauptsatz"]).toBeUndefined();
+    const { wordsByTopic: words } = buildGrammarIndex([{ deck: "x", type: "adj", front: "gemeinsam" }], GRAMMAR_TOPICS);
+    expect(words).toEqual({});
+    expect(Object.values(wordsByTopic).every((list) => list.length > 0)).toBe(true);
   });
 });
 
