@@ -97,6 +97,8 @@ learner's own single words go.
   after a dot: `Pl. -n · CH: der Krug, ¨-e`, `Pl. -e · A: das Gasthaus, ¨-er`
 - verbs: the Perfekt form, `hat reserviert` / `ist gesunken`, or `ritt · ist geritten`
   (a `hat …`/`ist …` sub links the verb to the Perfekt topic automatically)
+  Every verb needs one – a test checks it. Modal verbs show the Präteritum instead
+  (`konnte`) and carry `"grammar": ["modalverben"]`.
 - adjectives: an opposite as `↔ unangenehm`
 - phrases: alternatives as `auch: Ich nehme …`
 

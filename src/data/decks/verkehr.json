@@ -187,14 +187,15 @@
   {
     "type": "v",
     "front": "dürfen",
-    "sub": "ich darf, du darfst, er darf",
+    "sub": "ich darf, du darfst, er darf · durfte",
     "english": "to be allowed to / may",
     "example": "Darf ich hier sitzen?",
     "exampleEn": "May I sit here?",
     "level": "A1",
     "grammar": [
       "modalverben"
-    ]
+    ],
+    "note": "Vergangenheit meist Präteritum: ich durfte"
   },
   {
     "type": "v",
@@ -217,14 +218,15 @@
   {
     "type": "v",
     "front": "müssen",
-    "sub": "ich muss, du musst, er muss",
+    "sub": "ich muss, du musst, er muss · musste",
     "english": "must / to have to",
     "example": "Ich muss langsam fahren.",
     "exampleEn": "I have to drive slowly.",
     "level": "A1",
     "grammar": [
       "modalverben"
-    ]
+    ],
+    "note": "Vergangenheit meist Präteritum: ich musste"
   },
   {
     "type": "v",

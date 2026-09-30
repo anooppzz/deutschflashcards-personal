@@ -344,12 +344,56 @@
             "en": "The singular often changes the vowel: können → ich k**a**nn, müssen → ich m**u**ss."
           }
         ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Vergangenheit: Präteritum", "en": "Past tense: Präteritum"},
+        "head": [{"de": "Modalverb", "en": "Modal verb"}, "ich / er / sie", {"de": "Perfekt (selten)", "en": "Perfekt (rare)"}],
+        "rows": [
+          ["können", "k**o**nn**te**", "hat gekonnt"],
+          ["müssen", "m**u**ss**te**", "hat gemusst"],
+          ["dürfen", "d**u**rf**te**", "hat gedurft"],
+          ["wollen", "woll**te**", "hat gewollt"],
+          ["sollen", "soll**te**", "hat gesollt"],
+          ["mögen", "m**och**te", "hat gemocht"],
+          ["möchten", "**wollte**", "–"]
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "So merkst du es dir", "en": "How to remember"},
+        "items": [
+          {
+            "de": "Für die Vergangenheit von Modalverben nimmt man fast immer das **Präteritum**: Ich **musste** gestern arbeiten.",
+            "en": "For the past of modal verbs you almost always use the **Präteritum**: Ich **musste** gestern arbeiten (I had to work yesterday)."
+          },
+          {
+            "de": "Präteritum = Stamm **ohne Umlaut** + **-te**: können → k**o**nnte, müssen → m**u**sste.",
+            "en": "Präteritum = stem **without umlaut** + **-te**: können → k**o**nnte, müssen → m**u**sste."
+          },
+          {
+            "de": "Endungen: ich konnte, du konnte**st**, er konnte, wir konnte**n**, ihr konnte**t**, sie konnte**n** – ich und er sind wieder gleich.",
+            "en": "Endings: ich konnte, du konnte**st**, er konnte, wir konnte**n**, ihr konnte**t**, sie konnte**n** – ich and er are the same again."
+          },
+          {
+            "de": "„hat gekonnt“ usw. nur **ohne** zweites Verb: Ich habe das nicht gekonnt.",
+            "en": "\"hat gekonnt\" etc. only **without** a second verb: Ich habe das nicht gekonnt (I couldn't do it)."
+          }
+        ]
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "**möchten** hat keine Vergangenheit – nimm **wollte**: Ich möchte Kaffee → Ich wollte Kaffee. ❌ Ich möchtete",
+          "en": "**möchten** has no past form – use **wollte**: Ich möchte Kaffee → Ich wollte Kaffee (I wanted coffee). ❌ Ich möchtete"
+        }
       }
     ],
     "examples": [
       {"de": "Ich kann heute nicht kommen.", "en": "I can't come today."},
       {"de": "Du musst das Formular ausfüllen.", "en": "You have to fill out the form."},
-      {"de": "Darf ich hier parken?", "en": "May I park here?"}
+      {"de": "Darf ich hier parken?", "en": "May I park here?"},
+      {"de": "Gestern konnte ich nicht kommen – ich musste arbeiten.", "en": "Yesterday I couldn't come – I had to work."}
     ]
   },
   {

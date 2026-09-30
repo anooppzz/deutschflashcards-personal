@@ -113,6 +113,18 @@ describe("real data", () => {
     const rules = GRAMMAR_TOPICS.flatMap((t) => (Array.isArray(t.match) ? t.match : t.match ? [t.match] : []));
     for (const r of rules) if (r.subPattern) expect(() => new RegExp(r.subPattern)).not.toThrow();
   });
+
+  it("every verb card shows its Perfekt (modal verbs: the Modalverben topic instead)", () => {
+    const missing = ALL_CARDS.filter((c) => c.type === "v")
+      .filter((c) => !keysFor(c).some((k) => k === "perfekt" || k === "modalverben"))
+      .map((c) => `${c.deck}/${c.front}`);
+    expect(missing).toEqual([]);
+  });
+
+  it("irregular verbs show hat or ist before the Partizip II", () => {
+    const bad = ALL_CARDS.filter((c) => c.deck === "irregular" && !/ · (hat|ist) ge\S+$/.test(c.sub)).map((c) => c.sub);
+    expect(bad).toEqual([]);
+  });
 });
 
 describe("buildGrammarIndex", () => {

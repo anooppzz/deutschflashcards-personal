@@ -193,7 +193,7 @@
       {
         "type": "v",
         "front": "kommen aus …",
-        "sub": "",
+        "sub": "ist gekommen",
         "english": "to come from …",
         "example": "Ich komme aus Deutschland.",
         "exampleEn": "I come from Germany.",
@@ -286,7 +286,7 @@
       {
         "type": "v",
         "front": "buchstabieren",
-        "sub": "",
+        "sub": "hat buchstabiert",
         "english": "to spell",
         "example": "Können Sie bitte Ihren Namen buchstabieren?",
         "exampleEn": "Could you please spell your name?",
@@ -440,7 +440,7 @@
       {
         "type": "v",
         "front": "arbeiten als/bei …",
-        "sub": "",
+        "sub": "hat gearbeitet",
         "english": "to work as / at",
         "example": "Ich arbeite als Lehrer an einer Schule.",
         "exampleEn": "I work as a teacher at a school.",
@@ -449,7 +449,7 @@
       {
         "type": "v",
         "front": "studieren",
-        "sub": "",
+        "sub": "hat studiert",
         "english": "to study (university)",
         "example": "Sie studiert Medizin in Berlin.",
         "exampleEn": "She is studying medicine in Berlin.",
@@ -683,7 +683,7 @@
       {
         "type": "v",
         "front": "leben",
-        "sub": "",
+        "sub": "hat gelebt",
         "english": "to live",
         "example": "Ich lebe seit fünf Jahren hier.",
         "exampleEn": "I have lived here for five years.",
@@ -692,7 +692,7 @@
       {
         "type": "v",
         "front": "allein leben",
-        "sub": "",
+        "sub": "hat allein gelebt",
         "english": "to live alone",
         "example": "Er lebt allein in einer kleinen Wohnung.",
         "exampleEn": "He lives alone in a small apartment.",
@@ -701,7 +701,7 @@
       {
         "type": "v",
         "front": "zusammenleben",
-        "sub": "",
+        "sub": "hat zusammengelebt",
         "english": "to live together",
         "example": "Wir leben seit drei Jahren zusammen.",
         "exampleEn": "We have lived together for three years.",
@@ -710,7 +710,7 @@
       {
         "type": "v",
         "front": "wohnen in",
-        "sub": "",
+        "sub": "hat gewohnt",
         "english": "to live / reside in",
         "example": "Sie wohnt in Hamburg.",
         "exampleEn": "She lives in Hamburg.",
@@ -746,7 +746,7 @@
       {
         "type": "v",
         "front": "glauben",
-        "sub": "",
+        "sub": "hat geglaubt",
         "english": "to believe",
         "example": "Ich glaube, das ist richtig.",
         "exampleEn": "I believe that's correct.",
@@ -759,16 +759,17 @@
       {
         "type": "v",
         "front": "haben",
-        "sub": "",
+        "sub": "hatte · hat gehabt",
         "english": "to have",
         "example": "Wir haben heute keine Zeit.",
         "exampleEn": "We don't have time today.",
-        "level": "A1"
+        "level": "A1",
+        "note": "Vergangenheit meist Präteritum: ich hatte"
       },
       {
         "type": "v",
         "front": "machen",
-        "sub": "",
+        "sub": "hat gemacht",
         "english": "to do / make",
         "example": "Was machst du am Wochenende?",
         "exampleEn": "What are you doing on the weekend?",
@@ -1400,7 +1401,7 @@
       {
         "type": "v",
         "front": "kosten",
-        "sub": "",
+        "sub": "hat gekostet",
         "english": "to cost",
         "example": "Wie viel kostet das Sofa?",
         "exampleEn": "How much does the sofa cost?",
@@ -1456,7 +1457,7 @@
       {
         "type": "v",
         "front": "brauchen",
-        "sub": "",
+        "sub": "hat gebraucht",
         "english": "to need",
         "example": "Ich brauche ein neues Sofa.",
         "exampleEn": "I need a new sofa.",
@@ -1465,7 +1466,7 @@
       {
         "type": "v",
         "front": "finden",
-        "sub": "",
+        "sub": "hat gefunden",
         "english": "to find",
         "example": "Wir finden das Sofa sehr bequem.",
         "exampleEn": "We find the sofa very comfortable.",
@@ -1477,7 +1478,7 @@
       {
         "type": "v",
         "front": "sagen",
-        "sub": "",
+        "sub": "hat gesagt",
         "english": "to say",
         "example": "Kannst du mir bitte die Wahrheit sagen?",
         "exampleEn": "Can you please tell me the truth?",
@@ -2022,16 +2023,16 @@
       {
         "type": "v",
         "front": "bieten",
-        "sub": "",
+        "sub": "hat geboten",
         "english": "to offer",
-        "example": "Das Geschäft bietet viele Produkte an.",
-        "exampleEn": "The store offers many products.",
+        "example": "Die Stadt bietet viele Möglichkeiten.",
+        "exampleEn": "The city offers many opportunities.",
         "level": "A2"
       },
       {
         "type": "v",
         "front": "schreiben",
-        "sub": "",
+        "sub": "hat geschrieben",
         "english": "to write",
         "example": "Kannst du deinen Namen schreiben?",
         "exampleEn": "Can you write your name?",
@@ -2357,7 +2358,7 @@
       {
         "type": "v",
         "front": "suchen",
-        "sub": "",
+        "sub": "hat gesucht",
         "english": "to search / look for",
         "example": "Ich suche meinen Schlüssel.",
         "exampleEn": "I'm looking for my key.",
@@ -2485,7 +2486,7 @@
       {
         "type": "v",
         "front": "backen",
-        "sub": "",
+        "sub": "hat gebacken",
         "english": "to bake",
         "example": "Meine Mutter backt gern Kuchen.",
         "exampleEn": "My mother likes to bake cake.",
@@ -2494,7 +2495,7 @@
       {
         "type": "v",
         "front": "besuchen",
-        "sub": "",
+        "sub": "hat besucht",
         "english": "to visit",
         "example": "Wir besuchen unsere Großeltern am Sonntag.",
         "exampleEn": "We visit our grandparents on Sunday.",
@@ -2503,7 +2504,7 @@
       {
         "type": "v",
         "front": "fotografieren",
-        "sub": "",
+        "sub": "hat fotografiert",
         "english": "to photograph",
         "example": "Ich fotografiere gern die Natur.",
         "exampleEn": "I like to photograph nature.",
@@ -2512,7 +2513,7 @@
       {
         "type": "v",
         "front": "kochen",
-        "sub": "",
+        "sub": "hat gekocht",
         "english": "to cook",
         "example": "Mein Vater kocht jeden Abend.",
         "exampleEn": "My father cooks every evening.",
@@ -2521,7 +2522,7 @@
       {
         "type": "v",
         "front": "lieben",
-        "sub": "",
+        "sub": "hat geliebt",
         "english": "to love",
         "example": "Ich liebe klassische Musik.",
         "exampleEn": "I love classical music.",
@@ -2530,7 +2531,7 @@
       {
         "type": "v",
         "front": "malen",
-        "sub": "",
+        "sub": "hat gemalt",
         "english": "to paint",
         "example": "Sie malt gern Landschaften.",
         "exampleEn": "She likes to paint landscapes.",
@@ -2539,7 +2540,7 @@
       {
         "type": "v",
         "front": "Musik hören",
-        "sub": "die Musik",
+        "sub": "hat Musik gehört",
         "english": "to listen to music",
         "example": "Ich höre gern Musik beim Joggen.",
         "exampleEn": "I like to listen to music while jogging.",
@@ -2548,7 +2549,7 @@
       {
         "type": "v",
         "front": "Rad fahren",
-        "sub": "du fährst Rad · CH: Velo",
+        "sub": "du fährst Rad · ist Rad gefahren · CH: Velo",
         "english": "to cycle",
         "example": "Am Wochenende fahre ich gern Rad.",
         "exampleEn": "At the weekend I like to cycle.",
@@ -2557,7 +2558,7 @@
       {
         "type": "v",
         "front": "schwimmen",
-        "sub": "",
+        "sub": "ist geschwommen",
         "english": "to swim",
         "example": "Im Sommer gehen wir oft schwimmen.",
         "exampleEn": "In summer we often go swimming.",
@@ -2566,7 +2567,7 @@
       {
         "type": "v",
         "front": "spazieren gehen",
-        "sub": "",
+        "sub": "ist spazieren gegangen",
         "english": "to go for a walk",
         "example": "Wir gehen im Park spazieren.",
         "exampleEn": "We go for a walk in the park.",
@@ -2575,7 +2576,7 @@
       {
         "type": "v",
         "front": "Fußball/Tennis spielen",
-        "sub": "",
+        "sub": "hat Fußball gespielt",
         "english": "to play football / tennis",
         "example": "Mein Bruder spielt gern Fußball.",
         "exampleEn": "My brother likes to play football.",
@@ -2584,7 +2585,7 @@
       {
         "type": "v",
         "front": "Gitarre spielen",
-        "sub": "",
+        "sub": "hat Gitarre gespielt",
         "english": "to play guitar",
         "example": "Er kann sehr gut Gitarre spielen.",
         "exampleEn": "He can play guitar very well.",
@@ -2593,7 +2594,7 @@
       {
         "type": "v",
         "front": "tanzen",
-        "sub": "",
+        "sub": "hat getanzt",
         "english": "to dance",
         "example": "Sie tanzt jeden Freitag.",
         "exampleEn": "She dances every Friday.",
@@ -2696,7 +2697,7 @@
       {
         "type": "v",
         "front": "Spaß machen",
-        "sub": "",
+        "sub": "hat Spaß gemacht",
         "english": "to be fun",
         "example": "Dieses Spiel macht wirklich Spaß.",
         "exampleEn": "This game is really fun.",
@@ -2705,14 +2706,15 @@
       {
         "type": "v",
         "front": "können",
-        "sub": "",
+        "sub": "konnte",
         "english": "can / to be able",
         "example": "Kannst du mir bitte helfen?",
         "exampleEn": "Can you please help me?",
         "level": "A1",
         "grammar": [
           "modalverben"
-        ]
+        ],
+        "note": "Vergangenheit meist Präteritum: ich konnte"
       },
       {
         "type": "sonst",
@@ -2783,7 +2785,7 @@
       {
         "type": "v",
         "front": "rauchen",
-        "sub": "",
+        "sub": "hat geraucht",
         "english": "to smoke",
         "example": "Er raucht seit Jahren nicht mehr.",
         "exampleEn": "He hasn't smoked in years.",
@@ -3387,14 +3389,15 @@
       {
         "type": "v",
         "front": "wissen",
-        "sub": "",
+        "sub": "wusste · hat gewusst",
         "english": "to know (a fact)",
         "example": "Ich weiß die Antwort nicht.",
         "exampleEn": "I don't know the answer.",
         "level": "A1",
         "grammar": [
           "nebensatz"
-        ]
+        ],
+        "note": "Vergangenheit oft Präteritum: ich wusste"
       },
       {
         "type": "sonst",
@@ -3832,7 +3835,7 @@
       {
         "type": "v",
         "front": "frühstücken",
-        "sub": "",
+        "sub": "hat gefrühstückt",
         "english": "to have breakfast",
         "example": "Wir frühstücken um acht Uhr.",
         "exampleEn": "We have breakfast at eight o'clock.",
@@ -3841,7 +3844,7 @@
       {
         "type": "v",
         "front": "mögen",
-        "sub": "du magst, er mag",
+        "sub": "du magst, er mag · mochte · hat gemocht",
         "english": "to like",
         "example": "Ich mag keinen Fisch.",
         "exampleEn": "I don't like fish.",
@@ -3853,7 +3856,7 @@
       {
         "type": "v",
         "front": "schmecken",
-        "sub": "CH: fein sein",
+        "sub": "hat geschmeckt · CH: fein sein",
         "english": "to taste",
         "example": "Die Suppe schmeckt sehr gut.",
         "exampleEn": "The soup tastes very good.",
@@ -3913,19 +3916,20 @@
       {
         "type": "v",
         "front": "möchten",
-        "sub": "",
+        "sub": "Vergangenheit: wollte",
         "english": "would like",
         "example": "Ich möchte gern einen Kaffee.",
         "exampleEn": "I would like a coffee.",
         "level": "A1",
         "grammar": [
           "modalverben"
-        ]
+        ],
+        "note": "kein eigenes Perfekt – Vergangenheit: ich wollte"
       },
       {
         "type": "v",
         "front": "kennen",
-        "sub": "",
+        "sub": "hat gekannt",
         "english": "to know (acquainted)",
         "example": "Ich kenne dieses Restaurant nicht.",
         "exampleEn": "I don't know this restaurant.",
@@ -4141,7 +4145,7 @@
       {
         "type": "v",
         "front": "abfahren",
-        "sub": "du fährst ab",
+        "sub": "du fährst ab · ist abgefahren",
         "english": "to depart",
         "example": "Der Zug fährt gleich ab.",
         "exampleEn": "The train is about to depart.",
@@ -4150,7 +4154,7 @@
       {
         "type": "v",
         "front": "abholen",
-        "sub": "",
+        "sub": "hat abgeholt",
         "english": "to pick up",
         "example": "Kannst du mich vom Bahnhof abholen?",
         "exampleEn": "Can you pick me up from the train station?",
@@ -4159,7 +4163,7 @@
       {
         "type": "v",
         "front": "ankommen",
-        "sub": "",
+        "sub": "ist angekommen",
         "english": "to arrive",
         "example": "Wann kommt der nächste Zug an?",
         "exampleEn": "When does the next train arrive?",
@@ -4168,7 +4172,7 @@
       {
         "type": "v",
         "front": "aussteigen",
-        "sub": "",
+        "sub": "ist ausgestiegen",
         "english": "to get off",
         "example": "Wir steigen an der nächsten Haltestelle aus.",
         "exampleEn": "We're getting off at the next stop.",
@@ -4177,7 +4181,7 @@
       {
         "type": "v",
         "front": "einsteigen",
-        "sub": "",
+        "sub": "ist eingestiegen",
         "english": "to get on",
         "example": "Wir steigen jetzt in den Bus ein.",
         "exampleEn": "We're getting on the bus now.",
@@ -4186,7 +4190,7 @@
       {
         "type": "v",
         "front": "umsteigen",
-        "sub": "",
+        "sub": "ist umgestiegen",
         "english": "to change (transport)",
         "example": "Sie müssen am Hauptbahnhof umsteigen.",
         "exampleEn": "You have to change trains at the main station.",
@@ -4237,7 +4241,7 @@
       {
         "type": "v",
         "front": "anrufen",
-        "sub": "",
+        "sub": "hat angerufen",
         "english": "to call (phone)",
         "example": "Ich rufe dich später an.",
         "exampleEn": "I'll call you later.",
@@ -4246,7 +4250,7 @@
       {
         "type": "v",
         "front": "einkaufen",
-        "sub": "",
+        "sub": "hat eingekauft",
         "english": "to shop",
         "example": "Wir gehen am Samstag einkaufen.",
         "exampleEn": "We're going shopping on Saturday.",
@@ -4255,7 +4259,7 @@
       {
         "type": "v",
         "front": "mitbringen",
-        "sub": "",
+        "sub": "hat mitgebracht",
         "english": "to bring along",
         "example": "Kannst du bitte Brot mitbringen?",
         "exampleEn": "Can you please bring some bread?",
@@ -4267,7 +4271,7 @@
       {
         "type": "v",
         "front": "fernsehen",
-        "sub": "du siehst fern",
+        "sub": "du siehst fern · hat ferngesehen",
         "english": "to watch TV",
         "example": "Am Abend sehe ich gern fern.",
         "exampleEn": "In the evening I like to watch TV.",
@@ -4399,7 +4403,7 @@
       {
         "type": "v",
         "front": "einladen",
-        "sub": "du lädst ein, er lädt ein",
+        "sub": "du lädst ein, er lädt ein · hat eingeladen",
         "english": "to invite",
         "example": "Wir laden dich zur Party ein.",
         "exampleEn": "We're inviting you to the party.",
@@ -4408,7 +4412,7 @@
       {
         "type": "v",
         "front": "kaufen",
-        "sub": "",
+        "sub": "hat gekauft",
         "english": "to buy",
         "example": "Ich kaufe frisches Brot beim Bäcker.",
         "exampleEn": "I buy fresh bread at the bakery.",
@@ -4417,7 +4421,7 @@
       {
         "type": "v",
         "front": "lachen",
-        "sub": "",
+        "sub": "hat gelacht",
         "english": "to laugh",
         "example": "Die Kinder lachen viel.",
         "exampleEn": "The children laugh a lot.",
@@ -4426,7 +4430,7 @@
       {
         "type": "v",
         "front": "lernen",
-        "sub": "",
+        "sub": "hat gelernt",
         "english": "to learn / study",
         "example": "Ich lerne seit einem Jahr Deutsch.",
         "exampleEn": "I've been learning German for a year.",
@@ -4435,7 +4439,7 @@
       {
         "type": "v",
         "front": "reden",
-        "sub": "",
+        "sub": "hat geredet",
         "english": "to talk",
         "example": "Wir reden oft über die Arbeit.",
         "exampleEn": "We often talk about work.",
@@ -4583,7 +4587,7 @@
       {
         "type": "v",
         "front": "meinen",
-        "sub": "",
+        "sub": "hat gemeint",
         "english": "to mean / think",
         "example": "Was meinst du dazu?",
         "exampleEn": "What do you think about that?",
@@ -4897,7 +4901,7 @@
       {
         "type": "v",
         "front": "anfangen",
-        "sub": "du fängst an",
+        "sub": "du fängst an · hat angefangen",
         "english": "to begin",
         "example": "Der Film fängt um acht Uhr an.",
         "exampleEn": "The film starts at eight o'clock.",
@@ -5422,7 +5426,7 @@
       {
         "type": "v",
         "front": "anmachen",
-        "sub": "A: einschalten",
+        "sub": "hat angemacht · A: einschalten",
         "english": "to turn on",
         "example": "Kannst du bitte das Licht anmachen?",
         "exampleEn": "Can you please turn on the light?",
@@ -5431,7 +5435,7 @@
       {
         "type": "v",
         "front": "fragen",
-        "sub": "",
+        "sub": "hat gefragt",
         "english": "to ask",
         "example": "Darf ich dich etwas fragen?",
         "exampleEn": "May I ask you something?",
@@ -5440,7 +5444,7 @@
       {
         "type": "v",
         "front": "stimmen",
-        "sub": "",
+        "sub": "hat gestimmt",
         "english": "to be correct",
         "example": "Das stimmt nicht ganz.",
         "exampleEn": "That's not quite correct.",
@@ -6036,7 +6040,7 @@
       {
         "type": "v",
         "front": "Bescheid sagen",
-        "sub": "",
+        "sub": "hat Bescheid gesagt",
         "english": "to let sb know",
         "example": "Bitte sagen Sie mir Bescheid.",
         "exampleEn": "Please let me know.",
@@ -6045,7 +6049,7 @@
       {
         "type": "v",
         "front": "Hilfe rufen",
-        "sub": "",
+        "sub": "hat Hilfe gerufen",
         "english": "to call for help",
         "example": "Sie musste Hilfe rufen.",
         "exampleEn": "She had to call for help.",
@@ -6133,7 +6137,7 @@
       {
         "type": "v",
         "front": "absagen",
-        "sub": "Termine absagen",
+        "sub": "Termine absagen · hat abgesagt",
         "english": "to cancel",
         "example": "Ich muss den Termin leider absagen.",
         "exampleEn": "I unfortunately have to cancel the appointment.",
@@ -6160,7 +6164,7 @@
       {
         "type": "v",
         "front": "passen",
-        "sub": "Passt es dir?",
+        "sub": "Passt es dir? · hat gepasst",
         "english": "to suit / be convenient",
         "example": "Passt dir Montag um zehn Uhr?",
         "exampleEn": "Does Monday at ten o'clock suit you?",
@@ -6487,14 +6491,15 @@
       {
         "type": "v",
         "front": "wollen",
-        "sub": "ich will, du willst",
+        "sub": "ich will, du willst · wollte",
         "english": "to want",
         "example": "Ich will nächstes Jahr studieren.",
         "exampleEn": "I want to study next year.",
         "level": "A1",
         "grammar": [
           "modalverben"
-        ]
+        ],
+        "note": "Vergangenheit meist Präteritum: ich wollte"
       },
       {
         "type": "sonst",
@@ -10144,7 +10149,7 @@
       {
         "type": "v",
         "front": "stimmen",
-        "sub": "Stimmt so!",
+        "sub": "Stimmt so! · hat gestimmt",
         "english": "to be right · Stimmt so! = keep the change",
         "example": "Das macht 18,50 Euro. – Hier sind 20 Euro. Stimmt so!",
         "exampleEn": "That's 18.50 euros. – Here's 20 euros. Keep the change!",
@@ -10154,7 +10159,7 @@
       {
         "type": "v",
         "front": "zusammen zahlen",
-        "sub": "↔ getrennt zahlen",
+        "sub": "↔ getrennt zahlen · hat zusammen gezahlt",
         "english": "to pay together",
         "example": "Wir möchten bitte zusammen zahlen.",
         "exampleEn": "We'd like to pay together, please.",
@@ -10164,7 +10169,7 @@
       {
         "type": "v",
         "front": "getrennt zahlen",
-        "sub": "↔ zusammen zahlen",
+        "sub": "↔ zusammen zahlen · hat getrennt gezahlt",
         "english": "to pay separately",
         "example": "Können wir bitte getrennt zahlen?",
         "exampleEn": "Can we pay separately, please?",
@@ -10681,6 +10686,16 @@
         "grammar": [
           "konnektoren-adverbien"
         ]
+      },
+      {
+        "type": "v",
+        "front": "streiten",
+        "sub": "stritt · hat gestritten",
+        "english": "to argue, to quarrel",
+        "example": "Die Kinder streiten sich schon wieder.",
+        "exampleEn": "The kids are arguing again.",
+        "note": "oft sich streiten (mit + Dat., über + Akk.) · der Streit = the argument",
+        "level": "A2"
       }
     ]
   }

@@ -18,6 +18,22 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 ## Log
 
+### 2026-09-30
+- **Perfekt on every verb card** (the learner asked whether Partizip II and Perfekt are
+  on the cards). Before, the irregular deck showed the Partizip II without *hat/ist*, and
+  70 chapter verbs showed no Perfekt at all.
+  - Irregular deck: new field `hilfsverb`; cards now read *fuhr · ist gefahren*
+    (7 with *ist*: fallen, fahren, wachsen, fliegen, bleiben, steigen, gehen).
+  - 70 chapter verbs got their Perfekt in `sub` (e.g. *ist angekommen*, *hat eingekauft*,
+    *hatte · hat gehabt*, *wusste · hat gewusst*), so they also link to the Perfekt topic.
+  - Modal verbs show the Präteritum instead (*konnte*, *wollte*, *durfte*, *musste*;
+    *möchten* → *wollte*). The Modalverben topic got a past-tense table, "how to
+    remember" bullets and a *möchten* warning.
+  - New tests: every verb links to Perfekt or Modalverben; irregular subs show hat/ist.
+  - Fixed the *bieten* example (it used *anbieten*: "bietet … an").
+- *streiten* added to Meine Wörter (*stritt · hat gestritten*, note: *sich streiten mit /
+  über*, *der Streit*).
+
 ### 2026-09-29
 - **Textbook page "Deshalb, sonst, dann, danach – Hauptsätze verbinden (Position 1)"**
   was already covered by the Konnektoren topic (key `konnektoren-adverbien`), so it was

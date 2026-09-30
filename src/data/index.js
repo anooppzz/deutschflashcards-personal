@@ -43,7 +43,7 @@ export const EXTRA_BY_KEY = Object.fromEntries(EXTRA_TOPICS.map((t) => [t.key, t
 // inseparable decks get the same `sub` text their cards display. Used to
 // link cards to grammar topics (both directions) - see engine/grammarLinks.js.
 export const ALL_CARDS = [
-  ...IRREGULAR_VERBS.map((v) => ({ deck: "irregular", front: v.infinitiv, type: "v", english: v.english, sub: `${v.präteritum} · ${v.partizip}`, grammar: v.grammar })),
+  ...IRREGULAR_VERBS.map((v) => ({ deck: "irregular", front: v.infinitiv, type: "v", english: v.english, sub: `${v.präteritum} · ${v.hilfsverb} ${v.partizip}`, grammar: v.grammar })),
   ...INSEPARABLE_VERBS.map((v) => ({ deck: "inseparable", front: v.infinitiv, type: "v", english: v.english, sub: `hat ${v.partizip}`, grammar: v.grammar })),
   ...[["haushalt", HAUSHALT], ["verkehr", VERKEHR], ["kleidung", KLEIDUNG]].flatMap(([deck, cards]) =>
     cards.map((w) => ({ deck, front: w.front, type: w.type, gender: w.gender, english: w.english, sub: w.sub, grammar: w.grammar }))),

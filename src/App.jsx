@@ -106,7 +106,7 @@ const GRAMMAR_INDEX = buildGrammarIndex(ALL_CARDS, GRAMMAR_TOPICS);
 const grammarLinksById = (id) => GRAMMAR_INDEX.linksById[id] || [];
 
 function normalizeCard(deckKey, c) {
-  // irregular verbs: { group, infinitiv, präteritum, partizip, english, example }
+  // irregular verbs: { group, infinitiv, präteritum, hilfsverb, partizip, english, example }
   if (deckKey === "irregular") {
     const normalizedIrregular = {
       deck: deckKey,
@@ -116,6 +116,7 @@ function normalizeCard(deckKey, c) {
       example: c.example,
       conjugation: {
         präteritum: c.präteritum,
+        hilfsverb: c.hilfsverb,
         partizip: c.partizip,
         group: c.group,
       },
@@ -1459,7 +1460,7 @@ function App() {
               <>
                 <FlipCard
                   front={irrVerb.infinitiv}
-                  sub={`${irrVerb.präteritum} · ${irrVerb.partizip}`}
+                  sub={`${irrVerb.präteritum} · ${irrVerb.hilfsverb} ${irrVerb.partizip}`}
                   back={irrVerb.english}
                   example={irrVerb.example}
                   accent={GROUP_COLORS[irrVerb.group] || "#4f86c6"}
