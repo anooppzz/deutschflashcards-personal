@@ -15,13 +15,20 @@ was done, newest first. Every change adds a log entry here in the same commit
 - [ ] Ideas, not requested yet: tapping a word under "Deine Wörter" could open its card
   (now it only speaks it); grammar text exists only in German and English (other app
   languages fall back to English).
-- [ ] Offered, not requested yet: a grammar topic "Reflexive Verben" (sich freuen,
-  sich erinnern an, sich streiten mit … – about 12 cards would link) and "Verben mit
-  Präposition".
+- [ ] Offered, not requested yet: a grammar topic "Verben mit Präposition" (warten auf,
+  denken an, sprechen über …).
+- [ ] Asked, no answer yet: remove *streiten* from Meine Wörter now that
+  *streiten (sich)* is in Firma & Produkte? (Kept both until the learner says so.)
 
 ## Log
 
 ### 2026-09-30
+- **Grammar topic "Reflexive Verben"** (`reflexive-verben`, group Verben, after
+  Modalverben): pronoun table (Akk./Dat.), how to remember, the learner's 12 verbs with
+  their prepositions and cases, where *sich* goes (7 sentence types), with/without *sich*,
+  two ⚠️ pitfalls. Rule: verbs whose sub has "hat sich …" link automatically; hand tags
+  on *anmelden*, *sich Sorgen machen*, *entschuldigen*, *streiten* (Meine Wörter).
+  16 words linked. Fixed *kümmern (sich)*: "hat gekümmert" → "hat sich gekümmert".
 - **Chapter "Firma & Produkte"** 🏢 (`firma-produkte`, Menschen A2 · Einheit 11,
   Lernwortschatz page): 31 cards – In der Firma, Produkte, Glückwünsche, weitere
   wichtige Wörter. The page names no chapter title, so the label is by content.

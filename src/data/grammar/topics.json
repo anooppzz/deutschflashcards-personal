@@ -397,6 +397,125 @@
     ]
   },
   {
+    "key": "reflexive-verben",
+    "level": "A2",
+    "group": {"de": "Verben", "en": "Verbs"},
+    "title": {"de": "Reflexive Verben: sich freuen, sich erinnern", "en": "Reflexive Verbs: sich freuen, sich erinnern"},
+    "summary": {
+      "de": "Das Reflexivpronomen passt zur Person: ich freue **mich**, du freust **dich**, er freut **sich**.",
+      "en": "The reflexive pronoun matches the person: ich freue **mich**, du freust **dich**, er freut **sich**."
+    },
+    "sections": [
+      {
+        "type": "table",
+        "title": {"de": "Reflexivpronomen", "en": "Reflexive pronouns"},
+        "head": [{"de": "Person", "en": "Person"}, "Akkusativ", "Dativ", {"de": "Beispiel", "en": "Example"}],
+        "rows": [
+          ["ich", "**mich**", "**mir**", "ich freue **mich**"],
+          ["du", "**dich**", "**dir**", "du freust **dich**"],
+          ["er/sie/es", "**sich**", "**sich**", "er freut **sich**"],
+          ["wir", "uns", "uns", "wir freuen uns"],
+          ["ihr", "euch", "euch", "ihr freut euch"],
+          ["sie/Sie", "**sich**", "**sich**", "Sie freuen **sich**"]
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "So merkst du es dir", "en": "How to remember"},
+        "items": [
+          {
+            "de": "Nur **ich** und **du** haben eigene Formen (mich, dich). **wir / ihr** = uns / euch wie immer.",
+            "en": "Only **ich** and **du** have their own forms (mich, dich). **wir / ihr** = uns / euch as usual."
+          },
+          {
+            "de": "Alles in der 3. Person heißt **sich** – auch höflich: Freuen **Sie sich**? (sich klein!)",
+            "en": "Everything in the 3rd person is **sich** – polite Sie too: Freuen **Sie sich**? (sich in lower case!)"
+          },
+          {
+            "de": "**Dativ** (mir, dir) nur, wenn schon ein Akkusativ im Satz ist: Ich wasche **mich**. → Ich wasche **mir** die Hände.",
+            "en": "**Dative** (mir, dir) only when the sentence already has an accusative: Ich wasche **mich**. → Ich wasche **mir** die Hände."
+          },
+          {
+            "de": "Lerne das Verb immer **mit sich und Präposition**: sich freuen auf, sich erinnern an.",
+            "en": "Always learn the verb **with sich and its preposition**: sich freuen auf, sich erinnern an."
+          }
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Deine Verben mit Präposition", "en": "Your verbs with prepositions"},
+        "head": [{"de": "Verb", "en": "Verb"}, {"de": "Kasus", "en": "Case"}, {"de": "Bedeutung", "en": "Meaning"}],
+        "rows": [
+          ["sich freuen **auf**", "Akk.", {"de": "Zukunft: Vorfreude", "en": "look forward to"}],
+          ["sich freuen **über**", "Akk.", {"de": "jetzt / vorbei", "en": "be happy about"}],
+          ["sich erinnern **an**", "Akk.", {"de": "nicht vergessen", "en": "remember"}],
+          ["sich interessieren **für**", "Akk.", {"de": "Interesse haben", "en": "be interested in"}],
+          ["sich ärgern **über**", "Akk.", {"de": "böse sein", "en": "be annoyed about"}],
+          ["sich kümmern **um**", "Akk.", {"de": "sorgen für", "en": "take care of"}],
+          ["sich Sorgen machen **um**", "Akk.", {"de": "Angst haben um", "en": "worry about"}],
+          ["sich anmelden **für**", "Akk.", {"de": "für einen Kurs …", "en": "register for"}],
+          ["sich verabreden **mit**", "Dat.", {"de": "ein Treffen ausmachen", "en": "arrange to meet"}],
+          ["sich bedanken **bei** … **für**", "Dat. + Akk.", {"de": "Danke sagen", "en": "thank sb. for"}],
+          ["sich streiten **mit** … **über**", "Dat. + Akk.", {"de": "Streit haben", "en": "argue with sb. about"}],
+          ["sich unterhalten **mit** … **über**", "Dat. + Akk.", {"de": "reden", "en": "talk with sb. about"}]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Wo steht sich?", "en": "Where does sich go?"},
+        "head": [{"de": "Satz", "en": "Sentence"}, {"de": "Beispiel", "en": "Example"}],
+        "rows": [
+          [{"de": "Hauptsatz", "en": "Main clause"}, "Ich **freue mich** auf morgen."],
+          [{"de": "Frage / Inversion", "en": "Question / inversion"}, "Freust du **dich**? Heute freue ich **mich**."],
+          ["Perfekt", "Ich **habe mich** gefreut."],
+          [{"de": "Modalverb", "en": "Modal verb"}, "Ich muss **mich** beeilen."],
+          [{"de": "trennbar", "en": "Separable"}, "Ich ruhe **mich** aus."],
+          [{"de": "Nebensatz", "en": "Subordinate clause"}, "…, weil ich **mich** freue."],
+          [{"de": "Imperativ", "en": "Imperative"}, "Beeil **dich**! Freuen Sie **sich**!"]
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "Mit oder ohne sich?", "en": "With or without sich?"},
+        "items": [
+          {
+            "de": "Viele Verben gehen **mit und ohne** sich: Ich ärgere **mich**. / Ich ärgere **meinen Bruder**.",
+            "en": "Many verbs work **with and without** sich: Ich ärgere **mich** (I'm annoyed). / Ich ärgere **meinen Bruder** (I annoy my brother)."
+          },
+          {
+            "de": "Manche gibt es **nur mit** sich: sich beeilen, sich bedanken, sich erkälten, sich beschweren.",
+            "en": "Some exist **only with** sich: sich beeilen (hurry), sich bedanken (thank), sich erkälten (catch a cold), sich beschweren (complain)."
+          },
+          {
+            "de": "Im Englischen fehlt oft „myself“: sich freuen = be happy, sich erinnern = remember, sich fühlen = feel.",
+            "en": "English often has no \"myself\": sich freuen = be happy, sich erinnern = remember, sich fühlen = feel."
+          }
+        ]
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "❌ Ich freue **sich**. ✅ Ich freue **mich**. – **sich** nur für er / sie / es / sie / Sie.",
+          "en": "❌ Ich freue **sich**. ✅ Ich freue **mich**. – **sich** only for er / sie / es / sie / Sie."
+        }
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "Perfekt immer mit **haben**: Ich **habe mich** verletzt. ❌ Ich bin mich …",
+          "en": "Perfekt always with **haben**: Ich **habe mich** verletzt. ❌ Ich bin mich …"
+        }
+      }
+    ],
+    "examples": [
+      {"de": "Ich freue mich auf das Wochenende.", "en": "I'm looking forward to the weekend."},
+      {"de": "Erinnerst du dich an unseren Urlaub?", "en": "Do you remember our vacation?"},
+      {"de": "Wir haben uns lange über den Film unterhalten.", "en": "We talked about the film for a long time."},
+      {"de": "Meine Eltern machen sich Sorgen um mich.", "en": "My parents worry about me."}
+    ],
+    "match": [{"type": "v", "subPattern": "(^|[·,] )hat sich "}]
+  },
+  {
     "key": "komparativ-superlativ",
     "level": "A2",
     "group": {"de": "Adjektive", "en": "Adjectives"},

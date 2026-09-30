@@ -6079,7 +6079,7 @@
       {
         "type": "v",
         "front": "kümmern (sich)",
-        "sub": "hat gekümmert",
+        "sub": "hat sich gekümmert",
         "english": "to take care of",
         "example": "Ich kümmere mich um das Problem.",
         "exampleEn": "I'll take care of the problem.",
@@ -6468,7 +6468,10 @@
         "english": "to register / sign up",
         "example": "Ich muss mich für den Kurs anmelden.",
         "exampleEn": "I have to register for the course.",
-        "level": "A2"
+        "level": "A2",
+        "grammar": [
+          "reflexive-verben"
+        ]
       },
       {
         "type": "v",
@@ -9601,7 +9604,10 @@
         "example": "Meine Eltern machen sich Sorgen um mich.",
         "exampleEn": "My parents worry about me.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 8"
+        "source": "Menschen A2 · Einheit 8",
+        "grammar": [
+          "reflexive-verben"
+        ]
       },
       {
         "type": "n",
@@ -11055,7 +11061,10 @@
         "example": "Die Kinder streiten sich schon wieder.",
         "exampleEn": "The kids are arguing again.",
         "note": "oft sich streiten (mit + Dat., über + Akk.) · der Streit = the argument",
-        "level": "A2"
+        "level": "A2",
+        "grammar": [
+          "reflexive-verben"
+        ]
       }
     ]
   }

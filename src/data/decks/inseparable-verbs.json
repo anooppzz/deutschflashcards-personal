@@ -42,7 +42,10 @@
     "english": "to excuse / apologize",
     "example": "Er hat sich entschuldigt.",
     "exampleEn": "He apologized.",
-    "level": "A1"
+    "level": "A1",
+    "grammar": [
+      "reflexive-verben"
+    ]
   },
   {
     "infinitiv": "gehören",
