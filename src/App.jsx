@@ -29,7 +29,7 @@ import {
   GENDER_COLORS, TYPE_META, GROUP_COLORS,
   ROUND_SIZE, ARTICLE_SIZE_PRESETS, GOAL_PRESETS, REVIEW_SIZE,
   LANGUAGES, HELP_FLAGS,
-  MODE, MODE_TABS,
+  MODE, MODE_TABS, DAY_MS,
 } from "./constants";
 import {
   IRREGULAR_VERBS, INSEPARABLE_VERBS, HAUSHALT, VERKEHR, KLEIDUNG,
@@ -49,7 +49,7 @@ import {
 } from "./engine";
 import {
   FlipCard, Controls, NoResults, CategoryFilter,
-  StreakBar, ProgressBar, Modal, RoundSizeSelector, ErrorBoundary,
+  StreakBar, ProgressBar, Modal, RoundSizeSelector, ErrorBoundary, BackupModal,
   badgeStyle, ctrlBtn,
 } from "./components";
 import { ProgressCtx } from "./context/ProgressCtx";
@@ -801,6 +801,13 @@ function App() {
   // onboarding: welcome modal (first visit only) + always-available help panel
   const [showWelcome, setShowWelcome] = useState(false);
   const [showHelp, setShowHelp] = useState(false);
+  // backup (components/BackupModal.jsx): a reminder appears once there is
+  // real progress to lose and no backup from the last two weeks
+  const [showBackup, setShowBackup] = useState(false);
+  const [lastBackupAt, setLastBackupAt] = useState(() => {
+    const v = readSaved(STORAGE_KEYS.BACKUP_AT);
+    return typeof v === "number" ? v : null;
+  });
   useEffect(() => {
     (async () => {
       try {
@@ -1118,6 +1125,8 @@ function App() {
     setTopicsOpen(false);
   };
   const reviewing = Boolean(review) && !searching;
+  const progressCount = Object.keys(progress).length;
+  const backupDue = progressCount >= 20 && (!lastBackupAt || Date.now() - lastBackupAt > 14 * DAY_MS);
   // search results or a review session cover the mode's own controls
   const overlay = searching || reviewing;
   const searchCardResults = useMemo(() => searchCards(ALL_CARDS, query), [query]);
@@ -1278,6 +1287,20 @@ function App() {
         <div style={{ height: 14 }} />
 
         <StreakBar streak={displayStreak} count={streakData.count} goal={streakData.goal} recordStreak={streakData.recordStreak} onCycleGoal={cycleGoal} />
+
+        {backupDue && !reviewing && (
+          <button
+            onClick={() => setShowBackup(true)}
+            style={{
+              display: "flex", width: "100%", alignItems: "center", justifyContent: "space-between", gap: 10, marginBottom: 12,
+              padding: "8px 14px", borderRadius: 12, border: "1px dashed #3a5670", background: "transparent",
+              color: "#8fb8d8", fontSize: 13, cursor: "pointer", textAlign: "left",
+            }}
+          >
+            <span>💾 {lastBackupAt ? `Seit ${Math.floor((Date.now() - lastBackupAt) / DAY_MS)} Tagen nicht gesichert` : "Fortschritt noch nie gesichert"}</span>
+            <span style={{ fontWeight: 700, whiteSpace: "nowrap" }}>Sichern →</span>
+          </button>
+        )}
 
         {/* HEUTE FÄLLIG - spaced-repetition reviews from every deck */}
         {dueAll.length > 0 && !reviewing && (
@@ -1844,6 +1867,10 @@ function App() {
         <div style={{ marginTop: 28, color: "#4a5a68", fontSize: 11, textAlign: "center" }}>
           Tap a card to flip • ← → arrow keys to navigate
         </div>
+        <button
+          onClick={() => setShowBackup(true)}
+          style={{ display: "block", margin: "12px auto 0", padding: "8px 14px", borderRadius: 10, border: "1px solid #2c3a47", background: "#1a232b", color: "#9ab0c2", fontSize: 12, fontWeight: 700, cursor: "pointer" }}
+        >💾 Fortschritt sichern & App installieren</button>
       </div>
       {showWelcome && (
         <WelcomeModal
@@ -1853,6 +1880,14 @@ function App() {
         />
       )}
       {showHelp && <HelpModal lang={lang} onClose={() => setShowHelp(false)} />}
+      {showBackup && (
+        <BackupModal
+          onClose={() => setShowBackup(false)}
+          progressCount={progressCount}
+          lastBackupAt={lastBackupAt}
+          onSaved={setLastBackupAt}
+        />
+      )}
     </div>
     </GrammarNavCtx.Provider>
     </ProgressCtx.Provider>

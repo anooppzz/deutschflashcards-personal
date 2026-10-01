@@ -19,8 +19,7 @@ was done, newest first. Every change adds a log entry here in the same commit
   denken an, sprechen über …).
 - [ ] **Audit 2026-10-01 – proposals, none requested yet** (learner picks):
   1. ~~Global search~~ – done 2026-10-01 (see log).
-  2. Progress safety: export/import backup (progress lives only in this browser's
-     localStorage); installable PWA with offline cache.
+  2. ~~Backup + installable offline app~~ – done 2026-10-01.
   3. ~~Heute fällig, remember selection, fold topic chips~~ – done 2026-10-01.
   4. New trainers from existing data: Perfekt (hat/ist + Partizip II), Plural.
      Reverse mode strips the article, so a wrong der/die/das counts as correct.
@@ -36,6 +35,21 @@ was done, newest first. Every change adds a log entry here in the same commit
 ## Log
 
 ### 2026-10-01
+- **Backup and installable app** (audit item 2):
+  - "💾 Fortschritt sichern & App installieren" (footer) opens a window: download a backup
+    file (`deutsch-flashcards-backup-YYYY-MM-DD.json`: progress, streak, settings, own
+    translation corrections – not rebuildable caches, never other sites' keys on the shared
+    github.io origin), load one back (checks it, asks before replacing, reloads), and how to
+    install (button on Android/Chrome, Share → Home Screen steps on iPhone).
+  - Reminder line under the streak once 20+ cards have progress and there's no backup from
+    the last 14 days. Saving a backup also asks the browser to keep storage persistent.
+  - PWA: `public/manifest.webmanifest`, icons (flashcard with the German flag), `sw.js`
+    (works offline; the page is fetched network-first so new deploys show up immediately).
+    Registered only on https/localhost – the downloaded HTML file (file://) is unchanged.
+  - Tested: save → file contents, bad file → error, restore on an empty "new device" →
+    25 cards + Heute fällig back, offline reload, file:// build. Install prompt itself
+    can't fire in headless Chrome, so that button is untested.
+  - `src/engine/backup.js` (+6 tests), `src/engine/pwa.js`, `src/components/BackupModal.jsx`.
 - **Phone layout, saved selection, "Heute fällig"** (audit item 3):
   - The 31 topic chips fold into one row "📚 Themen · 👕 Kleidung ▾"; tap to open, "✓ Fertig"
     to close. The language buttons fold into a flag button at the top left (closes after

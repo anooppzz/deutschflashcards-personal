@@ -12,4 +12,5 @@ export const STORAGE_KEYS = {
   CLOZE_SIZE: "clozeSize:v1",
   TABS: "tabs:v1", // selected topics, restored on reload
   MODE: "mode:v1", // last study mode
+  BACKUP_AT: "backupAt:v1", // when the learner last saved a backup file
 };

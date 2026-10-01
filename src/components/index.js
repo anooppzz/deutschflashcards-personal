@@ -12,3 +12,4 @@ export { default as Modal } from "./Modal";
 export { default as RoundSizeSelector } from "./RoundSizeSelector";
 export { default as ErrorBoundary } from "./ErrorBoundary";
 export * from "./cardStyles";
+export { default as BackupModal } from "./BackupModal";

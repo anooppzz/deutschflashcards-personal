@@ -70,6 +70,11 @@ src/modes/                 one folder per study mode (cards, article, quiz, reve
                            cloze, wordsearch, grammar) + search (results view)
                            + review ("Heute fällig" session)
 src/components/FlipCard.jsx  the card (front/back, note, 📖 grammar chips)
+src/components/BackupModal.jsx  "💾 Sichern & App": backup file, restore, install hint
+src/engine/backup.js       what a backup holds (STORAGE_KEYS + corr_*), parse/restore
+src/engine/pwa.js, public/ installable app: manifest, icons, sw.js (offline cache;
+                           page network-first, so deploys arrive at once; bump
+                           CACHE in sw.js only if icons/manifest change)
 ```
 
 Chapters in `extra-topics.json` appear automatically as topic buttons; nothing else
