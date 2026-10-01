@@ -17,6 +17,11 @@ was done, newest first. Every change adds a log entry here in the same commit
   languages fall back to English).
 - [ ] Offered, not requested yet: a grammar topic "Verben mit Präposition" (warten auf,
   denken an, sprechen über …).
+- [ ] Offered 2026-10-01, not requested yet: cards for reflexive verbs from those pages that
+  have no card (sich duschen, rasieren, schminken, vorstellen, verlieben, beschweren,
+  küssen) and the Einheit 11 Kommunikation phrases (etwas bewerten: *Ich finde es
+  schön, dass …*, *Am besten gefällt mir, dass …*; gratulieren: *Herzlichen Glückwunsch zum
+  Jubiläum!*; sich bedanken: *Wir bedanken uns für …*).
 - [ ] **Audit 2026-10-01 – proposals, none requested yet** (learner picks):
   1. ~~Global search~~ – done 2026-10-01 (see log).
   2. ~~Backup + installable offline app~~ – done 2026-10-01.
@@ -35,6 +40,15 @@ was done, newest first. Every change adds a log entry here in the same commit
 ## Log
 
 ### 2026-10-01
+- **Reflexive Verben extended** from two pages the learner sent (grammar book ch. 31
+  "Sie wäscht sich – Reflexive (und reziproke) Verben" and Menschen A2 p. 66 Grammatik):
+  pronoun table now *waschen* incl. *man*; "mich/dich/uns/euch = accusative pronoun, only
+  3rd person *sich*"; new table *Typische reflexive Verben* (waschen, duschen, rasieren,
+  schminken, anziehen, vorstellen …); new section *Reziprok: sich = einander* (küssen,
+  kennenlernen, verlieben, treffen, streiten; plural only; *gegenseitig*); *Sie wäscht sich*
+  ↔ *Sie wäscht das Baby*; noun subject *Heute freut sich mein Bruder*; *weil er sich
+  geärgert hat*; 4 more preposition verbs (entschuldigen bei, treffen mit, beschweren über,
+  verlieben in). *treffen* and *kennenlernen* tagged (17 words linked). Fits 360/390px.
 - **Backup and installable app** (audit item 2):
   - "💾 Fortschritt sichern & App installieren" (footer) opens a window: download a backup
     file (`deutsch-flashcards-backup-YYYY-MM-DD.json`: progress, streak, settings, own

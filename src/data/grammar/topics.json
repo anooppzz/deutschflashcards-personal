@@ -402,8 +402,8 @@
     "group": {"de": "Verben", "en": "Verbs"},
     "title": {"de": "Reflexive Verben: sich freuen, sich erinnern", "en": "Reflexive Verbs: sich freuen, sich erinnern"},
     "summary": {
-      "de": "Das Reflexivpronomen passt zur Person: ich freue **mich**, du freust **dich**, er freut **sich**.",
-      "en": "The reflexive pronoun matches the person: ich freue **mich**, du freust **dich**, er freut **sich**."
+      "de": "Das Reflexivpronomen passt zur Person: ich wasche **mich**, du wäschst **dich**, er wäscht **sich**.",
+      "en": "The reflexive pronoun matches the person: ich wasche **mich**, du wäschst **dich**, er wäscht **sich**."
     },
     "sections": [
       {
@@ -411,12 +411,12 @@
         "title": {"de": "Reflexivpronomen", "en": "Reflexive pronouns"},
         "head": [{"de": "Person", "en": "Person"}, "Akkusativ", "Dativ", {"de": "Beispiel", "en": "Example"}],
         "rows": [
-          ["ich", "**mich**", "**mir**", "ich freue **mich**"],
-          ["du", "**dich**", "**dir**", "du freust **dich**"],
-          ["er/sie/es", "**sich**", "**sich**", "er freut **sich**"],
-          ["wir", "uns", "uns", "wir freuen uns"],
-          ["ihr", "euch", "euch", "ihr freut euch"],
-          ["sie/Sie", "**sich**", "**sich**", "Sie freuen **sich**"]
+          ["ich", "**mich**", "**mir**", "ich wasche **mich**"],
+          ["du", "**dich**", "**dir**", "du wäschst **dich**"],
+          ["er/sie/es", "**sich**", "**sich**", "er wäscht **sich**"],
+          ["wir", "uns", "uns", "wir waschen uns"],
+          ["ihr", "euch", "euch", "ihr wascht euch"],
+          ["sie/Sie", "**sich**", "**sich**", "Sie waschen **sich**"]
         ]
       },
       {
@@ -424,8 +424,8 @@
         "title": {"de": "So merkst du es dir", "en": "How to remember"},
         "items": [
           {
-            "de": "Nur **ich** und **du** haben eigene Formen (mich, dich). **wir / ihr** = uns / euch wie immer.",
-            "en": "Only **ich** and **du** have their own forms (mich, dich). **wir / ihr** = uns / euch as usual."
+            "de": "**mich, dich, uns, euch** sind wie das Akkusativpronomen (Er sieht **mich**.). Nur die 3. Person hat eine eigene Form: **sich** – auch bei **man**: man wäscht **sich**.",
+            "en": "**mich, dich, uns, euch** are the same as the accusative pronoun (Er sieht **mich**.). Only the 3rd person has its own form: **sich** – also with **man**: man wäscht **sich**."
           },
           {
             "de": "Alles in der 3. Person heißt **sich** – auch höflich: Freuen **Sie sich**? (sich klein!)",
@@ -436,9 +436,30 @@
             "en": "**Dative** (mir, dir) only when the sentence already has an accusative: Ich wasche **mich**. → Ich wasche **mir** die Hände."
           },
           {
+            "de": "Mit einem Nomen als Subjekt steht sich oft davor: Heute freut **sich** mein Bruder. (Mit Pronomen: Heute freut er **sich**.)",
+            "en": "With a noun as subject, sich often comes before it: Heute freut **sich** mein Bruder. (With a pronoun: Heute freut er **sich**.)"
+          },
+          {
             "de": "Lerne das Verb immer **mit sich und Präposition**: sich freuen auf, sich erinnern an.",
             "en": "Always learn the verb **with sich and its preposition**: sich freuen auf, sich erinnern an."
           }
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Typische reflexive Verben", "en": "Typical reflexive verbs"},
+        "head": [{"de": "Verb", "en": "Verb"}, {"de": "Bedeutung", "en": "Meaning"}],
+        "rows": [
+          ["sich waschen", {"de": "sich sauber machen", "en": "wash (yourself)"}],
+          ["(sich) duschen", {"de": "unter die Dusche gehen", "en": "have a shower"}],
+          ["sich rasieren", {"de": "den Bart entfernen", "en": "shave"}],
+          ["sich schminken", {"de": "Make-up auftragen", "en": "put on make-up"}],
+          ["sich anziehen", {"de": "Kleidung anziehen", "en": "get dressed"}],
+          ["sich vorstellen", {"de": "Name und Person nennen", "en": "introduce yourself"}],
+          ["sich anmelden", {"de": "für einen Kurs …", "en": "register, sign up"}],
+          ["sich fühlen", {"de": "Ich fühle mich gut.", "en": "feel"}],
+          ["sich beeilen", {"de": "schnell machen", "en": "hurry"}],
+          ["sich ausruhen", {"de": "Pause machen", "en": "rest"}]
         ]
       },
       {
@@ -455,9 +476,39 @@
           ["sich Sorgen machen **um**", "Akk.", {"de": "Angst haben um", "en": "worry about"}],
           ["sich anmelden **für**", "Akk.", {"de": "für einen Kurs …", "en": "register for"}],
           ["sich verabreden **mit**", "Dat.", {"de": "ein Treffen ausmachen", "en": "arrange to meet"}],
-          ["sich bedanken **bei** … **für**", "Dat. + Akk.", {"de": "Danke sagen", "en": "thank sb. for"}],
-          ["sich streiten **mit** … **über**", "Dat. + Akk.", {"de": "Streit haben", "en": "argue with sb. about"}],
-          ["sich unterhalten **mit** … **über**", "Dat. + Akk.", {"de": "reden", "en": "talk with sb. about"}]
+          ["sich bedanken **bei** … **für**", "Dat.+Akk.", {"de": "Danke sagen", "en": "thank sb. for"}],
+          ["sich streiten **mit** … **über**", "Dat.+Akk.", {"de": "Streit haben", "en": "argue with sb. about"}],
+          ["sich unterhalten **mit** … **über**", "Dat.+Akk.", {"de": "reden", "en": "talk with sb. about"}],
+          [
+            "sich entschuldigen **bei**",
+            "Dat.",
+            {"de": "Entschuldigung sagen (für + Akk.)", "en": "apologize to sb. (für + Akk.)"}
+          ],
+          ["sich treffen **mit**", "Dat.", {"de": "zusammenkommen", "en": "meet (up with)"}],
+          ["sich beschweren **über**", "Akk.", {"de": "reklamieren", "en": "complain about"}],
+          ["sich verlieben **in**", "Akk.", {"de": "Liebe beginnt", "en": "fall in love with"}]
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "Reziprok: sich = einander", "en": "Reciprocal: sich = each other"},
+        "items": [
+          {
+            "de": "Mit **wir / ihr / sie** heißt sich oft **einander**: Er küsst sie, sie küsst ihn → Sie **küssen sich**.",
+            "en": "With **wir / ihr / sie**, sich often means **each other**: Er küsst sie, sie küsst ihn → Sie **küssen sich** (they kiss each other)."
+          },
+          {
+            "de": "Typisch: sich kennenlernen, sich verlieben, sich treffen, sich streiten, sich küssen: Wir haben **uns** 2020 **kennengelernt**.",
+            "en": "Typical: sich kennenlernen (get to know each other, meet), sich verlieben (fall in love), sich treffen (meet), sich streiten (argue), sich küssen (kiss): Wir haben **uns** 2020 **kennengelernt**."
+          },
+          {
+            "de": "Nur im Plural – „Ich küsse **mich**“ heißt etwas ganz anderes!",
+            "en": "Plural only – \"Ich küsse **mich**\" means I kiss myself!"
+          },
+          {
+            "de": "Unklar, ob „sich selbst“ oder „einander“? **gegenseitig** macht es klar: Sie helfen sich **gegenseitig**.",
+            "en": "Unclear whether it's \"themselves\" or \"each other\"? **gegenseitig** makes it clear: Sie helfen sich **gegenseitig** (they help each other)."
+          }
         ]
       },
       {
@@ -470,7 +521,7 @@
           ["Perfekt", "Ich **habe mich** gefreut."],
           [{"de": "Modalverb", "en": "Modal verb"}, "Ich muss **mich** beeilen."],
           [{"de": "trennbar", "en": "Separable"}, "Ich ruhe **mich** aus."],
-          [{"de": "Nebensatz", "en": "Subordinate clause"}, "…, weil ich **mich** freue."],
+          [{"de": "Nebensatz", "en": "Subordinate clause"}, "…, weil er **sich** geärgert hat."],
           [{"de": "Imperativ", "en": "Imperative"}, "Beeil **dich**! Freuen Sie **sich**!"]
         ]
       },
@@ -479,8 +530,16 @@
         "title": {"de": "Mit oder ohne sich?", "en": "With or without sich?"},
         "items": [
           {
+            "de": "Gleiche Person → sich. Andere Person → Akkusativ: Sie wäscht **sich**. ↔ Sie wäscht **das Baby** (= **es**).",
+            "en": "Same person → sich. Someone else → accusative: Sie wäscht **sich** (she washes herself). ↔ Sie wäscht **das Baby** (= **es**)."
+          },
+          {
             "de": "Viele Verben gehen **mit und ohne** sich: Ich ärgere **mich**. / Ich ärgere **meinen Bruder**.",
             "en": "Many verbs work **with and without** sich: Ich ärgere **mich** (I'm annoyed). / Ich ärgere **meinen Bruder** (I annoy my brother)."
+          },
+          {
+            "de": "Manchmal geht beides: Ich dusche. = Ich dusche **mich**.",
+            "en": "Sometimes both work: Ich dusche. = Ich dusche **mich**."
           },
           {
             "de": "Manche gibt es **nur mit** sich: sich beeilen, sich bedanken, sich erkälten, sich beschweren.",
@@ -509,9 +568,14 @@
     ],
     "examples": [
       {"de": "Ich freue mich auf das Wochenende.", "en": "I'm looking forward to the weekend."},
+      {"de": "Er rasiert sich, sie schminkt sich.", "en": "He shaves, she puts on make-up."},
       {"de": "Erinnerst du dich an unseren Urlaub?", "en": "Do you remember our vacation?"},
       {"de": "Wir haben uns lange über den Film unterhalten.", "en": "We talked about the film for a long time."},
-      {"de": "Meine Eltern machen sich Sorgen um mich.", "en": "My parents worry about me."}
+      {"de": "Meine Eltern machen sich Sorgen um mich.", "en": "My parents worry about me."},
+      {
+        "de": "Sie haben sich im Urlaub kennengelernt und sich verliebt.",
+        "en": "They met on holiday and fell in love."
+      }
     ],
     "match": [{"type": "v", "subPattern": "(^|[·,] )hat sich "}]
   },

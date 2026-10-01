@@ -180,7 +180,10 @@
     "partizip": "getroffen",
     "english": "to meet / hit",
     "example": "Ich habe ihn am Krankenhaus getroffen.",
-    "level": "A2"
+    "level": "A2",
+    "grammar": [
+      "reflexive-verben"
+    ]
   },
   {
     "group": "e – a – o",

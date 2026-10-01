@@ -6248,7 +6248,10 @@
         "english": "to get to know",
         "example": "Ich möchte dich besser kennenlernen.",
         "exampleEn": "I would like to get to know you better.",
-        "level": "A2"
+        "level": "A2",
+        "grammar": [
+          "reflexive-verben"
+        ]
       },
       {
         "type": "v",
