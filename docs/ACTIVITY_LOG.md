@@ -17,8 +17,30 @@ was done, newest first. Every change adds a log entry here in the same commit
   languages fall back to English).
 - [ ] Offered, not requested yet: a grammar topic "Verben mit Präposition" (warten auf,
   denken an, sprechen über …).
+- [ ] **Audit 2026-10-01 – proposals, none requested yet** (learner picks):
+  1. Global search: all chapters regardless of selection + grammar topics, umlaut-
+     insensitive (fruhstuck → frühstücken), grouped results, tap to open. Today search
+     only filters the selected topics, misses umlauts, and topic clicks clear it.
+  2. Progress safety: export/import backup (progress lives only in this browser's
+     localStorage); installable PWA with offline cache.
+  3. Daily review "Heute fällig" across all chapters; remember last topics and mode
+     (reload resets to Kleidung); collapse the 31 topic chips (first card sits at
+     y≈1150px on a 390×844 phone).
+  4. New trainers from existing data: Perfekt (hat/ist + Partizip II), Plural.
+     Reverse mode strips the article, so a wrong der/die/das counts as correct.
+  5. Grammar topics missing for A2: Kasus overview (den/dem, mich/mir), Adjektivendungen,
+     Konjunktiv II (würde, hätte gern, könnte), Präteritum war/hatte, Verben mit Dativ,
+     Verben mit Präposition + worauf/darauf, trennbare Verben, Imperativ; mini-exercises
+     inside topics.
+  6. Data: 108 nouns with old/empty plural format, 9 duplicate words that disagree
+     (das Glas, das Wetter, die Post …), 51 adjectives without opposite.
+  7. Code: App.jsx 1,703 lines / 75 useState; six copy-pasted deck viewers; help texts
+     inline; progress keyed by deck+front (fixing a typo in `front` loses progress).
 
 ## Log
+
+### 2026-10-01
+- Full audit of app, data and structure; findings under Pending ("Audit 2026-10-01").
 
 ### 2026-09-30
 - *streiten* removed from Meine Wörter (learner's choice); it lives on as
