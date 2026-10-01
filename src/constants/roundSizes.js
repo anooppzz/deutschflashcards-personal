@@ -16,3 +16,6 @@ export const ARTICLE_SIZE_PRESETS = ["auto", 10, 15, 20, 25, "all"];
 
 // Daily streak goal options shown in the streak UI.
 export const GOAL_PRESETS = [10, 20, 30, 40, 50];
+
+// Cards per "Heute fällig" review session (the rest: "Weitere fällige Karten").
+export const REVIEW_SIZE = 20;

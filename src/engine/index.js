@@ -14,3 +14,4 @@ export * from "./translation/correctionCache";
 export * from "./translation/exampleCache";
 export * from "./grammarLinks";
 export * from "./globalSearch";
+export * from "./review";

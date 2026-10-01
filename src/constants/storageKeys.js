@@ -10,4 +10,6 @@ export const STORAGE_KEYS = {
   WELCOME_SEEN: "welcomeSeen:v1",
   ARTICLE_SIZE: "articleSize:v1",
   CLOZE_SIZE: "clozeSize:v1",
+  TABS: "tabs:v1", // selected topics, restored on reload
+  MODE: "mode:v1", // last study mode
 };

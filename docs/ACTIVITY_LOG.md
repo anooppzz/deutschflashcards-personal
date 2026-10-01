@@ -21,9 +21,7 @@ was done, newest first. Every change adds a log entry here in the same commit
   1. ~~Global search~~ – done 2026-10-01 (see log).
   2. Progress safety: export/import backup (progress lives only in this browser's
      localStorage); installable PWA with offline cache.
-  3. Daily review "Heute fällig" across all chapters; remember last topics and mode
-     (reload resets to Kleidung); collapse the 31 topic chips (first card sits at
-     y≈1150px on a 390×844 phone).
+  3. ~~Heute fällig, remember selection, fold topic chips~~ – done 2026-10-01.
   4. New trainers from existing data: Perfekt (hat/ist + Partizip II), Plural.
      Reverse mode strips the article, so a wrong der/die/das counts as correct.
   5. Grammar topics missing for A2: Kasus overview (den/dem, mich/mir), Adjektivendungen,
@@ -38,6 +36,21 @@ was done, newest first. Every change adds a log entry here in the same commit
 ## Log
 
 ### 2026-10-01
+- **Phone layout, saved selection, "Heute fällig"** (audit item 3):
+  - The 31 topic chips fold into one row "📚 Themen · 👕 Kleidung ▾"; tap to open, "✓ Fertig"
+    to close. The language buttons fold into a flag button at the top left (closes after
+    picking). The "A1 / A2 · tap to flip" hint line is gone (the footer says the same).
+    The first card now starts at y≈595px instead of ≈1150px (360/390px phones).
+  - Selected topics and the study mode are saved (`tabs:v1`, `mode:v1`) and restored on
+    reload; unknown chapter keys are dropped.
+  - "📅 N Karten heute fällig · Wiederholen →" banner under the streak: every studied card
+    whose review date has come, from all decks, most overdue first, 20 per session. Flip,
+    then "✗ Nicht gewusst" / "✓ Gewusst" – a real FSRS review (same as a quiz answer, counts
+    for the daily goal). Summary lists the misses with "↻ Falsche nochmal" and "Weitere
+    fällige Karten". Never-studied cards aren't "due"; cards marked "↻ Üben" are (due now).
+    `src/engine/review.js` (+3 tests), `src/modes/review/ReviewSession.jsx`; FlipCard got
+    `showMarks` (hides ✓ Gekonnt / ↻ Üben in the session).
+  - Help texts for topics and language updated in all six languages.
 - **App-wide search** (audit item 1): the search box now searches every card in every
   deck plus the text of all grammar topics, whatever topics are selected. Case, umlauts,
   ß and ae/oe/ue don't matter (*fruhstuck* → *frühstücken*); matches the word, its forms

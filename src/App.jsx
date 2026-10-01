@@ -27,7 +27,7 @@ import React, { useState, useCallback, useEffect, useMemo, useRef } from "react"
 import {
   STORAGE_KEYS,
   GENDER_COLORS, TYPE_META, GROUP_COLORS,
-  ROUND_SIZE, ARTICLE_SIZE_PRESETS, GOAL_PRESETS,
+  ROUND_SIZE, ARTICLE_SIZE_PRESETS, GOAL_PRESETS, REVIEW_SIZE,
   LANGUAGES, HELP_FLAGS,
   MODE, MODE_TABS,
 } from "./constants";
@@ -45,7 +45,7 @@ import {
   weightedSample, shuffled,
   validateGermanWord,
   distinctLevels, distinctSources, passesGlobalFilters,
-  buildGrammarIndex, buildGrammarSearchIndex, searchCards, searchGrammar,
+  buildGrammarIndex, buildGrammarSearchIndex, searchCards, searchGrammar, dueCards,
 } from "./engine";
 import {
   FlipCard, Controls, NoResults, CategoryFilter,
@@ -62,7 +62,7 @@ import {
   ReverseTrainer, ReverseSummary,
   ClozeTrainer, ClozeSummary, buildClozePool, buildClozeRound, saveClozeSizePref, resolveClozeRoundSize, isClozeCorrect,
   WordSearchTrainer, WordSearchSummary, buildWordSearchPool, buildWordSearchRound, resolveWordSearchSize,
-  GrammarView, SearchResults,
+  GrammarView, SearchResults, ReviewSession,
 } from "./modes";
 
 /* ============================================================
@@ -95,6 +95,23 @@ EXTRA_TOPICS.forEach((t) => {
   DECK_META[t.key] = { label: t.label, icon: t.icon };
   DECK_SOURCE[t.key] = t.cards;
 });
+
+// The selected topics and the study mode survive a reload. Read straight
+// from localStorage (synchronously) so the first render already shows the
+// saved selection; anything no longer valid (a renamed or removed chapter)
+// is dropped, falling back to the default.
+const readSaved = (key) => {
+  try { return JSON.parse(localStorage.getItem(key)); } catch { return null; }
+};
+const savedTabs = () => {
+  const v = readSaved(STORAGE_KEYS.TABS);
+  const valid = Array.isArray(v) ? v.filter((k) => k in DECK_SOURCE) : [];
+  return valid.length ? valid : ["kleidung"];
+};
+const savedMode = () => {
+  const v = readSaved(STORAGE_KEYS.MODE);
+  return Object.values(MODE).includes(v) ? v : MODE.CARDS;
+};
 
 // Unified card normalization (schema v1)
 // Converts all deck shapes (irregular, inseparable, typed, extra topics) into one consistent output.
@@ -264,13 +281,13 @@ const HELP_I18N = {
   "help.section.newFeatures": { en: "More Ways to Study", de: "Weitere Lernwege", sq: "Mënyra të tjera për të mësuar", ar: "طرق أخرى للدراسة", uk: "Інші способи навчання", hi: "सीखने के और तरीके" },
 
   "help.tabs.label": { en: "Topic tabs", de: "Themen-Tabs", sq: "Skedat e temave", ar: "علامات تبويب المواضيع", uk: "Вкладки тем", hi: "टॉपिक टैब्स" },
-  "help.tabs.desc": { en: "Select one or more topics at once. \"All\" selects every topic.", de: "Ein oder mehrere Themen gleichzeitig auswählen. \"Alle\" wählt jedes Thema.", sq: "Zgjidh një ose disa tema njëkohësisht. \"Të gjitha\" zgjedh çdo temë.", ar: "اختر موضوعًا واحدًا أو أكثر في الوقت نفسه. \"الكل\" يختار جميع المواضيع.", uk: "Оберіть одну або кілька тем одночасно. \"Усі\" обирає кожну тему.", hi: "एक या एक से अधिक विषय एक साथ चुनें। \"सभी\" हर विषय को चुनता है।" },
+  "help.tabs.desc": { en: "Tap \"📚 Themen\" to open the topic list, select one or more topics, then \"✓ Fertig\". \"Alle\" selects every topic. Your selection and mode are kept when you come back.", de: "Tippe auf \"📚 Themen\", um die Themenliste zu öffnen, wähle ein oder mehrere Themen, dann \"✓ Fertig\". \"Alle\" wählt jedes Thema. Auswahl und Modus bleiben beim nächsten Besuch erhalten.", sq: "Trokit \"📚 Themen\" për të hapur listën e temave, zgjidh një ose disa tema, pastaj \"✓ Fertig\". \"Alle\" zgjedh çdo temë. Zgjedhja dhe mënyra ruhen për herën tjetër.", ar: "اضغط على \"📚 Themen\" لفتح قائمة المواضيع، واختر موضوعًا واحدًا أو أكثر، ثم \"✓ Fertig\". \"Alle\" يختار جميع المواضيع. يُحفظ اختيارك والوضع للمرة القادمة.", uk: "Натисніть \"📚 Themen\", щоб відкрити список тем, оберіть одну або кілька тем, потім \"✓ Fertig\". \"Alle\" обирає всі теми. Вибір і режим зберігаються до наступного разу.", hi: "विषय सूची खोलने के लिए \"📚 Themen\" पर टैप करें, एक या अधिक विषय चुनें, फिर \"✓ Fertig\"। \"Alle\" हर विषय चुनता है। आपका चयन और मोड अगली बार के लिए सहेजे रहते हैं।" },
   "help.search.label": { en: "Search", de: "Suche", sq: "Kërko", ar: "البحث", uk: "Пошук", hi: "खोजें" },
   "help.search.desc": { en: "Searches every word and every grammar topic, whatever topics are selected - in German or English, umlauts optional (fruhstuck finds frühstücken). Tap a word to open its card, or a grammar result to open the topic.", de: "Durchsucht alle Wörter und alle Grammatikthemen, egal welche Themen gewählt sind - auf Deutsch oder Englisch, Umlaute optional (fruhstuck findet frühstücken). Tippe auf ein Wort, um die Karte zu öffnen, oder auf ein Grammatik-Ergebnis, um das Thema zu öffnen.", sq: "Kërkon në të gjitha fjalët dhe të gjitha temat e gramatikës, pavarësisht cilat tema janë zgjedhur - në gjermanisht ose anglisht, umlautet janë opsionale (fruhstuck gjen frühstücken). Trokit mbi një fjalë për të hapur kartën, ose mbi një rezultat gramatike për të hapur temën.", ar: "يبحث في كل الكلمات وكل مواضيع القواعد، أيًا كانت المواضيع المختارة - بالألمانية أو الإنجليزية، والأوملاوت اختياري (fruhstuck يجد frühstücken). اضغط على كلمة لفتح بطاقتها، أو على نتيجة قواعد لفتح الموضوع.", uk: "Шукає в усіх словах і всіх темах граматики, незалежно від обраних тем - німецькою або англійською, умляути необов'язкові (fruhstuck знаходить frühstücken). Натисніть на слово, щоб відкрити картку, або на результат з граматики, щоб відкрити тему.", hi: "हर शब्द और हर व्याकरण विषय में खोजता है, चाहे कोई भी विषय चुने हों - जर्मन या अंग्रेज़ी में, उमलाउट वैकल्पिक (fruhstuck से frühstücken मिलता है)। कार्ड खोलने के लिए किसी शब्द पर, या विषय खोलने के लिए व्याकरण परिणाम पर टैप करें।" },
   "help.modes.label": { en: "Cards · Article · Quiz", de: "Karten · Artikel · Quiz", sq: "Kartat · Artikulli · Kuizi", ar: "البطاقات · أداة التعريف · الاختبار", uk: "Картки · Артикль · Квіз", hi: "कार्ड्स · आर्टिकल · क्विज़" },
   "help.modes.desc": { en: "Three study modes: flip through cards, practice der/die/das, or test meanings with multiple choice.", de: "Drei Lernmodi: durchblättern, der/die/das üben, oder Bedeutungen per Mehrfachauswahl testen.", sq: "Tre mënyra mësimi: kalo nëpër karta, praktiko der/die/das, ose testo kuptimet me zgjedhje të shumëfishta.", ar: "ثلاث طرق للدراسة: تصفح البطاقات، تدرّب على der/die/das، أو اختبر المعاني بأسئلة متعددة الخيارات.", uk: "Три режими навчання: перегортайте картки, тренуйте der/die/das, або перевіряйте значення через вибір варіантів.", hi: "तीन अध्ययन तरीके: कार्ड्स पलटें, der/die/das का अभ्यास करें, या बहुविकल्पीय प्रश्नों से अर्थ जाँचें।" },
   "help.language.label": { en: "Language", de: "Sprache", sq: "Gjuha", ar: "اللغة", uk: "Мова", hi: "भाषा" },
-  "help.language.desc": { en: "Translations in SQ/AR/UK/HI - or add your own language with ➕.", de: "Übersetzungen in SQ/AR/UK/HI - oder über ➕ eine eigene Sprache hinzufügen.", sq: "Përkthime në SQ/AR/UK/HI - ose shto gjuhën tënde me ➕.", ar: "ترجمات بـ SQ/AR/UK/HI - أو أضف لغتك الخاصة عبر ➕.", uk: "Переклади SQ/AR/UK/HI - або додайте свою мову через ➕.", hi: "SQ/AR/UK/HI में अनुवाद - या ➕ से अपनी भाषा जोड़ें।" },
+  "help.language.desc": { en: "Tap the flag at the top left: translations in SQ/AR/UK/HI - or add your own language with ➕.", de: "Tippe oben links auf die Flagge: Übersetzungen in SQ/AR/UK/HI - oder über ➕ eine eigene Sprache hinzufügen.", sq: "Trokit flamurin lart majtas: përkthime në SQ/AR/UK/HI - ose shto gjuhën tënde me ➕.", ar: "اضغط على العلم أعلى اليسار: ترجمات بـ SQ/AR/UK/HI - أو أضف لغتك الخاصة عبر ➕.", uk: "Натисніть прапор угорі ліворуч: переклади SQ/AR/UK/HI - або додайте власну мову через ➕.", hi: "ऊपर बाईं ओर झंडे पर टैप करें: SQ/AR/UK/HI में अनुवाद - या ➕ से अपनी भाषा जोड़ें।" },
   "help.badge.label": { en: "Topic badge", de: "Themen-Tag", sq: "Etiketa e temës", ar: "شارة الموضوع", uk: "Значок теми", hi: "टॉपिक बैज" },
   "help.badge.desc": { en: "Shows which topic a word came from on every card - useful once several topics are mixed together.", de: "Zeigt auf jeder Karte, aus welchem Thema ein Wort stammt - hilfreich, wenn mehrere Themen gemischt sind.", sq: "Tregon nga cila temë vjen një fjalë në çdo kartë - e dobishme kur disa tema janë përzier së bashku.", ar: "يُظهر من أي موضوع جاءت الكلمة في كل بطاقة - مفيد عند خلط عدة مواضيع معًا.", uk: "Показує, з якої теми походить слово на кожній картці - корисно, коли кілька тем змішані разом.", hi: "हर कार्ड पर दिखाता है कि शब्द किस विषय से है - कई विषय मिलाने पर उपयोगी।" },
   "help.filter.label": { en: "Category filter", de: "Kategorie-Filter", sq: "Filtri i kategorisë", ar: "فلتر الفئة", uk: "Фільтр категорії", hi: "श्रेणी फ़िल्टर" },
@@ -504,7 +521,11 @@ function HelpModal({ onClose, lang }) {
    ============================================================ */
 
 function App() {
-  const [tabs, setTabs] = useState(["kleidung"]); // multi-select topics
+  const [tabs, setTabs] = useState(savedTabs); // multi-select topics
+  useEffect(() => { storage.set(STORAGE_KEYS.TABS, JSON.stringify(tabs)); }, [tabs]);
+  // the topic picker is folded into one row until opened, so the card
+  // stays near the top of a phone screen
+  const [topicsOpen, setTopicsOpen] = useState(false);
   const [query, setQuery] = useState("");
 
   // decks
@@ -744,7 +765,8 @@ function App() {
   );
 
   // ---- study mode: cards | article | quiz ----
-  const [mode, setMode] = useState(MODE.CARDS);
+  const [mode, setMode] = useState(savedMode);
+  useEffect(() => { storage.set(STORAGE_KEYS.MODE, JSON.stringify(mode)); }, [mode]);
   // grammar links: a card's 📖 chip opens the Grammatik tab on that topic,
   // remembering which mode it came from so "← Zurück" can return there.
   const [grammarFocus, setGrammarFocus] = useState(null);
@@ -774,6 +796,7 @@ function App() {
   const [lang, setLang] = useState("en");
   const [customLangs, setCustomLangs] = useState([]);
   const [addingLang, setAddingLang] = useState(false);
+  const [langOpen, setLangOpen] = useState(false); // language picker, folded into the header button
   const [newLangText, setNewLangText] = useState("");
   // onboarding: welcome modal (first visit only) + always-available help panel
   const [showWelcome, setShowWelcome] = useState(false);
@@ -1081,6 +1104,22 @@ function App() {
   // topic is searched, whatever topics are selected. A grammar result opens
   // its topic; "← Zurück" there returns to the results (the query stays).
   const searching = query.trim() !== "" && !grammarFocus;
+
+  // ---- "📅 Heute fällig" (engine/review.js): every studied card whose
+  // review date has come, from all decks, reviewed in sessions of
+  // REVIEW_SIZE. While a session runs it replaces the mode content; the
+  // cards are a snapshot, so grading one doesn't reshuffle the session.
+  const dueAll = useMemo(() => dueCards(progress, ALL_CARDS), [progress]);
+  const [review, setReview] = useState(null); // { cards, n }
+  const startReview = (cards) => {
+    setReview({ cards, n: Date.now() });
+    setQuery("");
+    setGrammarFocus(null);
+    setTopicsOpen(false);
+  };
+  const reviewing = Boolean(review) && !searching;
+  // search results or a review session cover the mode's own controls
+  const overlay = searching || reviewing;
   const searchCardResults = useMemo(() => searchCards(ALL_CARDS, query), [query]);
   const searchTopicResults = useMemo(() => searchGrammar(GRAMMAR_SEARCH, query, lang), [query, lang]);
   // "… öffnen →" under a found card: select its chapter and show that card,
@@ -1152,7 +1191,7 @@ function App() {
     <div style={{ minHeight: "100vh", background: "#0e1419", fontFamily: "system-ui, sans-serif", padding: "28px 16px" }}>
       <div style={{ maxWidth: 480, margin: "0 auto" }}>
         <div style={{ position: "relative", minHeight: 40 }}>
-          <h1 style={{ color: "#f2f5f8", fontSize: 22, fontWeight: 800, textAlign: "center", margin: "0 0 4px", pointerEvents: "none" }}>
+          <h1 style={{ color: "#f2f5f8", fontSize: "clamp(18px, 5.6vw, 22px)", fontWeight: 800, textAlign: "center", margin: "0 0 4px", padding: "0 52px", lineHeight: "40px", whiteSpace: "nowrap", pointerEvents: "none" }}>
             Deutsch Flashcards
           </h1>
           <button
@@ -1164,12 +1203,30 @@ function App() {
               display: "flex", alignItems: "center", justifyContent: "center",
             }}
           >❓</button>
+          {(() => {
+            const cur = LANGUAGES.find(([k]) => k === lang);
+            return (
+              <button
+                onClick={() => setLangOpen((o) => !o)}
+                aria-expanded={langOpen}
+                aria-label="Sprache der Übersetzungen wählen"
+                title="Sprache der Übersetzungen"
+                style={{
+                  position: "absolute", top: 0, left: 0, zIndex: 1, height: 40, minWidth: 40, padding: "0 8px", borderRadius: 20,
+                  border: "1px solid #2c3a47", background: langOpen ? "#2c3a47" : "#1a232b", color: "#9ab0c2",
+                  fontSize: 12, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis",
+                }}
+              >{cur ? cur[2] : "🌐"}<span aria-hidden="true" style={{ fontSize: 10, marginLeft: 3 }}>▾</span></button>
+            );
+          })()}
         </div>
-        <div style={{ display: "flex", justifyContent: "center", gap: 6, marginBottom: 10, flexWrap: "wrap" }}>
+        {langOpen && (
+        <>
+        <div style={{ display: "flex", justifyContent: "center", gap: 6, margin: "10px 0", flexWrap: "wrap" }}>
           {LANGUAGES.map(([key, label, flag]) => (
             <button
               key={key}
-              onClick={() => { setLang(key); saveLang(key); }}
+              onClick={() => { setLang(key); saveLang(key); setLangOpen(false); }}
               title="Sprache der Übersetzungen"
               style={{
                 padding: "5px 12px", borderRadius: 10, fontSize: 12, fontWeight: 700, cursor: "pointer",
@@ -1182,7 +1239,7 @@ function App() {
           {customLangs.map((name) => (
             <span key={name} style={{ display: "inline-flex", alignItems: "center", borderRadius: 10, overflow: "hidden", border: lang === name ? "none" : "1px solid #2c3a47" }}>
               <button
-                onClick={() => { setLang(name); saveLang(name); }}
+                onClick={() => { setLang(name); saveLang(name); setLangOpen(false); }}
                 style={{ padding: "5px 10px", border: "none", fontSize: 12, fontWeight: 700, cursor: "pointer", background: lang === name ? "#e0833b" : "#1a232b", color: lang === name ? "#0e1419" : "#9ab0c2" }}
               >{name}</button>
               <button
@@ -1216,14 +1273,53 @@ function App() {
         <p style={{ color: "#5a6b78", fontSize: 11, textAlign: "center", margin: "0 0 4px" }}>
           Übersetzungssprache wählen, oder ➕ für eine eigene Sprache
         </p>
-        <p style={{ color: "#5a6b78", fontSize: 12, textAlign: "center", margin: "0 0 16px" }}>
-          A1 / A2 · tap to flip, ← → to navigate
-        </p>
+        </>
+        )}
+        <div style={{ height: 14 }} />
 
         <StreakBar streak={displayStreak} count={streakData.count} goal={streakData.goal} recordStreak={streakData.recordStreak} onCycleGoal={cycleGoal} />
 
-        {/* TABS - multi-select topics */}
-        <div style={{ display: "flex", gap: 6, justifyContent: "center", marginBottom: 16, flexWrap: "wrap" }}>
+        {/* HEUTE FÄLLIG - spaced-repetition reviews from every deck */}
+        {dueAll.length > 0 && !reviewing && (
+          <button
+            onClick={() => startReview(dueAll.slice(0, REVIEW_SIZE))}
+            style={{
+              display: "flex", width: "100%", alignItems: "center", justifyContent: "space-between", gap: 10, marginBottom: 12,
+              padding: "11px 14px", borderRadius: 12, border: "1px solid #e0833b", background: "rgba(224,131,59,.1)",
+              color: "#f2f5f8", fontSize: 14, fontWeight: 700, cursor: "pointer", textAlign: "left",
+            }}
+          >
+            <span>📅 {dueAll.length} {dueAll.length === 1 ? "Karte" : "Karten"} heute fällig</span>
+            <span style={{ color: "#e0833b", whiteSpace: "nowrap" }}>Wiederholen →</span>
+          </button>
+        )}
+
+        {/* TABS - multi-select topics, folded into one summary row */}
+        {(() => {
+          const allOn = TABS.every(([k]) => tabs.includes(k));
+          const labelOf = (k) => (TABS.find(([key]) => key === k) || [k, k])[1];
+          const summary = allOn ? `Alle · ${TABS.length} Themen`
+            : tabs.length === 1 ? labelOf(tabs[0])
+            : `${tabs.length} Themen · ${tabs.map((k) => labelOf(k).split(" ")[0]).join(" ")}`;
+          return (
+            <button
+              onClick={() => setTopicsOpen((o) => !o)}
+              aria-expanded={topicsOpen}
+              style={{
+                display: "flex", width: "100%", alignItems: "center", gap: 8, marginBottom: topicsOpen ? 10 : 12,
+                padding: "10px 14px", borderRadius: 12, border: "1px solid #2c3a47", background: "#1a232b",
+                color: "#f2f5f8", fontSize: 14, cursor: "pointer", textAlign: "left",
+              }}
+            >
+              <span style={{ color: "#7d8d9c", fontSize: 12, fontWeight: 700, flexShrink: 0 }}>📚 Themen</span>
+              <span style={{ flex: 1, minWidth: 0, fontWeight: 700, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{summary}</span>
+              <span aria-hidden="true" style={{ color: "#7d8d9c" }}>{topicsOpen ? "▴" : "▾"}</span>
+            </button>
+          );
+        })()}
+        {topicsOpen && (
+        <>
+        <div style={{ display: "flex", gap: 6, justifyContent: "center", marginBottom: 10, flexWrap: "wrap" }}>
           {(() => {
             const allOn = TABS.every(([k]) => tabs.includes(k));
             return (
@@ -1260,6 +1356,13 @@ function App() {
           })}
         </div>
 
+        <button
+          onClick={() => setTopicsOpen(false)}
+          style={{ display: "block", margin: "0 auto 14px", padding: "7px 18px", borderRadius: 10, border: "none", background: "#e0833b", color: "#0e1419", fontSize: 13, fontWeight: 700, cursor: "pointer" }}
+        >✓ Fertig</button>
+        </>
+        )}
+
         {/* SEARCH */}
         <div style={{ position: "relative", marginBottom: 18 }}>
           <span style={{ position: "absolute", left: 14, top: "50%", transform: "translateY(-50%)", fontSize: 14, color: "#7d8d9c", pointerEvents: "none" }}>🔍</span>
@@ -1268,7 +1371,7 @@ function App() {
             aria-label="Suchen in allen Wörtern und der Grammatik"
             value={query}
             onChange={(e) => { setQuery(e.target.value); setGrammarFocus(null); }}
-            placeholder="Suchen … alle Wörter & Grammatik"
+            placeholder="Suchen: Wörter & Grammatik"
             style={{
               width: "100%", boxSizing: "border-box", padding: "10px 36px 10px 36px",
               borderRadius: 12, border: "1px solid #2c3a47", background: "#161d24",
@@ -1295,7 +1398,7 @@ function App() {
             when only one card type is present. Both narrow every mode below,
             not just Cards - see selectionCards, which feeds Quiz/Article/
             Reverse/Cloze/Word Search rounds. */}
-        {!searching && availableLevels.length > 1 && (
+        {!overlay && availableLevels.length > 1 && (
           <CategoryFilter
             cats={availableLevels.map((l) => [l, l])}
             allKeys={availableLevels}
@@ -1305,7 +1408,7 @@ function App() {
             colorFor={(l) => (l === "A1" ? "#5fa85f" : "#e0833b")}
           />
         )}
-        {!searching && availableSources.length > 1 && (
+        {!overlay && availableSources.length > 1 && (
           <CategoryFilter
             cats={availableSources.map((s) => [s, s.replace(/^Menschen A2 · /, "")])}
             allKeys={availableSources}
@@ -1328,7 +1431,7 @@ function App() {
             return (
               <button
                 key={tab.mode}
-                onClick={() => { setMode(tab.mode); setGrammarFocus(null); setGrammarFrom(null); setQuery(""); }}
+                onClick={() => { setMode(tab.mode); setGrammarFocus(null); setGrammarFrom(null); setQuery(""); setReview(null); }}
                 aria-pressed={active}
                 aria-label={tab.count !== undefined ? `${tab.label} (${tab.count})` : tab.label}
                 style={{
@@ -1352,17 +1455,17 @@ function App() {
             );
           })}
         </div>
-        {!searching && mode === MODE.CARDS && selectionCards.length > 0 && <ProgressBar known={knownCount} total={selectionCards.length} due={dueCount} />}
-        {!searching && mode === MODE.ARTICLE && !aFinished && (
+        {!overlay && mode === MODE.CARDS && selectionCards.length > 0 && <ProgressBar known={knownCount} total={selectionCards.length} due={dueCount} />}
+        {!overlay && mode === MODE.ARTICLE && !aFinished && (
           <RoundSizeSelector onCycle={cycleArticleSize} label={articleSizeLabel(articleSizePref)} />
         )}
-        {!searching && mode === MODE.REVERSE && !rFinished && (
+        {!overlay && mode === MODE.REVERSE && !rFinished && (
           <RoundSizeSelector onCycle={cycleReverseSize} label={articleSizeLabel(reverseSizePref)} />
         )}
-        {!searching && mode === MODE.CLOZE && !cFinished && (
+        {!overlay && mode === MODE.CLOZE && !cFinished && (
           <RoundSizeSelector onCycle={cycleClozeSize} label={articleSizeLabel(clozeSizePref)} />
         )}
-        {!searching && mode === MODE.WORDSEARCH && !wsFinished && (
+        {!overlay && mode === MODE.WORDSEARCH && !wsFinished && (
           <RoundSizeSelector onCycle={cycleWsSize} label={articleSizeLabel(wsSizePref)} />
         )}
 
@@ -1375,6 +1478,17 @@ function App() {
             lang={lang}
             onOpenTopic={openGrammar}
             onOpenChapter={openChapterAt}
+          />
+        ) : reviewing ? (
+          <ReviewSession
+            key={review.n}
+            cards={review.cards}
+            lang={lang}
+            onGrade={reviewResult}
+            onExit={() => setReview(null)}
+            onRepeat={(missed) => startReview(missed)}
+            moreCount={dueAll.length}
+            onMore={() => startReview(dueAll.slice(0, REVIEW_SIZE))}
           />
         ) : mode === MODE.ARTICLE ? (
           aFinished ? (

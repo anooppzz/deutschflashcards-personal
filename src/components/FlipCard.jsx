@@ -8,7 +8,7 @@ import { ProgressCtx } from "../context/ProgressCtx";
 import { GrammarNavCtx } from "../context/GrammarNavCtx";
 import { faceStyle, badgeStyle, iconBtn } from "./cardStyles";
 
-function FlipCard({ front, sub, back, english, example, exampleEn, accent, badge, type, gender, deck, cardId, lang = "en", level, source, note }) {
+function FlipCard({ front, sub, back, english, example, exampleEn, accent, badge, type, gender, deck, cardId, lang = "en", level, source, note, showMarks = true }) {
   const { progress, mark } = useContext(ProgressCtx);
   const { openGrammar, linksFor } = useContext(GrammarNavCtx);
   const entry = cardId ? progress[cardId] : undefined;
@@ -201,7 +201,8 @@ function FlipCard({ front, sub, back, english, example, exampleEn, accent, badge
               🔇 Audio in dieser Umgebung blockiert
             </div>
           )}
-          {cardId && (
+          {/* manual marks - hidden where the screen grades the card itself (review session) */}
+          {cardId && showMarks && (
             <div style={{ position: "absolute", bottom: 12, display: "flex", gap: 8 }}>
               <button
                 onClick={stop(() => mark(cardId, status === "known" ? null : "known"))}
@@ -245,4 +246,5 @@ FlipCard.propTypes = {
   level: PropTypes.oneOf(["A1", "A2"]),
   source: PropTypes.string,
   note: PropTypes.string,
+  showMarks: PropTypes.bool,
 };
