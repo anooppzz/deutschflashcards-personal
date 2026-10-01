@@ -42,10 +42,10 @@ import {
   initFsrsCard, reviewFsrsCard, knownFsrsCard, reviewNowFsrsCard,
   isKnownStability, statusOfFsrs, dueLabel, migrateBoxEntry,
   localDateStr, addDaysStr, saveStreak, effectiveStreakDisplay,
-  weightedSample, shuffled, matches,
+  weightedSample, shuffled,
   validateGermanWord,
   distinctLevels, distinctSources, passesGlobalFilters,
-  buildGrammarIndex,
+  buildGrammarIndex, buildGrammarSearchIndex, searchCards, searchGrammar,
 } from "./engine";
 import {
   FlipCard, Controls, NoResults, CategoryFilter,
@@ -62,7 +62,7 @@ import {
   ReverseTrainer, ReverseSummary,
   ClozeTrainer, ClozeSummary, buildClozePool, buildClozeRound, saveClozeSizePref, resolveClozeRoundSize, isClozeCorrect,
   WordSearchTrainer, WordSearchSummary, buildWordSearchPool, buildWordSearchRound, resolveWordSearchSize,
-  GrammarView,
+  GrammarView, SearchResults,
 } from "./modes";
 
 /* ============================================================
@@ -104,6 +104,8 @@ EXTRA_TOPICS.forEach((t) => {
 // their 📖 chips by card id, and each grammar topic lists its words.
 const GRAMMAR_INDEX = buildGrammarIndex(ALL_CARDS, GRAMMAR_TOPICS);
 const grammarLinksById = (id) => GRAMMAR_INDEX.linksById[id] || [];
+// the text of every grammar topic, indexed once for the app-wide search
+const GRAMMAR_SEARCH = buildGrammarSearchIndex(GRAMMAR_TOPICS);
 
 function normalizeCard(deckKey, c) {
   // irregular verbs: { group, infinitiv, präteritum, hilfsverb, partizip, english, example }
@@ -192,7 +194,6 @@ function normalizeCard(deckKey, c) {
   return normalized;
 }
 
-/* matches() now lives in engine/search.js */
 
 /* ============================================================
    COMPONENTS
@@ -265,7 +266,7 @@ const HELP_I18N = {
   "help.tabs.label": { en: "Topic tabs", de: "Themen-Tabs", sq: "Skedat e temave", ar: "علامات تبويب المواضيع", uk: "Вкладки тем", hi: "टॉपिक टैब्स" },
   "help.tabs.desc": { en: "Select one or more topics at once. \"All\" selects every topic.", de: "Ein oder mehrere Themen gleichzeitig auswählen. \"Alle\" wählt jedes Thema.", sq: "Zgjidh një ose disa tema njëkohësisht. \"Të gjitha\" zgjedh çdo temë.", ar: "اختر موضوعًا واحدًا أو أكثر في الوقت نفسه. \"الكل\" يختار جميع المواضيع.", uk: "Оберіть одну або кілька тем одночасно. \"Усі\" обирає кожну тему.", hi: "एक या एक से अधिक विषय एक साथ चुनें। \"सभी\" हर विषय को चुनता है।" },
   "help.search.label": { en: "Search", de: "Suche", sq: "Kërko", ar: "البحث", uk: "Пошук", hi: "खोजें" },
-  "help.search.desc": { en: "Filters within whichever topics are currently selected, in German or English.", de: "Filtert innerhalb der gerade gewählten Themen, auf Deutsch oder Englisch.", sq: "Filtron brenda temave aktualisht të zgjedhura, në gjermanisht ose anglisht.", ar: "يُصفّي ضمن المواضيع المختارة حاليًا، بالألمانية أو الإنجليزية.", uk: "Фільтрує в межах обраних тем, німецькою або англійською.", hi: "वर्तमान में चुने गए विषयों के भीतर खोजता है, जर्मन या अंग्रेज़ी में।" },
+  "help.search.desc": { en: "Searches every word and every grammar topic, whatever topics are selected - in German or English, umlauts optional (fruhstuck finds frühstücken). Tap a word to open its card, or a grammar result to open the topic.", de: "Durchsucht alle Wörter und alle Grammatikthemen, egal welche Themen gewählt sind - auf Deutsch oder Englisch, Umlaute optional (fruhstuck findet frühstücken). Tippe auf ein Wort, um die Karte zu öffnen, oder auf ein Grammatik-Ergebnis, um das Thema zu öffnen.", sq: "Kërkon në të gjitha fjalët dhe të gjitha temat e gramatikës, pavarësisht cilat tema janë zgjedhur - në gjermanisht ose anglisht, umlautet janë opsionale (fruhstuck gjen frühstücken). Trokit mbi një fjalë për të hapur kartën, ose mbi një rezultat gramatike për të hapur temën.", ar: "يبحث في كل الكلمات وكل مواضيع القواعد، أيًا كانت المواضيع المختارة - بالألمانية أو الإنجليزية، والأوملاوت اختياري (fruhstuck يجد frühstücken). اضغط على كلمة لفتح بطاقتها، أو على نتيجة قواعد لفتح الموضوع.", uk: "Шукає в усіх словах і всіх темах граматики, незалежно від обраних тем - німецькою або англійською, умляути необов'язкові (fruhstuck знаходить frühstücken). Натисніть на слово, щоб відкрити картку, або на результат з граматики, щоб відкрити тему.", hi: "हर शब्द और हर व्याकरण विषय में खोजता है, चाहे कोई भी विषय चुने हों - जर्मन या अंग्रेज़ी में, उमलाउट वैकल्पिक (fruhstuck से frühstücken मिलता है)। कार्ड खोलने के लिए किसी शब्द पर, या विषय खोलने के लिए व्याकरण परिणाम पर टैप करें।" },
   "help.modes.label": { en: "Cards · Article · Quiz", de: "Karten · Artikel · Quiz", sq: "Kartat · Artikulli · Kuizi", ar: "البطاقات · أداة التعريف · الاختبار", uk: "Картки · Артикль · Квіз", hi: "कार्ड्स · आर्टिकल · क्विज़" },
   "help.modes.desc": { en: "Three study modes: flip through cards, practice der/die/das, or test meanings with multiple choice.", de: "Drei Lernmodi: durchblättern, der/die/das üben, oder Bedeutungen per Mehrfachauswahl testen.", sq: "Tre mënyra mësimi: kalo nëpër karta, praktiko der/die/das, ose testo kuptimet me zgjedhje të shumëfishta.", ar: "ثلاث طرق للدراسة: تصفح البطاقات، تدرّب على der/die/das، أو اختبر المعاني بأسئلة متعددة الخيارات.", uk: "Три режими навчання: перегортайте картки, тренуйте der/die/das, або перевіряйте значення через вибір варіантів.", hi: "तीन अध्ययन तरीके: कार्ड्स पलटें, der/die/das का अभ्यास करें, या बहुविकल्पीय प्रश्नों से अर्थ जाँचें।" },
   "help.language.label": { en: "Language", de: "Sprache", sq: "Gjuha", ar: "اللغة", uk: "Мова", hi: "भाषा" },
@@ -768,6 +769,7 @@ function App() {
     setGrammarFrom(null);
     setGrammarFocus(null);
   };
+
   // #2: language toggle - EN/RU/AR, personal + persisted
   const [lang, setLang] = useState("en");
   const [customLangs, setCustomLangs] = useState([]);
@@ -1044,21 +1046,21 @@ function App() {
 
   // filtered decks
   const filteredIrr = useMemo(
-    () => irrDeck.filter((v) => irrFilter.includes(v.group) && matches(v, query) && passesGlobalFilters(v, levelFilter, sourceFilter)),
-    [irrDeck, irrFilter, query, levelFilter, sourceFilter]
+    () => irrDeck.filter((v) => irrFilter.includes(v.group) && passesGlobalFilters(v, levelFilter, sourceFilter)),
+    [irrDeck, irrFilter, levelFilter, sourceFilter]
   );
-  const filteredInsep = useMemo(() => insepDeck.filter((v) => matches(v, query) && passesGlobalFilters(v, levelFilter, sourceFilter)), [insepDeck, query, levelFilter, sourceFilter]);
+  const filteredInsep = useMemo(() => insepDeck.filter((v) => passesGlobalFilters(v, levelFilter, sourceFilter)), [insepDeck, levelFilter, sourceFilter]);
   const filteredHaus = useMemo(
-    () => hausDeck.filter((w) => hausFilter.includes(w.type) && matches(w, query) && passesGlobalFilters(w, levelFilter, sourceFilter)),
-    [hausDeck, hausFilter, query, levelFilter, sourceFilter]
+    () => hausDeck.filter((w) => hausFilter.includes(w.type) && passesGlobalFilters(w, levelFilter, sourceFilter)),
+    [hausDeck, hausFilter, levelFilter, sourceFilter]
   );
   const filteredVerk = useMemo(
-    () => verkDeck.filter((w) => verkFilter.includes(w.type) && matches(w, query) && passesGlobalFilters(w, levelFilter, sourceFilter)),
-    [verkDeck, verkFilter, query, levelFilter, sourceFilter]
+    () => verkDeck.filter((w) => verkFilter.includes(w.type) && passesGlobalFilters(w, levelFilter, sourceFilter)),
+    [verkDeck, verkFilter, levelFilter, sourceFilter]
   );
   const filteredKleid = useMemo(
-    () => kleidDeck.filter((w) => kleidFilter.includes(w.type) && matches(w, query) && passesGlobalFilters(w, levelFilter, sourceFilter)),
-    [kleidDeck, kleidFilter, query, levelFilter, sourceFilter]
+    () => kleidDeck.filter((w) => kleidFilter.includes(w.type) && passesGlobalFilters(w, levelFilter, sourceFilter)),
+    [kleidDeck, kleidFilter, levelFilter, sourceFilter]
   );
 
   const irrVerb = filteredIrr[irrIdx % (filteredIrr.length || 1)];
@@ -1069,10 +1071,42 @@ function App() {
 
   // combined (multi-topic) filtered deck
   const filteredCombo = useMemo(
-    () => comboDeck.filter((c) => comboFilter.includes(c.type) && matches(c, query) && passesGlobalFilters(c, levelFilter, sourceFilter)),
-    [comboDeck, comboFilter, query, levelFilter, sourceFilter]
+    () => comboDeck.filter((c) => comboFilter.includes(c.type) && passesGlobalFilters(c, levelFilter, sourceFilter)),
+    [comboDeck, comboFilter, levelFilter, sourceFilter]
   );
   const comboCard = filteredCombo[comboIdx % (filteredCombo.length || 1)];
+
+  // ---- app-wide search (engine/globalSearch.js): while there is a query,
+  // the results replace the mode content below. Every card and every grammar
+  // topic is searched, whatever topics are selected. A grammar result opens
+  // its topic; "← Zurück" there returns to the results (the query stays).
+  const searching = query.trim() !== "" && !grammarFocus;
+  const searchCardResults = useMemo(() => searchCards(ALL_CARDS, query), [query]);
+  const searchTopicResults = useMemo(() => searchGrammar(GRAMMAR_SEARCH, query, lang), [query, lang]);
+  // "… öffnen →" under a found card: select its chapter and show that card,
+  // in the chapter's natural order with every filter open
+  const openChapterAt = (deck, front) => {
+    const plain = {
+      irregular: [IRREGULAR_VERBS, (c) => c.infinitiv, () => { setIrrDeck(IRREGULAR_VERBS); setIrrFilter(GROUP_KEYS); setIrrShuffled(false); }, setIrrIdx],
+      inseparable: [INSEPARABLE_VERBS, (c) => c.infinitiv, () => { setInsepDeck(INSEPARABLE_VERBS); setInsepShuffled(false); }, setInsepIdx],
+      haushalt: [HAUSHALT, (c) => c.front, () => { setHausDeck(HAUSHALT); setHausFilter(HAUS_KEYS); setHausShuffled(false); }, setHausIdx],
+      verkehr: [VERKEHR, (c) => c.front, () => { setVerkDeck(VERKEHR); setVerkFilter(FULL_KEYS); setVerkShuffled(false); }, setVerkIdx],
+      kleidung: [KLEIDUNG, (c) => c.front, () => { setKleidDeck(KLEIDUNG); setKleidFilter(FULL_KEYS); setKleidShuffled(false); }, setKleidIdx],
+    }[deck];
+    if (plain) {
+      const [cards, frontOf, reset, setIdx] = plain;
+      reset();
+      setIdx(Math.max(0, cards.findIndex((c) => frontOf(c) === front)));
+    } else if (EXTRA_BY_KEY[deck]) {
+      const t = EXTRA_BY_KEY[deck];
+      setExtraSlice(deck)({ order: t.cards, filter: t.keys, shuffled: false, idx: Math.max(0, t.cards.findIndex((c) => c.front === front)) });
+    }
+    setTabs([deck]);
+    setQuery("");
+    setMode(MODE.CARDS);
+    setGrammarFocus(null);
+    setGrammarFrom(null);
+  };
 
   // keyboard nav
   useEffect(() => {
@@ -1230,18 +1264,22 @@ function App() {
         <div style={{ position: "relative", marginBottom: 18 }}>
           <span style={{ position: "absolute", left: 14, top: "50%", transform: "translateY(-50%)", fontSize: 14, color: "#7d8d9c", pointerEvents: "none" }}>🔍</span>
           <input
+            type="search"
+            aria-label="Suchen in allen Wörtern und der Grammatik"
             value={query}
-            onChange={(e) => { setQuery(e.target.value); setIrrIdx(0); setInsepIdx(0); setHausIdx(0); setVerkIdx(0); setKleidIdx(0); setComboIdx(0); }}
-            placeholder="Suchen … (deutsch oder englisch)"
+            onChange={(e) => { setQuery(e.target.value); setGrammarFocus(null); }}
+            placeholder="Suchen … alle Wörter & Grammatik"
             style={{
               width: "100%", boxSizing: "border-box", padding: "10px 36px 10px 36px",
               borderRadius: 12, border: "1px solid #2c3a47", background: "#161d24",
-              color: "#f2f5f8", fontSize: 14, outline: "none",
+              // 16px: smaller text makes iPhones zoom into the page on focus
+              color: "#f2f5f8", fontSize: 16, outline: "none", appearance: "none",
             }}
           />
           {query && (
             <button
               onClick={() => setQuery("")}
+              aria-label="Suche löschen"
               style={{
                 position: "absolute", right: 8, top: "50%", transform: "translateY(-50%)",
                 background: "none", border: "none", color: "#7d8d9c", fontSize: 18, cursor: "pointer",
@@ -1257,7 +1295,7 @@ function App() {
             when only one card type is present. Both narrow every mode below,
             not just Cards - see selectionCards, which feeds Quiz/Article/
             Reverse/Cloze/Word Search rounds. */}
-        {availableLevels.length > 1 && (
+        {!searching && availableLevels.length > 1 && (
           <CategoryFilter
             cats={availableLevels.map((l) => [l, l])}
             allKeys={availableLevels}
@@ -1267,7 +1305,7 @@ function App() {
             colorFor={(l) => (l === "A1" ? "#5fa85f" : "#e0833b")}
           />
         )}
-        {availableSources.length > 1 && (
+        {!searching && availableSources.length > 1 && (
           <CategoryFilter
             cats={availableSources.map((s) => [s, s.replace(/^Menschen A2 · /, "")])}
             allKeys={availableSources}
@@ -1290,7 +1328,7 @@ function App() {
             return (
               <button
                 key={tab.mode}
-                onClick={() => { setMode(tab.mode); setGrammarFocus(null); setGrammarFrom(null); }}
+                onClick={() => { setMode(tab.mode); setGrammarFocus(null); setGrammarFrom(null); setQuery(""); }}
                 aria-pressed={active}
                 aria-label={tab.count !== undefined ? `${tab.label} (${tab.count})` : tab.label}
                 style={{
@@ -1314,22 +1352,31 @@ function App() {
             );
           })}
         </div>
-        {mode === MODE.CARDS && selectionCards.length > 0 && <ProgressBar known={knownCount} total={selectionCards.length} due={dueCount} />}
-        {mode === MODE.ARTICLE && !aFinished && (
+        {!searching && mode === MODE.CARDS && selectionCards.length > 0 && <ProgressBar known={knownCount} total={selectionCards.length} due={dueCount} />}
+        {!searching && mode === MODE.ARTICLE && !aFinished && (
           <RoundSizeSelector onCycle={cycleArticleSize} label={articleSizeLabel(articleSizePref)} />
         )}
-        {mode === MODE.REVERSE && !rFinished && (
+        {!searching && mode === MODE.REVERSE && !rFinished && (
           <RoundSizeSelector onCycle={cycleReverseSize} label={articleSizeLabel(reverseSizePref)} />
         )}
-        {mode === MODE.CLOZE && !cFinished && (
+        {!searching && mode === MODE.CLOZE && !cFinished && (
           <RoundSizeSelector onCycle={cycleClozeSize} label={articleSizeLabel(clozeSizePref)} />
         )}
-        {mode === MODE.WORDSEARCH && !wsFinished && (
+        {!searching && mode === MODE.WORDSEARCH && !wsFinished && (
           <RoundSizeSelector onCycle={cycleWsSize} label={articleSizeLabel(wsSizePref)} />
         )}
 
         <ErrorBoundary resetKey={mode} label={mode}>
-        {mode === MODE.ARTICLE ? (
+        {searching ? (
+          <SearchResults
+            query={query}
+            cards={searchCardResults}
+            topics={searchTopicResults}
+            lang={lang}
+            onOpenTopic={openGrammar}
+            onOpenChapter={openChapterAt}
+          />
+        ) : mode === MODE.ARTICLE ? (
           aFinished ? (
             <ArticleSummary
               score={aScore}
@@ -1479,7 +1526,7 @@ function App() {
                   }}
                   isShuffled={irrShuffled} />
               </>
-            ) : <NoResults q={query} />}
+            ) : <NoResults />}
           </>
         )}
 
@@ -1518,7 +1565,7 @@ function App() {
                   }}
                   isShuffled={insepShuffled} />
               </>
-            ) : <NoResults q={query} />}
+            ) : <NoResults />}
           </>
         )}
 
@@ -1551,7 +1598,7 @@ function App() {
                   }}
                   isShuffled={hausShuffled} />
               </>
-            ) : <NoResults q={query} />}
+            ) : <NoResults />}
           </>
         )}
 
@@ -1587,7 +1634,7 @@ function App() {
                   }}
                   isShuffled={verkShuffled} />
               </>
-            ) : <NoResults q={query} />}
+            ) : <NoResults />}
           </>
         )}
 
@@ -1623,7 +1670,7 @@ function App() {
                   }}
                   isShuffled={kleidShuffled} />
               </>
-            ) : <NoResults q={query} />}
+            ) : <NoResults />}
           </>
         )}
 
@@ -1633,7 +1680,6 @@ function App() {
             topic={EXTRA_BY_KEY[onlyTab]}
             slice={extra[onlyTab]}
             setSlice={setExtraSlice(onlyTab)}
-            query={query}
             lang={lang}
             levelFilter={levelFilter}
             sourceFilter={sourceFilter}
@@ -1673,7 +1719,7 @@ function App() {
                   }}
                   isShuffled={comboShuffled} />
               </>
-            ) : <NoResults q={query} />}
+            ) : <NoResults />}
           </>
         )}
 

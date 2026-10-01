@@ -18,3 +18,7 @@ body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
   margin-top: 16px; padding: 10px 22px; border-radius: 10px; border: none;
   background: #e0833b; color: #0e1419; font-weight: 700; font-size: 14px; cursor: pointer;
 }
+
+/* the search box has its own × button - hide the browser's built-in one */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; appearance: none; }

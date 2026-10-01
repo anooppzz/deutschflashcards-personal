@@ -63,9 +63,10 @@ src/data/decks/            vocabulary
   _deck-manifest.json      labels/icons for the five non-chapter decks
 src/data/grammar/topics.json   grammar reference (the Grammatik tab)
 src/data/index.js          exports; ALL_CARDS = every card in one flat list
-src/engine/                logic: FSRS scheduling, search, filters, grammarLinks.js
+src/engine/                logic: FSRS scheduling, filters, grammarLinks.js,
+                           globalSearch.js (app-wide search: cards + grammar)
 src/modes/                 one folder per study mode (cards, article, quiz, reverse,
-                           cloze, wordsearch, grammar)
+                           cloze, wordsearch, grammar) + search (results view)
 src/components/FlipCard.jsx  the card (front/back, note, 📖 grammar chips)
 ```
 

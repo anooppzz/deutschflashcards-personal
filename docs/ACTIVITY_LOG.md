@@ -18,9 +18,7 @@ was done, newest first. Every change adds a log entry here in the same commit
 - [ ] Offered, not requested yet: a grammar topic "Verben mit Präposition" (warten auf,
   denken an, sprechen über …).
 - [ ] **Audit 2026-10-01 – proposals, none requested yet** (learner picks):
-  1. Global search: all chapters regardless of selection + grammar topics, umlaut-
-     insensitive (fruhstuck → frühstücken), grouped results, tap to open. Today search
-     only filters the selected topics, misses umlauts, and topic clicks clear it.
+  1. ~~Global search~~ – done 2026-10-01 (see log).
   2. Progress safety: export/import backup (progress lives only in this browser's
      localStorage); installable PWA with offline cache.
   3. Daily review "Heute fällig" across all chapters; remember last topics and mode
@@ -40,6 +38,15 @@ was done, newest first. Every change adds a log entry here in the same commit
 ## Log
 
 ### 2026-10-01
+- **App-wide search** (audit item 1): the search box now searches every card in every
+  deck plus the text of all grammar topics, whatever topics are selected. Case, umlauts,
+  ß and ae/oe/ue don't matter (*fruhstuck* → *frühstücken*); matches the word, its forms
+  (*ging* → gehen), the meaning, note and example, best first. Results replace the mode
+  content: 📖 Grammatik rows open the topic ("← Zurück" returns to the results), 🃏 card
+  rows open the full card in place, "… öffnen →" jumps to that card in its chapter.
+  Engine `src/engine/globalSearch.js` (+11 tests); view `src/modes/search/`.
+  The old per-deck filter (`engine/search.js`) is gone. Search input is 16px so iPhones
+  don't zoom in on focus. `ALL_CARDS` now carries example, note, level, source.
 - Full audit of app, data and structure; findings under Pending ("Audit 2026-10-01").
 
 ### 2026-09-30

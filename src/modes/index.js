@@ -21,3 +21,4 @@ export { default as WordSearchSummary } from "./wordsearch/WordSearchSummary";
 export { buildWordSearchPool, buildWordSearchRound, resolveWordSearchSize } from "./wordsearch/buildGrid";
 
 export { default as GrammarView } from "./grammar/GrammarView";
+export { default as SearchResults } from "./search/SearchResults";

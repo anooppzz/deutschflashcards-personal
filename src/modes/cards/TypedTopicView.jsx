@@ -1,5 +1,5 @@
 import { GENDER_COLORS, TYPE_META } from "../../constants";
-import { idOf, matches, shuffled, passesGlobalFilters } from "../../engine";
+import { idOf, shuffled, passesGlobalFilters } from "../../engine";
 import { FlipCard, Controls, NoResults, CategoryFilter } from "../../components";
 
 // Colors for the type-filter chips within a Lektion topic - not shared
@@ -7,9 +7,9 @@ import { FlipCard, Controls, NoResults, CategoryFilter } from "../../components"
 const typeColorOf = (key) => (key === "n" ? "#4f86c6" : TYPE_META[key].color);
 
 /* Generic view for the Lektion topic decks (typed vocabulary) */
-function TypedTopicView({ topic, slice, setSlice, query, lang, levelFilter, sourceFilter }) {
+function TypedTopicView({ topic, slice, setSlice, lang, levelFilter, sourceFilter }) {
   const cards = topic.cards;
-  const filtered = slice.order.filter((c) => slice.filter.includes(c.type) && matches(c, query) && passesGlobalFilters(c, levelFilter, sourceFilter));
+  const filtered = slice.order.filter((c) => slice.filter.includes(c.type) && passesGlobalFilters(c, levelFilter, sourceFilter));
   const total = filtered.length;
   const card = filtered[slice.idx % (total || 1)];
   return (
@@ -58,7 +58,7 @@ function TypedTopicView({ topic, slice, setSlice, query, lang, levelFilter, sour
             isShuffled={Boolean(slice.shuffled)}
           />
         </>
-      ) : <NoResults q={query} />}
+      ) : <NoResults />}
     </>
   );
 }
