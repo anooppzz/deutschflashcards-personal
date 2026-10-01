@@ -137,7 +137,8 @@ function FlipCard({ front, sub, back, english, example, exampleEn, accent, badge
           </div>
         </div>
         {/* BACK */}
-        <div style={{ ...faceStyle(computedAccent), transform: "rotateY(180deg)" }}>
+        {/* bottom padding keeps long backs clear of the ✓ Gekonnt / ↻ Üben buttons */}
+        <div style={{ ...faceStyle(computedAccent), transform: "rotateY(180deg)", paddingBottom: cardId && showMarks ? 46 : 24 }}>
           <div dir="auto" style={{ fontSize: 24, fontWeight: 700, color: "#f2f5f8", textAlign: "center" }}>{transBack}</div>
           {lang !== "en" && cardId && (
             correcting ? (

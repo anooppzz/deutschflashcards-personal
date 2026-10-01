@@ -10855,6 +10855,168 @@
         "exampleEn": "Welcome to our company!",
         "level": "A1",
         "source": "Menschen A2 · Einheit 11"
+      },
+      {
+        "type": "sonst",
+        "front": "Ich finde es schön, dass …",
+        "sub": "auch: traurig / schrecklich / gut …",
+        "english": "I think it's nice that …",
+        "example": "Ich finde es traurig, dass man so viel wegwirft.",
+        "exampleEn": "I think it's sad that people throw away so much.",
+        "note": "dass → Verb am Ende",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 11",
+        "grammar": [
+          "nebensatz"
+        ]
+      },
+      {
+        "type": "sonst",
+        "front": "Ich bin froh, dass …",
+        "sub": "",
+        "english": "I'm glad that …",
+        "example": "Ich bin froh, dass dir die Tasche gefällt.",
+        "exampleEn": "I'm glad you like the bag.",
+        "note": "dass → Verb am Ende",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 11",
+        "grammar": [
+          "nebensatz"
+        ]
+      },
+      {
+        "type": "sonst",
+        "front": "Ich denke, dass das eine gute Idee ist.",
+        "sub": "auch: …, dass das im Trend liegt.",
+        "english": "I think that's a good idea.",
+        "example": "Taschen aus alten Zeitungen? Ich denke, dass das eine gute Idee ist.",
+        "exampleEn": "Bags made from old newspapers? I think that's a good idea.",
+        "note": "im Trend liegen = to be trendy",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 11",
+        "grammar": [
+          "nebensatz"
+        ]
+      },
+      {
+        "type": "sonst",
+        "front": "Am besten gefällt mir, dass …",
+        "sub": "auch: Besonders gut gefällt mir, dass …",
+        "english": "What I like best is that …",
+        "example": "Am besten gefällt mir, dass die Taschen so bunt sind.",
+        "exampleEn": "What I like best is that the bags are so colourful.",
+        "note": "gefallen + Dat. (mir)",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 11",
+        "grammar": [
+          "nebensatz"
+        ]
+      },
+      {
+        "type": "sonst",
+        "front": "Den/Das/Die … würde ich gern kaufen.",
+        "sub": "↔ … würde ich nicht kaufen. Denn …",
+        "english": "I'd like to buy the …",
+        "example": "Die Handtasche würde ich gern kaufen. Denn sie ist praktisch.",
+        "exampleEn": "I'd like to buy the handbag. Because it's practical.",
+        "note": "würde + Infinitiv = would · Den (der Rucksack), das (das Heft), die (die Tasche)",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 11",
+        "grammar": [
+          "konnektoren-aduso"
+        ]
+      },
+      {
+        "type": "sonst",
+        "front": "Ich würde gern in der Firma arbeiten, weil …",
+        "sub": "↔ nicht so gern",
+        "english": "I'd like to work at the company because …",
+        "example": "Ich würde gern in der Firma arbeiten, weil mir die Idee gefällt.",
+        "exampleEn": "I'd like to work at the company because I like the idea.",
+        "note": "weil → Verb am Ende",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 11",
+        "grammar": [
+          "nebensatz"
+        ]
+      },
+      {
+        "type": "sonst",
+        "front": "Herzlichen Glückwunsch zum Jubiläum!",
+        "sub": "auch: Alles Gute zum Jubiläum!",
+        "english": "Congratulations on your anniversary!",
+        "example": "Zehn Jahre! Herzlichen Glückwunsch zum Jubiläum!",
+        "exampleEn": "Ten years! Congratulations on the anniversary!",
+        "note": "das Jubiläum = anniversary · zum = zu + dem",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 11",
+        "grammar": [
+          "praep-dativ"
+        ]
+      },
+      {
+        "type": "sonst",
+        "front": "Wir wünschen Ihnen …",
+        "sub": "",
+        "english": "We wish you …",
+        "example": "Wir wünschen Ihnen viel Erfolg und alles Gute!",
+        "exampleEn": "We wish you every success and all the best!",
+        "note": "wünschen + Dat. (Ihnen) + Akk. (viel Erfolg)",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 11"
+      },
+      {
+        "type": "sonst",
+        "front": "Wir gratulieren Ihnen …",
+        "sub": "auch: Wir gratulieren Ihnen zu …",
+        "english": "We congratulate you …",
+        "example": "Wir gratulieren Ihnen zum Geburtstag!",
+        "exampleEn": "Happy birthday! (lit. we congratulate you on your birthday)",
+        "note": "gratulieren + Dat. (Ihnen) · zu + Dat.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 11",
+        "grammar": [
+          "praep-dativ"
+        ]
+      },
+      {
+        "type": "sonst",
+        "front": "Wir hoffen, …",
+        "sub": "auch: Wir hoffen, dass …",
+        "english": "We hope …",
+        "example": "Wir hoffen, dass Sie noch lange bei uns bleiben.",
+        "exampleEn": "We hope you stay with us for a long time.",
+        "note": "dass → Verb am Ende",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 11",
+        "grammar": [
+          "nebensatz"
+        ]
+      },
+      {
+        "type": "sonst",
+        "front": "Wir danken Ihnen für …",
+        "sub": "",
+        "english": "We thank you for …",
+        "example": "Wir danken Ihnen für die Einladung.",
+        "exampleEn": "We thank you for the invitation.",
+        "note": "danken + Dat. (Ihnen) für + Akk.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 11"
+      },
+      {
+        "type": "sonst",
+        "front": "Wir bedanken uns für …",
+        "sub": "",
+        "english": "We'd like to say thank you for …",
+        "example": "Wir bedanken uns für Ihre Hilfe.",
+        "exampleEn": "We'd like to say thank you for your help.",
+        "note": "sich bedanken: ich bedanke mich, wir bedanken uns",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 11",
+        "grammar": [
+          "reflexive-verben"
+        ]
       }
     ]
   },
@@ -11055,6 +11217,76 @@
         "grammar": [
           "konnektoren-adverbien"
         ]
+      },
+      {
+        "type": "v",
+        "front": "duschen (sich)",
+        "sub": "hat sich geduscht",
+        "english": "to (have a) shower",
+        "example": "Ich dusche mich jeden Morgen.",
+        "exampleEn": "I shower every morning.",
+        "note": "mit oder ohne sich: Ich dusche. = Ich dusche mich.",
+        "level": "A2"
+      },
+      {
+        "type": "v",
+        "front": "rasieren (sich)",
+        "sub": "hat sich rasiert",
+        "english": "to shave",
+        "example": "Mein Vater rasiert sich jeden Morgen.",
+        "exampleEn": "My father shaves every morning.",
+        "note": "jemanden rasieren: Der Friseur rasiert ihn.",
+        "level": "A2"
+      },
+      {
+        "type": "v",
+        "front": "schminken (sich)",
+        "sub": "hat sich geschminkt",
+        "english": "to put on make-up",
+        "example": "Sie schminkt sich vor der Party.",
+        "exampleEn": "She puts on make-up before the party.",
+        "note": "↔ sich abschminken = to take off make-up",
+        "level": "A2"
+      },
+      {
+        "type": "v",
+        "front": "vor·stellen (sich)",
+        "sub": "hat sich vorgestellt",
+        "english": "to introduce oneself",
+        "example": "Darf ich mich vorstellen? Ich heiße Anna.",
+        "exampleEn": "May I introduce myself? My name is Anna.",
+        "note": "jemanden vorstellen = to introduce sb. · sich (Dat.) etwas vorstellen = to imagine",
+        "level": "A2"
+      },
+      {
+        "type": "v",
+        "front": "verlieben (sich)",
+        "sub": "hat sich verliebt",
+        "english": "to fall in love",
+        "example": "Sie hat sich in ihren Kollegen verliebt.",
+        "exampleEn": "She fell in love with her colleague.",
+        "note": "sich verlieben in + Akk. · verliebt sein = to be in love",
+        "level": "A2"
+      },
+      {
+        "type": "v",
+        "front": "beschweren (sich)",
+        "sub": "hat sich beschwert",
+        "english": "to complain",
+        "example": "Der Gast beschwert sich über das kalte Essen.",
+        "exampleEn": "The guest complains about the cold food.",
+        "note": "sich beschweren bei + Dat. über + Akk.",
+        "level": "A2"
+      },
+      {
+        "type": "v",
+        "front": "küssen (sich)",
+        "sub": "hat sich geküsst",
+        "english": "to kiss (each other)",
+        "example": "Die beiden küssen sich zum Abschied.",
+        "exampleEn": "The two of them kiss goodbye.",
+        "note": "reziprok: sich = einander · jemanden küssen: Er küsst sie.",
+        "level": "A2"
       }
     ]
   }
