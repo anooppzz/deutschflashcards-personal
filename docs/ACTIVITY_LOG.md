@@ -27,12 +27,18 @@ was done, newest first. Every change adds a log entry here in the same commit
      ~~Konjunktiv II, Präteritum war/hatte, Verben mit Dativ, Verben mit Präposition,
      trennbare Verben, Imperativ~~ (done 2026-10-04); ~~mini-exercises~~ (done).
   6. ~~Data cleanup~~ (done 2026-10-04).
-  7. Code: App.jsx 1,703 lines / 75 useState; six copy-pasted deck viewers; help texts
-     inline; progress keyed by deck+front (fixing a typo in `front` loses progress).
+  7. ~~Code tidying~~ (done 2026-10-04).
 
 ## Log
 
 ### 2026-10-04
+- **Code tidying 3/4 – progress survives renames:** `src/data/renames.json` (old id → new id,
+  or null for a deletion) is applied when progress loads (`engine/renames.js`). It starts
+  with the four real renames found in git history, so that practice comes back: three
+  restaurant cards reworded on 2026-09-24 (Verzeihen Sie. / Stimmt so. / Einen Moment,
+  bitte.) and *streiten* moved from Meine Wörter to Firma & Produkte. `src/data/card-ids.json`
+  snapshots all 1,194 ids; `cardIds.test.js` fails when a card disappears without a rename
+  entry or the snapshot is stale (`npm run ids:update`). New rule 6b in CLAUDE.md. +6 tests.
 - **Code tidying 2/4 – help out of App.jsx:** the 56 help/welcome texts (6 languages) are
   now `src/data/help.json`; WelcomeModal / HelpModal live in `components/HelpModals.jsx`;
   a stale comment about an abandoned translation approach is gone (chain.js documents the

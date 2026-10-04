@@ -17,3 +17,4 @@ export * from "./globalSearch";
 export * from "./review";
 export * from "./backup";
 export * from "./pwa";
+export * from "./renames";

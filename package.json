@@ -8,7 +8,8 @@
     "build": "vite build",
     "lint": "oxlint",
     "preview": "vite preview",
-    "test": "vitest run"
+    "test": "vitest run",
+    "ids:update": "UPDATE_CARD_IDS=1 vitest run src/data/cardIds.test.js"
   },
   "dependencies": {
     "prop-types": "^15.8.1",

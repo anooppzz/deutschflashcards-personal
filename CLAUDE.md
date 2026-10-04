@@ -26,6 +26,7 @@ npm test        # vitest – must pass
 npm run lint    # oxlint – 57 warnings already exist; add no new ones
 npm run build   # dist/index.html
 npm run dev     # local dev server
+npm run ids:update  # after adding/renaming/removing cards (see rule 6b)
 ```
 
 ## Rules for agents
@@ -46,6 +47,11 @@ npm run dev     # local dev server
 6. **Never duplicate cards.** Search all decks for a word before adding it. Words may
    exist in another chapter; adding the same word to a new chapter is fine only when
    the learner asks for it (progress is tracked per chapter).
+6b. **Never lose the learner's progress.** Progress is stored per card id
+   (`deck::front`). Changing a `front` (even a typo), moving a card to another chapter
+   or deleting it: add `"old-id": "new-id"` (or `"old-id": null` for a deletion) to
+   `src/data/renames.json`, then run `npm run ids:update`. `src/data/cardIds.test.js`
+   fails until both are done; the app moves the progress on the next load.
 7. **Read textbook photos carefully.** Transcribe exactly (articles, plural markers,
    A:/CH: variants). Say which readings you're unsure of instead of guessing silently.
 8. **Explain the way the learner likes:** scannable – a one-line rule, tables for forms

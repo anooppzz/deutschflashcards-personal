@@ -45,12 +45,13 @@ import {
   weightedSample, shuffled,
   checkReverseAnswer,
   distinctLevels, distinctSources, passesGlobalFilters,
-  buildGrammarIndex, buildGrammarSearchIndex, searchCards, searchGrammar, dueCards,
+  buildGrammarIndex, buildGrammarSearchIndex, searchCards, searchGrammar, dueCards, applyRenames,
 } from "./engine";
 import {
   FlipCard, Controls, NoResults, CategoryFilter,
   StreakBar, ProgressBar, RoundSizeSelector, ErrorBoundary, BackupModal, WelcomeModal, HelpModal,
 } from "./components";
+import RENAMES from "./data/renames.json";
 import { ProgressCtx } from "./context/ProgressCtx";
 import { GrammarNavCtx } from "./context/GrammarNavCtx";
 import {
@@ -320,8 +321,10 @@ function App() {
             migrated[id] = v;
           }
         });
-        setProgress(migrated);
-        if (anyMigrated) saveProgress(migrated);
+        // cards renamed or moved since: their progress follows (data/renames.json)
+        const renamed = applyRenames(migrated, RENAMES);
+        setProgress(renamed.progress);
+        if (anyMigrated || renamed.changed) saveProgress(renamed.progress);
       } catch (e) {}
     })();
   }, []);
