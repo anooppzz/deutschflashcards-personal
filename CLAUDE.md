@@ -139,7 +139,8 @@ found in the example are left out of Cloze, which is fine for phrases).
   Nomen & Artikel · Verben · Adjektive · Satz & Fragen · Konnektoren · Präpositionen.
 - Tables must fit a 360px phone: at most ~4 short columns; put long text in bullets.
 - `match` rules link cards automatically: `type`, `gender`, `decks`, `endings`,
-  `subPattern` (regex on `sub`), `except` (card fronts to skip). Gender rules only link cards whose gender agrees.
+  `subPattern` (regex on `sub`), `frontPattern` (regex on `front`), `except` (card
+  fronts to skip). Gender rules only link cards whose gender agrees.
   Anything else: add the topic key to the card's `grammar` list.
 - `src/modes/grammar/grammarContent.test.js` checks both languages, table row
   lengths, balanced `**`, groups; `src/engine/grammarLinks.test.js` checks that every

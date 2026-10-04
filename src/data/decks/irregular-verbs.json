@@ -37,7 +37,10 @@
     "partizip": "gelassen",
     "english": "to let / leave",
     "example": "Ich habe das Fahrrad zu Hause gelassen.",
-    "level": "A1"
+    "level": "A1",
+    "grammar": [
+      "imperativ"
+    ]
   },
   {
     "group": "a – i – a",
@@ -47,7 +50,10 @@
     "partizip": "geraten",
     "english": "to advise / guess",
     "example": "Er hat mir geraten, langsam zu fahren.",
-    "level": "A2"
+    "level": "A2",
+    "grammar": [
+      "verben-dativ"
+    ]
   },
   {
     "group": "a – i – a",
@@ -130,7 +136,8 @@
     "level": "A1",
     "grammar": [
       "fragewoerter-kasus",
-      "kasus-ueberblick"
+      "kasus-ueberblick",
+      "verben-dativ"
     ]
   },
   {
@@ -171,7 +178,10 @@
     "partizip": "gesprochen",
     "english": "to speak",
     "example": "Wir haben über die Regeln gesprochen.",
-    "level": "A1"
+    "level": "A1",
+    "grammar": [
+      "verben-praeposition"
+    ]
   },
   {
     "group": "e – a – o",
@@ -197,7 +207,8 @@
     "level": "A1",
     "grammar": [
       "fragewoerter-kasus",
-      "kasus-ueberblick"
+      "kasus-ueberblick",
+      "verben-dativ"
     ]
   },
   {

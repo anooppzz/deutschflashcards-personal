@@ -64,7 +64,8 @@ describe("grammarLinksFor - Perfekt rule", () => {
   it("links every verb in the irregular and inseparable decks", () => {
     // irregular verbs show their Präteritum too, so they also link to that topic
     expect(keysFor(verb("fangen", "fing · gefangen", "irregular"))).toEqual(["perfekt", "praeteritum"]);
-    expect(keysFor(verb("bekommen", "hat bekommen", "inseparable"))).toEqual(["perfekt"]);
+    // inseparable verbs also link to Trennbare Verben, which contrasts them
+    expect(keysFor(verb("bekommen", "hat bekommen", "inseparable"))).toEqual(["trennbare-verben", "perfekt"]);
   });
 
   it("uses the short topic title as the chip label", () => {
@@ -77,6 +78,19 @@ describe("grammarLinksFor - Perfekt rule", () => {
     expect(keysFor(verb("mögen", "du magst, er mag"))).toEqual([]);
     expect(keysFor(verb("kochen", ""))).toEqual([]);
     expect(keysFor({ type: "sonst", front: "hat", sub: "hat recht" })).toEqual([]);
+  });
+});
+
+describe("grammarLinksFor - Trennbare Verben rule", () => {
+  it("links verbs with a separable prefix, with or without the dot", () => {
+    expect(keysFor({ type: "v", front: "an·rufen" })).toContain("trennbare-verben");
+    expect(keysFor({ type: "v", front: "aufräumen" })).toContain("trennbare-verben");
+    expect(keysFor({ type: "v", front: "kennenlernen" })).toContain("trennbare-verben");
+  });
+  it("skips words that only start like a prefix", () => {
+    expect(keysFor({ type: "v", front: "antworten" })).not.toContain("trennbare-verben");
+    expect(keysFor({ type: "v", front: "arbeiten" })).not.toContain("trennbare-verben");
+    expect(keysFor({ type: "n", gender: "der", front: "der Anruf" })).not.toContain("trennbare-verben");
   });
 });
 

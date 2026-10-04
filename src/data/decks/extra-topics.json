@@ -754,7 +754,8 @@
         "grammar": [
           "fragewoerter-kasus",
           "nebensatz",
-          "kasus-ueberblick"
+          "kasus-ueberblick",
+          "verben-dativ"
         ]
       },
       {
@@ -1490,7 +1491,8 @@
         "level": "A1",
         "grammar": [
           "fragewoerter-kasus",
-          "kasus-ueberblick"
+          "kasus-ueberblick",
+          "verben-dativ"
         ]
       },
       {
@@ -2045,7 +2047,8 @@
         "level": "A1",
         "grammar": [
           "fragewoerter-kasus",
-          "kasus-ueberblick"
+          "kasus-ueberblick",
+          "verben-dativ"
         ]
       },
       {
@@ -3115,7 +3118,8 @@
         "level": "A2",
         "grammar": [
           "fragewoerter-kasus",
-          "kasus-ueberblick"
+          "kasus-ueberblick",
+          "verben-dativ"
         ]
       },
       {
@@ -3128,7 +3132,8 @@
         "level": "A2",
         "grammar": [
           "fragewoerter-kasus",
-          "kasus-ueberblick"
+          "kasus-ueberblick",
+          "verben-dativ"
         ]
       },
       {
@@ -3876,7 +3881,8 @@
         "level": "A1",
         "grammar": [
           "fragewoerter-kasus",
-          "kasus-ueberblick"
+          "kasus-ueberblick",
+          "verben-dativ"
         ]
       },
       {
@@ -4252,7 +4258,10 @@
         "english": "excuse me",
         "example": "Entschuldigen Sie, wo ist der Bahnhof?",
         "exampleEn": "Excuse me, where is the train station?",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "imperativ"
+        ]
       },
       {
         "type": "v",
@@ -4282,7 +4291,8 @@
         "level": "A2",
         "grammar": [
           "fragewoerter-kasus",
-          "kasus-ueberblick"
+          "kasus-ueberblick",
+          "verben-dativ"
         ]
       },
       {
@@ -4460,7 +4470,11 @@
         "english": "to talk",
         "example": "Wir reden oft über die Arbeit.",
         "exampleEn": "We often talk about work.",
-        "level": "A2"
+        "level": "A2",
+        "note": "reden über + Akk. · mit + Dat.",
+        "grammar": [
+          "verben-praeposition"
+        ]
       },
       {
         "type": "adj",
@@ -4598,8 +4612,10 @@
         "exampleEn": "I often think about my family.",
         "level": "A1",
         "grammar": [
-          "nebensatz"
-        ]
+          "nebensatz",
+          "verben-praeposition"
+        ],
+        "note": "denken an + Akk. · über etwas nachdenken = think about"
       },
       {
         "type": "v",
@@ -5456,7 +5472,11 @@
         "english": "to ask",
         "example": "Darf ich dich etwas fragen?",
         "exampleEn": "May I ask you something?",
-        "level": "A1"
+        "level": "A1",
+        "note": "fragen nach + Dat. = ask about",
+        "grammar": [
+          "verben-praeposition"
+        ]
       },
       {
         "type": "v",
@@ -6082,7 +6102,8 @@
         "level": "A1",
         "grammar": [
           "fragewoerter-kasus",
-          "kasus-ueberblick"
+          "kasus-ueberblick",
+          "verben-dativ"
         ]
       },
       {
@@ -6101,7 +6122,11 @@
         "english": "to take care of",
         "example": "Ich kümmere mich um das Problem.",
         "exampleEn": "I'll take care of the problem.",
-        "level": "A2"
+        "level": "A2",
+        "note": "sich kümmern um + Akk.",
+        "grammar": [
+          "verben-praeposition"
+        ]
       },
       {
         "type": "v",
@@ -6122,7 +6147,8 @@
         "level": "A2",
         "grammar": [
           "fragewoerter-kasus",
-          "kasus-ueberblick"
+          "kasus-ueberblick",
+          "verben-dativ"
         ]
       },
       {
@@ -6190,7 +6216,8 @@
         "level": "A2",
         "grammar": [
           "fragewoerter-kasus",
-          "kasus-ueberblick"
+          "kasus-ueberblick",
+          "verben-dativ"
         ]
       },
       {
@@ -6298,7 +6325,11 @@
         "english": "to wait",
         "example": "Wir warten auf den Bus.",
         "exampleEn": "We're waiting for the bus.",
-        "level": "A1"
+        "level": "A1",
+        "note": "warten auf + Akk.",
+        "grammar": [
+          "verben-praeposition"
+        ]
       },
       {
         "type": "adj",
@@ -6493,7 +6524,8 @@
         "exampleEn": "I have to register for the course.",
         "level": "A2",
         "grammar": [
-          "reflexive-verben"
+          "reflexive-verben",
+          "verben-praeposition"
         ]
       },
       {
@@ -7141,7 +7173,8 @@
         "level": "A2",
         "grammar": [
           "fragewoerter-kasus",
-          "kasus-ueberblick"
+          "kasus-ueberblick",
+          "verben-dativ"
         ]
       },
       {
@@ -7154,7 +7187,8 @@
         "level": "A2",
         "grammar": [
           "fragewoerter-kasus",
-          "kasus-ueberblick"
+          "kasus-ueberblick",
+          "verben-dativ"
         ]
       },
       {
@@ -7167,7 +7201,8 @@
         "level": "A1",
         "grammar": [
           "fragewoerter-kasus",
-          "kasus-ueberblick"
+          "kasus-ueberblick",
+          "verben-dativ"
         ]
       },
       {
@@ -8267,7 +8302,11 @@
         "example": "Ich interessiere mich für Geschichte.",
         "exampleEn": "I'm interested in history.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 5"
+        "source": "Menschen A2 · Einheit 5",
+        "note": "sich interessieren für + Akk.",
+        "grammar": [
+          "verben-praeposition"
+        ]
       },
       {
         "type": "v",
@@ -8300,7 +8339,8 @@
         "source": "Menschen A2 · Einheit 5",
         "grammar": [
           "fragewoerter-kasus",
-          "kasus-ueberblick"
+          "kasus-ueberblick",
+          "verben-dativ"
         ]
       },
       {
@@ -8385,7 +8425,11 @@
         "example": "Er hat sich über den Verkehr geärgert.",
         "exampleEn": "He got annoyed about the traffic.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 5"
+        "source": "Menschen A2 · Einheit 5",
+        "note": "sich ärgern über + Akk.",
+        "grammar": [
+          "verben-praeposition"
+        ]
       },
       {
         "type": "v",
@@ -8421,7 +8465,11 @@
         "example": "Ich freue mich auf den Urlaub.",
         "exampleEn": "I'm looking forward to the vacation.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 5"
+        "source": "Menschen A2 · Einheit 5",
+        "note": "sich freuen auf (kommt noch) / über (ist da) + Akk.",
+        "grammar": [
+          "verben-praeposition"
+        ]
       },
       {
         "type": "adj",
@@ -8695,7 +8743,11 @@
         "example": "Was hältst du von meinem Vorschlag?",
         "exampleEn": "What do you think of my suggestion?",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 6"
+        "source": "Menschen A2 · Einheit 6",
+        "note": "Was hältst du von …? (+ Dat.) = What do you think of …?",
+        "grammar": [
+          "verben-praeposition"
+        ]
       },
       {
         "type": "sonst",
@@ -8725,7 +8777,10 @@
         "example": "Lass uns morgen ins Kino gehen.",
         "exampleEn": "Let's go to the cinema tomorrow.",
         "level": "A1",
-        "source": "Menschen A2 · Einheit 6"
+        "source": "Menschen A2 · Einheit 6",
+        "grammar": [
+          "imperativ"
+        ]
       },
       {
         "type": "sonst",
@@ -8735,7 +8790,10 @@
         "example": "Lass uns zusammen zum Konzert gehen.",
         "exampleEn": "Let's go to the concert together.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 6"
+        "source": "Menschen A2 · Einheit 6",
+        "grammar": [
+          "imperativ"
+        ]
       },
       {
         "type": "v",
@@ -9033,7 +9091,8 @@
         "source": "Menschen A2 · Einheit 7",
         "grammar": [
           "fragewoerter-kasus",
-          "kasus-ueberblick"
+          "kasus-ueberblick",
+          "verben-dativ"
         ]
       },
       {
@@ -9047,7 +9106,8 @@
         "source": "Menschen A2 · Einheit 7",
         "grammar": [
           "fragewoerter-kasus",
-          "kasus-ueberblick"
+          "kasus-ueberblick",
+          "verben-dativ"
         ]
       },
       {
@@ -9068,7 +9128,11 @@
         "example": "Ich nehme an einem Deutschkurs teil.",
         "exampleEn": "I'm participating in a German course.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 7"
+        "source": "Menschen A2 · Einheit 7",
+        "note": "teilnehmen an + Dat.",
+        "grammar": [
+          "verben-praeposition"
+        ]
       },
       {
         "type": "adj",
@@ -9646,7 +9710,8 @@
         "level": "A2",
         "source": "Menschen A2 · Einheit 8",
         "grammar": [
-          "reflexive-verben"
+          "reflexive-verben",
+          "verben-praeposition"
         ]
       },
       {
@@ -9688,7 +9753,10 @@
         "example": "Ich vertraue meinem Arzt.",
         "exampleEn": "I trust my doctor.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 8"
+        "source": "Menschen A2 · Einheit 8",
+        "grammar": [
+          "verben-dativ"
+        ]
       },
       {
         "type": "sonst",
@@ -10032,7 +10100,8 @@
         "source": "Menschen A2 · Einheit 9",
         "grammar": [
           "fragewoerter-kasus",
-          "kasus-ueberblick"
+          "kasus-ueberblick",
+          "verben-dativ"
         ]
       },
       {
@@ -10253,7 +10322,10 @@
         "example": "Verzeihen Sie, ist der Tisch noch frei?",
         "exampleEn": "Excuse me, is this table still free?",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 10"
+        "source": "Menschen A2 · Einheit 10",
+        "grammar": [
+          "imperativ"
+        ]
       },
       {
         "type": "n",
@@ -10699,7 +10771,10 @@
         "exampleEn": "I'd like to say thank you for the invitation.",
         "note": "sich bedanken bei + Dat. für + Akk.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 11"
+        "source": "Menschen A2 · Einheit 11",
+        "grammar": [
+          "verben-praeposition"
+        ]
       },
       {
         "type": "v",
@@ -10804,7 +10879,10 @@
         "exampleEn": "Do you remember our vacation?",
         "note": "sich erinnern an + Akk.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 11"
+        "source": "Menschen A2 · Einheit 11",
+        "grammar": [
+          "verben-praeposition"
+        ]
       },
       {
         "type": "v",
@@ -10828,7 +10906,8 @@
         "level": "A2",
         "source": "Menschen A2 · Einheit 11",
         "grammar": [
-          "praeteritum"
+          "praeteritum",
+          "verben-praeposition"
         ]
       },
       {
@@ -10840,7 +10919,10 @@
         "exampleEn": "We talked about the film for a long time.",
         "note": "sich unterhalten mit + Dat. über + Akk. · Partizip = Infinitiv",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 11"
+        "source": "Menschen A2 · Einheit 11",
+        "grammar": [
+          "verben-praeposition"
+        ]
       },
       {
         "type": "v",
@@ -11327,7 +11409,10 @@
         "example": "Sie hat sich in ihren Kollegen verliebt.",
         "exampleEn": "She fell in love with her colleague.",
         "note": "sich verlieben in + Akk. · verliebt sein = to be in love",
-        "level": "A2"
+        "level": "A2",
+        "grammar": [
+          "verben-praeposition"
+        ]
       },
       {
         "type": "v",
@@ -11337,7 +11422,10 @@
         "example": "Der Gast beschwert sich über das kalte Essen.",
         "exampleEn": "The guest complains about the cold food.",
         "note": "sich beschweren bei + Dat. über + Akk.",
-        "level": "A2"
+        "level": "A2",
+        "grammar": [
+          "verben-praeposition"
+        ]
       },
       {
         "type": "v",

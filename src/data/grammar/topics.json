@@ -337,6 +337,216 @@
     ]
   },
   {
+    "key": "trennbare-verben",
+    "level": "A1",
+    "group": {"de": "Verben", "en": "Verbs"},
+    "title": {"de": "Trennbare Verben: anrufen, aufstehen", "en": "Separable Verbs: anrufen, aufstehen"},
+    "summary": {
+      "de": "Das Präfix geht **ans Satzende**: Ich **rufe** dich morgen **an**.",
+      "en": "The prefix goes **to the end of the sentence**: Ich **rufe** dich morgen **an** (I'll call you tomorrow)."
+    },
+    "sections": [
+      {
+        "type": "table",
+        "title": {"de": "Wo steht das Präfix?", "en": "Where does the prefix go?"},
+        "head": [{"de": "Satz", "en": "Sentence"}, {"de": "Beispiel", "en": "Example"}],
+        "rows": [
+          [{"de": "Präsens", "en": "present"}, "Ich **stehe** um 7 Uhr **auf**."],
+          [{"de": "Frage", "en": "question"}, "**Stehst** du früh **auf**?"],
+          [{"de": "Imperativ", "en": "imperative"}, "**Steh** bitte **auf**!"],
+          [{"de": "mit Modalverb", "en": "with a modal"}, "Ich muss früh **aufstehen**."],
+          ["Perfekt", "Ich bin früh **aufgestanden**."],
+          [{"de": "Nebensatz", "en": "subordinate clause"}, "…, weil ich früh **aufstehe**."]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Häufige trennbare Präfixe", "en": "Common separable prefixes"},
+        "head": [{"de": "Präfix", "en": "Prefix"}, {"de": "Beispiel", "en": "Example"}, {"de": "Englisch", "en": "English"}],
+        "rows": [
+          ["**ab**", "abfahren", "depart"],
+          ["**an**", "anrufen", "call (phone)"],
+          ["**auf**", "aufstehen", "get up"],
+          ["**aus**", "aussteigen", "get off"],
+          ["**ein**", "einkaufen", "go shopping"],
+          ["**mit**", "mitkommen", "come along"],
+          ["**vor**", "vorstellen", "introduce"],
+          ["**zu**", "zuhören", "listen"],
+          ["**zurück**", "zurückfahren", "drive back"],
+          ["**weg**", "wegwerfen", "throw away"],
+          ["**fern**", "fernsehen", "watch TV"],
+          ["**kennen**", "kennenlernen", "get to know"]
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "So merkst du es dir", "en": "How to remember"},
+        "items": [
+          {
+            "de": "Trennbare Präfixe sind **betont**: **AN**rufen, **AUF**stehen. Untrennbare nicht: be**SU**chen, ver**STE**hen.",
+            "en": "Separable prefixes are **stressed**: **AN**rufen, **AUF**stehen. Inseparable ones aren't: be**SU**chen, ver**STE**hen."
+          },
+          {
+            "de": "Auf den Karten steht ein Punkt an der Trennstelle: an·rufen, auf·stehen.",
+            "en": "On the cards a dot marks the split: an·rufen, auf·stehen."
+          },
+          {
+            "de": "Zusammen bleibt es am Ende: mit Modalverb (Ich muss **anrufen**) und im Nebensatz (…, dass ich **anrufe**).",
+            "en": "It stays together at the end: with a modal (Ich muss **anrufen**) and in a subordinate clause (…, dass ich **anrufe**)."
+          },
+          {
+            "de": "Perfekt: **ge** in die Mitte – an**ge**rufen, auf**ge**standen, ein**ge**kauft.",
+            "en": "Perfekt: **ge** goes in the middle – an**ge**rufen, auf**ge**standen, ein**ge**kauft."
+          }
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Trennbar oder untrennbar?", "en": "Separable or inseparable?"},
+        "head": [{"de": "trennbar", "en": "separable"}, {"de": "untrennbar", "en": "inseparable"}],
+        "rows": [
+          ["ab-, an-, auf-, aus-, ein-, mit-, vor-, zu- …", "be-, emp-, ent-, er-, ge-, miss-, ver-, zer-"],
+          ["Ich **rufe** dich **an**.", "Ich **besuche** dich."],
+          ["an**ge**rufen", "besucht (kein ge-)"]
+        ]
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "Präfix nicht vergessen: Ich rufe dich morgen **an**. Ohne an heißt rufen = schreien!",
+          "en": "Don't forget the prefix: Ich rufe dich morgen **an**. Without an, rufen means to shout!"
+        }
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "Im Nebensatz nicht trennen: …, weil ich früh **aufstehe**. ❌ weil ich früh stehe auf.",
+          "en": "Don't split it in a subordinate clause: …, weil ich früh **aufstehe**. ❌ weil ich früh stehe auf."
+        }
+      }
+    ],
+    "examples": [
+      {"de": "Der Zug fährt um acht Uhr ab.", "en": "The train leaves at eight."},
+      {"de": "Kannst du mich morgen anrufen?", "en": "Can you call me tomorrow?"},
+      {"de": "Wir haben gestern im Supermarkt eingekauft.", "en": "We went shopping at the supermarket yesterday."}
+    ],
+    "match": [
+      {
+        "type": "v",
+        "frontPattern": "^(ab|an|auf|aus|ein|fern|her|hin|kennen|los|mit|nach|statt|teil|um|vor|weg|weiter|zu|zurück|zusammen)·?[a-zäöü]",
+        "except": ["antworten", "zusammen zahlen"]
+      },
+      {"type": "v", "decks": ["inseparable"]}
+    ]
+  },
+  {
+    "key": "imperativ",
+    "level": "A1",
+    "group": {"de": "Verben", "en": "Verbs"},
+    "title": {"de": "Imperativ: Komm! Kommt! Kommen Sie!", "en": "Imperative: Komm! Kommt! Kommen Sie!"},
+    "summary": {
+      "de": "Bitten und Aufforderungen: **du** → Komm!, **ihr** → Kommt!, **Sie** → Kommen Sie!",
+      "en": "Requests and instructions: **du** → Komm!, **ihr** → Kommt!, **Sie** → Kommen Sie!"
+    },
+    "sections": [
+      {
+        "type": "table",
+        "head": ["Person", {"de": "Präsens", "en": "Present"}, "Imperativ"],
+        "rows": [
+          ["du", "du komm**st**", "**Komm**!"],
+          ["ihr", "ihr kommt", "**Kommt**!"],
+          ["Sie", "Sie kommen", "**Kommen Sie**!"],
+          ["wir", "wir gehen", "**Gehen wir**!"]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "du-Form", "en": "du form"},
+        "head": ["Verb", "du …", "Imperativ"],
+        "rows": [
+          ["machen", "du machst", "**Mach**!"],
+          ["nehmen", "du nimmst", "**Nimm**!"],
+          ["lesen", "du liest", "**Lies**!"],
+          ["essen", "du isst", "**Iss**!"],
+          ["fahren", "du fährst", "**Fahr**!"],
+          ["arbeiten", "du arbeitest", "**Arbeite**!"],
+          ["anrufen", "du rufst an", "**Ruf** … **an**!"],
+          ["sich beeilen", "du beeilst dich", "**Beeil dich**!"]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "sein ist anders", "en": "sein is different"},
+        "head": ["Person", "Imperativ"],
+        "rows": [["du", "**Sei** ruhig!"], ["ihr", "**Seid** leise!"], ["Sie", "**Seien Sie** pünktlich!"]]
+      },
+      {
+        "type": "points",
+        "title": {"de": "So merkst du es dir", "en": "How to remember"},
+        "items": [
+          {
+            "de": "**du**: Präsens ohne du und ohne **-st**: du komm**st** → **Komm**!",
+            "en": "**du**: the present without du and without **-st**: du komm**st** → **Komm**!"
+          },
+          {
+            "de": "e → i/ie bleibt: **nimm, lies, iss, gib, hilf**. Aber der Umlaut fällt weg: **fahr**!, **schlaf**! (nicht: fähr)",
+            "en": "e → i/ie stays: **nimm, lies, iss, gib, hilf**. But the umlaut disappears: **fahr**!, **schlaf**! (not: fähr)"
+          },
+          {
+            "de": "Auf -t, -d, -n mit **-e**: Arbeit**e**! Wart**e**! Öffn**e**!",
+            "en": "Ending in -t, -d, -n add **-e**: Arbeit**e**! Wart**e**! Öffn**e**!"
+          },
+          {
+            "de": "**ihr** = Präsens ohne ihr: Kommt! Wartet! · **Sie** = Verb + Sie: Warten Sie bitte!",
+            "en": "**ihr** = the present without ihr: Kommt! Wartet! · **Sie** = verb + Sie: Warten Sie bitte!"
+          },
+          {
+            "de": "Trennbar: Präfix ans Ende – Ruf mich **an**! Reflexiv: Beeil **dich**! Beeilt **euch**! Beeilen Sie **sich**!",
+            "en": "Separable: prefix at the end – Ruf mich **an**! Reflexive: Beeil **dich**! Beeilt **euch**! Beeilen Sie **sich**!"
+          }
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "Freundlicher", "en": "Friendlier"},
+        "items": [
+          {
+            "de": "**bitte** macht es höflich: Komm **bitte**! Setzen Sie sich **bitte**.",
+            "en": "**bitte** makes it polite: Komm **bitte**! Setzen Sie sich **bitte**."
+          },
+          {
+            "de": "**mal** macht es locker: Guck **mal**! Komm **mal** her!",
+            "en": "**mal** makes it casual: Guck **mal**! (Have a look!) Komm **mal** her!"
+          },
+          {
+            "de": "Noch höflicher als Frage: **Könnten** Sie bitte …? (Konjunktiv II)",
+            "en": "Even politer as a question: **Könnten** Sie bitte …? (Konjunktiv II)"
+          }
+        ]
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "**Sie** nie weglassen: Kommen **Sie** bitte! ❌ Kommen bitte!",
+          "en": "Never drop **Sie**: Kommen **Sie** bitte! ❌ Kommen bitte!"
+        }
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "Kein Umlaut in der du-Form: **Fahr** langsam! ❌ Fähr langsam!",
+          "en": "No umlaut in the du form: **Fahr** langsam! ❌ Fähr langsam!"
+        }
+      }
+    ],
+    "examples": [
+      {"de": "Komm, wir gehen!", "en": "Come on, let's go!"},
+      {"de": "Nimm doch noch ein Stück Kuchen!", "en": "Do have another piece of cake!"},
+      {"de": "Ruf mich bitte heute Abend an!", "en": "Please call me this evening!"},
+      {"de": "Warten Sie bitte einen Moment.", "en": "Please wait a moment."}
+    ]
+  },
+  {
     "key": "perfekt",
     "level": "A2",
     "group": {"de": "Verben", "en": "Verbs"},
@@ -936,6 +1146,196 @@
       }
     ],
     "match": [{"type": "v", "subPattern": "(^|[·,] )hat sich "}]
+  },
+  {
+    "key": "verben-dativ",
+    "level": "A2",
+    "group": {"de": "Verben", "en": "Verbs"},
+    "title": {"de": "Verben mit Dativ: helfen, gefallen, gehören", "en": "Verbs with the Dative: helfen, gefallen, gehören"},
+    "summary": {
+      "de": "Manche Verben brauchen den **Dativ** statt Akkusativ: Ich helfe **dir**. Das gefällt **mir**.",
+      "en": "Some verbs take the **dative** instead of the accusative: Ich helfe **dir** (I help you). Das gefällt **mir** (I like it)."
+    },
+    "sections": [
+      {
+        "type": "table",
+        "title": {"de": "Nur Dativ", "en": "Dative only"},
+        "head": ["Verb", {"de": "Beispiel", "en": "Example"}, {"de": "Englisch", "en": "English"}],
+        "rows": [
+          ["helfen", "Ich helfe **dir**.", "help"],
+          ["danken", "Ich danke **Ihnen**.", "thank"],
+          ["gefallen", "Das Kleid gefällt **mir**.", "like (it pleases me)"],
+          ["gehören", "Das Buch gehört **mir**.", "belong to"],
+          ["schmecken", "Schmeckt **dir** die Suppe?", "taste good"],
+          ["passen", "Passt **Ihnen** Montag?", "suit, fit"],
+          ["fehlen", "Du fehlst **mir**.", "be missed (I miss you)"],
+          ["antworten", "Antworte **mir**!", "answer"],
+          ["gratulieren", "Ich gratuliere **dir**.", "congratulate"],
+          ["glauben", "Ich glaube **dir**.", "believe sb."],
+          ["vertrauen", "Ich vertraue **ihm**.", "trust"],
+          ["raten", "Er rät **mir**, …", "advise"],
+          ["wehtun", "Der Kopf tut **mir** weh.", "hurt"],
+          ["zuhören", "Hör **mir** zu!", "listen to"]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Dativ + Akkusativ", "en": "Dative + accusative"},
+        "head": ["Verb", {"de": "Beispiel", "en": "Example"}],
+        "rows": [
+          ["geben", "Ich gebe **dem Kind den Ball**."],
+          ["schenken", "Er schenkt **ihr Blumen**."],
+          ["zeigen", "Zeig **mir das Foto**!"],
+          ["erklären", "Erklär **mir das** bitte."],
+          ["bringen, schicken", "Ich bringe **dir einen Kaffee**."],
+          ["empfehlen, leihen", "Kannst du **mir dein Rad** leihen?"]
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "So merkst du es dir", "en": "How to remember"},
+        "items": [
+          {
+            "de": "Der Dativ ist meist die **Person**, die etwas bekommt oder fühlt: helfen **wem**? gefällt **wem**?",
+            "en": "The dative is usually the **person** who receives or feels something: helfen **wem**? gefällt **wem**?"
+          },
+          {
+            "de": "**gefallen, schmecken, fehlen, gehören**: im Englischen umgekehrt! Das gefällt **mir** = I like it. Du fehlst **mir** = I miss you.",
+            "en": "**gefallen, schmecken, fehlen, gehören**: back to front compared with English! Das gefällt **mir** = I like it. Du fehlst **mir** = I miss you."
+          },
+          {
+            "de": "Zwei Objekte: Person (Dativ) vor Sache (Akkusativ): Ich gebe **dir das Buch**. Pronomen-Sache zuerst: Ich gebe **es dir**.",
+            "en": "Two objects: person (dative) before thing (accusative): Ich gebe **dir das Buch**. A pronoun thing comes first: Ich gebe **es dir**."
+          },
+          {
+            "de": "Fragewort: **Wem** hilfst du? **Wem** gehört das? (siehe „Fragewörter“)",
+            "en": "Question word: **Wem** hilfst du? **Wem** gehört das? (see \"Question Words\")"
+          }
+        ]
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "❌ Ich helfe dich. ✅ Ich helfe **dir**. – ❌ Ich gefalle das Kleid. ✅ Das Kleid gefällt **mir**.",
+          "en": "❌ Ich helfe dich. ✅ Ich helfe **dir**. – ❌ Ich gefalle das Kleid. ✅ Das Kleid gefällt **mir** (the dress is the subject!)."
+        }
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "**fragen** und **anrufen** sind Akkusativ: Ich frage **dich**. Ich rufe **dich** an.",
+          "en": "**fragen** and **anrufen** take the accusative: Ich frage **dich**. Ich rufe **dich** an."
+        }
+      }
+    ],
+    "examples": [
+      {"de": "Kannst du mir bitte helfen?", "en": "Can you help me, please?"},
+      {"de": "Die Jacke gefällt mir sehr gut.", "en": "I really like the jacket."},
+      {"de": "Wem gehört der Schlüssel?", "en": "Whose key is this?"},
+      {"de": "Ich schenke meiner Mutter Blumen.", "en": "I'm giving my mother flowers."}
+    ]
+  },
+  {
+    "key": "verben-praeposition",
+    "level": "A2",
+    "group": {"de": "Verben", "en": "Verbs"},
+    "title": {"de": "Verben mit Präposition: warten auf, denken an", "en": "Verbs with Prepositions: warten auf, denken an"},
+    "summary": {
+      "de": "Viele Verben haben eine feste **Präposition** – lerne sie zusammen: warten **auf** + Akk., denken **an** + Akk.",
+      "en": "Many verbs have a fixed **preposition** – learn them together: warten **auf** + acc. (wait for), denken **an** + acc. (think of)."
+    },
+    "sections": [
+      {
+        "type": "table",
+        "title": {"de": "Häufige Verben", "en": "Common verbs"},
+        "head": ["Verb", {"de": "Kasus", "en": "Case"}, {"de": "Englisch", "en": "English"}],
+        "rows": [
+          ["warten **auf**", "Akk.", "wait for"],
+          ["denken **an**", "Akk.", "think of"],
+          ["sprechen **über**", "Akk.", "talk about"],
+          ["sprechen **mit**", "Dat.", "talk to"],
+          ["fragen **nach**", "Dat.", "ask about"],
+          ["halten **von**", "Dat.", "think of (opinion)"],
+          ["teilnehmen **an**", "Dat.", "take part in"],
+          ["träumen **von**", "Dat.", "dream of"],
+          ["Angst haben **vor**", "Dat.", "be afraid of"],
+          ["sich freuen **auf**", "Akk.", "look forward to"],
+          ["sich interessieren **für**", "Akk.", "be interested in"],
+          ["sich kümmern **um**", "Akk.", "take care of"],
+          ["sich erinnern **an**", "Akk.", "remember"],
+          ["sich ärgern **über**", "Akk.", "be annoyed about"]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Fragen und Antworten", "en": "Questions and answers"},
+        "head": ["", {"de": "Sache", "en": "Thing"}, "Person"],
+        "rows": [
+          [{"de": "Frage", "en": "Question"}, "**Worauf** wartest du?", "**Auf wen** wartest du?"],
+          [{"de": "Antwort", "en": "Answer"}, "Ich warte **darauf**.", "Ich warte **auf ihn**."]
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "wo(r)- und da(r)-", "en": "wo(r)- and da(r)-"},
+        "items": [
+          {
+            "de": "**Sache**: wo- / da- + Präposition: **Wofür** interessierst du dich? – **Dafür**.",
+            "en": "**Thing**: wo- / da- + preposition: **Wofür** interessierst du dich? – **Dafür**."
+          },
+          {
+            "de": "Beginnt die Präposition mit einem Vokal, kommt ein **r** dazu: wo**r**auf, wo**r**an, wo**r**über, da**r**auf, da**r**an.",
+            "en": "If the preposition starts with a vowel, add an **r**: wo**r**auf, wo**r**an, wo**r**über, da**r**auf, da**r**an."
+          },
+          {
+            "de": "**Person**: Präposition + Fragewort/Pronomen: **An wen** denkst du? – **An dich**.",
+            "en": "**Person**: preposition + question word/pronoun: **An wen** denkst du? – **An dich**."
+          },
+          {
+            "de": "da(r)- kündigt einen Nebensatz an: Ich freue mich **darauf**, **dass** du kommst.",
+            "en": "da(r)- can announce a clause: Ich freue mich **darauf**, **dass** du kommst."
+          }
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "So merkst du es dir", "en": "How to remember"},
+        "items": [
+          {
+            "de": "Verb + Präposition + Kasus als **ein Paket** lernen – auf den Karten steht es hinten.",
+            "en": "Learn verb + preposition + case as **one package** – the cards show it on the back."
+          },
+          {
+            "de": "Bei Verben haben **auf** und **über** fast immer den **Akkusativ**.",
+            "en": "With verbs, **auf** and **über** almost always take the **accusative**."
+          },
+          {
+            "de": "Die Präposition ändert die Bedeutung: sich freuen **auf** (kommt noch) / **über** (ist schon da); sprechen **mit** (Person) / **über** (Thema).",
+            "en": "The preposition changes the meaning: sich freuen **auf** (still to come) / **über** (already here); sprechen **mit** (person) / **über** (topic)."
+          }
+        ]
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "❌ Ich warte für den Bus. ✅ Ich warte **auf** den Bus. – Englisch „for“ ist nicht immer **für**!",
+          "en": "❌ Ich warte für den Bus. ✅ Ich warte **auf** den Bus. – English \"for\" isn't always **für**!"
+        }
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "denken **an** = an jemanden denken (think of). Über etwas **nach**denken = überlegen (think about).",
+          "en": "denken **an** = think of (someone/something). Über etwas **nach**denken = think about (consider)."
+        }
+      }
+    ],
+    "examples": [
+      {"de": "Ich warte schon seit zehn Minuten auf den Bus.", "en": "I've been waiting for the bus for ten minutes."},
+      {"de": "Woran denkst du? – An den Urlaub.", "en": "What are you thinking of? – The holiday."},
+      {"de": "Was hältst du von der Idee?", "en": "What do you think of the idea?"},
+      {"de": "Sie nimmt an einem Deutschkurs teil.", "en": "She's taking part in a German course."}
+    ]
   },
   {
     "key": "adjektivendungen",

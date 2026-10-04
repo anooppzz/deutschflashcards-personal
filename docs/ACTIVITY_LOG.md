@@ -24,9 +24,8 @@ was done, newest first. Every change adds a log entry here in the same commit
   4. New trainers from existing data: Perfekt (hat/ist + Partizip II), Plural.
      Reverse mode strips the article, so a wrong der/die/das counts as correct.
   5. Grammar topics missing for A2: ~~Kasus overview, Adjektivendungen~~ (done 2026-10-04),
-     ~~Konjunktiv II, Präteritum war/hatte~~ (done 2026-10-04), Verben mit Dativ,
-     Verben mit Präposition + worauf/darauf, trennbare Verben, Imperativ; mini-exercises
-     inside topics.
+     ~~Konjunktiv II, Präteritum war/hatte, Verben mit Dativ, Verben mit Präposition,
+     trennbare Verben, Imperativ~~ (done 2026-10-04); mini-exercises inside topics.
   6. Data: 108 nouns with old/empty plural format, 9 duplicate words that disagree
      (das Glas, das Wetter, die Post …), 51 adjectives without opposite.
   7. Code: App.jsx 1,703 lines / 75 useState; six copy-pasted deck viewers; help texts
@@ -35,6 +34,22 @@ was done, newest first. Every change adds a log entry here in the same commit
 ## Log
 
 ### 2026-10-04
+- **Four grammar topics (Verben):** order now Präsens · Trennbare Verben · Imperativ · Perfekt ·
+  Präteritum · Modalverben · Konjunktiv II · Reflexive · Verben mit Dativ · Verben mit Präposition.
+  - *Trennbare Verben* (A1): where the prefix goes (6 sentence types), 12 prefixes, stress
+    trick, ge in the middle, trennbar vs untrennbar, ⚠️ forgotten prefix, no split in
+    Nebensatz. Rule: new `frontPattern` (separable prefix, with or without ·) except
+    *antworten*, *zusammen zahlen*; plus the inseparable deck for the contrast → 54 words.
+  - *Imperativ* (A1): du/ihr/Sie/wir table, du-form table (nimm, lies, fahr, arbeite, ruf …
+    an, beeil dich), sein (sei/seid/seien Sie), bitte/mal, ⚠️ Sie never dropped, no umlaut.
+    4 words (lassen, lass uns, Entschuldigen Sie, Verzeihen Sie).
+  - *Verben mit Dativ*: 14 dative-only verbs with examples, Dativ + Akkusativ verbs, "back to
+    front" gefallen/fehlen, word order of two objects, ⚠️ helfe dich, fragen/anrufen = Akk.
+    23 words.
+  - *Verben mit Präposition*: 14 verbs with case, wo(r)-/da(r)- vs person, auf/über = Akk.,
+    ⚠️ warten für, denken an vs nachdenken über. 19 words; 10 verb cards got a back-of-card
+    note with their preposition (warten auf, denken an, sich freuen auf/über …).
+  - Tests: separable rule (+2), one exact-link test updated.
 - **Grammar topics "Präteritum: war, hatte (und Modalverben)"** (`praeteritum`, after Perfekt)
   **and "Konjunktiv II: würde, hätte, wäre, könnte"** (`konjunktiv-2`, after Modalverben):
   - Präteritum: sein/haben/werden table, modal verbs (incl. möchten → wollte), how to
