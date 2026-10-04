@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useLayoutEffect } from "react";
 import PropTypes from "prop-types";
 
 // Drag-to-select word search grid. Deliberately does NOT use per-cell
@@ -40,6 +40,21 @@ function WordSearchGrid({ grid, size, placements, foundWords, onFound, revealed 
   const [dragPath, setDragPath] = useState(null);
   const dragStartRef = useRef(null);
   const containerRef = useRef(null);
+  // The grid always fits the width it has: on a phone a 14×14 grid with
+  // fixed cells was wider than the screen, had to be scrolled, and a word
+  // across the whole width couldn't be dragged at all.
+  const wrapRef = useRef(null);
+  const [width, setWidth] = useState(0);
+  useLayoutEffect(() => {
+    const el = wrapRef.current;
+    if (!el) return undefined;
+    const update = () => setWidth(el.clientWidth);
+    update();
+    if (typeof ResizeObserver === "undefined") return undefined;
+    const ro = new ResizeObserver(update);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
 
   const cellFromPoint = useCallback((clientX, clientY) => {
     const el = document.elementFromPoint(clientX, clientY);
@@ -80,9 +95,11 @@ function WordSearchGrid({ grid, size, placements, foundWords, onFound, revealed 
   const foundCells = placements.filter((p) => foundWords.has(p.word)).flatMap((p) => p.path);
   const revealedCells = revealed ? placements.filter((p) => !foundWords.has(p.word)).flatMap((p) => p.path) : [];
 
-  const cellSizePx = Math.max(26, Math.min(38, Math.floor(320 / size)));
+  const GAP = 2;
+  const cellSizePx = width ? Math.max(14, Math.min(38, Math.floor((width - GAP * (size - 1)) / size))) : 24;
 
   return (
+    <div ref={wrapRef} style={{ width: "100%" }}>
     <div
       ref={containerRef}
       onPointerMove={handlePointerMove}
@@ -94,7 +111,7 @@ function WordSearchGrid({ grid, size, placements, foundWords, onFound, revealed 
       style={{
         display: "grid",
         gridTemplateColumns: `repeat(${size}, ${cellSizePx}px)`,
-        gap: 2,
+        gap: GAP,
         justifyContent: "center",
         touchAction: "none",
         userSelect: "none",
@@ -116,7 +133,7 @@ function WordSearchGrid({ grid, size, placements, foundWords, onFound, revealed 
               style={{
                 width: cellSizePx, height: cellSizePx,
                 display: "flex", alignItems: "center", justifyContent: "center",
-                borderRadius: 6, fontSize: Math.max(11, cellSizePx - 16), fontWeight: 700,
+                borderRadius: cellSizePx < 24 ? 4 : 6, fontSize: Math.max(10, Math.round(cellSizePx * 0.55)), fontWeight: 700,
                 cursor: "pointer",
                 background: isFound ? "#5fa85f" : selected ? "#e0833b" : isRevealed ? "#3a4553" : "#161d24",
                 color: isFound || selected ? "#0e1419" : "#cdd8e2",
@@ -126,6 +143,7 @@ function WordSearchGrid({ grid, size, placements, foundWords, onFound, revealed 
           );
         })
       )}
+    </div>
     </div>
   );
 }

@@ -73,6 +73,9 @@ src/data/index.js          exports; ALL_CARDS = every card in one flat list
 src/engine/                logic: FSRS scheduling, filters, grammarLinks.js,
                            globalSearch.js (app-wide search: cards + grammar)
                            review.js ("Heute fällig": due cards from all decks)
+                           useBackButton.js (phone back gesture steps back inside
+                           the app – App.jsx `backAction` lists the layers in order;
+                           add a new overlay/dialog there)
 src/modes/cards/deckViews.js  how each deck shows in Karten mode (banner, filter, badge)
 src/modes/                 one folder per study mode (cards, article, quiz, reverse,
                            cloze, wordsearch, grammar) + search (results view)
@@ -80,6 +83,7 @@ src/modes/                 one folder per study mode (cards, article, quiz, reve
                            + forms (🔁 Formen: Perfekt + Plural, built from each
                            card's sub line – keep `sub` formats as below)
 src/components/FlipCard.jsx  the card (front/back, note, 📖 grammar chips)
+src/components/Swipeable.jsx  swipe left/right on a card = next/previous
 src/components/HelpModals.jsx  welcome + ❓ help windows; texts in src/data/help.json
                            (en, de, sq, ar, uk, hi – keep all six when editing)
 src/components/BackupModal.jsx  "💾 Sichern & App": backup file, restore, install hint

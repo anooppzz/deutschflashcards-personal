@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { idOf, shuffled } from "../../engine";
-import { FlipCard, Controls, NoResults, CategoryFilter } from "../../components";
+import { FlipCard, Controls, NoResults, CategoryFilter, Swipeable } from "../../components";
 import { visibleCards } from "./deckViews";
 
 // One deck in Karten mode - any deck: the original five and every
@@ -13,6 +13,8 @@ function DeckView({ view, slice, setSlice, lang, levelFilter, sourceFilter }) {
   const cards = visibleCards(view, slice, levelFilter, sourceFilter);
   const total = cards.length;
   const card = cards[slice.idx % (total || 1)];
+  const next = () => setSlice({ idx: (slice.idx + 1) % total });
+  const prev = () => setSlice({ idx: (slice.idx - 1 + total) % total });
   return (
     <>
       {view.banner && (
@@ -32,6 +34,7 @@ function DeckView({ view, slice, setSlice, lang, levelFilter, sourceFilter }) {
       )}
       {card ? (
         <>
+          <Swipeable onNext={next} onPrev={prev}>
           <FlipCard
             front={card.front}
             sub={card.sub}
@@ -46,6 +49,7 @@ function DeckView({ view, slice, setSlice, lang, levelFilter, sourceFilter }) {
             source={card.source}
             note={card.note}
           />
+          </Swipeable>
           {card.tip && (
             <div style={{ marginTop: 12, fontSize: 12, color: "#9ab0c2", textAlign: "center", lineHeight: 1.5 }}>
               💡 {card.tip}
@@ -54,8 +58,8 @@ function DeckView({ view, slice, setSlice, lang, levelFilter, sourceFilter }) {
           <Controls
             index={slice.idx % total}
             total={total}
-            onPrev={() => setSlice({ idx: (slice.idx - 1 + total) % total })}
-            onNext={() => setSlice({ idx: (slice.idx + 1) % total })}
+            onPrev={prev}
+            onNext={next}
             onShuffle={() => setSlice(
               slice.shuffled
                 ? { order: view.cards, idx: 0, shuffled: false }

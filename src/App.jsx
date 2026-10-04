@@ -49,11 +49,12 @@ import {
 } from "./engine";
 import {
   FlipCard, Controls, NoResults, CategoryFilter,
-  StreakBar, ProgressBar, RoundSizeSelector, ErrorBoundary, BackupModal, WelcomeModal, HelpModal,
+  StreakBar, ProgressBar, RoundSizeSelector, ErrorBoundary, BackupModal, WelcomeModal, HelpModal, Swipeable,
 } from "./components";
 import RENAMES from "./data/renames.json";
 import { ProgressCtx } from "./context/ProgressCtx";
 import { GrammarNavCtx } from "./context/GrammarNavCtx";
+import { useBackButton } from "./engine/useBackButton";
 import {
   DeckView, buildDeckViews, visibleCards, initialSlice,
   ArticleTrainer, ArticleSummary,
@@ -821,6 +822,22 @@ function App() {
     setGrammarFrom(null);
   };
 
+  // Phone back button / back swipe: undo the top-most thing first (a dialog,
+  // a picker, the grammar page a card opened, the search, a review), then go
+  // to the Karten tab; only from there does back leave the app.
+  const backAction =
+    showWelcome ? () => { setShowWelcome(false); saveWelcomeSeen(); }
+    : showHelp ? () => setShowHelp(false)
+    : showBackup ? () => setShowBackup(false)
+    : langOpen ? () => setLangOpen(false)
+    : mode === MODE.GRAMMAR && grammarFrom ? backFromGrammar
+    : query !== "" ? () => setQuery("")
+    : review ? () => setReview(null)
+    : topicsOpen ? () => setTopicsOpen(false)
+    : mode !== MODE.CARDS ? () => { setMode(MODE.CARDS); setGrammarFocus(null); setGrammarFrom(null); }
+    : null;
+  useBackButton(backAction);
+
   // keyboard nav
   useEffect(() => {
     const onKey = (e) => {
@@ -1315,6 +1332,7 @@ function App() {
             lang={lang}
             focus={grammarFocus}
             onBack={grammarFrom ? backFromGrammar : undefined}
+            onOpenChapter={openChapterAt}
           />
         ) : (
         <>
@@ -1340,6 +1358,7 @@ function App() {
               typeFilterRow(comboCats, comboKeys, comboFilter, setComboFilter, setComboIdx)}
             {comboCard ? (
               <>
+                <Swipeable onNext={() => step(setComboIdx, filteredCombo.length)(1)} onPrev={() => step(setComboIdx, filteredCombo.length)(-1)}>
                 <FlipCard
                   front={comboCard.front}
                   english={comboCard.english}
@@ -1354,6 +1373,7 @@ function App() {
                   source={comboCard.source}
                   note={comboCard.note}
                 />
+                </Swipeable>
                 <Controls index={comboIdx % filteredCombo.length} total={filteredCombo.length}
                   onPrev={() => step(setComboIdx, filteredCombo.length)(-1)}
                   onNext={() => step(setComboIdx, filteredCombo.length)(1)}
@@ -1372,7 +1392,7 @@ function App() {
         </ErrorBoundary>
 
         <div style={{ marginTop: 28, color: "#4a5a68", fontSize: 11, textAlign: "center" }}>
-          Tap a card to flip • ← → arrow keys to navigate
+          Tap a card to flip • swipe or ← → for the next card
         </div>
         <button
           onClick={() => setShowBackup(true)}

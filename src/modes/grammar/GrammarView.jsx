@@ -1,10 +1,12 @@
 import { useState, useEffect, useRef, Fragment } from "react";
 import PropTypes from "prop-types";
 import { STORAGE_KEYS } from "../../constants";
-import { GRAMMAR_EXERCISES } from "../../data";
+import { GRAMMAR_EXERCISES, ALL_CARDS, DECK_META } from "../../data";
 import GrammarExercises from "./GrammarExercises";
+import { idOf } from "../../engine";
 import { speak } from "../../engine/speech";
 import { iconBtn } from "../../components/cardStyles";
+import FlipCard from "../../components/FlipCard";
 import TopicBody from "./GrammarSections";
 import { localize } from "./richText";
 
@@ -27,13 +29,22 @@ const levelColor = (level) => (level === "A1" ? "#5fa85f" : "#e0833b");
 
 // how many of "Deine Wörter" show before "Alle N zeigen"
 const WORDS_PREVIEW = 12;
+const ACCENT = "#e0833b";
+
+// "Deine Wörter" only carry front, english and decks; the full card (example,
+// note, progress) comes from here
+const CARD_BY_ID = new Map(ALL_CARDS.map((c) => [idOf(c.deck, c.front), c]));
+const cardOf = (w) => (w.decks || []).map((d) => CARD_BY_ID.get(idOf(d, w.front))).find(Boolean);
 
 // words: the learner's cards this topic covers (see buildGrammarIndex), so
 // a rule can be read next to the vocabulary it applies to.
 // exercises: this topic's ✏️ Üben questions; best: best score so far
-function GrammarTopicCard({ topic, words = [], lang, open, onToggle, exercises = [], best, onScore }) {
+// A tapped word opens its full card right below it (flip, audio, ✓ Gekonnt),
+// with a link to its chapter (onOpenChapter).
+function GrammarTopicCard({ topic, words = [], lang, open, onToggle, exercises = [], best, onScore, onOpenChapter }) {
   const [audioErr, setAudioErr] = useState(false);
   const [showAllWords, setShowAllWords] = useState(false);
+  const [openWord, setOpenWord] = useState(null); // front of the opened word
   const shownWords = showAllWords ? words : words.slice(0, WORDS_PREVIEW);
   const panelId = `grammar-panel-${topic.key}`;
   const title = localize(topic.title, lang);
@@ -93,17 +104,48 @@ function GrammarTopicCard({ topic, words = [], lang, open, onToggle, exercises =
                 DEINE WÖRTER ({words.length})
               </div>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(140px, 1fr))", gap: 6 }}>
-                {shownWords.map((w) => (
-                  <button
-                    key={w.front}
-                    onClick={() => speak(w.front, () => setAudioErr(true))}
-                    aria-label={`Aussprechen: ${w.front}`}
-                    style={{ textAlign: "left", padding: "6px 10px", borderRadius: 8, border: "1px solid #2c3a47", background: "#0e1419", cursor: "pointer" }}
-                  >
-                    <div style={{ fontSize: 13, fontWeight: 600, color: "#f2f5f8" }}>{w.front}</div>
-                    <div style={{ fontSize: 11, color: "#7d8d9c", marginTop: 1 }}>{w.english}</div>
-                  </button>
-                ))}
+                {shownWords.map((w) => {
+                  const isOpen = openWord === w.front;
+                  const card = isOpen ? cardOf(w) : null;
+                  const meta = card && DECK_META[card.deck];
+                  return (
+                    <Fragment key={w.front}>
+                      <button
+                        type="button"
+                        onClick={() => setOpenWord(isOpen ? null : w.front)}
+                        aria-expanded={isOpen}
+                        style={{ textAlign: "left", padding: "6px 10px", borderRadius: 8, border: `1px solid ${isOpen ? ACCENT : "#2c3a47"}`, background: "#0e1419", cursor: "pointer" }}
+                      >
+                        <div style={{ fontSize: 13, fontWeight: 600, color: "#f2f5f8" }}>{w.front}</div>
+                        <div style={{ fontSize: 11, color: "#7d8d9c", marginTop: 1 }}>{w.english}</div>
+                      </button>
+                      {card && (
+                        <div style={{ gridColumn: "1 / -1", margin: "2px 0 8px" }}>
+                          <FlipCard
+                            front={card.front}
+                            sub={card.sub}
+                            english={card.english}
+                            example={card.example}
+                            exampleEn={card.exampleEn}
+                            type={card.type}
+                            gender={card.gender}
+                            deck={card.deck}
+                            cardId={idOf(card.deck, card.front)}
+                            lang={lang}
+                            level={card.level}
+                            source={card.source}
+                            note={card.note}
+                          />
+                          {meta && onOpenChapter && (
+                            <button type="button" onClick={() => onOpenChapter(card.deck, card.front)} style={{ display: "block", margin: "8px auto 0", background: "none", border: "none", color: "#8fb8d8", fontSize: 13, cursor: "pointer" }}>
+                              {meta.icon} {meta.label} öffnen →
+                            </button>
+                          )}
+                        </div>
+                      )}
+                    </Fragment>
+                  );
+                })}
               </div>
               {words.length > WORDS_PREVIEW && (
                 <button
@@ -154,6 +196,7 @@ GrammarTopicCard.propTypes = {
   exercises: PropTypes.array,
   best: PropTypes.number,
   onScore: PropTypes.func,
+  onOpenChapter: PropTypes.func,
 };
 
 // best ✏️ Üben score per topic: { [key]: number }, kept in localStorage
@@ -164,7 +207,8 @@ const readScores = () => {
 // focus: { key, n } - set when a card's grammar chip opened this view; the
 // topic is expanded and scrolled to. n changes on every open, so tapping the
 // same chip twice still re-focuses. onBack: return to where the chip was.
-function GrammarView({ topics, words = {}, lang = "en", focus, onBack }) {
+// onOpenChapter(deck, front): show a word's card in its chapter.
+function GrammarView({ topics, words = {}, lang = "en", focus, onBack, onOpenChapter }) {
   const [openKey, setOpenKey] = useState(focus ? focus.key : null);
   const [scores, setScores] = useState(readScores);
   const saveScore = (key, score) => {
@@ -201,7 +245,7 @@ function GrammarView({ topics, words = {}, lang = "en", focus, onBack }) {
       {onBack && (
         <button
           onClick={onBack}
-          style={{ position: "sticky", top: 8, zIndex: 2, marginBottom: 12, background: "#1a232b", border: "1px solid #2c3a47", borderRadius: 10, padding: "6px 12px", color: "#9ab0c2", fontSize: 12, fontWeight: 600, cursor: "pointer", boxShadow: "0 4px 12px rgba(0,0,0,.4)" }}
+          style={{ position: "sticky", top: 8, zIndex: 2, marginBottom: 12, background: ACCENT, border: "none", borderRadius: 10, padding: "8px 14px", color: "#0e1419", fontSize: 13, fontWeight: 800, cursor: "pointer", boxShadow: "0 4px 12px rgba(0,0,0,.5)" }}
         >← Zurück</button>
       )}
       <div style={{ background: "#16202a", borderRadius: 12, padding: "10px 16px", marginBottom: 16, fontSize: 12, color: "#8fb8d8", textAlign: "center" }}>
@@ -228,6 +272,7 @@ function GrammarView({ topics, words = {}, lang = "en", focus, onBack }) {
               exercises={GRAMMAR_EXERCISES[topic.key]}
               best={scores[topic.key]}
               onScore={(score) => saveScore(topic.key, score)}
+              onOpenChapter={onOpenChapter}
             />
           </Fragment>
         );
@@ -242,6 +287,7 @@ GrammarView.propTypes = {
   lang: PropTypes.string,
   focus: PropTypes.shape({ key: PropTypes.string.isRequired, n: PropTypes.number }),
   onBack: PropTypes.func,
+  onOpenChapter: PropTypes.func,
 };
 
 export default GrammarView;

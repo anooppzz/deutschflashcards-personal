@@ -9,9 +9,10 @@ was done, newest first. Every change adds a log entry here in the same commit
 - [ ] **Old repo leftovers:** branch `claude/epic-meitner-f5b32y` in
   `anooppzz/deutschflashcards` couldn't be deleted by the agent (403). The learner can
   delete it on GitHub or leave it.
-- [ ] Ideas, not requested yet: tapping a word under "Deine Wörter" could open its card
-  (now it only speaks it); grammar text exists only in German and English (other app
+- [ ] Idea, not requested yet: grammar text exists only in German and English (other app
   languages fall back to English).
+- [ ] **To check on the learner's phone:** the Android back gesture inside the installed app
+  and the card swipe (tested with simulated touch in headless Chrome only).
 - [ ] **To check on the learner's phone:** the "📲 App installieren" button (Android/Chrome) –
   headless Chrome never offers installation, so it is untested.
 - The audit of 2026-10-01 is fully done (search, backup + PWA, Heute fällig, Formen
@@ -20,6 +21,21 @@ was done, newest first. Every change adds a log entry here in the same commit
 ## Log
 
 ### 2026-10-04
+- **Phone fixes from testing the installed app:**
+  - **Back gesture stays in the app** (`engine/useBackButton.js`): Android back / browser back
+    now steps back one layer – welcome/help/backup window → language picker → grammar page
+    opened from a card → search → review → topic picker → Karten tab – and only leaves
+    the app from Karten. Works by keeping one history entry while there is somewhere to go
+    back to (removed again when you get back to Karten by tapping).
+  - **"← Zurück" is orange** (was grey on dark grey) and a bit bigger.
+  - **Swipe between cards** (`components/Swipeable.jsx`): swipe left = next, right =
+    previous, in every deck and the mixed view. A tap still flips; up/down still scrolls.
+  - **Wortgitter fits the screen:** cells are sized from the available width (14–38px), so
+    the whole grid is visible at 360px and long words can be dragged end to end.
+  - **"Deine Wörter" opens the card:** tapping a word under a grammar topic shows its full
+    card right below it (flip, 🔊, ✓ Gekonnt, chips) plus "… öffnen →" to its chapter.
+  - Tested at 360/390px with simulated touch: swipe, tap, vertical scroll, every back step,
+    word card + chapter link, no sideways scroll, no errors.
 - **Code tidying 4/4 – lint 57 → 0 warnings:** 22 unused `catch (e)` → `catch`; 4 unused
   imports; 31 effect-dependency warnings fixed by giving the effects plain values (cardDeck,
   cardFront … instead of `card && card.front`) in Artikel, Quiz, Reverse and FlipCard;
