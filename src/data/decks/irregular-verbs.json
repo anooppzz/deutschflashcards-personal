@@ -129,7 +129,8 @@
     "example": "Kannst du mir ein Beispiel geben?",
     "level": "A1",
     "grammar": [
-      "fragewoerter-kasus"
+      "fragewoerter-kasus",
+      "kasus-ueberblick"
     ]
   },
   {
@@ -195,7 +196,8 @@
     "example": "Er hat mir geholfen.",
     "level": "A1",
     "grammar": [
-      "fragewoerter-kasus"
+      "fragewoerter-kasus",
+      "kasus-ueberblick"
     ]
   },
   {

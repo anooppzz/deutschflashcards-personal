@@ -23,7 +23,7 @@ was done, newest first. Every change adds a log entry here in the same commit
   3. ~~Heute fällig, remember selection, fold topic chips~~ – done 2026-10-01.
   4. New trainers from existing data: Perfekt (hat/ist + Partizip II), Plural.
      Reverse mode strips the article, so a wrong der/die/das counts as correct.
-  5. Grammar topics missing for A2: Kasus overview (den/dem, mich/mir), Adjektivendungen,
+  5. Grammar topics missing for A2: ~~Kasus overview, Adjektivendungen~~ (done 2026-10-04),
      Konjunktiv II (würde, hätte gern, könnte), Präteritum war/hatte, Verben mit Dativ,
      Verben mit Präposition + worauf/darauf, trennbare Verben, Imperativ; mini-exercises
      inside topics.
@@ -33,6 +33,23 @@ was done, newest first. Every change adds a log entry here in the same commit
      inline; progress keyed by deck+front (fixing a typo in `front` loses progress).
 
 ## Log
+
+### 2026-10-04
+- **Grammar topics "Kasus: Nominativ, Akkusativ, Dativ"** (`kasus-ueberblick`, Nomen &
+  Artikel) **and "Adjektivendungen"** (`adjektivendungen`, Adjektive, before Komparativ):
+  - Kasus: one sentence with all three cases, der/die/das and ein/kein/mein tables by case,
+    personal pronouns Nom/Akk/Dat, how to remember (only masculine changes in Akk; Dativ
+    signals -m/-r; Dativ plural -n), what decides the case (subject, sein, most verbs,
+    Dativ verbs, geben + Dat + Akk, prepositions), ⚠️ *es gibt* + Akk, *sein* + Nom.
+    Linked: the 19 Dativ/two-object verbs already tagged for Fragewörter + helfen, geben,
+    gehören, gefallen (21 words).
+  - Adjektivendungen: ending tables after der/die/das, after ein/kein/mein and with no
+    article; example table (der Rock / die Jacke / das Kleid); how to remember (5 × -e, else
+    -en; ein-words: adjective shows the gender; no article = der/die/das endings); watch
+    out (no ending after sein, teuer → teures, prima/lila/rosa/orange, comparatives too);
+    ⚠️ einen neuen Rock. Every adjective card links (93), except adverb-like ones.
+  - Link rules got `except` (card fronts to skip), +1 test; three tests that used an
+    adjective as an "unlinked" example now use other cards. Tables fit 360/390px.
 
 ### 2026-10-01
 - **19 cards from the reflexive pages** (learner: "Add cards too"):

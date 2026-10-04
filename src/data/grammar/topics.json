@@ -155,6 +155,138 @@
     ]
   },
   {
+    "key": "kasus-ueberblick",
+    "level": "A2",
+    "group": {"de": "Nomen & Artikel", "en": "Nouns & Articles"},
+    "title": {"de": "Kasus: Nominativ, Akkusativ, Dativ", "en": "Cases: Nominative, Accusative, Dative"},
+    "summary": {
+      "de": "Der Kasus zeigt die **Rolle** im Satz: wer handelt → **Nominativ**, was/wen → **Akkusativ**, wem → **Dativ**.",
+      "en": "The case shows the **role** in the sentence: who acts → **nominative**, what/whom → **accusative**, to whom → **dative**."
+    },
+    "sections": [
+      {
+        "type": "table",
+        "title": {"de": "Ein Satz, drei Fälle", "en": "One sentence, three cases"},
+        "head": [{"de": "Kasus", "en": "Case"}, {"de": "Frage", "en": "Question"}, {"de": "Im Satz", "en": "In the sentence"}],
+        "rows": [
+          ["Nominativ", "Wer/Was?", "**Der Mann** schenkt …"],
+          ["Dativ", "Wem?", "… **dem Kind** …"],
+          ["Akkusativ", "Wen/Was?", "… **einen Ball**."]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "der, die, das", "en": "der, die, das"},
+        "head": ["", {"de": "m", "en": "m"}, {"de": "f", "en": "f"}, {"de": "n", "en": "n"}, {"de": "Pl.", "en": "pl."}],
+        "rows": [
+          ["Nom.", "der", "die", "das", "die"],
+          ["Akk.", "**den**", "die", "das", "die"],
+          ["Dat.", "**dem**", "**der**", "**dem**", "**den** …-n"]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "ein, kein, mein – gleiche Endungen", "en": "ein, kein, mein – same endings"},
+        "head": ["", {"de": "m", "en": "m"}, {"de": "f", "en": "f"}, {"de": "n", "en": "n"}, {"de": "Pl.", "en": "pl."}],
+        "rows": [
+          ["Nom.", "ein", "eine", "ein", "keine"],
+          ["Akk.", "**einen**", "eine", "ein", "keine"],
+          ["Dat.", "**einem**", "**einer**", "**einem**", "**keinen** …-n"]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Personalpronomen", "en": "Personal pronouns"},
+        "head": ["Nominativ", "Akkusativ", "Dativ"],
+        "rows": [
+          ["ich", "**mich**", "**mir**"],
+          ["du", "**dich**", "**dir**"],
+          ["er", "**ihn**", "**ihm**"],
+          ["sie", "sie", "**ihr**"],
+          ["es", "es", "**ihm**"],
+          ["wir", "uns", "uns"],
+          ["ihr", "euch", "euch"],
+          ["sie / Sie", "sie / Sie", "**ihnen / Ihnen**"]
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "So merkst du es dir", "en": "How to remember"},
+        "items": [
+          {
+            "de": "Im **Akkusativ** ändert sich nur **maskulin**: der → **den**, ein → **einen**, er → **ihn**. f, n und Plural bleiben wie im Nominativ.",
+            "en": "In the **accusative** only the **masculine** changes: der → **den**, ein → **einen**, er → **ihn**. f, n and plural stay as in the nominative."
+          },
+          {
+            "de": "**Dativ**-Signale: **-m** (m, n) und **-r** (f): de**m**, de**r**, eine**m**, eine**r**, ih**m**, ih**r**.",
+            "en": "**Dative** signals: **-m** (m, n) and **-r** (f): de**m**, de**r**, eine**m**, eine**r**, ih**m**, ih**r**."
+          },
+          {
+            "de": "Dativ Plural: Artikel **den** + Nomen **-n**: mit den Kinder**n**, mit meinen Freunde**n** (nicht bei -s: mit den Autos).",
+            "en": "Dative plural: article **den** + noun **-n**: mit den Kinder**n**, mit meinen Freunde**n** (not with -s plurals: mit den Autos)."
+          },
+          {
+            "de": "Artikel und Pronomen haben dieselbe Endung: de**r** – e**r**, de**n** – ih**n**, de**m** – ih**m**.",
+            "en": "Article and pronoun share the ending: de**r** – e**r**, de**n** – ih**n**, de**m** – ih**m**."
+          },
+          {
+            "de": "Person bekommt etwas → **Dativ**, die Sache → **Akkusativ**: Ich gebe **dem Kind** (wem?) **den Ball** (was?).",
+            "en": "The person who receives → **dative**, the thing → **accusative**: Ich gebe **dem Kind** (to whom?) **den Ball** (what?)."
+          }
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Was bestimmt den Kasus?", "en": "What decides the case?"},
+        "head": [{"de": "Wann?", "en": "When?"}, {"de": "Kasus", "en": "Case"}, {"de": "Beispiel", "en": "Example"}],
+        "rows": [
+          [{"de": "Subjekt", "en": "subject"}, "Nom.", "**Der Bus** kommt."],
+          [{"de": "nach sein, werden, heißen", "en": "after sein, werden, heißen"}, "Nom.", "Das ist **der** Chef."],
+          [
+            {"de": "die meisten Verben: haben, sehen, kaufen …", "en": "most verbs: haben, sehen, kaufen …"},
+            "Akk.",
+            "Ich habe **einen** Hund."
+          ],
+          [
+            {"de": "helfen, danken, gefallen, gehören …", "en": "helfen, danken, gefallen, gehören …"},
+            "Dat.",
+            "Ich helfe **dem** Mann."
+          ],
+          [
+            {"de": "geben, schenken, zeigen, bringen", "en": "geben, schenken, zeigen, bringen"},
+            "Dat.+Akk.",
+            "Ich gebe **dir den** Schlüssel."
+          ],
+          [
+            {"de": "nach Präpositionen", "en": "after prepositions"},
+            {"de": "je nach Präp.", "en": "depends"},
+            "mit **dem** Bus · für **den** Chef"
+          ]
+        ]
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "**es gibt** + Akkusativ: Es gibt **einen** Park. ❌ Es gibt ein Park.",
+          "en": "**es gibt** (there is) + accusative: Es gibt **einen** Park. ❌ Es gibt ein Park."
+        }
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "Nach **sein** bleibt der Nominativ: Er ist **ein** guter Lehrer. ❌ Er ist einen guten Lehrer.",
+          "en": "After **sein** it stays nominative: Er ist **ein** guter Lehrer. ❌ Er ist einen guten Lehrer."
+        }
+      }
+    ],
+    "examples": [
+      {"de": "Der Mann schenkt dem Kind einen Ball.", "en": "The man gives the child a ball."},
+      {"de": "Ich sehe den Bus.", "en": "I see the bus."},
+      {"de": "Das Buch gehört mir.", "en": "The book belongs to me."},
+      {"de": "Hast du einen Stift für mich?", "en": "Do you have a pen for me?"}
+    ]
+  },
+  {
     "key": "praesens-regelmaessig",
     "level": "A1",
     "group": {"de": "Verben", "en": "Verbs"},
@@ -578,6 +710,138 @@
       }
     ],
     "match": [{"type": "v", "subPattern": "(^|[·,] )hat sich "}]
+  },
+  {
+    "key": "adjektivendungen",
+    "level": "A2",
+    "group": {"de": "Adjektive", "en": "Adjectives"},
+    "title": {"de": "Adjektivendungen", "en": "Adjective Endings"},
+    "summary": {
+      "de": "Vor einem Nomen bekommt das Adjektiv eine Endung: der neu**e** Rock, ein neu**er** Rock. Nach **sein** keine: Der Rock ist **neu**.",
+      "en": "Before a noun the adjective takes an ending: der neu**e** Rock, ein neu**er** Rock. After **sein** none: Der Rock ist **neu**."
+    },
+    "sections": [
+      {
+        "type": "table",
+        "title": {"de": "Nach der, die, das", "en": "After der, die, das"},
+        "head": ["", {"de": "m", "en": "m"}, {"de": "f", "en": "f"}, {"de": "n", "en": "n"}, {"de": "Pl.", "en": "pl."}],
+        "rows": [
+          ["Nom.", "-e", "-e", "-e", "**-en**"],
+          ["Akk.", "**-en**", "-e", "-e", "**-en**"],
+          ["Dat.", "**-en**", "**-en**", "**-en**", "**-en**"]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Nach ein, kein, mein …", "en": "After ein, kein, mein …"},
+        "head": ["", {"de": "m", "en": "m"}, {"de": "f", "en": "f"}, {"de": "n", "en": "n"}, {"de": "Pl.", "en": "pl."}],
+        "rows": [
+          ["Nom.", "**-er**", "-e", "**-es**", "**-en**"],
+          ["Akk.", "**-en**", "-e", "**-es**", "**-en**"],
+          ["Dat.", "**-en**", "**-en**", "**-en**", "**-en**"]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Ohne Artikel", "en": "No article"},
+        "head": ["", {"de": "m", "en": "m"}, {"de": "f", "en": "f"}, {"de": "n", "en": "n"}, {"de": "Pl.", "en": "pl."}],
+        "rows": [
+          ["Nom.", "**-er**", "**-e**", "**-es**", "**-e**"],
+          ["Akk.", "**-en**", "**-e**", "**-es**", "**-e**"],
+          ["Dat.", "**-em**", "**-er**", "**-em**", "**-en**"]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Beispiele: der Rock, die Jacke, das Kleid", "en": "Examples: der Rock, die Jacke, das Kleid"},
+        "head": ["", {"de": "der, die, das", "en": "der, die, das"}, {"de": "ein, eine", "en": "ein, eine"}],
+        "rows": [
+          [{"de": "m", "en": "m"}, "der neu**e** Rock", "ein neu**er** Rock"],
+          [{"de": "f", "en": "f"}, "die neu**e** Jacke", "eine neu**e** Jacke"],
+          [{"de": "n", "en": "n"}, "das neu**e** Kleid", "ein neu**es** Kleid"],
+          [{"de": "Pl.", "en": "pl."}, "die neu**en** Schuhe", "keine neu**en** Schuhe"],
+          [{"de": "Akk. m", "en": "acc. m"}, "den neu**en** Rock", "einen neu**en** Rock"],
+          [{"de": "Dativ", "en": "dative"}, "mit dem neu**en** Rock", "mit einem neu**en** Rock"]
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "So merkst du es dir", "en": "How to remember"},
+        "items": [
+          {
+            "de": "**der/die/das**: Der Artikel zeigt das Genus schon – das Adjektiv nimmt nur **-e** oder **-en**. 5 × **-e** (Nominativ m/f/n, Akkusativ f/n), sonst immer **-en**.",
+            "en": "**der/die/das**: the article already shows the gender – the adjective only takes **-e** or **-en**. 5 × **-e** (nominative m/f/n, accusative f/n), otherwise always **-en**."
+          },
+          {
+            "de": "**ein/kein/mein**: Wo ein keine Endung hat, zeigt das Adjektiv das Genus: ein alt**er** Mann (de**r**), ein klein**es** Kind (da**s**).",
+            "en": "**ein/kein/mein**: where ein has no ending, the adjective shows the gender: ein alt**er** Mann (de**r**), ein klein**es** Kind (da**s**)."
+          },
+          {
+            "de": "**Ohne Artikel** übernimmt das Adjektiv die Endung von der/die/das: frisch**er** Kaffee (de**r**), kalt**e** Milch (di**e**), mit heiß**em** Wasser (de**m**).",
+            "en": "**No article**: the adjective takes the ending of der/die/das: frisch**er** Kaffee (de**r**), kalt**e** Milch (di**e**), mit heiß**em** Wasser (de**m**)."
+          },
+          {
+            "de": "**Dativ** und **Plural** mit Artikel: immer **-en** – mit dem neu**en** Auto, die rot**en** Schuhe.",
+            "en": "**Dative** and **plural** with an article: always **-en** – mit dem neu**en** Auto, die rot**en** Schuhe."
+          },
+          {
+            "de": "Zwei Adjektive → beide gleich: ein schön**er**, warm**er** Tag.",
+            "en": "Two adjectives → both the same: ein schön**er**, warm**er** Tag."
+          }
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "Achtung", "en": "Watch out"},
+        "items": [
+          {
+            "de": "Nach **sein / werden** keine Endung: Die Suppe ist **heiß**. ❌ Die Suppe ist heiße.",
+            "en": "After **sein / werden** no ending: Die Suppe ist **heiß**. ❌ Die Suppe ist heiße."
+          },
+          {
+            "de": "-er/-el verlieren das e: teuer → ein **teures** Auto, dunkel → eine **dunkle** Jacke; hoch → ein **hoher** Turm.",
+            "en": "-er/-el lose the e: teuer → ein **teures** Auto, dunkel → eine **dunkle** Jacke; hoch → ein **hoher** Turm."
+          },
+          {
+            "de": "Keine Endung bei **prima, lila, rosa, orange**: eine prima Idee, ein rosa Kleid.",
+            "en": "No ending for **prima, lila, rosa, orange**: eine prima Idee, ein rosa Kleid."
+          },
+          {
+            "de": "Auch Komparativ und Superlativ bekommen Endungen: ein **größeres** Auto, der **schnellste** Zug.",
+            "en": "Comparatives and superlatives take endings too: ein **größeres** Auto, der **schnellste** Zug."
+          }
+        ]
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "Häufigster Fehler: Akkusativ maskulin. Ich kaufe **einen** neu**en** Rock. ❌ einen neuer Rock",
+          "en": "Most common mistake: accusative masculine. Ich kaufe **einen** neu**en** Rock. ❌ einen neuer Rock"
+        }
+      }
+    ],
+    "examples": [
+      {"de": "Ich trage einen warmen Mantel.", "en": "I'm wearing a warm coat."},
+      {"de": "Das ist ein schönes Kleid.", "en": "That's a beautiful dress."},
+      {"de": "Mit dem neuen Auto fahren wir nach Berlin.", "en": "We're driving to Berlin in the new car."},
+      {"de": "Ich trinke gern kalte Milch.", "en": "I like drinking cold milk."},
+      {"de": "Die roten Schuhe sind teuer.", "en": "The red shoes are expensive."}
+    ],
+    "match": {
+      "type": "adj",
+      "except": [
+        "draußen",
+        "hoffentlich",
+        "endlich",
+        "schade",
+        "prima",
+        "ziemlich",
+        "einverstanden",
+        "orange",
+        "bestimmt",
+        "selten"
+      ]
+    }
   },
   {
     "key": "komparativ-superlativ",

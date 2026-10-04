@@ -5,7 +5,9 @@
 // 1. The topic's `match` rule covers it (one rule, or a list where any rule
 //    may match). A rule can check `type`, `gender`, `decks`, `endings` (the
 //    bare word ends in one of them) and `subPattern` (a regex tested against
-//    the card's sub line, e.g. its Perfekt form "hat reserviert"). Rules live
+//    the card's sub line, e.g. its Perfekt form "hat reserviert"), and
+//    `except` lists card fronts the rule skips ("hoffentlich" is filed as an
+//    adjective but takes no ending). Rules live
 //    in the grammar data (topics.json), so covering more words is a data
 //    change. A gender rule only links a card whose own gender agrees with
 //    it: "der Sprung" ends in -ung but is masculine (the -ung belongs to the
@@ -24,6 +26,7 @@ const ruleMatch = (rule, card, word) => {
   if (rule.type && card.type !== rule.type) return null;
   if (rule.gender && card.gender !== rule.gender) return null;
   if (rule.decks && !rule.decks.includes(card.deck)) return null;
+  if (rule.except && rule.except.includes(card.front)) return null;
   if (rule.subPattern && !new RegExp(rule.subPattern).test(card.sub || "")) return null;
   if (rule.endings) {
     // longest ending first, and the word must be longer than the ending

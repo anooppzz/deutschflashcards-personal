@@ -29,7 +29,7 @@ describe("grammarLinksFor", () => {
 
   it("does not link non-nouns or words that only look similar", () => {
     expect(keysFor({ type: "sonst", front: "Achtung" })).toEqual([]);
-    expect(keysFor({ type: "adj", front: "gemeinsam" })).toEqual([]);
+    expect(keysFor({ type: "sonst", front: "gemeinsam" })).toEqual([]);
     expect(keysFor(noun("die Frau", "die"))).toEqual([]);
     expect(keysFor(noun("die Pommes frites", "die"))).toEqual([]);
   });
@@ -76,6 +76,14 @@ describe("grammarLinksFor - Perfekt rule", () => {
     expect(keysFor(verb("mögen", "du magst, er mag"))).toEqual([]);
     expect(keysFor(verb("kochen", ""))).toEqual([]);
     expect(keysFor({ type: "sonst", front: "hat", sub: "hat recht" })).toEqual([]);
+  });
+});
+
+describe("grammarLinksFor - Adjektivendungen rule", () => {
+  it("links adjectives, except the ones that take no ending", () => {
+    expect(keysFor({ type: "adj", front: "neu" })).toContain("adjektivendungen");
+    expect(keysFor({ type: "adj", front: "hoffentlich" })).not.toContain("adjektivendungen");
+    expect(keysFor({ type: "adj", front: "prima" })).not.toContain("adjektivendungen");
   });
 });
 
@@ -133,7 +141,8 @@ describe("buildGrammarIndex", () => {
   it("maps card ids to their links", () => {
     expect(linksById[idOf("persoenlich", "die Zeichnung")].map((l) => l.key)).toEqual(["genus-endungen"]);
     expect(linksById[idOf("freizeit", "können")].map((l) => l.key)).toEqual(["modalverben"]);
-    expect(linksById[idOf("persoenlich", "gemeinsam")]).toBeUndefined();
+    expect(linksById[idOf("persoenlich", "gemeinsam")].map((l) => l.key)).toEqual(["adjektivendungen"]);
+    expect(linksById[idOf("begruessung", "Tschüs")]).toBeUndefined();
   });
 
   it("lists each topic's words once, with every deck they appear in", () => {
@@ -148,7 +157,7 @@ describe("buildGrammarIndex", () => {
   });
 
   it("has no entry for topics nothing links to", () => {
-    const { wordsByTopic: words } = buildGrammarIndex([{ deck: "x", type: "adj", front: "gemeinsam" }], GRAMMAR_TOPICS);
+    const { wordsByTopic: words } = buildGrammarIndex([{ deck: "x", type: "sonst", front: "gemeinsam" }], GRAMMAR_TOPICS);
     expect(words).toEqual({});
     expect(Object.values(wordsByTopic).every((list) => list.length > 0)).toBe(true);
   });

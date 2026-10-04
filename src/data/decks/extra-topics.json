@@ -753,7 +753,8 @@
         "level": "A1",
         "grammar": [
           "fragewoerter-kasus",
-          "nebensatz"
+          "nebensatz",
+          "kasus-ueberblick"
         ]
       },
       {
@@ -1484,7 +1485,8 @@
         "exampleEn": "Can you please tell me the truth?",
         "level": "A1",
         "grammar": [
-          "fragewoerter-kasus"
+          "fragewoerter-kasus",
+          "kasus-ueberblick"
         ]
       },
       {
@@ -2038,7 +2040,8 @@
         "exampleEn": "Can you write your name?",
         "level": "A1",
         "grammar": [
-          "fragewoerter-kasus"
+          "fragewoerter-kasus",
+          "kasus-ueberblick"
         ]
       },
       {
@@ -3105,7 +3108,8 @@
         "exampleEn": "I thank you for your help.",
         "level": "A2",
         "grammar": [
-          "fragewoerter-kasus"
+          "fragewoerter-kasus",
+          "kasus-ueberblick"
         ]
       },
       {
@@ -3117,7 +3121,8 @@
         "exampleEn": "I'm missing the time for sports.",
         "level": "A2",
         "grammar": [
-          "fragewoerter-kasus"
+          "fragewoerter-kasus",
+          "kasus-ueberblick"
         ]
       },
       {
@@ -3862,7 +3867,8 @@
         "exampleEn": "The soup tastes very good.",
         "level": "A1",
         "grammar": [
-          "fragewoerter-kasus"
+          "fragewoerter-kasus",
+          "kasus-ueberblick"
         ]
       },
       {
@@ -4265,7 +4271,8 @@
         "exampleEn": "Can you please bring some bread?",
         "level": "A2",
         "grammar": [
-          "fragewoerter-kasus"
+          "fragewoerter-kasus",
+          "kasus-ueberblick"
         ]
       },
       {
@@ -6064,7 +6071,8 @@
         "exampleEn": "Can you please bring me the menu?",
         "level": "A1",
         "grammar": [
-          "fragewoerter-kasus"
+          "fragewoerter-kasus",
+          "kasus-ueberblick"
         ]
       },
       {
@@ -6103,7 +6111,8 @@
         "exampleEn": "I'll send you the invoice by email.",
         "level": "A2",
         "grammar": [
-          "fragewoerter-kasus"
+          "fragewoerter-kasus",
+          "kasus-ueberblick"
         ]
       },
       {
@@ -6170,7 +6179,8 @@
         "exampleEn": "Does Monday at ten o'clock suit you?",
         "level": "A2",
         "grammar": [
-          "fragewoerter-kasus"
+          "fragewoerter-kasus",
+          "kasus-ueberblick"
         ]
       },
       {
@@ -7115,7 +7125,8 @@
         "exampleEn": "Congratulations on your new job!",
         "level": "A2",
         "grammar": [
-          "fragewoerter-kasus"
+          "fragewoerter-kasus",
+          "kasus-ueberblick"
         ]
       },
       {
@@ -7127,7 +7138,8 @@
         "exampleEn": "He gives her flowers for her birthday.",
         "level": "A2",
         "grammar": [
-          "fragewoerter-kasus"
+          "fragewoerter-kasus",
+          "kasus-ueberblick"
         ]
       },
       {
@@ -7139,7 +7151,8 @@
         "exampleEn": "Can you please answer me?",
         "level": "A1",
         "grammar": [
-          "fragewoerter-kasus"
+          "fragewoerter-kasus",
+          "kasus-ueberblick"
         ]
       },
       {
@@ -8271,7 +8284,8 @@
         "level": "A1",
         "source": "Menschen A2 · Einheit 5",
         "grammar": [
-          "fragewoerter-kasus"
+          "fragewoerter-kasus",
+          "kasus-ueberblick"
         ]
       },
       {
@@ -8997,7 +9011,8 @@
         "level": "A2",
         "source": "Menschen A2 · Einheit 7",
         "grammar": [
-          "fragewoerter-kasus"
+          "fragewoerter-kasus",
+          "kasus-ueberblick"
         ]
       },
       {
@@ -9010,7 +9025,8 @@
         "level": "A2",
         "source": "Menschen A2 · Einheit 7",
         "grammar": [
-          "fragewoerter-kasus"
+          "fragewoerter-kasus",
+          "kasus-ueberblick"
         ]
       },
       {
@@ -9994,7 +10010,8 @@
         "level": "A1",
         "source": "Menschen A2 · Einheit 9",
         "grammar": [
-          "fragewoerter-kasus"
+          "fragewoerter-kasus",
+          "kasus-ueberblick"
         ]
       },
       {
