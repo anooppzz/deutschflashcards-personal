@@ -23,3 +23,6 @@ export { buildWordSearchPool, buildWordSearchRound, resolveWordSearchSize } from
 export { default as GrammarView } from "./grammar/GrammarView";
 export { default as SearchResults } from "./search/SearchResults";
 export { default as ReviewSession } from "./review/ReviewSession";
+
+export { default as FormsTrainer } from "./forms/FormsTrainer";
+export { buildFormsPool } from "./forms/buildForms";

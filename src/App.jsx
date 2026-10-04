@@ -62,7 +62,7 @@ import {
   ReverseTrainer, ReverseSummary,
   ClozeTrainer, ClozeSummary, buildClozePool, buildClozeRound, saveClozeSizePref, resolveClozeRoundSize, isClozeCorrect,
   WordSearchTrainer, WordSearchSummary, buildWordSearchPool, buildWordSearchRound, resolveWordSearchSize,
-  GrammarView, SearchResults, ReviewSession,
+  GrammarView, SearchResults, ReviewSession, FormsTrainer, buildFormsPool,
 } from "./modes";
 
 /* ============================================================
@@ -121,6 +121,9 @@ const savedMode = () => {
 // their 📖 chips by card id, and each grammar topic lists its words.
 const GRAMMAR_INDEX = buildGrammarIndex(ALL_CARDS, GRAMMAR_TOPICS);
 const grammarLinksById = (id) => GRAMMAR_INDEX.linksById[id] || [];
+// every card by id (full fields: sub, note …) for modes that need more
+// than the selection's own card objects carry
+const CARD_BY_ID = new Map(ALL_CARDS.map((c) => [idOf(c.deck, c.front), c]));
 // the text of every grammar topic, indexed once for the app-wide search
 const GRAMMAR_SEARCH = buildGrammarSearchIndex(GRAMMAR_TOPICS);
 
@@ -285,7 +288,7 @@ const HELP_I18N = {
   "help.search.label": { en: "Search", de: "Suche", sq: "Kërko", ar: "البحث", uk: "Пошук", hi: "खोजें" },
   "help.search.desc": { en: "Searches every word and every grammar topic, whatever topics are selected - in German or English, umlauts optional (fruhstuck finds frühstücken). Tap a word to open its card, or a grammar result to open the topic.", de: "Durchsucht alle Wörter und alle Grammatikthemen, egal welche Themen gewählt sind - auf Deutsch oder Englisch, Umlaute optional (fruhstuck findet frühstücken). Tippe auf ein Wort, um die Karte zu öffnen, oder auf ein Grammatik-Ergebnis, um das Thema zu öffnen.", sq: "Kërkon në të gjitha fjalët dhe të gjitha temat e gramatikës, pavarësisht cilat tema janë zgjedhur - në gjermanisht ose anglisht, umlautet janë opsionale (fruhstuck gjen frühstücken). Trokit mbi një fjalë për të hapur kartën, ose mbi një rezultat gramatike për të hapur temën.", ar: "يبحث في كل الكلمات وكل مواضيع القواعد، أيًا كانت المواضيع المختارة - بالألمانية أو الإنجليزية، والأوملاوت اختياري (fruhstuck يجد frühstücken). اضغط على كلمة لفتح بطاقتها، أو على نتيجة قواعد لفتح الموضوع.", uk: "Шукає в усіх словах і всіх темах граматики, незалежно від обраних тем - німецькою або англійською, умляути необов'язкові (fruhstuck знаходить frühstücken). Натисніть на слово, щоб відкрити картку, або на результат з граматики, щоб відкрити тему.", hi: "हर शब्द और हर व्याकरण विषय में खोजता है, चाहे कोई भी विषय चुने हों - जर्मन या अंग्रेज़ी में, उमलाउट वैकल्पिक (fruhstuck से frühstücken मिलता है)। कार्ड खोलने के लिए किसी शब्द पर, या विषय खोलने के लिए व्याकरण परिणाम पर टैप करें।" },
   "help.modes.label": { en: "Cards · Article · Quiz", de: "Karten · Artikel · Quiz", sq: "Kartat · Artikulli · Kuizi", ar: "البطاقات · أداة التعريف · الاختبار", uk: "Картки · Артикль · Квіз", hi: "कार्ड्स · आर्टिकल · क्विज़" },
-  "help.modes.desc": { en: "Three study modes: flip through cards, practice der/die/das, or test meanings with multiple choice.", de: "Drei Lernmodi: durchblättern, der/die/das üben, oder Bedeutungen per Mehrfachauswahl testen.", sq: "Tre mënyra mësimi: kalo nëpër karta, praktiko der/die/das, ose testo kuptimet me zgjedhje të shumëfishta.", ar: "ثلاث طرق للدراسة: تصفح البطاقات، تدرّب على der/die/das، أو اختبر المعاني بأسئلة متعددة الخيارات.", uk: "Три режими навчання: перегортайте картки, тренуйте der/die/das, або перевіряйте значення через вибір варіантів.", hi: "तीन अध्ययन तरीके: कार्ड्स पलटें, der/die/das का अभ्यास करें, या बहुविकल्पीय प्रश्नों से अर्थ जाँचें।" },
+  "help.modes.desc": { en: "Karten: flip through cards. Artikel: der/die/das. Quiz: pick the meaning. Reverse: type the German word (nouns with article). Lücke: fill the gap in a sentence. Wortgitter: find words in a grid. Formen: Perfekt (hat/ist + Partizip) and plurals. Grammatik: the grammar topics.", de: "Karten: durchblättern. Artikel: der/die/das. Quiz: Bedeutung wählen. Reverse: das deutsche Wort schreiben (Nomen mit Artikel). Lücke: die Lücke im Satz füllen. Wortgitter: Wörter im Gitter finden. Formen: Perfekt (hat/ist + Partizip) und Plural. Grammatik: die Grammatikthemen.", sq: "Karten: shfleto kartat. Artikel: der/die/das. Quiz: zgjidh kuptimin. Reverse: shkruaj fjalën gjermane (emrat me nyje). Lücke: plotëso boshllëkun në fjali. Wortgitter: gjej fjalët në rrjetë. Formen: Perfekt (hat/ist + Partizip) dhe shumësi. Grammatik: temat e gramatikës.", ar: "Karten: تصفح البطاقات. Artikel: der/die/das. Quiz: اختر المعنى. Reverse: اكتب الكلمة الألمانية (الأسماء مع أداة التعريف). Lücke: املأ الفراغ في الجملة. Wortgitter: ابحث عن الكلمات في الشبكة. Formen: Perfekt (hat/ist + Partizip) والجمع. Grammatik: مواضيع القواعد.", uk: "Karten: гортайте картки. Artikel: der/die/das. Quiz: оберіть значення. Reverse: напишіть німецьке слово (іменники з артиклем). Lücke: заповніть пропуск у реченні. Wortgitter: знайдіть слова в сітці. Formen: Perfekt (hat/ist + Partizip) і множина. Grammatik: теми граматики.", hi: "Karten: कार्ड पलटें। Artikel: der/die/das। Quiz: अर्थ चुनें। Reverse: जर्मन शब्द लिखें (संज्ञा आर्टिकल के साथ)। Lücke: वाक्य में खाली जगह भरें। Wortgitter: ग्रिड में शब्द खोजें। Formen: Perfekt (hat/ist + Partizip) और बहुवचन। Grammatik: व्याकरण विषय।" },
   "help.language.label": { en: "Language", de: "Sprache", sq: "Gjuha", ar: "اللغة", uk: "Мова", hi: "भाषा" },
   "help.language.desc": { en: "Tap the flag at the top left: translations in SQ/AR/UK/HI - or add your own language with ➕.", de: "Tippe oben links auf die Flagge: Übersetzungen in SQ/AR/UK/HI - oder über ➕ eine eigene Sprache hinzufügen.", sq: "Trokit flamurin lart majtas: përkthime në SQ/AR/UK/HI - ose shto gjuhën tënde me ➕.", ar: "اضغط على العلم أعلى اليسار: ترجمات بـ SQ/AR/UK/HI - أو أضف لغتك الخاصة عبر ➕.", uk: "Натисніть прапор угорі ліворуч: переклади SQ/AR/UK/HI - або додайте власну мову через ➕.", hi: "ऊपर बाईं ओर झंडे पर टैप करें: SQ/AR/UK/HI में अनुवाद - या ➕ से अपनी भाषा जोड़ें।" },
   "help.badge.label": { en: "Topic badge", de: "Themen-Tag", sq: "Etiketa e temës", ar: "شارة الموضوع", uk: "Значок теми", hi: "टॉपिक बैज" },
@@ -759,6 +762,13 @@ function App() {
       return !e || e.due <= now;
     }).length;
   }, [selectionCards, progress]);
+  // 🔁 Formen (modes/forms): Perfekt and plural questions from the selection
+  const formsPools = useMemo(() => {
+    const cards = selectionCards.map((c) => CARD_BY_ID.get(idOf(c.deck, c.front))).filter(Boolean);
+    return { perfekt: buildFormsPool(cards, "perfekt"), plural: buildFormsPool(cards, "plural") };
+  }, [selectionCards]);
+  const [formsKind, setFormsKind] = useState(() => (readSaved(STORAGE_KEYS.FORMS_KIND) === "plural" ? "plural" : "perfekt"));
+  useEffect(() => { storage.set(STORAGE_KEYS.FORMS_KIND, JSON.stringify(formsKind)); }, [formsKind]);
   const articleNouns = useMemo(
     () => selectionCards.filter((c) => c.type === "n" && c.gender),
     [selectionCards]
@@ -1444,13 +1454,11 @@ function App() {
         )}
 
         {/* MODE SWITCH + PROGRESS */}
-        {/* Seven tabs in two even rows of four, the same on every screen
-            (the column is at most 480px, too narrow for seven in a row):
-            every button is icon over label, counts are corner badges, and
-            Grammatik - the reference, not a practice mode - fills the last
-            two cells. */}
+        {/* Eight tabs in two even rows of four, the same on every screen
+            (the column is at most 480px, too narrow for eight in a row):
+            every button is icon over label, counts are corner badges. */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(4, minmax(0, 1fr))", gap: 6, marginBottom: 14 }}>
-          {MODE_TABS(articleNouns.length, clozePool.length, wsPool.length).map((tab) => {
+          {MODE_TABS(articleNouns.length, clozePool.length, wsPool.length, formsPools.perfekt.length + formsPools.plural.length).map((tab) => {
             const active = mode === tab.mode;
             return (
               <button
@@ -1459,7 +1467,7 @@ function App() {
                 aria-pressed={active}
                 aria-label={tab.count !== undefined ? `${tab.label} (${tab.count})` : tab.label}
                 style={{
-                  position: "relative", gridColumn: tab.mode === MODE.GRAMMAR ? "span 2" : undefined,
+                  position: "relative",
                   display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 2,
                   minHeight: 52, padding: "6px 4px", borderRadius: 12, border: "1px solid #2c3a47",
                   background: active ? "#e0833b" : "#1a232b", color: active ? "#0e1419" : "#9ab0c2",
@@ -1621,6 +1629,31 @@ function App() {
               onFinish={finishWs}
             />
           )
+        ) : mode === MODE.FORMS ? (
+          <>
+            <div role="group" aria-label="Formen" style={{ display: "flex", gap: 8, marginBottom: 12 }}>
+              {[["perfekt", "Perfekt"], ["plural", "Plural"]].map(([k, label]) => (
+                <button
+                  key={k}
+                  type="button"
+                  aria-pressed={formsKind === k}
+                  onClick={() => setFormsKind(k)}
+                  style={{
+                    flex: 1, padding: "9px 0", borderRadius: 10, fontSize: 13, fontWeight: 700, cursor: "pointer",
+                    border: formsKind === k ? "none" : "1px solid #2c3a47",
+                    background: formsKind === k ? "#4f86c6" : "#1a232b", color: formsKind === k ? "#0e1419" : "#9ab0c2",
+                  }}
+                >{label} ({formsPools[k].length})</button>
+              ))}
+            </div>
+            <FormsTrainer
+              key={`${formsKind}|${formsPools[formsKind].length}|${tabs.join(",")}`}
+              kind={formsKind}
+              pool={formsPools[formsKind]}
+              progress={progress}
+              onGrade={reviewResult}
+            />
+          </>
         ) : mode === MODE.GRAMMAR ? (
           <GrammarView
             topics={GRAMMAR_TOPICS}

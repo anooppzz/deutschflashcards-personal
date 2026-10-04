@@ -13,4 +13,5 @@ export const STORAGE_KEYS = {
   TABS: "tabs:v1", // selected topics, restored on reload
   MODE: "mode:v1", // last study mode
   BACKUP_AT: "backupAt:v1", // when the learner last saved a backup file
+  FORMS_KIND: "formsKind:v1", // Formen trainer: "perfekt" or "plural"
 };

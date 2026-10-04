@@ -69,6 +69,8 @@ src/engine/                logic: FSRS scheduling, filters, grammarLinks.js,
 src/modes/                 one folder per study mode (cards, article, quiz, reverse,
                            cloze, wordsearch, grammar) + search (results view)
                            + review ("Heute fällig" session)
+                           + forms (🔁 Formen: Perfekt + Plural, built from each
+                           card's sub line – keep `sub` formats as below)
 src/components/FlipCard.jsx  the card (front/back, note, 📖 grammar chips)
 src/components/BackupModal.jsx  "💾 Sichern & App": backup file, restore, install hint
 src/engine/backup.js       what a backup holds (STORAGE_KEYS + corr_*), parse/restore

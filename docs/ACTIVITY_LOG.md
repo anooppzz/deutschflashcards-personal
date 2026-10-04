@@ -21,7 +21,7 @@ was done, newest first. Every change adds a log entry here in the same commit
   1. ~~Global search~~ – done 2026-10-01 (see log).
   2. ~~Backup + installable offline app~~ – done 2026-10-01.
   3. ~~Heute fällig, remember selection, fold topic chips~~ – done 2026-10-01.
-  4. New trainers from existing data: Perfekt (hat/ist + Partizip II), Plural.
+  4. ~~Perfekt + Plural trainers~~ (done 2026-10-04, 🔁 Formen).
      ~~Reverse mode article check~~ (done 2026-10-04).
   5. Grammar topics missing for A2: ~~Kasus overview, Adjektivendungen~~ (done 2026-10-04),
      ~~Konjunktiv II, Präteritum war/hatte, Verben mit Dativ, Verben mit Präposition,
@@ -34,6 +34,17 @@ was done, newest first. Every change adds a log entry here in the same commit
 ## Log
 
 ### 2026-10-04
+- **🔁 Formen trainer** (new mode tab; 8 tabs = two even rows of four, Grammatik no longer
+  spans two): Perfekt | Plural switch (remembered, `formsKind:v1`).
+  - Perfekt: pick hat / ist (+ sich for reflexive verbs), type the Partizip II. 225 verbs
+    across the app – read from each card's sub ("hat gekauft", "fuhr · ist gefahren");
+    phrases like "hat Musik gehört" are skipped.
+  - Plural: "die ___" – 435 nouns, built from "Pl. -en / ¨-e / -" etc. (umlaut on the last
+    a/o/u/au, capitals too: Arzt → Ärzte); skipped: kein/nur Plural, "-e/-s" alternatives.
+    All 435 plurals and 225 Perfekt forms were listed and checked by hand.
+  - Feedback names what was wrong ("Hilfsverb + Partizip"); round of 15 like Artikel (new
+    cards first, then due ones); every answer is a real review; summary with "Fehler üben".
+  - `src/modes/forms/` (buildForms.js +8 tests, FormsTrainer.jsx); help text lists all modes.
 - **Reverse mode checks the article:** a noun shown with der/die/das must be typed with the
   right one – "✗ Falscher Artikel" / "✗ Artikel fehlt" on the card, "(Artikel!)" / "(ohne
   Artikel)" in the summary; *der/die* nouns accept either. Placeholder says "mit Artikel …"
