@@ -74,6 +74,8 @@ src/modes/                 one folder per study mode (cards, article, quiz, reve
                            + forms (🔁 Formen: Perfekt + Plural, built from each
                            card's sub line – keep `sub` formats as below)
 src/components/FlipCard.jsx  the card (front/back, note, 📖 grammar chips)
+src/components/HelpModals.jsx  welcome + ❓ help windows; texts in src/data/help.json
+                           (en, de, sq, ar, uk, hi – keep all six when editing)
 src/components/BackupModal.jsx  "💾 Sichern & App": backup file, restore, install hint
 src/engine/backup.js       what a backup holds (STORAGE_KEYS + corr_*), parse/restore
 src/engine/pwa.js, public/ installable app: manifest, icons, sw.js (offline cache;

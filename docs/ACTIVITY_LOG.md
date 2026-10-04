@@ -33,6 +33,11 @@ was done, newest first. Every change adds a log entry here in the same commit
 ## Log
 
 ### 2026-10-04
+- **Code tidying 2/4 – help out of App.jsx:** the 56 help/welcome texts (6 languages) are
+  now `src/data/help.json`; WelcomeModal / HelpModal live in `components/HelpModals.jsx`;
+  a stale comment about an abandoned translation approach is gone (chain.js documents the
+  real one). App.jsx 1,690 → 1,400 lines. Welcome and help windows compared with the
+  previous build in English, Ukrainian and German: identical text.
 - **Code tidying 1/4 – one deck view:** the five copy-pasted deck screens (Irregular, Nicht
   trennbar, Haushalt, Verkehr, Kleidung) and the chapter view are one `DeckView`, driven by
   configs in `modes/cards/deckViews.js` (banner, filter by type or vowel group, colour,
