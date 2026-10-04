@@ -36,7 +36,7 @@ was done, newest first. Every change adds a log entry here in the same commit
   getDerivedStateFromProps instead of setState in componentDidUpdate. Rule now: 0 warnings.
   Re-tested in the browser: all decks vs the previous build, help texts, Artikel / Quiz /
   Reverse / Karten in English and Albanian, Formen, all 29 grammar exercise sets, review.
-- **Code tidying done** (steps 1–4 above). App.jsx 1,932 → 1,395 lines.
+- **Code tidying done** (steps 1–4 above). App.jsx 1,932 → 1,405 lines.
 - **Code tidying 3/4 – progress survives renames:** `src/data/renames.json` (old id → new id,
   or null for a deletion) is applied when progress loads (`engine/renames.js`). It starts
   with the four real renames found in git history, so that practice comes back: three
