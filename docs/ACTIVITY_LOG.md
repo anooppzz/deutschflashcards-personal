@@ -26,14 +26,23 @@ was done, newest first. Every change adds a log entry here in the same commit
   5. Grammar topics missing for A2: ~~Kasus overview, Adjektivendungen~~ (done 2026-10-04),
      ~~Konjunktiv II, Präteritum war/hatte, Verben mit Dativ, Verben mit Präposition,
      trennbare Verben, Imperativ~~ (done 2026-10-04); mini-exercises inside topics.
-  6. Data: 108 nouns with old/empty plural format, 9 duplicate words that disagree
-     (das Glas, das Wetter, die Post …), 51 adjectives without opposite.
+  6. ~~Data cleanup~~ (done 2026-10-04).
   7. Code: App.jsx 1,703 lines / 75 useState; six copy-pasted deck viewers; help texts
      inline; progress keyed by deck+front (fixing a typo in `front` loses progress).
 
 ## Log
 
 ### 2026-10-04
+- **Data cleanup** (audit item 6):
+  - Nouns: 46 old-format plurals got the "Pl." prefix ("-n · …" → "Pl. -n · …"); 61 empty
+    or plural-less notes got the real plural or "kein Plural" (Wetter, Milch, Geld, Gepäck …;
+    Kaffee → Pl. -s · "Zwei Kaffee, bitte!"; Papier → "die Papiere = Dokumente"; das Glas as
+    material vs Trinkglas ¨-er); months say "Monat". Every noun now has plural information
+    except Ostern / Weihnachten. The duplicates that disagreed (das Glas, das Wetter, die
+    Post, der Moment) now agree. The plural trainer grew from 435 to 492 nouns.
+  - Adjectives: 33 got a natural opposite (neu ↔ alt, leer ↔ voll, pünktlich ↔ unpünktlich,
+    sonnig ↔ bewölkt …); colours and adverb-like words stay without.
+  - Scan of all cards at 360px after the change: none overflows.
 - **🔁 Formen trainer** (new mode tab; 8 tabs = two even rows of four, Grammatik no longer
   spans two): Perfekt | Plural switch (remembered, `formsKind:v1`).
   - Perfekt: pick hat / ist (+ sich for reflexive verbs), type the Partizip II. 225 verbs
