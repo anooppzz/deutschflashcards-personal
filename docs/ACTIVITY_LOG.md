@@ -12,19 +12,10 @@ was done, newest first. Every change adds a log entry here in the same commit
 - [ ] Ideas, not requested yet: tapping a word under "Deine Wörter" could open its card
   (now it only speaks it); grammar text exists only in German and English (other app
   languages fall back to English).
-- [ ] Offered, not requested yet: a grammar topic "Verben mit Präposition" (warten auf,
-  denken an, sprechen über …).
-- [ ] **Audit 2026-10-01 – proposals, none requested yet** (learner picks):
-  1. ~~Global search~~ – done 2026-10-01 (see log).
-  2. ~~Backup + installable offline app~~ – done 2026-10-01.
-  3. ~~Heute fällig, remember selection, fold topic chips~~ – done 2026-10-01.
-  4. ~~Perfekt + Plural trainers~~ (done 2026-10-04, 🔁 Formen).
-     ~~Reverse mode article check~~ (done 2026-10-04).
-  5. Grammar topics missing for A2: ~~Kasus overview, Adjektivendungen~~ (done 2026-10-04),
-     ~~Konjunktiv II, Präteritum war/hatte, Verben mit Dativ, Verben mit Präposition,
-     trennbare Verben, Imperativ~~ (done 2026-10-04); ~~mini-exercises~~ (done).
-  6. ~~Data cleanup~~ (done 2026-10-04).
-  7. ~~Code tidying~~ (done 2026-10-04).
+- [ ] **To check on the learner's phone:** the "📲 App installieren" button (Android/Chrome) –
+  headless Chrome never offers installation, so it is untested.
+- The audit of 2026-10-01 is fully done (search, backup + PWA, Heute fällig, Formen
+  trainer, Reverse articles, 12 grammar topics, ✏️ Üben, data cleanup, code tidying).
 
 ## Log
 
