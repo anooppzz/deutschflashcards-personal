@@ -18,7 +18,7 @@ function ReverseSummary({ score, mistakes, onRestart, onRetryMistakes }) {
                   {m.english}
                 </div>
                 <div style={{ display: "flex", justifyContent: "space-between", gap: 8 }}>
-                  <span style={{ color: "#c6534f" }}>Du: {m.userInput}</span>
+                  <span style={{ color: "#c6534f" }}>Du: {m.userInput}{m.reason === "wrong-article" ? " (Artikel!)" : m.reason === "missing-article" ? " (ohne Artikel)" : ""}</span>
                   <span style={{ color: "#5fa85f" }}>Korrekt: {m.front}</span>
                 </div>
               </div>

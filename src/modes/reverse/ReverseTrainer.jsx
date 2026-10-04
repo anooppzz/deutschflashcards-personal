@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { GENDER_COLORS, TYPE_META } from "../../constants";
 import { DECK_META } from "../../data";
-import { idOf, translateText, validateGermanWord } from "../../engine";
+import { idOf, translateText, checkReverseAnswer } from "../../engine";
 import { faceStyle, badgeStyle } from "../../components/cardStyles";
 import { FloatingNext } from "../../components";
 
@@ -34,7 +34,14 @@ function ReverseTrainer({ cards, idx, input, flipped, score, onInput, onSubmit, 
   }
 
   const displayMeaning = lang !== "en" && transMeaning ? transMeaning : card.english;
-  const isCorrect = flipped ? validateGermanWord(input, card.front) : null;
+  const result = flipped ? checkReverseAnswer(input, card.front) : null;
+  const isCorrect = result ? result.correct : null;
+  const verdict = !result ? "" : result.correct ? "✓ Richtig!"
+    : result.reason === "wrong-article" ? "✗ Falscher Artikel"
+    : result.reason === "missing-article" ? "✗ Artikel fehlt"
+    : "✗ Nicht ganz";
+  // nouns shown with an article must be typed with it
+  const needsArticle = /^(der|die|das)[\s/]/.test(card.front);
   const statusColor = isCorrect ? "#5fa85f" : isCorrect === false ? "#c6534f" : "#7d8d9c";
 
   // Compute accent color based on card type/gender (like FlipCard does)
@@ -83,7 +90,7 @@ function ReverseTrainer({ cards, idx, input, flipped, score, onInput, onSubmit, 
               value={input}
               onChange={(e) => onInput(e.target.value)}
               onKeyDown={(e) => { if (e.key === "Enter" && input.trim()) { e.preventDefault(); onSubmit(); } }}
-              placeholder="German word..."
+              placeholder={needsArticle ? "mit Artikel: der / die / das …" : "Deutsches Wort …"}
               style={{
                 width: "100%",
                 padding: "12px 14px",
@@ -91,7 +98,7 @@ function ReverseTrainer({ cards, idx, input, flipped, score, onInput, onSubmit, 
                 border: "2px solid #2c3a47",
                 background: "#16202a",
                 color: "#f2f5f8",
-                fontSize: 14,
+                fontSize: 16, // 16px: smaller makes iPhones zoom in on focus
                 fontFamily: "inherit",
                 boxSizing: "border-box",
                 marginBottom: 14,
@@ -119,7 +126,7 @@ function ReverseTrainer({ cards, idx, input, flipped, score, onInput, onSubmit, 
           {/* BACK - Reveal side (styled like FlipCard back) */}
           <div style={{ ...faceStyle(statusColor), transform: "rotateY(180deg)", backfaceVisibility: "hidden" }}>
             <div style={{ fontSize: 13, color: statusColor, marginBottom: 20, textAlign: "center", fontWeight: 600 }}>
-              {isCorrect ? "✓ Richtig!" : "✗ Nicht ganz"}
+              {verdict}
             </div>
             <div style={{ fontSize: 14, color: "#f2f5f8", marginBottom: 10, textAlign: "center" }}>Deine Antwort:</div>
             <div style={{ fontSize: 16, fontWeight: 700, color: "#f2f5f8", textAlign: "center", marginBottom: 20, padding: "10px", borderRadius: 8, background: "rgba(255,255,255,.1)" }}>

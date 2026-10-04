@@ -43,7 +43,7 @@ import {
   isKnownStability, statusOfFsrs, dueLabel, migrateBoxEntry,
   localDateStr, addDaysStr, saveStreak, effectiveStreakDisplay,
   weightedSample, shuffled,
-  validateGermanWord,
+  checkReverseAnswer,
   distinctLevels, distinctSources, passesGlobalFilters,
   buildGrammarIndex, buildGrammarSearchIndex, searchCards, searchGrammar, dueCards,
 } from "./engine";
@@ -1006,10 +1006,11 @@ function App() {
   const submitReverse = () => {
     if (!rInput.trim() || rFlipped) return;
     const card = rOrder[rIdx % rOrder.length];
-    const correct = validateGermanWord(rInput, card.front);
+    // nouns need the right article too (engine/validation.js)
+    const { correct, reason } = checkReverseAnswer(rInput, card.front);
     setRFlipped(true);
     setRScore((s) => ({ right: s.right + (correct ? 1 : 0), total: s.total + 1 }));
-    if (!correct) setRMistakes((m) => [...m, { ...card, userInput: rInput }]);
+    if (!correct) setRMistakes((m) => [...m, { ...card, userInput: rInput, reason }]);
     reviewResult(idOf(card.deck, card.front), correct);
   };
   const nextReverse = () => {

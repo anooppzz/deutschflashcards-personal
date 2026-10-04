@@ -22,7 +22,7 @@ was done, newest first. Every change adds a log entry here in the same commit
   2. ~~Backup + installable offline app~~ – done 2026-10-01.
   3. ~~Heute fällig, remember selection, fold topic chips~~ – done 2026-10-01.
   4. New trainers from existing data: Perfekt (hat/ist + Partizip II), Plural.
-     Reverse mode strips the article, so a wrong der/die/das counts as correct.
+     ~~Reverse mode article check~~ (done 2026-10-04).
   5. Grammar topics missing for A2: ~~Kasus overview, Adjektivendungen~~ (done 2026-10-04),
      ~~Konjunktiv II, Präteritum war/hatte, Verben mit Dativ, Verben mit Präposition,
      trennbare Verben, Imperativ~~ (done 2026-10-04); mini-exercises inside topics.
@@ -34,6 +34,12 @@ was done, newest first. Every change adds a log entry here in the same commit
 ## Log
 
 ### 2026-10-04
+- **Reverse mode checks the article:** a noun shown with der/die/das must be typed with the
+  right one – "✗ Falscher Artikel" / "✗ Artikel fehlt" on the card, "(Artikel!)" / "(ohne
+  Artikel)" in the summary; *der/die* nouns accept either. Placeholder says "mit Artikel …"
+  for nouns; input 16px (no iPhone zoom). `checkReverseAnswer` in `engine/validation.js`.
+  Fixed on the way: *der/die Angestellte* could never be answered right, and *an·rufen*
+  needed the dot; reflexive "(sich)" is optional now. +7 tests (`validation.test.js`).
 - **Four grammar topics (Verben):** order now Präsens · Trennbare Verben · Imperativ · Perfekt ·
   Präteritum · Modalverben · Konjunktiv II · Reflexive · Verben mit Dativ · Verben mit Präposition.
   - *Trennbare Verben* (A1): where the prefix goes (6 sentence types), 12 prefixes, stress
