@@ -24,7 +24,7 @@ was done, newest first. Every change adds a log entry here in the same commit
   4. New trainers from existing data: Perfekt (hat/ist + Partizip II), Plural.
      Reverse mode strips the article, so a wrong der/die/das counts as correct.
   5. Grammar topics missing for A2: ~~Kasus overview, Adjektivendungen~~ (done 2026-10-04),
-     Konjunktiv II (würde, hätte gern, könnte), Präteritum war/hatte, Verben mit Dativ,
+     ~~Konjunktiv II, Präteritum war/hatte~~ (done 2026-10-04), Verben mit Dativ,
      Verben mit Präposition + worauf/darauf, trennbare Verben, Imperativ; mini-exercises
      inside topics.
   6. Data: 108 nouns with old/empty plural format, 9 duplicate words that disagree
@@ -35,6 +35,18 @@ was done, newest first. Every change adds a log entry here in the same commit
 ## Log
 
 ### 2026-10-04
+- **Grammar topics "Präteritum: war, hatte (und Modalverben)"** (`praeteritum`, after Perfekt)
+  **and "Konjunktiv II: würde, hätte, wäre, könnte"** (`konjunktiv-2`, after Modalverben):
+  - Präteritum: sein/haben/werden table, modal verbs (incl. möchten → wollte), how to
+    remember (ich = er, spoken: sein/haben/modals → Präteritum, rest → Perfekt), other verbs
+    in texts (-te, ging/fuhr/kam), ⚠️ hatte ≠ hätte, war ≠ wahr. Links: the irregular deck
+    (rule) + 13 cards (haben, wissen, werden, dafür/dagegen sein, reiten, streiten, modals).
+  - Konjunktiv II: forms of würde/hätte and wäre/könnte (two tables so they fit 320px),
+    what for (polite, ordering, wishes, advice with sollte, suggestions, unreal wenn), how to
+    form (würde + Infinitiv; own forms for haben/sein/modals; Präteritum + Umlaut trick;
+    möchte), politeness ladder, ⚠️ hätte ≠ hatte, würde ≠ wurde. Links: 5 restaurant
+    phrases, 2 Firma phrases, haben, können, möchten, werden (11).
+  - Two link tests updated (irregular verbs and *können* now also link to these topics).
 - **Grammar topics "Kasus: Nominativ, Akkusativ, Dativ"** (`kasus-ueberblick`, Nomen &
   Artikel) **and "Adjektivendungen"** (`adjektivendungen`, Adjektive, before Komparativ):
   - Kasus: one sentence with all three cases, der/die/das and ein/kein/mein tables by case,

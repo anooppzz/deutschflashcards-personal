@@ -62,7 +62,8 @@ describe("grammarLinksFor - Perfekt rule", () => {
   });
 
   it("links every verb in the irregular and inseparable decks", () => {
-    expect(keysFor(verb("fangen", "fing · gefangen", "irregular"))).toEqual(["perfekt"]);
+    // irregular verbs show their Präteritum too, so they also link to that topic
+    expect(keysFor(verb("fangen", "fing · gefangen", "irregular"))).toEqual(["perfekt", "praeteritum"]);
     expect(keysFor(verb("bekommen", "hat bekommen", "inseparable"))).toEqual(["perfekt"]);
   });
 
@@ -140,7 +141,7 @@ describe("buildGrammarIndex", () => {
 
   it("maps card ids to their links", () => {
     expect(linksById[idOf("persoenlich", "die Zeichnung")].map((l) => l.key)).toEqual(["genus-endungen"]);
-    expect(linksById[idOf("freizeit", "können")].map((l) => l.key)).toEqual(["modalverben"]);
+    expect(linksById[idOf("freizeit", "können")].map((l) => l.key)).toEqual(["praeteritum", "modalverben", "konjunktiv-2"]);
     expect(linksById[idOf("persoenlich", "gemeinsam")].map((l) => l.key)).toEqual(["adjektivendungen"]);
     expect(linksById[idOf("begruessung", "Tschüs")]).toBeUndefined();
   });

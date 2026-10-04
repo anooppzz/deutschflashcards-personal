@@ -193,7 +193,8 @@
     "exampleEn": "May I sit here?",
     "level": "A1",
     "grammar": [
-      "modalverben"
+      "modalverben",
+      "praeteritum"
     ],
     "note": "Vergangenheit meist Präteritum: ich durfte"
   },
@@ -224,7 +225,8 @@
     "exampleEn": "I have to drive slowly.",
     "level": "A1",
     "grammar": [
-      "modalverben"
+      "modalverben",
+      "praeteritum"
     ],
     "note": "Vergangenheit meist Präteritum: ich musste"
   },

@@ -417,6 +417,112 @@
     "match": [{"type": "v", "decks": ["irregular", "inseparable"]}, {"type": "v", "subPattern": "(^|[·,] )(hat|ist) \\S"}]
   },
   {
+    "key": "praeteritum",
+    "level": "A2",
+    "group": {"de": "Verben", "en": "Verbs"},
+    "title": {"de": "Präteritum: war, hatte (und Modalverben)", "en": "Simple Past: war, hatte (and modal verbs)"},
+    "summary": {
+      "de": "Bei **sein**, **haben** und den **Modalverben** sagt man die Vergangenheit meist im Präteritum: Ich **war** krank. Ich **hatte** keine Zeit.",
+      "en": "With **sein**, **haben** and the **modal verbs**, the past is usually the Präteritum: Ich **war** krank (I was ill). Ich **hatte** keine Zeit (I had no time)."
+    },
+    "sections": [
+      {
+        "type": "table",
+        "head": ["", "sein", "haben", "werden"],
+        "rows": [
+          ["ich", "war", "hatte", "wurde"],
+          ["du", "war**st**", "hatte**st**", "wurde**st**"],
+          ["er/sie/es", "war", "hatte", "wurde"],
+          ["wir", "war**en**", "hatte**n**", "wurde**n**"],
+          ["ihr", "war**t**", "hatte**t**", "wurde**t**"],
+          ["sie/Sie", "war**en**", "hatte**n**", "wurde**n**"]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Modalverben", "en": "Modal verbs"},
+        "head": [
+          {"de": "Infinitiv", "en": "Infinitive"},
+          {"de": "Präteritum", "en": "Präteritum"},
+          {"de": "Englisch", "en": "English"}
+        ],
+        "rows": [
+          ["können", "k**o**nn**te**", "could, was able to"],
+          ["müssen", "m**u**ss**te**", "had to"],
+          ["dürfen", "d**u**rf**te**", "was allowed to"],
+          ["wollen", "woll**te**", "wanted to"],
+          ["sollen", "soll**te**", "was supposed to"],
+          ["mögen", "m**och**te", "liked"],
+          ["möchten", "**wollte**", "wanted (no own past)"]
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "So merkst du es dir", "en": "How to remember"},
+        "items": [
+          {
+            "de": "**ich** und **er/sie/es** sind gleich, ohne Endung: ich **war**, er **war**; ich **hatte**, sie **hatte**.",
+            "en": "**ich** and **er/sie/es** are the same, with no ending: ich **war**, er **war**; ich **hatte**, sie **hatte**."
+          },
+          {
+            "de": "Die Endungen kennst du von den Modalverben: du **-st**, wir/sie **-en**, ihr **-t**.",
+            "en": "You know the endings from the modal verbs: du **-st**, wir/sie **-en**, ihr **-t**."
+          },
+          {
+            "de": "Gesprochen: **sein, haben, Modalverben → Präteritum**, alle anderen Verben → **Perfekt**: Ich **war** im Kino und **habe** einen Film **gesehen**.",
+            "en": "Spoken German: **sein, haben, modal verbs → Präteritum**, all other verbs → **Perfekt**: Ich **war** im Kino und **habe** einen Film **gesehen**."
+          },
+          {
+            "de": "Modalverben: kein Umlaut im Präteritum: k**ö**nnen → k**o**nnte, m**ü**ssen → m**u**sste.",
+            "en": "Modal verbs drop the umlaut in the Präteritum: k**ö**nnen → k**o**nnte, m**ü**ssen → m**u**sste."
+          }
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "Andere Verben – in Texten", "en": "Other verbs – in texts"},
+        "items": [
+          {
+            "de": "In Geschichten, Zeitungen und Berichten steht oft bei **allen** Verben das Präteritum.",
+            "en": "Stories, newspapers and reports often use the Präteritum for **all** verbs."
+          },
+          {
+            "de": "Regelmäßig: Stamm + **-te**: mach**te**, wohn**te**; nach -t/-d mit e: arbeit**ete**.",
+            "en": "Regular: stem + **-te**: mach**te**, wohn**te**; after -t/-d with an e: arbeit**ete**."
+          },
+          {
+            "de": "Unregelmäßig: neuer Stamm, kein -te: gehen → **ging**, fahren → **fuhr**, kommen → **kam** – siehe Deck „Irregular“.",
+            "en": "Irregular: a new stem, no -te: gehen → **ging**, fahren → **fuhr**, kommen → **kam** – see the \"Irregular\" deck."
+          }
+        ]
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "**hatte** ≠ **hätte**: Ich **hatte** Hunger. (Vergangenheit) – Ich **hätte** gern Brot. (höflich, Konjunktiv II)",
+          "en": "**hatte** ≠ **hätte**: Ich **hatte** Hunger (I was hungry – past). – Ich **hätte** gern Brot (I'd like some bread – polite, Konjunktiv II)."
+        }
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "**war** (was) ≠ **wahr** (true) – gleich gesprochen: Das **war** schön. – Das ist nicht **wahr**!",
+          "en": "**war** (was) ≠ **wahr** (true) – they sound the same: Das **war** schön. – Das ist nicht **wahr**!"
+        }
+      }
+    ],
+    "examples": [
+      {"de": "Gestern war ich krank.", "en": "I was ill yesterday."},
+      {"de": "Wir hatten leider keine Zeit.", "en": "Unfortunately we didn't have time."},
+      {"de": "Als Kind wollte ich Pilot werden.", "en": "As a child I wanted to become a pilot."},
+      {
+        "de": "Wie war der Urlaub? – Super, aber wir hatten Pech mit dem Wetter.",
+        "en": "How was the holiday? – Great, but we were unlucky with the weather."
+      }
+    ],
+    "match": {"type": "v", "decks": ["irregular"]}
+  },
+  {
     "key": "modalverben",
     "level": "A2",
     "group": {"de": "Verben", "en": "Verbs"},
@@ -526,6 +632,126 @@
       {"de": "Du musst das Formular ausfüllen.", "en": "You have to fill out the form."},
       {"de": "Darf ich hier parken?", "en": "May I park here?"},
       {"de": "Gestern konnte ich nicht kommen – ich musste arbeiten.", "en": "Yesterday I couldn't come – I had to work."}
+    ]
+  },
+  {
+    "key": "konjunktiv-2",
+    "level": "A2",
+    "group": {"de": "Verben", "en": "Verbs"},
+    "title": {"de": "Konjunktiv II: würde, hätte, wäre, könnte", "en": "Subjunctive II: würde, hätte, wäre, könnte"},
+    "summary": {
+      "de": "Konjunktiv II klingt **höflich** oder zeigt einen **Wunsch**: Ich **hätte** gern …, **Könnten** Sie …?, Ich **würde** gern …",
+      "en": "Konjunktiv II sounds **polite** or expresses a **wish**: Ich **hätte** gern … (I'd like …), **Könnten** Sie …? (Could you …?), Ich **würde** gern … (I'd like to …)."
+    },
+    "sections": [
+      {
+        "type": "table",
+        "head": ["", "würde", "hätte"],
+        "rows": [
+          ["ich", "würde", "hätte"],
+          ["du", "würde**st**", "hätte**st**"],
+          ["er/sie/es", "würde", "hätte"],
+          ["wir", "würde**n**", "hätte**n**"],
+          ["ihr", "würde**t**", "hätte**t**"],
+          ["sie/Sie", "würde**n**", "hätte**n**"]
+        ]
+      },
+      {
+        "type": "table",
+        "head": ["", "wäre", "könnte"],
+        "rows": [
+          ["ich", "wäre", "könnte"],
+          ["du", "wär**st**", "könnte**st**"],
+          ["er/sie/es", "wäre", "könnte"],
+          ["wir", "wäre**n**", "könnte**n**"],
+          ["ihr", "wär**t**", "könnte**t**"],
+          ["sie/Sie", "wäre**n**", "könnte**n**"]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Wofür?", "en": "What for?"},
+        "head": [{"de": "Wofür?", "en": "What for?"}, {"de": "Beispiel", "en": "Example"}],
+        "rows": [
+          [
+            {"de": "höflich bitten", "en": "asking politely"},
+            "**Könnten** Sie mir helfen? **Würden** Sie bitte das Fenster öffnen?"
+          ],
+          [{"de": "bestellen", "en": "ordering"}, "Ich **hätte** gern einen Kaffee."],
+          [
+            {"de": "Wunsch, Traum", "en": "wish, dream"},
+            "Ich **würde** gern nach Australien reisen. Ich **wäre** gern reich."
+          ],
+          [{"de": "Ratschlag", "en": "advice"}, "Du **solltest** mehr schlafen."],
+          [{"de": "Vorschlag", "en": "suggestion"}, "Wir **könnten** ins Kino gehen."],
+          [{"de": "nicht real", "en": "unreal"}, "Wenn ich Zeit **hätte**, **würde** ich kommen."]
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "So bildest du es", "en": "How to form it"},
+        "items": [
+          {
+            "de": "**würde + Infinitiv am Ende** – für fast alle Verben: Ich **würde** gern Klavier **spielen**.",
+            "en": "**würde + infinitive at the end** – for almost all verbs: Ich **würde** gern Klavier **spielen** (I'd like to play the piano)."
+          },
+          {
+            "de": "**haben, sein** und die Modalverben haben eine eigene Form – nimm sie statt würde: **hätte, wäre, könnte, müsste, dürfte, sollte**.",
+            "en": "**haben, sein** and the modal verbs have their own form – use it instead of würde: **hätte, wäre, könnte, müsste, dürfte, sollte**."
+          },
+          {
+            "de": "Trick: Präteritum + **Umlaut**: hatte → h**ä**tte, war → w**ä**re, konnte → k**ö**nnte, wurde → w**ü**rde.",
+            "en": "Trick: Präteritum + **umlaut**: hatte → h**ä**tte, war → w**ä**re, konnte → k**ö**nnte, wurde → w**ü**rde."
+          },
+          {
+            "de": "**sollte** und **wollte** bleiben ohne Umlaut: Du **solltest** … = you should …",
+            "en": "**sollte** and **wollte** keep no umlaut: Du **solltest** … = you should …"
+          },
+          {
+            "de": "**möchte** ist schon der Konjunktiv II von mögen: Ich möchte … = I would like …",
+            "en": "**möchte** already is the Konjunktiv II of mögen: Ich möchte … = I would like …"
+          },
+          {
+            "de": "Endungen wie im Präteritum: ich = er/sie/es, du **-st**, wir/sie **-n**, ihr **-t**.",
+            "en": "Endings as in the Präteritum: ich = er/sie/es, du **-st**, wir/sie **-n**, ihr **-t**."
+          }
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "Wie höflich?", "en": "How polite?"},
+        "items": [
+          {
+            "de": "Gib mir das Salz! → Kannst du mir das Salz geben? → **Könntest** du mir bitte das Salz geben? (am höflichsten)",
+            "en": "Gib mir das Salz! (Give me the salt!) → Kannst du …? (Can you …?) → **Könntest** du mir bitte …? (Could you please …? – most polite)"
+          },
+          {
+            "de": "Im Geschäft und Restaurant: **Ich hätte gern** … klingt freundlicher als „Ich will …“.",
+            "en": "In shops and restaurants: **Ich hätte gern** … sounds friendlier than \"Ich will …\" (I want …)."
+          }
+        ]
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "**hätte** ≠ **hatte**: Ich **hätte** gern ein Bier. (höflich) – Ich **hatte** Durst. (Vergangenheit)",
+          "en": "**hätte** ≠ **hatte**: Ich **hätte** gern ein Bier (I'd like a beer – polite). – Ich **hatte** Durst (I was thirsty – past)."
+        }
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "**würde** ≠ **wurde**: Er **würde** gern Arzt werden. (Wunsch) – Er **wurde** Arzt. (Vergangenheit)",
+          "en": "**würde** ≠ **wurde**: Er **würde** gern Arzt werden (he'd like to become a doctor). – Er **wurde** Arzt (he became a doctor)."
+        }
+      }
+    ],
+    "examples": [
+      {"de": "Ich hätte gern ein Glas Wasser.", "en": "I'd like a glass of water."},
+      {"de": "Könnten Sie das bitte wiederholen?", "en": "Could you repeat that, please?"},
+      {"de": "Ich würde gern mehr reisen.", "en": "I'd like to travel more."},
+      {"de": "Du solltest zum Arzt gehen.", "en": "You should go to the doctor."},
+      {"de": "An deiner Stelle würde ich das kaufen.", "en": "If I were you, I'd buy it."}
     ]
   },
   {

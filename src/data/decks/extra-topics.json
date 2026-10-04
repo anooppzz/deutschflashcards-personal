@@ -765,7 +765,11 @@
         "example": "Wir haben heute keine Zeit.",
         "exampleEn": "We don't have time today.",
         "level": "A1",
-        "note": "Vergangenheit meist Präteritum: ich hatte"
+        "note": "Vergangenheit meist Präteritum: ich hatte",
+        "grammar": [
+          "praeteritum",
+          "konjunktiv-2"
+        ]
       },
       {
         "type": "v",
@@ -2715,7 +2719,9 @@
         "exampleEn": "Can you please help me?",
         "level": "A1",
         "grammar": [
-          "modalverben"
+          "modalverben",
+          "praeteritum",
+          "konjunktiv-2"
         ],
         "note": "Vergangenheit meist Präteritum: ich konnte"
       },
@@ -3400,7 +3406,8 @@
         "exampleEn": "I don't know the answer.",
         "level": "A1",
         "grammar": [
-          "nebensatz"
+          "nebensatz",
+          "praeteritum"
         ],
         "note": "Vergangenheit oft Präteritum: ich wusste"
       },
@@ -3855,7 +3862,8 @@
         "exampleEn": "I don't like fish.",
         "level": "A1",
         "grammar": [
-          "modalverben"
+          "modalverben",
+          "praeteritum"
         ]
       },
       {
@@ -3928,7 +3936,9 @@
         "exampleEn": "I would like a coffee.",
         "level": "A1",
         "grammar": [
-          "modalverben"
+          "modalverben",
+          "praeteritum",
+          "konjunktiv-2"
         ],
         "note": "kein eigenes Perfekt – Vergangenheit: ich wollte"
       },
@@ -6502,7 +6512,11 @@
         "english": "to become",
         "example": "Er möchte Arzt werden.",
         "exampleEn": "He wants to become a doctor.",
-        "level": "A1"
+        "level": "A1",
+        "grammar": [
+          "praeteritum",
+          "konjunktiv-2"
+        ]
       },
       {
         "type": "v",
@@ -6513,7 +6527,8 @@
         "exampleEn": "I want to study next year.",
         "level": "A1",
         "grammar": [
-          "modalverben"
+          "modalverben",
+          "praeteritum"
         ],
         "note": "Vergangenheit meist Präteritum: ich wollte"
       },
@@ -8380,7 +8395,10 @@
         "example": "Ich bin dafür, dass wir früh losfahren.",
         "exampleEn": "I'm in favor of leaving early.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 5"
+        "source": "Menschen A2 · Einheit 5",
+        "grammar": [
+          "praeteritum"
+        ]
       },
       {
         "type": "v",
@@ -8390,7 +8408,10 @@
         "example": "Meine Schwester ist dagegen.",
         "exampleEn": "My sister is against it.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 5"
+        "source": "Menschen A2 · Einheit 5",
+        "grammar": [
+          "praeteritum"
+        ]
       },
       {
         "type": "v",
@@ -10399,7 +10420,10 @@
         "exampleEn": "We'd like to order. – One moment, please.",
         "note": "höflich: würden gern + Infinitiv",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 10"
+        "source": "Menschen A2 · Einheit 10",
+        "grammar": [
+          "konjunktiv-2"
+        ]
       },
       {
         "type": "sonst",
@@ -10430,7 +10454,10 @@
         "exampleEn": "I'd like a schnitzel with salad.",
         "note": "höflicher als „Ich will …“",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 10"
+        "source": "Menschen A2 · Einheit 10",
+        "grammar": [
+          "konjunktiv-2"
+        ]
       },
       {
         "type": "sonst",
@@ -10460,7 +10487,10 @@
         "example": "Könnten Sie mir etwas Essig und Öl bringen?",
         "exampleEn": "Could you bring me some vinegar and oil?",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 10"
+        "source": "Menschen A2 · Einheit 10",
+        "grammar": [
+          "konjunktiv-2"
+        ]
       },
       {
         "type": "sonst",
@@ -10471,7 +10501,10 @@
         "exampleEn": "The knife isn't clean. Could I have another one?",
         "note": "das Messer → ein anderes · der Löffel → einen anderen · die Gabel → eine andere",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 10"
+        "source": "Menschen A2 · Einheit 10",
+        "grammar": [
+          "konjunktiv-2"
+        ]
       },
       {
         "type": "adj",
@@ -10501,7 +10534,10 @@
         "example": "Entschuldigung, wir würden gern zahlen.",
         "exampleEn": "Excuse me, we'd like to pay.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 10"
+        "source": "Menschen A2 · Einheit 10",
+        "grammar": [
+          "konjunktiv-2"
+        ]
       },
       {
         "type": "sonst",
@@ -10790,7 +10826,10 @@
         "exampleEn": "The kids are arguing again.",
         "note": "sich streiten mit + Dat. über + Akk. · der Streit",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 11"
+        "source": "Menschen A2 · Einheit 11",
+        "grammar": [
+          "praeteritum"
+        ]
       },
       {
         "type": "v",
@@ -10940,7 +10979,8 @@
         "level": "A2",
         "source": "Menschen A2 · Einheit 11",
         "grammar": [
-          "konnektoren-aduso"
+          "konnektoren-aduso",
+          "konjunktiv-2"
         ]
       },
       {
@@ -10954,7 +10994,8 @@
         "level": "A2",
         "source": "Menschen A2 · Einheit 11",
         "grammar": [
-          "nebensatz"
+          "nebensatz",
+          "konjunktiv-2"
         ]
       },
       {
@@ -11080,7 +11121,10 @@
         "example": "Meine Tochter reitet gern.",
         "exampleEn": "My daughter likes riding.",
         "note": "nur für Tiere – Fahrrad, Auto: fahren",
-        "level": "A2"
+        "level": "A2",
+        "grammar": [
+          "praeteritum"
+        ]
       },
       {
         "type": "sonst",
