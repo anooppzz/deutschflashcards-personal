@@ -1,5 +1,8 @@
 import { useState, useEffect, useRef, Fragment } from "react";
 import PropTypes from "prop-types";
+import { STORAGE_KEYS } from "../../constants";
+import { GRAMMAR_EXERCISES } from "../../data";
+import GrammarExercises from "./GrammarExercises";
 import { speak } from "../../engine/speech";
 import { iconBtn } from "../../components/cardStyles";
 import TopicBody from "./GrammarSections";
@@ -27,7 +30,8 @@ const WORDS_PREVIEW = 12;
 
 // words: the learner's cards this topic covers (see buildGrammarIndex), so
 // a rule can be read next to the vocabulary it applies to.
-function GrammarTopicCard({ topic, words = [], lang, open, onToggle }) {
+// exercises: this topic's ✏️ Üben questions; best: best score so far
+function GrammarTopicCard({ topic, words = [], lang, open, onToggle, exercises = [], best, onScore }) {
   const [audioErr, setAudioErr] = useState(false);
   const [showAllWords, setShowAllWords] = useState(false);
   const shownWords = showAllWords ? words : words.slice(0, WORDS_PREVIEW);
@@ -51,6 +55,9 @@ function GrammarTopicCard({ topic, words = [], lang, open, onToggle }) {
           <span style={{ fontSize: 14, fontWeight: 700, color: "#f2f5f8" }}>{title}</span>
         </span>
         <span style={{ display: "flex", alignItems: "center", gap: 8, flexShrink: 0 }}>
+          {best != null && (
+            <span title="Bestes Übungsergebnis" style={{ fontSize: 11, color: best === exercises.length ? "#5fa85f" : "#9ab0c2" }}>✏️ {best}/{exercises.length}</span>
+          )}
           {words.length > 0 && (
             <span style={{ fontSize: 11, color: "#7d8d9c" }}>{words.length} {words.length === 1 ? "Wort" : "Wörter"}</span>
           )}
@@ -74,6 +81,12 @@ function GrammarTopicCard({ topic, words = [], lang, open, onToggle }) {
               <div style={{ fontSize: 12, color: "#7d8d9c", marginTop: 2 }}>{ex.en}</div>
             </div>
           ))}
+          {exercises.length > 0 && (
+            <div style={{ marginTop: 16 }}>
+              <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 0.5, color: "#7d8d9c", marginBottom: 8 }}>✏️ ÜBEN</div>
+              <GrammarExercises items={exercises} lang={lang} best={best} onDone={onScore} />
+            </div>
+          )}
           {words.length > 0 && (
             <div style={{ marginTop: 16 }}>
               <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 0.5, color: "#7d8d9c", marginBottom: 8 }}>
@@ -138,6 +151,14 @@ GrammarTopicCard.propTypes = {
   lang: PropTypes.string,
   open: PropTypes.bool.isRequired,
   onToggle: PropTypes.func.isRequired,
+  exercises: PropTypes.array,
+  best: PropTypes.number,
+  onScore: PropTypes.func,
+};
+
+// best ✏️ Üben score per topic: { [key]: number }, kept in localStorage
+const readScores = () => {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEYS.GRAMMAR_SCORES)) || {}; } catch { return {}; }
 };
 
 // focus: { key, n } - set when a card's grammar chip opened this view; the
@@ -145,6 +166,15 @@ GrammarTopicCard.propTypes = {
 // same chip twice still re-focuses. onBack: return to where the chip was.
 function GrammarView({ topics, words = {}, lang = "en", focus, onBack }) {
   const [openKey, setOpenKey] = useState(focus ? focus.key : null);
+  const [scores, setScores] = useState(readScores);
+  const saveScore = (key, score) => {
+    setScores((prev) => {
+      if (prev[key] != null && prev[key] >= score) return prev;
+      const next = { ...prev, [key]: score };
+      try { localStorage.setItem(STORAGE_KEYS.GRAMMAR_SCORES, JSON.stringify(next)); } catch { /* storage off */ }
+      return next;
+    });
+  };
   useEffect(() => {
     if (!focus) return;
     setOpenKey(focus.key);
@@ -195,6 +225,9 @@ function GrammarView({ topics, words = {}, lang = "en", focus, onBack }) {
               lang={lang}
               open={openKey === topic.key}
               onToggle={() => toggle(topic.key)}
+              exercises={GRAMMAR_EXERCISES[topic.key]}
+              best={scores[topic.key]}
+              onScore={(score) => saveScore(topic.key, score)}
             />
           </Fragment>
         );

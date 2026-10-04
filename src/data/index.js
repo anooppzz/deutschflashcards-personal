@@ -11,6 +11,7 @@ import EXTRA_TOPICS from "./decks/extra-topics.json";
 import DECK_META from "./decks/_deck-manifest.json";
 import STATIC_TRANSLATIONS from "./translations/static-table.json";
 import GRAMMAR_TOPICS from "./grammar/topics.json";
+import GRAMMAR_EXERCISES from "./grammar/exercises.json";
 
 export {
   IRREGULAR_VERBS,
@@ -22,6 +23,7 @@ export {
   DECK_META,
   STATIC_TRANSLATIONS,
   GRAMMAR_TOPICS,
+  GRAMMAR_EXERCISES,
 };
 
 // Deck registry for the multi-topic (combined) mode - maps each deck key to

@@ -1,6 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { localize, parseHighlights } from "./richText";
 import GRAMMAR_TOPICS from "../../data/grammar/topics.json";
+import GRAMMAR_EXERCISES from "../../data/grammar/exercises.json";
 
 describe("parseHighlights", () => {
   it("splits **marked** parts out", () => {
@@ -85,5 +86,49 @@ describe("grammar topics data", () => {
       }
     }
     expect(problems).toEqual([]);
+  });
+});
+
+describe("✏️ Üben exercises", () => {
+  it("every topic has at least 4 exercises, and no exercises without a topic", () => {
+    const keys = GRAMMAR_TOPICS.map((t) => t.key);
+    expect(keys.filter((k) => !(GRAMMAR_EXERCISES[k] && GRAMMAR_EXERCISES[k].length >= 4))).toEqual([]);
+    expect(Object.keys(GRAMMAR_EXERCISES).filter((k) => !keys.includes(k))).toEqual([]);
+  });
+
+  it("each exercise has one blank, distinct options containing the answer, and a reason in both languages", () => {
+    const bad = [];
+    for (const [key, items] of Object.entries(GRAMMAR_EXERCISES)) {
+      items.forEach((e, i) => {
+        const at = `${key}[${i}]`;
+        if (e.q.split("___").length !== 2) bad.push(`${at}: needs exactly one ___`);
+        if (!e.options.includes(e.answer)) bad.push(`${at}: answer not among options`);
+        if (new Set(e.options).size !== e.options.length) bad.push(`${at}: duplicate options`);
+        if (e.options.length < 3) bad.push(`${at}: fewer than 3 options`);
+        if (!(e.why && e.why.de && e.why.en)) bad.push(`${at}: why needs de and en`);
+        if (!e.en) bad.push(`${at}: missing English sentence`);
+      });
+    }
+    expect(bad).toEqual([]);
+  });
+});
+
+describe("✏️ Üben doesn't give the answer away", () => {
+  const norm = (s) => s.replace(/\*\*/g, "").toLowerCase().replace(/[^a-zäöüß ]/g, "").trim();
+  const allText = (topic) => [
+    ...textsOf(topic).flatMap(([, f]) => (typeof f === "string" ? [f] : Object.values(f))),
+    ...topic.examples.flatMap((e) => [e.de, e.en]),
+  ].map(norm);
+  it("no exercise sentence (answer filled in) appears in its own topic", () => {
+    const bad = [];
+    for (const topic of GRAMMAR_TOPICS) {
+      const texts = allText(topic);
+      (GRAMMAR_EXERCISES[topic.key] || []).forEach((e, i) => {
+        const fill = e.answer === "keine Endung" ? "" : e.answer.replace(/^-/, "");
+        const filled = norm(e.q.replace("___", fill).split("(")[0]);
+        if (filled.length > 12 && texts.some((t) => t.includes(filled))) bad.push(`${topic.key}[${i}]: ${e.q}`);
+      });
+    }
+    expect(bad).toEqual([]);
   });
 });

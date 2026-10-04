@@ -25,7 +25,7 @@ was done, newest first. Every change adds a log entry here in the same commit
      ~~Reverse mode article check~~ (done 2026-10-04).
   5. Grammar topics missing for A2: ~~Kasus overview, Adjektivendungen~~ (done 2026-10-04),
      ~~Konjunktiv II, Präteritum war/hatte, Verben mit Dativ, Verben mit Präposition,
-     trennbare Verben, Imperativ~~ (done 2026-10-04); mini-exercises inside topics.
+     trennbare Verben, Imperativ~~ (done 2026-10-04); ~~mini-exercises~~ (done).
   6. ~~Data cleanup~~ (done 2026-10-04).
   7. Code: App.jsx 1,703 lines / 75 useState; six copy-pasted deck viewers; help texts
      inline; progress keyed by deck+front (fixing a typo in `front` loses progress).
@@ -33,6 +33,13 @@ was done, newest first. Every change adds a log entry here in the same commit
 ## Log
 
 ### 2026-10-04
+- **✏️ Üben in every grammar topic:** 145 multiple-choice questions (5 × 29 topics) in
+  `src/data/grammar/exercises.json`, after the examples. One question at a time, options
+  shuffled every round, ✓/✗ with a one-line reason + the sentence in English, "↻ Nochmal".
+  Best score per topic saved (`grammarScores:v1`, part of the backup) and shown on the topic
+  header (✏️ 5/5, green when perfect). 45 questions first repeated a sentence shown in their
+  own topic – rewritten, and a test now prevents it. All 29 topics played through at 360px.
+  `src/modes/grammar/GrammarExercises.jsx`; +3 content tests.
 - **Data cleanup** (audit item 6):
   - Nouns: 46 old-format plurals got the "Pl." prefix ("-n · …" → "Pl. -n · …"); 61 empty
     or plural-less notes got the real plural or "kein Plural" (Wetter, Milch, Geld, Gepäck …;

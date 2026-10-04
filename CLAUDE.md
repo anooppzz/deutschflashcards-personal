@@ -62,6 +62,7 @@ src/data/decks/            vocabulary
   haushalt|kleidung|verkehr.json, irregular-verbs.json, inseparable-verbs.json
   _deck-manifest.json      labels/icons for the five non-chapter decks
 src/data/grammar/topics.json   grammar reference (the Grammatik tab)
+src/data/grammar/exercises.json  ✏️ Üben questions per topic (see below)
 src/data/index.js          exports; ALL_CARDS = every card in one flat list
 src/engine/                logic: FSRS scheduling, filters, grammarLinks.js,
                            globalSearch.js (app-wide search: cards + grammar)
@@ -147,6 +148,15 @@ found in the example are left out of Cloze, which is fine for phrases).
 - `src/modes/grammar/grammarContent.test.js` checks both languages, table row
   lengths, balanced `**`, groups; `src/engine/grammarLinks.test.js` checks that every
   `grammar` tag names an existing topic.
+
+## Grammar exercises (`exercises.json`)
+
+`{ "topic-key": [ { "q": "Ich warte ___ den Bus.", "options": ["auf", "für", "an"],
+"answer": "auf", "en": "I'm waiting for the bus.", "why": {"de": "…", "en": "…"} } ] }`
+– one `___` per question, 3 options (shuffled in the app), a one-line reason in both
+languages. Ending questions use options like `"-en"` and `"keine Endung"`. 5 per topic;
+every new topic needs ≥ 4. Tests check the format and that no question repeats a
+sentence from its own topic (the answer would be on screen right above it).
 
 ## Editing the JSON
 

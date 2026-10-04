@@ -14,4 +14,5 @@ export const STORAGE_KEYS = {
   MODE: "mode:v1", // last study mode
   BACKUP_AT: "backupAt:v1", // when the learner last saved a backup file
   FORMS_KIND: "formsKind:v1", // Formen trainer: "perfekt" or "plural"
+  GRAMMAR_SCORES: "grammarScores:v1", // best ✏️ Üben score per grammar topic
 };

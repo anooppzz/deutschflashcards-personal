@@ -1,0 +1,205 @@
+{
+  "artikel-nominativ": [
+    {"q": "___ Tisch ist neu.", "options": ["Der", "Die", "Das"], "answer": "Der", "en": "The table is new.", "why": {"de": "Tisch ist maskulin: der Tisch.", "en": "Tisch is masculine: der Tisch."}},
+    {"q": "___ Lampe ist kaputt.", "options": ["Der", "Die", "Das"], "answer": "Die", "en": "The lamp is broken.", "why": {"de": "Lampe ist feminin: die Lampe.", "en": "Lampe is feminine: die Lampe."}},
+    {"q": "Das ist ___ Buch.", "options": ["ein", "eine", "einen"], "answer": "ein", "en": "That is a book.", "why": {"de": "das Buch (neutral) → ein.", "en": "das Buch (neuter) → ein."}},
+    {"q": "Das ist ___ Tasche.", "options": ["ein", "eine", "einen"], "answer": "eine", "en": "That is a bag.", "why": {"de": "die Tasche (feminin) → eine.", "en": "die Tasche (feminine) → eine."}},
+    {"q": "___ Kinder spielen im Park.", "options": ["Der", "Die", "Das"], "answer": "Die", "en": "The children are playing in the park.", "why": {"de": "Plural: immer die.", "en": "Plural: always die."}}
+  ],
+  "genus-endungen": [
+    {"q": "___ Wohnung ist sehr hell.", "options": ["Der", "Die", "Das"], "answer": "Die", "en": "The flat is very bright.", "why": {"de": "-ung → immer die.", "en": "-ung → always die."}},
+    {"q": "___ Gesundheit ist das Wichtigste.", "options": ["Der", "Die", "Das"], "answer": "Die", "en": "Health is the most important thing.", "why": {"de": "-heit → die.", "en": "-heit → die."}},
+    {"q": "___ Information ist richtig.", "options": ["Der", "Die", "Das"], "answer": "Die", "en": "The information is correct.", "why": {"de": "-ion → die.", "en": "-ion → die."}},
+    {"q": "___ Freundschaft ist sehr alt.", "options": ["Der", "Die", "Das"], "answer": "Die", "en": "The friendship is very old.", "why": {"de": "-schaft → die.", "en": "-schaft → die."}},
+    {"q": "___ Sprung war sehr hoch.", "options": ["Der", "Die", "Das"], "answer": "Der", "en": "The jump was very high.", "why": {"de": "Achtung: -ung gehört hier zum Stamm (springen → der Sprung), keine Endung.", "en": "Careful: here -ung is part of the stem (springen → der Sprung), not the suffix."}}
+  ],
+  "possessivartikel": [
+    {"q": "Das ist Anna. Das ist ___ Bruder.", "options": ["ihr", "sein", "mein"], "answer": "ihr", "en": "That's Anna. That's her brother.", "why": {"de": "Anna = sie → ihr.", "en": "Anna = she → ihr (her)."}},
+    {"q": "Das ist Tom. Das ist ___ Schwester.", "options": ["seine", "ihre", "sein"], "answer": "seine", "en": "That's Tom. That's his sister.", "why": {"de": "Tom = er → sein; die Schwester → seine.", "en": "Tom = he → sein; die Schwester → seine."}},
+    {"q": "Wir wohnen hier. Das ist ___ Haus.", "options": ["unser", "unsere", "euer"], "answer": "unser", "en": "We live here. That's our house.", "why": {"de": "wir → unser; das Haus → keine Endung.", "en": "wir → unser; das Haus → no ending."}},
+    {"q": "Kinder, wo ist ___ Lehrerin?", "options": ["eure", "euere", "euer"], "answer": "eure", "en": "Children, where is your teacher?", "why": {"de": "ihr → euer; mit -e fällt das zweite e weg: eure.", "en": "ihr → euer; with -e the second e drops out: eure."}},
+    {"q": "Frau Müller, ist das ___ Tasche?", "options": ["Ihre", "ihre", "deine"], "answer": "Ihre", "en": "Mrs Müller, is that your bag?", "why": {"de": "Höflich (Sie) → Ihr, groß geschrieben.", "en": "Polite (Sie) → Ihr, with a capital I."}}
+  ],
+  "kasus-ueberblick": [
+    {"q": "Ich sehe ___ Mann.", "options": ["der", "den", "dem"], "answer": "den", "en": "I see the man.", "why": {"de": "Akkusativ maskulin: der → den.", "en": "Accusative masculine: der → den."}},
+    {"q": "Ich gebe ___ Kind einen Apfel.", "options": ["das", "dem", "den"], "answer": "dem", "en": "I give the child an apple.", "why": {"de": "Wem? → Dativ: das Kind → dem Kind.", "en": "To whom? → dative: das Kind → dem Kind."}},
+    {"q": "___ Lehrer erklärt die Regel.", "options": ["Der", "Den", "Dem"], "answer": "Der", "en": "The teacher explains the rule.", "why": {"de": "Wer erklärt? → Subjekt → Nominativ.", "en": "Who explains? → subject → nominative."}},
+    {"q": "Es gibt hier ___ Park.", "options": ["ein", "einen", "einem"], "answer": "einen", "en": "There is a park here.", "why": {"de": "es gibt + Akkusativ: einen Park.", "en": "es gibt + accusative: einen Park."}},
+    {"q": "Er ist ___ guter Freund.", "options": ["ein", "einen", "einem"], "answer": "ein", "en": "He is a good friend.", "why": {"de": "Nach sein bleibt der Nominativ.", "en": "After sein it stays nominative."}}
+  ],
+  "praesens-regelmaessig": [
+    {"q": "Du ___ in Berlin. (wohnen)", "options": ["wohnst", "wohnt", "wohnen"], "answer": "wohnst", "en": "You live in Berlin.", "why": {"de": "du → -st.", "en": "du → -st."}},
+    {"q": "Wir ___ Deutsch. (lernen)", "options": ["lernen", "lernt", "lernst"], "answer": "lernen", "en": "We're learning German.", "why": {"de": "wir → -en (wie der Infinitiv).", "en": "wir → -en (like the infinitive)."}},
+    {"q": "Er ___ viel. (arbeiten)", "options": ["arbeitet", "arbeit", "arbeitt"], "answer": "arbeitet", "en": "He works a lot.", "why": {"de": "Stamm auf -t: ein e dazu → arbeit-e-t.", "en": "Stem ending in -t: add an e → arbeit-e-t."}},
+    {"q": "Ihr ___ Fußball. (spielen)", "options": ["spielt", "spielen", "spielst"], "answer": "spielt", "en": "You (all) play football.", "why": {"de": "ihr → -t.", "en": "ihr → -t."}},
+    {"q": "Ich ___ gern Musik. (hören)", "options": ["höre", "hört", "hören"], "answer": "höre", "en": "I like listening to music.", "why": {"de": "ich → -e.", "en": "ich → -e."}}
+  ],
+  "trennbare-verben": [
+    {"q": "Ich räume heute mein Zimmer ___.", "options": ["auf", "an", "ab"], "answer": "auf", "en": "I'm tidying my room today.", "why": {"de": "aufräumen: das Präfix auf steht am Ende.", "en": "aufräumen: the prefix auf goes to the end."}},
+    {"q": "Wann kommt der Zug ___?", "options": ["an", "ab", "auf"], "answer": "an", "en": "When does the train arrive?", "why": {"de": "ankommen = arrive.", "en": "ankommen = to arrive."}},
+    {"q": "Ich muss morgen früh ___.", "options": ["aufstehen", "stehe auf", "aufstehe"], "answer": "aufstehen", "en": "I have to get up early tomorrow.", "why": {"de": "Mit Modalverb: Infinitiv zusammen am Ende.", "en": "With a modal: the infinitive stays together at the end."}},
+    {"q": "Ich bin um 7 Uhr ___.", "options": ["aufgestanden", "geaufstanden", "aufgestehen"], "answer": "aufgestanden", "en": "I got up at 7.", "why": {"de": "Perfekt: ge in die Mitte – auf-ge-standen.", "en": "Perfekt: ge goes in the middle – auf-ge-standen."}},
+    {"q": "Ich habe keine Zeit, weil ich heute ___.", "options": ["einkaufe", "kaufe ein", "einkaufen"], "answer": "einkaufe", "en": "I have no time because I'm going shopping today.", "why": {"de": "Im Nebensatz nicht trennen: Verb zusammen am Ende.", "en": "Don't split it in a subordinate clause: the verb stays together at the end."}}
+  ],
+  "imperativ": [
+    {"q": "___ bitte langsam! (du, fahren)", "options": ["Fahr", "Fähr", "Fahrst"], "answer": "Fahr", "en": "Please drive slowly!", "why": {"de": "du-Imperativ: kein Umlaut – fahr!", "en": "du imperative: no umlaut – fahr!"}},
+    {"q": "___ das Buch! (du, lesen)", "options": ["Lies", "Les", "Liest"], "answer": "Lies", "en": "Read the book!", "why": {"de": "e → ie bleibt: du liest → lies!", "en": "e → ie stays: du liest → lies!"}},
+    {"q": "Kommen ___ bitte herein!", "options": ["Sie", "du", "ihr"], "answer": "Sie", "en": "Please come in!", "why": {"de": "Sie-Form: Verb + Sie, nie ohne Sie.", "en": "Sie form: verb + Sie, never without Sie."}},
+    {"q": "Kinder, ___ bitte leise! (sein)", "options": ["seid", "sind", "seiet"], "answer": "seid", "en": "Children, please be quiet!", "why": {"de": "sein ist anders: sei – seid – seien Sie.", "en": "sein is different: sei – seid – seien Sie."}},
+    {"q": "___ mich morgen an! (du, anrufen)", "options": ["Ruf", "Rufst", "Anruf"], "answer": "Ruf", "en": "Call me tomorrow!", "why": {"de": "Trennbar: Ruf … an! (an am Ende).", "en": "Separable: Ruf … an! (an at the end)."}}
+  ],
+  "perfekt": [
+    {"q": "Ich ___ nach Berlin gefahren.", "options": ["bin", "habe", "ist"], "answer": "bin", "en": "I went to Berlin.", "why": {"de": "Bewegung → sein: ich bin gefahren.", "en": "Movement → sein: ich bin gefahren."}},
+    {"q": "Wir ___ Pizza gegessen.", "options": ["haben", "sind", "hat"], "answer": "haben", "en": "We ate pizza.", "why": {"de": "Die meisten Verben → haben.", "en": "Most verbs → haben."}},
+    {"q": "Ich habe einen Tisch ___. (reservieren)", "options": ["reserviert", "gereserviert", "reservieren"], "answer": "reserviert", "en": "I booked a table.", "why": {"de": "-ieren: kein ge-.", "en": "-ieren verbs: no ge-."}},
+    {"q": "Ich habe meinen Schlüssel ___. (vergessen)", "options": ["vergessen", "gevergessen", "vergesst"], "answer": "vergessen", "en": "I forgot my key.", "why": {"de": "ver- ist untrennbar: kein ge-.", "en": "ver- is inseparable: no ge-."}},
+    {"q": "Sie ist zu Hause ___. (bleiben)", "options": ["geblieben", "gebleibt", "bleibt"], "answer": "geblieben", "en": "She stayed at home.", "why": {"de": "bleiben: Perfekt mit sein, unregelmäßig – geblieben.", "en": "bleiben: Perfekt with sein, irregular – geblieben."}}
+  ],
+  "praeteritum": [
+    {"q": "Letzte Woche ___ wir in Wien.", "options": ["waren", "sind", "wurden"], "answer": "waren", "en": "Last week we were in Vienna.", "why": {"de": "sein im Präteritum, wir → waren.", "en": "sein in the Präteritum, wir → waren."}},
+    {"q": "Er ___ gestern Geburtstag.", "options": ["hatte", "hätte", "hat"], "answer": "hatte", "en": "It was his birthday yesterday.", "why": {"de": "Vergangenheit: hatte. (hätte = would have)", "en": "Past: hatte. (hätte = would have)"}},
+    {"q": "Du ___ müde, oder?", "options": ["warst", "war", "wart"], "answer": "warst", "en": "You were tired, weren't you?", "why": {"de": "du → -st: du warst.", "en": "du → -st: du warst."}},
+    {"q": "Früher ___ ich Lehrerin werden.", "options": ["wollte", "will", "wolle"], "answer": "wollte", "en": "I used to want to become a teacher.", "why": {"de": "Modalverb in der Vergangenheit: Präteritum – wollte.", "en": "Modal verb in the past: Präteritum – wollte."}},
+    {"q": "Ich ___ gestern nicht kommen.", "options": ["konnte", "könnte", "kann"], "answer": "konnte", "en": "I couldn't come yesterday.", "why": {"de": "Vergangenheit: konnte (ohne Umlaut). könnte = Konjunktiv II.", "en": "Past: konnte (no umlaut). könnte = Konjunktiv II."}}
+  ],
+  "modalverben": [
+    {"q": "Ich ___ gut schwimmen.", "options": ["kann", "kannst", "könne"], "answer": "kann", "en": "I can swim well.", "why": {"de": "ich = er: kann (ohne Endung).", "en": "ich = er: kann (no ending)."}},
+    {"q": "Ihr ___ jetzt nach Hause gehen.", "options": ["müsst", "musst", "müssen"], "answer": "müsst", "en": "You (all) have to go home now.", "why": {"de": "ihr → -t, mit Umlaut: ihr müsst.", "en": "ihr → -t, with umlaut: ihr müsst."}},
+    {"q": "___ wir hier rauchen?", "options": ["Dürfen", "Darf", "Dürft"], "answer": "Dürfen", "en": "Are we allowed to smoke here?", "why": {"de": "wir → dürfen (Plural mit Umlaut).", "en": "wir → dürfen (plural keeps the umlaut)."}},
+    {"q": "Er will Arzt ___.", "options": ["werden", "wird", "geworden"], "answer": "werden", "en": "He wants to become a doctor.", "why": {"de": "Modalverb + Infinitiv am Ende.", "en": "Modal verb + infinitive at the end."}},
+    {"q": "Wir ___ morgen früh aufstehen. (sollen)", "options": ["sollen", "sollt", "soll"], "answer": "sollen", "en": "We're supposed to get up early tomorrow.", "why": {"de": "wir → -en: wir sollen.", "en": "wir → -en: wir sollen."}}
+  ],
+  "konjunktiv-2": [
+    {"q": "Wir ___ gern zwei Bier.", "options": ["hätten", "hatten", "haben"], "answer": "hätten", "en": "We'd like two beers.", "why": {"de": "Höflich bestellen: Wir hätten gern …", "en": "Ordering politely: Wir hätten gern …"}},
+    {"q": "___ Sie mir bitte helfen?", "options": ["Könnten", "Konnten", "Kannst"], "answer": "Könnten", "en": "Could you help me, please?", "why": {"de": "Höfliche Bitte: Könnten Sie …? (Konnten = Vergangenheit)", "en": "Polite request: Könnten Sie …? (Konnten = past)"}},
+    {"q": "Ihr ___ früher ins Bett gehen.", "options": ["solltet", "solltest", "sollten"], "answer": "solltet", "en": "You (all) should go to bed earlier.", "why": {"de": "Ratschlag: ihr solltet.", "en": "Advice: ihr solltet."}},
+    {"q": "Wenn ich Geld hätte, ___ ich ein Auto kaufen.", "options": ["würde", "wurde", "werde"], "answer": "würde", "en": "If I had money, I would buy a car.", "why": {"de": "würde + Infinitiv (wurde = Vergangenheit).", "en": "würde + infinitive (wurde = past)."}},
+    {"q": "Es ___ schön, wenn du kommen könntest.", "options": ["wäre", "war", "würde"], "answer": "wäre", "en": "It would be nice if you could come.", "why": {"de": "sein → wäre (nicht: würde … sein).", "en": "sein → wäre (not: würde … sein)."}}
+  ],
+  "reflexive-verben": [
+    {"q": "Du freust ___ auf den Urlaub.", "options": ["dich", "dir", "sich"], "answer": "dich", "en": "You're looking forward to the holiday.", "why": {"de": "du → dich (sich nur für er/sie/es/sie/Sie).", "en": "du → dich (sich only for er/sie/es/sie/Sie)."}},
+    {"q": "Wäschst du ___ die Hände?", "options": ["dir", "dich", "sich"], "answer": "dir", "en": "Are you washing your hands?", "why": {"de": "Akkusativ schon da (die Hände) → Dativ: dir.", "en": "There's already an accusative (die Hände) → dative: dir."}},
+    {"q": "Er rasiert ___ jeden Morgen.", "options": ["sich", "ihn", "ihm"], "answer": "sich", "en": "He shaves every morning.", "why": {"de": "Gleiche Person → sich. (ihn = jemand anderen)", "en": "Same person → sich. (ihn = someone else)"}},
+    {"q": "Sie haben ___ im Urlaub verliebt.", "options": ["sich", "uns", "ihnen"], "answer": "sich", "en": "They fell in love on holiday.", "why": {"de": "sie (Plural) → sich.", "en": "sie (plural) → sich."}},
+    {"q": "Sie ___ sich gestern geärgert.", "options": ["hat", "ist", "haben"], "answer": "hat", "en": "She got annoyed yesterday.", "why": {"de": "Reflexive Verben: Perfekt immer mit haben.", "en": "Reflexive verbs: Perfekt always with haben."}}
+  ],
+  "verben-dativ": [
+    {"q": "Kannst du ___ helfen?", "options": ["mir", "mich", "ich"], "answer": "mir", "en": "Can you help me?", "why": {"de": "helfen + Dativ: mir.", "en": "helfen + dative: mir."}},
+    {"q": "Die Suppe schmeckt ___ nicht.", "options": ["mir", "mich", "ich"], "answer": "mir", "en": "I don't like the soup.", "why": {"de": "schmecken + Dativ – die Suppe ist das Subjekt.", "en": "schmecken + dative – the soup is the subject."}},
+    {"q": "Das Auto gehört ___ Vater.", "options": ["meinem", "meinen", "mein"], "answer": "meinem", "en": "The car belongs to my father.", "why": {"de": "gehören + Dativ: meinem Vater.", "en": "gehören + dative: meinem Vater."}},
+    {"q": "Ich rufe ___ morgen an.", "options": ["dich", "dir", "du"], "answer": "dich", "en": "I'll call you tomorrow.", "why": {"de": "anrufen + Akkusativ: dich.", "en": "anrufen + accusative: dich."}},
+    {"q": "Ich zeige ___ die Stadt.", "options": ["dir", "dich", "du"], "answer": "dir", "en": "I'll show you the city.", "why": {"de": "Person (wem?) → Dativ, Sache → Akkusativ.", "en": "The person (to whom?) → dative, the thing → accusative."}}
+  ],
+  "verben-praeposition": [
+    {"q": "Wir warten ___ den Zug.", "options": ["auf", "für", "an"], "answer": "auf", "en": "We're waiting for the train.", "why": {"de": "warten auf + Akk. (English \"for\" ≠ für).", "en": "warten auf + acc. (English \"for\" ≠ für)."}},
+    {"q": "Ich denke oft ___ dich.", "options": ["an", "über", "von"], "answer": "an", "en": "I often think of you.", "why": {"de": "denken an + Akkusativ.", "en": "denken an + accusative."}},
+    {"q": "Was hältst du ___ dem neuen Chef?", "options": ["von", "über", "an"], "answer": "von", "en": "What do you think of the new boss?", "why": {"de": "halten von + Dativ = Meinung.", "en": "halten von + dative = opinion."}},
+    {"q": "___ wartest du? – Auf den Bus.", "options": ["Worauf", "Wofür", "Woran"], "answer": "Worauf", "en": "What are you waiting for? – The bus.", "why": {"de": "warten auf → wo + r + auf = worauf.", "en": "warten auf → wo + r + auf = worauf."}},
+    {"q": "Wir nehmen ___ einem Ausflug teil.", "options": ["an", "in", "bei"], "answer": "an", "en": "We're taking part in an excursion.", "why": {"de": "teilnehmen an + Dativ.", "en": "teilnehmen an + dative."}}
+  ],
+  "adjektivendungen": [
+    {"q": "Ich kaufe einen neu___ Computer.", "options": ["-en", "-er", "-e"], "answer": "-en", "en": "I'm buying a new computer.", "why": {"de": "Akkusativ maskulin: einen neu-en Computer.", "en": "Accusative masculine: einen neu-en Computer."}},
+    {"q": "Das ist ein groß___ Haus.", "options": ["-es", "-e", "-en"], "answer": "-es", "en": "That's a big house.", "why": {"de": "ein (keine Endung) + das → Adjektiv zeigt -es.", "en": "ein (no ending) + das → the adjective shows -es."}},
+    {"q": "Die klein___ Kinder spielen draußen.", "options": ["-en", "-e", "-es"], "answer": "-en", "en": "The small children are playing outside.", "why": {"de": "Plural mit Artikel: immer -en.", "en": "Plural with an article: always -en."}},
+    {"q": "Frisch___ Brot schmeckt gut.", "options": ["-es", "-e", "-en"], "answer": "-es", "en": "Fresh bread tastes good.", "why": {"de": "Ohne Artikel: Endung wie das → frisches Brot.", "en": "No article: ending like das → frisches Brot."}},
+    {"q": "Der Kaffee ist kalt___.", "options": ["keine Endung", "-e", "-er"], "answer": "keine Endung", "en": "The coffee is cold.", "why": {"de": "Nach sein: keine Endung – kalt.", "en": "After sein: no ending – kalt."}}
+  ],
+  "komparativ-superlativ": [
+    {"q": "Das Fahrrad ist ___ als das Auto. (billig)", "options": ["billiger", "billigste", "mehr billig"], "answer": "billiger", "en": "The bike is cheaper than the car.", "why": {"de": "Komparativ: -er + als.", "en": "Comparative: -er + als."}},
+    {"q": "Im Sommer ist es am ___. (warm)", "options": ["wärmsten", "wärmer", "warmsten"], "answer": "wärmsten", "en": "It's warmest in summer.", "why": {"de": "Superlativ: am … -sten, kurze Adjektive mit Umlaut – am wärmsten.", "en": "Superlative: am … -sten, short adjectives take an umlaut – am wärmsten."}},
+    {"q": "Ich trinke ___ Tee als Kaffee.", "options": ["lieber", "gerner", "mehr gern"], "answer": "lieber", "en": "I prefer tea to coffee.", "why": {"de": "gern – lieber – am liebsten.", "en": "gern – lieber – am liebsten."}},
+    {"q": "Mein Zimmer ist so groß ___ dein Zimmer.", "options": ["wie", "als", "wann"], "answer": "wie", "en": "My room is as big as your room.", "why": {"de": "Gleich: so … wie.", "en": "Equal: so … wie."}},
+    {"q": "Mein Bruder ist ___ als ich.", "options": ["älter", "alter", "mehr alt"], "answer": "älter", "en": "My brother is older than me.", "why": {"de": "Kurze Adjektive mit a/o/u: Umlaut – alt → älter.", "en": "Short adjectives with a/o/u take an umlaut – alt → älter."}}
+  ],
+  "wortstellung-hauptsatz": [
+    {"q": "Morgen ___.", "options": ["fahre ich nach Berlin", "ich fahre nach Berlin", "ich nach Berlin fahre"], "answer": "fahre ich nach Berlin", "en": "Tomorrow I'm going to Berlin.", "why": {"de": "Verb auf Position 2 – das Subjekt kommt danach.", "en": "Verb in position 2 – the subject comes after it."}},
+    {"q": "Am Wochenende ___.", "options": ["spiele ich Fußball", "ich spiele Fußball", "ich Fußball spiele"], "answer": "spiele ich Fußball", "en": "At the weekend I play football.", "why": {"de": "Etwas anderes auf Position 1 → Verb, dann Subjekt.", "en": "Something else in position 1 → verb, then subject."}},
+    {"q": "Ich kann heute ___.", "options": ["nicht kommen", "kommen nicht", "nicht komme"], "answer": "nicht kommen", "en": "I can't come today.", "why": {"de": "Modalverb auf 2, Infinitiv am Ende.", "en": "Modal in position 2, infinitive at the end."}},
+    {"q": "Deutsch ___.", "options": ["lerne ich seit einem Jahr", "ich lerne seit einem Jahr", "ich seit einem Jahr lerne"], "answer": "lerne ich seit einem Jahr", "en": "I've been learning German for a year.", "why": {"de": "Auch ein Objekt kann auf Position 1 stehen – das Verb bleibt auf 2.", "en": "An object can also stand in position 1 – the verb stays in 2."}},
+    {"q": "___ du heute Zeit?", "options": ["Hast", "Du hast", "Haben"], "answer": "Hast", "en": "Do you have time today?", "why": {"de": "Ja/Nein-Frage: Verb auf Position 1.", "en": "Yes/no question: verb in position 1."}}
+  ],
+  "fragewoerter-kasus": [
+    {"q": "___ kommt heute? – Anna.", "options": ["Wer", "Wen", "Wem"], "answer": "Wer", "en": "Who's coming today? – Anna.", "why": {"de": "Subjekt → wer.", "en": "Subject → wer."}},
+    {"q": "___ triffst du? – Meinen Bruder.", "options": ["Wen", "Wer", "Wem"], "answer": "Wen", "en": "Who are you meeting? – My brother.", "why": {"de": "treffen + Akkusativ → wen.", "en": "treffen + accusative → wen."}},
+    {"q": "___ hilfst du? – Meiner Mutter.", "options": ["Wem", "Wen", "Wer"], "answer": "Wem", "en": "Who are you helping? – My mother.", "why": {"de": "helfen + Dativ → wem.", "en": "helfen + dative → wem."}},
+    {"q": "Bei ___ wohnst du?", "options": ["wem", "wen", "wer"], "answer": "wem", "en": "Who are you staying with?", "why": {"de": "bei + Dativ → bei wem.", "en": "bei + dative → bei wem."}},
+    {"q": "Für ___ ist das Geschenk?", "options": ["wen", "wem", "wer"], "answer": "wen", "en": "Who is the present for?", "why": {"de": "für + Akkusativ → für wen.", "en": "für + accusative → für wen."}}
+  ],
+  "konnektoren-ueberblick": [
+    {"q": "Ich lerne Deutsch, weil ___.", "options": ["ich in Berlin arbeite", "ich arbeite in Berlin", "arbeite ich in Berlin"], "answer": "ich in Berlin arbeite", "en": "I'm learning German because I work in Berlin.", "why": {"de": "weil → Verb ans Ende.", "en": "weil → verb to the end."}},
+    {"q": "Ich lerne Deutsch, denn ___.", "options": ["ich arbeite in Berlin", "ich in Berlin arbeite", "arbeite ich in Berlin"], "answer": "ich arbeite in Berlin", "en": "I'm learning German because I work in Berlin.", "why": {"de": "denn → normale Wortstellung (Verb auf 2).", "en": "denn → normal word order (verb in position 2)."}},
+    {"q": "Es regnet, deshalb ___.", "options": ["nehme ich einen Schirm", "ich nehme einen Schirm", "ich einen Schirm nehme"], "answer": "nehme ich einen Schirm", "en": "It's raining, so I'm taking an umbrella.", "why": {"de": "deshalb steht auf Position 1 → Verb direkt danach.", "en": "deshalb takes position 1 → the verb comes right after."}},
+    {"q": "Ich mag Kaffee, aber ___.", "options": ["ich trinke keinen Tee", "trinke ich keinen Tee", "ich keinen Tee trinke"], "answer": "ich trinke keinen Tee", "en": "I like coffee, but I don't drink tea.", "why": {"de": "aber → Wortstellung bleibt normal.", "en": "aber → word order stays normal."}},
+    {"q": "Ich weiß nicht, ob ___.", "options": ["er heute kommt", "kommt er heute", "er kommt heute"], "answer": "er heute kommt", "en": "I don't know if he's coming today.", "why": {"de": "ob → Verb ans Ende.", "en": "ob → verb to the end."}}
+  ],
+  "konnektoren-aduso": [
+    {"q": "Ich trinke keinen Kaffee, ___ Tee.", "options": ["sondern", "aber", "oder"], "answer": "sondern", "en": "I don't drink coffee, but tea.", "why": {"de": "Nach einer Verneinung + Korrektur: sondern.", "en": "After a negation, correcting it: sondern."}},
+    {"q": "Das Auto ist alt, ___ es fährt gut.", "options": ["aber", "sondern", "denn"], "answer": "aber", "en": "The car is old, but it runs well.", "why": {"de": "Gegensatz ohne Korrektur: aber.", "en": "Contrast without correcting: aber."}},
+    {"q": "Er kommt nicht mit, ___ er muss arbeiten.", "options": ["denn", "weil", "aber"], "answer": "denn", "en": "He isn't coming along because he has to work.", "why": {"de": "Verb auf Position 2 → denn (weil bräuchte das Verb am Ende).", "en": "Verb in position 2 → denn (weil would need the verb at the end)."}},
+    {"q": "Kommst du heute ___ morgen?", "options": ["oder", "und", "aber"], "answer": "oder", "en": "Are you coming today or tomorrow?", "why": {"de": "Auswahl: oder.", "en": "A choice: oder."}},
+    {"q": "Er kommt nicht heute, ___ morgen.", "options": ["sondern", "aber", "denn"], "answer": "sondern", "en": "He's not coming today, but tomorrow.", "why": {"de": "nicht A, sondern B.", "en": "not A, but (instead) B."}}
+  ],
+  "nebensatz": [
+    {"q": "Ich glaube, ___ er recht hat.", "options": ["dass", "weil", "wenn"], "answer": "dass", "en": "I think he's right.", "why": {"de": "glauben, dass … (Inhalt).", "en": "glauben, dass … (the content)."}},
+    {"q": "Ich komme nicht, ___ ich krank bin.", "options": ["weil", "dass", "ob"], "answer": "weil", "en": "I'm not coming because I'm ill.", "why": {"de": "Grund → weil.", "en": "Reason → weil."}},
+    {"q": "___ ich jung war, habe ich in Köln gewohnt.", "options": ["Als", "Wenn", "Wann"], "answer": "Als", "en": "When I was young, I lived in Cologne.", "why": {"de": "Einmal in der Vergangenheit → als.", "en": "Once, in the past → als."}},
+    {"q": "___ ich Zeit habe, lese ich gern.", "options": ["Wenn", "Als", "Wann"], "answer": "Wenn", "en": "When I have time, I like reading.", "why": {"de": "Immer wieder / Bedingung → wenn.", "en": "Every time / condition → wenn."}},
+    {"q": "Weißt du, ___ der Bus schon weg ist?", "options": ["ob", "dass", "wenn"], "answer": "ob", "en": "Do you know if the bus has already gone?", "why": {"de": "Ja/Nein-Frage im Nebensatz → ob.", "en": "Yes/no question as a clause → ob."}}
+  ],
+  "konnektoren-adverbien": [
+    {"q": "Der Bus kommt nicht, ___ gehe ich zu Fuß.", "options": ["deshalb", "weil", "denn"], "answer": "deshalb", "en": "The bus isn't coming, so I'm walking.", "why": {"de": "Folge + Verb direkt danach → deshalb.", "en": "Consequence + verb right after → deshalb."}},
+    {"q": "Zieh eine Jacke an, ___ wirst du krank.", "options": ["sonst", "sondern", "deshalb"], "answer": "sonst", "en": "Put on a jacket, otherwise you'll get ill.", "why": {"de": "sonst = wenn nicht, dann …", "en": "sonst = otherwise (if not, then …)."}},
+    {"q": "Es regnet, ___ gehe ich spazieren.", "options": ["trotzdem", "deshalb", "weil"], "answer": "trotzdem", "en": "It's raining, but I'm going for a walk anyway.", "why": {"de": "Gegen die Erwartung → trotzdem.", "en": "Against expectations → trotzdem."}},
+    {"q": "Zuerst frühstücke ich, ___ gehe ich zur Arbeit.", "options": ["dann", "denn", "wenn"], "answer": "dann", "en": "First I have breakfast, then I go to work.", "why": {"de": "Reihenfolge → dann (nicht denn = because).", "en": "Sequence → dann (not denn = because)."}},
+    {"q": "Ich habe gegessen. ___ habe ich gespült.", "options": ["Danach", "Nachdem", "Nach"], "answer": "Danach", "en": "I ate. After that I did the washing-up.", "why": {"de": "danach + Verb auf Position 2 (nachdem leitet einen Nebensatz ein).", "en": "danach + verb in position 2 (nachdem starts a subordinate clause)."}}
+  ],
+  "praep-ueberblick": [
+    {"q": "Ich spreche mit ___ Chef.", "options": ["dem", "den", "der"], "answer": "dem", "en": "I'm talking to the boss.", "why": {"de": "mit + Dativ.", "en": "mit + dative."}},
+    {"q": "Das Geschenk ist für ___ Vater.", "options": ["meinen", "meinem", "mein"], "answer": "meinen", "en": "The present is for my father.", "why": {"de": "für + Akkusativ.", "en": "für + accusative."}},
+    {"q": "Wegen ___ Arbeit habe ich keine Zeit.", "options": ["der", "die", "dem"], "answer": "der", "en": "Because of work I have no time.", "why": {"de": "wegen + Genitiv, feminin: der Arbeit.", "en": "wegen + genitive, feminine: der Arbeit."}},
+    {"q": "Das Buch liegt auf ___ Tisch.", "options": ["dem", "den", "der"], "answer": "dem", "en": "The book is lying on the table.", "why": {"de": "Wo? → Dativ.", "en": "Where? → dative."}},
+    {"q": "Ich lege das Buch auf ___ Tisch.", "options": ["den", "dem", "der"], "answer": "den", "en": "I put the book on the table.", "why": {"de": "Wohin? → Akkusativ.", "en": "Where to? → accusative."}}
+  ],
+  "praep-akkusativ": [
+    {"q": "Ich gehe durch ___ Park.", "options": ["den", "dem", "der"], "answer": "den", "en": "I'm walking through the park.", "why": {"de": "durch + Akkusativ.", "en": "durch + accusative."}},
+    {"q": "Wir sind gegen ___ Plan.", "options": ["den", "dem", "des"], "answer": "den", "en": "We're against the plan.", "why": {"de": "gegen + Akkusativ.", "en": "gegen + accusative."}},
+    {"q": "Er geht ohne ___ Jacke raus.", "options": ["seine", "seiner", "seinen"], "answer": "seine", "en": "He goes out without his jacket.", "why": {"de": "ohne + Akk.: die Jacke → seine Jacke.", "en": "ohne + acc.: die Jacke → seine Jacke."}},
+    {"q": "Wir sitzen um ___ Tisch.", "options": ["den", "dem", "der"], "answer": "den", "en": "We're sitting around the table.", "why": {"de": "um + Akkusativ.", "en": "um + accusative."}},
+    {"q": "Das ist ein Brief für ___.", "options": ["dich", "dir", "du"], "answer": "dich", "en": "This is a letter for you.", "why": {"de": "für + Akkusativ: dich.", "en": "für + accusative: dich."}}
+  ],
+  "praep-dativ": [
+    {"q": "Ich komme aus ___ Türkei.", "options": ["der", "die", "dem"], "answer": "der", "en": "I come from Turkey.", "why": {"de": "aus + Dativ: die Türkei → aus der Türkei.", "en": "aus + dative: die Türkei → aus der Türkei."}},
+    {"q": "Nach ___ Kurs gehen wir essen.", "options": ["dem", "den", "das"], "answer": "dem", "en": "After the course we're going out to eat.", "why": {"de": "nach + Dativ: der Kurs → nach dem Kurs.", "en": "nach + dative: der Kurs → nach dem Kurs."}},
+    {"q": "Ich wohne seit ___ Jahr hier.", "options": ["einem", "ein", "einen"], "answer": "einem", "en": "I've lived here for a year.", "why": {"de": "seit + Dativ.", "en": "seit + dative."}},
+    {"q": "Gehst du mit ___ ins Kino?", "options": ["mir", "mich", "ich"], "answer": "mir", "en": "Are you going to the cinema with me?", "why": {"de": "mit + Dativ: mir.", "en": "mit + dative: mir."}},
+    {"q": "Ich gehe morgen ___ Arzt.", "options": ["zum", "zur", "zu den"], "answer": "zum", "en": "I'm going to the doctor tomorrow.", "why": {"de": "zu + dem = zum (der Arzt).", "en": "zu + dem = zum (der Arzt)."}}
+  ],
+  "wechselpraepositionen": [
+    {"q": "Das Bild hängt an ___ Wand.", "options": ["der", "die", "den"], "answer": "der", "en": "The picture is hanging on the wall.", "why": {"de": "Wo? → Dativ: an der Wand.", "en": "Where? → dative: an der Wand."}},
+    {"q": "Ich hänge das Bild an ___ Wand.", "options": ["die", "der", "dem"], "answer": "die", "en": "I hang the picture on the wall.", "why": {"de": "Wohin? → Akkusativ: an die Wand.", "en": "Where to? → accusative: an die Wand."}},
+    {"q": "Die Katze liegt unter ___ Tisch.", "options": ["dem", "den", "der"], "answer": "dem", "en": "The cat is lying under the table.", "why": {"de": "Wo? → Dativ.", "en": "Where? → dative."}},
+    {"q": "Wir gehen in ___ Kino.", "options": ["das", "dem", "den"], "answer": "das", "en": "We're going to the cinema.", "why": {"de": "Wohin? → Akkusativ: in das (= ins) Kino.", "en": "Where to? → accusative: in das (= ins) Kino."}},
+    {"q": "Ich bin in ___ Küche.", "options": ["der", "die", "dem"], "answer": "der", "en": "I'm in the kitchen.", "why": {"de": "Wo? → Dativ: in der Küche.", "en": "Where? → dative: in der Küche."}}
+  ],
+  "praep-genitiv": [
+    {"q": "Wegen ___ Wetters bleiben wir zu Hause.", "options": ["des", "dem", "den"], "answer": "des", "en": "Because of the weather we're staying at home.", "why": {"de": "wegen + Genitiv: des Wetters.", "en": "wegen + genitive: des Wetters."}},
+    {"q": "Während ___ Pause trinke ich Kaffee.", "options": ["der", "die", "dem"], "answer": "der", "en": "During the break I drink coffee.", "why": {"de": "während + Genitiv, feminin: der Pause.", "en": "während + genitive, feminine: der Pause."}},
+    {"q": "Trotz ___ Kälte gehen wir schwimmen.", "options": ["der", "die", "dem"], "answer": "der", "en": "Despite the cold we're going swimming.", "why": {"de": "trotz + Genitiv, feminin: der Kälte.", "en": "trotz + genitive, feminine: der Kälte."}},
+    {"q": "Statt ___ nehme ich das Fahrrad.", "options": ["des Busses", "dem Bus", "den Bus"], "answer": "des Busses", "en": "Instead of the bus I'm taking the bike.", "why": {"de": "statt + Genitiv: des Busses (+ -es).", "en": "statt + genitive: des Busses (+ -es)."}},
+    {"q": "Das ist das Auto ___.", "options": ["meines Vaters", "meinem Vater", "mein Vater"], "answer": "meines Vaters", "en": "That's my father's car.", "why": {"de": "Besitz: Genitiv – meines Vaters.", "en": "Possession: genitive – meines Vaters."}}
+  ],
+  "praep-zeit": [
+    {"q": "Wir treffen uns ___ acht Uhr.", "options": ["um", "am", "im"], "answer": "um", "en": "We're meeting at eight o'clock.", "why": {"de": "Uhrzeit → um.", "en": "Clock time → um."}},
+    {"q": "Ich habe ___ Montag frei.", "options": ["am", "im", "um"], "answer": "am", "en": "I'm off on Monday.", "why": {"de": "Tag → am.", "en": "Day → am."}},
+    {"q": "___ Sommer fahren wir ans Meer.", "options": ["Im", "Am", "Um"], "answer": "Im", "en": "In summer we go to the sea.", "why": {"de": "Jahreszeit, Monat → im.", "en": "Season, month → im."}},
+    {"q": "Er wohnt ___ drei Jahren in München.", "options": ["seit", "vor", "ab"], "answer": "seit", "en": "He has lived in Munich for three years.", "why": {"de": "Bis jetzt → seit + Präsens.", "en": "Up to now → seit + present tense."}},
+    {"q": "Ich war ___ zwei Wochen in Berlin.", "options": ["vor", "seit", "in"], "answer": "vor", "en": "I was in Berlin two weeks ago.", "why": {"de": "Vergangenheit, \"ago\" → vor.", "en": "Past, \"ago\" → vor."}}
+  ],
+  "praep-ort": [
+    {"q": "Ich fahre ___ Berlin.", "options": ["nach", "in", "zu"], "answer": "nach", "en": "I'm going to Berlin.", "why": {"de": "Städte, Länder ohne Artikel → nach.", "en": "Cities, countries without an article → nach."}},
+    {"q": "Ich fahre ___ Schweiz.", "options": ["in die", "nach", "zu der"], "answer": "in die", "en": "I'm going to Switzerland.", "why": {"de": "Länder mit Artikel → in + Akkusativ.", "en": "Countries with an article → in + accusative."}},
+    {"q": "Ich bin ___ meiner Oma.", "options": ["bei", "zu", "mit"], "answer": "bei", "en": "I'm at my grandma's.", "why": {"de": "Wo? bei einer Person.", "en": "Where? at a person's place → bei."}},
+    {"q": "Ich komme ___ Spanien.", "options": ["aus", "von", "nach"], "answer": "aus", "en": "I come from Spain.", "why": {"de": "Woher? Land → aus.", "en": "Where from? country → aus."}},
+    {"q": "Ich gehe jetzt ___ Hause.", "options": ["nach", "zu", "zum"], "answer": "nach", "en": "I'm going home now.", "why": {"de": "nach Hause = wohin; zu Hause = wo.", "en": "nach Hause = (going) home; zu Hause = at home."}}
+  ]
+}
