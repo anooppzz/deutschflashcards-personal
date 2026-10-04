@@ -33,6 +33,14 @@ was done, newest first. Every change adds a log entry here in the same commit
 ## Log
 
 ### 2026-10-04
+- **Code tidying 1/4 – one deck view:** the five copy-pasted deck screens (Irregular, Nicht
+  trennbar, Haushalt, Verkehr, Kleidung) and the chapter view are one `DeckView`, driven by
+  configs in `modes/cards/deckViews.js` (banner, filter by type or vowel group, colour,
+  badge, 💡 tip). 20 useState and ~230 lines gone from App.jsx (1,932 → 1,690). Compared
+  against the previous build: same cards, banners, chips, counters and tips in 7 decks.
+  Side effects: ← → arrow keys now work in chapters too; search "… öffnen →" now really
+  opens the found card (it always opened the chapter's first card); the card back no
+  longer shows the previous card's meaning for a moment after "next".
 - **✏️ Üben in every grammar topic:** 145 multiple-choice questions (5 × 29 topics) in
   `src/data/grammar/exercises.json`, after the examples. One question at a time, options
   shuffled every round, ✓/✗ with a one-line reason + the sentence in English, "↻ Nochmal".

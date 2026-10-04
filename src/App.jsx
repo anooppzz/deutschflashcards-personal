@@ -26,7 +26,7 @@
 import React, { useState, useCallback, useEffect, useMemo, useRef } from "react";
 import {
   STORAGE_KEYS,
-  GENDER_COLORS, TYPE_META, GROUP_COLORS,
+  GENDER_COLORS, TYPE_META,
   ROUND_SIZE, ARTICLE_SIZE_PRESETS, GOAL_PRESETS, REVIEW_SIZE,
   LANGUAGES, HELP_FLAGS,
   MODE, MODE_TABS, DAY_MS,
@@ -34,7 +34,7 @@ import {
 import {
   IRREGULAR_VERBS, INSEPARABLE_VERBS, HAUSHALT, VERKEHR, KLEIDUNG,
   EXTRA_TOPICS, DECK_META, GRAMMAR_TOPICS,
-  DECK_SOURCE, EXTRA_KEYS, EXTRA_BY_KEY, ALL_CARDS,
+  DECK_SOURCE, EXTRA_BY_KEY, ALL_CARDS,
 } from "./data";
 import {
   storage,
@@ -55,7 +55,7 @@ import {
 import { ProgressCtx } from "./context/ProgressCtx";
 import { GrammarNavCtx } from "./context/GrammarNavCtx";
 import {
-  TypedTopicView,
+  DeckView, buildDeckViews, visibleCards, initialSlice,
   ArticleTrainer, ArticleSummary,
   buildArticleRoundStratified, saveArticleSizePref, resolveArticleRoundSize, articleSizeLabel,
   QuizTrainer, QuizSummary, buildQuiz,
@@ -79,11 +79,8 @@ const step = (setIdx, total) => (dir) => {
 };
 
 // category lists for the multi-select filters
-const HAUS_CATS = [["n", "Nomen"], ["v", "Verben"], ["adj", "Adjektive"]];
 const FULL_CATS = [["n", "Nomen"], ["v", "Verben"], ["adj", "Adjektive"], ["sonst", "Sonstige"]];
-const HAUS_KEYS = HAUS_CATS.map(([k]) => k);
 const FULL_KEYS = FULL_CATS.map(([k]) => k);
-const GROUP_KEYS = Object.keys(GROUP_COLORS);
 
 // deck registry for the multi-topic (combined) mode - see data/index.js
 
@@ -95,6 +92,9 @@ EXTRA_TOPICS.forEach((t) => {
   DECK_META[t.key] = { label: t.label, icon: t.icon };
   DECK_SOURCE[t.key] = t.cards;
 });
+
+// every deck the Karten mode shows on its own (modes/cards/deckViews.js)
+const DECK_VIEWS = buildDeckViews();
 
 // The selected topics and the study mode survive a reload. Read straight
 // from localStorage (synchronously) so the first render already shows the
@@ -531,41 +531,21 @@ function App() {
   const [topicsOpen, setTopicsOpen] = useState(false);
   const [query, setQuery] = useState("");
 
-  // decks
-  const [irrDeck, setIrrDeck] = useState(IRREGULAR_VERBS);
-  const [irrShuffled, setIrrShuffled] = useState(false);
-  const [insepDeck, setInsepDeck] = useState(INSEPARABLE_VERBS);
-  const [insepShuffled, setInsepShuffled] = useState(false);
-  const [hausDeck, setHausDeck] = useState(HAUSHALT);
-  const [hausShuffled, setHausShuffled] = useState(false);
-  const [verkDeck, setVerkDeck] = useState(VERKEHR);
-  const [verkShuffled, setVerkShuffled] = useState(false);
-  const [kleidDeck, setKleidDeck] = useState(KLEIDUNG);
-  const [kleidShuffled, setKleidShuffled] = useState(false);
-
-  // indices
-  const [irrIdx, setIrrIdx] = useState(0);
-  const [insepIdx, setInsepIdx] = useState(0);
-  const [hausIdx, setHausIdx] = useState(0);
-  const [verkIdx, setVerkIdx] = useState(0);
-  const [kleidIdx, setKleidIdx] = useState(0);
-
-  // sub-filters (multi-select arrays of active category keys)
-  const [irrFilter, setIrrFilter] = useState(GROUP_KEYS);
-  const [hausFilter, setHausFilter] = useState(HAUS_KEYS);
-  const [verkFilter, setVerkFilter] = useState(FULL_KEYS);
-  const [kleidFilter, setKleidFilter] = useState(FULL_KEYS);
-
   // combined (multi-topic) mode state
   const [comboFilter, setComboFilter] = useState(FULL_KEYS);
   const [comboIdx, setComboIdx] = useState(0);
   const [comboDeck, setComboDeck] = useState(KLEIDUNG.map((c) => normalizeCard("kleidung", c)));
   const [comboShuffled, setComboShuffled] = useState(false);
 
-  // state for the Lektion topic decks: { [key]: { idx, filter, order } }
+  // each deck's place in Karten mode: { [key]: { idx, filter, order, shuffled } }
   const [extra, setExtra] = useState(() =>
-    Object.fromEntries(EXTRA_TOPICS.map((t) => [t.key, { idx: 0, filter: t.keys, order: t.cards, shuffled: false }]))
+    Object.fromEntries(Object.values(DECK_VIEWS).map((v) => [v.key, initialSlice(v)]))
   );
+  // back to the first card in every deck (after the A1/A2 or chapter filter changes)
+  const resetDeckPositions = () => {
+    setExtra((prev) => Object.fromEntries(Object.entries(prev).map(([k, sl]) => [k, { ...sl, idx: 0 }])));
+    setComboIdx(0);
+  };
   const setExtraSlice = (key) => (patch) =>
     setExtra((prev) => ({ ...prev, [key]: { ...prev[key], ...patch } }));
 
@@ -1086,29 +1066,6 @@ function App() {
   };
 
   // filtered decks
-  const filteredIrr = useMemo(
-    () => irrDeck.filter((v) => irrFilter.includes(v.group) && passesGlobalFilters(v, levelFilter, sourceFilter)),
-    [irrDeck, irrFilter, levelFilter, sourceFilter]
-  );
-  const filteredInsep = useMemo(() => insepDeck.filter((v) => passesGlobalFilters(v, levelFilter, sourceFilter)), [insepDeck, levelFilter, sourceFilter]);
-  const filteredHaus = useMemo(
-    () => hausDeck.filter((w) => hausFilter.includes(w.type) && passesGlobalFilters(w, levelFilter, sourceFilter)),
-    [hausDeck, hausFilter, levelFilter, sourceFilter]
-  );
-  const filteredVerk = useMemo(
-    () => verkDeck.filter((w) => verkFilter.includes(w.type) && passesGlobalFilters(w, levelFilter, sourceFilter)),
-    [verkDeck, verkFilter, levelFilter, sourceFilter]
-  );
-  const filteredKleid = useMemo(
-    () => kleidDeck.filter((w) => kleidFilter.includes(w.type) && passesGlobalFilters(w, levelFilter, sourceFilter)),
-    [kleidDeck, kleidFilter, levelFilter, sourceFilter]
-  );
-
-  const irrVerb = filteredIrr[irrIdx % (filteredIrr.length || 1)];
-  const insepVerb = filteredInsep[insepIdx % (filteredInsep.length || 1)];
-  const hausWord = filteredHaus[hausIdx % (filteredHaus.length || 1)];
-  const verkWord = filteredVerk[verkIdx % (filteredVerk.length || 1)];
-  const kleidWord = filteredKleid[kleidIdx % (filteredKleid.length || 1)];
 
   // combined (multi-topic) filtered deck
   const filteredCombo = useMemo(
@@ -1145,21 +1102,8 @@ function App() {
   // "… öffnen →" under a found card: select its chapter and show that card,
   // in the chapter's natural order with every filter open
   const openChapterAt = (deck, front) => {
-    const plain = {
-      irregular: [IRREGULAR_VERBS, (c) => c.infinitiv, () => { setIrrDeck(IRREGULAR_VERBS); setIrrFilter(GROUP_KEYS); setIrrShuffled(false); }, setIrrIdx],
-      inseparable: [INSEPARABLE_VERBS, (c) => c.infinitiv, () => { setInsepDeck(INSEPARABLE_VERBS); setInsepShuffled(false); }, setInsepIdx],
-      haushalt: [HAUSHALT, (c) => c.front, () => { setHausDeck(HAUSHALT); setHausFilter(HAUS_KEYS); setHausShuffled(false); }, setHausIdx],
-      verkehr: [VERKEHR, (c) => c.front, () => { setVerkDeck(VERKEHR); setVerkFilter(FULL_KEYS); setVerkShuffled(false); }, setVerkIdx],
-      kleidung: [KLEIDUNG, (c) => c.front, () => { setKleidDeck(KLEIDUNG); setKleidFilter(FULL_KEYS); setKleidShuffled(false); }, setKleidIdx],
-    }[deck];
-    if (plain) {
-      const [cards, frontOf, reset, setIdx] = plain;
-      reset();
-      setIdx(Math.max(0, cards.findIndex((c) => frontOf(c) === front)));
-    } else if (EXTRA_BY_KEY[deck]) {
-      const t = EXTRA_BY_KEY[deck];
-      setExtraSlice(deck)({ order: t.cards, filter: t.keys, shuffled: false, idx: Math.max(0, t.cards.findIndex((c) => c.front === front)) });
-    }
+    const view = DECK_VIEWS[deck];
+    if (view) setExtraSlice(deck)({ ...initialSlice(view), idx: Math.max(0, view.cards.findIndex((c) => c.front === front)) });
     setTabs([deck]);
     setQuery("");
     setMode(MODE.CARDS);
@@ -1173,15 +1117,15 @@ function App() {
       if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
       const dir = e.key === "ArrowRight" ? 1 : -1;
       if (!single) { step(setComboIdx, filteredCombo.length)(dir); return; }
-      if (onlyTab === "irregular") step(setIrrIdx, filteredIrr.length)(dir);
-      else if (onlyTab === "inseparable") step(setInsepIdx, filteredInsep.length)(dir);
-      else if (onlyTab === "haushalt") step(setHausIdx, filteredHaus.length)(dir);
-      else if (onlyTab === "verkehr") step(setVerkIdx, filteredVerk.length)(dir);
-      else if (onlyTab === "kleidung") step(setKleidIdx, filteredKleid.length)(dir);
+      const view = DECK_VIEWS[onlyTab];
+      if (!view) return;
+      const total = visibleCards(view, extra[onlyTab], levelFilter, sourceFilter).length;
+      if (!total) return;
+      setExtra((prev) => ({ ...prev, [onlyTab]: { ...prev[onlyTab], idx: (prev[onlyTab].idx + dir + total) % total } }));
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [single, onlyTab, filteredCombo.length, filteredIrr.length, filteredInsep.length, filteredHaus.length, filteredVerk.length, filteredKleid.length]);
+  }, [single, onlyTab, filteredCombo.length, extra, levelFilter, sourceFilter]);
 
   const TABS = [
     ["kleidung", "👕 Kleidung"],
@@ -1438,7 +1382,7 @@ function App() {
             allKeys={availableLevels}
             active={levelFilter}
             onChange={setLevelFilter}
-            setIdx={() => { setIrrIdx(0); setInsepIdx(0); setHausIdx(0); setVerkIdx(0); setKleidIdx(0); setComboIdx(0); }}
+            setIdx={resetDeckPositions}
             colorFor={(l) => (l === "A1" ? "#5fa85f" : "#e0833b")}
           />
         )}
@@ -1448,7 +1392,7 @@ function App() {
             allKeys={availableSources}
             active={sourceFilter}
             onChange={setSourceFilter}
-            setIdx={() => { setIrrIdx(0); setInsepIdx(0); setHausIdx(0); setVerkIdx(0); setKleidIdx(0); setComboIdx(0); }}
+            setIdx={resetDeckPositions}
             colorFor={() => "#4f86c6"}
           />
         )}
@@ -1664,191 +1608,10 @@ function App() {
           />
         ) : (
         <>
-        {single && onlyTab === "irregular" && (
-          <>
-            <CategoryFilter
-              cats={GROUP_KEYS.map((g) => [g, g])}
-              allKeys={GROUP_KEYS}
-              active={irrFilter}
-              onChange={setIrrFilter}
-              setIdx={setIrrIdx}
-              colorFor={(g) => GROUP_COLORS[g] || "#4f86c6"}
-            />
-            {irrVerb ? (
-              <>
-                <FlipCard
-                  front={irrVerb.infinitiv}
-                  sub={`${irrVerb.präteritum} · ${irrVerb.hilfsverb} ${irrVerb.partizip}`}
-                  back={irrVerb.english}
-                  example={irrVerb.example}
-                  accent={GROUP_COLORS[irrVerb.group] || "#4f86c6"}
-                  badge={`${DECK_META.irregular.icon} ${DECK_META.irregular.label} · ${irrVerb.group}`}
-                  cardId={idOf("irregular", irrVerb.infinitiv)}
-                  lang={lang}
-                  level={irrVerb.level}
-                  source={irrVerb.source}
-                />
-                <Controls index={irrIdx % filteredIrr.length} total={filteredIrr.length}
-                  onPrev={() => step(setIrrIdx, filteredIrr.length)(-1)}
-                  onNext={() => step(setIrrIdx, filteredIrr.length)(1)}
-                  onShuffle={() => {
-                    if (irrShuffled) { setIrrDeck(IRREGULAR_VERBS); setIrrIdx(0); setIrrShuffled(false); }
-                    else { setIrrDeck(shuffled(IRREGULAR_VERBS)); setIrrFilter(GROUP_KEYS); setIrrIdx(0); setIrrShuffled(true); }
-                  }}
-                  isShuffled={irrShuffled} />
-              </>
-            ) : <NoResults />}
-          </>
-        )}
-
-        {/* INSEPARABLE */}
-        {single && onlyTab === "inseparable" && (
-          <>
-            <div style={{ background: "#1e2a1e", borderRadius: 12, padding: "10px 16px", marginBottom: 18, fontSize: 12, color: "#7ec87e", textAlign: "center" }}>
-              🔑 Inseparable prefixes never add <strong>ge-</strong> in Partizip II
-            </div>
-            {insepVerb ? (
-              <>
-                <FlipCard
-                  front={insepVerb.infinitiv}
-                  sub={`hat ${insepVerb.partizip}${insepVerb.tip ? "  💡" : ""}`}
-                  back={insepVerb.english}
-                  example={insepVerb.example}
-                  exampleEn={insepVerb.exampleEn}
-                  accent="#5fa85f"
-                  badge={`${DECK_META.inseparable.icon} ${DECK_META.inseparable.label}`}
-                  cardId={idOf("inseparable", insepVerb.infinitiv)}
-                  lang={lang}
-                  level={insepVerb.level}
-                  source={insepVerb.source}
-                />
-                {insepVerb.tip && (
-                  <div style={{ marginTop: 12, fontSize: 12, color: "#9ab0c2", textAlign: "center", lineHeight: 1.5 }}>
-                    💡 {insepVerb.tip}
-                  </div>
-                )}
-                <Controls index={insepIdx % filteredInsep.length} total={filteredInsep.length}
-                  onPrev={() => step(setInsepIdx, filteredInsep.length)(-1)}
-                  onNext={() => step(setInsepIdx, filteredInsep.length)(1)}
-                  onShuffle={() => {
-                    if (insepShuffled) { setInsepDeck(INSEPARABLE_VERBS); setInsepIdx(0); setInsepShuffled(false); }
-                    else { setInsepDeck(shuffled(INSEPARABLE_VERBS)); setInsepIdx(0); setInsepShuffled(true); }
-                  }}
-                  isShuffled={insepShuffled} />
-              </>
-            ) : <NoResults />}
-          </>
-        )}
-
-        {/* HAUSHALT */}
-        {single && onlyTab === "haushalt" && (
-          <>
-            {typeFilterRow(HAUS_CATS, HAUS_KEYS, hausFilter, setHausFilter, setHausIdx)}
-            {hausWord ? (
-              <>
-                <FlipCard
-                  front={hausWord.front}
-                  sub={hausWord.sub}
-                  back={hausWord.english}
-                  example={hausWord.example}
-                  exampleEn={hausWord.exampleEn}
-                  accent={hausWord.type === "n" ? GENDER_COLORS[hausWord.gender] : TYPE_META[hausWord.type].color}
-                  badge={`${DECK_META.haushalt.icon} ${DECK_META.haushalt.label} · ${hausWord.type === "n" ? `Nomen · ${hausWord.gender}` : TYPE_META[hausWord.type].label}`}
-                  cardId={idOf("haushalt", hausWord.front)}
-                  lang={lang}
-                  level={hausWord.level}
-                  source={hausWord.source}
-                  note={hausWord.note}
-                />
-                <Controls index={hausIdx % filteredHaus.length} total={filteredHaus.length}
-                  onPrev={() => step(setHausIdx, filteredHaus.length)(-1)}
-                  onNext={() => step(setHausIdx, filteredHaus.length)(1)}
-                  onShuffle={() => {
-                    if (hausShuffled) { setHausDeck(HAUSHALT); setHausIdx(0); setHausShuffled(false); }
-                    else { setHausDeck(shuffled(HAUSHALT)); setHausFilter(HAUS_KEYS); setHausIdx(0); setHausShuffled(true); }
-                  }}
-                  isShuffled={hausShuffled} />
-              </>
-            ) : <NoResults />}
-          </>
-        )}
-
-        {/* STRASSENVERKEHR ★ NEW */}
-        {single && onlyTab === "verkehr" && (
-          <>
-            <div style={{ background: "#1e2630", borderRadius: 12, padding: "10px 16px", marginBottom: 16, fontSize: 12, color: "#7fb0d6", textAlign: "center" }}>
-              🚦 Im Straßenverkehr - CH = Schweiz, A = Österreich
-            </div>
-            {typeFilterRow(FULL_CATS, FULL_KEYS, verkFilter, setVerkFilter, setVerkIdx)}
-            {verkWord ? (
-              <>
-                <FlipCard
-                  front={verkWord.front}
-                  sub={verkWord.sub}
-                  back={verkWord.english}
-                  example={verkWord.example}
-                  exampleEn={verkWord.exampleEn}
-                  accent={verkWord.type === "n" ? GENDER_COLORS[verkWord.gender] : TYPE_META[verkWord.type].color}
-                  badge={`${DECK_META.verkehr.icon} ${DECK_META.verkehr.label} · ${verkWord.type === "n" ? `Nomen · ${verkWord.gender}` : TYPE_META[verkWord.type].label}`}
-                  cardId={idOf("verkehr", verkWord.front)}
-                  lang={lang}
-                  level={verkWord.level}
-                  source={verkWord.source}
-                  note={verkWord.note}
-                />
-                <Controls index={verkIdx % filteredVerk.length} total={filteredVerk.length}
-                  onPrev={() => step(setVerkIdx, filteredVerk.length)(-1)}
-                  onNext={() => step(setVerkIdx, filteredVerk.length)(1)}
-                  onShuffle={() => {
-                    if (verkShuffled) { setVerkDeck(VERKEHR); setVerkIdx(0); setVerkShuffled(false); }
-                    else { setVerkDeck(shuffled(VERKEHR)); setVerkFilter(FULL_KEYS); setVerkIdx(0); setVerkShuffled(true); }
-                  }}
-                  isShuffled={verkShuffled} />
-              </>
-            ) : <NoResults />}
-          </>
-        )}
-
-        {/* KLEIDUNG ★ NEW */}
-        {single && onlyTab === "kleidung" && (
-          <>
-            <div style={{ background: "#221c2a", borderRadius: 12, padding: "10px 16px", marginBottom: 16, fontSize: 12, color: "#b89ad6", textAlign: "center" }}>
-              👕 Kleidung - Komparativ: <strong>schöner als</strong> · Gleichheit: <strong>(genau)so … wie</strong>
-            </div>
-            {typeFilterRow(FULL_CATS, FULL_KEYS, kleidFilter, setKleidFilter, setKleidIdx)}
-            {kleidWord ? (
-              <>
-                <FlipCard
-                  front={kleidWord.front}
-                  sub={kleidWord.sub}
-                  back={kleidWord.english}
-                  example={kleidWord.example}
-                  exampleEn={kleidWord.exampleEn}
-                  accent={kleidWord.type === "n" ? GENDER_COLORS[kleidWord.gender] : TYPE_META[kleidWord.type].color}
-                  badge={`${DECK_META.kleidung.icon} ${DECK_META.kleidung.label} · ${kleidWord.type === "n" ? `Nomen · ${kleidWord.gender}` : TYPE_META[kleidWord.type].label}`}
-                  cardId={idOf("kleidung", kleidWord.front)}
-                  lang={lang}
-                  level={kleidWord.level}
-                  source={kleidWord.source}
-                  note={kleidWord.note}
-                />
-                <Controls index={kleidIdx % filteredKleid.length} total={filteredKleid.length}
-                  onPrev={() => step(setKleidIdx, filteredKleid.length)(-1)}
-                  onNext={() => step(setKleidIdx, filteredKleid.length)(1)}
-                  onShuffle={() => {
-                    if (kleidShuffled) { setKleidDeck(KLEIDUNG); setKleidIdx(0); setKleidShuffled(false); }
-                    else { setKleidDeck(shuffled(KLEIDUNG)); setKleidFilter(FULL_KEYS); setKleidIdx(0); setKleidShuffled(true); }
-                  }}
-                  isShuffled={kleidShuffled} />
-              </>
-            ) : <NoResults />}
-          </>
-        )}
-
-        {/* LEKTION TOPICS (typed vocabulary) ★ NEW */}
-        {single && EXTRA_KEYS.includes(onlyTab) && (
-          <TypedTopicView
-            topic={EXTRA_BY_KEY[onlyTab]}
+        {/* ONE DECK - the original five and every chapter (modes/cards) */}
+        {single && DECK_VIEWS[onlyTab] && (
+          <DeckView
+            view={DECK_VIEWS[onlyTab]}
             slice={extra[onlyTab]}
             setSlice={setExtraSlice(onlyTab)}
             lang={lang}

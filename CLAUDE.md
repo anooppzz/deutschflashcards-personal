@@ -67,6 +67,7 @@ src/data/index.js          exports; ALL_CARDS = every card in one flat list
 src/engine/                logic: FSRS scheduling, filters, grammarLinks.js,
                            globalSearch.js (app-wide search: cards + grammar)
                            review.js ("Heute fällig": due cards from all decks)
+src/modes/cards/deckViews.js  how each deck shows in Karten mode (banner, filter, badge)
 src/modes/                 one folder per study mode (cards, article, quiz, reverse,
                            cloze, wordsearch, grammar) + search (results view)
                            + review ("Heute fällig" session)

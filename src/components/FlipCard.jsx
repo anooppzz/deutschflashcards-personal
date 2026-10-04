@@ -20,6 +20,9 @@ function FlipCard({ front, sub, back, english, example, exampleEn, accent, badge
   // support both old (back) and new (english) field names
   const meaning = english || back;
   const [transBack, setTransBack] = useState(meaning);
+  // English needs no translation: show the meaning itself, so the back is
+  // never a render behind when the card changes
+  const backText = lang === "en" ? meaning : transBack;
   const [transExEn, setTransExEn] = useState(null);
   const [correcting, setCorrecting] = useState(false);
   const [correctionText, setCorrectionText] = useState("");
@@ -139,7 +142,7 @@ function FlipCard({ front, sub, back, english, example, exampleEn, accent, badge
         {/* BACK */}
         {/* bottom padding keeps long backs clear of the ✓ Gekonnt / ↻ Üben buttons */}
         <div style={{ ...faceStyle(computedAccent), transform: "rotateY(180deg)", paddingBottom: cardId && showMarks ? 46 : 24 }}>
-          <div dir="auto" style={{ fontSize: 24, fontWeight: 700, color: "#f2f5f8", textAlign: "center" }}>{transBack}</div>
+          <div dir="auto" style={{ fontSize: 24, fontWeight: 700, color: "#f2f5f8", textAlign: "center" }}>{backText}</div>
           {lang !== "en" && cardId && (
             correcting ? (
               <div onClick={stop(() => {})} style={{ display: "flex", gap: 4, marginTop: 6, alignItems: "center" }}>
@@ -157,7 +160,7 @@ function FlipCard({ front, sub, back, english, example, exampleEn, accent, badge
               </div>
             ) : (
               <button
-                onClick={stop(() => { setCorrecting(true); setCorrectionText(transBack); })}
+                onClick={stop(() => { setCorrecting(true); setCorrectionText(backText); })}
                 style={{ marginTop: 4, background: "none", border: "none", color: "#5a6b78", fontSize: 11, cursor: "pointer", textDecoration: "underline" }}
               >✗ falsch?</button>
             )

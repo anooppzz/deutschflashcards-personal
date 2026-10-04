@@ -131,7 +131,7 @@ function SearchResults({ query, cards, topics, lang, onOpenTopic, onOpenChapter 
                       note={card.note}
                     />
                     {meta && (
-                      <button type="button" onClick={() => onOpenChapter(card.deck)} style={{ display: "block", margin: "8px auto 0", background: "none", border: "none", color: "#8fb8d8", fontSize: 13, cursor: "pointer" }}>
+                      <button type="button" onClick={() => onOpenChapter(card.deck, card.front)} style={{ display: "block", margin: "8px auto 0", background: "none", border: "none", color: "#8fb8d8", fontSize: 13, cursor: "pointer" }}>
                         {meta.icon} {meta.label} öffnen →
                       </button>
                     )}

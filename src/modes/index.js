@@ -1,5 +1,6 @@
 // Barrel export for all training modes.
-export { default as TypedTopicView } from "./cards/TypedTopicView";
+export { default as DeckView } from "./cards/DeckView";
+export { buildDeckViews, initialSlice, visibleCards } from "./cards/deckViews";
 
 export { default as ArticleTrainer } from "./article/ArticleTrainer";
 export { default as ArticleSummary } from "./article/ArticleSummary";
