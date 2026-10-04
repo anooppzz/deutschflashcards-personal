@@ -9,9 +9,6 @@ was done, newest first. Every change adds a log entry here in the same commit
 - [ ] **Old repo leftovers:** branch `claude/epic-meitner-f5b32y` in
   `anooppzz/deutschflashcards` couldn't be deleted by the agent (403). The learner can
   delete it on GitHub or leave it.
-- [ ] 57 lint warnings predate this log (unused imports/catch variables, hook
-  dependencies in `App.jsx`, `FlipCard.jsx`, `ArticleTrainer.jsx`, `speech.js`).
-  Don't add new ones; cleaning them up is optional.
 - [ ] Ideas, not requested yet: tapping a word under "Deine Wörter" could open its card
   (now it only speaks it); grammar text exists only in German and English (other app
   languages fall back to English).
@@ -32,6 +29,14 @@ was done, newest first. Every change adds a log entry here in the same commit
 ## Log
 
 ### 2026-10-04
+- **Code tidying 4/4 – lint 57 → 0 warnings:** 22 unused `catch (e)` → `catch`; 4 unused
+  imports; 31 effect-dependency warnings fixed by giving the effects plain values (cardDeck,
+  cardFront … instead of `card && card.front`) in Artikel, Quiz, Reverse and FlipCard;
+  Wortgitter sizes moved out of the component; ErrorBoundary resets via
+  getDerivedStateFromProps instead of setState in componentDidUpdate. Rule now: 0 warnings.
+  Re-tested in the browser: all decks vs the previous build, help texts, Artikel / Quiz /
+  Reverse / Karten in English and Albanian, Formen, all 29 grammar exercise sets, review.
+- **Code tidying done** (steps 1–4 above). App.jsx 1,932 → 1,395 lines.
 - **Code tidying 3/4 – progress survives renames:** `src/data/renames.json` (old id → new id,
   or null for a deletion) is applied when progress loads (`engine/renames.js`). It starts
   with the four real renames found in git history, so that practice comes back: three

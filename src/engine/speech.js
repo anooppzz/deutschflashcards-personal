@@ -5,12 +5,12 @@
 let _voices = [];
 
 const loadVoices = () => {
-  try { _voices = window.speechSynthesis.getVoices() || []; } catch (e) {}
+  try { _voices = window.speechSynthesis.getVoices() || []; } catch {}
 };
 
 if (typeof window !== "undefined" && window.speechSynthesis) {
   loadVoices();
-  try { window.speechSynthesis.addEventListener("voiceschanged", loadVoices); } catch (e) {}
+  try { window.speechSynthesis.addEventListener("voiceschanged", loadVoices); } catch {}
 }
 
 export const speak = (text, onErr) => {
@@ -30,7 +30,7 @@ export const speak = (text, onErr) => {
     u.onstart = () => { started = true; };
     synth.speak(u);
     // Chrome/mobile: speech sometimes stays paused; nudge it, then verify it actually started
-    setTimeout(() => { try { if (synth.paused) synth.resume(); } catch (e) {} }, 200);
+    setTimeout(() => { try { if (synth.paused) synth.resume(); } catch {} }, 200);
     setTimeout(() => { if (!started && !synth.speaking) fail(); }, 1200);
-  } catch (e) { fail(); }
+  } catch { fail(); }
 };

@@ -19,6 +19,6 @@ export const getCachedAiExample = async (cardId) => {
       aiExampleMemCache.set(cardId, parsed);
       return parsed;
     }
-  } catch (e) {}
+  } catch {}
   return null;
 };

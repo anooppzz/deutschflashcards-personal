@@ -16,7 +16,7 @@ import PropTypes from "prop-types";
 class ErrorBoundary extends Component {
   constructor(props) {
     super(props);
-    this.state = { hasError: false };
+    this.state = { hasError: false, resetKey: props.resetKey };
   }
 
   static getDerivedStateFromError() {
@@ -28,13 +28,12 @@ class ErrorBoundary extends Component {
     console.error("[ErrorBoundary] caught an error in", this.props.label || "a mode", ":", error, info);
   }
 
-  componentDidUpdate(prevProps) {
-    // If the person switches away from the broken mode and back, or the
-    // resetKey otherwise changes, give the subtree a fresh try rather than
-    // permanently pinning it to the fallback for the rest of the session.
-    if (this.state.hasError && prevProps.resetKey !== this.props.resetKey) {
-      this.setState({ hasError: false });
-    }
+  // If the person switches away from the broken mode and back, or the
+  // resetKey otherwise changes, give the subtree a fresh try rather than
+  // permanently pinning it to the fallback for the rest of the session.
+  static getDerivedStateFromProps(props, state) {
+    if (props.resetKey !== state.resetKey) return { hasError: false, resetKey: props.resetKey };
+    return null;
   }
 
   render() {

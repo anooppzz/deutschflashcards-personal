@@ -18,7 +18,7 @@ export const addDaysStr = (dateStr, delta) => {
 };
 
 export const saveStreak = (data) => {
-  try { storage.set(STORAGE_KEYS.STREAK, JSON.stringify(data)); } catch (e) {}
+  try { storage.set(STORAGE_KEYS.STREAK, JSON.stringify(data)); } catch {}
 };
 
 // What to show right now without needing the user to act first (so a broken

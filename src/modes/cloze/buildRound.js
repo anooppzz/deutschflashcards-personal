@@ -94,7 +94,7 @@ export const buildClozeRound = (pool, progress, n) => {
 };
 
 export const saveClozeSizePref = (v) => {
-  try { storage.set(STORAGE_KEYS.CLOZE_SIZE, JSON.stringify(v)); } catch (e) {}
+  try { storage.set(STORAGE_KEYS.CLOZE_SIZE, JSON.stringify(v)); } catch {}
 };
 
 export const resolveClozeRoundSize = (pref, poolLen) => {

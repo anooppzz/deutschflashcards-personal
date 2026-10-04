@@ -17,18 +17,24 @@ function ArticleTrainer({ nouns, idx, choice, score, onChoose, onNext, totalAvai
   const [correctionText, setCorrectionText] = useState("");
   const exampleRef = useRef(null);
   const { openGrammar, linksFor } = useContext(GrammarNavCtx);
+  // the card's fields as plain values, so the effects below re-run exactly
+  // when the card changes
+  const cardDeck = card ? card.deck : null;
+  const cardFront = card ? card.front : null;
+  const cardExample = card ? card.example : null;
+  const cardEnglish = card ? card.english : null;
   useEffect(() => {
     setAiEx(null);
     setPeek(false);
     setCorrecting(false);
     setCorrectionText("");
-    if (!card || card.example) return;
+    if (!cardFront || cardExample) return;
     let cancelled = false;
-    getCachedAiExample(idOf(card.deck, card.front)).then((cached) => {
+    getCachedAiExample(idOf(cardDeck, cardFront)).then((cached) => {
       if (!cancelled && cached) setAiEx(cached);
     });
     return () => { cancelled = true; };
-  }, [card && card.deck, card && card.front, card && card.example]);
+  }, [cardDeck, cardFront, cardExample]);
   // Scroll the card's TOP edge into view once an answer is given. The
   // der/die/das buttons sit below the card, so on a scrolled-down mobile
   // view the reveal (✓/✗, the correct gender, meaning) can start above the
@@ -46,19 +52,20 @@ function ArticleTrainer({ nouns, idx, choice, score, onChoose, onNext, totalAvai
   // #1+#4: translate the noun's meaning into the selected language (used by both the post-answer reveal and the peek button)
   useEffect(() => {
     setTransMeaning(null);
-    if (!card || lang === "en" || !card.english) return;
+    if (!cardFront || lang === "en" || !cardEnglish) return;
     let cancelled = false;
-    translateText(card.english, lang, idOf(card.deck, card.front)).then((t) => { if (!cancelled) setTransMeaning(t); });
+    translateText(cardEnglish, lang, idOf(cardDeck, cardFront)).then((t) => { if (!cancelled) setTransMeaning(t); });
     return () => { cancelled = true; };
-  }, [card && card.deck, card && card.front, card && card.english, lang]);
+  }, [cardDeck, cardFront, cardEnglish, lang]);
   const shownExampleForTrans = card ? (card.example ? { de: card.example, en: card.exampleEn } : aiEx) : null;
+  const shownExampleEn = shownExampleForTrans ? shownExampleForTrans.en : null;
   useEffect(() => {
     setTransExEn(null);
-    if (!card || lang === "en" || !shownExampleForTrans || !shownExampleForTrans.en) return;
+    if (!cardFront || lang === "en" || !shownExampleEn) return;
     let cancelled = false;
-    translateText(shownExampleForTrans.en, lang, idOf(card.deck, card.front) + ":ex").then((t) => { if (!cancelled) setTransExEn(t); });
+    translateText(shownExampleEn, lang, idOf(cardDeck, cardFront) + ":ex").then((t) => { if (!cancelled) setTransExEn(t); });
     return () => { cancelled = true; };
-  }, [shownExampleForTrans && shownExampleForTrans.en, lang, card && card.deck, card && card.front]);
+  }, [shownExampleEn, lang, cardDeck, cardFront]);
 
   if (!card) {
     return (

@@ -76,13 +76,14 @@ function FlipCard({ front, sub, back, english, example, exampleEn, accent, badge
   const grammarLinks = cardId ? linksFor(cardId) : [];
 
   const shown = example ? { de: example, en: exampleEn } : ai;
+  const shownEn = shown ? shown.en : null;
   useEffect(() => {
     setTransExEn(null);
-    if (!cardId || lang === "en" || !shown || !shown.en) return;
+    if (!cardId || lang === "en" || !shownEn) return;
     let cancelled = false;
-    translateText(shown.en, lang, cardId + ":ex").then((t) => { if (!cancelled) setTransExEn(t); });
+    translateText(shownEn, lang, cardId + ":ex").then((t) => { if (!cancelled) setTransExEn(t); });
     return () => { cancelled = true; };
-  }, [shown && shown.en, lang, cardId]);
+  }, [shownEn, lang, cardId]);
 
   return (
     <div

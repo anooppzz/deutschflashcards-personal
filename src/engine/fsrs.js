@@ -115,7 +115,7 @@ export const migrateBoxEntry = (old) => {
 };
 
 export const saveProgress = (map) => {
-  try { storage.set(STORAGE_KEYS.PROGRESS, JSON.stringify(map)); } catch (e) {}
+  try { storage.set(STORAGE_KEYS.PROGRESS, JSON.stringify(map)); } catch {}
 };
 
 export const idOf = (deck, front) => `${deck}::${front}`;

@@ -13,7 +13,7 @@ export const storage = {
     try {
       const v = localStorage.getItem(key);
       return v === null ? null : { key, value: v };
-    } catch (e) {
+    } catch {
       return null; // private-browsing / storage disabled - degrade to in-memory only, same as before
     }
   },
@@ -21,12 +21,12 @@ export const storage = {
     try {
       localStorage.setItem(key, value);
       return { key, value };
-    } catch (e) {
+    } catch {
       return null;
     }
   },
   remove: async (key) => {
-    try { localStorage.removeItem(key); } catch (e) {}
+    try { localStorage.removeItem(key); } catch {}
   },
 };
 

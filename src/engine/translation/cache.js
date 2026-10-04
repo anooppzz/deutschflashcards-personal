@@ -19,11 +19,11 @@ export const getCachedTranslation = async (cacheKey, lang) => {
       translationMemCache.set(memKey, r.value);
       return r.value;
     }
-  } catch (e) {}
+  } catch {}
   return null;
 };
 
 export const setCachedTranslation = (cacheKey, lang, value) => {
   translationMemCache.set(lang + "::" + cacheKey, value);
-  try { storage.set(translationKey(cacheKey, lang), value); } catch (e) {}
+  try { storage.set(translationKey(cacheKey, lang), value); } catch {}
 };

@@ -23,7 +23,7 @@ grammar topics.
 ```bash
 npm ci          # install
 npm test        # vitest – must pass
-npm run lint    # oxlint – 57 warnings already exist; add no new ones
+npm run lint    # oxlint – 0 warnings; keep it that way
 npm run build   # dist/index.html
 npm run dev     # local dev server
 npm run ids:update  # after adding/renaming/removing cards (see rule 6b)
@@ -34,7 +34,7 @@ npm run ids:update  # after adding/renaming/removing cards (see rule 6b)
 1. **Start** by reading `docs/ACTIVITY_LOG.md`. Check `git status` and `git log -5`.
 2. **Commit straight to `main`** and push; no branches or pull requests unless the
    learner asks. Use a clear subject and a body that says what and why.
-3. **Before every push:** `npm test`, `npm run lint` (warning count unchanged),
+3. **Before every push:** `npm test`, `npm run lint` (0 warnings),
    `npm run build`. For anything visible, open the build in a browser (Playwright +
    Chromium work in this environment) at **360px and 390px** width: no table or page may
    scroll sideways.

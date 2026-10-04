@@ -12,25 +12,32 @@ function QuizTrainer({ questions, idx, choice, score, onChoose, onNext, lang = "
   const [transOptions, setTransOptions] = useState(null);
   const [transExEn, setTransExEn] = useState(null);
   const exampleRef = useRef(null);
+  // the question's fields as plain values, so the effects below re-run
+  // exactly when the question changes (options as one string: they are
+  // fixed for a question)
+  const qDeck = q ? q.deck : null;
+  const qFront = q ? q.front : null;
+  const qExample = q ? q.example : null;
+  const qOptions = q ? JSON.stringify(q.options) : "[]";
   useEffect(() => {
     setAiEx(null);
-    if (!q || q.example) return; // no question yet, or it already has a static example
+    if (!qFront || qExample) return; // no question yet, or it already has a static example
     let cancelled = false;
-    getCachedAiExample(idOf(q.deck, q.front)).then((cached) => {
+    getCachedAiExample(idOf(qDeck, qFront)).then((cached) => {
       if (!cancelled && cached) setAiEx(cached);
     });
     return () => { cancelled = true; };
-  }, [q && q.deck, q && q.front, q && q.example]);
+  }, [qDeck, qFront, qExample]);
   // #1+#4: translate the 4 answer options into the selected language, cached per option text
   useEffect(() => {
     setTransOptions(null);
-    if (!q || lang === "en") return;
+    if (!qFront || lang === "en") return;
     let cancelled = false;
-    Promise.all(q.options.map((opt) => translateText(opt, lang, idOf(q.deck, q.front) + ":opt:" + opt))).then((res) => {
+    Promise.all(JSON.parse(qOptions).map((opt) => translateText(opt, lang, idOf(qDeck, qFront) + ":opt:" + opt))).then((res) => {
       if (!cancelled) setTransOptions(res);
     });
     return () => { cancelled = true; };
-  }, [q && q.deck, q && q.front, lang]);
+  }, [qDeck, qFront, qOptions, lang]);
   // bring the example panel into view once an answer is given, so it's never hidden below the fold on mobile
   useEffect(() => {
     if (choice && exampleRef.current) {
@@ -39,13 +46,14 @@ function QuizTrainer({ questions, idx, choice, score, onChoose, onNext, lang = "
   }, [choice]);
   const shownExample = q ? (q.example ? { de: q.example, en: q.exampleEn } : aiEx) : null;
   // #1+#4: translate the example's English line too, once an answer has been given
+  const shownExampleEn = shownExample ? shownExample.en : null;
   useEffect(() => {
     setTransExEn(null);
-    if (!q || lang === "en" || !shownExample || !shownExample.en) return;
+    if (!qFront || lang === "en" || !shownExampleEn) return;
     let cancelled = false;
-    translateText(shownExample.en, lang, idOf(q.deck, q.front) + ":ex").then((t) => { if (!cancelled) setTransExEn(t); });
+    translateText(shownExampleEn, lang, idOf(qDeck, qFront) + ":ex").then((t) => { if (!cancelled) setTransExEn(t); });
     return () => { cancelled = true; };
-  }, [shownExample && shownExample.en, lang, q && q.deck, q && q.front]);
+  }, [shownExampleEn, lang, qDeck, qFront]);
 
   if (!q || questions.length < 2) {
     return (

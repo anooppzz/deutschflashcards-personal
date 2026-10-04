@@ -10,14 +10,18 @@ function ReverseTrainer({ cards, idx, input, flipped, score, onInput, onSubmit, 
   const card = cards.length ? cards[idx % cards.length] : null;
   const [transMeaning, setTransMeaning] = useState(null);
   const inputRef = useRef(null);
+  // the card's fields as plain values, so the effect re-runs exactly when the card changes
+  const cardDeck = card ? card.deck : null;
+  const cardFront = card ? card.front : null;
+  const cardEnglish = card ? card.english : null;
 
   useEffect(() => {
     setTransMeaning(null);
-    if (!card || lang === "en" || !card.english) return;
+    if (!cardFront || lang === "en" || !cardEnglish) return;
     let cancelled = false;
-    translateText(card.english, lang, idOf(card.deck, card.front)).then((t) => { if (!cancelled) setTransMeaning(t); });
+    translateText(cardEnglish, lang, idOf(cardDeck, cardFront)).then((t) => { if (!cancelled) setTransMeaning(t); });
     return () => { cancelled = true; };
-  }, [card && card.deck, card && card.front, card && card.english, lang]);
+  }, [cardDeck, cardFront, cardEnglish, lang]);
 
   useEffect(() => {
     if (!flipped && inputRef.current) inputRef.current.focus();

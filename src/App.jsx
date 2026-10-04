@@ -39,8 +39,8 @@ import {
 import {
   storage,
   idOf, saveProgress,
-  initFsrsCard, reviewFsrsCard, knownFsrsCard, reviewNowFsrsCard,
-  isKnownStability, statusOfFsrs, dueLabel, migrateBoxEntry,
+  reviewFsrsCard, knownFsrsCard, reviewNowFsrsCard,
+  isKnownStability, migrateBoxEntry,
   localDateStr, addDaysStr, saveStreak, effectiveStreakDisplay,
   weightedSample, shuffled,
   checkReverseAnswer,
@@ -79,6 +79,8 @@ const step = (setIdx, total) => (dir) => {
 };
 
 // category lists for the multi-select filters
+// Wortgitter round sizes, cycled by its round-size button
+const WS_SIZE_PRESETS = [5, 8, 10];
 const FULL_CATS = [["n", "Nomen"], ["v", "Verben"], ["adj", "Adjektive"], ["sonst", "Sonstige"]];
 const FULL_KEYS = FULL_CATS.map(([k]) => k);
 
@@ -221,9 +223,9 @@ function normalizeCard(deckKey, c) {
 
 
 // translation language + onboarding flags (engine/translation/chain.js explains the translation order)
-const saveLang = (v) => { try { storage.set(STORAGE_KEYS.LANG, JSON.stringify(v)); } catch (e) {} };
-const saveCustomLangs = (arr) => { try { storage.set(STORAGE_KEYS.CUSTOM_LANGS, JSON.stringify(arr)); } catch (e) {} };
-const saveWelcomeSeen = () => { try { storage.set(STORAGE_KEYS.WELCOME_SEEN, "1"); } catch (e) {} };
+const saveLang = (v) => { try { storage.set(STORAGE_KEYS.LANG, JSON.stringify(v)); } catch {} };
+const saveCustomLangs = (arr) => { try { storage.set(STORAGE_KEYS.CUSTOM_LANGS, JSON.stringify(arr)); } catch {} };
+const saveWelcomeSeen = () => { try { storage.set(STORAGE_KEYS.WELCOME_SEEN, "1"); } catch {} };
 
 
 /* ============================================================
@@ -325,7 +327,7 @@ function App() {
         const renamed = applyRenames(migrated, RENAMES);
         setProgress(renamed.progress);
         if (anyMigrated || renamed.changed) saveProgress(renamed.progress);
-      } catch (e) {}
+      } catch {}
     })();
   }, []);
 
@@ -343,7 +345,7 @@ function App() {
           if (typeof loaded.metToday !== "boolean") loaded.metToday = loaded.count >= loaded.goal;
           setStreakData(loaded);
         }
-      } catch (e) {}
+      } catch {}
     })();
   }, []);
   const bumpStreak = useCallback(() => {
@@ -516,7 +518,7 @@ function App() {
         if (rc && rc.value) setCustomLangs(JSON.parse(rc.value));
         const rw = await storage.get(STORAGE_KEYS.WELCOME_SEEN);
         if (!rw || !rw.value) setShowWelcome(true);
-      } catch (e) {}
+      } catch {}
     })();
   }, []);
   const addCustomLang = () => {
@@ -577,7 +579,6 @@ function App() {
   // the usable Word Search pool: every selected card with a usable grid
   // word AND an example+translation for the end-of-round reveal.
   const wsPool = useMemo(() => buildWordSearchPool(selectionCards), [selectionCards]);
-  const WS_SIZE_PRESETS = [5, 8, 10];
   const [wsSizePref, setWsSizePref] = useState("auto");
   const cycleWsSize = useCallback(() => {
     setWsSizePref((prev) => {

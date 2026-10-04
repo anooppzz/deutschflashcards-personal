@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import { GENDER_COLORS, TYPE_META } from "../../constants";
 import { DECK_META, ALL_WORDS } from "../../data";

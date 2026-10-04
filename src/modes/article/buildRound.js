@@ -51,7 +51,7 @@ export const buildArticleRoundStratified = (nouns, progress, n) => {
 
 // A14: let the person override the automatic round-size behaviour
 export const saveArticleSizePref = (v) => {
-  try { storage.set(STORAGE_KEYS.ARTICLE_SIZE, JSON.stringify(v)); } catch (e) {}
+  try { storage.set(STORAGE_KEYS.ARTICLE_SIZE, JSON.stringify(v)); } catch {}
 };
 
 export const resolveArticleRoundSize = (pref, poolLen) => {

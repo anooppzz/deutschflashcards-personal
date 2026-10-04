@@ -23,11 +23,11 @@ export const getCorrection = async (cacheKey, lang) => {
       correctionMemCache.set(memKey, r.value);
       return r.value;
     }
-  } catch (e) {}
+  } catch {}
   return null;
 };
 
 export const submitCorrection = (cacheKey, lang, correctedText) => {
   correctionMemCache.set(lang + "::" + cacheKey, correctedText);
-  try { storage.set(correctionKey(cacheKey, lang), correctedText); } catch (e) {}
+  try { storage.set(correctionKey(cacheKey, lang), correctedText); } catch {}
 };
