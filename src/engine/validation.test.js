@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { validateGermanWord, checkReverseAnswer } from "./validation";
+import { validateGermanWord, checkReverseAnswer, isArticleCorrect } from "./validation";
 
 describe("validateGermanWord", () => {
   it("ignores case, articles, umlaut spelling and the separable dot", () => {
@@ -36,5 +36,20 @@ describe("checkReverseAnswer", () => {
   });
   it("reports a wrong word before the article", () => {
     expect(checkReverseAnswer("der Rechner", "die Rechnung").reason).toBe("word");
+  });
+});
+
+describe("isArticleCorrect", () => {
+  it("checks a single-gender noun", () => {
+    expect(isArticleCorrect("die", "die")).toBe(true);
+    expect(isArticleCorrect("der", "die")).toBe(false);
+  });
+  it("accepts either article for a der/die noun", () => {
+    expect(isArticleCorrect("der", "der/die")).toBe(true);
+    expect(isArticleCorrect("die", "der/die")).toBe(true);
+    expect(isArticleCorrect("das", "der/die")).toBe(false);
+  });
+  it("is false before a choice is made", () => {
+    expect(isArticleCorrect(null, "der")).toBe(false);
   });
 });

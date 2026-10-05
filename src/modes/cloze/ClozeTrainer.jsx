@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
-import { GENDER_COLORS, TYPE_META } from "../../constants";
+import { genderColor, TYPE_META } from "../../constants";
 import { DECK_META, ALL_WORDS } from "../../data";
 import { isClozeCorrect, findAlternateWordMatch } from "./buildRound";
 import { faceStyle, badgeStyle } from "../../components/cardStyles";
@@ -33,7 +33,7 @@ function ClozeTrainer({ cards, idx, input, flipped, score, onInput, onSubmit, on
   // Doesn't affect scoring, only the explanation shown.
   const altMatch = flipped && isCorrect === false ? findAlternateWordMatch(input, ALL_WORDS) : null;
   const statusColor = isCorrect ? "#5fa85f" : isCorrect === false ? "#c6534f" : "#7d8d9c";
-  const cardAccent = card.type === "n" ? GENDER_COLORS[card.gender] : TYPE_META[card.type]?.color || "#7d8d9c";
+  const cardAccent = card.type === "n" ? genderColor(card.gender) : TYPE_META[card.type]?.color || "#7d8d9c";
   const cardBadge = `${DECK_META[card.deck]?.label || card.deck}${card.type === "n" ? " · NOMEN" : ""} · ${card.gender || ""}`.trim();
 
   return (

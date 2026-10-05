@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useContext } from "react";
-import { GENDER_COLORS } from "../../constants";
+import { genderColor } from "../../constants";
 import { DECK_META, GRAMMAR_TOPICS } from "../../data";
-import { idOf, translateText, submitCorrection, getCachedAiExample, grammarHintFor } from "../../engine";
+import { idOf, translateText, submitCorrection, getCachedAiExample, grammarHintFor, isArticleCorrect } from "../../engine";
 import { GrammarNavCtx } from "../../context/GrammarNavCtx";
 import { speak } from "../../engine/speech";
 import { faceStyle, badgeStyle, iconBtn } from "../../components/cardStyles";
@@ -76,10 +76,11 @@ function ArticleTrainer({ nouns, idx, choice, score, onChoose, onNext, totalAvai
       </div>
     );
   }
-  const word = card.front.replace(/^(der|die|das)\s+/i, "");
+  const word = card.front.replace(/^(der\/die|der|die|das)\s+/i, "");
+  const right = isArticleCorrect(choice, card.gender);
   // after a wrong answer, the tip of a rule that covers this noun (e.g.
   // -ung -> die); only topics with a hint have one
-  const tips = choice && choice !== card.gender
+  const tips = choice && !right
     ? linksFor(idOf(card.deck, card.front))
         .map((l) => ({ key: l.key, text: grammarHintFor(l, GRAMMAR_TOPICS, lang) }))
         .filter((t) => t.text)
@@ -136,12 +137,12 @@ function ArticleTrainer({ nouns, idx, choice, score, onChoose, onNext, totalAvai
             )}
           </div>
           {/* BACK */}
-          <div style={{ ...faceStyle(choice ? GENDER_COLORS[card.gender] : "#2c3a47"), transform: "rotateY(180deg)" }}>
-            <div style={{ fontSize: 34, marginBottom: 4 }}>{choice === card.gender ? "✓" : "✗"}</div>
-            <div style={{ fontSize: 15, fontWeight: 700, color: choice === card.gender ? "#5fa85f" : "#c6534f" }}>
-              {choice === card.gender ? "Richtig!" : "Nicht ganz."}
+          <div style={{ ...faceStyle(choice ? genderColor(card.gender) : "#2c3a47"), transform: "rotateY(180deg)" }}>
+            <div style={{ fontSize: 34, marginBottom: 4 }}>{right ? "✓" : "✗"}</div>
+            <div style={{ fontSize: 15, fontWeight: 700, color: right ? "#5fa85f" : "#c6534f" }}>
+              {right ? "Richtig!" : "Nicht ganz."}
             </div>
-            <div style={{ marginTop: 8, fontSize: 22, fontWeight: 800, color: GENDER_COLORS[card.gender] }}>
+            <div style={{ marginTop: 8, fontSize: 22, fontWeight: 800, color: genderColor(card.gender) }}>
               {card.gender} {word}
             </div>
             {card.english && (
@@ -208,7 +209,7 @@ function ArticleTrainer({ nouns, idx, choice, score, onChoose, onNext, totalAvai
       <div style={{ display: "flex", gap: 8, marginTop: 16 }}>
         {arts.map(([a, c]) => {
           const answered = Boolean(choice);
-          const isCorrect = a === card.gender;
+          const isCorrect = isArticleCorrect(a, card.gender);
           const isChosen = a === choice;
           let bg = "#1a232b", col = c, bd = c;
           if (answered) {

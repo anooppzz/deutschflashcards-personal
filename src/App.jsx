@@ -43,7 +43,7 @@ import {
   isKnownStability, migrateBoxEntry,
   localDateStr, addDaysStr, saveStreak, effectiveStreakDisplay,
   weightedSample, shuffled,
-  checkReverseAnswer,
+  checkReverseAnswer, isArticleCorrect,
   distinctLevels, distinctSources, passesGlobalFilters,
   buildGrammarIndex, buildGrammarSearchIndex, searchCards, searchGrammar, dueCards, applyRenames,
 } from "./engine";
@@ -657,7 +657,7 @@ function App() {
   const chooseArticle = (g) => {
     if (aChoice || !aOrder.length) return;
     const card = aOrder[aIdx % aOrder.length];
-    const correct = card.gender === g;
+    const correct = isArticleCorrect(g, card.gender);
     setAChoice(g);
     setAScore((s) => ({ right: s.right + (correct ? 1 : 0), total: s.total + 1 }));
     if (!correct) setAMistakes((m) => [...m, card]);

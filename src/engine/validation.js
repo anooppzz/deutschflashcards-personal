@@ -27,6 +27,11 @@ export const validateGermanWord = (userInput, correctWord) => {
   return userNorm.length > 0 && userNorm === normalize(correctWord);
 };
 
+// Artikel mode: is the tapped article right? A noun with two genders
+// ("der/die Angestellte") accepts either article.
+export const isArticleCorrect = (choice, gender) =>
+  Boolean(choice && gender) && gender.toLowerCase().split('/').includes(choice.toLowerCase());
+
 // Reverse mode: the word AND, for a noun shown with its article, the
 // article. { correct, reason }: reason is "word" (wrong word),
 // "missing-article" or "wrong-article"; null when correct. A noun with two

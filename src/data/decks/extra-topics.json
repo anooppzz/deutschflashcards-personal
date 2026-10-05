@@ -11161,6 +11161,417 @@
     ]
   },
   {
+    "key": "essen-mengen",
+    "icon": "🥗",
+    "label": "Essen & Mengen",
+    "note": "Essen und Getränke, Mengen",
+    "cards": [
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Alkohol",
+        "sub": "kein Plural",
+        "english": "alcohol",
+        "example": "Ich trinke keinen Alkohol.",
+        "exampleEn": "I don't drink alcohol.",
+        "note": "alkoholfrei = alcohol-free",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 12"
+      },
+      {
+        "type": "n",
+        "gender": "das",
+        "front": "das Gericht",
+        "sub": "Pl. -e · A: die Speise, -n",
+        "english": "dish (meal)",
+        "example": "Das ist ein typisches Gericht aus Bayern.",
+        "exampleEn": "That's a typical dish from Bavaria.",
+        "note": "Gericht also = court (of law)",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 12"
+      },
+      {
+        "type": "n",
+        "gender": "das",
+        "front": "das Getreide",
+        "sub": "kein Plural",
+        "english": "grain, cereal",
+        "example": "Brot macht man aus Getreide.",
+        "exampleEn": "Bread is made from grain.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 12"
+      },
+      {
+        "type": "n",
+        "gender": "das",
+        "front": "das Huhn",
+        "sub": "Pl. ¨-er · CH: das Poulet, -s",
+        "english": "chicken",
+        "example": "Meine Großeltern haben zehn Hühner.",
+        "exampleEn": "My grandparents have ten chickens.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 12"
+      },
+      {
+        "type": "n",
+        "gender": "das",
+        "front": "das Hühnerfleisch",
+        "sub": "kein Plural · CH: das Pouletfleisch",
+        "english": "chicken (meat)",
+        "example": "Hühnerfleisch esse ich am liebsten.",
+        "exampleEn": "Chicken is the meat I like best.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 12"
+      },
+      {
+        "type": "n",
+        "gender": "das",
+        "front": "das Lebensmittel",
+        "sub": "Pl. -",
+        "english": "food (item), groceries",
+        "example": "Wir kaufen die Lebensmittel im Supermarkt.",
+        "exampleEn": "We buy our groceries at the supermarket.",
+        "note": "meist Plural: die Lebensmittel",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 12"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Limonade",
+        "sub": "Pl. -n · CH: das Süssgetränk, -e",
+        "english": "lemonade, soft drink",
+        "example": "Limonade hat viel Zucker.",
+        "exampleEn": "Lemonade has a lot of sugar.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 12"
+      },
+      {
+        "type": "n",
+        "gender": "das",
+        "front": "das Mineralwasser",
+        "sub": "kein Plural",
+        "english": "mineral water",
+        "example": "Ein Mineralwasser, bitte!",
+        "exampleEn": "A mineral water, please!",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 12"
+      },
+      {
+        "type": "n",
+        "gender": "das",
+        "front": "das Rind",
+        "sub": "Pl. -er",
+        "english": "cow, cattle",
+        "example": "Auf der Wiese stehen viele Rinder.",
+        "exampleEn": "There are lots of cattle in the meadow.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 12"
+      },
+      {
+        "type": "n",
+        "gender": "das",
+        "front": "das Rindfleisch",
+        "sub": "kein Plural",
+        "english": "beef",
+        "example": "Das Gulasch ist aus Rindfleisch.",
+        "exampleEn": "The goulash is made with beef.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 12"
+      },
+      {
+        "type": "n",
+        "gender": "das",
+        "front": "das Schwein",
+        "sub": "Pl. -e",
+        "english": "pig",
+        "example": "Der Bauer hat Schweine und Kühe.",
+        "exampleEn": "The farmer has pigs and cows.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 12"
+      },
+      {
+        "type": "n",
+        "gender": "das",
+        "front": "das Schweinefleisch",
+        "sub": "kein Plural",
+        "english": "pork",
+        "example": "Er isst kein Schweinefleisch.",
+        "exampleEn": "He doesn't eat pork.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 12"
+      },
+      {
+        "type": "v",
+        "front": "braten",
+        "sub": "hat gebraten",
+        "english": "to fry, to roast",
+        "example": "Ich brate das Fleisch in der Pfanne.",
+        "exampleEn": "I'm frying the meat in the pan.",
+        "note": "du brätst, er brät · der Braten = roast",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 12"
+      },
+      {
+        "type": "adj",
+        "front": "scharf",
+        "sub": "↔ mild",
+        "english": "spicy, hot",
+        "example": "Das Curry ist mir zu scharf.",
+        "exampleEn": "The curry is too spicy for me.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 12"
+      },
+      {
+        "type": "adj",
+        "front": "vegetarisch",
+        "sub": "",
+        "english": "vegetarian",
+        "example": "Habt ihr auch etwas Vegetarisches?",
+        "exampleEn": "Do you have anything vegetarian too?",
+        "note": "der Vegetarier / die Vegetarierin = vegetarian (person)",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 12"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Hälfte",
+        "sub": "Pl. -n",
+        "english": "half",
+        "example": "Die Hälfte der Deutschen trinkt jeden Tag Kaffee.",
+        "exampleEn": "Half of Germans drink coffee every day.",
+        "note": "halb = half (adj.): ein halbes Brot",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 12"
+      },
+      {
+        "type": "adj",
+        "front": "doppelt",
+        "sub": "doppelt so viele",
+        "english": "double, twice",
+        "example": "Wir essen doppelt so viel Fleisch wie früher.",
+        "exampleEn": "We eat twice as much meat as we used to.",
+        "note": "doppelt so viel / so viele … wie",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 12",
+        "grammar": [
+          "komparativ-superlativ"
+        ]
+      },
+      {
+        "type": "adj",
+        "front": "durchschnittlich",
+        "sub": "",
+        "english": "average; on average",
+        "example": "Ein Deutscher isst durchschnittlich 60 Kilo Fleisch im Jahr.",
+        "exampleEn": "A German eats 60 kilos of meat a year on average.",
+        "note": "der Durchschnitt = the average",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 12"
+      },
+      {
+        "type": "sonst",
+        "front": "genug",
+        "sub": "",
+        "english": "enough",
+        "example": "Wir haben genug Brot für alle.",
+        "exampleEn": "We have enough bread for everyone.",
+        "note": "genug steht vor dem Nomen: genug Zeit",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 12"
+      },
+      {
+        "type": "adj",
+        "front": "häufig",
+        "sub": "↔ selten",
+        "english": "frequent; often",
+        "example": "Wir essen häufig Nudeln.",
+        "exampleEn": "We often eat pasta.",
+        "note": "häufig ≈ oft",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 12"
+      },
+      {
+        "type": "sonst",
+        "front": "kaum",
+        "sub": "",
+        "english": "hardly, barely",
+        "example": "Ich habe heute kaum etwas gegessen.",
+        "exampleEn": "I've hardly eaten anything today.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 12"
+      },
+      {
+        "type": "sonst",
+        "front": "rund",
+        "sub": "≈ ungefähr",
+        "english": "around, approximately",
+        "example": "Rund 10 Prozent der Deutschen essen kein Fleisch.",
+        "exampleEn": "Around 10 percent of Germans don't eat meat.",
+        "note": "also rund = round (shape)",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 12"
+      },
+      {
+        "type": "n",
+        "gender": "der/die",
+        "front": "der/die Deutsche",
+        "sub": "Pl. -n · ein Deutscher, eine Deutsche",
+        "english": "German (person)",
+        "example": "Viele Deutsche essen gern Brot.",
+        "exampleEn": "Many Germans like eating bread.",
+        "note": "wie ein Adjektiv: der Deutsche, ein Deutscher, die Deutschen",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 12"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Heimat",
+        "sub": "kein Plural",
+        "english": "home, homeland",
+        "example": "Was isst man in deiner Heimat?",
+        "exampleEn": "What do people eat where you come from?",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 12"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Zeitschrift",
+        "sub": "Pl. -en",
+        "english": "magazine",
+        "example": "Ich lese eine Zeitschrift über Kochen.",
+        "exampleEn": "I'm reading a magazine about cooking.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 12"
+      },
+      {
+        "type": "v",
+        "front": "an·sehen",
+        "sub": "hat angesehen",
+        "english": "to look at, to watch",
+        "example": "Wir sehen uns die Speisekarte an.",
+        "exampleEn": "We're looking at the menu.",
+        "note": "trennbar: Ich sehe mir … an · du siehst an",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 12"
+      },
+      {
+        "type": "v",
+        "front": "aus·suchen",
+        "sub": "hat ausgesucht",
+        "english": "to choose, to pick out",
+        "example": "Such dir ein Gericht aus!",
+        "exampleEn": "Pick a dish!",
+        "note": "trennbar: Ich suche mir … aus",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 12"
+      },
+      {
+        "type": "v",
+        "front": "holen",
+        "sub": "hat geholt",
+        "english": "to fetch, to get",
+        "example": "Ich hole noch schnell Brötchen.",
+        "exampleEn": "I'll just quickly go and get some rolls.",
+        "note": "abholen = to pick up (a person)",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 12"
+      },
+      {
+        "type": "v",
+        "front": "überraschen",
+        "sub": "hat überrascht",
+        "english": "to surprise",
+        "example": "Wir wollen sie mit einem Kuchen überraschen.",
+        "exampleEn": "We want to surprise her with a cake.",
+        "note": "nicht trennbar · die Überraschung = surprise",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 12"
+      },
+      {
+        "type": "v",
+        "front": "verbrauchen",
+        "sub": "hat verbraucht",
+        "english": "to consume, to use up",
+        "example": "Deutschland verbraucht viel Wasser.",
+        "exampleEn": "Germany consumes a lot of water.",
+        "note": "der Verbraucher = consumer",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 12"
+      },
+      {
+        "type": "v",
+        "front": "vor·bereiten (sich)",
+        "sub": "hat sich vorbereitet",
+        "english": "to prepare (oneself)",
+        "example": "Ich bereite mich auf die Prüfung vor.",
+        "exampleEn": "I'm preparing for the exam.",
+        "note": "sich vorbereiten auf + Akk. · etwas vorbereiten = to prepare sth.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 12"
+      },
+      {
+        "type": "v",
+        "front": "wundern (sich)",
+        "sub": "hat sich gewundert",
+        "english": "to be surprised, to wonder",
+        "example": "Ich wundere mich über den Preis.",
+        "exampleEn": "I'm surprised at the price.",
+        "note": "sich wundern über + Akk.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 12"
+      },
+      {
+        "type": "adj",
+        "front": "preiswert",
+        "sub": "↔ teuer · A/CH: günstig",
+        "english": "good value, inexpensive",
+        "example": "Das Essen in der Mensa ist preiswert.",
+        "exampleEn": "The food in the canteen is good value.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 12"
+      },
+      {
+        "type": "sonst",
+        "front": "wahrscheinlich",
+        "sub": "",
+        "english": "probably",
+        "example": "Wahrscheinlich gibt es heute Fisch.",
+        "exampleEn": "There's probably fish today.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 12"
+      },
+      {
+        "type": "sonst",
+        "front": "Komisch!",
+        "sub": "",
+        "english": "Strange! / Funny!",
+        "example": "Komisch! Der Laden ist heute zu.",
+        "exampleEn": "Strange! The shop is closed today.",
+        "note": "komisch = strange, odd (not only funny)",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 12"
+      },
+      {
+        "type": "sonst",
+        "front": "wenn …, dann …",
+        "sub": "",
+        "english": "if … then …",
+        "example": "Wenn du Hunger hast, dann iss doch etwas!",
+        "exampleEn": "If you're hungry, then eat something!",
+        "note": "wenn → Verb am Ende; dann → Verb auf Position 2",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 12",
+        "grammar": [
+          "nebensatz"
+        ]
+      }
+    ]
+  },
+  {
     "key": "persoenlich",
     "icon": "⭐",
     "label": "Meine Wörter",

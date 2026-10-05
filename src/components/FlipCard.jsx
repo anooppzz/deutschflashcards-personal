@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
-import { GENDER_COLORS, TYPE_META } from "../constants";
+import { genderColor, TYPE_META } from "../constants";
 import { DECK_META } from "../data";
 import { statusOfFsrs, dueLabel, submitCorrection, getCachedAiExample, translateText } from "../engine";
 import { speak } from "../engine/speech";
@@ -28,7 +28,7 @@ function FlipCard({ front, sub, back, english, example, exampleEn, accent, badge
   const [correctionText, setCorrectionText] = useState("");
 
   // compute accent if not provided (v1 normalized cards)
-  const computedAccent = accent || (type === "n" ? GENDER_COLORS[gender] : TYPE_META[type]?.color || "#7d8d9c");
+  const computedAccent = accent || (type === "n" ? genderColor(gender) : TYPE_META[type]?.color || "#7d8d9c");
 
   // compute badge if not provided (v1 normalized cards) - matches the format
   // used by every other FlipCard call site: "{icon} {deckLabel} · Nomen · {gender}"

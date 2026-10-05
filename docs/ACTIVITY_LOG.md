@@ -9,6 +9,10 @@ was done, newest first. Every change adds a log entry here in the same commit
 - [ ] **Old repo leftovers:** branch `claude/epic-meitner-f5b32y` in
   `anooppzz/deutschflashcards` couldn't be deleted by the agent (403). The learner can
   delete it on GitHub or leave it.
+- [ ] **Old repo touched by mistake (2026-10-05):** a session worked in the legacy
+  `anooppzz/deutschflashcards` first and merged its PR #1 there (Essen & Mengen + a der/die
+  split in its single-file app). Nothing deploys from it, so it's harmless; revert it only
+  if the learner wants the old repo back as it was.
 - [ ] Idea, not requested yet: grammar text exists only in German and English (other app
   languages fall back to English).
 - [ ] **To check on the learner's phone:** the Android back gesture inside the installed app
@@ -19,6 +23,26 @@ was done, newest first. Every change adds a log entry here in the same commit
   trainer, Reverse articles, 12 grammar topics, ✏️ Üben, data cleanup, code tidying).
 
 ## Log
+
+### 2026-10-05
+- **Chapter "Essen & Mengen"** 🥗 (`essen-mengen`, Menschen A2 · Einheit 12, Lernwortschatz
+  page): 36 cards – Essen und Getränke, Mengen, weitere wichtige Wörter, each with an example.
+  The page names no chapter title, so the label is by content. A/CH variants in `sub`
+  (*das Gericht* · A: die Speise, *das Huhn* · CH: das Poulet, *die Limonade* · CH: das
+  Süssgetränk, *preiswert* · A/CH: günstig). Reading notes: the book prints *vorbereiten
+  (sich)* without the dot – it is separable, so the card is *vor·bereiten (sich)*. No
+  duplicates: *der Braten* (Essen) is the noun, *braten* the new verb; *rund* here means
+  "around, approximately" (the shape card stays in Farben & Dinge); *wenn, dann* stay in
+  Meine Wörter and *wenn …, dann …* is the construction as a phrase card (→ Nebensätze).
+  *doppelt so viele* → Komparativ (so … wie).
+- **Artikel mode: der/die nouns can be answered.** *der/die Bekannte, Verwandte,
+  Angestellte, Erwachsene* (and now *Deutsche*) had no right answer – the tap was compared
+  with the literal "der/die" – and the question showed "der/die …", giving it away. Either
+  article now counts (`isArticleCorrect` in `engine/validation.js`, used for the buttons,
+  the ✓ and the score), the question shows the word without "der/die", and the summary
+  strips it too. `genderColor()` (constants/colors.js) gives these nouns the colour of their
+  first article in Artikel, Karten, Reverse, Lücke and the card badge (was no colour).
+  +3 tests. Checked at 360/390px: tapping der and die both say Richtig!, no sideways scroll.
 
 ### 2026-10-04
 - **Phone fixes from testing the installed app:**

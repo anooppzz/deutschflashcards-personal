@@ -3,6 +3,8 @@
 // it only needs to change in one place.
 
 export const GENDER_COLORS = { der: "#4f86c6", die: "#c6534f", das: "#c69a3b" };
+// a noun with two genders ("der/die Bekannte") takes the colour of its first one
+export const genderColor = (gender) => GENDER_COLORS[gender] || GENDER_COLORS[String(gender || "").split("/")[0]];
 
 export const TYPE_META = {
   v: { color: "#5fa85f", label: "Verb" },

@@ -4,7 +4,7 @@
 // what the filter chips filter on (word type, or the vowel group for the
 // irregular verbs), the optional banner above the card, and the card's
 // colour and badge.
-import { GENDER_COLORS, TYPE_META, GROUP_COLORS } from "../../constants";
+import { genderColor, TYPE_META, GROUP_COLORS } from "../../constants";
 import { IRREGULAR_VERBS, INSEPARABLE_VERBS, HAUSHALT, VERKEHR, KLEIDUNG, EXTRA_TOPICS, DECK_META } from "../../data";
 import { passesGlobalFilters } from "../../engine";
 
@@ -15,7 +15,7 @@ const typeCats = (cards) => {
   const present = new Set(cards.map((c) => c.type));
   return TYPE_CATS.filter(([k]) => present.has(k));
 };
-const typeAccent = (c) => (c.type === "n" ? GENDER_COLORS[c.gender] : TYPE_META[c.type].color);
+const typeAccent = (c) => (c.type === "n" ? genderColor(c.gender) : TYPE_META[c.type].color);
 const typeColor = (key) => (key === "n" ? "#4f86c6" : TYPE_META[key].color);
 const typeBadge = (icon, label) => (c) =>
   `${icon} ${label} · ${c.type === "n" ? `Nomen · ${c.gender}` : TYPE_META[c.type].label}`;

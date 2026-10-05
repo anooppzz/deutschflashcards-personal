@@ -1,4 +1,4 @@
-import { GENDER_COLORS } from "../../constants";
+import { genderColor } from "../../constants";
 
 /* A1: Artikel end-of-round summary - score + which nouns' genders were missed */
 function ArticleSummary({ score, mistakes, onRestart, onRetryMistakes }) {
@@ -16,8 +16,8 @@ function ArticleSummary({ score, mistakes, onRestart, onRetryMistakes }) {
           <div style={{ marginTop: 8, display: "flex", flexDirection: "column", gap: 6 }}>
             {mistakes.map((m, i) => (
               <div key={i} style={{ display: "flex", justifyContent: "space-between", gap: 10, padding: "8px 12px", borderRadius: 10, background: "#161d24", border: "1px solid #2c3a47" }}>
-                <span style={{ color: "#f2f5f8", fontWeight: 600, fontSize: 13 }}>{m.front.replace(/^(der|die|das)\s+/i, "")}</span>
-                <span style={{ color: GENDER_COLORS[m.gender], fontWeight: 700, fontSize: 13 }}>{m.gender}</span>
+                <span style={{ color: "#f2f5f8", fontWeight: 600, fontSize: 13 }}>{m.front.replace(/^(der\/die|der|die|das)\s+/i, "")}</span>
+                <span style={{ color: genderColor(m.gender), fontWeight: 700, fontSize: 13 }}>{m.gender}</span>
               </div>
             ))}
           </div>

@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { GENDER_COLORS, TYPE_META } from "../../constants";
+import { genderColor, TYPE_META } from "../../constants";
 import { DECK_META } from "../../data";
 import { idOf, translateText, checkReverseAnswer } from "../../engine";
 import { faceStyle, badgeStyle } from "../../components/cardStyles";
@@ -50,7 +50,7 @@ function ReverseTrainer({ cards, idx, input, flipped, score, onInput, onSubmit, 
 
   // Compute accent color based on card type/gender (like FlipCard does)
   const cardAccent = card ? (
-    card.type === "n" ? GENDER_COLORS[card.gender] : TYPE_META[card.type]?.color || "#7d8d9c"
+    card.type === "n" ? genderColor(card.gender) : TYPE_META[card.type]?.color || "#7d8d9c"
   ) : "#7d8d9c";
 
   // Card category badge (deck · type · gender) - uppercase for badge style
