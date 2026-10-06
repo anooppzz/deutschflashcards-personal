@@ -448,6 +448,22 @@ function App() {
   const [showMistakes, setShowMistakes] = useState(false);
   // 🎓 DTZ trainer (modes/exam): null = closed, else { kind: "home" | "teil" | "sim", … }
   const [dtzView, setDtzView] = useState(null);
+  // On a phone the mode tabs sit at the bottom of the first screen, so what
+  // a tap opens (a tab, 🎓 DTZ, a 🎯 plan step, a text) starts below the fold.
+  // showContent("tabs") brings the tab row to the top (skipped when it is
+  // already near the top); showContent("content") the opened view itself.
+  const tabsRef = useRef(null);
+  const contentRef = useRef(null);
+  const [scrollTarget, setScrollTarget] = useState(null); // { to, n }
+  const showContent = (to) => setScrollTarget({ to, n: Date.now() });
+  useEffect(() => {
+    if (!scrollTarget) return;
+    const el = (scrollTarget.to === "tabs" ? tabsRef : contentRef).current;
+    if (!el) return;
+    const top = el.getBoundingClientRect().top;
+    if (scrollTarget.to === "tabs" && top >= 0 && top < window.innerHeight * 0.25) return;
+    window.scrollTo({ top: Math.max(0, window.scrollY + top - 8), behavior: "smooth" });
+  }, [scrollTarget]);
   const [dtzResults, setDtzResults] = useState(() => {
     const v = readSaved(STORAGE_KEYS.DTZ_RESULTS);
     return Array.isArray(v) ? v : [];
@@ -567,6 +583,7 @@ function App() {
     setMode(grammarFrom);
     setGrammarFrom(null);
     setGrammarFocus(null);
+    showContent("tabs");
   };
 
   // #2: language toggle - EN/RU/AR, personal + persisted
@@ -890,6 +907,7 @@ function App() {
     setQuery("");
     setGrammarFocus(null);
     setTopicsOpen(false);
+    showContent("content");
   };
   const reviewing = Boolean(review) && !searching;
   const dtzOpen = Boolean(dtzView) && !searching && !reviewing;
@@ -938,6 +956,7 @@ function App() {
     setGrammarFocus(null);
     setGrammarFrom(null);
     setShowMistakes(false);
+    showContent("tabs");
   };
   const newTopics = newTopicsOf(EXTRA_TOPICS, { seen: seenNew, selected: tabs });
 
@@ -984,7 +1003,7 @@ function App() {
       detail: mistakeCount ? `${mistakeCount} ${mistakeCount === 1 ? "Eintrag" : "Einträge"} – heute einmal richtig beantworten` : "Keine offenen Fehler",
       done: mistakesOpenToday === 0,
       action: "Öffnen",
-      onStart: mistakeCount ? () => { setShowMistakes(true); setTopicsOpen(false); } : undefined,
+      onStart: mistakeCount ? () => { setShowMistakes(true); setTopicsOpen(false); showContent("content"); } : undefined,
     },
     {
       key: "grammar", icon: "✏️",
@@ -1247,7 +1266,7 @@ function App() {
         </div>
 
         <button
-          onClick={() => setTopicsOpen(false)}
+          onClick={() => { setTopicsOpen(false); showContent("tabs"); }}
           style={{ display: "block", margin: "0 auto 14px", padding: "7px 18px", borderRadius: 10, border: "none", background: "#e0833b", color: "#0e1419", fontSize: 13, fontWeight: 700, cursor: "pointer" }}
         >✓ Fertig</button>
         </>
@@ -1313,7 +1332,7 @@ function App() {
         {/* Ten tabs in two even rows of five, the same on every screen
             (the column is at most 480px, too narrow for ten in a row):
             every button is icon over label, counts are corner badges. */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(5, minmax(0, 1fr))", gap: "10px 5px", marginTop: 8, marginBottom: 14 }}>
+        <div ref={tabsRef} style={{ display: "grid", gridTemplateColumns: "repeat(5, minmax(0, 1fr))", gap: "10px 5px", marginTop: 8, marginBottom: 14 }}>
           {MODE_TABS({
             article: articleNouns.length, cloze: clozePool.length, wordsearch: wsPool.length,
             forms: formsPools.perfekt.length + formsPools.plural.length, satzbau: satzbauPool.length, reading: readingTexts.length,
@@ -1322,7 +1341,7 @@ function App() {
             return (
               <button
                 key={tab.mode}
-                onClick={() => { setMode(tab.mode); setGrammarFocus(null); setGrammarFrom(null); setQuery(""); setReview(null); setShowMistakes(false); setDtzView(null); }}
+                onClick={() => { setMode(tab.mode); setGrammarFocus(null); setGrammarFrom(null); setQuery(""); setReview(null); setShowMistakes(false); setDtzView(null); showContent("tabs"); }}
                 aria-pressed={active}
                 aria-label={tab.count !== undefined ? `${tab.label} (${tab.count})` : tab.label}
                 style={{
@@ -1349,7 +1368,7 @@ function App() {
         {/* 🎓 DTZ - exam practice, independent of the selected topics */}
         {!overlay && (
           <button
-            onClick={() => { setDtzView({ kind: "home" }); setTopicsOpen(false); window.scrollTo(0, 0); }}
+            onClick={() => { setDtzView({ kind: "home" }); setTopicsOpen(false); showContent("content"); }}
             style={{
               display: "flex", width: "100%", alignItems: "center", justifyContent: "space-between", gap: 10, marginTop: -4, marginBottom: 14,
               padding: "10px 14px", borderRadius: 12, border: "1px solid #3a5670", background: "rgba(143,184,216,.08)",
@@ -1374,6 +1393,7 @@ function App() {
           <RoundSizeSelector onCycle={cycleWsSize} label={articleSizeLabel(wsSizePref)} />
         )}
 
+        <div ref={contentRef} />
         <ErrorBoundary resetKey={mode} label={mode}>
         {searching ? (
           <SearchResults
@@ -1388,7 +1408,7 @@ function App() {
           <DtzTrainer
             sets={DTZ_SETS}
             view={dtzView}
-            setView={(v) => { setDtzView(v); window.scrollTo(0, 0); }}
+            setView={(v) => { setDtzView(v); showContent("content"); }}
             results={dtzResults}
             onResult={saveDtzResult}
             onClose={() => setDtzView(null)}
@@ -1556,7 +1576,7 @@ function App() {
             texts={readingTexts}
             allTexts={READING_TEXTS}
             openKey={readingKey}
-            onOpen={(key) => { setReadingKey(key); window.scrollTo(0, 0); }}
+            onOpen={(key) => { setReadingKey(key); showContent("content"); }}
             lang={lang}
             scores={readingScores}
             onScore={saveReadingScore}

@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, Fragment } from "react";
 import PropTypes from "prop-types";
-import { speakLines, stopSpeaking } from "../../engine/speech";
+import { stopSpeaking, pauseSpeaking } from "../../engine/speech";
+import { AudioControls } from "../../components";
 import { PARTS, A2_FROM, B1_FROM, itemsOf, itemsOfPart, choicesFor, scoreItems, levelFor, range, formatClock } from "./dtz";
 
 // 🎓 DTZ trainer (format: docs/DTZ_FORMAT.md). Three ways in:
@@ -35,25 +36,12 @@ const choiceBtn = (state, picked) => ({
 
 // ---- small pieces ----
 
+// a Hören text; once (simulation): it can be paused, but after it ends or is stopped it can't be played again
 function AudioButton({ lines, once, played, onPlayed }) {
-  const [playing, setPlaying] = useState(false);
-  const [err, setErr] = useState(false);
-  useEffect(() => () => stopSpeaking(), []);
   const used = once && played;
-  const play = () => {
-    if (playing) { stopSpeaking(); setPlaying(false); return; }
-    if (used) return;
-    setErr(false);
-    setPlaying(true);
-    if (onPlayed) onPlayed();
-    speakLines(lines, { onEnd: () => setPlaying(false), onErr: () => { setPlaying(false); setErr(true); } });
-  };
   return (
     <div style={{ margin: "6px 0 10px" }}>
-      <button type="button" onClick={play} disabled={used && !playing} style={{ ...smallBtn, borderColor: playing ? ACCENT : "#2c3a47", color: used && !playing ? "#5a6b78" : playing ? ACCENT : "#cdd8e2" }}>
-        {playing ? "⏹ Stopp" : used ? "✓ gehört (nur einmal)" : once ? "▶ Anhören (nur einmal)" : "▶ Anhören"}
-      </button>
-      {err && <div style={{ marginTop: 6, fontSize: 11, color: "#c6925a" }}>🔇 Kein Ton – deutsche Stimme in den Handy-Einstellungen prüfen.</div>}
+      <AudioControls lines={lines} label={used ? "✓ gehört (nur einmal)" : once ? "▶ Anhören (nur einmal)" : "▶ Anhören"} disabled={used} onStart={onPlayed} />
     </div>
   );
 }
@@ -191,7 +179,7 @@ function TeilBlock({ part, teil, answers, onPick, reveal, once, played, onPlayed
 
 // ---- practice one Teil ----
 
-function TeilPractice({ set, part, teilIndex, onDone }) {
+function TeilPractice({ set, part, teilIndex, onDone, toTop }) {
   const teil = set[part][teilIndex];
   const items = itemsOf(teil);
   const [answers, setAnswers] = useState({});
@@ -208,7 +196,7 @@ function TeilPractice({ set, part, teilIndex, onDone }) {
       {reveal ? (
         <div role="status" style={{ ...card, textAlign: "center" }}>
           <div style={{ fontSize: 18, fontWeight: 800, color: result.right === result.total ? GREEN : "#f2f5f8" }}>{result.right} / {result.total} richtig</div>
-          <button type="button" onClick={() => { setAnswers({}); setReveal(false); window.scrollTo(0, 0); }} style={{ ...smallBtn, marginTop: 8 }}>↻ Nochmal</button>
+          <button type="button" onClick={() => { setAnswers({}); setReveal(false); toTop(); }} style={{ ...smallBtn, marginTop: 8 }}>↻ Nochmal</button>
         </div>
       ) : (
         <button type="button" onClick={check} style={{ ...bigBtn(true), textAlign: "center", fontWeight: 800 }}>
@@ -221,11 +209,12 @@ function TeilPractice({ set, part, teilIndex, onDone }) {
 
 // ---- simulation ----
 
-function Simulation({ set, parts, onFinish }) {
+function Simulation({ set, parts, onFinish, toTop }) {
   const [step, setStep] = useState(0); // index into parts; parts.length = finished
   const [answers, setAnswers] = useState({});
   const [played, setPlayed] = useState(() => new Set());
   const [left, setLeft] = useState(set.times[parts[0]] * 60);
+  const [paused, setPaused] = useState(false); // ⏸: the clock stops and any text being read pauses
   const finishedRef = useRef(false);
   const part = parts[step];
   const pick = (n, key) => setAnswers((a) => ({ ...a, [n]: key }));
@@ -245,12 +234,12 @@ function Simulation({ set, parts, onFinish }) {
     if (step + 1 >= parts.length) { finish(answers); return; }
     setStep(step + 1);
     setLeft(set.times[parts[step + 1]] * 60);
-    window.scrollTo(0, 0);
+    toTop();
   };
 
   // the clock; at 0 the part ends on its own
   useEffect(() => {
-    if (step >= parts.length) return undefined;
+    if (step >= parts.length || paused) return undefined;
     const end = Date.now() + left * 1000;
     const t = setInterval(() => {
       const s = (end - Date.now()) / 1000;
@@ -258,7 +247,7 @@ function Simulation({ set, parts, onFinish }) {
       if (s <= 0) clearInterval(t);
     }, 1000);
     return () => clearInterval(t);
-  }, [step]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [step, paused]); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => { if (step < parts.length && left <= 0) next(); }, [left]); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (step >= parts.length) {
@@ -270,15 +259,28 @@ function Simulation({ set, parts, onFinish }) {
     <div>
       <div style={{ position: "sticky", top: 0, zIndex: 3, display: "flex", justifyContent: "space-between", alignItems: "center", gap: 8, padding: "8px 12px", marginBottom: 10, borderRadius: 12, background: "#1a232b", border: `1px solid ${left < 300 ? RED : "#2c3a47"}` }}>
         <span style={{ fontWeight: 800, color: "#f2f5f8" }}>{PARTS[part]} · {answered}/{items.length}</span>
-        <span aria-live="off" style={{ fontWeight: 800, fontVariantNumeric: "tabular-nums", color: left < 300 ? RED : ACCENT }}>⏱ {formatClock(left)}</span>
+        <span style={{ display: "flex", alignItems: "center", gap: 8 }}>
+          <span aria-live="off" style={{ fontWeight: 800, fontVariantNumeric: "tabular-nums", color: left < 300 ? RED : ACCENT }}>⏱ {formatClock(left)}</span>
+          <button type="button" aria-label={paused ? "Weiter" : "Pause"} onClick={() => { if (!paused) pauseSpeaking(); setPaused(!paused); }} style={{ ...smallBtn, padding: "4px 10px" }}>{paused ? "▶" : "⏸"}</button>
+        </span>
       </div>
-      {part === "hoeren" && <p style={instr}>Wie in der Prüfung: Jeder Hörtext läuft nur einmal. Lesen Sie zuerst die Aufgaben.</p>}
-      {set[part].map((teil) => (
-        <TeilBlock key={teil.teil} part={part} teil={teil} answers={answers} onPick={pick} reveal={false} once={part === "hoeren"} played={played} onPlayed={(k) => setPlayed((p) => new Set(p).add(k))} />
-      ))}
-      <button type="button" onClick={next} style={{ ...bigBtn(true), textAlign: "center", fontWeight: 800 }}>
-        {step + 1 < parts.length ? `Weiter zu ${PARTS[parts[step + 1]]} →` : "✓ Abgeben und auswerten"}
-      </button>
+      {paused && (
+        <div role="status" style={{ ...card, textAlign: "center" }}>
+          <div style={{ fontSize: 16, fontWeight: 800, color: "#f2f5f8" }}>⏸ Pause</div>
+          <p style={{ ...instr, margin: "6px 0 10px" }}>Die Zeit steht. Ein Hörtext, der gerade lief, ist auch pausiert: Mit „▶ Weiter“ beim Text geht er an derselben Stelle weiter.</p>
+          <button type="button" onClick={() => setPaused(false)} style={{ ...bigBtn(true), textAlign: "center", fontWeight: 800, marginBottom: 0 }}>▶ Weiter</button>
+        </div>
+      )}
+      {/* hidden, not removed, while paused: a paused Hörtext keeps its place */}
+      <div style={{ display: paused ? "none" : "block" }}>
+        {part === "hoeren" && <p style={instr}>Wie in der Prüfung: Jeder Hörtext läuft nur einmal. Lesen Sie zuerst die Aufgaben.</p>}
+        {set[part].map((teil) => (
+          <TeilBlock key={teil.teil} part={part} teil={teil} answers={answers} onPick={pick} reveal={false} once={part === "hoeren"} played={played} onPlayed={(k) => setPlayed((p) => new Set(p).add(k))} />
+        ))}
+        <button type="button" onClick={next} style={{ ...bigBtn(true), textAlign: "center", fontWeight: 800 }}>
+          {step + 1 < parts.length ? `Weiter zu ${PARTS[parts[step + 1]]} →` : "✓ Abgeben und auswerten"}
+        </button>
+      </div>
     </div>
   );
 }
@@ -373,11 +375,13 @@ function Home({ set, results, setView }) {
 
 function DtzTrainer({ sets, view, setView, results, onResult, onClose }) {
   const set = sets[0];
+  const root = useRef(null);
+  const toTop = () => { if (root.current) root.current.scrollIntoView({ behavior: "smooth", block: "start" }); };
   const title = view.kind === "home" ? "🎓 DTZ-Training"
     : view.kind === "teil" ? `🎓 ${PARTS[view.part]} · Teil ${set[view.part][view.teil].teil}`
     : `🎓 Simulation · ${view.parts.map((p) => PARTS[p]).join(" + ")}`;
   return (
-    <div>
+    <div ref={root} style={{ scrollMarginTop: 8 }}>
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 10, marginBottom: 12 }}>
         <h2 style={{ margin: 0, fontSize: 18, color: "#f2f5f8" }}>{title}</h2>
         {view.kind === "home" ? (
@@ -387,9 +391,9 @@ function DtzTrainer({ sets, view, setView, results, onResult, onClose }) {
         )}
       </div>
       {view.kind === "home" && <Home set={set} results={results} setView={setView} />}
-      {view.kind === "teil" && <TeilPractice key={`${view.part}${view.teil}`} set={set} part={view.part} teilIndex={view.teil} onDone={onResult} />}
+      {view.kind === "teil" && <TeilPractice key={`${view.part}${view.teil}`} set={set} part={view.part} teilIndex={view.teil} onDone={onResult} toTop={toTop} />}
       {view.kind === "sim" && (
-        <Simulation key={view.parts.join("+")} set={set} parts={view.parts} onFinish={(r) => { onResult(r); setView({ ...view, done: true }); }} />
+        <Simulation key={view.parts.join("+")} set={set} parts={view.parts} onFinish={(r) => { onResult(r); setView({ ...view, done: true }); }} toTop={toTop} />
       )}
     </div>
   );
@@ -404,8 +408,8 @@ TeilBlock.propTypes = {
   part: PropTypes.string.isRequired, teil: PropTypes.object.isRequired, answers: PropTypes.object.isRequired, onPick: PropTypes.func.isRequired,
   reveal: PropTypes.bool, once: PropTypes.bool, played: PropTypes.instanceOf(Set), onPlayed: PropTypes.func,
 };
-TeilPractice.propTypes = { set: PropTypes.object.isRequired, part: PropTypes.string.isRequired, teilIndex: PropTypes.number.isRequired, onDone: PropTypes.func.isRequired };
-Simulation.propTypes = { set: PropTypes.object.isRequired, parts: PropTypes.arrayOf(PropTypes.string).isRequired, onFinish: PropTypes.func.isRequired };
+TeilPractice.propTypes = { set: PropTypes.object.isRequired, part: PropTypes.string.isRequired, teilIndex: PropTypes.number.isRequired, onDone: PropTypes.func.isRequired, toTop: PropTypes.func.isRequired };
+Simulation.propTypes = { set: PropTypes.object.isRequired, parts: PropTypes.arrayOf(PropTypes.string).isRequired, onFinish: PropTypes.func.isRequired, toTop: PropTypes.func.isRequired };
 SimResult.propTypes = { set: PropTypes.object.isRequired, parts: PropTypes.arrayOf(PropTypes.string).isRequired, answers: PropTypes.object.isRequired };
 Home.propTypes = { set: PropTypes.object.isRequired, results: PropTypes.array.isRequired, setView: PropTypes.func.isRequired };
 DtzTrainer.propTypes = {

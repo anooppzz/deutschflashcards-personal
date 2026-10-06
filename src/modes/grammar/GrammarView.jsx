@@ -7,6 +7,7 @@ import { idOf } from "../../engine";
 import { speak } from "../../engine/speech";
 import { iconBtn } from "../../components/cardStyles";
 import FlipCard from "../../components/FlipCard";
+import Reveal from "../../components/Reveal";
 import LookupLinks from "../../components/LookupLinks";
 import { topicLinks, topicQuestion } from "../../engine/lookup";
 import TopicBody from "./GrammarSections";
@@ -123,7 +124,7 @@ function GrammarTopicCard({ topic, words = [], lang, open, onToggle, exercises =
                         <div style={{ fontSize: 11, color: "#7d8d9c", marginTop: 1 }}>{w.english}</div>
                       </button>
                       {card && (
-                        <div style={{ gridColumn: "1 / -1", margin: "2px 0 8px" }}>
+                        <Reveal style={{ gridColumn: "1 / -1", margin: "2px 0 8px" }}>
                           <FlipCard
                             front={card.front}
                             sub={card.sub}
@@ -144,7 +145,7 @@ function GrammarTopicCard({ topic, words = [], lang, open, onToggle, exercises =
                               {meta.icon} {meta.label} öffnen →
                             </button>
                           )}
-                        </div>
+                        </Reveal>
                       )}
                     </Fragment>
                   );

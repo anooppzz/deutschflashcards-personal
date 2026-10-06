@@ -36,6 +36,9 @@ was done, newest first. Every change adds a log entry here in the same commit
   Frag Gemini" links next to "Frag Claude".
 - [ ] Sprechen with Google speech recognition: learner OK'd it; show the privacy notes
   (audio goes to Google; not a pronunciation grade) in the app when it is built.
+- [ ] **To check on the learner's phone:** ⏸ Pause / ▶ Weiter in 🎓 DTZ Hören and 📰 Lesen
+  Vorlesen with the phone's German voice (tested with a simulated voice in headless Chrome),
+  and that the page now scrolls to what a tab or button opens.
 - [ ] **To check on the learner's phone:** the "📲 App installieren" button (Android/Chrome) –
   headless Chrome never offers installation, so it is untested.
 - The audit of 2026-10-01 is fully done (search, backup + PWA, Heute fällig, Formen
@@ -44,6 +47,27 @@ was done, newest first. Every change adds a log entry here in the same commit
 ## Log
 
 ### 2026-10-06
+- **⏸ Pause for audio + scrolling to what opens** (learner: no pause, Stopp starts over; on the
+  phone a tapped tab or section opens below the screen).
+  - **Audio:** 🎓 DTZ Hören and 📰 Lesen Vorlesen get ▶ / ⏸ Pause / ▶ Weiter / ⏹ Stopp and
+    "Satz 3/8" (`components/AudioControls.jsx`). `engine/speech.js` `createPlayer` speaks one
+    sentence at a time (`sentencesOf` keeps "1. Juni", "Dr. …", "z. B." together), so Weiter
+    repeats the cut-off sentence and goes on – Android's own speechSynthesis.pause() is
+    unreliable. Speech cut off by the phone (a call) becomes a pause. In a simulation a text
+    may be paused; after it ends or is stopped it still counts as heard once. Single-word 🔊
+    buttons are unchanged; tapping one pauses a text being read, which keeps its place.
+  - **DTZ simulation ⏸** in the timer bar: the clock stops, a running Hörtext pauses, the tasks
+    are hidden (not removed, so the paused text keeps its place) until "▶ Weiter".
+  - **Scrolling:** the ten mode tabs sit at the bottom of a phone's first screen. Tapping a tab,
+    "✓ Fertig" under 📚 Themen, a chapter's "Öffnen →" or "← Zurück" from Grammatik now brings
+    the tab row to the top (not when it already is); 🎓 DTZ, a 🎯 plan step (Wiederholen, Neue
+    Wörter, Fehlerheft), a 📰 text and DTZ views/"Nochmal"/next part scroll to the view itself
+    (before, `scrollTo(0, 0)` showed the app header instead). A word's card that opens under a
+    tapped word (📰 Lesen, Grammatik words, search, Fehlerheft) scrolls into view if it's
+    off-screen (`components/Reveal.jsx`).
+  - Tested at 360/390px with a simulated voice: pause → Satz 3/5 → Weiter repeats sentence 3;
+    Stopp starts over; simulation clock frozen while paused and running after; tab/DTZ/text
+    land at the top; no sideways scroll, no errors. `engine/speech.test.js` (10 tests).
 - **🎓 DTZ-Prüfungstraining, step 1: Hören + Lesen.** The learner's exam is the DTZ (integration
   course). Read the official sources once the learner allowed www.bamf.de, www.gast.de,
   www.klett-sprachen.de and www.telc.net in the environment (`curl` works; WebFetch still

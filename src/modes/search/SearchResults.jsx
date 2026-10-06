@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { FlipCard, NoResults } from "../../components";
+import { FlipCard, NoResults, Reveal } from "../../components";
 import { GENDER_COLORS } from "../../constants";
 import { DECK_META } from "../../data";
 import { idOf, matchRanges, MIN_QUERY } from "../../engine";
@@ -114,7 +114,7 @@ function SearchResults({ query, cards, topics, lang, onOpenTopic, onOpenChapter 
                   {meta && <span style={chipStyle}>{meta.icon} {meta.label}</span>}
                 </button>
                 {isOpen && (
-                  <div style={{ margin: "4px 0 14px" }}>
+                  <Reveal style={{ margin: "4px 0 14px" }}>
                     <FlipCard
                       front={card.front}
                       sub={card.sub}
@@ -135,7 +135,7 @@ function SearchResults({ query, cards, topics, lang, onOpenTopic, onOpenChapter 
                         {meta.icon} {meta.label} öffnen →
                       </button>
                     )}
-                  </div>
+                  </Reveal>
                 )}
               </div>
             );

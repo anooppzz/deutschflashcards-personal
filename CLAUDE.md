@@ -107,6 +107,11 @@ src/modes/                 one folder per study mode (cards, article, quiz, reve
                            learner types it (validation.js isDictatable/checkDictation)
 src/components/FlipCard.jsx  the card (front/back, note, 📖 grammar chips)
 src/components/Swipeable.jsx  swipe left/right on a card = next/previous
+src/components/AudioControls.jsx  ▶ / ⏸ Pause / ▶ Weiter / ⏹ Stopp for longer texts (DTZ Hören,
+                           Lesen Vorlesen); engine/speech.js createPlayer speaks sentence by
+                           sentence, so Pause resumes at the cut-off sentence
+src/components/Reveal.jsx  wrap anything that opens below a tap (a word's card): scrolls it
+                           on screen. App.jsx showContent() does the same for tabs/views
 src/components/LookupLinks.jsx  🔎 Nachschlagen (Duden, DWDS, Verbformen, Reverso, Leo,
                            Google) + 🤖 Frag Claude under a flipped card and a grammar
                            topic; URLs and questions in engine/lookup.js. Free: only

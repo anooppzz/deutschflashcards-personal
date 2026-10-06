@@ -1,9 +1,8 @@
 import { useState, useEffect, useMemo, Fragment } from "react";
 import PropTypes from "prop-types";
-import { FlipCard } from "../../components";
+import { FlipCard, AudioControls, Reveal } from "../../components";
 import { DECK_META, ALL_CARDS } from "../../data";
 import { idOf, parseParagraph, plainParagraph, indexCardsByFront, resolveLink } from "../../engine";
-import { speak, stopSpeaking } from "../../engine/speech";
 
 // 📰 Lesen: a short A2 text per chapter (engine/reading.js). Underlined
 // words open their card under the paragraph; 🔊 reads the text aloud;
@@ -75,17 +74,10 @@ function Questions({ text, best, onScore }) {
 
 function TextView({ text, lang, best, onScore, onBack, onOpenChapter }) {
   const [showEn, setShowEn] = useState(false);
-  const [reading, setReading] = useState(false);
   const [open, setOpen] = useState(null); // "paragraph:segment" of the opened word
   const paragraphs = useMemo(() => text.paragraphs.map(parseParagraph), [text]);
   const meta = DECK_META[text.deck];
-  useEffect(() => () => stopSpeaking(), []);
-
-  const readAloud = () => {
-    if (reading) { stopSpeaking(); setReading(false); return; }
-    setReading(true);
-    speak(text.paragraphs.map(plainParagraph).join(" "), () => setReading(false), 0.9, () => setReading(false));
-  };
+  const lines = useMemo(() => text.paragraphs.map((p) => ({ text: plainParagraph(p) })), [text]);
 
   return (
     <div>
@@ -93,7 +85,7 @@ function TextView({ text, lang, best, onScore, onBack, onOpenChapter }) {
       {meta && <div style={{ fontSize: 12, color: "#8fb8d8" }}>{meta.icon} {meta.label} · {text.level}</div>}
       <h2 style={{ margin: "4px 0 10px", fontSize: 20, color: "#f2f5f8" }}>{text.title}</h2>
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 12 }}>
-        <button type="button" aria-pressed={reading} onClick={readAloud} style={toggle(reading)}>{reading ? "⏹ Stopp" : "🔊 Vorlesen"}</button>
+        <AudioControls lines={lines} label="🔊 Vorlesen" rate={0.9} />
         <button type="button" aria-pressed={showEn} onClick={() => setShowEn((v) => !v)} style={toggle(showEn)}>🇬🇧 Übersetzung</button>
       </div>
       <div style={{ fontSize: 11, color: "#7d8d9c", marginBottom: 10 }}>Tippe auf ein unterstrichenes Wort, um seine Karte zu sehen.</div>
@@ -118,7 +110,7 @@ function TextView({ text, lang, best, onScore, onBack, onOpenChapter }) {
             {showEn && <p style={{ margin: "0 0 14px", fontSize: 13, lineHeight: 1.5, color: "#7d8d9c", fontStyle: "italic" }}>{text.en[pi]}</p>}
             {!showEn && <div style={{ height: 8 }} />}
             {card && (
-              <div style={{ margin: "0 0 14px" }}>
+              <Reveal style={{ margin: "0 0 14px" }}>
                 <FlipCard
                   front={card.front} sub={card.sub} english={card.english} example={card.example} exampleEn={card.exampleEn}
                   type={card.type} gender={card.gender} deck={card.deck} cardId={idOf(card.deck, card.front)}
@@ -129,7 +121,7 @@ function TextView({ text, lang, best, onScore, onBack, onOpenChapter }) {
                     {cardMeta.icon} {cardMeta.label} öffnen →
                   </button>
                 )}
-              </div>
+              </Reveal>
             )}
           </Fragment>
         );

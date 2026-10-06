@@ -1,6 +1,6 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-import { FlipCard } from "../../components";
+import { FlipCard, Reveal } from "../../components";
 import { DECK_META } from "../../data";
 import { CLEAR_AFTER_DAYS } from "../../engine";
 import GrammarExercises from "../grammar/GrammarExercises";
@@ -70,7 +70,7 @@ function MistakeBook({ words, grammar, lang, onPracticeWords, onGrammarAnswer, o
                   <Tally wrong={wrong} rightDays={rightDays} />
                 </button>
                 {isOpen && (
-                  <div style={{ margin: "4px 0 14px" }}>
+                  <Reveal style={{ margin: "4px 0 14px" }}>
                     <FlipCard
                       front={card.front}
                       sub={card.sub}
@@ -91,7 +91,7 @@ function MistakeBook({ words, grammar, lang, onPracticeWords, onGrammarAnswer, o
                         {meta.icon} {meta.label} öffnen →
                       </button>
                     )}
-                  </div>
+                  </Reveal>
                 )}
               </div>
             );

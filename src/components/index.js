@@ -17,3 +17,5 @@ export { WelcomeModal, HelpModal } from "./HelpModals";
 export { default as Swipeable } from "./Swipeable";
 export { default as DailyPlan } from "./DailyPlan";
 export { default as LookupLinks } from "./LookupLinks";
+export { default as AudioControls } from "./AudioControls";
+export { default as Reveal } from "./Reveal";
