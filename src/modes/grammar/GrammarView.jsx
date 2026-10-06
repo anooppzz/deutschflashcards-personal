@@ -43,7 +43,7 @@ const cardOf = (w) => (w.decks || []).map((d) => CARD_BY_ID.get(idOf(d, w.front)
 // exercises: this topic's ✏️ Üben questions; best: best score so far
 // A tapped word opens its full card right below it (flip, audio, ✓ Gekonnt),
 // with a link to its chapter (onOpenChapter).
-function GrammarTopicCard({ topic, words = [], lang, open, onToggle, exercises = [], best, onScore, onAnswer, onOpenChapter }) {
+function GrammarTopicCard({ topic, words = [], lang, open, onToggle, exercises = [], best, due, onScore, onAnswer, onOpenChapter }) {
   const [audioErr, setAudioErr] = useState(false);
   const [showAllWords, setShowAllWords] = useState(false);
   const [openWord, setOpenWord] = useState(null); // front of the opened word
@@ -68,6 +68,7 @@ function GrammarTopicCard({ topic, words = [], lang, open, onToggle, exercises =
           <span style={{ fontSize: 14, fontWeight: 700, color: "#f2f5f8" }}>{title}</span>
         </span>
         <span style={{ display: "flex", alignItems: "center", gap: 8, flexShrink: 0 }}>
+          {due && <span title="Heute wiederholen" style={{ fontSize: 11, fontWeight: 700, color: "#e0833b" }}>📅 fällig</span>}
           {best != null && (
             <span title="Bestes Übungsergebnis" style={{ fontSize: 11, color: best === exercises.length ? "#5fa85f" : "#9ab0c2" }}>✏️ {best}/{exercises.length}</span>
           )}
@@ -199,6 +200,7 @@ GrammarTopicCard.propTypes = {
   onToggle: PropTypes.func.isRequired,
   exercises: PropTypes.array,
   best: PropTypes.number,
+  due: PropTypes.bool,
   onScore: PropTypes.func,
   onAnswer: PropTypes.func,
   onOpenChapter: PropTypes.func,
@@ -214,7 +216,9 @@ const readScores = () => {
 // same chip twice still re-focuses. onBack: return to where the chip was.
 // onOpenChapter(deck, front): show a word's card in its chapter.
 // onExerciseAnswer(topicKey, item, correct): every ✏️ Üben answer (Fehlerheft).
-function GrammarView({ topics, words = {}, lang = "en", focus, onBack, onOpenChapter, onExerciseAnswer }) {
+// dueKeys: topics whose review is due (engine/grammarReview.js);
+// onExerciseDone(topicKey, right, total): a finished ✏️ Üben round.
+function GrammarView({ topics, words = {}, lang = "en", focus, onBack, onOpenChapter, onExerciseAnswer, dueKeys = [], onExerciseDone }) {
   const [openKey, setOpenKey] = useState(focus ? focus.key : null);
   const [scores, setScores] = useState(readScores);
   const saveScore = (key, score) => {
@@ -256,6 +260,7 @@ function GrammarView({ topics, words = {}, lang = "en", focus, onBack, onOpenCha
       )}
       <div style={{ background: "#16202a", borderRadius: 12, padding: "10px 16px", marginBottom: 16, fontSize: 12, color: "#8fb8d8", textAlign: "center" }}>
         📖 Grammatik-Referenz · {topics.length} Themen · Tippe zum Aufklappen
+        {dueKeys.length > 0 && <span style={{ color: "#e0833b", fontWeight: 700 }}> · 📅 {dueKeys.length} heute fällig</span>}
       </div>
       {topics.map((topic, i) => {
         // topics are ordered by group; a heading starts each group
@@ -277,7 +282,8 @@ function GrammarView({ topics, words = {}, lang = "en", focus, onBack, onOpenCha
               onToggle={() => toggle(topic.key)}
               exercises={GRAMMAR_EXERCISES[topic.key]}
               best={scores[topic.key]}
-              onScore={(score) => saveScore(topic.key, score)}
+              due={dueKeys.includes(topic.key)}
+              onScore={(score) => { saveScore(topic.key, score); if (onExerciseDone) onExerciseDone(topic.key, score, (GRAMMAR_EXERCISES[topic.key] || []).length); }}
               onOpenChapter={onOpenChapter}
               onAnswer={onExerciseAnswer ? (item, correct) => onExerciseAnswer(topic.key, item, correct) : undefined}
             />
@@ -296,6 +302,8 @@ GrammarView.propTypes = {
   onBack: PropTypes.func,
   onOpenChapter: PropTypes.func,
   onExerciseAnswer: PropTypes.func,
+  dueKeys: PropTypes.arrayOf(PropTypes.string),
+  onExerciseDone: PropTypes.func,
 };
 
 export default GrammarView;

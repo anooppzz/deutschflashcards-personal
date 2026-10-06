@@ -1,0 +1,1180 @@
+[
+ {
+  "key": "begruessung",
+  "level": "A2",
+  "deck": "begruessung",
+  "title": "Neu im Deutschkurs",
+  "paragraphs": [
+   "[[Guten Morgen]]! [[Mein Name ist|Mein Name ist …]] Lena Brandt. Brandt ist mein [[Familienname|der Familienname]], Lena ist mein [[Vorname|der Vorname]]. Ich [[komme aus|kommen aus …]] [[Österreich]], aus Graz. Jetzt wohne ich in [[Deutschland]], in München.",
+   "Im Deutschkurs sitze ich neben Herrn Silva. [[Woher|Woher …?]] kommt er? Er kommt aus Brasilien. „[[Wie geht's?]]“, fragt er. „[[Sehr gut|sehr gut]], [[danke]]! [[Und|und]] Ihnen?“ – „[[Es geht|es geht]]. Ich bin ein bisschen müde.“",
+   "Die Lehrerin heißt Frau Novak. Ihren Namen muss sie oft [[buchstabieren]]: N-O-V-A-K. Nach dem Kurs sage ich zu ihr: „[[Auf Wiedersehen]]!“ Und zu meinen Freunden sage ich: „[[Tschüs]]!“"
+  ],
+  "en": [
+   "Good morning! My name is Lena Brandt. Brandt is my surname, Lena is my first name. I come from Austria, from Graz. Now I live in Germany, in Munich.",
+   "In the German course I sit next to Mr Silva. Where does he come from? He comes from Brazil. “How are you?” he asks. “Very well, thank you! And you?” – “So-so. I'm a bit tired.”",
+   "The teacher is called Ms Novak. She often has to spell her name: N-O-V-A-K. After the course I say to her: “Goodbye!” And to my friends I say: “Bye!”"
+  ],
+  "questions": [
+   {
+    "q": "Lena kommt aus Deutschland.",
+    "en": "Lena comes from Germany.",
+    "answer": "falsch"
+   },
+   {
+    "q": "Herr Silva kommt aus Brasilien.",
+    "en": "Mr Silva comes from Brazil.",
+    "answer": "richtig"
+   },
+   {
+    "q": "Wer muss oft den Namen buchstabieren?",
+    "en": "Who often has to spell the name?",
+    "options": [
+     "Frau Novak",
+     "Lena",
+     "Herr Silva"
+    ],
+    "answer": "Frau Novak"
+   }
+  ]
+ },
+ {
+  "key": "arbeit",
+  "level": "A2",
+  "deck": "arbeit",
+  "title": "Drei Menschen, drei Berufe",
+  "paragraphs": [
+   "Tom ist 24 [[Jahre alt|… Jahre alt sein]] und [[studiert|studieren]] Medizin. Später möchte er als [[Arzt|der Arzt]] [[arbeiten|arbeiten als/bei …]]. Jetzt macht er ein [[Praktikum|das Praktikum]] in einem Krankenhaus.",
+   "Seine Schwester Mia ist [[Lehrerin|der Lehrer]]. Sie [[lebt|leben]] mit ihrem Mann in Köln. Mia ist [[verheiratet]] und hat zwei [[Kinder|das Kind]]. Sie liebt ihren [[Beruf|der Beruf]], [[aber]] die Arbeit ist manchmal anstrengend.",
+   "Ihr Vater, Herr Becker, ist 58 Jahre alt und [[arbeitslos]]. Er war viele Jahre [[Mechatroniker|der Mechatroniker]] in einer Autofirma. Jetzt sucht er eine neue [[Stelle|die Stelle]]. „Das ist nicht leicht“, sagt er, „aber ich [[glaube|glauben]], ich finde bald etwas.“"
+  ],
+  "en": [
+   "Tom is 24 years old and studies medicine. Later he wants to work as a doctor. Right now he is doing an internship in a hospital.",
+   "His sister Mia is a teacher. She lives with her husband in Cologne. Mia is married and has two children. She loves her job, but the work is sometimes tiring.",
+   "Their father, Mr Becker, is 58 years old and unemployed. For many years he was a mechatronics technician at a car company. Now he is looking for a new job. “That isn't easy,” he says, “but I think I'll find something soon.”"
+  ],
+  "questions": [
+   {
+    "q": "Tom arbeitet schon als Arzt.",
+    "en": "Tom already works as a doctor.",
+    "answer": "falsch"
+   },
+   {
+    "q": "Mia hat zwei Kinder.",
+    "en": "Mia has two children.",
+    "answer": "richtig"
+   },
+   {
+    "q": "Was sucht Herr Becker?",
+    "en": "What is Mr Becker looking for?",
+    "options": [
+     "eine neue Stelle",
+     "eine Wohnung",
+     "ein Praktikum"
+    ],
+    "answer": "eine neue Stelle"
+   }
+  ]
+ },
+ {
+  "key": "familie",
+  "level": "A2",
+  "deck": "familie",
+  "title": "Ein Foto von meiner Familie",
+  "paragraphs": [
+   "Das ist ein [[Bild|das Bild]] von meiner [[Familie|die Familie]]. In der Mitte sitzen meine [[Großeltern|die Großeltern]]. Mein [[Großvater|der Großvater]] ist 80, meine [[Großmutter|die Großmutter]] ist 76.",
+   "Links stehen meine [[Eltern|die Eltern]]. Mein [[Vater|der Vater]] ist Lehrer, meine [[Mutter|die Mutter]] arbeitet in einem Büro. Rechts sind meine [[Geschwister|die Geschwister]]: mein [[Bruder|der Bruder]] Jonas und meine [[Schwester|die Schwester]] Clara. Clara hat schon eine [[Tochter|die Tochter]]. Sie heißt Emma und ist die erste [[Enkelin|die Enkelin]] von meinen Großeltern.",
+   "Wir sprechen zu Hause zwei [[Sprachen|die Sprache]]: [[Deutsch]] und Polnisch. Meine Großmutter spricht nur [[ein bisschen]] Deutsch, aber das ist kein Problem."
+  ],
+  "en": [
+   "This is a picture of my family. My grandparents are sitting in the middle. My grandfather is 80, my grandmother is 76.",
+   "My parents are standing on the left. My father is a teacher, my mother works in an office. On the right are my brother and sister: my brother Jonas and my sister Clara. Clara already has a daughter. She is called Emma and she is my grandparents' first granddaughter.",
+   "At home we speak two languages: German and Polish. My grandmother only speaks a little German, but that's not a problem."
+  ],
+  "questions": [
+   {
+    "q": "Der Vater ist Lehrer.",
+    "en": "The father is a teacher.",
+    "answer": "richtig"
+   },
+   {
+    "q": "Emma ist die Tochter von Jonas.",
+    "en": "Emma is Jonas's daughter.",
+    "answer": "falsch"
+   },
+   {
+    "q": "Welche Sprachen spricht die Familie?",
+    "en": "Which languages does the family speak?",
+    "options": [
+     "Deutsch und Polnisch",
+     "Deutsch und Englisch",
+     "nur Deutsch"
+    ],
+    "answer": "Deutsch und Polnisch"
+   }
+  ]
+ },
+ {
+  "key": "moebel",
+  "level": "A2",
+  "deck": "moebel",
+  "title": "Die erste eigene Wohnung",
+  "paragraphs": [
+   "Sara hat ihre erste Wohnung. Das [[Zimmer|das Zimmer]] ist [[klein]], aber [[schön]]. Leider hat sie fast keine [[Möbel|die Möbel]]. Sie [[braucht|brauchen]] ein [[Bett|das Bett]], einen [[Tisch|der Tisch]] und zwei [[Stühle|der Stuhl]].",
+   "Im Möbelhaus [[findet|finden]] sie ein [[Sofa|das Sofa]]. Es ist [[modern]] und [[praktisch]], aber es [[kostet|kosten]] 900 [[Euro|der Euro]]. „Das ist [[zu]] [[teuer]]“, [[sagt|sagen]] Sara.",
+   "Dann sieht sie ein [[Angebot|das Angebot]]: ein altes Sofa für [[nur]] 120 Euro. Es ist nicht ganz neu, aber [[wirklich]] [[günstig]]. Ihr Bruder kommt mit dem Auto und bringt das Sofa zu ihr nach Hause."
+  ],
+  "en": [
+   "Sara has her first flat. The room is small but nice. Unfortunately she has almost no furniture. She needs a bed, a table and two chairs.",
+   "In the furniture store she finds a sofa. It is modern and practical, but it costs 900 euros. “That's too expensive,” says Sara.",
+   "Then she sees an offer: an old sofa for only 120 euros. It isn't quite new, but really cheap. Her brother comes with the car and brings the sofa home for her."
+  ],
+  "questions": [
+   {
+    "q": "Saras Zimmer ist groß.",
+    "en": "Sara's room is big.",
+    "answer": "falsch"
+   },
+   {
+    "q": "Das moderne Sofa kostet 900 Euro.",
+    "en": "The modern sofa costs 900 euros.",
+    "answer": "richtig"
+   },
+   {
+    "q": "Wie viel kostet das alte Sofa?",
+    "en": "How much does the old sofa cost?",
+    "options": [
+     "120 Euro",
+     "900 Euro",
+     "12 Euro"
+    ],
+    "answer": "120 Euro"
+   }
+  ]
+ },
+ {
+  "key": "dinge",
+  "level": "A2",
+  "deck": "dinge",
+  "title": "Wo ist meine Tasche?",
+  "paragraphs": [
+   "Heute Morgen kann Paul seine [[Tasche|die Tasche]] nicht finden. Sie ist [[schwarz]] und aus Leder. In der Tasche sind seine [[Geldbörse|die Geldbörse]], sein [[Schlüssel|der Schlüssel]] und seine [[Brille|die Brille]].",
+   "Er ruft im Café an: „Ich habe gestern eine schwarze Tasche vergessen. Ist sie bei Ihnen?“ Die Frau im Café fragt: „Was ist in der Tasche?“ Paul sagt: „Eine [[Flasche|die Flasche]] Wasser, ein [[Buch|das Buch]] und ein [[Regenschirm|der Regenschirm]]. Der Regenschirm ist [[gelb]].“",
+   "„Ja, die Tasche ist hier!“, sagt die Frau. Paul ist sehr froh. Am Nachmittag holt er die Tasche ab und bringt der Frau eine [[Schokolade|die Schokolade]] mit."
+  ],
+  "en": [
+   "This morning Paul can't find his bag. It is black and made of leather. In the bag are his wallet, his key and his glasses.",
+   "He calls the café: “I forgot a black bag yesterday. Is it with you?” The woman in the café asks: “What is in the bag?” Paul says: “A bottle of water, a book and an umbrella. The umbrella is yellow.”",
+   "“Yes, the bag is here!” says the woman. Paul is very happy. In the afternoon he picks up the bag and brings the woman a bar of chocolate."
+  ],
+  "questions": [
+   {
+    "q": "Pauls Tasche ist braun.",
+    "en": "Paul's bag is brown.",
+    "answer": "falsch"
+   },
+   {
+    "q": "Der Regenschirm ist gelb.",
+    "en": "The umbrella is yellow.",
+    "answer": "richtig"
+   },
+   {
+    "q": "Wo ist die Tasche?",
+    "en": "Where is the bag?",
+    "options": [
+     "im Café",
+     "im Büro",
+     "im Bus"
+    ],
+    "answer": "im Café"
+   }
+  ]
+ },
+ {
+  "key": "buero",
+  "level": "A2",
+  "deck": "buero",
+  "title": "Ein stressiger Montag",
+  "paragraphs": [
+   "Frau Klein kommt um acht Uhr ins [[Büro|das Büro]]. Zuerst macht sie den [[Computer|der Computer]] an. Aber der [[Bildschirm|der Bildschirm]] bleibt schwarz! Auch der [[Drucker|der Drucker]] funktioniert nicht.",
+   "Sie ruft den Techniker an. Er hat erst am Nachmittag [[Zeit|die Zeit]]. Dann schreibt ihr [[Chef|der Chef]] eine [[SMS|die SMS]]: „Bitte schicken Sie [[heute]] noch die [[Rechnung|die Rechnung]] an die [[Firma|die Firma]] Holz-Meier.“",
+   "Frau Klein nimmt ihren [[Laptop|der Laptop]] und arbeitet im Café. Sie schreibt die Rechnung und notiert alle [[Termine|der Termin]] in ihrem [[Kalender|der Kalender]]. Am Abend sagt sie: „So viel [[Stress|der Stress]] – und es ist erst Montag!“"
+  ],
+  "en": [
+   "Ms Klein comes into the office at eight o'clock. First she turns on the computer. But the screen stays black! The printer doesn't work either.",
+   "She calls the technician. He doesn't have time until the afternoon. Then her boss writes her a text message: “Please send the invoice to the company Holz-Meier today.”",
+   "Ms Klein takes her laptop and works in a café. She writes the invoice and notes all appointments in her calendar. In the evening she says: “So much stress – and it's only Monday!”"
+  ],
+  "questions": [
+   {
+    "q": "Am Morgen funktioniert der Computer gut.",
+    "en": "In the morning the computer works well.",
+    "answer": "falsch"
+   },
+   {
+    "q": "Der Techniker hat erst am Nachmittag Zeit.",
+    "en": "The technician only has time in the afternoon.",
+    "answer": "richtig"
+   },
+   {
+    "q": "Wo schreibt Frau Klein die Rechnung?",
+    "en": "Where does Ms Klein write the invoice?",
+    "options": [
+     "im Café",
+     "im Büro",
+     "zu Hause"
+    ],
+    "answer": "im Café"
+   }
+  ]
+ },
+ {
+  "key": "freizeit",
+  "level": "A2",
+  "deck": "freizeit",
+  "title": "Was machst du in deiner Freizeit?",
+  "paragraphs": [
+   "Ich heiße Ben und habe viele [[Hobbys|das Hobby]]. Am Wochenende [[spiele ich Fußball|Fußball/Tennis spielen]], und im Sommer gehe ich [[oft]] [[schwimmen]]. Ich [[koche|kochen]] auch [[gern]], besonders Pasta.",
+   "Meine Freundin Anna [[malt|malen]] und [[fotografiert|fotografieren]]. Sie macht [[manchmal]] einen [[Ausflug|der Ausflug]] in die [[Natur|die Natur]] und macht dort Fotos. Am Abend [[hört sie Musik|Musik hören]].",
+   "Am Freitag gehen wir zusammen ins [[Kino|das Kino]]. Danach fragt Anna: „Gehen wir noch tanzen?“ Aber ich [[tanze|tanzen]] [[nie]] – das [[macht mir keinen Spaß|Spaß machen]]!"
+  ],
+  "en": [
+   "My name is Ben and I have lots of hobbies. At the weekend I play football, and in summer I often go swimming. I also like cooking, especially pasta.",
+   "My girlfriend Anna paints and takes photos. Sometimes she makes a trip into nature and takes photos there. In the evening she listens to music.",
+   "On Friday we go to the cinema together. Afterwards Anna asks: “Shall we go dancing?” But I never dance – I don't enjoy it!"
+  ],
+  "questions": [
+   {
+    "q": "Ben kocht gern.",
+    "en": "Ben likes cooking.",
+    "answer": "richtig"
+   },
+   {
+    "q": "Anna spielt Fußball.",
+    "en": "Anna plays football.",
+    "answer": "falsch"
+   },
+   {
+    "q": "Wie oft tanzt Ben?",
+    "en": "How often does Ben dance?",
+    "options": [
+     "nie",
+     "oft",
+     "manchmal"
+    ],
+    "answer": "nie"
+   }
+  ]
+ },
+ {
+  "key": "stadt",
+  "level": "A2",
+  "deck": "stadt",
+  "title": "Ein Tag in Hamburg",
+  "paragraphs": [
+   "Am [[Samstag|der Samstag]] sind wir in Hamburg. Zuerst gehen wir zum [[Hafen|der Hafen]] und sehen die großen Schiffe. Der [[Blick|der Blick]] ist wunderbar!",
+   "Um [[halb|halb …]] zwölf besuchen wir das [[Rathaus|das Rathaus]]. Dann essen wir in einem kleinen [[Restaurant|das Restaurant]] Fisch. Am [[Nachmittag|der Nachmittag]] gehen wir in ein [[Museum|das Museum]] und danach in den [[Park|der Park]].",
+   "Am [[Abend|der Abend]] gibt es ein [[Konzert|das Konzert]], aber die Karten sind sehr teuer. [[Vielleicht|vielleicht]] nächstes Mal! Wir trinken noch einen [[Kaffee|der Kaffee]] in einem [[Café|das Café]] und fahren um zehn Uhr zurück in die [[Jugendherberge|die Jugendherberge]]."
+  ],
+  "en": [
+   "On Saturday we are in Hamburg. First we go to the harbour and see the big ships. The view is wonderful!",
+   "At half past eleven we visit the town hall. Then we eat fish in a small restaurant. In the afternoon we go to a museum and then to the park.",
+   "In the evening there is a concert, but the tickets are very expensive. Maybe next time! We have another coffee in a café and at ten o'clock we go back to the youth hostel."
+  ],
+  "questions": [
+   {
+    "q": "Zuerst gehen sie zum Hafen.",
+    "en": "First they go to the harbour.",
+    "answer": "richtig"
+   },
+   {
+    "q": "Am Abend gehen sie ins Konzert.",
+    "en": "In the evening they go to the concert.",
+    "answer": "falsch"
+   },
+   {
+    "q": "Wo schlafen sie?",
+    "en": "Where do they sleep?",
+    "options": [
+     "in der Jugendherberge",
+     "im Hotel",
+     "bei Freunden"
+    ],
+    "answer": "in der Jugendherberge"
+   }
+  ]
+ },
+ {
+  "key": "essen",
+  "level": "A2",
+  "deck": "essen",
+  "title": "Frühstück am Sonntag",
+  "paragraphs": [
+   "Am Sonntag [[frühstückt|frühstücken]] Familie Wagner immer zusammen. Es gibt frische [[Brötchen|das Brötchen]], [[Butter|die Butter]], [[Käse|der Käse]] und [[Schinken|der Schinken]]. Die Kinder [[mögen]] lieber Marmelade.",
+   "Herr Wagner kocht [[Eier|das Ei]] und macht [[Tee|der Tee]]. Frau Wagner trinkt lieber Kaffee mit [[Milch|die Milch]]. Im [[Kühlschrank|der Kühlschrank]] ist noch [[Obst|das Obst]]: [[Äpfel|der Apfel]] und eine [[Orange|die Orange]].",
+   "„[[Guten Appetit]]!“, sagt die kleine Lisa. „[[Gleichfalls!|Gleichfalls! / Ebenfalls!]]“, antworten die Eltern. Nach dem [[Frühstück|das Frühstück]] hat niemand mehr [[Hunger|der Hunger]]."
+  ],
+  "en": [
+   "On Sundays the Wagner family always has breakfast together. There are fresh rolls, butter, cheese and ham. The children prefer jam.",
+   "Mr Wagner boils eggs and makes tea. Ms Wagner prefers coffee with milk. In the fridge there is still fruit: apples and an orange.",
+   "“Enjoy your meal!” says little Lisa. “You too!” answer the parents. After breakfast nobody is hungry any more."
+  ],
+  "questions": [
+   {
+    "q": "Familie Wagner frühstückt am Sonntag zusammen.",
+    "en": "The Wagner family has breakfast together on Sunday.",
+    "answer": "richtig"
+   },
+   {
+    "q": "Frau Wagner trinkt Tee.",
+    "en": "Ms Wagner drinks tea.",
+    "answer": "falsch"
+   },
+   {
+    "q": "Was ist im Kühlschrank?",
+    "en": "What is in the fridge?",
+    "options": [
+     "Äpfel und eine Orange",
+     "Fisch und Reis",
+     "Eis und Kuchen"
+    ],
+    "answer": "Äpfel und eine Orange"
+   }
+  ]
+ },
+ {
+  "key": "reisen",
+  "level": "A2",
+  "deck": "reisen",
+  "title": "Mit dem Zug nach Berlin",
+  "paragraphs": [
+   "Herr Yilmaz fährt heute mit dem [[Zug|der Zug]] nach Berlin. Um Viertel nach sieben ist er am [[Bahnhof|der Bahnhof]]. Er hat nur einen kleinen [[Koffer|der Koffer]] als [[Gepäck|das Gepäck]]. Auf dem [[Bahnsteig|der Bahnsteig]] wartet er auf seinen Zug.",
+   "Aber der Zug hat 20 [[Minuten|die Minute]] Verspätung! In Hannover muss Herr Yilmaz [[umsteigen]]. Er läuft schnell zum [[Gleis|das Gleis]] 7. Zum Glück wartet der andere Zug.",
+   "Um zwölf Uhr [[kommt er in Berlin an|ankommen]]. Seine Tochter [[holt ihn am Bahnhof ab|abholen]]. Zusammen fahren sie mit der [[U-Bahn|die U-Bahn]] zu ihrer Wohnung."
+  ],
+  "en": [
+   "Today Mr Yilmaz is travelling to Berlin by train. At quarter past seven he is at the station. He only has a small suitcase as luggage. He waits for his train on the platform.",
+   "But the train is 20 minutes late! In Hanover Mr Yilmaz has to change trains. He runs quickly to platform 7. Luckily the other train is waiting.",
+   "At twelve o'clock he arrives in Berlin. His daughter picks him up at the station. Together they take the underground to her flat."
+  ],
+  "questions": [
+   {
+    "q": "Der Zug hat Verspätung.",
+    "en": "The train is late.",
+    "answer": "richtig"
+   },
+   {
+    "q": "Herr Yilmaz hat viel Gepäck.",
+    "en": "Mr Yilmaz has a lot of luggage.",
+    "answer": "falsch"
+   },
+   {
+    "q": "Wo muss er umsteigen?",
+    "en": "Where does he have to change trains?",
+    "options": [
+     "in Hannover",
+     "in Berlin",
+     "in Hamburg"
+    ],
+    "answer": "in Hannover"
+   }
+  ]
+ },
+ {
+  "key": "meintag",
+  "level": "A2",
+  "deck": "meintag",
+  "title": "Mein Mittwoch",
+  "paragraphs": [
+   "Ich heiße Marco. Ich stehe um sechs Uhr auf und lese beim Frühstück die [[Zeitung|die Zeitung]]. Dann fahre ich mit dem [[Fahrrad|das Fahrrad]] zur [[Arbeit|die Arbeit]]. Ich arbeite [[von acht bis vier|von … bis]] Uhr. Um zwölf mache ich eine kurze [[Pause|die Pause]].",
+   "Am Nachmittag [[kaufe|kaufen]] ich ein [[Geschenk|das Geschenk]] für meine Freundin Julia. Sie ist [[schwanger]] und das [[Baby|das Baby]] kommt im nächsten [[Monat|der Monat]]! Am Samstag macht Julia eine kleine [[Party|die Party]]. Sie hat alle Freunde [[eingeladen|einladen]].",
+   "Am Abend muss ich meine Wohnung [[aufräumen]]. Das ist [[langweilig]]! Dann [[lerne|lernen]] ich noch eine Stunde Deutsch und mache meine [[Hausaufgabe|die Hausaufgabe]]. Um elf Uhr bin ich [[fertig]] – und sehr müde."
+  ],
+  "en": [
+   "My name is Marco. I get up at six o'clock and read the newspaper at breakfast. Then I cycle to work. I work from eight to four. At twelve I take a short break.",
+   "In the afternoon I buy a present for my friend Julia. She is pregnant and the baby is coming next month! On Saturday Julia is having a small party. She has invited all her friends.",
+   "In the evening I have to tidy my flat. That's boring! Then I study German for another hour and do my homework. At eleven o'clock I'm finished – and very tired."
+  ],
+  "questions": [
+   {
+    "q": "Marco fährt mit dem Bus zur Arbeit.",
+    "en": "Marco goes to work by bus.",
+    "answer": "falsch"
+   },
+   {
+    "q": "Julia bekommt bald ein Baby.",
+    "en": "Julia is having a baby soon.",
+    "answer": "richtig"
+   },
+   {
+    "q": "Was macht Marco am Abend?",
+    "en": "What does Marco do in the evening?",
+    "options": [
+     "Er räumt auf und lernt Deutsch.",
+     "Er geht auf eine Party.",
+     "Er liest die Zeitung."
+    ],
+    "answer": "Er räumt auf und lernt Deutsch."
+   }
+  ]
+ },
+ {
+  "key": "jahr",
+  "level": "A2",
+  "deck": "jahr",
+  "title": "Feste im Jahr",
+  "paragraphs": [
+   "In Deutschland gibt es viele [[Feste|das Fest]]. Das Jahr beginnt mit einer Party: An [[Silvester|das Silvester]] [[feiern]] die [[Leute|die Leute]] bis Mitternacht. Am ersten [[Januar|der Januar]] ist dann [[Neujahr|das Neujahr]].",
+   "Im [[Februar|der Februar]] ist in Köln [[Karneval|der Karneval]]. Der Karneval [[dauert|dauern]] fast eine Woche. Viele [[Personen|die Person]] tragen lustige Kostüme und tanzen auf der Straße.",
+   "Im [[Sommer|der Sommer]] gibt es viele [[Hochzeiten|die Hochzeit]]. Meine Schwester hat [[gestern]] geheiratet. Wir haben bis drei Uhr nachts gefeiert und getanzt. Im [[Herbst|der Herbst]] und im [[Winter|der Winter]] gibt es dann wieder andere Feste."
+  ],
+  "en": [
+   "In Germany there are many festivals. The year begins with a party: on New Year's Eve people celebrate until midnight. Then the first of January is New Year's Day.",
+   "In February it is carnival in Cologne. Carnival lasts almost a week. Lots of people wear funny costumes and dance in the street.",
+   "In summer there are lots of weddings. My sister got married yesterday. We celebrated and danced until three in the morning. In autumn and winter there are other festivals again."
+  ],
+  "questions": [
+   {
+    "q": "An Silvester feiern die Leute bis Mitternacht.",
+    "en": "On New Year's Eve people celebrate until midnight.",
+    "answer": "richtig"
+   },
+   {
+    "q": "Der Karneval in Köln dauert nur einen Tag.",
+    "en": "Carnival in Cologne lasts only one day.",
+    "answer": "falsch"
+   },
+   {
+    "q": "Was hat die Schwester gestern gemacht?",
+    "en": "What did the sister do yesterday?",
+    "options": [
+     "Sie hat geheiratet.",
+     "Sie hat Karneval gefeiert.",
+     "Sie hat Silvester gefeiert."
+    ],
+    "answer": "Sie hat geheiratet."
+   }
+  ]
+ },
+ {
+  "key": "weg",
+  "level": "A2",
+  "deck": "weg",
+  "title": "Wie komme ich zum Dom?",
+  "paragraphs": [
+   "Eine Touristin steht in der [[Mitte|die Mitte]] von Köln und hat eine [[Frage|die Frage]]: „Entschuldigung, ich bin hier [[fremd]]. Wie komme ich zum [[Dom|der Dom]]?“",
+   "Ein Mann antwortet: „Das ist ganz in der [[Nähe|die Nähe]], nur 500 [[Meter|der Meter]]. Gehen Sie hier geradeaus bis zur [[Ampel|die Ampel]]. Dann gehen Sie [[nach links]] und über die [[Brücke|die Brücke]]. Nach der Brücke gehen Sie [[nach rechts]]. Der Dom ist direkt [[hinter]] dem [[Hotel|das Hotel]] Europa.“",
+   "„[[Danke schön!]]“, sagt die Touristin. „[[Bitte, gern.]]“, antwortet der Mann. Zehn Minuten später steht sie vor dem Dom. Er ist wirklich sehr groß!"
+  ],
+  "en": [
+   "A tourist is standing in the middle of Cologne and has a question: “Excuse me, I'm not from here. How do I get to the cathedral?”",
+   "A man answers: “That's very close, only 500 metres. Go straight on here as far as the traffic lights. Then go left and over the bridge. After the bridge go right. The cathedral is directly behind the Hotel Europa.”",
+   "“Thank you very much!” says the tourist. “You're welcome,” answers the man. Ten minutes later she is standing in front of the cathedral. It really is very big!"
+  ],
+  "questions": [
+   {
+    "q": "Der Dom ist weit weg.",
+    "en": "The cathedral is far away.",
+    "answer": "falsch"
+   },
+   {
+    "q": "Die Touristin geht über eine Brücke.",
+    "en": "The tourist walks over a bridge.",
+    "answer": "richtig"
+   },
+   {
+    "q": "Wo ist der Dom?",
+    "en": "Where is the cathedral?",
+    "options": [
+     "hinter dem Hotel Europa",
+     "neben der Post",
+     "vor der Bank"
+    ],
+    "answer": "hinter dem Hotel Europa"
+   }
+  ]
+ },
+ {
+  "key": "haus",
+  "level": "A2",
+  "deck": "haus",
+  "title": "Wohnung zu vermieten",
+  "paragraphs": [
+   "[[Anzeige|die Anzeige]]: Schöne Drei-Zimmer-[[Wohnung|die Wohnung]] im zweiten [[Stock|der Stock]], 75 [[Quadratmeter|der Quadratmeter]]. Die Wohnung hat eine große [[Küche|die Küche]], ein helles [[Wohnzimmer|das Wohnzimmer]], ein [[Schlafzimmer|das Schlafzimmer]], ein [[Kinderzimmer|das Kinderzimmer]] und einen [[Balkon|der Balkon]]. [[Miete|die Miete]]: 850 Euro.",
+   "Familie Costa möchte die Wohnung sehen. Der [[Vermieter|der Vermieter]], Herr Schulz, zeigt ihnen alles. Die Wohnung ist [[leer]], sie ist nicht [[möbliert]]. „Sie ist sehr [[gemütlich]]“, sagt Frau Costa. Die Kinder finden den [[Garten|der Garten]] [[hinten]] am Haus toll.",
+   "Nur eine Sache ist nicht so gut: Es gibt keinen [[Aufzug|der Aufzug]], nur eine [[Treppe|die Treppe]]. Aber das ist kein Problem. Familie Costa [[bezahlt|bezahlen]] die erste Miete und zieht im Mai ein."
+  ],
+  "en": [
+   "Advertisement: Lovely three-room flat on the second floor, 75 square metres. The flat has a large kitchen, a bright living room, a bedroom, a children's room and a balcony. Rent: 850 euros.",
+   "The Costa family would like to see the flat. The landlord, Mr Schulz, shows them everything. The flat is empty; it isn't furnished. “It's very cosy,” says Ms Costa. The children think the garden at the back of the house is great.",
+   "Only one thing isn't so good: there is no lift, only a staircase. But that's not a problem. The Costa family pays the first rent and moves in in May."
+  ],
+  "questions": [
+   {
+    "q": "Die Wohnung ist möbliert.",
+    "en": "The flat is furnished.",
+    "answer": "falsch"
+   },
+   {
+    "q": "Die Wohnung hat einen Balkon.",
+    "en": "The flat has a balcony.",
+    "answer": "richtig"
+   },
+   {
+    "q": "Wie viel kostet die Miete?",
+    "en": "How much is the rent?",
+    "options": [
+     "850 Euro",
+     "750 Euro",
+     "75 Euro"
+    ],
+    "answer": "850 Euro"
+   }
+  ]
+ },
+ {
+  "key": "hotel",
+  "level": "A2",
+  "deck": "hotel",
+  "title": "Ein Problem im Hotel",
+  "paragraphs": [
+   "Herr Novak hat eine [[Sitzung|die Sitzung]] in Frankfurt und schläft im Hotel. Am Abend ist es im Zimmer sehr [[kalt]]. Die [[Heizung|die Heizung]] ist [[kaputt]]! Auch der [[Fernseher|der Fernseher]] [[funktioniert|funktionieren]] nicht.",
+   "Er ruft an der Rezeption an: „Guten Abend, hier ist Zimmer 214. Die Heizung geht nicht, und im Bad gibt es kein [[Handtuch|das Handtuch]].“ Die Frau an der Rezeption sagt: „Das tut mir leid. Ich [[kümmere mich|kümmern (sich)]] [[sofort]] darum.“",
+   "Zehn Minuten später kommt ein Techniker und [[repariert|reparieren]] die Heizung. Eine Mitarbeiterin [[bringt|bringen]] zwei Handtücher. Am nächsten Morgen klingelt der [[Wecker|der Wecker]] um sechs. Herr Novak hat gut geschlafen und ist [[pünktlich]] bei seiner Sitzung."
+  ],
+  "en": [
+   "Mr Novak has a meeting in Frankfurt and is staying at a hotel. In the evening it is very cold in the room. The heating is broken! The television doesn't work either.",
+   "He calls reception: “Good evening, this is room 214. The heating isn't working, and there is no towel in the bathroom.” The woman at reception says: “I'm sorry. I'll take care of it right away.”",
+   "Ten minutes later a technician comes and repairs the heating. A member of staff brings two towels. The next morning the alarm clock rings at six. Mr Novak has slept well and is on time for his meeting."
+  ],
+  "questions": [
+   {
+    "q": "Im Zimmer ist es zu warm.",
+    "en": "It is too warm in the room.",
+    "answer": "falsch"
+   },
+   {
+    "q": "Im Bad gibt es kein Handtuch.",
+    "en": "There is no towel in the bathroom.",
+    "answer": "richtig"
+   },
+   {
+    "q": "Wer repariert die Heizung?",
+    "en": "Who repairs the heating?",
+    "options": [
+     "ein Techniker",
+     "Herr Novak",
+     "die Frau an der Rezeption"
+    ],
+    "answer": "ein Techniker"
+   }
+  ]
+ },
+ {
+  "key": "ausbildung",
+  "level": "A2",
+  "deck": "ausbildung",
+  "title": "Meine Wünsche für die Zukunft",
+  "paragraphs": [
+   "Ich heiße Elif und bin 17 Jahre alt. Nächstes Jahr möchte ich die Schule [[abschließen]]. Die [[Prüfung|die Prüfung]] ist schwer, aber ich lerne viel.",
+   "Danach [[will|wollen]] ich [[unbedingt]] ein Jahr ins [[Ausland|das Ausland]] gehen, vielleicht nach Kanada. Dort kann ich eine [[Fremdsprache|die Fremdsprache]] lernen und die [[Welt|die Welt]] sehen. Ich möchte dort auch arbeiten und [[Geld|das Geld]] [[verdienen]].",
+   "Später möchte ich Ärztin [[werden]]. [[Auf keinen Fall|auf keinen Fall]] möchte ich [[Politikerin|der Politiker]] werden – das ist zu stressig! Und mein größter [[Wunsch|der Wunsch]]? Ich möchte den [[Führerschein|der Führerschein]] machen und mit einem [[Motorrad|das Motorrad]] durch [[Europa]] fahren."
+  ],
+  "en": [
+   "My name is Elif and I'm 17 years old. Next year I want to finish school. The exam is hard, but I'm studying a lot.",
+   "After that I really want to go abroad for a year, maybe to Canada. There I can learn a foreign language and see the world. I'd also like to work there and earn money.",
+   "Later I'd like to become a doctor. I definitely don't want to become a politician – that's too stressful! And my biggest wish? I want to get my driving licence and ride a motorbike across Europe."
+  ],
+  "questions": [
+   {
+    "q": "Elif möchte ein Jahr ins Ausland gehen.",
+    "en": "Elif wants to go abroad for a year.",
+    "answer": "richtig"
+   },
+   {
+    "q": "Elif möchte Politikerin werden.",
+    "en": "Elif wants to become a politician.",
+    "answer": "falsch"
+   },
+   {
+    "q": "Was ist Elifs größter Wunsch?",
+    "en": "What is Elif's biggest wish?",
+    "options": [
+     "mit dem Motorrad durch Europa fahren",
+     "Sängerin werden",
+     "in Kanada heiraten"
+    ],
+    "answer": "mit dem Motorrad durch Europa fahren"
+   }
+  ]
+ },
+ {
+  "key": "wetter",
+  "level": "A2",
+  "deck": "wetter",
+  "title": "Das Wetter für morgen",
+  "paragraphs": [
+   "Und jetzt das [[Wetter|das Wetter]] für morgen: Im [[Norden|der Norden]] gibt es viele [[Wolken|die Wolke]] und am Nachmittag [[Regen|der Regen]]. Es ist [[windig]] und [[kühl]], nur 12 [[Grad|das Grad]].",
+   "Im [[Süden|der Süden]] [[scheint|scheinen]] die [[Sonne|die Sonne]]. Es wird [[warm]], bis zu 24 Grad. Am Abend kann es in den Bergen ein [[Gewitter|das Gewitter]] geben.",
+   "Im [[Osten|der Osten]] ist es am Morgen [[neblig]], später wird es [[sonnig]]. Im [[Westen|der Westen]] [[regnet|regnen]] es den ganzen Tag. Nehmen Sie also einen Regenschirm mit! Auf der Zugspitze kann es sogar [[schneien]]."
+  ],
+  "en": [
+   "And now the weather for tomorrow: in the north there will be lots of clouds and rain in the afternoon. It will be windy and cool, only 12 degrees.",
+   "In the south the sun is shining. It will be warm, up to 24 degrees. In the evening there may be a thunderstorm in the mountains.",
+   "In the east it will be foggy in the morning, later it will be sunny. In the west it will rain all day. So take an umbrella with you! On the Zugspitze it may even snow."
+  ],
+  "questions": [
+   {
+    "q": "Im Norden ist es warm.",
+    "en": "It is warm in the north.",
+    "answer": "falsch"
+   },
+   {
+    "q": "Im Westen regnet es den ganzen Tag.",
+    "en": "In the west it rains all day.",
+    "answer": "richtig"
+   },
+   {
+    "q": "Wo scheint die Sonne?",
+    "en": "Where is the sun shining?",
+    "options": [
+     "im Süden",
+     "im Norden",
+     "im Westen"
+    ],
+    "answer": "im Süden"
+   }
+  ]
+ },
+ {
+  "key": "feste-glueckwuensche",
+  "level": "A2",
+  "deck": "feste-glueckwuensche",
+  "title": "Eine Einladung",
+  "paragraphs": [
+   "Liebe Freunde, ich habe tolle Neuigkeiten: Ich habe meine Prüfung [[bestanden|bestehen]]! Und [[endlich]] habe ich eine neue Wohnung. Nächsten Monat [[ziehe ich um|um·ziehen]].",
+   "Das möchte ich mit euch [[gemeinsam]] feiern! Die [[Feier|die Feier]] ist am Samstag um 19 Uhr. Bei schönem Wetter sitzen wir [[draußen]] im Garten. Ich kaufe die [[Getränke|das Getränk]], ihr bringt bitte einen Salat mit. Bitte [[antwortet|antworten]] bis Donnerstag. Ich freue mich! Eure Nina",
+   "Liebe Nina, [[Herzlichen Glückwunsch!]] [[Gut gemacht!]] Ich komme sehr gern. [[Hoffentlich|hoffentlich]] ist das Wetter schön! Liebe Grüße, Daniel"
+  ],
+  "en": [
+   "Dear friends, I have great news: I passed my exam! And at last I have a new flat. I'm moving next month.",
+   "I'd like to celebrate that together with you! The party is on Saturday at 7 pm. If the weather is nice we'll sit outside in the garden. I'll buy the drinks, please bring a salad. Please answer by Thursday. I'm looking forward to it! Yours, Nina",
+   "Dear Nina, congratulations! Well done! I'd love to come. Hopefully the weather will be nice! Best wishes, Daniel"
+  ],
+  "questions": [
+   {
+    "q": "Nina hat ihre Prüfung bestanden.",
+    "en": "Nina passed her exam.",
+    "answer": "richtig"
+   },
+   {
+    "q": "Die Feier ist am Sonntag.",
+    "en": "The party is on Sunday.",
+    "answer": "falsch"
+   },
+   {
+    "q": "Was sollen die Freunde mitbringen?",
+    "en": "What should the friends bring?",
+    "options": [
+     "einen Salat",
+     "Getränke",
+     "Geschenke"
+    ],
+    "answer": "einen Salat"
+   }
+  ]
+ },
+ {
+  "key": "lebensmittel-einkaufen",
+  "level": "A2",
+  "deck": "lebensmittel-einkaufen",
+  "title": "Der Einkaufszettel",
+  "paragraphs": [
+   "Heute kauft Herr Fischer ein. Seine Frau hat einen [[Einkaufszettel|der Einkaufszettel]] geschrieben: ein [[Kilo|das Kilo(gramm)]] Kartoffeln, 500 [[Gramm|das Gramm]] [[Quark|der Quark]], ein [[Liter|der Liter]] Milch, eine [[Packung|die Packung]] Reis und eine [[Dose|die Dose]] Tomaten.",
+   "Im Supermarkt kauft er noch [[Bananen|die Banane]], [[Birnen|die Birne]] und [[frisches|frisch]] [[Gemüse|das Gemüse]]. Die Milch soll [[fettarm]] sein, aber es gibt nur [[normale|normal]] Milch. Ist das ein [[Fehler|der Fehler]]? Nein, das ist nicht schlimm.",
+   "An der Kasse merkt er: Er ist sehr [[hungrig]]. Schnell kauft er noch eine [[Tüte|die Tüte]] [[Bonbons|der/das Bonbon]] und eine [[Cola|die Cola]]. Zu Hause sagt seine Frau: „Das steht aber nicht auf dem [[Zettel|der Zettel]]!“"
+  ],
+  "en": [
+   "Today Mr Fischer is doing the shopping. His wife has written a shopping list: a kilo of potatoes, 500 grams of quark, a litre of milk, a packet of rice and a tin of tomatoes.",
+   "In the supermarket he also buys bananas, pears and fresh vegetables. The milk should be low-fat, but there is only normal milk. Is that a mistake? No, it's not a problem.",
+   "At the checkout he notices: he is very hungry. Quickly he also buys a bag of sweets and a cola. At home his wife says: “But that isn't on the list!”"
+  ],
+  "questions": [
+   {
+    "q": "Herr Fischer hat den Einkaufszettel geschrieben.",
+    "en": "Mr Fischer wrote the shopping list.",
+    "answer": "falsch"
+   },
+   {
+    "q": "Im Supermarkt gibt es keine fettarme Milch.",
+    "en": "There is no low-fat milk in the supermarket.",
+    "answer": "richtig"
+   },
+   {
+    "q": "Was kauft Herr Fischer an der Kasse?",
+    "en": "What does Mr Fischer buy at the checkout?",
+    "options": [
+     "Bonbons und eine Cola",
+     "Bananen und Birnen",
+     "eine Dose Tomaten"
+    ],
+    "answer": "Bonbons und eine Cola"
+   }
+  ]
+ },
+ {
+  "key": "natur-tourismus",
+  "level": "A2",
+  "deck": "natur-tourismus",
+  "title": "Urlaub auf dem Land",
+  "paragraphs": [
+   "Familie Weber macht Urlaub in einem kleinen [[Dorf|das Dorf]] in den Bergen. Die [[Landschaft|die Landschaft]] ist wunderschön, und die [[Luft|die Luft]] ist sehr gut. Hier gibt es keinen Verkehr, nur [[Ruhe|die Ruhe]].",
+   "Jeden Tag [[wandern]] sie. Die Kinder sehen viele [[Tiere|das Tier]]: Kühe, eine [[Katze|die Katze]] und viele [[Vögel|der Vogel]]. Am Nachmittag sitzen sie am [[Ufer|das Ufer]] von einem kleinen See.",
+   "Im Hotel gibt es einen Kurs über [[Pflanzen|die Pflanze]] aus der Region. Frau Weber [[macht mit|mit·machen]]. Herr Weber findet Pflanzen [[überhaupt nicht]] interessant. Er liegt lieber in der Sonne. [[Außerdem|außerdem]] hat er Urlaub!"
+  ],
+  "en": [
+   "The Weber family is on holiday in a small village in the mountains. The landscape is beautiful and the air is very good. There is no traffic here, only peace and quiet.",
+   "They go hiking every day. The children see lots of animals: cows, a cat and lots of birds. In the afternoon they sit on the shore of a small lake.",
+   "At the hotel there is a course about plants from the region. Ms Weber takes part. Mr Weber doesn't find plants interesting at all. He prefers to lie in the sun. Besides, he's on holiday!"
+  ],
+  "questions": [
+   {
+    "q": "Im Dorf gibt es viel Verkehr.",
+    "en": "There is a lot of traffic in the village.",
+    "answer": "falsch"
+   },
+   {
+    "q": "Die Kinder sehen viele Tiere.",
+    "en": "The children see lots of animals.",
+    "answer": "richtig"
+   },
+   {
+    "q": "Wer macht beim Kurs mit?",
+    "en": "Who takes part in the course?",
+    "options": [
+     "Frau Weber",
+     "Herr Weber",
+     "die Kinder"
+    ],
+    "answer": "Frau Weber"
+   }
+  ]
+ },
+ {
+  "key": "tourismus2",
+  "level": "A2",
+  "deck": "tourismus2",
+  "title": "Ein Tag in Berlin",
+  "paragraphs": [
+   "Familie Ahmadi macht [[Ferien|die Ferien]] in Berlin. Ihre [[Unterkunft|die Unterkunft]] ist ein kleines Hotel im Zentrum. Am ersten Tag machen sie einen [[Rundgang|der Rundgang]] mit einem [[Reiseführer|der Reiseführer]].",
+   "Der Reiseführer [[zeigt|zeigen]] ihnen viele [[Sehenswürdigkeiten|die Sehenswürdigkeit]]: das Brandenburger Tor, den Reichstag und ein Stück von der [[Mauer|die Mauer]]. Herr Ahmadi macht viele Fotos mit seiner [[Kamera|die Kamera]]. Die Kinder [[interessieren sich|interessieren (sich)]] mehr für Eis.",
+   "Nach dem Rundgang gibt Herr Ahmadi dem Reiseführer ein [[Trinkgeld|das Trinkgeld]]. Am Nachmittag wollen sie ein [[berühmtes|berühmt]] Museum [[besichtigen]]. Aber das Museum ist montags nicht [[geöffnet|geöffnet/offen]]! Herr Ahmadi [[ärgert sich|ärgern (sich)]]. Seine Frau sagt: „Kein Problem, wir kommen [[später]] in der Woche wieder.“"
+  ],
+  "en": [
+   "The Ahmadi family is on holiday in Berlin. Their accommodation is a small hotel in the centre. On the first day they go on a walking tour with a guide.",
+   "The guide shows them lots of sights: the Brandenburg Gate, the Reichstag and a piece of the Wall. Mr Ahmadi takes lots of photos with his camera. The children are more interested in ice cream.",
+   "After the tour Mr Ahmadi gives the guide a tip. In the afternoon they want to visit a famous museum. But the museum isn't open on Mondays! Mr Ahmadi gets annoyed. His wife says: “No problem, we'll come back later in the week.”"
+  ],
+  "questions": [
+   {
+    "q": "Die Familie schläft bei Freunden.",
+    "en": "The family is staying with friends.",
+    "answer": "falsch"
+   },
+   {
+    "q": "Herr Ahmadi gibt dem Reiseführer ein Trinkgeld.",
+    "en": "Mr Ahmadi gives the guide a tip.",
+    "answer": "richtig"
+   },
+   {
+    "q": "Warum können sie das Museum nicht besichtigen?",
+    "en": "Why can't they visit the museum?",
+    "options": [
+     "Es ist montags nicht geöffnet.",
+     "Es ist zu teuer.",
+     "Die Kinder wollen nicht."
+    ],
+    "answer": "Es ist montags nicht geöffnet."
+   }
+  ]
+ },
+ {
+  "key": "veranstaltungen",
+  "level": "A2",
+  "deck": "veranstaltungen",
+  "title": "Was machen wir am Wochenende?",
+  "paragraphs": [
+   "Lukas schreibt seiner Freundin Sophie eine Nachricht: „Hast du am Samstag Zeit? Im Stadtpark ist ein [[Festival|das Festival]] mit Musik und [[Kunst|die Kunst]]. Viele [[Künstler|der Künstler]] spielen auf einer großen [[Bühne|die Bühne]]. Der [[Eintritt|der Eintritt]] kostet 15 Euro, für Studenten gibt es eine [[Ermäßigung|die Ermäßigung]]. [[Kommst du mit|mit·kommen]]?“",
+   "Sophie antwortet: „Das Festival finde ich [[prima]], aber am Samstag habe ich keine Zeit. Ich habe einen anderen [[Vorschlag|der Vorschlag]]: Am Sonntag gibt es im Museum einen [[Vortrag|der Vortrag]] über Fotografie. Das ist bestimmt [[spannend]]!“",
+   "Lukas [[hält nicht viel von|halten von]] Vorträgen. Aber er möchte Sophie sehen. Also [[verabreden sie sich|verabreden (sich)]] für Sonntag um drei. „Und danach essen wir [[zusammen]] Pizza“, schreibt Lukas."
+  ],
+  "en": [
+   "Lukas sends his friend Sophie a message: “Do you have time on Saturday? In the city park there's a festival with music and art. Lots of artists are playing on a big stage. Entry costs 15 euros, there's a discount for students. Are you coming along?”",
+   "Sophie answers: “I think the festival is great, but I don't have time on Saturday. I have another suggestion: on Sunday there's a talk about photography at the museum. That's sure to be exciting!”",
+   "Lukas doesn't think much of talks. But he wants to see Sophie. So they arrange to meet on Sunday at three. “And afterwards we'll have pizza together,” writes Lukas."
+  ],
+  "questions": [
+   {
+    "q": "Der Eintritt für das Festival kostet 15 Euro.",
+    "en": "Entry to the festival costs 15 euros.",
+    "answer": "richtig"
+   },
+   {
+    "q": "Sophie hat am Samstag Zeit.",
+    "en": "Sophie has time on Saturday.",
+    "answer": "falsch"
+   },
+   {
+    "q": "Wann treffen sich Lukas und Sophie?",
+    "en": "When do Lukas and Sophie meet?",
+    "options": [
+     "am Sonntag um drei",
+     "am Samstag um drei",
+     "am Sonntag um acht"
+    ],
+    "answer": "am Sonntag um drei"
+   }
+  ]
+ },
+ {
+  "key": "gesundheit-fitness",
+  "level": "A2",
+  "deck": "gesundheit-fitness",
+  "title": "Endlich fit",
+  "paragraphs": [
+   "Herr Braun ist 52 Jahre alt. Sein Arzt sagt: „Ihr [[Gewicht|das Gewicht]] ist zu hoch. Sie müssen etwas für Ihre [[Gesundheit|die Gesundheit]] tun. [[An Ihrer Stelle|an deiner/Ihrer Stelle]] würde ich [[regelmäßig]] Sport machen.“",
+   "Jetzt [[trainiert|trainieren]] Herr Braun [[mindestens]] dreimal pro Woche. [[Montags|montags]] und [[mittwochs]] schwimmt er, [[samstags]] spielt er Tennis in einem [[Verein|der Verein]]. [[Morgens|morgens]] fährt er mit dem Fahrrad zur Arbeit.",
+   "Er macht keine strenge [[Diät|die Diät]], aber er isst weniger [[Nudeln|die Nudel]] und mehr Gemüse. Nach drei Monaten hat er acht Kilo [[abgenommen|ab·nehmen]]. Jetzt [[wiegt|wiegen]] er 84 Kilo und fühlt sich [[fit]]."
+  ],
+  "en": [
+   "Mr Braun is 52 years old. His doctor says: “Your weight is too high. You need to do something for your health. If I were you, I'd do sport regularly.”",
+   "Now Mr Braun trains at least three times a week. On Mondays and Wednesdays he swims, on Saturdays he plays tennis in a club. In the mornings he cycles to work.",
+   "He isn't on a strict diet, but he eats less pasta and more vegetables. After three months he has lost eight kilos. Now he weighs 84 kilos and feels fit."
+  ],
+  "questions": [
+   {
+    "q": "Herr Braun macht eine strenge Diät.",
+    "en": "Mr Braun is on a strict diet.",
+    "answer": "falsch"
+   },
+   {
+    "q": "Samstags spielt er Tennis.",
+    "en": "On Saturdays he plays tennis.",
+    "answer": "richtig"
+   },
+   {
+    "q": "Wie viel wiegt Herr Braun jetzt?",
+    "en": "How much does Mr Braun weigh now?",
+    "options": [
+     "84 Kilo",
+     "92 Kilo",
+     "52 Kilo"
+    ],
+    "answer": "84 Kilo"
+   }
+  ]
+ },
+ {
+  "key": "unfall-notfall",
+  "level": "A2",
+  "deck": "unfall-notfall",
+  "title": "Ein Unfall beim Fußball",
+  "paragraphs": [
+   "Am Sonntag spielt Jan mit Freunden Fußball. Plötzlich [[fällt er hin|hin·fallen]]. Sein Bein tut sehr weh, und er [[blutet|bluten]] am Knie. „Was ist [[los|los sein]]?“, fragt sein Freund Mehmet.",
+   "Mehmet ruft den [[Krankenwagen|der Krankenwagen]]. Zwanzig Minuten später ist Jan in der [[Notaufnahme|die Notaufnahme]]. Ein Arzt [[untersucht|untersuchen]] das Bein. „Die [[Verletzung|die Verletzung]] ist nicht schlimm“, sagt er. „Das Bein ist nicht gebrochen. Sie brauchen keine [[Operation|die Operation]].“",
+   "Eine Krankenschwester [[verbindet|verbinden]] das Knie. Jans Mutter [[macht sich Sorgen|sich Sorgen machen]] und ruft an. „Alles in Ordnung, Mama“, sagt Jan. „Ich darf nur zwei Wochen keinen Sport machen, [[weil]] das Knie Ruhe braucht. [[Deshalb|deshalb]] bleibe ich zu Hause und sehe fern.“"
+  ],
+  "en": [
+   "On Sunday Jan is playing football with friends. Suddenly he falls over. His leg hurts a lot and his knee is bleeding. “What's the matter?” asks his friend Mehmet.",
+   "Mehmet calls an ambulance. Twenty minutes later Jan is in the emergency department. A doctor examines the leg. “The injury isn't serious,” he says. “The leg isn't broken. You don't need an operation.”",
+   "A nurse bandages the knee. Jan's mother is worried and calls. “Everything's fine, Mum,” says Jan. “I just can't do any sport for two weeks, because the knee needs rest. So I'm staying at home watching TV.”"
+  ],
+  "questions": [
+   {
+    "q": "Jan hat sich beim Fußball verletzt.",
+    "en": "Jan got hurt playing football.",
+    "answer": "richtig"
+   },
+   {
+    "q": "Jan braucht eine Operation.",
+    "en": "Jan needs an operation.",
+    "answer": "falsch"
+   },
+   {
+    "q": "Wer verbindet das Knie?",
+    "en": "Who bandages the knee?",
+    "options": [
+     "eine Krankenschwester",
+     "Mehmet",
+     "Jans Mutter"
+    ],
+    "answer": "eine Krankenschwester"
+   }
+  ]
+ },
+ {
+  "key": "arbeitsleben",
+  "level": "A2",
+  "deck": "arbeitsleben",
+  "title": "Eine Firma stellt sich vor",
+  "paragraphs": [
+   "Die Firma Lang ist ein kleiner [[Betrieb|der Betrieb]] in Stuttgart. Sie baut [[Maschinen|die Maschine]] für Bäckereien. Die Firma hat 85 [[Mitarbeiter|der Mitarbeiter]]: [[Arbeiter|der Arbeiter]] in der [[Produktion|die Produktion]] und [[Angestellte|der/die Angestellte]] im Büro.",
+   "Die Arbeiter bauen die Maschinen in einer großen [[Halle|die Halle]]. Danach bringt ein [[Lkw|der Lkw]] sie zu den Kunden. Der [[Export|der Export]] ist wichtig: 60 [[Prozent|das Prozent]] der Maschinen gehen ins Ausland.",
+   "Die Firma hat viel [[Erfolg|der Erfolg]]. Die Zahl der Kunden [[steigt|steigen]] jedes Jahr. Die Chefin, Frau Lang, sagt: „Unser [[Team|das Team]] ist super. Gute Mitarbeiter sind wichtiger als neue Maschinen.“"
+  ],
+  "en": [
+   "The Lang company is a small business in Stuttgart. It builds machines for bakeries. The company has 85 employees: workers in production and office staff.",
+   "The workers build the machines in a large hall. Then a lorry takes them to the customers. Export is important: 60 per cent of the machines go abroad.",
+   "The company is very successful. The number of customers rises every year. The boss, Ms Lang, says: “Our team is great. Good employees are more important than new machines.”"
+  ],
+  "questions": [
+   {
+    "q": "Die Firma Lang hat 850 Mitarbeiter.",
+    "en": "The Lang company has 850 employees.",
+    "answer": "falsch"
+   },
+   {
+    "q": "Ein Lkw bringt die Maschinen zu den Kunden.",
+    "en": "A lorry takes the machines to the customers.",
+    "answer": "richtig"
+   },
+   {
+    "q": "Wie viel Prozent der Maschinen gehen ins Ausland?",
+    "en": "What percentage of the machines go abroad?",
+    "options": [
+     "60 Prozent",
+     "16 Prozent",
+     "85 Prozent"
+    ],
+    "answer": "60 Prozent"
+   }
+  ]
+ },
+ {
+  "key": "restaurant",
+  "level": "A2",
+  "deck": "restaurant",
+  "title": "Im Restaurant",
+  "paragraphs": [
+   "Anna und Tim haben einen Tisch im Restaurant „Zur Linde“ [[reserviert|reservieren]]. Der Kellner bringt die Speisekarte. Nach ein paar Minuten sagt Tim: „[[Wir würden gern bestellen.]]“ – „[[Ich komme gleich.]]“, antwortet der Kellner.",
+   "Anna bestellt ein [[Schnitzel|das Schnitzel]] mit [[Pommes frites|die Pommes frites]]. Tim sagt: „[[Ich hätte gern|Ich hätte gern …]] ein [[Steak|das Steak]], aber nicht mit Reis, [[sondern]] mit Salat.“ Leider ist das Steak [[versalzen]]. „[[Entschuldigung!]] [[Könnte ich ein anderes bekommen?]]“ – „Natürlich. [[Ich gebe es an die Küche weiter.]]“",
+   "Nach dem Essen sagt Anna: „[[Wir würden gern zahlen.]]“ Der Kellner fragt: „[[Zusammen oder getrennt?]]“ – „Zusammen, bitte.“ Die [[Rechnung|die Rechnung]] macht 54 Euro. Tim gibt 60 Euro und sagt: „[[Stimmt so|stimmen]].“"
+  ],
+  "en": [
+   "Anna and Tim have reserved a table at the restaurant “Zur Linde”. The waiter brings the menu. After a few minutes Tim says: “We'd like to order.” – “I'll be right with you,” answers the waiter.",
+   "Anna orders a schnitzel with chips. Tim says: “I'd like a steak, but not with rice, with salad instead.” Unfortunately the steak is too salty. “Excuse me! Could I have another one?” – “Of course. I'll pass it on to the kitchen.”",
+   "After the meal Anna says: “We'd like to pay.” The waiter asks: “Together or separately?” – “Together, please.” The bill comes to 54 euros. Tim gives 60 euros and says: “Keep the change.”"
+  ],
+  "questions": [
+   {
+    "q": "Anna und Tim haben einen Tisch reserviert.",
+    "en": "Anna and Tim have reserved a table.",
+    "answer": "richtig"
+   },
+   {
+    "q": "Tims Steak schmeckt sehr gut.",
+    "en": "Tim's steak tastes very good.",
+    "answer": "falsch"
+   },
+   {
+    "q": "Wie viel kostet das Essen?",
+    "en": "How much does the meal cost?",
+    "options": [
+     "54 Euro",
+     "60 Euro",
+     "45 Euro"
+    ],
+    "answer": "54 Euro"
+   }
+  ]
+ },
+ {
+  "key": "firma-produkte",
+  "level": "A2",
+  "deck": "firma-produkte",
+  "title": "Ein Jubiläum in der Firma",
+  "paragraphs": [
+   "Die Firma Hansen macht seit 25 Jahren [[Handtaschen|die Handtasche]] aus Leder und [[Stoff|der Stoff]]. Heute feiert sie ihr Jubiläum. Alle Mitarbeiter und viele [[Kunden|der Kunde]] sind da.",
+   "Herr Hansen hält eine kleine Rede: „Liebe Gäste, [[willkommen]]! Ich [[erinnere mich|erinnern (sich)]] noch gut an den Anfang: Wir waren nur drei Leute in einer kleinen [[Werkstatt|die Werkstatt]]. Heute sind wir 40. [[Ich bin froh, dass|Ich bin froh, dass …]] wir so ein tolles Team sind.“",
+   "Eine Kundin gratuliert: „[[Herzlichen Glückwunsch zum Jubiläum!]] [[Wir wünschen Ihnen|Wir wünschen Ihnen …]] noch viele gute Jahre. [[Meiner Meinung nach|meiner Meinung nach]] sind Ihre Taschen die schönsten in der Stadt!“"
+  ],
+  "en": [
+   "The Hansen company has been making handbags out of leather and fabric for 25 years. Today it is celebrating its anniversary. All the employees and lots of customers are there.",
+   "Mr Hansen gives a short speech: “Dear guests, welcome! I still remember the beginning well: we were only three people in a small workshop. Today there are 40 of us. I'm glad that we're such a great team.”",
+   "A customer congratulates them: “Congratulations on your anniversary! We wish you many more good years. In my opinion your bags are the most beautiful in town!”"
+  ],
+  "questions": [
+   {
+    "q": "Die Firma Hansen gibt es seit 25 Jahren.",
+    "en": "The Hansen company has existed for 25 years.",
+    "answer": "richtig"
+   },
+   {
+    "q": "Am Anfang hatte die Firma 40 Mitarbeiter.",
+    "en": "At the beginning the company had 40 employees.",
+    "answer": "falsch"
+   },
+   {
+    "q": "Was macht die Firma Hansen?",
+    "en": "What does the Hansen company make?",
+    "options": [
+     "Handtaschen",
+     "Möbel",
+     "Maschinen"
+    ],
+    "answer": "Handtaschen"
+   }
+  ]
+ },
+ {
+  "key": "essen-mengen",
+  "level": "A2",
+  "deck": "essen-mengen",
+  "title": "Was essen die Deutschen?",
+  "paragraphs": [
+   "Eine [[Zeitschrift|die Zeitschrift]] schreibt: Die [[Deutschen|der/die Deutsche]] essen [[durchschnittlich]] [[rund]] 52 Kilo Fleisch pro Jahr. Am [[häufigsten|häufig]] essen sie [[Schweinefleisch|das Schweinefleisch]], dann [[Hühnerfleisch|das Hühnerfleisch]] und [[Rindfleisch|das Rindfleisch]].",
+   "Aber immer mehr Leute essen [[vegetarisch]]. In vielen Restaurants gibt es heute mindestens ein vegetarisches [[Gericht|das Gericht]]. [[Wahrscheinlich|wahrscheinlich]] gibt es bald noch mehr.",
+   "Und was trinken die Deutschen? Am liebsten [[Mineralwasser|das Mineralwasser]] und Kaffee. Auch [[Limonade|die Limonade]] ist beliebt. Beim [[Alkohol|der Alkohol]] ist Bier die Nummer eins, aber die Deutschen trinken heute weniger Bier als vor zwanzig Jahren."
+  ],
+  "en": [
+   "A magazine writes: on average Germans eat around 52 kilos of meat a year. They eat pork most often, then chicken and beef.",
+   "But more and more people eat vegetarian food. Today many restaurants have at least one vegetarian dish. There will probably be even more soon.",
+   "And what do Germans drink? Most of all mineral water and coffee. Lemonade is popular too. When it comes to alcohol, beer is number one, but Germans drink less beer today than twenty years ago."
+  ],
+  "questions": [
+   {
+    "q": "Die Deutschen essen am häufigsten Rindfleisch.",
+    "en": "Germans eat beef most often.",
+    "answer": "falsch"
+   },
+   {
+    "q": "Immer mehr Leute essen vegetarisch.",
+    "en": "More and more people eat vegetarian food.",
+    "answer": "richtig"
+   },
+   {
+    "q": "Was trinken die Deutschen am liebsten?",
+    "en": "What do Germans like to drink most?",
+    "options": [
+     "Mineralwasser und Kaffee",
+     "Bier und Wein",
+     "Limonade und Tee"
+    ],
+    "answer": "Mineralwasser und Kaffee"
+   }
+  ]
+ },
+ {
+  "key": "kleidung",
+  "level": "A2",
+  "deck": "kleidung",
+  "title": "Was ziehe ich an?",
+  "paragraphs": [
+   "Heute Abend geht Lea auf eine Hochzeit. Sie steht vor dem Schrank und fragt sich: Was soll ich [[anziehen|an·ziehen]]? Das rote [[Kleid|das Kleid]] ist [[schöner als]] das blaue, aber es ist ein bisschen kurz.",
+   "Vielleicht eine schwarze [[Hose|die Hose]] und eine weiße [[Bluse|die Bluse]]? Die Hose ist [[genauso elegant wie|(genau)so … wie]] das Kleid, aber nicht so bequem.",
+   "[[Zuletzt|zuletzt]] nimmt sie doch das rote Kleid. Dazu trägt sie schwarze [[Schuhe|der Schuh]] und einen [[Mantel|der Mantel]], denn es ist kalt. Ihre Freundin sagt: „[[Toll!]] Du siehst super aus!“"
+  ],
+  "en": [
+   "This evening Lea is going to a wedding. She stands in front of the wardrobe and asks herself: what should I put on? The red dress is prettier than the blue one, but it's a bit short.",
+   "Maybe black trousers and a white blouse? The trousers are just as elegant as the dress, but not as comfortable.",
+   "In the end she takes the red dress after all. With it she wears black shoes and a coat, because it's cold. Her friend says: “Great! You look fantastic!”"
+  ],
+  "questions": [
+   {
+    "q": "Lea geht heute Abend auf eine Hochzeit.",
+    "en": "Lea is going to a wedding this evening.",
+    "answer": "richtig"
+   },
+   {
+    "q": "Am Ende trägt Lea die schwarze Hose.",
+    "en": "In the end Lea wears the black trousers.",
+    "answer": "falsch"
+   },
+   {
+    "q": "Warum trägt Lea einen Mantel?",
+    "en": "Why does Lea wear a coat?",
+    "options": [
+     "Es ist kalt.",
+     "Es regnet.",
+     "Der Mantel ist neu."
+    ],
+    "answer": "Es ist kalt."
+   }
+  ]
+ },
+ {
+  "key": "verkehr",
+  "level": "A2",
+  "deck": "verkehr",
+  "title": "Mit dem Fahrrad zur Schule",
+  "paragraphs": [
+   "Max ist zwölf und fährt jeden Tag mit dem Fahrrad zur Schule. Er trägt immer einen [[Helm|der Helm]]. Im [[Straßenverkehr|der Straßenverkehr]] [[achtet|achten]] er auf die Autos und auf die [[Schilder|das Schild]].",
+   "Bei Rot [[bleibt er stehen|stehen bleiben]]. Einmal hat ein Auto laut [[gehupt|hupen]], weil ein [[Hund|der Hund]] über die Straße gelaufen ist. Zum Glück ist nichts passiert.",
+   "Der Weg nach Hause geht bergauf. Deshalb [[schiebt|schieben]] Max das Fahrrad am Ende. Seine Mutter sagt jeden Morgen: „Fahr [[langsam]], die Straße ist [[gefährlich]]!“ Max antwortet: „[[In Ordnung|in Ordnung]], Mama.“"
+  ],
+  "en": [
+   "Max is twelve and cycles to school every day. He always wears a helmet. In traffic he pays attention to the cars and the signs.",
+   "When the light is red he stops. Once a car honked loudly because a dog ran across the road. Luckily nothing happened.",
+   "The way home goes uphill. So at the end Max pushes his bike. Every morning his mother says: “Ride slowly, the road is dangerous!” Max answers: “OK, Mum.”"
+  ],
+  "questions": [
+   {
+    "q": "Max trägt einen Helm.",
+    "en": "Max wears a helmet.",
+    "answer": "richtig"
+   },
+   {
+    "q": "Max fährt bei Rot weiter.",
+    "en": "Max keeps riding when the light is red.",
+    "answer": "falsch"
+   },
+   {
+    "q": "Warum hat ein Auto gehupt?",
+    "en": "Why did a car honk?",
+    "options": [
+     "Ein Hund ist über die Straße gelaufen.",
+     "Max ist zu schnell gefahren.",
+     "Die Ampel war kaputt."
+    ],
+    "answer": "Ein Hund ist über die Straße gelaufen."
+   }
+  ]
+ },
+ {
+  "key": "haushalt",
+  "level": "A2",
+  "deck": "haushalt",
+  "title": "Wer macht den Haushalt?",
+  "paragraphs": [
+   "In der WG von Jonas, Mia und Ali gibt es einen Plan für den [[Haushalt|der Haushalt]]. Jeder hat seine Aufgaben. Jonas [[wäscht|waschen]] die [[Wäsche|die Wäsche]] und bringt den [[Abfall|der Abfall]] runter.",
+   "Mia [[spült|spülen]] das [[Geschirr|das Geschirr]], denn die WG hat keine [[Spülmaschine|die Spülmaschine]]. Ali [[trocknet ab|ab·trocknen]] und putzt den [[Boden|der Boden]] in der Küche.",
+   "Aber diese Woche ist die Küche [[schmutzig]]. Überall steht Geschirr. Mia sagt: „Hier ist keine [[Ordnung|die Ordnung]]! Wer hat nicht [[abgewaschen|ab·waschen]]?“ Jonas lacht: „Ich war im Urlaub!“ Am Abend ist die Küche wieder [[sauber]]."
+  ],
+  "en": [
+   "In the flat Jonas, Mia and Ali share there is a plan for the housework. Everyone has their jobs. Jonas washes the laundry and takes the rubbish down.",
+   "Mia washes the dishes, because the flat has no dishwasher. Ali dries up and cleans the kitchen floor.",
+   "But this week the kitchen is dirty. There are dishes everywhere. Mia says: “There's no order here! Who didn't wash up?” Jonas laughs: “I was on holiday!” In the evening the kitchen is clean again."
+  ],
+  "questions": [
+   {
+    "q": "Die WG hat eine Spülmaschine.",
+    "en": "The shared flat has a dishwasher.",
+    "answer": "falsch"
+   },
+   {
+    "q": "Jonas wäscht die Wäsche.",
+    "en": "Jonas washes the laundry.",
+    "answer": "richtig"
+   },
+   {
+    "q": "Wer putzt den Boden?",
+    "en": "Who cleans the floor?",
+    "options": [
+     "Ali",
+     "Mia",
+     "Jonas"
+    ],
+    "answer": "Ali"
+   }
+  ]
+ }
+]

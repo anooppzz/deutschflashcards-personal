@@ -16,7 +16,8 @@ const gradeBtn = (color, filled) => ({
 });
 const linkBtn = { background: "none", border: "none", color: "#7d8d9c", fontSize: 13, cursor: "pointer", padding: 4 };
 
-function ReviewSession({ cards, lang, onGrade, onExit, onRepeat, moreCount, onMore }) {
+// title: the session's name in its header (🆕 Neue Wörter from the daily plan)
+function ReviewSession({ cards, lang, onGrade, onExit, onRepeat, moreCount, onMore, title = "📅 Wiederholung" }) {
   const [idx, setIdx] = useState(0);
   const [missed, setMissed] = useState([]);
   const done = idx >= cards.length;
@@ -60,7 +61,7 @@ function ReviewSession({ cards, lang, onGrade, onExit, onRepeat, moreCount, onMo
   return (
     <div>
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 10 }}>
-        <span style={{ fontSize: 13, fontWeight: 700, color: "#cdd8e2" }}>📅 Wiederholung · {idx + 1} / {cards.length}</span>
+        <span style={{ fontSize: 13, fontWeight: 700, color: "#cdd8e2" }}>{title} · {idx + 1} / {cards.length}</span>
         <button type="button" onClick={onExit} style={linkBtn}>Beenden ×</button>
       </div>
       <div aria-hidden="true" style={{ height: 4, borderRadius: 3, background: "#1e2630", marginBottom: 12, overflow: "hidden" }}>
@@ -104,6 +105,7 @@ ReviewSession.propTypes = {
   onExit: PropTypes.func.isRequired,
   onRepeat: PropTypes.func.isRequired,
   moreCount: PropTypes.number,
+  title: PropTypes.string,
   onMore: PropTypes.func,
 };
 

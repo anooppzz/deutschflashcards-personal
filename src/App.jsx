@@ -34,7 +34,7 @@ import {
 import {
   IRREGULAR_VERBS, INSEPARABLE_VERBS, HAUSHALT, VERKEHR, KLEIDUNG,
   EXTRA_TOPICS, DECK_META, GRAMMAR_TOPICS,
-  DECK_SOURCE, EXTRA_BY_KEY, ALL_CARDS, GRAMMAR_EXERCISES,
+  DECK_SOURCE, EXTRA_BY_KEY, ALL_CARDS, GRAMMAR_EXERCISES, READING_TEXTS,
 } from "./data";
 import {
   storage,
@@ -44,13 +44,15 @@ import {
   localDateStr, addDaysStr, saveStreak, effectiveStreakDisplay,
   weightedSample, shuffled,
   checkReverseAnswer, checkDictation, isDictatable, isArticleCorrect,
-  recordAnswer, sortedEntries, grammarMistakeId, isGrammarMistakeId, newTopicsOf,
+  recordAnswer, sortedEntries, grammarMistakeId, isGrammarMistakeId, newTopicsOf, textsForDecks,
+  freshDaily, addNewId, newCardsFor, NEW_PER_DAY_PRESETS, DEFAULT_NEW_PER_DAY,
+  scheduleTopic, isTopicDue, nextGrammarTopic,
   distinctLevels, distinctSources, passesGlobalFilters,
   buildGrammarIndex, buildGrammarSearchIndex, searchCards, searchGrammar, dueCards, applyRenames,
 } from "./engine";
 import {
   FlipCard, Controls, NoResults, CategoryFilter,
-  StreakBar, ProgressBar, RoundSizeSelector, ErrorBoundary, BackupModal, WelcomeModal, HelpModal, Swipeable,
+  StreakBar, ProgressBar, RoundSizeSelector, ErrorBoundary, BackupModal, WelcomeModal, HelpModal, Swipeable, DailyPlan,
 } from "./components";
 import RENAMES from "./data/renames.json";
 import { ProgressCtx } from "./context/ProgressCtx";
@@ -65,6 +67,7 @@ import {
   ClozeTrainer, ClozeSummary, buildClozePool, buildClozeRound, saveClozeSizePref, resolveClozeRoundSize, isClozeCorrect,
   WordSearchTrainer, WordSearchSummary, buildWordSearchPool, buildWordSearchRound, resolveWordSearchSize,
   GrammarView, SearchResults, ReviewSession, FormsTrainer, buildFormsPool, MistakeBook,
+  SatzbauTrainer, buildSatzbauPool, ReadingView,
 } from "./modes";
 
 /* ============================================================
@@ -396,9 +399,21 @@ function App() {
   }, []);
   const displayStreak = effectiveStreakDisplay(streakData);
 
+  // 🎯 Heute lernen (engine/dailyPlan.js): what was done today
+  const [daily, setDaily] = useState(() => freshDaily(readSaved(STORAGE_KEYS.DAILY), localDateStr()));
+  const updateDaily = useCallback((fn) => setDaily((prev) => {
+    const next = fn(freshDaily(prev, localDateStr()));
+    try { localStorage.setItem(STORAGE_KEYS.DAILY, JSON.stringify(next)); } catch { /* storage off */ }
+    return next;
+  }), []);
+  // a card is new until its first review; read through a ref so the graders stay stable
+  const progressRef = useRef(progress);
+  progressRef.current = progress;
+
   // manual override from the flashcard's ✓ Gekonnt / ↻ Üben buttons
   const mark = useCallback((id, status) => {
     if (!id) return;
+    if (status && !progressRef.current[id]) updateDaily((d) => addNewId(d, id));
     setProgress((prev) => {
       const next = { ...prev };
       if (status === "known") {
@@ -412,7 +427,7 @@ function App() {
       return next;
     });
     if (status === "known" || status === "review") bumpStreak();
-  }, [bumpStreak]);
+  }, [bumpStreak, updateDaily]);
 
   // graded result from Quiz/Article/Reverse/Cloze: runs the adaptive
   // difficulty/stability model (see engine/fsrs.js) instead of a fixed
@@ -432,8 +447,12 @@ function App() {
   }, []);
   const [showMistakes, setShowMistakes] = useState(false);
 
-  const reviewResult = useCallback((id, correct) => {
+  // opts.learning: a first look at new words (🎯 plan) - not knowing a word
+  // you have never seen isn't a mistake, so it stays out of the Fehlerheft
+  const reviewResult = useCallback((id, correct, opts = {}) => {
     if (!id) return;
+    const isNew = !progressRef.current[id];
+    if (isNew) updateDaily((d) => addNewId(d, id));
     setProgress((prev) => {
       const next = { ...prev };
       next[id] = reviewFsrsCard(prev[id], correct);
@@ -441,8 +460,8 @@ function App() {
       return next;
     });
     bumpStreak();
-    recordMistake(id, correct);
-  }, [bumpStreak, recordMistake]);
+    if (!(isNew && opts.learning)) recordMistake(id, correct);
+  }, [bumpStreak, recordMistake, updateDaily]);
 
   // full id list + noun list for the current selection (for progress bar & article trainer)
   const selectionCards = useMemo(() => {
@@ -488,6 +507,17 @@ function App() {
     () => selectionCards.filter((c) => c.type === "n" && c.gender),
     [selectionCards]
   );
+  // 🧩 Satzbau: the selection's example sentences; 📰 Lesen: the selection's texts
+  const satzbauPool = useMemo(() => buildSatzbauPool(selectionCards), [selectionCards]);
+  const readingTexts = useMemo(() => textsForDecks(READING_TEXTS, tabs), [tabs]);
+  const [readingKey, setReadingKey] = useState(null); // the open text
+  const [readingScores, setReadingScores] = useState(() => readSaved(STORAGE_KEYS.READING_SCORES) || {});
+  const saveReadingScore = (key, right) => setReadingScores((prev) => {
+    if (prev[key] != null && prev[key] >= right) return prev;
+    const next = { ...prev, [key]: right };
+    try { localStorage.setItem(STORAGE_KEYS.READING_SCORES, JSON.stringify(next)); } catch { /* storage off */ }
+    return next;
+  });
 
   // ---- study mode: cards | article | quiz ----
   const [mode, setMode] = useState(savedMode);
@@ -495,6 +525,16 @@ function App() {
   // grammar links: a card's 📖 chip opens the Grammatik tab on that topic,
   // remembering which mode it came from so "← Zurück" can return there.
   const [grammarFocus, setGrammarFocus] = useState(null);
+  // 📅 grammar topics come back for review (engine/grammarReview.js)
+  const [grammarSchedule, setGrammarSchedule] = useState(() => readSaved(STORAGE_KEYS.GRAMMAR_REVIEW) || {});
+  const finishGrammarRound = (key, right, total) => {
+    setGrammarSchedule((prev) => {
+      const next = { ...prev, [key]: scheduleTopic(prev[key], right, total, localDateStr()) };
+      try { localStorage.setItem(STORAGE_KEYS.GRAMMAR_REVIEW, JSON.stringify(next)); } catch { /* storage off */ }
+      return next;
+    });
+    updateDaily((d) => ({ ...d, grammar: true }));
+  };
   const [grammarFrom, setGrammarFrom] = useState(null);
   const openGrammar = useCallback((key) => {
     setShowMistakes(false);
@@ -832,9 +872,10 @@ function App() {
   // cards are a snapshot, so grading one doesn't reshuffle the session.
   const dueAll = useMemo(() => dueCards(progress, ALL_CARDS), [progress]);
   const [review, setReview] = useState(null); // { cards, n }
-  const startReview = (cards) => {
+  // opts: { learning, title } - the 🎯 plan's new-words session
+  const startReview = (cards, opts = {}) => {
     setShowMistakes(false);
-    setReview({ cards, n: Date.now() });
+    setReview({ cards, n: Date.now(), ...opts });
     setQuery("");
     setGrammarFocus(null);
     setTopicsOpen(false);
@@ -888,6 +929,61 @@ function App() {
   };
   const newTopics = newTopicsOf(EXTRA_TOPICS, { seen: seenNew, selected: tabs });
 
+  // 🎯 Heute lernen: the four steps of today's plan
+  const today = localDateStr();
+  const day = freshDaily(daily, today);
+  const [newPerDay, setNewPerDay] = useState(() => {
+    const v = readSaved(STORAGE_KEYS.NEW_PER_DAY);
+    return NEW_PER_DAY_PRESETS.includes(v) ? v : DEFAULT_NEW_PER_DAY;
+  });
+  const cycleNewPerDay = () => setNewPerDay((n) => {
+    const next = NEW_PER_DAY_PRESETS[(NEW_PER_DAY_PRESETS.indexOf(n) + 1) % NEW_PER_DAY_PRESETS.length];
+    try { localStorage.setItem(STORAGE_KEYS.NEW_PER_DAY, JSON.stringify(next)); } catch { /* storage off */ }
+    return next;
+  });
+  const newLeft = Math.max(0, newPerDay - day.newIds.length);
+  const newCandidates = useMemo(() => newCardsFor(ALL_CARDS, progress, tabs, idOf, newLeft), [progress, tabs, newLeft]);
+  const grammarDueKeys = GRAMMAR_TOPICS.filter((t) => isTopicDue(grammarSchedule[t.key], today)).map((t) => t.key);
+  const nextGrammar = nextGrammarTopic(GRAMMAR_TOPICS, GRAMMAR_EXERCISES, grammarSchedule, today);
+  const nextGrammarTitle = nextGrammar ? (GRAMMAR_TOPICS.find((t) => t.key === nextGrammar.key).title.de) : "";
+  const mistakesOpenToday = [...mistakeEntries.words, ...mistakeEntries.grammar].filter((e) => !e.rightDays.includes(today)).length;
+  const planSteps = [
+    {
+      key: "review", icon: "📅",
+      label: dueAll.length ? `${dueAll.length} ${dueAll.length === 1 ? "Karte" : "Karten"} wiederholen` : "Wiederholen",
+      detail: dueAll.length ? "Fällig aus allen Kapiteln" : "Nichts mehr fällig",
+      done: dueAll.length === 0,
+      onStart: dueAll.length ? () => startReview(dueAll.slice(0, REVIEW_SIZE)) : undefined,
+    },
+    {
+      key: "new", icon: "🆕",
+      label: `Neue Wörter: ${day.newIds.length} / ${newPerDay}`,
+      detail: newLeft === 0 ? "Tagesziel erreicht" : newCandidates.length ? `Als Nächstes aus ${(DECK_META[newCandidates[0].deck] || {}).label || newCandidates[0].deck}` : "Alle Karten schon gelernt",
+      extra: (
+        <button type="button" onClick={cycleNewPerDay} aria-label={`Tagesziel ändern (jetzt ${newPerDay})`} style={{ marginLeft: 6, padding: 0, background: "none", border: "none", color: "#8fb8d8", fontSize: 11, textDecoration: "underline", cursor: "pointer" }}>Ziel ändern</button>
+      ),
+      done: newLeft === 0 || newCandidates.length === 0,
+      action: "Lernen",
+      onStart: newLeft > 0 && newCandidates.length ? () => startReview(newCandidates, { learning: true, title: "🆕 Neue Wörter" }) : undefined,
+    },
+    {
+      key: "mistakes", icon: "📕",
+      label: mistakeCount ? `Fehlerheft: ${mistakesOpenToday} offen` : "Fehlerheft",
+      detail: mistakeCount ? `${mistakeCount} ${mistakeCount === 1 ? "Eintrag" : "Einträge"} – heute einmal richtig beantworten` : "Keine offenen Fehler",
+      done: mistakesOpenToday === 0,
+      action: "Öffnen",
+      onStart: mistakeCount ? () => { setShowMistakes(true); setTopicsOpen(false); } : undefined,
+    },
+    {
+      key: "grammar", icon: "✏️",
+      label: nextGrammar ? `${nextGrammar.due ? "Wiederholen" : "Neu"}: ${nextGrammarTitle}` : "Grammatik",
+      detail: day.grammar ? "Heute schon geübt" : nextGrammar ? "Thema lesen, dann ✏️ Übung am Ende" : "Nichts fällig",
+      done: day.grammar || !nextGrammar,
+      action: "Öffnen",
+      onStart: nextGrammar ? () => openGrammar(nextGrammar.key) : undefined,
+    },
+  ];
+
   // Phone back button / back swipe: undo the top-most thing first (a dialog,
   // a picker, the grammar page a card opened, the search, a review), then go
   // to the Karten tab; only from there does back leave the app.
@@ -900,6 +996,7 @@ function App() {
     : query !== "" ? () => setQuery("")
     : review ? () => setReview(null)
     : showMistakes ? () => setShowMistakes(false)
+    : mode === MODE.READING && readingKey ? () => setReadingKey(null)
     : topicsOpen ? () => setTopicsOpen(false)
     : mode !== MODE.CARDS ? () => { setMode(MODE.CARDS); setGrammarFocus(null); setGrammarFrom(null); }
     : null;
@@ -1051,34 +1148,9 @@ function App() {
           </button>
         )}
 
-        {/* HEUTE FÄLLIG - spaced-repetition reviews from every deck */}
-        {dueAll.length > 0 && !reviewing && (
-          <button
-            onClick={() => startReview(dueAll.slice(0, REVIEW_SIZE))}
-            style={{
-              display: "flex", width: "100%", alignItems: "center", justifyContent: "space-between", gap: 10, marginBottom: 12,
-              padding: "11px 14px", borderRadius: 12, border: "1px solid #e0833b", background: "rgba(224,131,59,.1)",
-              color: "#f2f5f8", fontSize: 14, fontWeight: 700, cursor: "pointer", textAlign: "left",
-            }}
-          >
-            <span>📅 {dueAll.length} {dueAll.length === 1 ? "Karte" : "Karten"} heute fällig</span>
-            <span style={{ color: "#e0833b", whiteSpace: "nowrap" }}>Wiederholen →</span>
-          </button>
-        )}
-
-        {/* 📕 FEHLERHEFT - wrong answers from every trainer, until fixed */}
-        {mistakeCount > 0 && !overlay && (
-          <button
-            onClick={() => { setShowMistakes(true); setTopicsOpen(false); }}
-            style={{
-              display: "flex", width: "100%", alignItems: "center", justifyContent: "space-between", gap: 10, marginBottom: 12,
-              padding: "11px 14px", borderRadius: 12, border: "1px solid #c6534f", background: "rgba(198,83,79,.1)",
-              color: "#f2f5f8", fontSize: 14, fontWeight: 700, cursor: "pointer", textAlign: "left",
-            }}
-          >
-            <span>📕 Fehlerheft · {mistakeCount} {mistakeCount === 1 ? "Eintrag" : "Einträge"}</span>
-            <span style={{ color: "#e07b6f", whiteSpace: "nowrap" }}>Üben →</span>
-          </button>
+        {/* 🎯 HEUTE LERNEN - due reviews, new words, Fehlerheft, one grammar topic */}
+        {!overlay && (
+          <DailyPlan steps={planSteps} collapsed={day.collapsed} onToggle={() => updateDaily((d) => ({ ...d, collapsed: !d.collapsed }))} />
         )}
 
         {/* 🆕 NEW CHAPTER - new chapters aren't ticked automatically */}
@@ -1221,11 +1293,14 @@ function App() {
         )}
 
         {/* MODE SWITCH + PROGRESS */}
-        {/* Eight tabs in two even rows of four, the same on every screen
-            (the column is at most 480px, too narrow for eight in a row):
+        {/* Ten tabs in two even rows of five, the same on every screen
+            (the column is at most 480px, too narrow for ten in a row):
             every button is icon over label, counts are corner badges. */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, minmax(0, 1fr))", gap: 6, marginBottom: 14 }}>
-          {MODE_TABS(articleNouns.length, clozePool.length, wsPool.length, formsPools.perfekt.length + formsPools.plural.length).map((tab) => {
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(5, minmax(0, 1fr))", gap: "10px 5px", marginTop: 8, marginBottom: 14 }}>
+          {MODE_TABS({
+            article: articleNouns.length, cloze: clozePool.length, wordsearch: wsPool.length,
+            forms: formsPools.perfekt.length + formsPools.plural.length, satzbau: satzbauPool.length, reading: readingTexts.length,
+          }).map((tab) => {
             const active = mode === tab.mode;
             return (
               <button
@@ -1236,17 +1311,17 @@ function App() {
                 style={{
                   position: "relative",
                   display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 2,
-                  minHeight: 52, padding: "6px 4px", borderRadius: 12, border: "1px solid #2c3a47",
+                  minHeight: 52, padding: "6px 2px", borderRadius: 12, border: "1px solid #2c3a47",
                   background: active ? "#e0833b" : "#1a232b", color: active ? "#0e1419" : "#9ab0c2",
                   cursor: "pointer",
                 }}
               >
                 <span aria-hidden="true" style={{ fontSize: 16, lineHeight: 1 }}>{tab.icon}</span>
-                <span style={{ fontSize: "clamp(11px, 3.3vw, 12px)", fontWeight: 700, whiteSpace: "nowrap" }}>{tab.label}</span>
+                <span style={{ fontSize: "clamp(10px, 2.9vw, 12px)", fontWeight: 700, whiteSpace: "nowrap", letterSpacing: -0.2 }}>{tab.label}</span>
                 {tab.count !== undefined && (
                   <span aria-hidden="true" style={{
-                    position: "absolute", top: 4, right: 4, minWidth: 16, padding: "0 4px", borderRadius: 8,
-                    fontSize: 10, fontWeight: 700, lineHeight: "15px", textAlign: "center",
+                    position: "absolute", top: -7, right: -3, minWidth: 16, padding: "0 4px", borderRadius: 8,
+                    fontSize: 10, fontWeight: 700, lineHeight: "15px", textAlign: "center", border: "1px solid #0e1419",
                     background: active ? "rgba(14,20,25,.22)" : "#2c3a47", color: active ? "#0e1419" : "#cdd8e2",
                   }}>{tab.count}</span>
                 )}
@@ -1293,10 +1368,11 @@ function App() {
             key={review.n}
             cards={review.cards}
             lang={lang}
-            onGrade={reviewResult}
+            onGrade={review.learning ? (id, correct) => reviewResult(id, correct, { learning: true }) : reviewResult}
             onExit={() => setReview(null)}
-            onRepeat={(missed) => startReview(missed)}
-            moreCount={dueAll.length}
+            onRepeat={(missed) => startReview(missed, { learning: review.learning, title: review.title })}
+            moreCount={review.learning ? 0 : dueAll.length}
+            title={review.title}
             onMore={() => startReview(dueAll.slice(0, REVIEW_SIZE))}
           />
         ) : mode === MODE.ARTICLE ? (
@@ -1433,6 +1509,19 @@ function App() {
               onGrade={reviewResult}
             />
           </>
+        ) : mode === MODE.SATZBAU ? (
+          <SatzbauTrainer key={`${tabs.join(",")}|${satzbauPool.length}`} pool={satzbauPool} />
+        ) : mode === MODE.READING ? (
+          <ReadingView
+            texts={readingTexts}
+            allTexts={READING_TEXTS}
+            openKey={readingKey}
+            onOpen={(key) => { setReadingKey(key); window.scrollTo(0, 0); }}
+            lang={lang}
+            scores={readingScores}
+            onScore={saveReadingScore}
+            onOpenChapter={openChapterAt}
+          />
         ) : mode === MODE.GRAMMAR ? (
           <GrammarView
             topics={GRAMMAR_TOPICS}
@@ -1442,6 +1531,8 @@ function App() {
             onBack={grammarFrom ? backFromGrammar : undefined}
             onOpenChapter={openChapterAt}
             onExerciseAnswer={(key, item, correct) => recordMistake(grammarMistakeId(key, item.q), correct)}
+            dueKeys={grammarDueKeys}
+            onExerciseDone={finishGrammarRound}
           />
         ) : (
         <>

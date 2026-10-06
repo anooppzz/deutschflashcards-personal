@@ -21,3 +21,6 @@ export * from "./renames";
 export * from "./mistakes";
 export * from "./newTopics";
 export * from "./lookup";
+export * from "./reading";
+export * from "./grammarReview";
+export * from "./dailyPlan";

@@ -18,4 +18,8 @@ export const STORAGE_KEYS = {
   MISTAKES: "mistakes:v1", // 📕 Fehlerheft: wrong answers until fixed (engine/mistakes.js)
   SEEN_NEW: "seenNewTopics:v1", // new chapters already opened or dismissed (engine/newTopics.js)
   REVERSE_PROMPT: "reversePrompt:v1", // Reverse mode: "meaning" (read) or "audio" (🎧 Hören)
+  READING_SCORES: "readingScores:v1", // 📰 Lesen: best question score per text
+  DAILY: "daily:v1", // 🎯 Heute lernen: what was done today (engine/dailyPlan.js)
+  NEW_PER_DAY: "newPerDay:v1", // 🎯 daily goal for new words
+  GRAMMAR_REVIEW: "grammarReview:v1", // 📅 when each grammar topic is due again (engine/grammarReview.js)
 };

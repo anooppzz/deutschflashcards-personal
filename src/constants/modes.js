@@ -11,22 +11,26 @@ export const MODE = {
   WORDSEARCH: "wordsearch",
   FORMS: "forms",
   GRAMMAR: "grammar",
+  SATZBAU: "satzbau",
+  READING: "reading",
 };
 
 // Tab definitions for the mode switcher: { mode, icon, label, count }.
-// Artikel, Cloze, Wortgitter and Formen carry a live count (how many cards in the
-// current selection are actually usable for that mode), so the function
-// takes all three; the count shows as a small badge, not in the label, so
+// Modes that only use part of the selection (Artikel: nouns, Lücke, Wortgitter,
+// Formen, Satzbau: usable sentences, Lesen: texts) carry a live count for the
+// current selection; it shows as a small corner badge, not in the label, so
 // every button keeps the same shape. Grammar is deliberately NOT scoped to
 // the topic selector - it's a fixed reference, independent of which
 // vocabulary topics are currently selected, so it carries no count.
-export const MODE_TABS = (articleNounsCount, clozeCount, wordSearchCount, formsCount) => [
+export const MODE_TABS = (counts = {}) => [
   { mode: MODE.CARDS, icon: "🃏", label: "Karten" },
-  { mode: MODE.ARTICLE, icon: "🎯", label: "Artikel", count: articleNounsCount },
+  { mode: MODE.ARTICLE, icon: "🎯", label: "Artikel", count: counts.article },
   { mode: MODE.QUIZ, icon: "📝", label: "Quiz" },
   { mode: MODE.REVERSE, icon: "↔️", label: "Reverse" },
-  { mode: MODE.CLOZE, icon: "✏️", label: "Lücke", count: clozeCount },
-  { mode: MODE.WORDSEARCH, icon: "🔤", label: "Wortgitter", count: wordSearchCount },
-  { mode: MODE.FORMS, icon: "🔁", label: "Formen", count: formsCount },
+  { mode: MODE.CLOZE, icon: "✏️", label: "Lücke", count: counts.cloze },
+  { mode: MODE.WORDSEARCH, icon: "🔤", label: "Wortgitter", count: counts.wordsearch },
+  { mode: MODE.FORMS, icon: "🔁", label: "Formen", count: counts.forms },
+  { mode: MODE.SATZBAU, icon: "🧩", label: "Satzbau", count: counts.satzbau },
+  { mode: MODE.READING, icon: "📰", label: "Lesen", count: counts.reading },
   { mode: MODE.GRAMMAR, icon: "📖", label: "Grammatik" },
 ];

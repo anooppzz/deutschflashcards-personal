@@ -17,7 +17,8 @@ handoff between chat sessions: a new session should be able to continue from the
   – tell the learner which commit to look for.
 - **New chapter?** Give it `"added": "YYYY-MM-DD"` (today). For three weeks the start
   screen shows "🆕 Neues Kapitel … Öffnen →", because new chapters are not ticked
-  under 📚 Themen automatically and are easy to miss.
+  under 📚 Themen automatically and are easy to miss. Also write its 📰 Lesen text
+  (see "Reading texts" below) – every chapter has one.
 
 ## The project
 
@@ -86,6 +87,7 @@ src/data/decks/            vocabulary
   _deck-manifest.json      labels/icons for the five non-chapter decks
 src/data/grammar/topics.json   grammar reference (the Grammatik tab)
 src/data/grammar/exercises.json  ✏️ Üben questions per topic (see below)
+src/data/reading/texts.json  📰 Lesen: one short A2 text per chapter (see below)
 src/data/index.js          exports; ALL_CARDS = every card in one flat list
 src/engine/                logic: FSRS scheduling, filters, grammarLinks.js,
                            globalSearch.js (app-wide search: cards + grammar)
@@ -111,6 +113,15 @@ src/engine/mistakes.js     📕 Fehlerheft: every wrong answer (App.jsx reviewRe
                            grammar exercises) until right on 2 different days;
                            view in modes/mistakes/MistakeBook.jsx
 src/engine/newTopics.js    🆕 Neues Kapitel banner (see "added" above)
+src/engine/dailyPlan.js    🎯 Heute lernen (start screen): due reviews, new words (daily
+                           goal), Fehlerheft, one grammar topic; card: components/DailyPlan.jsx,
+                           steps built in App.jsx (planSteps)
+src/engine/grammarReview.js  📅 grammar topics come back: ✏️ Üben ≥ 80% → 3, 8, 20 … days,
+                           else tomorrow; "📅 fällig" chip in the Grammatik tab
+src/engine/reading.js      📰 Lesen: [[surface|front]] links in texts → cards
+src/modes/satzbau/         🧩 Satzbau: order the words of a card's example sentence
+                           (first word given; 4–10 words; no …, /, quotes)
+src/modes/reading/         📰 Lesen view (list, text, linked words, questions)
 src/constants/build.js     "Version <date> · <commit>" at the bottom (set in vite.config.js)
 src/components/HelpModals.jsx  welcome + ❓ help windows; texts in src/data/help.json
                            (en, de, sq, ar, uk, hi – keep all six when editing)
@@ -195,9 +206,24 @@ found in the example are left out of Cloze, which is fine for phrases).
 `{ "topic-key": [ { "q": "Ich warte ___ den Bus.", "options": ["auf", "für", "an"],
 "answer": "auf", "en": "I'm waiting for the bus.", "why": {"de": "…", "en": "…"} } ] }`
 – one `___` per question, 3 options (shuffled in the app), a one-line reason in both
-languages. Ending questions use options like `"-en"` and `"keine Endung"`. 5 per topic;
-every new topic needs ≥ 4. Tests check the format and that no question repeats a
+languages. Ending questions use options like `"-en"` and `"keine Endung"`. 10 per topic
+(a new topic needs ≥ 4). Only one option may be correct German – no "Kannst/Könntest"
+pairs where both work. One question per line in the file. Tests check the format and that no question repeats a
 sentence from its own topic (the answer would be on screen right above it).
+
+## Reading texts (`reading/texts.json`)
+
+One per chapter (`key` = `deck` = chapter key), 3 short paragraphs of A2 German using
+that chapter's words, with an English translation per paragraph and 3 questions:
+
+`{ "key", "deck", "level": "A2", "title", "paragraphs": ["… [[Wohnung|die Wohnung]] …"],
+"en": ["…"], "questions": [{ "q", "en", "answer": "richtig" }, { "q", "en",
+"options": ["…", "…", "…"], "answer": "…" }] }`
+
+- `[[surface|card front]]` makes a word tappable; `[[front]]` when the text shows the
+  front unchanged. A separable verb can link the whole phrase (`[[kommt er an|ankommen]]`).
+- A question without `options` is "Richtig oder falsch?".
+- `engine/reading.test.js` fails if a link has no card or a question is malformed.
 
 ## Editing the JSON
 

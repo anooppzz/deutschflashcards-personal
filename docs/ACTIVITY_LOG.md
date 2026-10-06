@@ -22,9 +22,10 @@ was done, newest first. Every change adds a log entry here in the same commit
   (claude.ai/new?q=…; the question is also copied as a fallback).
 - [ ] **Starting a new chat:** pick `deutschflashcards-personal` as the repository. Chats
   that still open in the old repo now find a `CLAUDE.md` there sending them here.
-- [ ] Learning audit, phase 2 (not started): Satzbau trainer, "Heute lernen" daily plan,
-  reading texts per chapter, grammar topics with spaced repetition. Phase 3: in-app AI with
-  the learner's own key, exam mode.
+- [ ] **To check on the learner's phone:** 🎯 Heute lernen over a few days (does the new-word
+  goal feel right? 10/day by default, "Ziel ändern" cycles 5/10/15/20), Satzbau chips are
+  easy to tap, 📰 Lesen 🔊 Vorlesen with the phone's German voice.
+- [ ] Learning audit, phase 3 (not started): in-app AI with the learner's own key, exam mode.
 - [ ] **To check on the learner's phone:** the "📲 App installieren" button (Android/Chrome) –
   headless Chrome never offers installation, so it is untested.
 - The audit of 2026-10-01 is fully done (search, backup + PWA, Heute fällig, Formen
@@ -33,6 +34,34 @@ was done, newest first. Every change adds a log entry here in the same commit
 ## Log
 
 ### 2026-10-06
+- **Learning audit, phase 2:**
+  - **🎯 Heute lernen** (`engine/dailyPlan.js`, `components/DailyPlan.jsx`) replaces the
+    "Heute fällig" and Fehlerheft banners: one card with four steps – 📅 due reviews,
+    🆕 new words (daily goal 10, "Ziel ändern" → 5/10/15/20; unseen cards from the selected
+    chapters first, then the rest in chapter order), 📕 Fehlerheft (entries not yet answered
+    right today), ✏️ one grammar topic (the most overdue, else the next one never practised).
+    Done steps show ✅; the card folds (remembered for the day). Not knowing a word on its
+    first look in the new-words session doesn't go into the Fehlerheft.
+  - **📅 Grammar topics come back** (`engine/grammarReview.js`): finishing a topic's ✏️ Üben
+    schedules it – ≥ 80% → 3, 8, 20 … (max 60) days, else tomorrow (`grammarReview:v1`).
+    "📅 fällig" on the topic header and "📅 N heute fällig" at the top of the Grammatik tab.
+  - **✏️ Üben: 5 → 10 questions per topic** (145 new, 290 in total), each with English and a
+    reason in both languages; no item where two options are correct German; 5 first drafts
+    repeated sentences from their own topic and were replaced (the test caught them).
+  - **🧩 Satzbau** (new tab, `modes/satzbau/`): the words of a card's example sentence
+    (4–10 words, ~1,200 sentences) as chips; the first word is given, tap to build, tap to
+    take back. Wrong order → the right sentence (🔊) and "Meine Reihenfolge ist auch
+    richtig" for the cases where German allows both. Summary with "Fehler üben".
+  - **📰 Lesen** (new tab, `modes/reading/`, `data/reading/texts.json`): 31 short A2 texts,
+    one per chapter (all 28 textbook chapters + Kleidung, Verkehr, Haushalt), 450 linked
+    words that open their card under the paragraph, 🔊 Vorlesen, 🇬🇧 translation per
+    paragraph, 3 questions (richtig/falsch + multiple choice), best score kept
+    (`readingScores:v1`). Back gesture returns from a text to the list.
+  - Tabs: ten in two rows of five; count badges sit on the corner. Help (❓) mentions the
+    new parts in all six languages.
+  - Tested at 360/390px: plan steps (new words counted, grammar round → schedule → due chip,
+    folding), Satzbau round, a text with a word card and the questions, back gesture, tab
+    labels not clipped; no sideways scroll, no errors. 243 tests.
 - **Old repo now points here** (learner's OK): `anooppzz/deutschflashcards` got a
   `CLAUDE.md` on `main` (051d074) saying the repo is retired and to work in
   `deutschflashcards-personal` – new chats open in the old repo by default and edited the

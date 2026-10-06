@@ -15,3 +15,5 @@ export * from "./cardStyles";
 export { default as BackupModal } from "./BackupModal";
 export { WelcomeModal, HelpModal } from "./HelpModals";
 export { default as Swipeable } from "./Swipeable";
+export { default as DailyPlan } from "./DailyPlan";
+export { default as LookupLinks } from "./LookupLinks";

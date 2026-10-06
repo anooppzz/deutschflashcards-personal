@@ -14,7 +14,8 @@ if (typeof window !== "undefined" && window.speechSynthesis) {
 }
 
 // rate: 0.95 normal; 🐢 slower for listening practice (~0.6)
-export const speak = (text, onErr, rate = 0.95) => {
+// onEnd: called when the phone has finished speaking
+export const speak = (text, onErr, rate = 0.95, onEnd) => {
   const fail = () => { if (onErr) onErr(); };
   try {
     const synth = window.speechSynthesis;
@@ -27,6 +28,7 @@ export const speak = (text, onErr, rate = 0.95) => {
     const de = pool.find((v) => /^de(\b|[-_])/i.test(v.lang));
     if (de) u.voice = de;
     u.onerror = fail;
+    if (onEnd) u.onend = onEnd;
     let started = false;
     u.onstart = () => { started = true; };
     synth.speak(u);
@@ -34,4 +36,8 @@ export const speak = (text, onErr, rate = 0.95) => {
     setTimeout(() => { try { if (synth.paused) synth.resume(); } catch {} }, 200);
     setTimeout(() => { if (!started && !synth.speaking) fail(); }, 1200);
   } catch { fail(); }
+};
+
+export const stopSpeaking = () => {
+  try { window.speechSynthesis.cancel(); } catch { /* no speech */ }
 };
