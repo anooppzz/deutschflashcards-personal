@@ -32,7 +32,7 @@ grammar topics.
 - **Stack:** React 19 + Vite 8, tests with Vitest, lint with Oxlint. The build inlines
   everything into one self-contained `dist/index.html` (`vite-plugin-singlefile`).
 - **Legacy:** `anooppzz/deutschflashcards` is the old repo (built bundle only). Don't
-  change it.
+  change it – its only addition is a `CLAUDE.md` pointing here (2026-10-06).
 
 ## Commands
 

@@ -20,11 +20,8 @@ was done, newest first. Every change adds a log entry here in the same commit
 - [ ] **To check on the learner's phone:** 🎧 Hören speaks with the phone's German voice
   (headless Chrome has none), and 🤖 Frag Claude opens Claude with the question filled in
   (claude.ai/new?q=…; the question is also copied as a fallback).
-- [ ] **Stop new sessions from starting in the old repo:** new cloud sessions start in
-  `anooppzz/deutschflashcards`, which has no CLAUDE.md, so they edit the old app first
-  (happened on 2026-10-05). Fix: pick `deutschflashcards-personal` when starting a chat,
-  and/or (learner's OK needed – the old repo is otherwise untouched) add a short
-  `CLAUDE.md` there that points to this repo.
+- [ ] **Starting a new chat:** pick `deutschflashcards-personal` as the repository. Chats
+  that still open in the old repo now find a `CLAUDE.md` there sending them here.
 - [ ] Learning audit, phase 2 (not started): Satzbau trainer, "Heute lernen" daily plan,
   reading texts per chapter, grammar topics with spaced repetition. Phase 3: in-app AI with
   the learner's own key, exam mode.
@@ -36,6 +33,10 @@ was done, newest first. Every change adds a log entry here in the same commit
 ## Log
 
 ### 2026-10-06
+- **Old repo now points here** (learner's OK): `anooppzz/deutschflashcards` got a
+  `CLAUDE.md` on `main` (051d074) saying the repo is retired and to work in
+  `deutschflashcards-personal` – new chats open in the old repo by default and edited the
+  old app on 2026-10-05. Its own code is unchanged.
 - **Why the Essen & Mengen update "didn't show":** the other session's commit (ed46532)
   was on `main` and deployed green. Two likely reasons it wasn't visible: (1) new chapters
   aren't ticked under 📚 Themen automatically; (2) the installed app's service worker
