@@ -120,6 +120,7 @@ const FOLLOW_UPS = {
   topic: ["Gib mir 5 neue Übungssätze mit Lösungen.", "Erkläre es noch einfacher.", "Wie kommt das in der DTZ-Prüfung vor?"],
   word: ["Gib mir 3 weitere Beispielsätze.", "Wie benutze ich das im Gespräch (DTZ Sprechen)?", "Welche Wörter gehören dazu?"],
   writing: ["Erkläre meinen wichtigsten Fehler genauer.", "Gib mir 3 Sätze, mit denen mein Text besser wird.", "Was muss ich für B1 anders machen?"],
+  speaking: ["Erkläre meinen wichtigsten Fehler genauer.", "Gib mir 5 Sätze, die ich in der Prüfung benutzen kann.", "Was muss ich für B1 anders machen?"],
 };
 export const followUps = (kind) => FOLLOW_UPS[kind] || FOLLOW_UPS.word;
 

@@ -79,3 +79,24 @@ formal letter/e-mail (Vermieter, Hausverwaltung, Kita, Chef, VHS, Praxis, Kunden
   Korrektheit, Wortschatz, 0–5 each (5/4 B1, 3/2 A2, 1 A1) → A2 from 7, B1 from 15 of 20.
 - `writing.test.js` checks the format and runs every model answer through the app's own
   checklist (Anrede, Gruß, register, comma, geehrte/r).
+
+## Sprechen content (`src/data/exam/dtz-sprechen.json`)
+
+Official flow (g.a.s.t. Übungssatz 1, "Information für Prüfende"): Teil 1 introduce
+yourself from the keywords Name, Geburtsort, Wohnort, Arbeit/Beruf, Familie, Sprachen, plus
+the examiner's follow-up questions (1B); Teil 2 "Sie haben in einer Zeitschrift ein Foto
+gefunden … Was sehen Sie? Was für eine Situation?" (2A), then "Welche Erfahrungen haben
+Sie damit?" with A2 and B1 questions (2B); Teil 3 plan something together from notes
+ending in "…?".
+
+- `teil1`: `keywords`, `say`, `model` [{de, en}], `phrases`, `questions` [{ q: {de, en},
+  model: {de, en} }].
+- `teil2`: `say`, `sayB`, `phrases`, `topics` [{ key, title, photo: {de, en} (the app has
+  no pictures – the photo is described), a2: 3 × {de, en}, b1: 3 × {de, en}, model }].
+- `teil3`: `say`, `phrases`, `tasks` [{ key, title, situation: {de, en}, notes (last "…?"),
+  dialogue: alternating A/B lines {who, de, en}, starting with A, ending with B }] – the
+  learner is A, the app speaks B.
+- Scoring (`src/modes/exam/speaking.js`, handbook 7.1.2.4): B1+/B1/A2+/A2/A1/0 = 5…0 ×
+  weight – 1A ×1, 1B ×1, 2A ×2, 2B ×2, 3 ×4, Aussprache ×2, Flüssigkeit ×2,
+  Korrektheit ×3, Wortschatz ×3 = 100; A2 from 35, B1 from 75.
+- `speaking.test.js` checks the structure, the A/B order and the weights.

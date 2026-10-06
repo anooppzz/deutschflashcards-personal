@@ -5,6 +5,8 @@ import { AudioControls } from "../../components";
 import { PARTS, A2_FROM, B1_FROM, itemsOf, itemsOfPart, choicesFor, scoreItems, levelFor, range, formatClock } from "./dtz";
 import { WRITING_MINUTES, writingLevel } from "./writing";
 import WritingTrainer from "./WritingTrainer";
+import SpeakingTrainer from "./SpeakingTrainer";
+import { SPEAKING_MINUTES, speakingLevel } from "./speaking";
 
 // 🎓 DTZ trainer (format: docs/DTZ_FORMAT.md). Three ways in:
 // - Teil üben: one Teil, audio as often as you like, then "Auswerten" shows
@@ -12,9 +14,11 @@ import WritingTrainer from "./WritingTrainer";
 // - Simulation: Hören (25 min, each text once) and/or Lesen (45 min) with a
 //   timer, no feedback until the end; result x/45 → A2 (20) / B1 (33).
 // - ✍️ Schreiben: a pair of writing tasks (WritingTrainer.jsx, writing.js).
+// - 🗣 Sprechen: Teil 1/2/3 or the oral exam (SpeakingTrainer.jsx, speaking.js).
 // - Ergebnisse: the last results.
 // view lives in App (back gesture): { kind: "home" } · { kind: "teil", part, teil }
-// · { kind: "sim", parts, done } · { kind: "schreiben", pair }.
+// · { kind: "sim", parts, done } · { kind: "schreiben", pair }
+// · { kind: "sprechen", teil: 1 | 2 | 3 | "sim", item?, done }.
 
 const ACCENT = "#e0833b";
 const GREEN = "#5fa85f";
@@ -321,13 +325,14 @@ function SimResult({ set, parts, answers }) {
 // ---- home ----
 
 function Home({ set, writing, results, setView }) {
+  const sectionLabel = { fontSize: 11, fontWeight: 700, letterSpacing: 0.5, color: "#7d8d9c", margin: "12px 0 8px" };
   return (
     <div>
       <div style={card}>
         <h3 style={h3}>Deutsch-Test für Zuwanderer (DTZ) A2–B1</h3>
         <p style={{ ...instr, margin: 0 }}>
-          Hören (20 Aufgaben, 25 Min.) und Lesen (25 Aufgaben, 45 Min.) zählen zusammen: ab <b>{A2_FROM}</b> von 45 Punkten <b>A2</b>, ab <b>{B1_FROM}</b> <b>B1</b>.
-          Alle Texte sind neu geschrieben, im Format der echten Prüfung.
+          Hören (25 Min.) und Lesen (45 Min.) zählen zusammen: ab <b>{A2_FROM}</b> von 45 Punkten <b>A2</b>, ab <b>{B1_FROM}</b> <b>B1</b>. Schreiben (30 Min.): ab 7 von 20 A2, ab 15 B1. Sprechen (ca. 16 Min.): ab 35 von 100 A2, ab 75 B1.
+          Gesamtergebnis: <b>Sprechen</b> plus <b>Hören/Lesen oder Schreiben</b> auf derselben Stufe. Alle Aufgaben sind neu geschrieben, im Format der echten Prüfung.
         </p>
       </div>
 
@@ -359,6 +364,19 @@ function Home({ set, writing, results, setView }) {
         </button>
       ))}
 
+      <div style={sectionLabel}>🗣 SPRECHEN · ca. {SPEAKING_MINUTES} Min. · das Handy spricht Prüfer und Partnerin</div>
+      <button type="button" onClick={() => setView({ kind: "sprechen", teil: "sim" })} style={bigBtn(true)}>
+        <b>🎙 Mündliche Prüfung simulieren</b> <span style={{ fontSize: 12 }}>· Teil 1–3 · Ergebnis A2/B1</span>
+      </button>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 6, marginBottom: 8 }}>
+        {[[1, "Über sich sprechen"], [2, "Foto + Erfahrungen"], [3, "Gemeinsam planen"]].map(([teil, text]) => (
+          <button key={teil} type="button" onClick={() => setView({ kind: "sprechen", teil })} style={{ ...smallBtn, padding: "9px 4px", textAlign: "center" }}>
+            🗣 Teil {teil}
+            <div style={{ fontSize: 11, color: "#7d8d9c", fontWeight: 600 }}>{text}</div>
+          </button>
+        ))}
+      </div>
+
       {results.length > 0 && (
         <>
           <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 0.5, color: "#7d8d9c", margin: "12px 0 8px" }}>LETZTE ERGEBNISSE</div>
@@ -367,7 +385,7 @@ function Home({ set, writing, results, setView }) {
               <div key={i} style={{ display: "flex", justifyContent: "space-between", gap: 8, fontSize: 13, padding: "4px 0", color: "#cdd8e2" }}>
                 <span>{new Date(r.at).toLocaleDateString("de-DE")} · {r.label}</span>
                 {(() => {
-                  const level = r.total === 45 ? levelFor(r.right) : r.mode === "schreiben" ? writingLevel(r.right) : null;
+                  const level = r.total === 45 ? levelFor(r.right) : r.mode === "schreiben" ? writingLevel(r.right) : r.mode === "sprechen" ? speakingLevel(r.right) : null;
                   return <b style={{ color: level ? LEVEL_COLOR[level] : "#f2f5f8", whiteSpace: "nowrap" }}>{r.right}/{r.total}{level ? ` · ${level}` : ""}</b>;
                 })()}
               </div>
@@ -380,19 +398,20 @@ function Home({ set, writing, results, setView }) {
         Echte Übungssätze mit Hörtexten und Lösungen gibt es kostenlos bei g.a.s.t.:{" "}
         <a href="https://www.gast.de/fileadmin/gast.de/GAST/5_DTZ/PDF/gast_DTZ_UEbungssatz_1.pdf" target="_blank" rel="noopener noreferrer" style={{ color: "#8fb8d8" }}>Übungssatz 1</a> ·{" "}
         <a href="https://www.gast.de/fileadmin/gast.de/GAST/5_DTZ/PDF/gast_DTZ_UEbungssatz_2.pdf" target="_blank" rel="noopener noreferrer" style={{ color: "#8fb8d8" }}>Übungssatz 2</a>.
-        Sprechen folgt als Nächstes.
+        Dort gibt es auch Bilder für Sprechen Teil 2.
       </p>
     </div>
   );
 }
 
-function DtzTrainer({ sets, writing, view, setView, results, onResult, onClose }) {
+function DtzTrainer({ sets, writing, speaking, view, setView, results, onResult, onClose }) {
   const set = sets[0];
   const root = useRef(null);
   const toTop = () => { if (root.current) root.current.scrollIntoView({ behavior: "smooth", block: "start" }); };
   const title = view.kind === "home" ? "🎓 DTZ-Training"
     : view.kind === "teil" ? `🎓 ${PARTS[view.part]} · Teil ${set[view.part][view.teil].teil}`
     : view.kind === "schreiben" ? `✍️ Schreiben · ${writing[view.pair].title}`
+    : view.kind === "sprechen" ? `🗣 Sprechen · ${view.teil === "sim" ? "Prüfung" : `Teil ${view.teil}`}`
     : `🎓 Simulation · ${view.parts.map((p) => PARTS[p]).join(" + ")}`;
   return (
     <div ref={root} style={{ scrollMarginTop: 8 }}>
@@ -406,6 +425,7 @@ function DtzTrainer({ sets, writing, view, setView, results, onResult, onClose }
       </div>
       {view.kind === "home" && <Home set={set} writing={writing} results={results} setView={setView} />}
       {view.kind === "schreiben" && <WritingTrainer key={view.pair} pair={writing[view.pair]} onResult={onResult} toTop={toTop} />}
+      {view.kind === "sprechen" && <SpeakingTrainer key={`${view.teil}-${view.item}`} content={speaking} view={view} setView={setView} onResult={onResult} toTop={toTop} />}
       {view.kind === "teil" && <TeilPractice key={`${view.part}${view.teil}`} set={set} part={view.part} teilIndex={view.teil} onDone={onResult} toTop={toTop} />}
       {view.kind === "sim" && (
         <Simulation key={view.parts.join("+")} set={set} parts={view.parts} onFinish={(r) => { onResult(r); setView({ ...view, done: true }); }} toTop={toTop} />
@@ -430,6 +450,7 @@ Home.propTypes = { set: PropTypes.object.isRequired, writing: PropTypes.array.is
 DtzTrainer.propTypes = {
   sets: PropTypes.array.isRequired,
   writing: PropTypes.array.isRequired,
+  speaking: PropTypes.object.isRequired,
   view: PropTypes.shape({ kind: PropTypes.string.isRequired }).isRequired,
   setView: PropTypes.func.isRequired,
   results: PropTypes.array.isRequired,

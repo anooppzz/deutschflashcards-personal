@@ -94,7 +94,7 @@ function AiChat({ settings, subject, onClose, onOpenSettings, onSaveToInbox }) {
     try { navigator.clipboard.writeText(turns[i].a).then(() => setCopied(i), () => {}); } catch { /* no clipboard */ }
   };
 
-  const explainLabel = subject.kind === "writing" ? "📝 Bewerte meinen Text" : `📖 Erklär mir „${subject.title}“`;
+  const explainLabel = subject.kind === "writing" ? "📝 Bewerte meinen Text" : subject.kind === "speaking" ? "🗣 Bewerte meine Antworten" : `📖 Erklär mir „${subject.title}“`;
   const suggestions = asked === 0 ? [] : followUps(subject.kind);
 
   return (
@@ -194,7 +194,7 @@ function AiChat({ settings, subject, onClose, onOpenSettings, onSaveToInbox }) {
 AiChat.propTypes = {
   settings: PropTypes.object.isRequired,
   subject: PropTypes.shape({
-    kind: PropTypes.oneOf(["word", "topic", "writing"]).isRequired,
+    kind: PropTypes.oneOf(["word", "topic", "writing", "speaking"]).isRequired,
     title: PropTypes.string.isRequired,
     question: PropTypes.string.isRequired,
     context: PropTypes.string.isRequired,

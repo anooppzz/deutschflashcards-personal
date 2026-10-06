@@ -24,6 +24,7 @@ export const STORAGE_KEYS = {
   GRAMMAR_REVIEW: "grammarReview:v1", // 📅 when each grammar topic is due again (engine/grammarReview.js)
   DTZ_RESULTS: "dtzResults:v1", // 🎓 DTZ trainer: last results [{ at, mode, label, right, total }]
   DTZ_WRITING: "dtzWriting:v1", // ✍️ DTZ Schreiben: draft text + ticked Leitpunkte per task
+  DTZ_STT: "dtzSpeechToText:v1", // 🗣 Sprechen: "on" = 📝 Mitschrift with Google speech recognition (off by default)
   AI_INBOX: "aiInbox:v1", // 📥 KI-Eingang: AI answers to add to the app later (engine/aiInbox.js)
 };
 

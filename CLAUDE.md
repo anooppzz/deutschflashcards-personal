@@ -157,6 +157,10 @@ src/modes/exam/            🎓 DTZ trainer: dtz.js (scoring 20 → A2, 33 → B
                            ✍️ Schreiben: writing.js (checklist, criteria, 7 → A2, 15 → B1,
                            AI review prompt) + WritingTrainer.jsx; tasks in
                            src/data/exam/dtz-schreiben.json (pairs A/B)
+                           🗣 Sprechen: speaking.js (turns, 9 criteria → /100, 35 → A2,
+                           75 → B1), SpeakingTrainer.jsx, speakingMedia.js (🎙 recorder in
+                           memory, 📝 speech recognition = Google, off by default);
+                           content in src/data/exam/dtz-sprechen.json
 src/constants/build.js     "Version <date> · <commit>" at the bottom (set in vite.config.js)
 src/components/HelpModals.jsx  welcome + ❓ help windows; texts in src/data/help.json
                            (en, de, sq, ar, uk, hi – keep all six when editing)

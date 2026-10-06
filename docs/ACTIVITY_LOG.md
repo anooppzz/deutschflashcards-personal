@@ -27,8 +27,11 @@ was done, newest first. Every change adds a log entry here in the same commit
   easy to tap, 📰 Lesen 🔊 Vorlesen with the phone's German voice.
 - [ ] **Phase 3 – DTZ exam training** (the learner's exam is the **DTZ**, integration course;
   Goethe/other telc exams later as separate work). Done: step 1 Hören + Lesen (set 1),
-  step 2 Schreiben (4 pairs). Next: step 3 Sprechen (Teil 1–3 tasks + phrases, record
-  yourself – stays on the phone), more Hören/Lesen sets (2, 3 …), results over time.
+  step 2 Schreiben (4 pairs), step 3 Sprechen. Next: more Hören/Lesen sets (2, 3 …), more
+  Sprechen topics, results over time.
+- [ ] **To check on the learner's phone – 🗣 Sprechen:** 🎙 recording (microphone permission
+  prompt), the examiner/partner voices, 📝 Mitschrift with Google (Android Chrome stops
+  listening after a pause – tap again, the text is appended).
 - [ ] **To check on the learner's phone – 📥 KI-Eingang:** "📤 Teilen" opens Android's
   share sheet with the `.md` file (falls back to `.txt`, then plain text, then a download).
   First real round trip: export → Claude Code chat "Bitte den KI-Eingang einarbeiten".
@@ -42,8 +45,6 @@ was done, newest first. Every change adds a log entry here in the same commit
   (Gemini: aistudio.google.com/apikey; Claude: console.anthropic.com, small top-up + spend
   limit). If Gemini says the model doesn't exist or the free limit is used up, switch to the
   other Gemini model in the settings. Not built (optional): "Frag ChatGPT / Frag Gemini" links.
-- [ ] Sprechen with Google speech recognition: learner OK'd it; show the privacy notes
-  (audio goes to Google; not a pronunciation grade) in the app when it is built.
 - [ ] **To check on the learner's phone:** ⏸ Pause / ▶ Weiter in 🎓 DTZ Hören and 📰 Lesen
   Vorlesen with the phone's German voice (tested with a simulated voice in headless Chrome),
   and that the page now scrolls to what a tab or button opens.
@@ -55,6 +56,38 @@ was done, newest first. Every change adds a log entry here in the same commit
 ## Log
 
 ### 2026-10-06
+- **🗣 DTZ-Training step 3: Sprechen + banner.** The start-screen banner now reads
+  "🎓 DTZ-Prüfungstraining · Hören · Lesen · Schreiben · Sprechen"; the DTZ home explains all
+  four parts and the overall result (Sprechen + Hören/Lesen or Schreiben at the same level).
+  - Re-read the oral exam (g.a.s.t. Übungssatz 1: flow, task sheets, criteria; handbook
+    7.1.2.4 point table) → `docs/DTZ_FORMAT.md` "Sprechen content".
+  - **Content** (`src/data/exam/dtz-sprechen.json`, all new): Teil 1 keywords + a model
+    introduction + 12 follow-up questions with model answers; Teil 2 six described photos
+    (Wochenmarkt, Wartezimmer, Restaurantküche, Park, Umzug, Geburtstagsfeier), each with
+    3 A2 + 3 B1 questions and a model description; Teil 3 five planning tasks
+    (Abschiedsfest im Kurs, kranke Kollegin besuchen, Sommerfest im Haus, Geschenk für
+    einen Kollegen, Ausflug mit Kindern) with notes and a 10-line A/B dialogue; useful
+    phrases per Teil; English for everything.
+  - **Trainer** (DTZ home → "🗣 SPRECHEN"): Teil 1 / Teil 2 (choose a photo) / Teil 3 (choose
+    a task) to practise, or **🎙 Mündliche Prüfung simulieren** (1A + 2 questions, a photo +
+    2 A2 + 1 B1 questions, a planning talk; ~16 min clock; no examples; the question text
+    hidden – listen first; back gesture asks before cancelling). The phone's voice is the
+    examiner (male voice) and the partner (second female voice, higher pitch); 🔊 repeats.
+    Per turn: **🎙 Aufnehmen** (stays in memory, ▶ play back), optional **📝 Sprechen →
+    Text** (Google speech recognition, off by default, privacy note at the switch,
+    transcript editable), 💡 Beispiel and 💬 Nützliche Sätze in practice.
+  - **Rating:** with a transcript, ✨ in-app AI ("🗣 Bewerte meine Antworten") or the
+    Claude/ChatGPT/Gemini websites with a ready request (per-Teil task completion,
+    Korrektheit, Wortschatz, mistakes table, better B1 versions, tips). The simulation ends
+    with all recordings/transcripts and a self-rating on the 9 official criteria (points
+    shown per step, e.g. Teil 3 max 20) → x/100 → A2 (35) / B1 (75), saved to the DTZ
+    results.
+  - Tests: `speaking.test.js` (content structure, A/B dialogue order, turn building for
+    each Teil and the simulation, weights = 100, thresholds, AI prompt). Headless Chrome at
+    360/390 with a fake microphone, a fake voice and a fake recogniser: banner, Teil 1
+    (examiner speaks, record → player, transcript, example, rating links), Teil 2 (photo,
+    2B lead-in, level tag), Teil 3 (partner voice), full simulation (13 turns, back asks,
+    self-rating 64/100 A2 saved) – no sideways scrolling, no errors.
 - **✍️ DTZ-Training step 2: Schreiben.** Re-read the official format (handbook 6.3.3 and the
   g.a.s.t. Übungssätze): choose Aufgabe A or B, situation + 4 Leitpunkte, Anrede + Gruß,
   30 min; 4 criteria × 0–5 points, A2 from 7, B1 from 15 of 20. Format added to

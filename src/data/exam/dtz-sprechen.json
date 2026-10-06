@@ -1,0 +1,966 @@
+{
+  "teil1": {
+    "keywords": [
+      "Name",
+      "Geburtsort",
+      "Wohnort",
+      "Arbeit/Beruf",
+      "Familie",
+      "Sprachen"
+    ],
+    "say": "Würden Sie sich bitte vorstellen? Erzählen Sie bitte etwas über sich.",
+    "model": [
+      {
+        "de": "Mein Name ist Ana Silva.",
+        "en": "My name is Ana Silva."
+      },
+      {
+        "de": "Ich komme aus Brasilien. Ich bin in Recife geboren, das ist eine große Stadt am Meer.",
+        "en": "I come from Brazil. I was born in Recife, a big city by the sea."
+      },
+      {
+        "de": "Seit drei Jahren wohne ich in Deutschland, in Leipzig. Ich wohne mit meiner Familie in einer Dreizimmerwohnung.",
+        "en": "I have lived in Germany for three years, in Leipzig. I live with my family in a three-room flat."
+      },
+      {
+        "de": "In Brasilien war ich Krankenschwester. Hier arbeite ich zurzeit in einem Pflegeheim, aber ich möchte meine Ausbildung anerkennen lassen.",
+        "en": "In Brazil I was a nurse. Here I currently work in a care home, but I want to have my training recognised."
+      },
+      {
+        "de": "Ich bin verheiratet und habe zwei Kinder. Mein Sohn ist acht und geht in die Grundschule, meine Tochter ist vier und geht in die Kita.",
+        "en": "I'm married and have two children. My son is eight and goes to primary school, my daughter is four and goes to nursery."
+      },
+      {
+        "de": "Meine Muttersprache ist Portugiesisch. Ich spreche auch ein bisschen Englisch, und jetzt lerne ich Deutsch im Integrationskurs.",
+        "en": "My mother tongue is Portuguese. I also speak a little English, and now I'm learning German in the integration course."
+      }
+    ],
+    "phrases": [
+      {
+        "de": "Ich heiße … / Mein Name ist …",
+        "en": "My name is …"
+      },
+      {
+        "de": "Ich komme aus … Ich bin in … geboren.",
+        "en": "I come from … I was born in …"
+      },
+      {
+        "de": "Ich wohne seit … Jahren in …",
+        "en": "I have lived in … for … years."
+      },
+      {
+        "de": "Ich arbeite als … bei … / Zurzeit suche ich Arbeit.",
+        "en": "I work as … at … / At the moment I'm looking for work."
+      },
+      {
+        "de": "In meinem Heimatland war ich …",
+        "en": "In my home country I was …"
+      },
+      {
+        "de": "Ich bin verheiratet / ledig / geschieden. Ich habe … Kinder.",
+        "en": "I'm married / single / divorced. I have … children."
+      },
+      {
+        "de": "Meine Muttersprache ist … Ich spreche auch …",
+        "en": "My mother tongue is … I also speak …"
+      },
+      {
+        "de": "Entschuldigung, können Sie die Frage bitte wiederholen?",
+        "en": "Sorry, could you repeat the question, please?"
+      }
+    ],
+    "questions": [
+      {
+        "q": {
+          "de": "Wie lange wohnen Sie schon in Deutschland?",
+          "en": "How long have you lived in Germany?"
+        },
+        "model": {
+          "de": "Ich wohne seit drei Jahren hier. Am Anfang war alles neu für mich, aber jetzt fühle ich mich wohl.",
+          "en": "I've lived here for three years. At first everything was new to me, but now I feel at home."
+        }
+      },
+      {
+        "q": {
+          "de": "Warum sind Sie nach Deutschland gekommen?",
+          "en": "Why did you come to Germany?"
+        },
+        "model": {
+          "de": "Mein Mann hat hier eine Arbeit gefunden. Deshalb sind wir mit den Kindern nach Deutschland gekommen.",
+          "en": "My husband found a job here. That's why we came to Germany with the children."
+        }
+      },
+      {
+        "q": {
+          "de": "Was gefällt Ihnen an Ihrem Wohnort?",
+          "en": "What do you like about where you live?"
+        },
+        "model": {
+          "de": "Mir gefallen die vielen Parks. Außerdem ist alles in der Nähe: die Schule, der Supermarkt und die Haltestelle.",
+          "en": "I like the many parks. Also, everything is close by: the school, the supermarket and the stop."
+        }
+      },
+      {
+        "q": {
+          "de": "Was machen Sie in Ihrer Freizeit?",
+          "en": "What do you do in your free time?"
+        },
+        "model": {
+          "de": "Am Wochenende gehe ich gern mit meinen Kindern in den Park. Abends lese ich oder ich koche etwas Neues.",
+          "en": "At the weekend I like going to the park with my children. In the evening I read or cook something new."
+        }
+      },
+      {
+        "q": {
+          "de": "Wie sind Sie heute hierhergekommen?",
+          "en": "How did you get here today?"
+        },
+        "model": {
+          "de": "Ich bin mit der Straßenbahn gekommen. Die Fahrt hat ungefähr zwanzig Minuten gedauert.",
+          "en": "I came by tram. The journey took about twenty minutes."
+        }
+      },
+      {
+        "q": {
+          "de": "Wann haben Sie angefangen, Deutsch zu lernen?",
+          "en": "When did you start learning German?"
+        },
+        "model": {
+          "de": "Ich habe vor zwei Jahren angefangen, zuerst mit einer App und dann im Integrationskurs.",
+          "en": "I started two years ago, first with an app and then in the integration course."
+        }
+      },
+      {
+        "q": {
+          "de": "Was möchten Sie in Zukunft beruflich machen?",
+          "en": "What would you like to do for work in the future?"
+        },
+        "model": {
+          "de": "Ich möchte wieder als Krankenschwester arbeiten. Dafür brauche ich das Zertifikat B1.",
+          "en": "I want to work as a nurse again. For that I need the B1 certificate."
+        }
+      },
+      {
+        "q": {
+          "de": "Was machen Ihre Kinder?",
+          "en": "What do your children do?"
+        },
+        "model": {
+          "de": "Mein Sohn geht in die zweite Klasse und spielt gern Fußball. Meine Tochter ist in der Kita und malt sehr gern.",
+          "en": "My son is in second grade and likes playing football. My daughter is at nursery and loves drawing."
+        }
+      },
+      {
+        "q": {
+          "de": "Wie ist das Wetter in Ihrem Heimatland?",
+          "en": "What is the weather like in your home country?"
+        },
+        "model": {
+          "de": "In Recife ist es das ganze Jahr warm, oft über 30 Grad. Den Winter in Deutschland finde ich noch sehr kalt.",
+          "en": "In Recife it's warm all year, often over 30 degrees. I still find the winter in Germany very cold."
+        }
+      },
+      {
+        "q": {
+          "de": "Was vermissen Sie aus Ihrem Heimatland?",
+          "en": "What do you miss from your home country?"
+        },
+        "model": {
+          "de": "Ich vermisse meine Eltern und meine Freunde. Und natürlich das Essen und das Meer.",
+          "en": "I miss my parents and my friends. And of course the food and the sea."
+        }
+      },
+      {
+        "q": {
+          "de": "Welche Sprachen sprechen Sie zu Hause?",
+          "en": "Which languages do you speak at home?"
+        },
+        "model": {
+          "de": "Mit meinem Mann spreche ich Portugiesisch. Die Kinder sprechen miteinander oft Deutsch.",
+          "en": "I speak Portuguese with my husband. The children often speak German with each other."
+        }
+      },
+      {
+        "q": {
+          "de": "Was ist für Sie in Deutschland schwierig?",
+          "en": "What is difficult for you in Germany?"
+        },
+        "model": {
+          "de": "Am Anfang waren die Behörden schwierig, weil man viele Formulare ausfüllen muss. Jetzt geht es besser.",
+          "en": "At first the authorities were difficult, because you have to fill in lots of forms. Now it's better."
+        }
+      }
+    ]
+  },
+  "teil2": {
+    "say": "Sie haben in einer Zeitschrift ein Foto gefunden. Was sehen Sie auf dem Foto? Was für eine Situation zeigt dieses Bild?",
+    "sayB": "Erzählen Sie bitte: Welche Erfahrungen haben Sie damit?",
+    "phrases": [
+      {
+        "de": "Auf dem Foto sehe ich …",
+        "en": "In the photo I see …"
+      },
+      {
+        "de": "Im Vordergrund / Im Hintergrund ist …",
+        "en": "In the foreground / background there is …"
+      },
+      {
+        "de": "Links / Rechts / In der Mitte …",
+        "en": "On the left / right / in the middle …"
+      },
+      {
+        "de": "Ich glaube, … / Vielleicht … / Wahrscheinlich …",
+        "en": "I think … / Maybe … / Probably …"
+      },
+      {
+        "de": "Die Person sieht … aus.",
+        "en": "The person looks …"
+      },
+      {
+        "de": "Das Foto zeigt eine typische Situation: …",
+        "en": "The photo shows a typical situation: …"
+      },
+      {
+        "de": "Ich habe schon oft … / Ich habe noch nie …",
+        "en": "I have often … / I have never …"
+      },
+      {
+        "de": "Bei uns in … ist das anders: …",
+        "en": "Where I come from, … it's different: …"
+      },
+      {
+        "de": "Früher …, aber heute …",
+        "en": "In the past …, but today …"
+      },
+      {
+        "de": "Ich finde …, weil … / Der Vorteil ist …, der Nachteil ist …",
+        "en": "I think …, because … / The advantage is …, the disadvantage is …"
+      }
+    ],
+    "topics": [
+      {
+        "key": "markt",
+        "title": "Einkaufen auf dem Wochenmarkt",
+        "photo": {
+          "de": "Ein Markt im Freien. Eine Frau kauft an einem Stand Obst und Gemüse. Der Verkäufer gibt ihr eine Tüte mit Tomaten. Im Hintergrund sind viele Leute und andere Stände.",
+          "en": "An open-air market. A woman is buying fruit and vegetables at a stall. The seller is handing her a bag of tomatoes. In the background there are lots of people and other stalls."
+        },
+        "a2": [
+          {
+            "de": "Wo kaufen Sie Lebensmittel ein?",
+            "en": "Where do you buy food?"
+          },
+          {
+            "de": "Gehen Sie manchmal auf den Markt? Was kaufen Sie dort?",
+            "en": "Do you sometimes go to the market? What do you buy there?"
+          },
+          {
+            "de": "Wie ist das in Ihrem Heimatland: Wo kaufen die Leute ein?",
+            "en": "What is it like in your home country: where do people shop?"
+          }
+        ],
+        "b1": [
+          {
+            "de": "Was ist besser: der Markt oder der Supermarkt? Warum?",
+            "en": "What is better: the market or the supermarket? Why?"
+          },
+          {
+            "de": "Achten Sie beim Einkaufen mehr auf den Preis oder auf die Qualität? Erzählen Sie.",
+            "en": "When shopping, do you pay more attention to price or quality? Tell us."
+          },
+          {
+            "de": "Wie hat sich Ihr Einkaufen verändert, seit Sie in Deutschland sind?",
+            "en": "How has your shopping changed since you have been in Germany?"
+          }
+        ],
+        "model": [
+          {
+            "de": "Auf dem Foto sehe ich einen Markt. Ich glaube, das ist ein Wochenmarkt in einer Stadt.",
+            "en": "In the photo I see a market. I think it's a weekly market in a town."
+          },
+          {
+            "de": "Eine Frau kauft Obst und Gemüse, wahrscheinlich Tomaten.",
+            "en": "A woman is buying fruit and vegetables, probably tomatoes."
+          },
+          {
+            "de": "Der Verkäufer ist freundlich und lacht.",
+            "en": "The seller is friendly and smiling."
+          },
+          {
+            "de": "Im Hintergrund sind viele Leute. Vielleicht ist es Samstagvormittag.",
+            "en": "In the background there are lots of people. Maybe it's Saturday morning."
+          },
+          {
+            "de": "Das Foto zeigt eine ganz normale Situation: Die Frau macht ihren Wocheneinkauf.",
+            "en": "The photo shows a completely normal situation: the woman is doing her weekly shopping."
+          }
+        ]
+      },
+      {
+        "key": "arzt",
+        "title": "Im Wartezimmer",
+        "photo": {
+          "de": "Ein Wartezimmer in einer Arztpraxis. Einige Personen sitzen auf Stühlen und warten. Ein Mann hält sich den Kopf, eine Mutter hat ein kleines Kind auf dem Schoß. An der Wand hängt eine Uhr.",
+          "en": "A waiting room at a doctor's practice. Some people are sitting on chairs and waiting. A man is holding his head, a mother has a small child on her lap. There is a clock on the wall."
+        },
+        "a2": [
+          {
+            "de": "Wann waren Sie zuletzt beim Arzt?",
+            "en": "When did you last go to the doctor?"
+          },
+          {
+            "de": "Wie lange müssen Sie beim Arzt meistens warten?",
+            "en": "How long do you usually have to wait at the doctor's?"
+          },
+          {
+            "de": "Was machen Sie, wenn Sie krank sind?",
+            "en": "What do you do when you are ill?"
+          }
+        ],
+        "b1": [
+          {
+            "de": "Was ist beim Arzt in Deutschland anders als in Ihrem Heimatland?",
+            "en": "What is different at the doctor's in Germany compared with your home country?"
+          },
+          {
+            "de": "Was machen Sie, um gesund zu bleiben?",
+            "en": "What do you do to stay healthy?"
+          },
+          {
+            "de": "Haben Sie beim Arzt schon einmal eine schwierige Situation erlebt? Erzählen Sie.",
+            "en": "Have you ever had a difficult situation at the doctor's? Tell us."
+          }
+        ],
+        "model": [
+          {
+            "de": "Auf dem Foto sehe ich ein Wartezimmer. Das ist bestimmt in einer Arztpraxis.",
+            "en": "In the photo I see a waiting room. It's surely in a doctor's practice."
+          },
+          {
+            "de": "Mehrere Leute sitzen auf Stühlen und warten.",
+            "en": "Several people are sitting on chairs and waiting."
+          },
+          {
+            "de": "Ein Mann hält sich den Kopf. Ich glaube, er hat Kopfschmerzen.",
+            "en": "A man is holding his head. I think he has a headache."
+          },
+          {
+            "de": "Eine Mutter hat ein kleines Kind auf dem Schoß. Vielleicht ist das Kind krank.",
+            "en": "A mother has a small child on her lap. Maybe the child is ill."
+          },
+          {
+            "de": "An der Wand hängt eine Uhr. Die Leute warten wahrscheinlich schon lange.",
+            "en": "There's a clock on the wall. The people have probably been waiting a long time."
+          }
+        ]
+      },
+      {
+        "key": "arbeit",
+        "title": "In der Restaurantküche",
+        "photo": {
+          "de": "Die Küche in einem Restaurant. Drei Personen in weißer Kleidung arbeiten zusammen. Eine Frau schneidet Gemüse, ein Mann kocht an einem großen Herd. Alle sehen sehr beschäftigt aus.",
+          "en": "The kitchen of a restaurant. Three people in white clothes are working together. A woman is cutting vegetables, a man is cooking at a big stove. Everyone looks very busy."
+        },
+        "a2": [
+          {
+            "de": "Was arbeiten Sie? Oder: Was haben Sie früher gearbeitet?",
+            "en": "What is your job? Or: what did you work as before?"
+          },
+          {
+            "de": "Arbeiten Sie lieber allein oder im Team? Warum?",
+            "en": "Do you prefer working alone or in a team? Why?"
+          },
+          {
+            "de": "Wie sind Ihre Arbeitszeiten?",
+            "en": "What are your working hours?"
+          }
+        ],
+        "b1": [
+          {
+            "de": "Was ist Ihnen bei der Arbeit am wichtigsten: das Geld, die Kollegen oder etwas anderes? Warum?",
+            "en": "What is most important to you at work: the money, the colleagues or something else? Why?"
+          },
+          {
+            "de": "Wie haben Sie in Deutschland Arbeit gesucht? Was war schwierig?",
+            "en": "How did you look for work in Germany? What was difficult?"
+          },
+          {
+            "de": "Wie ist die Arbeit in Ihrem Heimatland anders als in Deutschland?",
+            "en": "How is work in your home country different from Germany?"
+          }
+        ],
+        "model": [
+          {
+            "de": "Das Foto zeigt eine Küche, wahrscheinlich in einem Restaurant.",
+            "en": "The photo shows a kitchen, probably in a restaurant."
+          },
+          {
+            "de": "Drei Personen arbeiten dort. Sie tragen weiße Kleidung, das sind bestimmt Köche.",
+            "en": "Three people are working there. They're wearing white clothes; they're surely cooks."
+          },
+          {
+            "de": "Links schneidet eine Frau Gemüse, und in der Mitte kocht ein Mann an einem großen Herd.",
+            "en": "On the left a woman is cutting vegetables, and in the middle a man is cooking at a big stove."
+          },
+          {
+            "de": "Alle sind sehr beschäftigt. Ich glaube, es ist Mittagszeit und es gibt viele Gäste.",
+            "en": "Everyone is very busy. I think it's lunchtime and there are lots of guests."
+          },
+          {
+            "de": "Die Situation zeigt, dass Teamarbeit in der Küche sehr wichtig ist.",
+            "en": "The situation shows that teamwork in the kitchen is very important."
+          }
+        ]
+      },
+      {
+        "key": "park",
+        "title": "Freizeit im Park",
+        "photo": {
+          "de": "Eine Familie im Park. Die Eltern sitzen auf einer Decke und machen ein Picknick. Zwei Kinder spielen mit einem Ball. Die Sonne scheint.",
+          "en": "A family in the park. The parents are sitting on a blanket and having a picnic. Two children are playing with a ball. The sun is shining."
+        },
+        "a2": [
+          {
+            "de": "Was machen Sie am Wochenende?",
+            "en": "What do you do at the weekend?"
+          },
+          {
+            "de": "Gehen Sie gern in den Park? Mit wem?",
+            "en": "Do you like going to the park? With whom?"
+          },
+          {
+            "de": "Was machen Familien in Ihrem Heimatland in der Freizeit?",
+            "en": "What do families in your home country do in their free time?"
+          }
+        ],
+        "b1": [
+          {
+            "de": "Haben Sie genug Freizeit? Wie wichtig ist Freizeit für Sie?",
+            "en": "Do you have enough free time? How important is free time to you?"
+          },
+          {
+            "de": "Was kann man in Ihrer Stadt in der Freizeit machen, auch ohne viel Geld?",
+            "en": "What can you do in your town in your free time, even without much money?"
+          },
+          {
+            "de": "Verbringen Sie Ihre Freizeit lieber drinnen oder draußen? Warum?",
+            "en": "Do you prefer spending your free time indoors or outdoors? Why?"
+          }
+        ],
+        "model": [
+          {
+            "de": "Auf dem Foto sehe ich eine Familie in einem Park.",
+            "en": "In the photo I see a family in a park."
+          },
+          {
+            "de": "Die Eltern sitzen auf einer Decke und machen ein Picknick.",
+            "en": "The parents are sitting on a blanket and having a picnic."
+          },
+          {
+            "de": "Im Hintergrund spielen zwei Kinder mit einem Ball.",
+            "en": "In the background two children are playing with a ball."
+          },
+          {
+            "de": "Die Sonne scheint, es ist bestimmt Sommer. Vielleicht ist es Sonntag.",
+            "en": "The sun is shining; it's surely summer. Maybe it's Sunday."
+          },
+          {
+            "de": "Alle sehen glücklich aus. Das ist eine typische Situation am Wochenende.",
+            "en": "Everyone looks happy. It's a typical weekend situation."
+          }
+        ]
+      },
+      {
+        "key": "umzug",
+        "title": "Der Umzug",
+        "photo": {
+          "de": "Ein Umzug. Vor einem Haus steht ein Transporter. Zwei Männer tragen ein Sofa. Auf dem Gehweg stehen viele Kartons.",
+          "en": "A house move. A van is parked in front of a building. Two men are carrying a sofa. There are lots of boxes on the pavement."
+        },
+        "a2": [
+          {
+            "de": "Wie wohnen Sie? Beschreiben Sie Ihre Wohnung.",
+            "en": "How do you live? Describe your flat."
+          },
+          {
+            "de": "Sind Sie schon einmal umgezogen? Wer hat Ihnen geholfen?",
+            "en": "Have you ever moved house? Who helped you?"
+          },
+          {
+            "de": "Wie wohnen die Leute in Ihrem Heimatland?",
+            "en": "How do people live in your home country?"
+          }
+        ],
+        "b1": [
+          {
+            "de": "Wie haben Sie Ihre Wohnung in Deutschland gefunden? Was war schwierig?",
+            "en": "How did you find your flat in Germany? What was difficult?"
+          },
+          {
+            "de": "Was ist für Sie bei einer Wohnung am wichtigsten? Warum?",
+            "en": "What is most important to you in a flat? Why?"
+          },
+          {
+            "de": "Wohnen Sie lieber in der Stadt oder auf dem Land? Warum?",
+            "en": "Do you prefer living in the town or in the country? Why?"
+          }
+        ],
+        "model": [
+          {
+            "de": "Das Foto zeigt einen Umzug.",
+            "en": "The photo shows a house move."
+          },
+          {
+            "de": "Vor einem Haus steht ein Transporter, und zwei Männer tragen ein Sofa.",
+            "en": "A van is parked in front of a building, and two men are carrying a sofa."
+          },
+          {
+            "de": "Auf dem Gehweg stehen viele Kartons. Ich glaube, die Familie zieht gerade ein.",
+            "en": "There are lots of boxes on the pavement. I think the family is just moving in."
+          },
+          {
+            "de": "Vielleicht helfen Freunde, oder die Männer arbeiten bei einer Umzugsfirma.",
+            "en": "Maybe friends are helping, or the men work for a removal company."
+          },
+          {
+            "de": "Ein Umzug ist immer viel Arbeit, aber auch ein neuer Anfang.",
+            "en": "A move is always a lot of work, but also a new beginning."
+          }
+        ]
+      },
+      {
+        "key": "feier",
+        "title": "Eine Geburtstagsfeier",
+        "photo": {
+          "de": "Eine Geburtstagsfeier. An einem langen Tisch sitzen viele Menschen. Auf dem Tisch steht eine große Torte mit Kerzen. Alle lachen, und eine Frau macht Fotos.",
+          "en": "A birthday party. Lots of people are sitting at a long table. On the table there is a big cake with candles. Everyone is laughing, and a woman is taking photos."
+        },
+        "a2": [
+          {
+            "de": "Wie feiern Sie Ihren Geburtstag?",
+            "en": "How do you celebrate your birthday?"
+          },
+          {
+            "de": "Welches Fest ist in Ihrer Familie am wichtigsten?",
+            "en": "Which celebration is the most important in your family?"
+          },
+          {
+            "de": "Was isst man bei Ihnen bei einem Fest?",
+            "en": "What do people eat at a celebration where you come from?"
+          }
+        ],
+        "b1": [
+          {
+            "de": "Wie feiert man in Ihrem Heimatland Hochzeiten oder Geburtstage? Was ist anders als in Deutschland?",
+            "en": "How do people celebrate weddings or birthdays in your home country? What is different from Germany?"
+          },
+          {
+            "de": "Welche deutschen Feste kennen Sie? Haben Sie schon einmal mitgefeiert?",
+            "en": "Which German celebrations do you know? Have you ever joined in?"
+          },
+          {
+            "de": "Feiern Sie lieber groß mit vielen Gästen oder klein? Warum?",
+            "en": "Do you prefer big celebrations with lots of guests or small ones? Why?"
+          }
+        ],
+        "model": [
+          {
+            "de": "Auf dem Foto sehe ich eine Feier. Ich glaube, das ist ein Geburtstag.",
+            "en": "In the photo I see a party. I think it's a birthday."
+          },
+          {
+            "de": "Viele Menschen sitzen an einem langen Tisch, vielleicht die Familie und Freunde.",
+            "en": "Lots of people are sitting at a long table, maybe the family and friends."
+          },
+          {
+            "de": "In der Mitte steht eine große Torte mit Kerzen.",
+            "en": "In the middle there is a big cake with candles."
+          },
+          {
+            "de": "Alle lachen, und eine Frau macht Fotos.",
+            "en": "Everyone is laughing, and a woman is taking photos."
+          },
+          {
+            "de": "Die Stimmung ist sehr gut. So eine Feier finde ich sehr schön.",
+            "en": "The atmosphere is very good. I really like a party like that."
+          }
+        ]
+      }
+    ]
+  },
+  "teil3": {
+    "say": "Planen Sie gemeinsam, was Sie tun wollen. Hier haben Sie einige Notizen.",
+    "phrases": [
+      {
+        "de": "Wie wäre es mit …? / Ich schlage vor, dass …",
+        "en": "How about …? / I suggest that …"
+      },
+      {
+        "de": "Wollen wir …? / Wir könnten …",
+        "en": "Shall we …? / We could …"
+      },
+      {
+        "de": "Gute Idee! / Einverstanden. / Das passt mir gut.",
+        "en": "Good idea! / Agreed. / That suits me."
+      },
+      {
+        "de": "Ich weiß nicht … / Das finde ich nicht so gut, weil …",
+        "en": "I'm not sure … / I don't think that's so good, because …"
+      },
+      {
+        "de": "Was meinst du? / Was denkst du über …?",
+        "en": "What do you think? / What do you think about …?"
+      },
+      {
+        "de": "Wer kümmert sich um …? / Ich mache …, und du …",
+        "en": "Who takes care of …? / I'll do …, and you …"
+      },
+      {
+        "de": "Also: Wir treffen uns am … um … Uhr.",
+        "en": "So: we'll meet on … at … o'clock."
+      }
+    ],
+    "tasks": [
+      {
+        "key": "abschied",
+        "title": "Abschiedsfest im Deutschkurs",
+        "situation": {
+          "de": "Ihr Deutschkurs ist bald zu Ende. Sie möchten mit allen ein Abschiedsfest machen. Sie beide organisieren das Fest.",
+          "en": "Your German course is ending soon. You want to have a farewell party with everyone. The two of you are organising it."
+        },
+        "notes": [
+          "Wann?",
+          "Wo feiern?",
+          "Essen und Getränke?",
+          "Geschenk für die Lehrerin?",
+          "Wer macht was?",
+          "…?"
+        ],
+        "dialogue": [
+          {
+            "who": "A",
+            "de": "Unser Kurs ist ja bald zu Ende. Wann wollen wir das Fest machen? Vielleicht am letzten Kurstag?",
+            "en": "Our course is ending soon. When shall we have the party? Maybe on the last day of the course?"
+          },
+          {
+            "who": "B",
+            "de": "Gute Idee. Aber am letzten Tag haben wir die Prüfung. Wie wäre es mit dem Freitag davor, nach dem Unterricht?",
+            "en": "Good idea. But on the last day we have the exam. How about the Friday before, after class?"
+          },
+          {
+            "who": "A",
+            "de": "Ja, Freitag passt mir gut. Und wo feiern wir? Im Kursraum?",
+            "en": "Yes, Friday suits me. And where shall we celebrate? In the classroom?"
+          },
+          {
+            "who": "B",
+            "de": "Der Kursraum ist ein bisschen klein. Ich schlage vor, dass wir in den Park gehen, wenn das Wetter schön ist.",
+            "en": "The classroom is a bit small. I suggest we go to the park if the weather is nice."
+          },
+          {
+            "who": "A",
+            "de": "Das finde ich schön. Und wenn es regnet, bleiben wir im Kursraum. Was machen wir mit dem Essen?",
+            "en": "I like that. And if it rains, we stay in the classroom. What shall we do about food?"
+          },
+          {
+            "who": "B",
+            "de": "Jeder bringt etwas aus seinem Heimatland mit. Dann gibt es ein internationales Buffet.",
+            "en": "Everyone brings something from their home country. Then there'll be an international buffet."
+          },
+          {
+            "who": "A",
+            "de": "Super! Ich mache einen Salat. Und die Getränke? Soll ich sie kaufen?",
+            "en": "Great! I'll make a salad. And the drinks? Shall I buy them?"
+          },
+          {
+            "who": "B",
+            "de": "Ja, gern. Ich sammle dann das Geld ein. Wir brauchen auch ein Geschenk für unsere Lehrerin.",
+            "en": "Yes, please. I'll collect the money. We also need a present for our teacher."
+          },
+          {
+            "who": "A",
+            "de": "Vielleicht Blumen und eine Karte, auf der alle unterschreiben?",
+            "en": "Maybe flowers and a card that everyone signs?"
+          },
+          {
+            "who": "B",
+            "de": "Prima. Dann kaufe ich die Blumen, und du kümmerst dich um die Karte. Ich schreibe heute noch allen eine Nachricht.",
+            "en": "Great. Then I'll buy the flowers and you take care of the card. I'll send everyone a message today."
+          }
+        ]
+      },
+      {
+        "key": "besuch",
+        "title": "Eine kranke Kollegin besuchen",
+        "situation": {
+          "de": "Ihre Kollegin Frau Lang liegt seit einer Woche im Krankenhaus. Sie möchten sie zusammen besuchen.",
+          "en": "Your colleague Ms Lang has been in hospital for a week. You want to visit her together."
+        },
+        "notes": [
+          "Wann besuchen?",
+          "Wie hinkommen?",
+          "Was mitbringen?",
+          "Wer kommt noch mit?",
+          "Wie lange bleiben?",
+          "…?"
+        ],
+        "dialogue": [
+          {
+            "who": "A",
+            "de": "Frau Lang ist schon eine Woche im Krankenhaus. Wollen wir sie zusammen besuchen?",
+            "en": "Ms Lang has been in hospital for a week now. Shall we visit her together?"
+          },
+          {
+            "who": "B",
+            "de": "Ja, unbedingt. Wann hast du Zeit? Ich arbeite diese Woche bis 15 Uhr.",
+            "en": "Yes, definitely. When are you free? I'm working until 3 pm this week."
+          },
+          {
+            "who": "A",
+            "de": "Ich auch. Wie wäre es mit Donnerstag um 16 Uhr? Die Besuchszeit ist bis 19 Uhr.",
+            "en": "Me too. How about Thursday at 4 pm? Visiting hours are until 7 pm."
+          },
+          {
+            "who": "B",
+            "de": "Donnerstag passt gut. Wie kommen wir hin? Das Krankenhaus ist ziemlich weit weg.",
+            "en": "Thursday is fine. How do we get there? The hospital is quite far away."
+          },
+          {
+            "who": "A",
+            "de": "Wir können zusammen mit dem Bus fahren. Die Linie 5 hält direkt vor dem Krankenhaus.",
+            "en": "We can take the bus together. The number 5 stops right outside the hospital."
+          },
+          {
+            "who": "B",
+            "de": "Gut, dann treffen wir uns an der Haltestelle vor der Firma. Was bringen wir mit? Blumen?",
+            "en": "Good, then let's meet at the stop outside the company. What shall we bring? Flowers?"
+          },
+          {
+            "who": "A",
+            "de": "Blumen sind in manchen Krankenhäusern nicht erlaubt. Ich finde, wir bringen lieber Obst und eine Zeitschrift mit.",
+            "en": "Flowers aren't allowed in some hospitals. I think we'd better bring fruit and a magazine."
+          },
+          {
+            "who": "B",
+            "de": "Gute Idee. Sollen wir die anderen Kollegen auch fragen?",
+            "en": "Good idea. Shall we ask the other colleagues too?"
+          },
+          {
+            "who": "A",
+            "de": "Ja, aber nicht zu viele, sonst ist es zu anstrengend für sie. Vielleicht fragen wir nur Herrn Wolf.",
+            "en": "Yes, but not too many, otherwise it's too tiring for her. Maybe we just ask Mr Wolf."
+          },
+          {
+            "who": "B",
+            "de": "Einverstanden. Und wir bleiben nicht zu lange, vielleicht eine halbe Stunde. Ich frage Herrn Wolf morgen.",
+            "en": "Agreed. And we won't stay too long, maybe half an hour. I'll ask Mr Wolf tomorrow."
+          }
+        ]
+      },
+      {
+        "key": "hoffest",
+        "title": "Sommerfest im Haus",
+        "situation": {
+          "de": "In Ihrem Haus wohnen viele Familien. Sie möchten im Sommer ein Fest für alle Nachbarn organisieren.",
+          "en": "Many families live in your building. You want to organise a summer party for all the neighbours."
+        },
+        "notes": [
+          "Wann?",
+          "Wo (Hof, Garten …)?",
+          "Essen und Getränke?",
+          "Spiele für die Kinder?",
+          "Wer informiert die Nachbarn?",
+          "…?"
+        ],
+        "dialogue": [
+          {
+            "who": "A",
+            "de": "In unserem Haus kennen sich viele Nachbarn noch nicht. Wollen wir ein Sommerfest für alle machen?",
+            "en": "Many neighbours in our building don't know each other yet. Shall we have a summer party for everyone?"
+          },
+          {
+            "who": "B",
+            "de": "Das ist eine schöne Idee! Wann wollen wir feiern? Vielleicht im Juli?",
+            "en": "That's a lovely idea! When shall we celebrate? Maybe in July?"
+          },
+          {
+            "who": "A",
+            "de": "Ja, im Juli ist das Wetter meistens schön. Wie wäre es mit Samstag, dem 12. Juli, am Nachmittag?",
+            "en": "Yes, the weather is usually nice in July. How about Saturday, 12 July, in the afternoon?"
+          },
+          {
+            "who": "B",
+            "de": "Einverstanden. Und wo? Im Hof ist viel Platz.",
+            "en": "Agreed. And where? There's lots of space in the courtyard."
+          },
+          {
+            "who": "A",
+            "de": "Stimmt, der Hof ist ideal. Aber wir müssen die Hausverwaltung fragen, ob wir dort feiern dürfen.",
+            "en": "True, the courtyard is ideal. But we have to ask the property management whether we're allowed to celebrate there."
+          },
+          {
+            "who": "B",
+            "de": "Das mache ich. Was machen wir mit dem Essen? Sollen wir grillen?",
+            "en": "I'll do that. What shall we do about the food? Shall we have a barbecue?"
+          },
+          {
+            "who": "A",
+            "de": "Grillen ist super. Jede Familie kann außerdem einen Salat oder einen Kuchen mitbringen.",
+            "en": "A barbecue is great. Each family can also bring a salad or a cake."
+          },
+          {
+            "who": "B",
+            "de": "Und für die Kinder brauchen wir ein paar Spiele. Ich habe Bälle und Straßenkreide.",
+            "en": "And we need some games for the children. I have balls and street chalk."
+          },
+          {
+            "who": "A",
+            "de": "Prima. Ich schreibe einen Zettel für alle Nachbarn und hänge ihn im Treppenhaus auf.",
+            "en": "Great. I'll write a note for all the neighbours and put it up in the stairwell."
+          },
+          {
+            "who": "B",
+            "de": "Sehr gut. Und um 22 Uhr machen wir die Musik leise, damit sich niemand beschwert.",
+            "en": "Very good. And at 10 pm we'll turn the music down so that nobody complains."
+          }
+        ]
+      },
+      {
+        "key": "geschenk",
+        "title": "Ein Geschenk für einen Kollegen",
+        "situation": {
+          "de": "Ihr Kollege Herr Ahmadi bekommt bald ein Baby. Sie möchten zusammen mit dem Team ein Geschenk kaufen.",
+          "en": "Your colleague Mr Ahmadi is having a baby soon. You want to buy a present together with the team."
+        },
+        "notes": [
+          "Was schenken?",
+          "Wie viel Geld?",
+          "Wer sammelt das Geld?",
+          "Wo kaufen?",
+          "Wann übergeben?",
+          "…?"
+        ],
+        "dialogue": [
+          {
+            "who": "A",
+            "de": "Herr Ahmadi bekommt bald ein Baby. Wollen wir ihm zusammen mit dem Team etwas schenken?",
+            "en": "Mr Ahmadi is having a baby soon. Shall we give him something together with the team?"
+          },
+          {
+            "who": "B",
+            "de": "Ja, auf jeden Fall! Was könnten wir ihm schenken?",
+            "en": "Yes, definitely! What could we give him?"
+          },
+          {
+            "who": "A",
+            "de": "Vielleicht etwas für das Baby, zum Beispiel Kleidung oder ein Spielzeug?",
+            "en": "Maybe something for the baby, for example clothes or a toy?"
+          },
+          {
+            "who": "B",
+            "de": "Bei Kleidung wissen wir die Größe nicht. Ich finde einen Gutschein besser, dann kann er selbst etwas aussuchen.",
+            "en": "With clothes we don't know the size. I think a voucher is better, then he can choose something himself."
+          },
+          {
+            "who": "A",
+            "de": "Das stimmt. Und wie viel Geld soll jeder geben? Fünf Euro?",
+            "en": "That's true. And how much money should everyone give? Five euros?"
+          },
+          {
+            "who": "B",
+            "de": "Fünf Euro sind gut, dann kann jeder mitmachen. Wir sind ja zwölf Leute im Team.",
+            "en": "Five euros is good, then everyone can join in. There are twelve of us in the team."
+          },
+          {
+            "who": "A",
+            "de": "Wer sammelt das Geld? Ich kann das machen, ich sehe alle Kollegen in der Pause.",
+            "en": "Who will collect the money? I can do it, I see all the colleagues during the break."
+          },
+          {
+            "who": "B",
+            "de": "Super. Dann kaufe ich den Gutschein im Babygeschäft in der Innenstadt.",
+            "en": "Great. Then I'll buy the voucher at the baby shop in the town centre."
+          },
+          {
+            "who": "A",
+            "de": "Und wann geben wir ihm das Geschenk? An seinem letzten Arbeitstag vor der Elternzeit?",
+            "en": "And when shall we give him the present? On his last working day before parental leave?"
+          },
+          {
+            "who": "B",
+            "de": "Ja, am Freitag. Ich besorge noch eine Karte, und alle schreiben etwas hinein.",
+            "en": "Yes, on Friday. I'll get a card too, and everyone writes something in it."
+          }
+        ]
+      },
+      {
+        "key": "ausflug",
+        "title": "Ein Ausflug mit den Kindern",
+        "situation": {
+          "de": "In den Ferien möchten Sie mit Ihren Kindern und den Kindern einer Freundin einen Tagesausflug machen. Sie planen den Ausflug zusammen mit der Freundin.",
+          "en": "In the holidays you want to go on a day trip with your children and a friend's children. You are planning the trip together with your friend."
+        },
+        "notes": [
+          "Wohin (Zoo, Schwimmbad, See …)?",
+          "Wie fahren?",
+          "Essen?",
+          "Was kostet es?",
+          "Was mitnehmen?",
+          "…?"
+        ],
+        "dialogue": [
+          {
+            "who": "A",
+            "de": "In den Ferien wollen wir doch mit den Kindern einen Ausflug machen. Wohin wollen wir fahren?",
+            "en": "We want to go on a trip with the children in the holidays. Where shall we go?"
+          },
+          {
+            "who": "B",
+            "de": "Die Kinder lieben Tiere. Wie wäre es mit dem Zoo?",
+            "en": "The children love animals. How about the zoo?"
+          },
+          {
+            "who": "A",
+            "de": "Der Zoo ist toll, aber ziemlich teuer. Was meinst du zum See? Da können die Kinder schwimmen.",
+            "en": "The zoo is great but quite expensive. What do you think about the lake? The children can swim there."
+          },
+          {
+            "who": "B",
+            "de": "Stimmt, das kostet fast nichts. Aber nur, wenn das Wetter schön ist. Wenn es regnet, gehen wir in den Zoo.",
+            "en": "True, that costs almost nothing. But only if the weather is nice. If it rains, we'll go to the zoo."
+          },
+          {
+            "who": "A",
+            "de": "Gute Idee. Wie fahren wir zum See? Mit dem Zug dauert es eine halbe Stunde.",
+            "en": "Good idea. How shall we get to the lake? It takes half an hour by train."
+          },
+          {
+            "who": "B",
+            "de": "Mit dem Zug ist gut. Kinder unter sechs Jahren fahren sogar kostenlos.",
+            "en": "The train is good. Children under six even travel free."
+          },
+          {
+            "who": "A",
+            "de": "Super. Und was machen wir mit dem Essen? Am See gibt es nur einen kleinen Kiosk.",
+            "en": "Great. And what shall we do about food? There's only a small kiosk at the lake."
+          },
+          {
+            "who": "B",
+            "de": "Wir machen ein Picknick. Ich mache Brötchen und bringe Obst mit.",
+            "en": "We'll have a picnic. I'll make rolls and bring fruit."
+          },
+          {
+            "who": "A",
+            "de": "Dann bringe ich Getränke und einen Kuchen mit. Wir dürfen die Handtücher und die Sonnencreme nicht vergessen.",
+            "en": "Then I'll bring drinks and a cake. We mustn't forget the towels and the sun cream."
+          },
+          {
+            "who": "B",
+            "de": "Richtig, und einen Ball für die Kinder. Treffen wir uns um 9 Uhr am Bahnhof?",
+            "en": "Right, and a ball for the children. Shall we meet at the station at 9?"
+          }
+        ]
+      }
+    ]
+  }
+}

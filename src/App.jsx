@@ -34,7 +34,7 @@ import {
 import {
   IRREGULAR_VERBS, INSEPARABLE_VERBS, HAUSHALT, VERKEHR, KLEIDUNG,
   EXTRA_TOPICS, DECK_META, GRAMMAR_TOPICS,
-  DECK_SOURCE, EXTRA_BY_KEY, ALL_CARDS, GRAMMAR_EXERCISES, READING_TEXTS, DTZ_SETS, DTZ_WRITING,
+  DECK_SOURCE, EXTRA_BY_KEY, ALL_CARDS, GRAMMAR_EXERCISES, READING_TEXTS, DTZ_SETS, DTZ_WRITING, DTZ_SPEAKING,
 } from "./data";
 import {
   storage,
@@ -1054,6 +1054,7 @@ function App() {
     : review ? () => setReview(null)
     : dtzView && dtzView.kind !== "home" ? () => {
       if (dtzView.kind === "sim" && !dtzView.done && !window.confirm("Simulation abbrechen? Die Antworten gehen verloren.")) return;
+      if (dtzView.kind === "sprechen" && dtzView.teil === "sim" && !dtzView.done && !window.confirm("Prüfung abbrechen? Deine Aufnahmen gehen verloren.")) return;
       setDtzView({ kind: "home" });
     }
     : dtzView ? () => setDtzView(null)
@@ -1402,7 +1403,7 @@ function App() {
               color: "#f2f5f8", fontSize: 14, fontWeight: 700, cursor: "pointer", textAlign: "left",
             }}
           >
-            <span>🎓 DTZ-Prüfungstraining <span style={{ fontSize: 12, fontWeight: 600, color: "#9ab0c2" }}>· Hören & Lesen</span></span>
+            <span>🎓 DTZ-Prüfungstraining <span style={{ fontSize: 12, fontWeight: 600, color: "#9ab0c2" }}>· Hören · Lesen · Schreiben · Sprechen</span></span>
             <span style={{ color: "#8fb8d8", whiteSpace: "nowrap" }}>Öffnen →</span>
           </button>
         )}
@@ -1435,6 +1436,7 @@ function App() {
           <DtzTrainer
             sets={DTZ_SETS}
             writing={DTZ_WRITING}
+            speaking={DTZ_SPEAKING}
             view={dtzView}
             setView={(v) => { setDtzView(v); showContent("content"); }}
             results={dtzResults}
