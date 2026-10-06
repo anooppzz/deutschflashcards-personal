@@ -3,15 +3,18 @@ import PropTypes from "prop-types";
 import { stopSpeaking, pauseSpeaking } from "../../engine/speech";
 import { AudioControls } from "../../components";
 import { PARTS, A2_FROM, B1_FROM, itemsOf, itemsOfPart, choicesFor, scoreItems, levelFor, range, formatClock } from "./dtz";
+import { WRITING_MINUTES, writingLevel } from "./writing";
+import WritingTrainer from "./WritingTrainer";
 
 // 🎓 DTZ trainer (format: docs/DTZ_FORMAT.md). Three ways in:
 // - Teil üben: one Teil, audio as often as you like, then "Auswerten" shows
 //   right/wrong, the reason and (Hören) the transcript.
 // - Simulation: Hören (25 min, each text once) and/or Lesen (45 min) with a
 //   timer, no feedback until the end; result x/45 → A2 (20) / B1 (33).
+// - ✍️ Schreiben: a pair of writing tasks (WritingTrainer.jsx, writing.js).
 // - Ergebnisse: the last results.
 // view lives in App (back gesture): { kind: "home" } · { kind: "teil", part, teil }
-// · { kind: "sim", parts, done }.
+// · { kind: "sim", parts, done } · { kind: "schreiben", pair }.
 
 const ACCENT = "#e0833b";
 const GREEN = "#5fa85f";
@@ -317,7 +320,7 @@ function SimResult({ set, parts, answers }) {
 
 // ---- home ----
 
-function Home({ set, results, setView }) {
+function Home({ set, writing, results, setView }) {
   return (
     <div>
       <div style={card}>
@@ -349,6 +352,13 @@ function Home({ set, results, setView }) {
         </div>
       ))}
 
+      <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 0.5, color: "#7d8d9c", margin: "12px 0 8px" }}>✍️ SCHREIBEN · {WRITING_MINUTES} Min. · Aufgabe A oder B</div>
+      {writing.map((pair, i) => (
+        <button key={pair.key} type="button" onClick={() => setView({ kind: "schreiben", pair: i })} style={{ ...bigBtn(false), padding: "10px 14px" }}>
+          <b>{pair.title}</b> <span style={{ fontSize: 12, color: "#9ab0c2" }}>· A: {pair.a.title} · B: {pair.b.title}</span>
+        </button>
+      ))}
+
       {results.length > 0 && (
         <>
           <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 0.5, color: "#7d8d9c", margin: "12px 0 8px" }}>LETZTE ERGEBNISSE</div>
@@ -356,7 +366,10 @@ function Home({ set, results, setView }) {
             {results.slice(0, 8).map((r, i) => (
               <div key={i} style={{ display: "flex", justifyContent: "space-between", gap: 8, fontSize: 13, padding: "4px 0", color: "#cdd8e2" }}>
                 <span>{new Date(r.at).toLocaleDateString("de-DE")} · {r.label}</span>
-                <b style={{ color: r.total === 45 ? LEVEL_COLOR[levelFor(r.right)] : "#f2f5f8", whiteSpace: "nowrap" }}>{r.right}/{r.total}{r.total === 45 ? ` · ${levelFor(r.right)}` : ""}</b>
+                {(() => {
+                  const level = r.total === 45 ? levelFor(r.right) : r.mode === "schreiben" ? writingLevel(r.right) : null;
+                  return <b style={{ color: level ? LEVEL_COLOR[level] : "#f2f5f8", whiteSpace: "nowrap" }}>{r.right}/{r.total}{level ? ` · ${level}` : ""}</b>;
+                })()}
               </div>
             ))}
           </div>
@@ -367,18 +380,19 @@ function Home({ set, results, setView }) {
         Echte Übungssätze mit Hörtexten und Lösungen gibt es kostenlos bei g.a.s.t.:{" "}
         <a href="https://www.gast.de/fileadmin/gast.de/GAST/5_DTZ/PDF/gast_DTZ_UEbungssatz_1.pdf" target="_blank" rel="noopener noreferrer" style={{ color: "#8fb8d8" }}>Übungssatz 1</a> ·{" "}
         <a href="https://www.gast.de/fileadmin/gast.de/GAST/5_DTZ/PDF/gast_DTZ_UEbungssatz_2.pdf" target="_blank" rel="noopener noreferrer" style={{ color: "#8fb8d8" }}>Übungssatz 2</a>.
-        Schreiben und Sprechen folgen als Nächstes.
+        Sprechen folgt als Nächstes.
       </p>
     </div>
   );
 }
 
-function DtzTrainer({ sets, view, setView, results, onResult, onClose }) {
+function DtzTrainer({ sets, writing, view, setView, results, onResult, onClose }) {
   const set = sets[0];
   const root = useRef(null);
   const toTop = () => { if (root.current) root.current.scrollIntoView({ behavior: "smooth", block: "start" }); };
   const title = view.kind === "home" ? "🎓 DTZ-Training"
     : view.kind === "teil" ? `🎓 ${PARTS[view.part]} · Teil ${set[view.part][view.teil].teil}`
+    : view.kind === "schreiben" ? `✍️ Schreiben · ${writing[view.pair].title}`
     : `🎓 Simulation · ${view.parts.map((p) => PARTS[p]).join(" + ")}`;
   return (
     <div ref={root} style={{ scrollMarginTop: 8 }}>
@@ -390,7 +404,8 @@ function DtzTrainer({ sets, view, setView, results, onResult, onClose }) {
           <button type="button" onClick={() => { stopSpeaking(); setView({ kind: "home" }); }} style={{ ...smallBtn, background: ACCENT, color: "#0e1419", border: "none" }}>← Übersicht</button>
         )}
       </div>
-      {view.kind === "home" && <Home set={set} results={results} setView={setView} />}
+      {view.kind === "home" && <Home set={set} writing={writing} results={results} setView={setView} />}
+      {view.kind === "schreiben" && <WritingTrainer key={view.pair} pair={writing[view.pair]} onResult={onResult} toTop={toTop} />}
       {view.kind === "teil" && <TeilPractice key={`${view.part}${view.teil}`} set={set} part={view.part} teilIndex={view.teil} onDone={onResult} toTop={toTop} />}
       {view.kind === "sim" && (
         <Simulation key={view.parts.join("+")} set={set} parts={view.parts} onFinish={(r) => { onResult(r); setView({ ...view, done: true }); }} toTop={toTop} />
@@ -411,9 +426,10 @@ TeilBlock.propTypes = {
 TeilPractice.propTypes = { set: PropTypes.object.isRequired, part: PropTypes.string.isRequired, teilIndex: PropTypes.number.isRequired, onDone: PropTypes.func.isRequired, toTop: PropTypes.func.isRequired };
 Simulation.propTypes = { set: PropTypes.object.isRequired, parts: PropTypes.arrayOf(PropTypes.string).isRequired, onFinish: PropTypes.func.isRequired, toTop: PropTypes.func.isRequired };
 SimResult.propTypes = { set: PropTypes.object.isRequired, parts: PropTypes.arrayOf(PropTypes.string).isRequired, answers: PropTypes.object.isRequired };
-Home.propTypes = { set: PropTypes.object.isRequired, results: PropTypes.array.isRequired, setView: PropTypes.func.isRequired };
+Home.propTypes = { set: PropTypes.object.isRequired, writing: PropTypes.array.isRequired, results: PropTypes.array.isRequired, setView: PropTypes.func.isRequired };
 DtzTrainer.propTypes = {
   sets: PropTypes.array.isRequired,
+  writing: PropTypes.array.isRequired,
   view: PropTypes.shape({ kind: PropTypes.string.isRequired }).isRequired,
   setView: PropTypes.func.isRequired,
   results: PropTypes.array.isRequired,

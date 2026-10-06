@@ -14,6 +14,7 @@ import GRAMMAR_TOPICS from "./grammar/topics.json";
 import GRAMMAR_EXERCISES from "./grammar/exercises.json";
 import READING_TEXTS from "./reading/texts.json";
 import DTZ_SETS from "./exam/dtz-sets.json";
+import DTZ_WRITING from "./exam/dtz-schreiben.json";
 
 export {
   IRREGULAR_VERBS,
@@ -28,6 +29,7 @@ export {
   GRAMMAR_EXERCISES,
   READING_TEXTS,
   DTZ_SETS,
+  DTZ_WRITING,
 };
 
 // Deck registry for the multi-topic (combined) mode - maps each deck key to

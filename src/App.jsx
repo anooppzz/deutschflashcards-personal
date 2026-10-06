@@ -34,7 +34,7 @@ import {
 import {
   IRREGULAR_VERBS, INSEPARABLE_VERBS, HAUSHALT, VERKEHR, KLEIDUNG,
   EXTRA_TOPICS, DECK_META, GRAMMAR_TOPICS,
-  DECK_SOURCE, EXTRA_BY_KEY, ALL_CARDS, GRAMMAR_EXERCISES, READING_TEXTS, DTZ_SETS,
+  DECK_SOURCE, EXTRA_BY_KEY, ALL_CARDS, GRAMMAR_EXERCISES, READING_TEXTS, DTZ_SETS, DTZ_WRITING,
 } from "./data";
 import {
   storage,
@@ -1434,6 +1434,7 @@ function App() {
         ) : dtzOpen ? (
           <DtzTrainer
             sets={DTZ_SETS}
+            writing={DTZ_WRITING}
             view={dtzView}
             setView={(v) => { setDtzView(v); showContent("content"); }}
             results={dtzResults}

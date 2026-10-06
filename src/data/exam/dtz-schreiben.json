@@ -1,0 +1,578 @@
+[
+  {
+    "key": "schreiben-1",
+    "title": "Satz 1",
+    "a": {
+      "key": "s1a",
+      "title": "Absage: Geburtstagsfeier",
+      "kind": "E-Mail",
+      "register": "informal",
+      "situation": "Ihre Freundin Sabine feiert am Samstag ihren 30. Geburtstag und hat Sie zu ihrer Party eingeladen. Sie können leider nicht kommen.",
+      "situationEn": "Your friend Sabine is celebrating her 30th birthday on Saturday and has invited you to her party. Unfortunately you can't come.",
+      "instruction": "Schreiben Sie Sabine eine E-Mail.",
+      "instructionEn": "Write Sabine an email.",
+      "points": [
+        {
+          "de": "Dank für die Einladung",
+          "en": "Thanks for the invitation"
+        },
+        {
+          "de": "Warum Sie nicht kommen können",
+          "en": "Why you can't come"
+        },
+        {
+          "de": "Geschenk",
+          "en": "Present"
+        },
+        {
+          "de": "Neues Treffen",
+          "en": "Meeting another time"
+        }
+      ],
+      "model": {
+        "anrede": "Liebe Sabine,",
+        "parts": [
+          "vielen Dank für deine Einladung zu deiner Geburtstagsfeier! Ich habe mich sehr darüber gefreut.",
+          "Leider kann ich am Samstag nicht kommen, weil meine Schwester an diesem Wochenende heiratet. Die Hochzeit ist in Hamburg, deshalb fahre ich schon am Freitag dorthin.",
+          "Ich habe aber schon ein kleines Geschenk für dich gekauft. Ich hoffe, dass es dir gefällt. Ich bringe es dir nächste Woche vorbei.",
+          "Hast du am Dienstag oder am Mittwoch Zeit? Dann können wir zusammen ins Café gehen und ein bisschen nachfeiern. Ich lade dich ein!"
+        ],
+        "partsEn": [
+          "thank you very much for your invitation to your birthday party! I was very happy about it.",
+          "Unfortunately I can't come on Saturday because my sister is getting married that weekend. The wedding is in Hamburg, so I'm going there on Friday already.",
+          "But I've already bought a little present for you. I hope you like it. I'll bring it round next week.",
+          "Are you free on Tuesday or Wednesday? Then we can go to a café together and celebrate a little afterwards. My treat!"
+        ],
+        "gruss": "Ich wünsche dir eine tolle Party!\nViele Grüße\nMaria"
+      },
+      "phrases": [
+        {
+          "de": "Vielen Dank für deine Einladung zu …",
+          "en": "Thank you for your invitation to …"
+        },
+        {
+          "de": "Leider kann ich nicht kommen, weil …",
+          "en": "Unfortunately I can't come because …"
+        },
+        {
+          "de": "Es tut mir wirklich leid.",
+          "en": "I'm really sorry."
+        },
+        {
+          "de": "Ich habe ein kleines Geschenk für dich.",
+          "en": "I have a little present for you."
+        },
+        {
+          "de": "Hast du am … Zeit?",
+          "en": "Are you free on …?"
+        },
+        {
+          "de": "Ich wünsche dir eine schöne Feier!",
+          "en": "Have a lovely party!"
+        }
+      ]
+    },
+    "b": {
+      "key": "s1b",
+      "title": "Aufzug kaputt",
+      "kind": "Brief",
+      "register": "formal",
+      "situation": "Sie wohnen im 5. Stock. Der Aufzug in Ihrem Haus ist seit zwei Wochen kaputt. Sie haben ein Baby und müssen den Kinderwagen jeden Tag die Treppe hochtragen.",
+      "situationEn": "You live on the 5th floor. The lift in your building has been broken for two weeks. You have a baby and have to carry the pram up the stairs every day.",
+      "instruction": "Schreiben Sie an die Hausverwaltung, Frau Krüger.",
+      "instructionEn": "Write to the property management, Ms Krüger.",
+      "points": [
+        {
+          "de": "Grund für Ihr Schreiben",
+          "en": "Reason for writing"
+        },
+        {
+          "de": "Probleme für Sie und Ihre Familie",
+          "en": "Problems for you and your family"
+        },
+        {
+          "de": "Was Sie schon gemacht haben",
+          "en": "What you have already done"
+        },
+        {
+          "de": "Was die Hausverwaltung tun soll",
+          "en": "What the property management should do"
+        }
+      ],
+      "model": {
+        "anrede": "Sehr geehrte Frau Krüger,",
+        "parts": [
+          "ich wohne in der Lindenstraße 12 im 5. Stock. Ich schreibe Ihnen, weil der Aufzug in unserem Haus seit zwei Wochen nicht funktioniert.",
+          "Das ist für meine Familie ein großes Problem. Wir haben ein Baby, und ich muss den Kinderwagen jeden Tag die Treppe hochtragen. Auch für meine Nachbarin, Frau Schulz, ist das schwierig, denn sie ist schon 80 Jahre alt.",
+          "Ich habe letzte Woche zweimal bei Ihnen angerufen, aber niemand hat sich gemeldet. Außerdem habe ich eine Nachricht auf den Anrufbeantworter gesprochen.",
+          "Bitte lassen Sie den Aufzug so schnell wie möglich reparieren. Können Sie mir bitte mitteilen, wann der Techniker kommt?"
+        ],
+        "partsEn": [
+          "I live at Lindenstraße 12 on the 5th floor. I'm writing to you because the lift in our building hasn't been working for two weeks.",
+          "This is a big problem for my family. We have a baby, and I have to carry the pram up the stairs every day. It's also difficult for my neighbour, Ms Schulz, because she is already 80 years old.",
+          "I called you twice last week, but nobody got back to me. I also left a message on the answering machine.",
+          "Please have the lift repaired as soon as possible. Could you please let me know when the technician is coming?"
+        ],
+        "gruss": "Mit freundlichen Grüßen\nMaria Novak"
+      },
+      "phrases": [
+        {
+          "de": "Ich schreibe Ihnen, weil …",
+          "en": "I'm writing to you because …"
+        },
+        {
+          "de": "… funktioniert seit … nicht.",
+          "en": "… hasn't been working since/for …"
+        },
+        {
+          "de": "Das ist ein großes Problem für mich, denn …",
+          "en": "This is a big problem for me because …"
+        },
+        {
+          "de": "Ich habe schon … angerufen, aber …",
+          "en": "I have already called …, but …"
+        },
+        {
+          "de": "Bitte lassen Sie … so schnell wie möglich reparieren.",
+          "en": "Please have … repaired as soon as possible."
+        },
+        {
+          "de": "Können Sie mir bitte mitteilen, wann …?",
+          "en": "Could you please let me know when …?"
+        }
+      ]
+    }
+  },
+  {
+    "key": "schreiben-2",
+    "title": "Satz 2",
+    "a": {
+      "key": "s2a",
+      "title": "Kind krank – Kita",
+      "kind": "E-Mail",
+      "register": "formal",
+      "situation": "Ihr Sohn Leon geht in die Kita „Sonnenschein“. Er ist krank und kann diese Woche nicht kommen. Am Freitag macht seine Gruppe einen Ausflug in den Zoo.",
+      "situationEn": "Your son Leon goes to the “Sonnenschein” day-care centre. He is ill and can't come this week. On Friday his group is going on a trip to the zoo.",
+      "instruction": "Schreiben Sie eine E-Mail an die Erzieherin, Frau Yilmaz.",
+      "instructionEn": "Write an email to the nursery teacher, Ms Yilmaz.",
+      "points": [
+        {
+          "de": "Grund für Ihr Schreiben",
+          "en": "Reason for writing"
+        },
+        {
+          "de": "Wie lange Leon fehlt",
+          "en": "How long Leon will be away"
+        },
+        {
+          "de": "Ausflug am Freitag",
+          "en": "The trip on Friday"
+        },
+        {
+          "de": "Eine Frage an Frau Yilmaz",
+          "en": "A question for Ms Yilmaz"
+        }
+      ],
+      "model": {
+        "anrede": "Sehr geehrte Frau Yilmaz,",
+        "parts": [
+          "leider muss ich Ihnen mitteilen, dass Leon krank ist. Er hat seit gestern Fieber und Husten. Wir waren heute Morgen beim Kinderarzt.",
+          "Der Arzt sagt, dass Leon bis Freitag zu Hause bleiben soll. Er kommt also wahrscheinlich erst am Montag wieder in die Kita.",
+          "Deshalb kann er leider nicht zum Ausflug in den Zoo mitkommen. Das ist sehr schade, denn er hat sich sehr darauf gefreut. Ich habe die 5 Euro für den Ausflug schon bezahlt. Bekomme ich das Geld zurück?",
+          "Ich habe noch eine Frage: Braucht die Kita eine Bescheinigung vom Arzt? Dann bringe ich sie am Montag mit."
+        ],
+        "partsEn": [
+          "unfortunately I have to let you know that Leon is ill. He has had a temperature and a cough since yesterday. We were at the paediatrician's this morning.",
+          "The doctor says that Leon should stay at home until Friday. So he will probably only come back to the nursery on Monday.",
+          "That's why he unfortunately can't go on the trip to the zoo. It's a real pity because he was really looking forward to it. I've already paid the 5 euros for the trip. Do I get the money back?",
+          "I have one more question: does the nursery need a certificate from the doctor? Then I'll bring it on Monday."
+        ],
+        "gruss": "Mit freundlichen Grüßen\nElena Popescu"
+      },
+      "phrases": [
+        {
+          "de": "Leider muss ich Ihnen mitteilen, dass …",
+          "en": "Unfortunately I have to let you know that …"
+        },
+        {
+          "de": "Er/Sie hat seit gestern Fieber.",
+          "en": "He/She has had a temperature since yesterday."
+        },
+        {
+          "de": "Der Arzt sagt, dass … zu Hause bleiben soll.",
+          "en": "The doctor says that … should stay at home."
+        },
+        {
+          "de": "Er/Sie kommt wahrscheinlich am … wieder.",
+          "en": "He/She will probably come back on …"
+        },
+        {
+          "de": "Ich habe noch eine Frage: …",
+          "en": "I have one more question: …"
+        },
+        {
+          "de": "Braucht die Kita eine Bescheinigung vom Arzt?",
+          "en": "Does the nursery need a doctor's certificate?"
+        }
+      ]
+    },
+    "b": {
+      "key": "s2b",
+      "title": "Urlaub beantragen",
+      "kind": "E-Mail",
+      "register": "formal",
+      "situation": "Ihre Mutter wird im August 60 Jahre alt. Sie möchten in Ihr Heimatland fliegen und brauchen dafür zwei Wochen Urlaub.",
+      "situationEn": "Your mother turns 60 in August. You want to fly to your home country and need two weeks' holiday for it.",
+      "instruction": "Schreiben Sie an Ihren Chef, Herrn Becker.",
+      "instructionEn": "Write to your boss, Mr Becker.",
+      "points": [
+        {
+          "de": "Wann Sie Urlaub möchten",
+          "en": "When you would like time off"
+        },
+        {
+          "de": "Grund",
+          "en": "Reason"
+        },
+        {
+          "de": "Wer Ihre Arbeit macht",
+          "en": "Who will do your work"
+        },
+        {
+          "de": "Bitte um Antwort",
+          "en": "Asking for an answer"
+        }
+      ],
+      "model": {
+        "anrede": "Sehr geehrter Herr Becker,",
+        "parts": [
+          "ich möchte gern vom 4. bis zum 15. August Urlaub nehmen. Das sind zwei Wochen.",
+          "Meine Mutter wird im August 60 Jahre alt, und die ganze Familie feiert in meinem Heimatland. Ich habe meine Mutter seit zwei Jahren nicht gesehen, deshalb ist mir diese Reise sehr wichtig.",
+          "Ich habe schon mit meinem Kollegen, Herrn Kaya, gesprochen. Er kann in dieser Zeit meine Aufgaben übernehmen. Im September arbeite ich dafür gern länger, wenn es nötig ist.",
+          "Bitte geben Sie mir bis Ende des Monats Bescheid, ob das möglich ist. Dann kann ich die Flugtickets buchen."
+        ],
+        "partsEn": [
+          "I would like to take holiday from 4 to 15 August. That is two weeks.",
+          "My mother turns 60 in August, and the whole family is celebrating in my home country. I haven't seen my mother for two years, so this trip is very important to me.",
+          "I have already spoken to my colleague, Mr Kaya. He can take over my tasks during this time. In return I'm happy to work longer in September if necessary.",
+          "Please let me know by the end of the month whether that's possible. Then I can book the plane tickets."
+        ],
+        "gruss": "Vielen Dank im Voraus!\nMit freundlichen Grüßen\nAhmad Karimi"
+      },
+      "phrases": [
+        {
+          "de": "Ich möchte gern vom … bis zum … Urlaub nehmen.",
+          "en": "I would like to take holiday from … to …"
+        },
+        {
+          "de": "Der Grund ist: …",
+          "en": "The reason is: …"
+        },
+        {
+          "de": "Deshalb ist mir … sehr wichtig.",
+          "en": "That's why … is very important to me."
+        },
+        {
+          "de": "Mein Kollege / Meine Kollegin kann meine Aufgaben übernehmen.",
+          "en": "My colleague can take over my tasks."
+        },
+        {
+          "de": "Bitte geben Sie mir bis … Bescheid, ob …",
+          "en": "Please let me know by … whether …"
+        },
+        {
+          "de": "Vielen Dank im Voraus!",
+          "en": "Thank you in advance!"
+        }
+      ]
+    }
+  },
+  {
+    "key": "schreiben-3",
+    "title": "Satz 3",
+    "a": {
+      "key": "s3a",
+      "title": "Hilfe beim Umzug",
+      "kind": "E-Mail",
+      "register": "informal",
+      "situation": "Sie ziehen nächsten Monat in eine größere Wohnung und brauchen Hilfe. Ihr Freund Tom hat ein Auto.",
+      "situationEn": "You are moving into a bigger flat next month and need help. Your friend Tom has a car.",
+      "instruction": "Schreiben Sie Tom eine E-Mail.",
+      "instructionEn": "Write Tom an email.",
+      "points": [
+        {
+          "de": "Wann und wohin Sie umziehen",
+          "en": "When and where you are moving"
+        },
+        {
+          "de": "Wobei Tom helfen soll",
+          "en": "What Tom should help with"
+        },
+        {
+          "de": "Essen und Getränke",
+          "en": "Food and drinks"
+        },
+        {
+          "de": "Bis wann Tom antworten soll",
+          "en": "By when Tom should answer"
+        }
+      ],
+      "model": {
+        "anrede": "Lieber Tom,",
+        "parts": [
+          "ich habe tolle Neuigkeiten: Ich habe endlich eine größere Wohnung gefunden! Am Samstag, dem 14. Juni, ziehe ich in die Gartenstraße 5. Die Wohnung hat drei Zimmer und einen Balkon.",
+          "Kannst du mir beim Umzug helfen? Ich brauche vor allem dein Auto, weil ich die Waschmaschine und das Sofa transportieren muss. Wir fangen um 9 Uhr an.",
+          "Mittags bestelle ich Pizza für alle, und natürlich gibt es auch genug Getränke.",
+          "Bitte schreib mir bis Mittwoch, ob du Zeit hast. Dann kann ich alles planen."
+        ],
+        "partsEn": [
+          "I have great news: I've finally found a bigger flat! On Saturday, 14 June, I'm moving to Gartenstraße 5. The flat has three rooms and a balcony.",
+          "Can you help me with the move? Above all I need your car, because I have to transport the washing machine and the sofa. We're starting at 9 o'clock.",
+          "At lunchtime I'll order pizza for everyone, and of course there will be enough to drink too.",
+          "Please write to me by Wednesday whether you're free. Then I can plan everything."
+        ],
+        "gruss": "Vielen Dank und liebe Grüße\nSamir"
+      },
+      "phrases": [
+        {
+          "de": "Ich habe tolle Neuigkeiten: …",
+          "en": "I have great news: …"
+        },
+        {
+          "de": "Am … ziehe ich in die …straße.",
+          "en": "On … I'm moving to … Street."
+        },
+        {
+          "de": "Kannst du mir beim Umzug helfen?",
+          "en": "Can you help me with the move?"
+        },
+        {
+          "de": "Ich brauche vor allem …, weil …",
+          "en": "Above all I need …, because …"
+        },
+        {
+          "de": "Für Essen und Getränke sorge ich.",
+          "en": "I'll take care of food and drinks."
+        },
+        {
+          "de": "Bitte schreib mir bis …, ob du Zeit hast.",
+          "en": "Please write to me by … whether you're free."
+        }
+      ]
+    },
+    "b": {
+      "key": "s3b",
+      "title": "Anmeldung Computerkurs",
+      "kind": "E-Mail",
+      "register": "formal",
+      "situation": "Die Volkshochschule bietet einen Computerkurs für Anfänger an. Sie möchten an dem Kurs teilnehmen, aber Sie haben noch Fragen.",
+      "situationEn": "The adult education centre offers a computer course for beginners. You would like to take part, but you still have questions.",
+      "instruction": "Schreiben Sie eine E-Mail an die Volkshochschule, Herrn Schäfer.",
+      "instructionEn": "Write an email to the adult education centre, Mr Schäfer.",
+      "points": [
+        {
+          "de": "Warum Sie den Kurs machen möchten",
+          "en": "Why you want to do the course"
+        },
+        {
+          "de": "Ihre Computerkenntnisse",
+          "en": "Your computer skills"
+        },
+        {
+          "de": "Kurszeiten",
+          "en": "Course times"
+        },
+        {
+          "de": "Kosten",
+          "en": "Costs"
+        }
+      ],
+      "model": {
+        "anrede": "Sehr geehrter Herr Schäfer,",
+        "parts": [
+          "ich interessiere mich für Ihren Computerkurs für Anfänger. Ich suche zurzeit eine neue Stelle, und für viele Arbeitsplätze braucht man Computerkenntnisse.",
+          "Ich kann schon E-Mails schreiben und im Internet suchen. Aber mit Word und Excel habe ich noch nie gearbeitet.",
+          "Ich arbeite von Montag bis Freitag bis 16 Uhr. Gibt es den Kurs auch am Abend oder am Samstag?",
+          "Außerdem möchte ich wissen, wie viel der Kurs kostet. Kann man die Kursgebühr auch in Raten bezahlen?"
+        ],
+        "partsEn": [
+          "I'm interested in your computer course for beginners. I'm currently looking for a new job, and many jobs require computer skills.",
+          "I can already write emails and search the internet. But I have never worked with Word and Excel.",
+          "I work from Monday to Friday until 4 pm. Is the course also available in the evening or on Saturday?",
+          "I would also like to know how much the course costs. Can you pay the course fee in instalments?"
+        ],
+        "gruss": "Mit freundlichen Grüßen\nOlga Ivanova"
+      },
+      "phrases": [
+        {
+          "de": "Ich interessiere mich für …",
+          "en": "I'm interested in …"
+        },
+        {
+          "de": "Ich möchte den Kurs machen, weil …",
+          "en": "I want to do the course because …"
+        },
+        {
+          "de": "Ich kann schon …, aber …",
+          "en": "I can already …, but …"
+        },
+        {
+          "de": "Gibt es den Kurs auch am Abend?",
+          "en": "Is the course also available in the evening?"
+        },
+        {
+          "de": "Außerdem möchte ich wissen, wie viel … kostet.",
+          "en": "I would also like to know how much … costs."
+        },
+        {
+          "de": "Kann man … in Raten bezahlen?",
+          "en": "Can you pay … in instalments?"
+        }
+      ]
+    }
+  },
+  {
+    "key": "schreiben-4",
+    "title": "Satz 4",
+    "a": {
+      "key": "s4a",
+      "title": "Zahnarzttermin absagen",
+      "kind": "E-Mail",
+      "register": "formal",
+      "situation": "Sie haben am Donnerstag um 10 Uhr einen Termin bei Ihrer Zahnärztin, Frau Dr. Wagner. Sie können aber nicht kommen.",
+      "situationEn": "You have an appointment with your dentist, Dr Wagner, on Thursday at 10 o'clock. But you can't come.",
+      "instruction": "Schreiben Sie eine E-Mail an die Praxis.",
+      "instructionEn": "Write an email to the practice.",
+      "points": [
+        {
+          "de": "Termin absagen",
+          "en": "Cancelling the appointment"
+        },
+        {
+          "de": "Grund",
+          "en": "Reason"
+        },
+        {
+          "de": "Neuer Termin: wann Sie Zeit haben",
+          "en": "New appointment: when you are free"
+        },
+        {
+          "de": "Ihre Beschwerden",
+          "en": "Your symptoms"
+        }
+      ],
+      "model": {
+        "anrede": "Sehr geehrte Frau Dr. Wagner,",
+        "parts": [
+          "ich habe am Donnerstag, dem 12. März, um 10 Uhr einen Termin bei Ihnen. Leider muss ich diesen Termin absagen.",
+          "Mein Chef hat mir gestern gesagt, dass ich diese Woche Frühschicht habe. Ich arbeite deshalb am Donnerstag von 6 bis 14 Uhr.",
+          "Könnte ich bitte einen neuen Termin bekommen? Nachmittags ab 15 Uhr habe ich jeden Tag Zeit, am liebsten am Montag oder Dienstag.",
+          "Mein Zahn tut immer noch weh, vor allem wenn ich etwas Kaltes trinke. Deshalb ist ein Termin bald sehr wichtig für mich."
+        ],
+        "partsEn": [
+          "I have an appointment with you on Thursday, 12 March, at 10 o'clock. Unfortunately I have to cancel this appointment.",
+          "My boss told me yesterday that I'm on the early shift this week. So on Thursday I'm working from 6 am to 2 pm.",
+          "Could I please get a new appointment? I'm free every afternoon from 3 pm, preferably on Monday or Tuesday.",
+          "My tooth still hurts, especially when I drink something cold. That's why an appointment soon is very important for me."
+        ],
+        "gruss": "Mit freundlichen Grüßen\nKarim Haddad"
+      },
+      "phrases": [
+        {
+          "de": "Leider muss ich meinen Termin am … absagen.",
+          "en": "Unfortunately I have to cancel my appointment on …"
+        },
+        {
+          "de": "Ich kann nicht kommen, weil …",
+          "en": "I can't come because …"
+        },
+        {
+          "de": "Könnte ich bitte einen neuen Termin bekommen?",
+          "en": "Could I please get a new appointment?"
+        },
+        {
+          "de": "Ich habe am liebsten … Zeit.",
+          "en": "I'm free preferably on …"
+        },
+        {
+          "de": "Mein Zahn / Mein Kopf tut weh.",
+          "en": "My tooth / My head hurts."
+        },
+        {
+          "de": "Deshalb ist … sehr wichtig für mich.",
+          "en": "That's why … is very important for me."
+        }
+      ]
+    },
+    "b": {
+      "key": "s4b",
+      "title": "Reklamation: Wasserkocher",
+      "kind": "E-Mail",
+      "register": "formal",
+      "situation": "Sie haben im Internet bei „Haushalt24“ einen Wasserkocher bestellt. Das Paket ist gestern angekommen, aber der Wasserkocher funktioniert nicht.",
+      "situationEn": "You ordered a kettle online from “Haushalt24”. The parcel arrived yesterday, but the kettle doesn't work.",
+      "instruction": "Schreiben Sie an den Kundenservice.",
+      "instructionEn": "Write to customer service.",
+      "points": [
+        {
+          "de": "Was Sie bestellt haben",
+          "en": "What you ordered"
+        },
+        {
+          "de": "Das Problem",
+          "en": "The problem"
+        },
+        {
+          "de": "Was Sie schon versucht haben",
+          "en": "What you have already tried"
+        },
+        {
+          "de": "Was Sie jetzt möchten",
+          "en": "What you want now"
+        }
+      ],
+      "model": {
+        "anrede": "Sehr geehrte Damen und Herren,",
+        "parts": [
+          "am 2. Mai habe ich bei Ihnen einen Wasserkocher bestellt (Bestellnummer 48213). Das Paket ist gestern angekommen.",
+          "Leider funktioniert der Wasserkocher nicht. Wenn ich ihn einschalte, leuchtet das Licht, aber das Wasser wird nicht warm.",
+          "Ich habe ihn an eine andere Steckdose angeschlossen und die Anleitung genau gelesen. Außerdem habe ich zweimal bei Ihrer Hotline angerufen, aber die Leitung war immer besetzt.",
+          "Bitte schicken Sie mir einen neuen Wasserkocher oder überweisen Sie mir das Geld zurück. Wie kann ich das kaputte Gerät zurückschicken?"
+        ],
+        "partsEn": [
+          "on 2 May I ordered a kettle from you (order number 48213). The parcel arrived yesterday.",
+          "Unfortunately the kettle doesn't work. When I switch it on, the light comes on, but the water doesn't get warm.",
+          "I plugged it into another socket and read the instructions carefully. I also called your hotline twice, but the line was always busy.",
+          "Please send me a new kettle or transfer the money back to me. How can I send the broken appliance back?"
+        ],
+        "gruss": "Mit freundlichen Grüßen\nLukas Weber"
+      },
+      "phrases": [
+        {
+          "de": "Am … habe ich bei Ihnen … bestellt.",
+          "en": "On … I ordered … from you."
+        },
+        {
+          "de": "Leider funktioniert … nicht.",
+          "en": "Unfortunately … doesn't work."
+        },
+        {
+          "de": "Wenn ich …, dann …",
+          "en": "When I …, then …"
+        },
+        {
+          "de": "Ich habe schon … versucht, aber …",
+          "en": "I have already tried …, but …"
+        },
+        {
+          "de": "Bitte schicken Sie mir … / überweisen Sie mir das Geld zurück.",
+          "en": "Please send me … / transfer the money back to me."
+        },
+        {
+          "de": "Wie kann ich … zurückschicken?",
+          "en": "How can I send … back?"
+        }
+      ]
+    }
+  }
+]

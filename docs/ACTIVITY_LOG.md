@@ -26,10 +26,9 @@ was done, newest first. Every change adds a log entry here in the same commit
   goal feel right? 10/day by default, "Ziel ändern" cycles 5/10/15/20), Satzbau chips are
   easy to tap, 📰 Lesen 🔊 Vorlesen with the phone's German voice.
 - [ ] **Phase 3 – DTZ exam training** (the learner's exam is the **DTZ**, integration course;
-  Goethe/other telc exams later as separate work). Done: step 1 Hören + Lesen (set 1).
-  Next: step 2 Schreiben (task A/B, 4 Leitpunkte, 30-min timer, checklist, model answer,
-  self-rating on the 4 official criteria), step 3 Sprechen (Teil 1–3 tasks + phrases,
-  record yourself – stays on the phone), more sets (2, 3 …), results over time.
+  Goethe/other telc exams later as separate work). Done: step 1 Hören + Lesen (set 1),
+  step 2 Schreiben (4 pairs). Next: step 3 Sprechen (Teil 1–3 tasks + phrases, record
+  yourself – stays on the phone), more Hören/Lesen sets (2, 3 …), results over time.
 - [ ] **To check on the learner's phone – 📥 KI-Eingang:** "📤 Teilen" opens Android's
   share sheet with the `.md` file (falls back to `.txt`, then plain text, then a download).
   First real round trip: export → Claude Code chat "Bitte den KI-Eingang einarbeiten".
@@ -56,6 +55,34 @@ was done, newest first. Every change adds a log entry here in the same commit
 ## Log
 
 ### 2026-10-06
+- **✍️ DTZ-Training step 2: Schreiben.** Re-read the official format (handbook 6.3.3 and the
+  g.a.s.t. Übungssätze): choose Aufgabe A or B, situation + 4 Leitpunkte, Anrede + Gruß,
+  30 min; 4 criteria × 0–5 points, A2 from 7, B1 from 15 of 20. Format added to
+  `docs/DTZ_FORMAT.md`.
+  - **Content** (`src/data/exam/dtz-schreiben.json`, all new): 4 pairs – Absage
+    Geburtstagsfeier (du) / Aufzug kaputt (Hausverwaltung); Kind krank (Kita) / Urlaub
+    beantragen (Chef); Hilfe beim Umzug (du) / Anmeldung Computerkurs (VHS);
+    Zahnarzttermin absagen / Reklamation Wasserkocher. Each with English, a B1 model
+    answer split by Leitpunkt (85–111 words, with English) and 6 useful phrases.
+  - **Trainer** (DTZ home → "✍️ SCHREIBEN" → Satz 1–4): both tasks side by side, then
+    **📝 Prüfung** (30-min clock with ⏸, no help, handed in at 0:00) or **✏️ Üben** (no
+    clock, 💬 Nützliche Sätze, 🇬🇧 English, live checklist). Leitpunkte to tick. Live
+    checklist (`writing.js`): Anrede (formal vs. personal), comma after it,
+    geehrte/geehrter and Liebe/Lieber with Frau/Herr, Gruß, du in a formal text, linking
+    words, word count. Drafts are saved per task (`dtzWriting:v1`, in the backup).
+  - **After "Abgeben":** the text, checklist, **📄 Musterlösung** (per Leitpunkt, English on
+    request), **rate it** – ✨ in-app AI ("📝 Bewerte meinen Text", follow-ups for
+    mistakes / B1) or the Claude / ChatGPT / Gemini websites with a ready request (task,
+    Leitpunkte, text, official criteria; asks for points, mistakes table, corrected
+    version, tips) – and **self-rating** on the 4 criteria with short descriptions
+    (Aufgabenbewältigung pre-filled from the ticked points) → x/20 → level; saved to the
+    DTZ results (shown with A2/B1 colour). "✏️ Weiter bearbeiten" / "🗑 Neu anfangen".
+  - Tests: `writing.test.js` (every task's format, every model answer passes the checklist
+    and is 70–140 words, checklist cases, thresholds, AI prompt). Headless Chrome at
+    360/390: choose, practise with mistakes → warnings, draft kept, hand in, model answer,
+    self-rating 10/20 A2 saved, exam clock runs out at 30:00 → handed in, formal-letter
+    warnings (geehrte, du), AI review in the app with a fake Gemini, back gesture – no
+    sideways scrolling, no errors.
 - **📥 KI-Eingang – AI answers into the app (options A + D of the brainstorm).**
   - In the KI chat, under each answer: **"📌 Für die App vorschlagen"** → chips for what
     should go in (🃏 Karten, 📖 Grammatik-Text, ✏️ Übungen, 💡 Sonstiges) + a note → saved in

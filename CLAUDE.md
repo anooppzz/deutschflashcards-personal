@@ -154,6 +154,9 @@ src/modes/reading/         📰 Lesen view (list, text, linked words, questions)
 src/modes/exam/            🎓 DTZ trainer: dtz.js (scoring 20 → A2, 33 → B1), DtzTrainer.jsx
                            (practise a Teil / timed simulation / results); the learner's
                            exam is the DTZ (integration course) – see docs/DTZ_FORMAT.md
+                           ✍️ Schreiben: writing.js (checklist, criteria, 7 → A2, 15 → B1,
+                           AI review prompt) + WritingTrainer.jsx; tasks in
+                           src/data/exam/dtz-schreiben.json (pairs A/B)
 src/constants/build.js     "Version <date> · <commit>" at the bottom (set in vite.config.js)
 src/components/HelpModals.jsx  welcome + ❓ help windows; texts in src/data/help.json
                            (en, de, sq, ar, uk, hi – keep all six when editing)

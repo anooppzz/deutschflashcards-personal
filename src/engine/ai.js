@@ -116,9 +116,12 @@ export const SYSTEM_PROMPT = [
 
 // Ready-made questions for the chat; the first one is the full explanation
 // (engine/lookup.js), the others build on it.
-export const followUps = (kind) => (kind === "topic"
-  ? ["Gib mir 5 neue Übungssätze mit Lösungen.", "Erkläre es noch einfacher.", "Wie kommt das in der DTZ-Prüfung vor?"]
-  : ["Gib mir 3 weitere Beispielsätze.", "Wie benutze ich das im Gespräch (DTZ Sprechen)?", "Welche Wörter gehören dazu?"]);
+const FOLLOW_UPS = {
+  topic: ["Gib mir 5 neue Übungssätze mit Lösungen.", "Erkläre es noch einfacher.", "Wie kommt das in der DTZ-Prüfung vor?"],
+  word: ["Gib mir 3 weitere Beispielsätze.", "Wie benutze ich das im Gespräch (DTZ Sprechen)?", "Welche Wörter gehören dazu?"],
+  writing: ["Erkläre meinen wichtigsten Fehler genauer.", "Gib mir 3 Sätze, mit denen mein Text besser wird.", "Was muss ich für B1 anders machen?"],
+};
+export const followUps = (kind) => FOLLOW_UPS[kind] || FOLLOW_UPS.word;
 
 // ---- Claude (Anthropic SDK) ----
 

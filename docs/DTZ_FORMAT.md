@@ -60,3 +60,22 @@ Sources (read 2026-10-06):
 - Hören Teil 4: 6 sentences, 3 statements, 3 sentences fit nobody.
 - `src/modes/exam/examContent.test.js` checks item numbers 1–45, answers among the options,
   the X rule and that every item has a reason.
+
+## Writing a Schreiben pair (`src/data/exam/dtz-schreiben.json`)
+
+Official format (handbook 6.3.3, g.a.s.t. Übungssätze): a short situation, the instruction
+("Schreiben Sie …"), **4 Leitpunkte** (all must be covered), Anrede + Gruß, 30 minutes, the
+learner chooses Aufgabe A or B. Typical pair: one personal or semi-formal message and one
+formal letter/e-mail (Vermieter, Hausverwaltung, Kita, Chef, VHS, Praxis, Kundenservice).
+
+- `{ key, title, a: task, b: task }`; task = `{ key, title, kind: "E-Mail" | "Brief",
+  register: "formal" | "informal", situation, situationEn, instruction, instructionEn,
+  points: [{de, en}] × 4, model: { anrede, parts: [4 – one per Leitpunkt], partsEn,
+  gruss }, phrases: [{de, en}] ≥ 4 }`.
+- Model answers: B1 level, 70–140 words, linked with weil/dass/deshalb/wenn …; after
+  "Anrede," the first part starts in lower case. New situations only – never the
+  official ones.
+- Scoring (`src/modes/exam/writing.js`): Aufgabenbewältigung, Kommunikative Gestaltung,
+  Korrektheit, Wortschatz, 0–5 each (5/4 B1, 3/2 A2, 1 A1) → A2 from 7, B1 from 15 of 20.
+- `writing.test.js` checks the format and runs every model answer through the app's own
+  checklist (Anrede, Gruß, register, comma, geehrte/r).
