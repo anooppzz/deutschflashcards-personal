@@ -15,4 +15,7 @@ export const STORAGE_KEYS = {
   BACKUP_AT: "backupAt:v1", // when the learner last saved a backup file
   FORMS_KIND: "formsKind:v1", // Formen trainer: "perfekt" or "plural"
   GRAMMAR_SCORES: "grammarScores:v1", // best ✏️ Üben score per grammar topic
+  MISTAKES: "mistakes:v1", // 📕 Fehlerheft: wrong answers until fixed (engine/mistakes.js)
+  SEEN_NEW: "seenNewTopics:v1", // new chapters already opened or dismissed (engine/newTopics.js)
+  REVERSE_PROMPT: "reversePrompt:v1", // Reverse mode: "meaning" (read) or "audio" (🎧 Hören)
 };

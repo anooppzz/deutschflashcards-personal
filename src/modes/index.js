@@ -27,3 +27,5 @@ export { default as ReviewSession } from "./review/ReviewSession";
 
 export { default as FormsTrainer } from "./forms/FormsTrainer";
 export { buildFormsPool } from "./forms/buildForms";
+
+export { default as MistakeBook } from "./mistakes/MistakeBook";

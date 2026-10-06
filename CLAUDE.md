@@ -3,6 +3,22 @@
 Read this first, then `docs/ACTIVITY_LOG.md` (pending work and history). Both are the
 handoff between chat sessions: a new session should be able to continue from them alone.
 
+## ⚠️ Where to work – read before changing anything
+
+- **The only repo to change:** `anooppzz/deutschflashcards-personal`, branch `main`.
+  The live app is built from it and nothing else.
+- **Not** `anooppzz/deutschflashcards` – the old, retired app. New cloud sessions may
+  start in that repo by default. If your working directory is a checkout of it (it has
+  no `CLAUDE.md`, only a `src/` with an old single-file app), **stop**: clone
+  `https://github.com/anooppzz/deutschflashcards-personal` and work there.
+- **Check before you say "done":** the commit is on `main` of the personal repo
+  (`git log origin/main -1`), the Actions run for it is green (build + deploy), and the
+  learner can see it: the app shows **"Version <date> · <commit>"** at the very bottom
+  – tell the learner which commit to look for.
+- **New chapter?** Give it `"added": "YYYY-MM-DD"` (today). For three weeks the start
+  screen shows "🆕 Neues Kapitel … Öffnen →", because new chapters are not ticked
+  under 📚 Themen automatically and are easy to miss.
+
 ## The project
 
 A personal German vocabulary and grammar trainer for one learner: an English speaker
@@ -64,7 +80,8 @@ npm run ids:update  # after adding/renaming/removing cards (see rule 6b)
 
 ```
 src/data/decks/            vocabulary
-  extra-topics.json        the textbook chapters: [{ key, icon, label, note, cards: [...] }]
+  extra-topics.json        the textbook chapters: [{ key, icon, label, added, note, cards: [...] }]
+                           (added: "YYYY-MM-DD" when created – drives the 🆕 banner)
   haushalt|kleidung|verkehr.json, irregular-verbs.json, inseparable-verbs.json
   _deck-manifest.json      labels/icons for the five non-chapter decks
 src/data/grammar/topics.json   grammar reference (the Grammatik tab)
@@ -82,8 +99,19 @@ src/modes/                 one folder per study mode (cards, article, quiz, reve
                            + review ("Heute fällig" session)
                            + forms (🔁 Formen: Perfekt + Plural, built from each
                            card's sub line – keep `sub` formats as below)
+                           + reverse also has 🎧 Hören: the phone says the card, the
+                           learner types it (validation.js isDictatable/checkDictation)
 src/components/FlipCard.jsx  the card (front/back, note, 📖 grammar chips)
 src/components/Swipeable.jsx  swipe left/right on a card = next/previous
+src/components/LookupLinks.jsx  🔎 Nachschlagen (Duden, DWDS, Verbformen, Reverso, Leo,
+                           Google) + 🤖 Frag Claude under a flipped card and a grammar
+                           topic; URLs and questions in engine/lookup.js. Free: only
+                           links, nothing is called from the app
+src/engine/mistakes.js     📕 Fehlerheft: every wrong answer (App.jsx reviewResult +
+                           grammar exercises) until right on 2 different days;
+                           view in modes/mistakes/MistakeBook.jsx
+src/engine/newTopics.js    🆕 Neues Kapitel banner (see "added" above)
+src/constants/build.js     "Version <date> · <commit>" at the bottom (set in vite.config.js)
 src/components/HelpModals.jsx  welcome + ❓ help windows; texts in src/data/help.json
                            (en, de, sq, ar, uk, hi – keep all six when editing)
 src/components/BackupModal.jsx  "💾 Sichern & App": backup file, restore, install hint

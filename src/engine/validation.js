@@ -48,3 +48,23 @@ export const checkReverseAnswer = (userInput, front) => {
     ? { correct: true, reason: null }
     : { correct: false, reason: 'wrong-article' };
 };
+
+// 🎧 Hören (Reverse mode, listening): the learner hears the card and types
+// it. Only cards that can be read aloud as one clear answer are used - no
+// gaps (…), no alternatives (/), no optional parts in brackets except
+// "(sich)".
+export const isDictatable = (front) =>
+  Boolean(front) && !/[…/]/.test(front) && !/\((?!sich\))/.test(front);
+
+// What the phone says: "vor·bereiten (sich)" → "sich vorbereiten".
+export const speakableText = (front) => {
+  const reflexive = /\s*\(sich\)/.test(front);
+  const bare = front.replace(/·/g, "").replace(/\s*\(sich\)/g, "").trim();
+  return reflexive ? `sich ${bare}` : bare;
+};
+
+// Like checkReverseAnswer, but punctuation doesn't count: you can't hear
+// a full stop or an apostrophe.
+const PUNCTUATION = /[.,!?¡¿;:"„“”'’«»]/g;
+export const checkDictation = (userInput, front) =>
+  checkReverseAnswer((userInput || "").replace(PUNCTUATION, ""), (front || "").replace(PUNCTUATION, ""));

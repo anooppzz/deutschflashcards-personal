@@ -17,12 +17,55 @@ was done, newest first. Every change adds a log entry here in the same commit
   languages fall back to English).
 - [ ] **To check on the learner's phone:** the Android back gesture inside the installed app
   and the card swipe (tested with simulated touch in headless Chrome only).
+- [ ] **To check on the learner's phone:** 🎧 Hören speaks with the phone's German voice
+  (headless Chrome has none), and 🤖 Frag Claude opens Claude with the question filled in
+  (claude.ai/new?q=…; the question is also copied as a fallback).
+- [ ] **Stop new sessions from starting in the old repo:** new cloud sessions start in
+  `anooppzz/deutschflashcards`, which has no CLAUDE.md, so they edit the old app first
+  (happened on 2026-10-05). Fix: pick `deutschflashcards-personal` when starting a chat,
+  and/or (learner's OK needed – the old repo is otherwise untouched) add a short
+  `CLAUDE.md` there that points to this repo.
+- [ ] Learning audit, phase 2 (not started): Satzbau trainer, "Heute lernen" daily plan,
+  reading texts per chapter, grammar topics with spaced repetition. Phase 3: in-app AI with
+  the learner's own key, exam mode.
 - [ ] **To check on the learner's phone:** the "📲 App installieren" button (Android/Chrome) –
   headless Chrome never offers installation, so it is untested.
 - The audit of 2026-10-01 is fully done (search, backup + PWA, Heute fällig, Formen
   trainer, Reverse articles, 12 grammar topics, ✏️ Üben, data cleanup, code tidying).
 
 ## Log
+
+### 2026-10-06
+- **Why the Essen & Mengen update "didn't show":** the other session's commit (ed46532)
+  was on `main` and deployed green. Two likely reasons it wasn't visible: (1) new chapters
+  aren't ticked under 📚 Themen automatically; (2) the installed app's service worker
+  fetched the page through the browser cache, which GitHub Pages lets keep a page for
+  10 minutes. Fixes: `sw.js` now fetches the page with `cache: "no-cache"` (CACHE v2);
+  a **🆕 Neues Kapitel** banner (chapters with `"added"`, for 21 days, until opened or
+  dismissed); **"Version <date> · <commit>"** at the bottom of the app. CLAUDE.md now opens
+  with "Where to work" (personal repo only, how to verify a deploy, `added` for chapters).
+- **Learning audit, phase 1:**
+  - **📕 Fehlerheft** (`engine/mistakes.js`, `modes/mistakes/MistakeBook.jsx`): every
+    wrong answer – Artikel, Quiz, Reverse, Hören, Lücke, Formen, "Nicht gewusst" in
+    reviews, and ✏️ Üben grammar questions – is collected (`mistakes:v1`, in the backup).
+    It leaves the list after right answers on 2 different days; a new mistake restarts
+    the count. Start screen banner "📕 Fehlerheft · N Einträge"; inside: "▶ Wörter
+    wiederholen" (review session), each word opens its card, grammar questions are
+    practised right there with their topic shown. Back gesture closes it.
+  - **🎧 Hören** in Reverse (toggle 📖 Lesen / 🎧 Hören, remembered): the phone says the
+    word, the learner types it; 🔊 Nochmal, 🐢 Langsam (rate 0.6), 💡 Bedeutung zeigen.
+    Punctuation doesn't count, the article does. Only cards with one clear spoken
+    answer (no …, /, optional brackets). No voice → the meaning shows with a hint.
+  - **🔎 Nachschlagen + 🤖 Frag Claude** (`components/LookupLinks.jsx`,
+    `engine/lookup.js`): under every flipped card – Duden, DWDS, Verbformen, Reverso,
+    Leo, Google – and at the end of every grammar topic (Google, YouTube). Frag Claude
+    opens claude.ai in the learner's own account with an A2 question about the word or
+    topic (card meaning + example included) and copies it too. All free; nothing runs
+    in the app, so nobody can use the learner's quota.
+  - New tests for the Fehlerheft, lookup links, Hören checks and the 🆕 banner (226 in
+    total). Tested at 360/390px: banners, card links, Hören, wrong answers in
+    Artikel/Reverse/grammar → Fehlerheft (3 entries), its grammar round, review from
+    it, back gesture; no sideways scroll, no errors.
 
 ### 2026-10-05
 - **Chapter "Essen & Mengen"** 🥗 (`essen-mengen`, Menschen A2 · Einheit 12, Lernwortschatz

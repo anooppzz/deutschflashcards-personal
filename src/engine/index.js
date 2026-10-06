@@ -18,3 +18,6 @@ export * from "./review";
 export * from "./backup";
 export * from "./pwa";
 export * from "./renames";
+export * from "./mistakes";
+export * from "./newTopics";
+export * from "./lookup";

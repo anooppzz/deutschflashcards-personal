@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { validateGermanWord, checkReverseAnswer, isArticleCorrect } from "./validation";
+import { validateGermanWord, checkReverseAnswer, isArticleCorrect, isDictatable, speakableText, checkDictation } from "./validation";
 
 describe("validateGermanWord", () => {
   it("ignores case, articles, umlaut spelling and the separable dot", () => {
@@ -51,5 +51,30 @@ describe("isArticleCorrect", () => {
   });
   it("is false before a choice is made", () => {
     expect(isArticleCorrect(null, "der")).toBe(false);
+  });
+});
+
+describe("Hören (dictation)", () => {
+  it("uses only cards with one clear spoken answer", () => {
+    expect(isDictatable("die Rechnung")).toBe(true);
+    expect(isDictatable("Wie geht's?")).toBe(true);
+    expect(isDictatable("kümmern (sich)")).toBe(true);
+    expect(isDictatable("das Kilo(gramm)")).toBe(false);
+    expect(isDictatable("kommen aus …")).toBe(false);
+    expect(isDictatable("Vielen Dank / Herzlichen Dank!")).toBe(false);
+    expect(isDictatable("der/die Angestellte")).toBe(false);
+  });
+
+  it("reads reflexive and separable verbs naturally", () => {
+    expect(speakableText("vor·bereiten (sich)")).toBe("sich vorbereiten");
+    expect(speakableText("an·rufen")).toBe("anrufen");
+    expect(speakableText("die Rechnung")).toBe("die Rechnung");
+  });
+
+  it("ignores punctuation but still needs the article", () => {
+    expect(checkDictation("wie gehts", "Wie geht's?").correct).toBe(true);
+    expect(checkDictation("Die Rechnung bitte", "Die Rechnung, bitte!").correct).toBe(true);
+    expect(checkDictation("Rechnung", "die Rechnung").reason).toBe("missing-article");
+    expect(checkDictation("sich vorbereiten", "vor·bereiten (sich)").correct).toBe(true);
   });
 });

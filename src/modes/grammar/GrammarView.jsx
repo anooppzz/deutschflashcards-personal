@@ -7,6 +7,8 @@ import { idOf } from "../../engine";
 import { speak } from "../../engine/speech";
 import { iconBtn } from "../../components/cardStyles";
 import FlipCard from "../../components/FlipCard";
+import LookupLinks from "../../components/LookupLinks";
+import { topicLinks, topicQuestion } from "../../engine/lookup";
 import TopicBody from "./GrammarSections";
 import { localize } from "./richText";
 
@@ -41,7 +43,7 @@ const cardOf = (w) => (w.decks || []).map((d) => CARD_BY_ID.get(idOf(d, w.front)
 // exercises: this topic's ✏️ Üben questions; best: best score so far
 // A tapped word opens its full card right below it (flip, audio, ✓ Gekonnt),
 // with a link to its chapter (onOpenChapter).
-function GrammarTopicCard({ topic, words = [], lang, open, onToggle, exercises = [], best, onScore, onOpenChapter }) {
+function GrammarTopicCard({ topic, words = [], lang, open, onToggle, exercises = [], best, onScore, onAnswer, onOpenChapter }) {
   const [audioErr, setAudioErr] = useState(false);
   const [showAllWords, setShowAllWords] = useState(false);
   const [openWord, setOpenWord] = useState(null); // front of the opened word
@@ -95,7 +97,7 @@ function GrammarTopicCard({ topic, words = [], lang, open, onToggle, exercises =
           {exercises.length > 0 && (
             <div style={{ marginTop: 16 }}>
               <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 0.5, color: "#7d8d9c", marginBottom: 8 }}>✏️ ÜBEN</div>
-              <GrammarExercises items={exercises} lang={lang} best={best} onDone={onScore} />
+              <GrammarExercises items={exercises} lang={lang} best={best} onDone={onScore} onAnswer={onAnswer} />
             </div>
           )}
           {words.length > 0 && (
@@ -161,6 +163,8 @@ function GrammarTopicCard({ topic, words = [], lang, open, onToggle, exercises =
               🔇 Audio in dieser Umgebung blockiert
             </div>
           )}
+          <div style={{ marginTop: 16, fontSize: 11, fontWeight: 700, letterSpacing: 0.5, color: "#7d8d9c", textAlign: "center" }}>MEHR DAZU</div>
+          <LookupLinks links={topicLinks(localize(topic.title, "de"))} question={topicQuestion(localize(topic.title, "de"))} />
         </div>
       )}
     </div>
@@ -196,6 +200,7 @@ GrammarTopicCard.propTypes = {
   exercises: PropTypes.array,
   best: PropTypes.number,
   onScore: PropTypes.func,
+  onAnswer: PropTypes.func,
   onOpenChapter: PropTypes.func,
 };
 
@@ -208,7 +213,8 @@ const readScores = () => {
 // topic is expanded and scrolled to. n changes on every open, so tapping the
 // same chip twice still re-focuses. onBack: return to where the chip was.
 // onOpenChapter(deck, front): show a word's card in its chapter.
-function GrammarView({ topics, words = {}, lang = "en", focus, onBack, onOpenChapter }) {
+// onExerciseAnswer(topicKey, item, correct): every ✏️ Üben answer (Fehlerheft).
+function GrammarView({ topics, words = {}, lang = "en", focus, onBack, onOpenChapter, onExerciseAnswer }) {
   const [openKey, setOpenKey] = useState(focus ? focus.key : null);
   const [scores, setScores] = useState(readScores);
   const saveScore = (key, score) => {
@@ -273,6 +279,7 @@ function GrammarView({ topics, words = {}, lang = "en", focus, onBack, onOpenCha
               best={scores[topic.key]}
               onScore={(score) => saveScore(topic.key, score)}
               onOpenChapter={onOpenChapter}
+              onAnswer={onExerciseAnswer ? (item, correct) => onExerciseAnswer(topic.key, item, correct) : undefined}
             />
           </Fragment>
         );
@@ -288,6 +295,7 @@ GrammarView.propTypes = {
   focus: PropTypes.shape({ key: PropTypes.string.isRequired, n: PropTypes.number }),
   onBack: PropTypes.func,
   onOpenChapter: PropTypes.func,
+  onExerciseAnswer: PropTypes.func,
 };
 
 export default GrammarView;

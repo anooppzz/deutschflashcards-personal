@@ -2,10 +2,12 @@
 // The whole app is one HTML file (vite-plugin-singlefile), so the cache only
 // holds that page, the manifest and the icons.
 // - The page: network first, so every deploy arrives as soon as you're
-//   online; offline, the last copy from the cache.
+//   online; offline, the last copy from the cache. "no-cache" asks the
+//   server every time instead of reusing the browser's copy (GitHub Pages
+//   lets browsers keep a page for 10 minutes, which hid fresh deploys).
 // - Manifest and icons: cache first.
 // Other origins (the translation API) are left alone.
-const CACHE = "deutsch-flashcards-v1";
+const CACHE = "deutsch-flashcards-v2";
 const PAGE = "./index.html";
 const SHELL = [PAGE, "./manifest.webmanifest", "./icon-192.png", "./icon-512.png"];
 
@@ -27,7 +29,7 @@ self.addEventListener("fetch", (event) => {
 
   if (req.mode === "navigate") {
     event.respondWith(
-      fetch(req)
+      fetch(req.url, { cache: "no-cache" })
         .then((res) => {
           if (res.ok) {
             const copy = res.clone();

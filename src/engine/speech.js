@@ -13,7 +13,8 @@ if (typeof window !== "undefined" && window.speechSynthesis) {
   try { window.speechSynthesis.addEventListener("voiceschanged", loadVoices); } catch {}
 }
 
-export const speak = (text, onErr) => {
+// rate: 0.95 normal; 🐢 slower for listening practice (~0.6)
+export const speak = (text, onErr, rate = 0.95) => {
   const fail = () => { if (onErr) onErr(); };
   try {
     const synth = window.speechSynthesis;
@@ -21,7 +22,7 @@ export const speak = (text, onErr) => {
     synth.cancel();
     const u = new SpeechSynthesisUtterance(text);
     u.lang = "de-DE";
-    u.rate = 0.95;
+    u.rate = rate;
     const pool = _voices.length ? _voices : synth.getVoices();
     const de = pool.find((v) => /^de(\b|[-_])/i.test(v.lang));
     if (de) u.voice = de;

@@ -7,6 +7,8 @@ import { speak } from "../engine/speech";
 import { ProgressCtx } from "../context/ProgressCtx";
 import { GrammarNavCtx } from "../context/GrammarNavCtx";
 import { faceStyle, badgeStyle, iconBtn } from "./cardStyles";
+import LookupLinks from "./LookupLinks";
+import { wordLinks, wordQuestion } from "../engine/lookup";
 
 function FlipCard({ front, sub, back, english, example, exampleEn, accent, badge, type, gender, deck, cardId, lang = "en", level, source, note, showMarks = true }) {
   const { progress, mark } = useContext(ProgressCtx);
@@ -86,6 +88,7 @@ function FlipCard({ front, sub, back, english, example, exampleEn, accent, badge
   }, [shownEn, lang, cardId]);
 
   return (
+    <div>
     <div
       onClick={() => setFlipped((f) => !f)}
       onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setFlipped((f) => !f); } }}
@@ -223,6 +226,9 @@ function FlipCard({ front, sub, back, english, example, exampleEn, accent, badge
           )}
         </div>
       </div>
+    </div>
+    {/* 🔎 / 🤖 under the card once it shows its back */}
+    {flipped && <LookupLinks links={wordLinks(front)} question={wordQuestion({ front, english: meaning, example })} />}
     </div>
   );
 }

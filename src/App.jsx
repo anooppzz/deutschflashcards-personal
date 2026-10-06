@@ -29,12 +29,12 @@ import {
   TYPE_META,
   ROUND_SIZE, ARTICLE_SIZE_PRESETS, GOAL_PRESETS, REVIEW_SIZE,
   LANGUAGES,
-  MODE, MODE_TABS, DAY_MS,
+  MODE, MODE_TABS, DAY_MS, buildLabel,
 } from "./constants";
 import {
   IRREGULAR_VERBS, INSEPARABLE_VERBS, HAUSHALT, VERKEHR, KLEIDUNG,
   EXTRA_TOPICS, DECK_META, GRAMMAR_TOPICS,
-  DECK_SOURCE, EXTRA_BY_KEY, ALL_CARDS,
+  DECK_SOURCE, EXTRA_BY_KEY, ALL_CARDS, GRAMMAR_EXERCISES,
 } from "./data";
 import {
   storage,
@@ -43,7 +43,8 @@ import {
   isKnownStability, migrateBoxEntry,
   localDateStr, addDaysStr, saveStreak, effectiveStreakDisplay,
   weightedSample, shuffled,
-  checkReverseAnswer, isArticleCorrect,
+  checkReverseAnswer, checkDictation, isDictatable, isArticleCorrect,
+  recordAnswer, sortedEntries, grammarMistakeId, isGrammarMistakeId, newTopicsOf,
   distinctLevels, distinctSources, passesGlobalFilters,
   buildGrammarIndex, buildGrammarSearchIndex, searchCards, searchGrammar, dueCards, applyRenames,
 } from "./engine";
@@ -63,7 +64,7 @@ import {
   ReverseTrainer, ReverseSummary,
   ClozeTrainer, ClozeSummary, buildClozePool, buildClozeRound, saveClozeSizePref, resolveClozeRoundSize, isClozeCorrect,
   WordSearchTrainer, WordSearchSummary, buildWordSearchPool, buildWordSearchRound, resolveWordSearchSize,
-  GrammarView, SearchResults, ReviewSession, FormsTrainer, buildFormsPool,
+  GrammarView, SearchResults, ReviewSession, FormsTrainer, buildFormsPool, MistakeBook,
 } from "./modes";
 
 /* ============================================================
@@ -127,6 +128,12 @@ const grammarLinksById = (id) => GRAMMAR_INDEX.linksById[id] || [];
 // every card by id (full fields: sub, note …) for modes that need more
 // than the selection's own card objects carry
 const CARD_BY_ID = new Map(ALL_CARDS.map((c) => [idOf(c.deck, c.front), c]));
+// 📕 Fehlerheft: grammar questions by their mistake id
+const GRAMMAR_QUESTION_BY_ID = new Map(Object.entries(GRAMMAR_EXERCISES).flatMap(([key, items]) => {
+  const topic = GRAMMAR_TOPICS.find((t) => t.key === key);
+  const topicTitle = topic ? topic.title.de || topic.title.en : key;
+  return items.map((item) => [grammarMistakeId(key, item.q), { item, topicTitle }]);
+}));
 // the text of every grammar topic, indexed once for the app-wide search
 const GRAMMAR_SEARCH = buildGrammarSearchIndex(GRAMMAR_TOPICS);
 
@@ -410,6 +417,21 @@ function App() {
   // graded result from Quiz/Article/Reverse/Cloze: runs the adaptive
   // difficulty/stability model (see engine/fsrs.js) instead of a fixed
   // Leitner box step.
+  // 📕 Fehlerheft (engine/mistakes.js): wrong answers from every trainer
+  // and grammar exercise, until answered right on two different days
+  const [mistakeBook, setMistakeBook] = useState(() => {
+    const saved = readSaved(STORAGE_KEYS.MISTAKES);
+    return saved && typeof saved === "object" ? applyRenames(saved, RENAMES).progress : {};
+  });
+  const recordMistake = useCallback((id, correct) => {
+    setMistakeBook((prev) => {
+      const next = recordAnswer(prev, id, correct, localDateStr());
+      if (next !== prev) { try { localStorage.setItem(STORAGE_KEYS.MISTAKES, JSON.stringify(next)); } catch { /* storage off */ } }
+      return next;
+    });
+  }, []);
+  const [showMistakes, setShowMistakes] = useState(false);
+
   const reviewResult = useCallback((id, correct) => {
     if (!id) return;
     setProgress((prev) => {
@@ -419,7 +441,8 @@ function App() {
       return next;
     });
     bumpStreak();
-  }, [bumpStreak]);
+    recordMistake(id, correct);
+  }, [bumpStreak, recordMistake]);
 
   // full id list + noun list for the current selection (for progress bar & article trainer)
   const selectionCards = useMemo(() => {
@@ -474,6 +497,7 @@ function App() {
   const [grammarFocus, setGrammarFocus] = useState(null);
   const [grammarFrom, setGrammarFrom] = useState(null);
   const openGrammar = useCallback((key) => {
+    setShowMistakes(false);
     setGrammarFrom(mode === MODE.GRAMMAR ? null : mode);
     setGrammarFocus({ key, n: Date.now() });
     setMode(MODE.GRAMMAR);
@@ -601,6 +625,17 @@ function App() {
   const [qFinished, setQFinished] = useState(false);
   // ---- Reverse Mode: produce German from meaning ----
   const [rOrder, setROrder] = useState([]);
+  // 📖 Lesen (meaning → German) or 🎧 Hören (hear it → German)
+  const [reversePrompt, setReversePrompt] = useState(() => (readSaved(STORAGE_KEYS.REVERSE_PROMPT) === "audio" ? "audio" : "meaning"));
+  const changeReversePrompt = (p) => {
+    setReversePrompt(p);
+    try { localStorage.setItem(STORAGE_KEYS.REVERSE_PROMPT, JSON.stringify(p)); } catch { /* storage off */ }
+  };
+  // Hören only uses cards that can be read aloud as one clear answer
+  const reversePool = useMemo(
+    () => (reversePrompt === "audio" ? selectionCards.filter((c) => isDictatable(c.front)) : selectionCards),
+    [reversePrompt, selectionCards]
+  );
   const [rIdx, setRIdx] = useState(0);
   const [rInput, setRInput] = useState("");
   const [rFlipped, setRFlipped] = useState(false);
@@ -634,8 +669,8 @@ function App() {
       setQOrder(buildQuiz(selectionCards, progress)); setQIdx(0); setQChoice(null); setQScore({ right: 0, total: 0 });
       setQMistakes([]); setQFinished(false);
     } else if (mode === MODE.REVERSE) {
-      const n = resolveArticleRoundSize(reverseSizePref, selectionCards.length);
-      const pool = weightedSample(selectionCards, Math.min(n, selectionCards.length), progress || {});
+      const n = resolveArticleRoundSize(reverseSizePref, reversePool.length);
+      const pool = weightedSample(reversePool, Math.min(n, reversePool.length), progress || {});
       setROrder(pool); setRIdx(0); setRInput(""); setRFlipped(false); setRScore({ right: 0, total: 0 });
       setRMistakes([]); setRFinished(false);
     } else if (mode === MODE.CLOZE) {
@@ -653,7 +688,7 @@ function App() {
     // selection changed in a way not captured by mode/tabs alone, while the
     // "Runde: N" label kept showing the saved preference regardless, since
     // it reads articleSizePref directly rather than the actual round length.
-  }, [mode, tabs, articleSizePref, reverseSizePref, clozeSizePref, wsSizePref, articleNouns, selectionCards, clozePool, wsPool]); // eslint-disable-line
+  }, [mode, tabs, articleSizePref, reverseSizePref, clozeSizePref, wsSizePref, articleNouns, selectionCards, reversePool, clozePool, wsPool]); // eslint-disable-line
   const chooseArticle = (g) => {
     if (aChoice || !aOrder.length) return;
     const card = aOrder[aIdx % aOrder.length];
@@ -708,7 +743,7 @@ function App() {
     if (!rInput.trim() || rFlipped) return;
     const card = rOrder[rIdx % rOrder.length];
     // nouns need the right article too (engine/validation.js)
-    const { correct, reason } = checkReverseAnswer(rInput, card.front);
+    const { correct, reason } = (reversePrompt === "audio" ? checkDictation : checkReverseAnswer)(rInput, card.front);
     setRFlipped(true);
     setRScore((s) => ({ right: s.right + (correct ? 1 : 0), total: s.total + 1 }));
     if (!correct) setRMistakes((m) => [...m, { ...card, userInput: rInput, reason }]);
@@ -721,7 +756,7 @@ function App() {
     setRIdx((i) => i + 1);
   };
   const restartReverse = () => {
-    const pool = weightedSample(selectionCards, Math.min(ROUND_SIZE, selectionCards.length), progress || {});
+    const pool = weightedSample(reversePool, Math.min(ROUND_SIZE, reversePool.length), progress || {});
     setROrder(pool); setRIdx(0); setRInput(""); setRFlipped(false); setRScore({ right: 0, total: 0 }); setRMistakes([]); setRFinished(false);
   };
   const retryMistakesReverse = () => {
@@ -798,16 +833,45 @@ function App() {
   const dueAll = useMemo(() => dueCards(progress, ALL_CARDS), [progress]);
   const [review, setReview] = useState(null); // { cards, n }
   const startReview = (cards) => {
+    setShowMistakes(false);
     setReview({ cards, n: Date.now() });
     setQuery("");
     setGrammarFocus(null);
     setTopicsOpen(false);
   };
   const reviewing = Boolean(review) && !searching;
+  const mistakesOpen = showMistakes && !searching && !reviewing;
+  // the Fehlerheft's entries that still exist (renamed or removed cards and
+  // questions drop out)
+  const mistakeEntries = useMemo(() => {
+    const words = [];
+    const grammar = [];
+    for (const e of sortedEntries(mistakeBook)) {
+      if (isGrammarMistakeId(e.id)) {
+        const g = GRAMMAR_QUESTION_BY_ID.get(e.id);
+        if (g) grammar.push({ ...e, ...g });
+      } else {
+        const card = CARD_BY_ID.get(e.id);
+        if (card) words.push({ ...e, card });
+      }
+    }
+    return { words, grammar };
+  }, [mistakeBook]);
+  const mistakeCount = mistakeEntries.words.length + mistakeEntries.grammar.length;
+  // 🆕 chapters added recently that the learner hasn't opened yet (engine/newTopics.js)
+  const [seenNew, setSeenNew] = useState(() => {
+    const v = readSaved(STORAGE_KEYS.SEEN_NEW);
+    return Array.isArray(v) ? v : [];
+  });
+  const markTopicSeen = (key) => setSeenNew((prev) => {
+    const next = [...prev, key];
+    try { localStorage.setItem(STORAGE_KEYS.SEEN_NEW, JSON.stringify(next)); } catch { /* storage off */ }
+    return next;
+  });
   const progressCount = Object.keys(progress).length;
   const backupDue = progressCount >= 20 && (!lastBackupAt || Date.now() - lastBackupAt > 14 * DAY_MS);
   // search results or a review session cover the mode's own controls
-  const overlay = searching || reviewing;
+  const overlay = searching || reviewing || mistakesOpen;
   const searchCardResults = useMemo(() => searchCards(ALL_CARDS, query), [query]);
   const searchTopicResults = useMemo(() => searchGrammar(GRAMMAR_SEARCH, query, lang), [query, lang]);
   // "… öffnen →" under a found card: select its chapter and show that card,
@@ -820,7 +884,9 @@ function App() {
     setMode(MODE.CARDS);
     setGrammarFocus(null);
     setGrammarFrom(null);
+    setShowMistakes(false);
   };
+  const newTopics = newTopicsOf(EXTRA_TOPICS, { seen: seenNew, selected: tabs });
 
   // Phone back button / back swipe: undo the top-most thing first (a dialog,
   // a picker, the grammar page a card opened, the search, a review), then go
@@ -833,6 +899,7 @@ function App() {
     : mode === MODE.GRAMMAR && grammarFrom ? backFromGrammar
     : query !== "" ? () => setQuery("")
     : review ? () => setReview(null)
+    : showMistakes ? () => setShowMistakes(false)
     : topicsOpen ? () => setTopicsOpen(false)
     : mode !== MODE.CARDS ? () => { setMode(MODE.CARDS); setGrammarFocus(null); setGrammarFrom(null); }
     : null;
@@ -999,6 +1066,35 @@ function App() {
           </button>
         )}
 
+        {/* 📕 FEHLERHEFT - wrong answers from every trainer, until fixed */}
+        {mistakeCount > 0 && !overlay && (
+          <button
+            onClick={() => { setShowMistakes(true); setTopicsOpen(false); }}
+            style={{
+              display: "flex", width: "100%", alignItems: "center", justifyContent: "space-between", gap: 10, marginBottom: 12,
+              padding: "11px 14px", borderRadius: 12, border: "1px solid #c6534f", background: "rgba(198,83,79,.1)",
+              color: "#f2f5f8", fontSize: 14, fontWeight: 700, cursor: "pointer", textAlign: "left",
+            }}
+          >
+            <span>📕 Fehlerheft · {mistakeCount} {mistakeCount === 1 ? "Eintrag" : "Einträge"}</span>
+            <span style={{ color: "#e07b6f", whiteSpace: "nowrap" }}>Üben →</span>
+          </button>
+        )}
+
+        {/* 🆕 NEW CHAPTER - new chapters aren't ticked automatically */}
+        {!overlay && newTopics.slice(0, 2).map((t) => (
+          <div key={t.key} style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12, padding: "8px 8px 8px 14px", borderRadius: 12, border: "1px solid #5fa85f", background: "rgba(95,168,95,.1)" }}>
+            <button
+              onClick={() => { markTopicSeen(t.key); openChapterAt(t.key, t.cards[0].front); }}
+              style={{ flex: 1, minWidth: 0, display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8, background: "none", border: "none", padding: 0, color: "#f2f5f8", fontSize: 14, fontWeight: 700, cursor: "pointer", textAlign: "left" }}
+            >
+              <span>🆕 Neues Kapitel: {t.icon} {t.label} · {t.cards.length} Karten</span>
+              <span style={{ color: "#5fa85f", whiteSpace: "nowrap" }}>Öffnen →</span>
+            </button>
+            <button onClick={() => markTopicSeen(t.key)} aria-label={`Hinweis ausblenden: ${t.label}`} style={{ flexShrink: 0, padding: "4px 8px", background: "none", border: "none", color: "#7d8d9c", fontSize: 16, cursor: "pointer" }}>✕</button>
+          </div>
+        ))}
+
         {/* TABS - multi-select topics, folded into one summary row */}
         {(() => {
           const allOn = TABS.every(([k]) => tabs.includes(k));
@@ -1134,7 +1230,7 @@ function App() {
             return (
               <button
                 key={tab.mode}
-                onClick={() => { setMode(tab.mode); setGrammarFocus(null); setGrammarFrom(null); setQuery(""); setReview(null); }}
+                onClick={() => { setMode(tab.mode); setGrammarFocus(null); setGrammarFrom(null); setQuery(""); setReview(null); setShowMistakes(false); }}
                 aria-pressed={active}
                 aria-label={tab.count !== undefined ? `${tab.label} (${tab.count})` : tab.label}
                 style={{
@@ -1181,6 +1277,16 @@ function App() {
             lang={lang}
             onOpenTopic={openGrammar}
             onOpenChapter={openChapterAt}
+          />
+        ) : mistakesOpen ? (
+          <MistakeBook
+            words={mistakeEntries.words}
+            grammar={mistakeEntries.grammar}
+            lang={lang}
+            onPracticeWords={() => startReview(mistakeEntries.words.map((w) => w.card))}
+            onGrammarAnswer={recordMistake}
+            onOpenChapter={openChapterAt}
+            onClose={() => setShowMistakes(false)}
           />
         ) : reviewing ? (
           <ReviewSession
@@ -1250,8 +1356,10 @@ function App() {
               onInput={setRInput}
               onSubmit={submitReverse}
               onNext={nextReverse}
-              totalAvailable={selectionCards.length}
+              totalAvailable={reversePool.length}
               lang={lang}
+              prompt={reversePrompt}
+              onPromptChange={changeReversePrompt}
             />
           )
         ) : mode === MODE.CLOZE ? (
@@ -1333,6 +1441,7 @@ function App() {
             focus={grammarFocus}
             onBack={grammarFrom ? backFromGrammar : undefined}
             onOpenChapter={openChapterAt}
+            onExerciseAnswer={(key, item, correct) => recordMistake(grammarMistakeId(key, item.q), correct)}
           />
         ) : (
         <>
@@ -1398,6 +1507,7 @@ function App() {
           onClick={() => setShowBackup(true)}
           style={{ display: "block", margin: "12px auto 0", padding: "8px 14px", borderRadius: 10, border: "1px solid #2c3a47", background: "#1a232b", color: "#9ab0c2", fontSize: 12, fontWeight: 700, cursor: "pointer" }}
         >💾 Fortschritt sichern & App installieren</button>
+        <div style={{ marginTop: 10, fontSize: 11, color: "#5a6b78", textAlign: "center" }}>{buildLabel()}</div>
       </div>
       {showWelcome && (
         <WelcomeModal

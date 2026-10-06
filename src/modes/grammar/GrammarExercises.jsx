@@ -8,7 +8,9 @@ import { localize } from "./richText";
 // each answer the right option lights up with a one-line reason and the
 // sentence in English. Options are shuffled every time, so positions can't
 // be learned. The best score is reported to the parent (onDone), which
-// keeps it per topic.
+// keeps it per topic. Every answer is also reported (onAnswer), so mistakes
+// land in the 📕 Fehlerheft. An item with a topicTitle (the Fehlerheft mixes
+// topics) shows it above the sentence.
 
 const BLANK = "___";
 const GREEN = "#5fa85f";
@@ -39,7 +41,7 @@ function Sentence({ q, fill }) {
   );
 }
 
-function GrammarExercises({ items, lang, best, onDone }) {
+function GrammarExercises({ items, lang, best, onDone, onAnswer }) {
   const [options, setOptions] = useState(null); // shuffled options per question; null = not started
   const [idx, setIdx] = useState(0);
   const [picked, setPicked] = useState(null);
@@ -51,7 +53,7 @@ function GrammarExercises({ items, lang, best, onDone }) {
   if (!options) {
     return (
       <button type="button" onClick={start} style={{ ...mainBtn, marginTop: 0 }}>
-        ✏️ Übung starten ({total} Fragen){best != null ? ` · bisher ${best}/${total}` : ""}
+        ✏️ Übung starten ({total} {total === 1 ? "Frage" : "Fragen"}){best != null ? ` · bisher ${best}/${total}` : ""}
       </button>
     );
   }
@@ -73,6 +75,7 @@ function GrammarExercises({ items, lang, best, onDone }) {
     if (answered) return;
     setPicked(opt);
     if (opt === it.answer) setRight((r) => r + 1);
+    if (onAnswer) onAnswer(it, opt === it.answer);
   };
   const next = () => {
     const finished = idx + 1 >= total;
@@ -83,7 +86,9 @@ function GrammarExercises({ items, lang, best, onDone }) {
 
   return (
     <div>
-      <div style={{ fontSize: 11, color: "#7d8d9c", marginBottom: 8 }}>Frage {idx + 1} / {total}</div>
+      <div style={{ fontSize: 11, color: "#7d8d9c", marginBottom: 8 }}>
+        Frage {idx + 1} / {total}{it.topicTitle ? <span style={{ color: "#8fb8d8" }}> · 📖 {it.topicTitle}</span> : null}
+      </div>
       <Sentence q={it.q} fill={answered ? it.answer : null} />
       <div role="group" aria-label="Antworten" style={{ display: "flex", flexDirection: "column", gap: 6, marginTop: 12 }}>
         {options[idx].map((opt) => {
@@ -117,10 +122,12 @@ GrammarExercises.propTypes = {
     answer: PropTypes.string.isRequired,
     en: PropTypes.string,
     why: PropTypes.objectOf(PropTypes.string),
+    topicTitle: PropTypes.string,
   })).isRequired,
   lang: PropTypes.string,
   best: PropTypes.number,
   onDone: PropTypes.func.isRequired,
+  onAnswer: PropTypes.func,
 };
 
 export default GrammarExercises;
