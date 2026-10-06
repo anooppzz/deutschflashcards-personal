@@ -113,15 +113,21 @@ src/components/AudioControls.jsx  ▶ / ⏸ Pause / ▶ Weiter / ⏹ Stopp for l
 src/components/Reveal.jsx  wrap anything that opens below a tap (a word's card): scrolls it
                            on screen. App.jsx showContent() does the same for tabs/views
 src/components/LookupLinks.jsx  🔎 Nachschlagen (Duden, DWDS, Verbformen, Reverso, Leo,
-                           Google) + 🤖 Frag Claude under a flipped card and a grammar
-                           topic; URLs and questions in engine/lookup.js. Free: only
-                           links, nothing is called from the app
+                           Google) + "🤖 Frag: Claude · ChatGPT · Gemini" under a flipped
+                           card and a grammar topic; URLs and questions in
+                           engine/lookup.js (Claude/ChatGPT take ?q=, Gemini can't – the
+                           question is copied to paste). Free: only links
 src/engine/ai.js           🤖 KI-Assistent (OFF by default; footer "🤖 KI-Assistent: an/aus"):
                            Gemini (free tier, REST) or Claude (prepaid, official SDK,
                            low effort + server-side fallbacks on Opus/Sonnet). The
                            learner's own key is stored under DEVICE_ONLY_KEYS.AI – never
                            add it to STORAGE_KEYS (that would put the key in the backup
                            file) and never put a key in the repo (it is public).
+                           Keys are ENCRYPTED (engine/aiVault.js): password (PBKDF2) +
+                           optional fingerprint/screen lock (passkey + WebAuthn PRF);
+                           unlocked in memory only, 15 min idle lock; a saved key is
+                           never shown again. Never store or log a key in clear.
+                           UI: AiKeySection.jsx, AiUnlock.jsx
                            UI: components/AiSettingsModal.jsx, AiChat.jsx ("✨ KI fragen"
                            under a flipped card / grammar topic via context/AiCtx.js),
                            AiText.jsx + engine/aiText.js (safe mini-Markdown, no HTML)

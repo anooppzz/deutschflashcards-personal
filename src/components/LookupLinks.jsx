@@ -1,11 +1,13 @@
 import { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
-import { claudeUrl } from "../engine/lookup";
+import { aiSiteLinks } from "../engine/lookup";
 import { AiCtx } from "../context/AiCtx";
 
-// 🔎 Nachschlagen (free dictionaries, Google) and 🤖 Frag Claude, under a
-// card's back or at the end of a grammar topic. links: [{ label, url }] from
-// engine/lookup.js; question: what Claude is asked. With the 🤖 KI-Assistent
+// 🔎 Nachschlagen (free dictionaries, Google) and 🤖 Frag Claude / ChatGPT /
+// Gemini, under a card's back or at the end of a grammar topic. links:
+// [{ label, url }] from engine/lookup.js; question: what the AI site is asked
+// (Claude and ChatGPT get it in the link; it is also copied, and Gemini
+// needs it pasted). With the 🤖 KI-Assistent
 // switched on (AiCtx), "✨ KI fragen" opens the in-app chat about aiSubject.
 // Taps here never flip the card around them.
 
@@ -23,16 +25,16 @@ const chip = {
 function LookupLinks({ links, question, aiSubject }) {
   const ai = useContext(AiCtx);
   const [open, setOpen] = useState(false);
-  const [copied, setCopied] = useState(false);
+  const [copied, setCopied] = useState(null); // the site the question was copied for
   useEffect(() => {
     if (!copied) return;
     const t = setTimeout(() => setCopied(false), 6000);
     return () => clearTimeout(t);
   }, [copied]);
 
-  const copyQuestion = () => {
+  const copyQuestion = (site) => {
     try {
-      navigator.clipboard.writeText(question).then(() => setCopied(true), () => {});
+      navigator.clipboard.writeText(question).then(() => setCopied(site), () => {});
     } catch { /* no clipboard: the link alone has to do */ }
   };
 
@@ -44,9 +46,6 @@ function LookupLinks({ links, question, aiSubject }) {
             🔎 Nachschlagen {open ? "▴" : "▾"}
           </button>
         )}
-        <a href={claudeUrl(question)} target="_blank" rel="noopener noreferrer" onClick={copyQuestion} style={btn(false)}>
-          🤖 Frag Claude
-        </a>
         {ai.enabled && ai.ask && aiSubject && (
           <button type="button" onClick={() => ai.ask(aiSubject)} style={{ ...btn(true), background: ACCENT, color: "#0e1419" }}>
             ✨ KI fragen
@@ -60,9 +59,17 @@ function LookupLinks({ links, question, aiSubject }) {
           ))}
         </div>
       )}
+      <div style={{ display: "flex", gap: 5, justifyContent: "center", alignItems: "center", flexWrap: "wrap", marginTop: 8 }}>
+        <span style={{ fontSize: 12, fontWeight: 700, color: "#9ab0c2" }}>🤖 Frag:</span>
+        {aiSiteLinks(question).map((l) => (
+          <a key={l.label} href={l.url} target="_blank" rel="noopener noreferrer" onClick={() => copyQuestion(l)} style={{ ...chip, padding: "4px 8px" }}>{l.label} ↗</a>
+        ))}
+      </div>
       {copied && (
         <div role="status" style={{ marginTop: 6, fontSize: 11, color: "#7d8d9c", textAlign: "center" }}>
-          📋 Frage kopiert – falls Claude sie nicht anzeigt: einfügen.
+          {copied.prefill
+            ? `📋 Frage kopiert – falls ${copied.label} sie nicht anzeigt: einfügen.`
+            : `📋 Frage kopiert – in ${copied.label} lange tippen → Einfügen.`}
         </div>
       )}
     </div>

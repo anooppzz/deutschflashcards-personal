@@ -5,8 +5,9 @@
 //   prompts to improve its products. Called with plain fetch (Google's REST API).
 // - Claude (Anthropic): prepaid, pay per question. Called with the official
 //   SDK, loaded only when the first question is sent.
-// The settings and keys live under DEVICE_ONLY_KEYS.AI: on this phone only,
-// never in the code, the repo or the backup file. The app calls the
+// The settings live under DEVICE_ONLY_KEYS.AI: on this phone only, never in
+// the code, the repo or the backup file. The API keys inside are encrypted
+// (engine/aiVault.js: password and/or fingerprint). The app calls the
 // provider straight from the browser - there is no server in between.
 import { DEVICE_ONLY_KEYS } from "../constants";
 
@@ -43,8 +44,11 @@ export const defaultAiSettings = () => ({
   enabled: false,
   provider: PROVIDERS.GEMINI,
   models: { [PROVIDERS.GEMINI]: DEFAULT_GEMINI_MODEL, [PROVIDERS.CLAUDE]: DEFAULT_CLAUDE_MODEL },
-  keys: { [PROVIDERS.GEMINI]: "", [PROVIDERS.CLAUDE]: "" },
+  vault: null, // encrypted keys (engine/aiVault.js)
+  legacyKeys: null, // plain keys saved before the vault existed - to be locked away
 });
+
+const isVault = (v) => Boolean(v && v.v === 1 && v.data?.ct && v.pin?.ct && v.hints && typeof v.hints === "object");
 
 // Reads the settings, filling in anything missing or broken with the
 // defaults (so a damaged entry means "off", never a crash).
@@ -62,18 +66,27 @@ export const loadAiSettings = (store = globalThis.localStorage) => {
       [PROVIDERS.GEMINI]: str(saved.models?.[PROVIDERS.GEMINI], d.models[PROVIDERS.GEMINI]),
       [PROVIDERS.CLAUDE]: CLAUDE_MODELS.some((m) => m.id === saved.models?.[PROVIDERS.CLAUDE]) ? saved.models[PROVIDERS.CLAUDE] : d.models[PROVIDERS.CLAUDE],
     },
-    keys: {
-      [PROVIDERS.GEMINI]: str(saved.keys?.[PROVIDERS.GEMINI], ""),
-      [PROVIDERS.CLAUDE]: str(saved.keys?.[PROVIDERS.CLAUDE], ""),
-    },
+    vault: isVault(saved.vault) ? saved.vault : null,
+    legacyKeys: legacyOf(saved, str),
   };
 };
 
-export const saveAiSettings = (settings, store = globalThis.localStorage) => {
-  try { store.setItem(DEVICE_ONLY_KEYS.AI, JSON.stringify(settings)); } catch { /* storage blocked: the settings last until reload */ }
+// plain keys from before the vault (first version stored "keys" in clear)
+const legacyOf = (saved, str) => {
+  if (isVault(saved.vault)) return null;
+  const keys = { [PROVIDERS.GEMINI]: str(saved.keys?.[PROVIDERS.GEMINI], ""), [PROVIDERS.CLAUDE]: str(saved.keys?.[PROVIDERS.CLAUDE], "") };
+  return keys[PROVIDERS.GEMINI] || keys[PROVIDERS.CLAUDE] ? keys : null;
 };
 
-export const aiReady = (s) => Boolean(s?.enabled && s.keys?.[s.provider]);
+// Only these fields are written: once a vault exists, no plain key is saved.
+export const saveAiSettings = (settings, store = globalThis.localStorage) => {
+  const { enabled, provider, models, vault, legacyKeys } = settings;
+  const out = { enabled, provider, models, vault: vault || null, ...(!vault && legacyKeys ? { keys: legacyKeys } : {}) };
+  try { store.setItem(DEVICE_ONLY_KEYS.AI, JSON.stringify(out)); } catch { /* storage blocked: the settings last until reload */ }
+};
+
+// on, and a locked-away key for the chosen provider (unlocking comes later)
+export const aiReady = (s) => Boolean(s?.enabled && s.vault?.hints?.[s.provider]);
 export const claudeModel = (id) => CLAUDE_MODELS.find((m) => m.id === id) || CLAUDE_MODELS[0];
 export const modelLabel = (s) => (s.provider === PROVIDERS.CLAUDE
   ? claudeModel(s.models[PROVIDERS.CLAUDE]).label
@@ -248,12 +261,12 @@ const askGemini = async ({ apiKey, model, messages, onText, signal, fetchFn = gl
   return { text, refused: refused && !text, truncated, cost: 0 };
 };
 
-// Sends the conversation ([{ role: "user" | "assistant", content }]) and
-// streams the answer into onText(fullTextSoFar). Resolves to
+// Sends the conversation ([{ role: "user" | "assistant", content }]) with
+// apiKey (just read from the unlocked vault) and streams the answer into
+// onText(fullTextSoFar). Resolves to
 // { text, cost?, refused?, truncated?, error?, aborted? } - never throws.
-export const askAi = (settings, { messages, onText, onFallback, signal, fetchFn }) => {
+export const askAi = (settings, { apiKey, messages, onText, onFallback, signal, fetchFn }) => {
   const provider = settings.provider;
-  const apiKey = settings.keys[provider];
   const model = settings.models[provider];
   if (!settings.enabled || !apiKey) return Promise.resolve({ error: "Der KI-Assistent ist aus." });
   return provider === PROVIDERS.CLAUDE

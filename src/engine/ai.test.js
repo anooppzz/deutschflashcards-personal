@@ -3,6 +3,7 @@ import {
   loadAiSettings, saveAiSettings, defaultAiSettings, aiReady, claudeParams, claudeCost, geminiBody,
   parseSse, geminiChunk, geminiError, askAi, formatUsd, PROVIDERS, CLAUDE_MODELS, SYSTEM_PROMPT,
 } from "./ai";
+import { createVault, lockVault } from "./aiVault";
 import { collectBackup, restoreBackup, parseBackup } from "./backup";
 import { DEVICE_ONLY_KEYS, STORAGE_KEYS } from "../constants";
 
@@ -25,15 +26,30 @@ describe("AI settings", () => {
     expect(aiReady(s)).toBe(false);
   });
 
-  it("round-trip and need on + key to be ready", () => {
+  it("round-trip with a vault and need on + a locked-away key to be ready", async () => {
     const store = memStore();
-    const s = { ...defaultAiSettings(), enabled: true, provider: PROVIDERS.CLAUDE, keys: { gemini: "", claude: " sk-ant-x " } };
-    saveAiSettings(s, store);
+    const vault = await createVault({ gemini: "", claude: "sk-ant-x1234" }, "geheim1", { iter: 1000 });
+    lockVault();
+    saveAiSettings({ ...defaultAiSettings(), enabled: true, provider: PROVIDERS.CLAUDE, vault }, store);
+    const raw = store.getItem(DEVICE_ONLY_KEYS.AI);
+    expect(raw).not.toContain("sk-ant-x1234");
     const back = loadAiSettings(store);
-    expect(back.keys.claude).toBe("sk-ant-x");
+    expect(back.vault.hints.claude).toBe("…1234");
+    expect(back.legacyKeys).toBe(null);
     expect(aiReady(back)).toBe(true);
     expect(aiReady({ ...back, enabled: false })).toBe(false);
     expect(aiReady({ ...back, provider: PROVIDERS.GEMINI })).toBe(false);
+  });
+
+  it("find plain keys from the first version and keep them until locked away", () => {
+    const store = memStore({ [DEVICE_ONLY_KEYS.AI]: JSON.stringify({ enabled: true, provider: "gemini", keys: { gemini: "AIza-old", claude: "" } }) });
+    const s = loadAiSettings(store);
+    expect(s.legacyKeys).toEqual({ gemini: "AIza-old", claude: "" });
+    expect(aiReady(s)).toBe(false); // not usable until protected
+    saveAiSettings(s, store);
+    expect(loadAiSettings(store).legacyKeys.gemini).toBe("AIza-old");
+    saveAiSettings({ ...s, legacyKeys: null, vault: { v: 1, data: { ct: "x" }, pin: { ct: "y" }, hints: { gemini: "…-old" } } }, store);
+    expect(store.getItem(DEVICE_ONLY_KEYS.AI)).not.toContain("AIza-old");
   });
 
   it("treat a damaged entry as off and drop unknown Claude models", () => {
@@ -118,8 +134,8 @@ describe("Gemini", () => {
       return sseResponse(['data: {"candidates":[{"content":{"parts":[{"text":"Gu', 'ten "}]}}]}\n\ndata: {"candidates":[{"content":{"parts":[{"text":"Tag"}]}}]}\n']);
     };
     const seen = [];
-    const settings = { ...defaultAiSettings(), enabled: true, keys: { gemini: "AIza-test", claude: "" } };
-    const r = await askAi(settings, { messages: [{ role: "user", content: "Hi" }], onText: (t) => seen.push(t), fetchFn });
+    const settings = { ...defaultAiSettings(), enabled: true };
+    const r = await askAi(settings, { apiKey: "AIza-test", messages: [{ role: "user", content: "Hi" }], onText: (t) => seen.push(t), fetchFn });
     expect(r).toMatchObject({ text: "Guten Tag", cost: 0 });
     expect(seen.at(-1)).toBe("Guten Tag");
     expect(calls[0].url).toContain("gemini-flash-latest:streamGenerateContent?alt=sse");
@@ -129,14 +145,14 @@ describe("Gemini", () => {
 
   it("returns the error message of a failed request", async () => {
     const fetchFn = async () => ({ ok: false, status: 429, json: async () => ({ error: { message: "quota" } }) });
-    const settings = { ...defaultAiSettings(), enabled: true, keys: { gemini: "k", claude: "" } };
-    expect((await askAi(settings, { messages: [], onText: () => {}, fetchFn })).error).toMatch(/Limit/);
+    const settings = { ...defaultAiSettings(), enabled: true };
+    expect((await askAi(settings, { apiKey: "k", messages: [], onText: () => {}, fetchFn })).error).toMatch(/Limit/);
   });
 
   it("sends nothing while switched off", async () => {
     let called = false;
-    const settings = { ...defaultAiSettings(), keys: { gemini: "k", claude: "" } };
-    const r = await askAi(settings, { messages: [], onText: () => {}, fetchFn: async () => { called = true; } });
+    const settings = defaultAiSettings();
+    const r = await askAi(settings, { apiKey: "k", messages: [], onText: () => {}, fetchFn: async () => { called = true; } });
     expect(called).toBe(false);
     expect(r.error).toBeTruthy();
   });

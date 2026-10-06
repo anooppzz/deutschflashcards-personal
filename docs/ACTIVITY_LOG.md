@@ -30,6 +30,14 @@ was done, newest first. Every change adds a log entry here in the same commit
   Next: step 2 Schreiben (task A/B, 4 Leitpunkte, 30-min timer, checklist, model answer,
   self-rating on the 4 official criteria), step 3 Sprechen (Teil 1–3 tasks + phrases,
   record yourself – stays on the phone), more sets (2, 3 …), results over time.
+- [ ] **Decide – AI answers into the app** (brainstorm given 2026-10-06, nothing built):
+  recommended start = "📌 Für die App vorschlagen" in the chat → a 📥 inbox on the phone →
+  export one Markdown file → a Claude Code session checks it (correct? A2? duplicate?) and
+  adds what fits (cards / grammar text / exercises) with an ACTIVITY_LOG entry. Later
+  maybe: AI-suggested cards the learner ticks straight into a personal deck on the phone.
+- [ ] **To check on the learner's phone – 🔒 key lock:** "👆 Auch mit Fingerabdruck" needs
+  Android Chrome with Google Password Manager passkeys (WebAuthn PRF). If the phone says it
+  can't, the password alone protects the key. Tested with Chrome's virtual authenticator.
 - [ ] **To check on the learner's phone – 🤖 KI-Assistent:** tested only against fake
   Gemini/Claude servers in headless Chrome. First real question with the learner's own key
   (Gemini: aistudio.google.com/apikey; Claude: console.anthropic.com, small top-up + spend
@@ -48,6 +56,35 @@ was done, newest first. Every change adds a log entry here in the same commit
 ## Log
 
 ### 2026-10-06
+- **🔒 AI key lock + 🤖 Frag ChatGPT / Gemini.** The learner wanted the key safe even when
+  someone else holds the phone.
+  - **Encrypted keys** (`engine/aiVault.js`): a random data key (AES-GCM) encrypts the API
+    keys; it is stored wrapped by the learner's **password** (PBKDF2-SHA-256, 600 000
+    rounds, min. 6 characters) and, if chosen, by the **fingerprint / screen lock** (a
+    passkey on the phone; its WebAuthn PRF secret only comes out after the phone checked
+    the fingerprint; HKDF → AES key). Unlocked only in memory; locks after 15 min without
+    AI use, on "🔒 Jetzt sperren", or when the app closes. The plain key is read from the
+    vault per request and never kept in React state or storage.
+  - **Settings** (`components/AiKeySection.jsx`): first time = key + password twice +
+    "👆 Auch mit Fingerabdruck" → "🔒 Sicher speichern". After that the key is **never shown
+    again** (only "…1234"). Locked: 👆 / password unlock (`AiUnlock.jsx`), "Passwort
+    vergessen? → löschen und neu eingeben". Unlocked: replace/remove a key, add a key for
+    the other provider, fingerprint on/off, change password, lock now, delete all.
+  - **Chat**: while locked, the unlock panel replaces the questions.
+  - **Old clear-text keys** (first version, same day) are found on load: settings show
+    "⚠️ ungeschützt" and "🔒 Jetzt schützen"; the AI stays unusable until they are locked away.
+  - **Links**: under a flipped card / grammar topic, "🤖 Frag: Claude ↗ ChatGPT ↗ Gemini ↗"
+    (ChatGPT `chatgpt.com/?q=` fills in the question; Gemini has no such link – the
+    question is copied and the note says to paste it). "✨ KI fragen" (in-app) sits next to
+    🔎 Nachschlagen.
+  - Tests: `aiVault.test.js` (nothing readable stored, wrong password, idle lock, replace
+    keys, change password, fingerprint with a fake phone – secret at creation or on first
+    use –, unsupported phone, cancelled, locked actions), `ai.test.js` (vault in settings,
+    clear-text migration), `lookup.test.js` (site links). Headless Chrome at 360/390 on
+    `http://localhost` with Chrome's virtual authenticator (PRF): setup with fingerprint,
+    chat, lock → fingerprint unlock, fingerprint refused, wrong/right password, add Claude
+    key, reload = locked, clear-text migration, delete all, Gemini copy note – storage never
+    holds a key in clear, no sideways scrolling, no errors.
 - **🤖 KI-Assistent (Phase 3 – AI), off by default.** Footer button "🤖 KI-Assistent: aus/an"
   opens the settings: on/off switch, provider **Gemini** (free tier with a daily limit;
   Google may use free-tier prompts – the settings say so) or **Claude** (prepaid; Opus 5.5

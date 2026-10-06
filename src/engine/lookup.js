@@ -1,5 +1,5 @@
-// 🔎 Nachschlagen and 🤖 Frag Claude: links from a card or a grammar topic
-// to free dictionaries, Google and Claude. All free, nothing is called from
+// 🔎 Nachschlagen and 🤖 Frag Claude / ChatGPT / Gemini: links from a card or
+// a grammar topic to free dictionaries, Google and AI chat sites. All free, nothing is called from
 // the app itself - each link just opens the site with the word filled in.
 // Claude opens in the learner's own account (claude.ai/new?q=…); the same
 // question is also copied, in case the app doesn't fill it in.
@@ -53,6 +53,15 @@ export const topicQuestion = (title) => [
 ].join("\n");
 
 export const claudeUrl = (question) => `https://claude.ai/new?q=${enc(question)}`;
+// ChatGPT fills in (and sends) ?q= too; Gemini has no such link, so the app
+// copies the question and the learner pastes it there.
+export const chatgptUrl = (question) => `https://chatgpt.com/?q=${enc(question)}`;
+export const GEMINI_URL = "https://gemini.google.com/app";
+export const aiSiteLinks = (question) => [
+  { label: "Claude", url: claudeUrl(question), prefill: true },
+  { label: "ChatGPT", url: chatgptUrl(question), prefill: true },
+  { label: "Gemini", url: GEMINI_URL, prefill: false },
+];
 
 // ✨ KI fragen (engine/ai.js): what the in-app chat is about. question is the
 // full explanation request above; context goes in front of a question the

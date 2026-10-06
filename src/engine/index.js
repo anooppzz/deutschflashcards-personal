@@ -26,3 +26,4 @@ export * from "./grammarReview";
 export * from "./dailyPlan";
 export * from "./ai";
 export * from "./aiText";
+export * from "./aiVault";

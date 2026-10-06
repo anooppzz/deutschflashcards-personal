@@ -1,13 +1,18 @@
 import { useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import AiText from "./AiText";
+import AiUnlock from "./AiUnlock";
 import { askAi, followUps, modelLabel, formatUsd, MAX_QUESTIONS, PROVIDERS } from "../engine/ai";
+import { readKeys } from "../engine/aiVault";
+import { useVaultUnlocked } from "../engine/useVaultUnlocked";
 
 // ✨ KI fragen: a chat about one card or grammar topic (engine/ai.js). Nothing
 // is sent until the learner taps a question or sends their own; the answer
 // streams in and can be stopped. Follow-up questions keep the conversation
 // (up to MAX_QUESTIONS). Closing the chat stops a running answer. It sits
-// below Modal (z 200), so the ⚙️ settings open on top of it.
+// below Modal (z 200), so the ⚙️ settings open on top of it. While the keys
+// are locked (engine/aiVault.js), the unlock panel replaces the questions;
+// the key is read from the vault for each request and never kept.
 // subject: { kind: "word" | "topic", title, question, context } (engine/lookup.js)
 
 const ACCENT = "#e0833b";
@@ -26,6 +31,7 @@ function AiChat({ settings, subject, onClose, onOpenSettings }) {
   const abortRef = useRef(null);
   const endRef = useRef(null);
   const busy = turns.some((t) => t.streaming);
+  const unlocked = useVaultUnlocked();
   const isClaude = settings.provider === PROVIDERS.CLAUDE;
   const asked = turns.length;
   const totalCost = turns.reduce((s, t) => s + (t.cost || 0), 0);
@@ -43,6 +49,8 @@ function AiChat({ settings, subject, onClose, onOpenSettings }) {
 
   // send question q (shown as label) as turn number i; earlier answered turns are the history
   const run = async (i, q, label, history) => {
+    let apiKey;
+    try { apiKey = (await readKeys(settings.vault))[settings.provider]; } catch { return; } // locked: the unlock panel shows
     const controller = new AbortController();
     abortRef.current = controller;
     setTurns((ts) => [...ts.slice(0, i), { q, label, a: "", streaming: true }]);
@@ -51,6 +59,7 @@ function AiChat({ settings, subject, onClose, onOpenSettings }) {
       { role: "user", content: q },
     ];
     const r = await askAi(settings, {
+      apiKey,
       messages,
       signal: controller.signal,
       onText: (a) => update(i, { a }),
@@ -134,7 +143,9 @@ function AiChat({ settings, subject, onClose, onOpenSettings }) {
 
         {/* questions */}
         <div style={{ padding: "10px 16px 14px", borderTop: "1px solid #1f2a33" }}>
-          {busy ? (
+          {!unlocked && !busy ? (
+            <AiUnlock vault={settings.vault} />
+          ) : busy ? (
             <button type="button" onClick={stop} style={{ width: "100%", padding: "11px 0", borderRadius: 12, border: `1px solid ${RED}`, background: "transparent", color: RED, fontSize: 14, fontWeight: 700, cursor: "pointer" }}>■ Stopp</button>
           ) : asked >= MAX_QUESTIONS ? (
             <button type="button" onClick={() => setTurns([])} style={{ ...chip(true), width: "100%", textAlign: "center" }}>Genug für dieses Gespräch – neu anfangen</button>

@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { lookupTerm, wordLinks, wordQuestion, claudeUrl, topicLinks, topicQuestion, wordSubject, topicSubject } from "./lookup";
+import { lookupTerm, wordLinks, wordQuestion, claudeUrl, topicLinks, topicQuestion, wordSubject, topicSubject, aiSiteLinks } from "./lookup";
 
 describe("lookupTerm", () => {
   it("strips article, dot, brackets and alternatives", () => {
@@ -41,5 +41,14 @@ describe("AI subjects", () => {
     const t = topicSubject("Perfekt");
     expect(t).toMatchObject({ kind: "topic", title: "Perfekt", question: topicQuestion("Perfekt") });
     expect(t.context).toContain("„Perfekt“");
+  });
+});
+
+describe("AI site links", () => {
+  it("prefill Claude and ChatGPT, open Gemini plain", () => {
+    const [claude, gpt, gemini] = aiSiteLinks("Was heißt „Haus“?");
+    expect(claude.url).toBe(`https://claude.ai/new?q=${encodeURIComponent("Was heißt „Haus“?")}`);
+    expect(gpt).toMatchObject({ label: "ChatGPT", prefill: true, url: `https://chatgpt.com/?q=${encodeURIComponent("Was heißt „Haus“?")}` });
+    expect(gemini).toMatchObject({ label: "Gemini", prefill: false, url: "https://gemini.google.com/app" });
   });
 });

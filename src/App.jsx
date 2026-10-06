@@ -1688,7 +1688,7 @@ function App() {
           onClose={() => { setShowWelcome(false); saveWelcomeSeen(); }}
         />
       )}
-      {aiChat && aiSettings.enabled && (
+      {aiChat && aiReady(aiSettings) && (
         <AiChat settings={aiSettings} subject={aiChat} onClose={() => setAiChat(null)} onOpenSettings={() => setAiSettingsOpen(true)} />
       )}
       {aiSettingsOpen && <AiSettingsModal settings={aiSettings} onChange={changeAiSettings} onClose={() => setAiSettingsOpen(false)} />}
