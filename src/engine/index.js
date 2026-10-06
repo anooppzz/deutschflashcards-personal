@@ -24,3 +24,5 @@ export * from "./lookup";
 export * from "./reading";
 export * from "./grammarReview";
 export * from "./dailyPlan";
+export * from "./ai";
+export * from "./aiText";

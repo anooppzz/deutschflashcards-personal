@@ -116,6 +116,15 @@ src/components/LookupLinks.jsx  🔎 Nachschlagen (Duden, DWDS, Verbformen, Reve
                            Google) + 🤖 Frag Claude under a flipped card and a grammar
                            topic; URLs and questions in engine/lookup.js. Free: only
                            links, nothing is called from the app
+src/engine/ai.js           🤖 KI-Assistent (OFF by default; footer "🤖 KI-Assistent: an/aus"):
+                           Gemini (free tier, REST) or Claude (prepaid, official SDK,
+                           low effort + server-side fallbacks on Opus/Sonnet). The
+                           learner's own key is stored under DEVICE_ONLY_KEYS.AI – never
+                           add it to STORAGE_KEYS (that would put the key in the backup
+                           file) and never put a key in the repo (it is public).
+                           UI: components/AiSettingsModal.jsx, AiChat.jsx ("✨ KI fragen"
+                           under a flipped card / grammar topic via context/AiCtx.js),
+                           AiText.jsx + engine/aiText.js (safe mini-Markdown, no HTML)
 src/engine/mistakes.js     📕 Fehlerheft: every wrong answer (App.jsx reviewResult +
                            grammar exercises) until right on 2 different days;
                            view in modes/mistakes/MistakeBook.jsx

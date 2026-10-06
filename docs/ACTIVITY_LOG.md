@@ -30,10 +30,11 @@ was done, newest first. Every change adds a log entry here in the same commit
   Next: step 2 Schreiben (task A/B, 4 Leitpunkte, 30-min timer, checklist, model answer,
   self-rating on the 4 official criteria), step 3 Sprechen (Teil 1–3 tasks + phrases,
   record yourself – stays on the phone), more sets (2, 3 …), results over time.
-- [ ] **Phase 3 – AI** (agreed, not built): in-app assistant with an **on/off switch, off by
-  default**; providers Gemini (free tier) and/or Anthropic (prepaid, learner OK'd it);
-  key only on the phone, never in code or backup. Optional quick win: "Frag ChatGPT /
-  Frag Gemini" links next to "Frag Claude".
+- [ ] **To check on the learner's phone – 🤖 KI-Assistent:** tested only against fake
+  Gemini/Claude servers in headless Chrome. First real question with the learner's own key
+  (Gemini: aistudio.google.com/apikey; Claude: console.anthropic.com, small top-up + spend
+  limit). If Gemini says the model doesn't exist or the free limit is used up, switch to the
+  other Gemini model in the settings. Not built (optional): "Frag ChatGPT / Frag Gemini" links.
 - [ ] Sprechen with Google speech recognition: learner OK'd it; show the privacy notes
   (audio goes to Google; not a pronunciation grade) in the app when it is built.
 - [ ] **To check on the learner's phone:** ⏸ Pause / ▶ Weiter in 🎓 DTZ Hören and 📰 Lesen
@@ -47,6 +48,33 @@ was done, newest first. Every change adds a log entry here in the same commit
 ## Log
 
 ### 2026-10-06
+- **🤖 KI-Assistent (Phase 3 – AI), off by default.** Footer button "🤖 KI-Assistent: aus/an"
+  opens the settings: on/off switch, provider **Gemini** (free tier with a daily limit;
+  Google may use free-tier prompts – the settings say so) or **Claude** (prepaid; Opus 5.5
+  default, Sonnet 5.5, Haiku 4.5 with prices and ≈ cost per question), the learner's own
+  API key (show/hide, delete, "Schlüssel holen" link), safety notes.
+  - **Key only on the phone:** stored under `DEVICE_ONLY_KEYS.AI` (`aiAssistant:device:v1`),
+    deliberately outside `STORAGE_KEYS`, so it is never in the backup file and a restore
+    doesn't touch it (tested). Calls go straight from the phone to Google/Anthropic.
+  - **Switched on**, "✨ KI fragen" appears next to 🤖 Frag Claude under a flipped card and a
+    grammar topic. It opens a chat (`components/AiChat.jsx`): nothing is sent until the
+    learner taps "📖 Erklär mir …" or types a question; the answer streams in (■ Stopp),
+    follow-up chips, 📋 Kopieren, ↻ Nochmal after an error, ≈ cost per answer and in total
+    for Claude, at most 10 questions per chat. Back gesture closes settings, then the chat.
+    Off again: no button, nothing sent; the free links stay.
+  - Claude: official `@anthropic-ai/sdk`, loaded only when the first question is sent,
+    `effort: "low"`, server-side fallbacks (`fallbacks: "default"`) on Opus/Sonnet 5.5,
+    refusals and typed errors shown in German (bad key, empty credit, rate limit, offline).
+    Gemini: REST streaming (`gemini-flash-latest`, `gemini-flash-lite-latest`), key in the
+    `x-goog-api-key` header, not the URL; 429/404/400 explained in German.
+  - Answers render a safe mini-Markdown (`engine/aiText.js`: headings, lists, small tables,
+    bold/italic/code – never HTML from the answer).
+  - Tests: `ai.test.js` (settings off by default, key not in backup + survives restore,
+    Claude params, Gemini SSE parsing + streaming with a fake fetch, errors, nothing sent
+    while off), `aiText.test.js`, `lookup.test.js` (subjects). Headless Chrome at 360/390
+    against fake Gemini and Claude servers (real SDK): settings, chat, follow-up history,
+    429 and 401 messages, back gesture, grammar topic, switch off – no sideways scrolling.
+    The app file grew from 300 to 366 kB gzipped (the Claude SDK).
 - **⏸ Pause for audio + scrolling to what opens** (learner: no pause, Stopp starts over; on the
   phone a tapped tab or section opens below the screen).
   - **Audio:** 🎓 DTZ Hören and 📰 Lesen Vorlesen get ▶ / ⏸ Pause / ▶ Weiter / ⏹ Stopp and

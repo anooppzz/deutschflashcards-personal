@@ -1,10 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import { claudeUrl } from "../engine/lookup";
+import { AiCtx } from "../context/AiCtx";
 
 // 🔎 Nachschlagen (free dictionaries, Google) and 🤖 Frag Claude, under a
 // card's back or at the end of a grammar topic. links: [{ label, url }] from
-// engine/lookup.js; question: what Claude is asked.
+// engine/lookup.js; question: what Claude is asked. With the 🤖 KI-Assistent
+// switched on (AiCtx), "✨ KI fragen" opens the in-app chat about aiSubject.
 // Taps here never flip the card around them.
 
 const ACCENT = "#e0833b";
@@ -18,7 +20,8 @@ const chip = {
   border: "1px solid #3a5670", color: "#8fb8d8", background: "transparent",
 };
 
-function LookupLinks({ links, question }) {
+function LookupLinks({ links, question, aiSubject }) {
+  const ai = useContext(AiCtx);
   const [open, setOpen] = useState(false);
   const [copied, setCopied] = useState(false);
   useEffect(() => {
@@ -44,6 +47,11 @@ function LookupLinks({ links, question }) {
         <a href={claudeUrl(question)} target="_blank" rel="noopener noreferrer" onClick={copyQuestion} style={btn(false)}>
           🤖 Frag Claude
         </a>
+        {ai.enabled && ai.ask && aiSubject && (
+          <button type="button" onClick={() => ai.ask(aiSubject)} style={{ ...btn(true), background: ACCENT, color: "#0e1419" }}>
+            ✨ KI fragen
+          </button>
+        )}
       </div>
       {open && (
         <div style={{ display: "flex", gap: 6, justifyContent: "center", flexWrap: "wrap", marginTop: 8 }}>
@@ -64,6 +72,7 @@ function LookupLinks({ links, question }) {
 LookupLinks.propTypes = {
   links: PropTypes.arrayOf(PropTypes.shape({ label: PropTypes.string.isRequired, url: PropTypes.string.isRequired })).isRequired,
   question: PropTypes.string.isRequired,
+  aiSubject: PropTypes.shape({ kind: PropTypes.string, title: PropTypes.string, question: PropTypes.string, context: PropTypes.string }),
 };
 
 export default LookupLinks;

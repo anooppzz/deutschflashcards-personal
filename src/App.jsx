@@ -49,6 +49,7 @@ import {
   scheduleTopic, isTopicDue, nextGrammarTopic,
   distinctLevels, distinctSources, passesGlobalFilters,
   buildGrammarIndex, buildGrammarSearchIndex, searchCards, searchGrammar, dueCards, applyRenames,
+  loadAiSettings, saveAiSettings, aiReady,
 } from "./engine";
 import {
   FlipCard, Controls, NoResults, CategoryFilter,
@@ -57,6 +58,9 @@ import {
 import RENAMES from "./data/renames.json";
 import { ProgressCtx } from "./context/ProgressCtx";
 import { GrammarNavCtx } from "./context/GrammarNavCtx";
+import { AiCtx } from "./context/AiCtx";
+import AiChat from "./components/AiChat";
+import AiSettingsModal from "./components/AiSettingsModal";
 import { useBackButton } from "./engine/useBackButton";
 import {
   DeckView, buildDeckViews, visibleCards, initialSlice,
@@ -598,6 +602,16 @@ function App() {
   // backup (components/BackupModal.jsx): a reminder appears once there is
   // real progress to lose and no backup from the last two weeks
   const [showBackup, setShowBackup] = useState(false);
+  // 🤖 KI-Assistent (engine/ai.js): off until switched on; settings and key
+  // live on this device only. aiChat: the card/topic the open chat is about.
+  const [aiSettings, setAiSettings] = useState(() => loadAiSettings());
+  const [aiSettingsOpen, setAiSettingsOpen] = useState(false);
+  const [aiChat, setAiChat] = useState(null);
+  const changeAiSettings = useCallback((s) => { setAiSettings(s); saveAiSettings(s); if (!s.enabled) setAiChat(null); }, []);
+  const aiNav = useMemo(() => ({
+    enabled: aiSettings.enabled,
+    ask: (subject) => (aiReady(aiSettings) ? setAiChat(subject) : setAiSettingsOpen(true)),
+  }), [aiSettings]);
   const [lastBackupAt, setLastBackupAt] = useState(() => {
     const v = readSaved(STORAGE_KEYS.BACKUP_AT);
     return typeof v === "number" ? v : null;
@@ -1019,7 +1033,9 @@ function App() {
   // a picker, the grammar page a card opened, the search, a review), then go
   // to the Karten tab; only from there does back leave the app.
   const backAction =
-    showWelcome ? () => { setShowWelcome(false); saveWelcomeSeen(); }
+    aiSettingsOpen ? () => setAiSettingsOpen(false)
+    : aiChat ? () => setAiChat(null)
+    : showWelcome ? () => { setShowWelcome(false); saveWelcomeSeen(); }
     : showHelp ? () => setShowHelp(false)
     : showBackup ? () => setShowBackup(false)
     : langOpen ? () => setLangOpen(false)
@@ -1079,6 +1095,7 @@ function App() {
   return (
     <ProgressCtx.Provider value={{ progress, mark }}>
     <GrammarNavCtx.Provider value={grammarNav}>
+    <AiCtx.Provider value={aiNav}>
     <div style={{ minHeight: "100vh", background: "#0e1419", fontFamily: "system-ui, sans-serif", padding: "28px 16px" }}>
       <div style={{ maxWidth: 480, margin: "0 auto" }}>
         <div style={{ position: "relative", minHeight: 40 }}>
@@ -1658,6 +1675,10 @@ function App() {
           onClick={() => setShowBackup(true)}
           style={{ display: "block", margin: "12px auto 0", padding: "8px 14px", borderRadius: 10, border: "1px solid #2c3a47", background: "#1a232b", color: "#9ab0c2", fontSize: 12, fontWeight: 700, cursor: "pointer" }}
         >💾 Fortschritt sichern & App installieren</button>
+        <button
+          onClick={() => setAiSettingsOpen(true)}
+          style={{ display: "block", margin: "8px auto 0", padding: "8px 14px", borderRadius: 10, border: `1px solid ${aiSettings.enabled ? "#5fa85f" : "#2c3a47"}`, background: "#1a232b", color: aiSettings.enabled ? "#5fa85f" : "#9ab0c2", fontSize: 12, fontWeight: 700, cursor: "pointer" }}
+        >🤖 KI-Assistent: {aiSettings.enabled ? "an" : "aus"}</button>
         <div style={{ marginTop: 10, fontSize: 11, color: "#5a6b78", textAlign: "center" }}>{buildLabel()}</div>
       </div>
       {showWelcome && (
@@ -1667,6 +1688,10 @@ function App() {
           onClose={() => { setShowWelcome(false); saveWelcomeSeen(); }}
         />
       )}
+      {aiChat && aiSettings.enabled && (
+        <AiChat settings={aiSettings} subject={aiChat} onClose={() => setAiChat(null)} onOpenSettings={() => setAiSettingsOpen(true)} />
+      )}
+      {aiSettingsOpen && <AiSettingsModal settings={aiSettings} onChange={changeAiSettings} onClose={() => setAiSettingsOpen(false)} />}
       {showHelp && <HelpModal lang={lang} onClose={() => setShowHelp(false)} />}
       {showBackup && (
         <BackupModal
@@ -1677,6 +1702,7 @@ function App() {
         />
       )}
     </div>
+    </AiCtx.Provider>
     </GrammarNavCtx.Provider>
     </ProgressCtx.Provider>
   );

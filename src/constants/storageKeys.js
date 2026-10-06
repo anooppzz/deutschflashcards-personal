@@ -24,3 +24,11 @@ export const STORAGE_KEYS = {
   GRAMMAR_REVIEW: "grammarReview:v1", // 📅 when each grammar topic is due again (engine/grammarReview.js)
   DTZ_RESULTS: "dtzResults:v1", // 🎓 DTZ trainer: last results [{ at, mode, label, right, total }]
 };
+
+// Keys that stay on this device only. They are deliberately NOT in
+// STORAGE_KEYS, so the backup file (engine/backup.js) never contains them and
+// a restore never overwrites or deletes them. The AI key must never leave the
+// phone; the repo and the backup file can be seen by others.
+export const DEVICE_ONLY_KEYS = {
+  AI: "aiAssistant:device:v1", // 🤖 KI-Assistent: on/off, provider, model, API keys (engine/ai.js)
+};

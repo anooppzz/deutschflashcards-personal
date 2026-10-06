@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { lookupTerm, wordLinks, wordQuestion, claudeUrl, topicLinks } from "./lookup";
+import { lookupTerm, wordLinks, wordQuestion, claudeUrl, topicLinks, topicQuestion, wordSubject, topicSubject } from "./lookup";
 
 describe("lookupTerm", () => {
   it("strips article, dot, brackets and alternatives", () => {
@@ -28,5 +28,18 @@ describe("links", () => {
     expect(q).toContain("„die Rechnung“ (bill)");
     expect(q).toContain("Die Rechnung, bitte!");
     expect(claudeUrl(q)).toMatch(/^https:\/\/claude\.ai\/new\?q=I'm%20learning/);
+  });
+});
+
+describe("AI subjects", () => {
+  it("carry the card or topic for the in-app chat", () => {
+    const w = wordSubject({ front: "die Rechnung", english: "bill", example: "Die Rechnung, bitte!" });
+    expect(w).toMatchObject({ kind: "word", title: "die Rechnung" });
+    expect(w.question).toBe(wordQuestion({ front: "die Rechnung", english: "bill", example: "Die Rechnung, bitte!" }));
+    expect(w.context).toContain("„die Rechnung“ (bill)");
+    expect(w.context).toContain("Die Rechnung, bitte!");
+    const t = topicSubject("Perfekt");
+    expect(t).toMatchObject({ kind: "topic", title: "Perfekt", question: topicQuestion("Perfekt") });
+    expect(t.context).toContain("„Perfekt“");
   });
 });

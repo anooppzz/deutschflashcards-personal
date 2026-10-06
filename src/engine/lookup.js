@@ -53,3 +53,23 @@ export const topicQuestion = (title) => [
 ].join("\n");
 
 export const claudeUrl = (question) => `https://claude.ai/new?q=${enc(question)}`;
+
+// ✨ KI fragen (engine/ai.js): what the in-app chat is about. question is the
+// full explanation request above; context goes in front of a question the
+// learner types themselves, so the AI knows which card or topic is meant.
+export const wordSubject = ({ front, english, example }) => ({
+  kind: "word",
+  title: front,
+  question: wordQuestion({ front, english, example }),
+  context: [
+    `${LEARNER} I'm looking at the flashcard „${front}“${english ? ` (${english})` : ""}.`,
+    example ? `Example from my flashcards: ${example}` : null,
+  ].filter(Boolean).join("\n"),
+});
+
+export const topicSubject = (title) => ({
+  kind: "topic",
+  title,
+  question: topicQuestion(title),
+  context: `${LEARNER} I'm studying the grammar topic „${title}“.`,
+});

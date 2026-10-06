@@ -12,6 +12,7 @@
     "ids:update": "UPDATE_CARD_IDS=1 vitest run src/data/cardIds.test.js"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.131.0",
     "prop-types": "^15.8.1",
     "react": "^19.2.7",
     "react-dom": "^19.2.7"

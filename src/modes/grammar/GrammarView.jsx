@@ -9,7 +9,7 @@ import { iconBtn } from "../../components/cardStyles";
 import FlipCard from "../../components/FlipCard";
 import Reveal from "../../components/Reveal";
 import LookupLinks from "../../components/LookupLinks";
-import { topicLinks, topicQuestion } from "../../engine/lookup";
+import { topicLinks, topicQuestion, topicSubject } from "../../engine/lookup";
 import TopicBody from "./GrammarSections";
 import { localize } from "./richText";
 
@@ -166,7 +166,7 @@ function GrammarTopicCard({ topic, words = [], lang, open, onToggle, exercises =
             </div>
           )}
           <div style={{ marginTop: 16, fontSize: 11, fontWeight: 700, letterSpacing: 0.5, color: "#7d8d9c", textAlign: "center" }}>MEHR DAZU</div>
-          <LookupLinks links={topicLinks(localize(topic.title, "de"))} question={topicQuestion(localize(topic.title, "de"))} />
+          <LookupLinks links={topicLinks(localize(topic.title, "de"))} question={topicQuestion(localize(topic.title, "de"))} aiSubject={topicSubject(localize(topic.title, "de"))} />
         </div>
       )}
     </div>
