@@ -25,7 +25,17 @@ was done, newest first. Every change adds a log entry here in the same commit
 - [ ] **To check on the learner's phone:** 🎯 Heute lernen over a few days (does the new-word
   goal feel right? 10/day by default, "Ziel ändern" cycles 5/10/15/20), Satzbau chips are
   easy to tap, 📰 Lesen 🔊 Vorlesen with the phone's German voice.
-- [ ] Learning audit, phase 3 (not started): in-app AI with the learner's own key, exam mode.
+- [ ] **Phase 3 – DTZ exam training** (the learner's exam is the **DTZ**, integration course;
+  Goethe/other telc exams later as separate work). Done: step 1 Hören + Lesen (set 1).
+  Next: step 2 Schreiben (task A/B, 4 Leitpunkte, 30-min timer, checklist, model answer,
+  self-rating on the 4 official criteria), step 3 Sprechen (Teil 1–3 tasks + phrases,
+  record yourself – stays on the phone), more sets (2, 3 …), results over time.
+- [ ] **Phase 3 – AI** (agreed, not built): in-app assistant with an **on/off switch, off by
+  default**; providers Gemini (free tier) and/or Anthropic (prepaid, learner OK'd it);
+  key only on the phone, never in code or backup. Optional quick win: "Frag ChatGPT /
+  Frag Gemini" links next to "Frag Claude".
+- [ ] Sprechen with Google speech recognition: learner OK'd it; show the privacy notes
+  (audio goes to Google; not a pronunciation grade) in the app when it is built.
 - [ ] **To check on the learner's phone:** the "📲 App installieren" button (Android/Chrome) –
   headless Chrome never offers installation, so it is untested.
 - The audit of 2026-10-01 is fully done (search, backup + PWA, Heute fällig, Formen
@@ -34,6 +44,31 @@ was done, newest first. Every change adds a log entry here in the same commit
 ## Log
 
 ### 2026-10-06
+- **🎓 DTZ-Prüfungstraining, step 1: Hören + Lesen.** The learner's exam is the DTZ (integration
+  course). Read the official sources once the learner allowed www.bamf.de, www.gast.de,
+  www.klett-sprachen.de and www.telc.net in the environment (`curl` works; WebFetch still
+  refused): the BAMF/Goethe/telc DTZ handbook and g.a.s.t. Übungssatz 1 + 2 (2023). Format
+  written down in **`docs/DTZ_FORMAT.md`** (parts, item numbers, task types, scoring, rules
+  for new sets – nothing official is copied into the app).
+  - **Set 1** (`src/data/exam/dtz-sets.json`): 45 original items – Hören 4 Ansagen, 5 radio
+    texts, 4 conversations (richtig/falsch + a/b/c), 3 opinions on Homeoffice (a–f);
+    Lesen: Klinikum signpost, 8 adverts with one X, 3 texts (bus line, Hausverwaltung email,
+    Kita letter), library leaflet, formal letter to the VHS with 6 gaps. Each item has an
+    English reason quoting the deciding German words; answers spread over a/b/c, 5 richtig /
+    5 falsch. `examContent.test.js` checks numbering 4+5+8+3 / 5+5+6+3+6, answers, the X
+    rule, Teil 4 sentences, gap markers.
+  - **Trainer** (`modes/exam/`, button "🎓 DTZ-Prüfungstraining" under the tabs): practise
+    one Teil (audio as often as wanted, "Auswerten" → ✓/✗, reason, "Hörtext lesen"), or
+    simulate Hören + Lesen (70 min) / only Hören (25) / only Lesen (45) with a sticky timer –
+    each Hören text plays once, at 0:00 the part moves on, result x/45 → unter A2 / A2 (20)
+    / B1 (33) with a full review. Lesen Teil 5 shows the chosen word inside the letter.
+    Hören is read by the phone with different voices/pitch per speaker (`speakLines`).
+    Last 50 results saved (`dtzResults:v1`, in the backup). Back gesture: from a Teil or
+    simulation to the overview (asks before dropping a running simulation), then closed.
+  - Links to the free official Übungssätze on the overview. Help (❓) updated in 6 languages.
+  - Tested at 360/390px (timer fast-forwarded with Playwright's clock): practice + review,
+    X in Lesen 2, gaps in Lesen 5, Hören → Lesen at 25:00, result and saved history, back
+    gesture; no sideways scroll, no errors. 249 tests.
 - **Satzbau: "↺ Rückgängig"** after "Meine Reihenfolge ist auch richtig" (the learner tapped it
   by mistake): shows "Deine Reihenfolge: …" and takes the point back – the sentence returns
   to the round's mistakes – until "Weiter". (That button never saved anything beyond the

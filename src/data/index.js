@@ -13,6 +13,7 @@ import STATIC_TRANSLATIONS from "./translations/static-table.json";
 import GRAMMAR_TOPICS from "./grammar/topics.json";
 import GRAMMAR_EXERCISES from "./grammar/exercises.json";
 import READING_TEXTS from "./reading/texts.json";
+import DTZ_SETS from "./exam/dtz-sets.json";
 
 export {
   IRREGULAR_VERBS,
@@ -26,6 +27,7 @@ export {
   GRAMMAR_TOPICS,
   GRAMMAR_EXERCISES,
   READING_TEXTS,
+  DTZ_SETS,
 };
 
 // Deck registry for the multi-topic (combined) mode - maps each deck key to

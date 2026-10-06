@@ -34,7 +34,7 @@ import {
 import {
   IRREGULAR_VERBS, INSEPARABLE_VERBS, HAUSHALT, VERKEHR, KLEIDUNG,
   EXTRA_TOPICS, DECK_META, GRAMMAR_TOPICS,
-  DECK_SOURCE, EXTRA_BY_KEY, ALL_CARDS, GRAMMAR_EXERCISES, READING_TEXTS,
+  DECK_SOURCE, EXTRA_BY_KEY, ALL_CARDS, GRAMMAR_EXERCISES, READING_TEXTS, DTZ_SETS,
 } from "./data";
 import {
   storage,
@@ -67,7 +67,7 @@ import {
   ClozeTrainer, ClozeSummary, buildClozePool, buildClozeRound, saveClozeSizePref, resolveClozeRoundSize, isClozeCorrect,
   WordSearchTrainer, WordSearchSummary, buildWordSearchPool, buildWordSearchRound, resolveWordSearchSize,
   GrammarView, SearchResults, ReviewSession, FormsTrainer, buildFormsPool, MistakeBook,
-  SatzbauTrainer, buildSatzbauPool, ReadingView,
+  SatzbauTrainer, buildSatzbauPool, ReadingView, DtzTrainer,
 } from "./modes";
 
 /* ============================================================
@@ -446,6 +446,17 @@ function App() {
     });
   }, []);
   const [showMistakes, setShowMistakes] = useState(false);
+  // 🎓 DTZ trainer (modes/exam): null = closed, else { kind: "home" | "teil" | "sim", … }
+  const [dtzView, setDtzView] = useState(null);
+  const [dtzResults, setDtzResults] = useState(() => {
+    const v = readSaved(STORAGE_KEYS.DTZ_RESULTS);
+    return Array.isArray(v) ? v : [];
+  });
+  const saveDtzResult = (r) => setDtzResults((prev) => {
+    const next = [{ at: new Date().toISOString(), mode: r.mode, label: r.label, right: r.right, total: r.total }, ...prev].slice(0, 50);
+    try { localStorage.setItem(STORAGE_KEYS.DTZ_RESULTS, JSON.stringify(next)); } catch { /* storage off */ }
+    return next;
+  });
 
   // opts.learning: a first look at new words (🎯 plan) - not knowing a word
   // you have never seen isn't a mistake, so it stays out of the Fehlerheft
@@ -881,7 +892,8 @@ function App() {
     setTopicsOpen(false);
   };
   const reviewing = Boolean(review) && !searching;
-  const mistakesOpen = showMistakes && !searching && !reviewing;
+  const dtzOpen = Boolean(dtzView) && !searching && !reviewing;
+  const mistakesOpen = showMistakes && !searching && !reviewing && !dtzOpen;
   // the Fehlerheft's entries that still exist (renamed or removed cards and
   // questions drop out)
   const mistakeEntries = useMemo(() => {
@@ -912,7 +924,7 @@ function App() {
   const progressCount = Object.keys(progress).length;
   const backupDue = progressCount >= 20 && (!lastBackupAt || Date.now() - lastBackupAt > 14 * DAY_MS);
   // search results or a review session cover the mode's own controls
-  const overlay = searching || reviewing || mistakesOpen;
+  const overlay = searching || reviewing || mistakesOpen || dtzOpen;
   const searchCardResults = useMemo(() => searchCards(ALL_CARDS, query), [query]);
   const searchTopicResults = useMemo(() => searchGrammar(GRAMMAR_SEARCH, query, lang), [query, lang]);
   // "… öffnen →" under a found card: select its chapter and show that card,
@@ -995,6 +1007,11 @@ function App() {
     : mode === MODE.GRAMMAR && grammarFrom ? backFromGrammar
     : query !== "" ? () => setQuery("")
     : review ? () => setReview(null)
+    : dtzView && dtzView.kind !== "home" ? () => {
+      if (dtzView.kind === "sim" && !dtzView.done && !window.confirm("Simulation abbrechen? Die Antworten gehen verloren.")) return;
+      setDtzView({ kind: "home" });
+    }
+    : dtzView ? () => setDtzView(null)
     : showMistakes ? () => setShowMistakes(false)
     : mode === MODE.READING && readingKey ? () => setReadingKey(null)
     : topicsOpen ? () => setTopicsOpen(false)
@@ -1305,7 +1322,7 @@ function App() {
             return (
               <button
                 key={tab.mode}
-                onClick={() => { setMode(tab.mode); setGrammarFocus(null); setGrammarFrom(null); setQuery(""); setReview(null); setShowMistakes(false); }}
+                onClick={() => { setMode(tab.mode); setGrammarFocus(null); setGrammarFrom(null); setQuery(""); setReview(null); setShowMistakes(false); setDtzView(null); }}
                 aria-pressed={active}
                 aria-label={tab.count !== undefined ? `${tab.label} (${tab.count})` : tab.label}
                 style={{
@@ -1329,6 +1346,20 @@ function App() {
             );
           })}
         </div>
+        {/* 🎓 DTZ - exam practice, independent of the selected topics */}
+        {!overlay && (
+          <button
+            onClick={() => { setDtzView({ kind: "home" }); setTopicsOpen(false); window.scrollTo(0, 0); }}
+            style={{
+              display: "flex", width: "100%", alignItems: "center", justifyContent: "space-between", gap: 10, marginTop: -4, marginBottom: 14,
+              padding: "10px 14px", borderRadius: 12, border: "1px solid #3a5670", background: "rgba(143,184,216,.08)",
+              color: "#f2f5f8", fontSize: 14, fontWeight: 700, cursor: "pointer", textAlign: "left",
+            }}
+          >
+            <span>🎓 DTZ-Prüfungstraining <span style={{ fontSize: 12, fontWeight: 600, color: "#9ab0c2" }}>· Hören & Lesen</span></span>
+            <span style={{ color: "#8fb8d8", whiteSpace: "nowrap" }}>Öffnen →</span>
+          </button>
+        )}
         {!overlay && mode === MODE.CARDS && selectionCards.length > 0 && <ProgressBar known={knownCount} total={selectionCards.length} due={dueCount} />}
         {!overlay && mode === MODE.ARTICLE && !aFinished && (
           <RoundSizeSelector onCycle={cycleArticleSize} label={articleSizeLabel(articleSizePref)} />
@@ -1352,6 +1383,15 @@ function App() {
             lang={lang}
             onOpenTopic={openGrammar}
             onOpenChapter={openChapterAt}
+          />
+        ) : dtzOpen ? (
+          <DtzTrainer
+            sets={DTZ_SETS}
+            view={dtzView}
+            setView={(v) => { setDtzView(v); window.scrollTo(0, 0); }}
+            results={dtzResults}
+            onResult={saveDtzResult}
+            onClose={() => setDtzView(null)}
           />
         ) : mistakesOpen ? (
           <MistakeBook

@@ -88,6 +88,8 @@ src/data/decks/            vocabulary
 src/data/grammar/topics.json   grammar reference (the Grammatik tab)
 src/data/grammar/exercises.json  ✏️ Üben questions per topic (see below)
 src/data/reading/texts.json  📰 Lesen: one short A2 text per chapter (see below)
+src/data/exam/dtz-sets.json  🎓 DTZ practice sets (Hören 1–20 + Lesen 21–45) – the format
+                           is in docs/DTZ_FORMAT.md; follow it exactly for new sets
 src/data/index.js          exports; ALL_CARDS = every card in one flat list
 src/engine/                logic: FSRS scheduling, filters, grammarLinks.js,
                            globalSearch.js (app-wide search: cards + grammar)
@@ -122,6 +124,9 @@ src/engine/reading.js      📰 Lesen: [[surface|front]] links in texts → card
 src/modes/satzbau/         🧩 Satzbau: order the words of a card's example sentence
                            (first word given; 4–10 words; no …, /, quotes)
 src/modes/reading/         📰 Lesen view (list, text, linked words, questions)
+src/modes/exam/            🎓 DTZ trainer: dtz.js (scoring 20 → A2, 33 → B1), DtzTrainer.jsx
+                           (practise a Teil / timed simulation / results); the learner's
+                           exam is the DTZ (integration course) – see docs/DTZ_FORMAT.md
 src/constants/build.js     "Version <date> · <commit>" at the bottom (set in vite.config.js)
 src/components/HelpModals.jsx  welcome + ❓ help windows; texts in src/data/help.json
                            (en, de, sq, ar, uk, hi – keep all six when editing)

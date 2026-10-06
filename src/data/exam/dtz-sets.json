@@ -1,0 +1,976 @@
+[
+ {
+  "key": "dtz-1",
+  "title": "DTZ Übungstest 1",
+  "times": {
+   "hoeren": 25,
+   "lesen": 45
+  },
+  "hoeren": [
+   {
+    "teil": 1,
+    "instruction": "Sie hören vier Ansagen. Zu jeder Ansage gibt es eine Aufgabe. Welche Lösung (a, b oder c) passt am besten?",
+    "groups": [
+     {
+      "audio": [
+       {
+        "who": "f",
+        "text": "Guten Tag, hier ist das Bürgeramt Bergstadt. Sie haben unsere Nummer außerhalb der Öffnungszeiten gewählt. Wir sind montags, dienstags und freitags von 8 bis 12 Uhr für Sie da, donnerstags zusätzlich von 14 bis 18 Uhr. Mittwochs ist das Bürgeramt geschlossen. Termine für einen neuen Personalausweis können Sie auch online auf unserer Internetseite vereinbaren."
+       }
+      ],
+      "items": [
+       {
+        "n": 1,
+        "type": "mc",
+        "q": "Wann hat das Bürgeramt am Nachmittag geöffnet?",
+        "options": {
+         "a": "Am Montag.",
+         "b": "Am Mittwoch.",
+         "c": "Am Donnerstag."
+        },
+        "answer": "c",
+        "why": "„donnerstags zusätzlich von 14 bis 18 Uhr“ – only Thursday has afternoon hours; on Wednesday it is closed."
+       }
+      ]
+     },
+     {
+      "audio": [
+       {
+        "who": "m",
+        "text": "Hallo Frau Petrović, hier ist Jens Becker von der Autowerkstatt Becker. Ihr Auto ist fertig. Wir haben die Bremsen repariert und auch gleich das Öl gewechselt. Die Rechnung beträgt 380 Euro. Sie können das Auto heute bis 18 Uhr abholen oder morgen ab 7 Uhr. Bitte bringen Sie den zweiten Autoschlüssel mit, den haben wir nämlich nicht. Bis dann!"
+       }
+      ],
+      "items": [
+       {
+        "n": 2,
+        "type": "mc",
+        "q": "Was soll Frau Petrović mitbringen?",
+        "options": {
+         "a": "Den Fahrzeugschein.",
+         "b": "Einen Autoschlüssel.",
+         "c": "380 Euro in bar."
+        },
+        "answer": "b",
+        "why": "„Bitte bringen Sie den zweiten Autoschlüssel mit“ – the 380 euros are the bill, nobody says cash."
+       }
+      ]
+     },
+     {
+      "audio": [
+       {
+        "who": "f",
+        "text": "Liebe Kundinnen und Kunden, heute ist in unserer Lebensmittelabteilung im Untergeschoss großer Obsttag: Alle Äpfel und Birnen kosten nur die Hälfte. Bitte beachten Sie außerdem: Unser Kundenparkplatz ist wegen Bauarbeiten heute geschlossen. Bitte benutzen Sie das Parkhaus am Marktplatz. Mit Ihrem Kassenbon ist die erste Stunde dort kostenlos."
+       }
+      ],
+      "items": [
+       {
+        "n": 3,
+        "type": "mc",
+        "q": "Wo können die Kunden heute parken?",
+        "options": {
+         "a": "Im Parkhaus am Marktplatz.",
+         "b": "Auf dem Kundenparkplatz.",
+         "c": "Im Untergeschoss."
+        },
+        "answer": "a",
+        "why": "„Unser Kundenparkplatz ist … heute geschlossen. Bitte benutzen Sie das Parkhaus am Marktplatz.“"
+       }
+      ]
+     },
+     {
+      "audio": [
+       {
+        "who": "m",
+        "text": "Hi Amira, hier ist Daniel. Du, wegen Samstag: Ich kann dir leider doch nicht beim Umzug helfen, ich muss arbeiten. Aber mein Bruder Tobias hat Zeit und er hat auch ein großes Auto. Er kommt um neun zu deiner alten Wohnung. Ruf ihn doch heute Abend kurz an, seine Nummer schicke ich dir per SMS. Tschüss!"
+       }
+      ],
+      "items": [
+       {
+        "n": 4,
+        "type": "mc",
+        "q": "Was soll Amira tun?",
+        "options": {
+         "a": "Daniel am Samstag abholen.",
+         "b": "Ein Auto mieten.",
+         "c": "Tobias anrufen."
+        },
+        "answer": "c",
+        "why": "„Ruf ihn doch heute Abend kurz an“ – ihn = Tobias, Daniel's brother."
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "teil": 2,
+    "instruction": "Sie hören fünf Ansagen aus dem Radio. Zu jeder Ansage gibt es eine Aufgabe. Welche Lösung (a, b oder c) passt am besten?",
+    "groups": [
+     {
+      "audio": [
+       {
+        "who": "a",
+        "text": "Und jetzt die Verkehrsmeldungen. Auf der A3 zwischen Köln-Ost und Leverkusen gibt es nach einem Unfall fünf Kilometer Stau. Die Polizei bittet, die Strecke zu umfahren. In der Kölner Innenstadt ist heute die Rheinbrücke wegen eines Stadtlaufs von 9 bis 14 Uhr gesperrt. Busse fahren in dieser Zeit eine Umleitung."
+       }
+      ],
+      "items": [
+       {
+        "n": 5,
+        "type": "mc",
+        "q": "Warum ist die Rheinbrücke gesperrt?",
+        "options": {
+         "a": "Wegen eines Unfalls.",
+         "b": "Wegen eines Sportereignisses.",
+         "c": "Wegen Bauarbeiten."
+        },
+        "answer": "b",
+        "why": "„wegen eines Stadtlaufs“ – a city run is a sports event; the accident is on the A3."
+       }
+      ]
+     },
+     {
+      "audio": [
+       {
+        "who": "a",
+        "text": "Das Wetter für morgen, Samstag: Am Vormittag ist es noch bewölkt und es regnet zeitweise. Ab Mittag kommt die Sonne heraus und es bleibt den ganzen Nachmittag trocken, bei Temperaturen bis 19 Grad. In der Nacht zum Sonntag kann es wieder Gewitter geben."
+       }
+      ],
+      "items": [
+       {
+        "n": 6,
+        "type": "mc",
+        "q": "Wie ist das Wetter am Samstagnachmittag?",
+        "options": {
+         "a": "Es regnet.",
+         "b": "Es gibt Gewitter.",
+         "c": "Es ist sonnig."
+        },
+        "answer": "c",
+        "why": "„Ab Mittag kommt die Sonne heraus … den ganzen Nachmittag trocken“ – rain is in the morning, storms at night."
+       }
+      ]
+     },
+     {
+      "audio": [
+       {
+        "who": "a",
+        "text": "Unser Tipp für alle Familien: Am Sonntag lädt die Stadtbibliothek zum Tag der offenen Tür ein. Von 11 bis 17 Uhr gibt es Lesungen für Kinder, einen Bücherflohmarkt und Führungen durch das Haus. Wer an diesem Tag einen Bibliotheksausweis macht, bezahlt nichts – sonst kostet der Ausweis 10 Euro im Jahr."
+       }
+      ],
+      "items": [
+       {
+        "n": 7,
+        "type": "mc",
+        "q": "Was ist am Sonntag in der Bibliothek kostenlos?",
+        "options": {
+         "a": "Der Bibliotheksausweis.",
+         "b": "Die Bücher auf dem Flohmarkt.",
+         "c": "Ein Deutschkurs."
+        },
+        "answer": "a",
+        "why": "„Wer an diesem Tag einen Bibliotheksausweis macht, bezahlt nichts.“"
+       }
+      ]
+     },
+     {
+      "audio": [
+       {
+        "who": "a",
+        "text": "Neu in Ihrer Stadt: das Familienzentrum „Kunterbunt“ in der Lindenstraße. Hier bekommen Eltern Beratung zu Kindergeld und Elterngeld, und jeden Dienstagvormittag gibt es ein Elterncafé. Für Kinder unter drei Jahren bieten wir eine Spielgruppe an – Anmeldung bitte telefonisch unter 0221 34 55 60."
+       }
+      ],
+      "items": [
+       {
+        "n": 8,
+        "type": "mc",
+        "q": "Was gibt es dienstags im Familienzentrum?",
+        "options": {
+         "a": "Eine Spielgruppe.",
+         "b": "Ein Treffen für Eltern.",
+         "c": "Eine Beratung zum Kindergeld."
+        },
+        "answer": "b",
+        "why": "„jeden Dienstagvormittag gibt es ein Elterncafé“ – a café where parents meet. The other two are offered, but no day is named."
+       }
+      ]
+     },
+     {
+      "audio": [
+       {
+        "who": "a",
+        "text": "Die Stadt Bergheim hat neue Öffnungszeiten für ihr Hallenbad beschlossen. Ab dem 1. Juni öffnet das Bad schon um 6 Uhr morgens, damit Berufstätige vor der Arbeit schwimmen können. Dafür schließt es am Abend eine Stunde früher, um 20 Uhr. Die Eintrittspreise bleiben gleich."
+       }
+      ],
+      "items": [
+       {
+        "n": 9,
+        "type": "mc",
+        "q": "Was ändert sich ab Juni?",
+        "options": {
+         "a": "Das Schwimmbad wird teurer.",
+         "b": "Das Schwimmbad schließt später am Abend.",
+         "c": "Das Schwimmbad öffnet früher am Morgen."
+        },
+        "answer": "c",
+        "why": "„öffnet das Bad schon um 6 Uhr morgens“ – it closes earlier, not later, and prices stay the same."
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "teil": 3,
+    "instruction": "Sie hören vier Gespräche. Zu jedem Gespräch gibt es zwei Aufgaben. Entscheiden Sie bei jedem Gespräch, ob die Aussage dazu richtig oder falsch ist und welche Antwort (a, b oder c) am besten passt.",
+    "groups": [
+     {
+      "audio": [
+       {
+        "who": "f",
+        "text": "Praxis Dr. Schneider, guten Morgen.",
+        "name": "Praxis"
+       },
+       {
+        "who": "m",
+        "text": "Guten Morgen, mein Name ist Okafor. Ich habe seit gestern starke Halsschmerzen und Fieber. Kann ich heute noch vorbeikommen?",
+        "name": "Herr Okafor"
+       },
+       {
+        "who": "f",
+        "text": "Heute Vormittag ist leider schon alles voll. Aber wir haben am Nachmittag eine offene Sprechstunde, ab 15 Uhr. Da müssen Sie allerdings vielleicht ein bisschen warten.",
+        "name": "Praxis"
+       },
+       {
+        "who": "m",
+        "text": "Das ist kein Problem. Muss ich etwas mitbringen?",
+        "name": "Herr Okafor"
+       },
+       {
+        "who": "f",
+        "text": "Ja, Ihre Versichertenkarte. Waren Sie schon einmal bei uns?",
+        "name": "Praxis"
+       },
+       {
+        "who": "m",
+        "text": "Nein, das ist das erste Mal.",
+        "name": "Herr Okafor"
+       },
+       {
+        "who": "f",
+        "text": "Dann kommen Sie bitte zehn Minuten früher. Sie müssen noch einen Fragebogen ausfüllen.",
+        "name": "Praxis"
+       }
+      ],
+      "items": [
+       {
+        "n": 10,
+        "type": "rf",
+        "q": "Herr Okafor bekommt einen Termin am Vormittag.",
+        "answer": "falsch",
+        "why": "„Heute Vormittag ist leider schon alles voll“ – he comes to the open consultation in the afternoon."
+       },
+       {
+        "n": 11,
+        "type": "mc",
+        "q": "Herr Okafor soll",
+        "options": {
+         "a": "einen Arztbrief mitbringen.",
+         "b": "einen Fragebogen ausfüllen.",
+         "c": "morgen noch einmal anrufen."
+        },
+        "answer": "b",
+        "why": "„Sie müssen noch einen Fragebogen ausfüllen“ – because it is his first visit."
+       }
+      ]
+     },
+     {
+      "audio": [
+       {
+        "who": "m",
+        "text": "Petra, hast du kurz Zeit? Ich habe eine Frage zum Schichtplan.",
+        "name": "Ali"
+       },
+       {
+        "who": "f",
+        "text": "Klar, Ali. Was ist los?",
+        "name": "Petra"
+       },
+       {
+        "who": "m",
+        "text": "Ich habe am Samstag Frühschicht, aber meine Tochter hat morgens ein Fußballturnier. Du hast doch am Samstag Spätschicht. Können wir tauschen?",
+        "name": "Ali"
+       },
+       {
+        "who": "f",
+        "text": "Hm, eigentlich wollte ich am Samstag lange schlafen … Aber gut. Am Abend bin ich zu einem Geburtstag eingeladen, da passt mir die Frühschicht sogar besser.",
+        "name": "Petra"
+       },
+       {
+        "who": "m",
+        "text": "Super, danke! Muss ich das jemandem sagen?",
+        "name": "Ali"
+       },
+       {
+        "who": "f",
+        "text": "Ja, sag bitte Frau Yilmaz Bescheid, sie schreibt den Plan. Am besten schickst du ihr eine E-Mail.",
+        "name": "Petra"
+       }
+      ],
+      "items": [
+       {
+        "n": 12,
+        "type": "rf",
+        "q": "Petra ist mit dem Tausch einverstanden.",
+        "answer": "richtig",
+        "why": "„Aber gut. … da passt mir die Frühschicht sogar besser.“ – she agrees to swap."
+       },
+       {
+        "n": 13,
+        "type": "mc",
+        "q": "Ali soll",
+        "options": {
+         "a": "Frau Yilmaz informieren.",
+         "b": "mit seiner Tochter sprechen.",
+         "c": "den Schichtplan schreiben."
+        },
+        "answer": "a",
+        "why": "„sag bitte Frau Yilmaz Bescheid, sie schreibt den Plan“."
+       }
+      ]
+     },
+     {
+      "audio": [
+       {
+        "who": "f",
+        "text": "Hallo Herr Nowak! Ich habe ein Paket für Sie angenommen. Der Postbote hat heute Vormittag geklingelt, aber Sie waren nicht da.",
+        "name": "Frau Braun"
+       },
+       {
+        "who": "m",
+        "text": "Oh, vielen Dank, Frau Braun! Das sind bestimmt die Schuhe für meinen Sohn. Kann ich das Paket gleich holen?",
+        "name": "Herr Nowak"
+       },
+       {
+        "who": "f",
+        "text": "Jetzt ist es schlecht, ich muss gleich zum Arzt. Aber heute Abend ab sieben bin ich wieder zu Hause.",
+        "name": "Frau Braun"
+       },
+       {
+        "who": "m",
+        "text": "Heute Abend habe ich leider Deutschkurs bis neun. Geht es morgen früh?",
+        "name": "Herr Nowak"
+       },
+       {
+        "who": "f",
+        "text": "Ja, morgen bin ich den ganzen Vormittag da. Klingeln Sie einfach.",
+        "name": "Frau Braun"
+       }
+      ],
+      "items": [
+       {
+        "n": 14,
+        "type": "rf",
+        "q": "Frau Braun hat ein Paket für Herrn Nowak.",
+        "answer": "richtig",
+        "why": "„Ich habe ein Paket für Sie angenommen.“"
+       },
+       {
+        "n": 15,
+        "type": "mc",
+        "q": "Herr Nowak holt das Paket",
+        "options": {
+         "a": "sofort.",
+         "b": "heute Abend.",
+         "c": "morgen Vormittag."
+        },
+        "answer": "c",
+        "why": "Now she goes to the doctor, in the evening he has his course – „Geht es morgen früh?“ – „Ja“."
+       }
+      ]
+     },
+     {
+      "audio": [
+       {
+        "who": "f",
+        "text": "Guten Tag, kann ich Ihnen helfen?",
+        "name": "Verkäuferin"
+       },
+       {
+        "who": "f2",
+        "text": "Ja, ich habe letzte Woche diese Jacke hier gekauft. Aber zu Hause habe ich gesehen, dass ein Knopf fehlt.",
+        "name": "Kundin"
+       },
+       {
+        "who": "f",
+        "text": "Oh, das tut mir leid. Haben Sie den Kassenbon dabei?",
+        "name": "Verkäuferin"
+       },
+       {
+        "who": "f2",
+        "text": "Ja, hier.",
+        "name": "Kundin"
+       },
+       {
+        "who": "f",
+        "text": "Möchten Sie die Jacke umtauschen oder möchten Sie Ihr Geld zurück?",
+        "name": "Verkäuferin"
+       },
+       {
+        "who": "f2",
+        "text": "Eigentlich gefällt mir die Jacke sehr gut. Haben Sie die noch einmal in Größe 38?",
+        "name": "Kundin"
+       },
+       {
+        "who": "f",
+        "text": "Moment … ja, hier ist noch eine. Schauen Sie mal, bei dieser ist alles in Ordnung.",
+        "name": "Verkäuferin"
+       },
+       {
+        "who": "f2",
+        "text": "Prima, dann nehme ich die.",
+        "name": "Kundin"
+       }
+      ],
+      "items": [
+       {
+        "n": 16,
+        "type": "rf",
+        "q": "Die Kundin tauscht die Jacke um.",
+        "answer": "richtig",
+        "why": "She doesn't want her money back: „Haben Sie die noch einmal in Größe 38?“ – „Prima, dann nehme ich die.“"
+       },
+       {
+        "n": 17,
+        "type": "mc",
+        "q": "Was ist das Problem mit der Jacke?",
+        "options": {
+         "a": "Sie ist zu klein.",
+         "b": "Die Farbe gefällt der Kundin nicht.",
+         "c": "Ein Knopf fehlt."
+        },
+        "answer": "c",
+        "why": "„dass ein Knopf fehlt“."
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "teil": 4,
+    "instruction": "Sie hören Aussagen zu einem Thema. Welcher der Sätze a–f passt zu den Aussagen 18–20? Lesen Sie zuerst die Sätze a–f.",
+    "topic": "Arbeiten im Homeoffice – eine gute Idee?",
+    "sentences": {
+     "a": "Zu Hause kann man sich schlecht konzentrieren.",
+     "b": "Man spart viel Zeit, weil man nicht zur Arbeit fahren muss.",
+     "c": "Die Firma sollte die Technik für zu Hause bezahlen.",
+     "d": "Ohne die Kollegen fühlt man sich manchmal allein.",
+     "e": "Homeoffice ist nur für Menschen ohne Kinder gut.",
+     "f": "In manchen Berufen ist Homeoffice gar nicht möglich."
+    },
+    "groups": [
+     {
+      "audio": [
+       {
+        "who": "f",
+        "text": "Ich arbeite drei Tage pro Woche von zu Hause aus. Früher war ich jeden Tag mit dem Auto unterwegs – hin und zurück fast zwei Stunden. Diese Zeit habe ich jetzt für meine Familie oder für Sport. Das ist für mich der größte Vorteil."
+       }
+      ],
+      "items": [
+       {
+        "n": 18,
+        "type": "match",
+        "q": "Aussage 18",
+        "answer": "b",
+        "why": "„Diese Zeit habe ich jetzt …“ – she no longer spends two hours a day driving."
+       }
+      ]
+     },
+     {
+      "audio": [
+       {
+        "who": "m",
+        "text": "Homeoffice – das klingt schön, aber ich bin Krankenpfleger. Ich kann die Patienten ja nicht über den Computer waschen oder ihnen Medikamente geben. Bei uns im Krankenhaus geht das einfach nicht."
+       }
+      ],
+      "items": [
+       {
+        "n": 19,
+        "type": "match",
+        "q": "Aussage 19",
+        "answer": "f",
+        "why": "„Bei uns im Krankenhaus geht das einfach nicht“ – in his job it is impossible."
+       }
+      ]
+     },
+     {
+      "audio": [
+       {
+        "who": "f",
+        "text": "Am Anfang fand ich es toll, zu Hause zu arbeiten. Aber nach ein paar Monaten haben mir meine Kollegen gefehlt: die Gespräche in der Kaffeepause, das gemeinsame Mittagessen … Jetzt gehe ich wieder öfter ins Büro."
+       }
+      ],
+      "items": [
+       {
+        "n": 20,
+        "type": "match",
+        "q": "Aussage 20",
+        "answer": "d",
+        "why": "„haben mir meine Kollegen gefehlt“ – she felt alone without them."
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "lesen": [
+   {
+    "teil": 1,
+    "instruction": "Sie sind im Krankenhaus und suchen Informationen. Lesen Sie die Aufgaben 21–25 und den Wegweiser. In welches Stockwerk (a, b oder c) gehen Sie?",
+    "document": {
+     "kind": "directory",
+     "title": "Städtisches Klinikum Nord – Wegweiser",
+     "floors": [
+      {
+       "floor": "4. OG",
+       "entries": [
+        {
+         "name": "Kinderklinik",
+         "details": "Kinderstation / Kinderambulanz / Elternzimmer"
+        },
+        {
+         "name": "Geburtshilfe",
+         "details": "Kreißsaal / Wochenstation / Kurse für werdende Eltern"
+        }
+       ]
+      },
+      {
+       "floor": "3. OG",
+       "entries": [
+        {
+         "name": "Innere Medizin",
+         "details": "Herz und Kreislauf / Magen und Darm / Diabetes-Beratung"
+        },
+        {
+         "name": "Augenklinik",
+         "details": "Augenambulanz / Sehtest / Augenoperationen"
+        }
+       ]
+      },
+      {
+       "floor": "2. OG",
+       "entries": [
+        {
+         "name": "Chirurgie",
+         "details": "Unfallchirurgie / Knochenbrüche / Operationen"
+        },
+        {
+         "name": "Orthopädie",
+         "details": "Rücken und Gelenke / Physiotherapie"
+        }
+       ]
+      },
+      {
+       "floor": "1. OG",
+       "entries": [
+        {
+         "name": "Radiologie",
+         "details": "Röntgen / MRT / Ultraschall"
+        },
+        {
+         "name": "Labor",
+         "details": "Blutabnahme / Urinuntersuchungen"
+        }
+       ]
+      },
+      {
+       "floor": "EG",
+       "entries": [
+        {
+         "name": "Patientenaufnahme",
+         "details": "Anmeldung / Versichertenkarte / Informationen zu Besuchszeiten"
+        },
+        {
+         "name": "Notaufnahme",
+         "details": "24 Stunden geöffnet"
+        },
+        {
+         "name": "Sozialdienst",
+         "details": "Pflegeberatung / Hilfe nach dem Krankenhausaufenthalt"
+        },
+        {
+         "name": "Service",
+         "details": "Cafeteria / Kiosk / Geldautomat"
+        }
+       ]
+      }
+     ]
+    },
+    "groups": [
+     {
+      "items": [
+       {
+        "n": 21,
+        "type": "mc",
+        "q": "Ihre Schwester bekommt bald ein Baby. Sie möchte einen Kurs zur Vorbereitung machen.",
+        "options": {
+         "a": "1. OG",
+         "b": "4. OG",
+         "c": "anderes Stockwerk"
+        },
+        "answer": "b",
+        "why": "4. OG Geburtshilfe: „Kurse für werdende Eltern“."
+       },
+       {
+        "n": 22,
+        "type": "mc",
+        "q": "Ihr Arzt hat Sie zum Röntgen geschickt.",
+        "options": {
+         "a": "1. OG",
+         "b": "2. OG",
+         "c": "anderes Stockwerk"
+        },
+        "answer": "a",
+        "why": "1. OG Radiologie: „Röntgen“."
+       },
+       {
+        "n": 23,
+        "type": "mc",
+        "q": "Sie möchten Ihrem Vater nach seiner Operation eine Zeitung kaufen.",
+        "options": {
+         "a": "2. OG",
+         "b": "3. OG",
+         "c": "anderes Stockwerk"
+        },
+        "answer": "c",
+        "why": "Newspapers are at the „Kiosk“ in the EG – not on the floors offered."
+       },
+       {
+        "n": 24,
+        "type": "mc",
+        "q": "Ihr Opa kommt bald nach Hause und braucht dann Hilfe bei der Pflege. Sie möchten sich beraten lassen.",
+        "options": {
+         "a": "EG",
+         "b": "3. OG",
+         "c": "anderes Stockwerk"
+        },
+        "answer": "a",
+        "why": "EG Sozialdienst: „Pflegeberatung / Hilfe nach dem Krankenhausaufenthalt“."
+       },
+       {
+        "n": 25,
+        "type": "mc",
+        "q": "Sie sehen in letzter Zeit nicht mehr gut und möchten Ihre Augen untersuchen lassen.",
+        "options": {
+         "a": "2. OG",
+         "b": "4. OG",
+         "c": "anderes Stockwerk"
+        },
+        "answer": "c",
+        "why": "The Augenklinik is on the 3. OG – not one of the floors offered."
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "teil": 2,
+    "instruction": "Lesen Sie die Situationen 26–30 und die Anzeigen a–h. Finden Sie für jede Situation die passende Anzeige. Für eine Aufgabe gibt es keine Lösung. Markieren Sie in diesem Fall ein X.",
+    "allowX": true,
+    "ads": [
+     {
+      "id": "a",
+      "title": "Waschmaschine zu verkaufen",
+      "text": "2 Jahre alt, 7 kg, sehr guter Zustand. Wegen Umzug für 150 € abzugeben. Nur Abholung. Tel. 0176 22 48 91"
+     },
+     {
+      "id": "b",
+      "title": "Elektro-Fachmarkt Schulze",
+      "text": "Neue Kühlschränke und Herde zu Sonderpreisen! Lieferung und Anschluss kostenlos. Hauptstraße 40"
+     },
+     {
+      "id": "c",
+      "title": "Schwimmschule Delfin",
+      "text": "Schwimmkurse für Kinder ab 5 Jahren, samstags 10–11 Uhr im Hallenbad Süd. Kleine Gruppen, erfahrene Trainer. Anmeldung: info@delfin-schwimmschule.de"
+     },
+     {
+      "id": "d",
+      "title": "Aqua-Fitness",
+      "text": "Fit bleiben im Wasser! Für Erwachsene jeden Alters. Dienstags 19 Uhr, Hallenbad Süd. Einfach vorbeikommen."
+     },
+     {
+      "id": "e",
+      "title": "Volkshochschule: Deutsch im Beruf (B1/B2)",
+      "text": "Telefonieren, E-Mails schreiben, Gespräche mit Kollegen und Kunden. Abendkurs, zweimal pro Woche. Auch mit Gutschein vom Jobcenter."
+     },
+     {
+      "id": "f",
+      "title": "Malerbetrieb Krämer",
+      "text": "Wir streichen Ihre Wohnung – schnell, sauber und zum fairen Preis. Kostenloser Kostenvoranschlag. Tel. 0221 77 45 12"
+     },
+     {
+      "id": "g",
+      "title": "Fahrradladen Pedalo",
+      "text": "Gebrauchte Fahrräder ab 80 €, alle geprüft und mit Garantie. Reparaturen in 24 Stunden."
+     },
+     {
+      "id": "h",
+      "title": "Sprachcafé im Stadtteilzentrum",
+      "text": "Jeden Freitag ab 17 Uhr: Deutsch sprechen mit Muttersprachlern. Für alle Niveaus, kostenlos, ohne Anmeldung."
+     }
+    ],
+    "groups": [
+     {
+      "items": [
+       {
+        "n": 26,
+        "type": "match",
+        "q": "Sie suchen eine günstige Waschmaschine.",
+        "answer": "a",
+        "why": "a: a used washing machine for 150 € – b only sells fridges and cookers."
+       },
+       {
+        "n": 27,
+        "type": "match",
+        "q": "Ihr Sohn ist sechs Jahre alt und soll schwimmen lernen.",
+        "answer": "c",
+        "why": "c: „Schwimmkurse für Kinder ab 5 Jahren“ – d is fitness for adults."
+       },
+       {
+        "n": 28,
+        "type": "match",
+        "q": "Sie möchten Ihr Deutsch für den Beruf verbessern.",
+        "answer": "e",
+        "why": "e: „Deutsch im Beruf“ – h is general conversation practice, not for work."
+       },
+       {
+        "n": 29,
+        "type": "match",
+        "q": "Sie möchten Ihre Wohnung neu streichen lassen.",
+        "answer": "f",
+        "why": "f: „Wir streichen Ihre Wohnung“."
+       },
+       {
+        "n": 30,
+        "type": "match",
+        "q": "Sie möchten Ihr altes Fahrrad verkaufen.",
+        "answer": "x",
+        "why": "No advert buys bikes – g sells used bikes and repairs them. So: X."
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "teil": 3,
+    "instruction": "Lesen Sie die drei Texte. Zu jedem Text gibt es zwei Aufgaben. Entscheiden Sie bei jedem Text, ob die Aussage richtig oder falsch ist und welche Antwort (a, b oder c) am besten passt.",
+    "groups": [
+     {
+      "document": {
+       "kind": "text",
+       "head": "Neue Buslinie zum Gewerbegebiet",
+       "body": "Ab dem 1. März fährt die neue Buslinie 15 vom Hauptbahnhof direkt zum Gewerbegebiet Nord. Bisher mussten die rund 3000 Beschäftigten dort am Bahnhof Süd umsteigen. Die Busse fahren montags bis freitags zwischen 5 und 22 Uhr alle 20 Minuten, am Wochenende einmal pro Stunde. Für die Fahrt gilt das normale Stadtticket. Die Stadt testet die Linie zunächst ein Jahr lang. Wenn genug Fahrgäste mitfahren, bleibt sie auch danach."
+      },
+      "items": [
+       {
+        "n": 31,
+        "type": "rf",
+        "q": "Mit der neuen Linie muss man nicht mehr umsteigen.",
+        "answer": "richtig",
+        "why": "„direkt zum Gewerbegebiet Nord. Bisher mussten … umsteigen.“"
+       },
+       {
+        "n": 32,
+        "type": "mc",
+        "q": "Die Linie 15",
+        "options": {
+         "a": "fährt am Wochenende nicht.",
+         "b": "braucht ein besonderes Ticket.",
+         "c": "gibt es vielleicht nur ein Jahr."
+        },
+        "answer": "c",
+        "why": "„testet die Linie zunächst ein Jahr lang. Wenn genug Fahrgäste mitfahren, bleibt sie“ – otherwise it may stop."
+       }
+      ]
+     },
+     {
+      "document": {
+       "kind": "email",
+       "head": "Von: Hausverwaltung Meyer & Co.\nAn: Mieterinnen und Mieter, Gartenstraße 12\nBetreff: Arbeiten an der Heizung",
+       "body": "Sehr geehrte Mieterinnen und Mieter,\n\nam Donnerstag, den 14. November, wird die Heizungsanlage in Ihrem Haus gewartet. Zwischen 8 und 15 Uhr gibt es deshalb kein warmes Wasser. Die Techniker müssen auch in jede Wohnung, um die Heizkörper zu prüfen. Wenn Sie an diesem Tag nicht zu Hause sind, geben Sie bitte Ihren Schlüssel bis Mittwoch beim Hausmeister, Herrn Kaya, ab.\n\nMit freundlichen Grüßen\nIhre Hausverwaltung Meyer & Co."
+      },
+      "items": [
+       {
+        "n": 33,
+        "type": "rf",
+        "q": "Am 14. November gibt es den ganzen Tag kein warmes Wasser.",
+        "answer": "falsch",
+        "why": "Only „zwischen 8 und 15 Uhr“."
+       },
+       {
+        "n": 34,
+        "type": "mc",
+        "q": "Wer an diesem Tag nicht zu Hause ist, soll",
+        "options": {
+         "a": "den Schlüssel beim Hausmeister abgeben.",
+         "b": "die Hausverwaltung anrufen.",
+         "c": "die Heizkörper selbst prüfen."
+        },
+        "answer": "a",
+        "why": "„geben Sie bitte Ihren Schlüssel … beim Hausmeister … ab“."
+       }
+      ]
+     },
+     {
+      "document": {
+       "kind": "letter",
+       "head": "Kita Sonnenblume",
+       "body": "Liebe Eltern,\n\nam Freitag, den 6. Juni, machen wir mit allen Kindern einen Ausflug in den Tierpark. Wir fahren um 9 Uhr mit dem Bus ab und sind gegen 15 Uhr zurück. Bitte geben Sie Ihrem Kind ein Lunchpaket und eine Flasche Wasser mit. Den Eintritt bezahlt der Förderverein der Kita. Für den Bus sammeln wir 3 Euro pro Kind ein – bitte geben Sie das Geld bis Mittwoch in der Gruppe ab. Außerdem brauchen wir noch zwei Mütter oder Väter, die uns begleiten. Bitte melden Sie sich bei Frau Hoffmann.\n\nViele Grüße\nIhr Kita-Team"
+      },
+      "items": [
+       {
+        "n": 35,
+        "type": "rf",
+        "q": "Die Eltern müssen den Eintritt für den Tierpark bezahlen.",
+        "answer": "falsch",
+        "why": "„Den Eintritt bezahlt der Förderverein der Kita“ – parents only pay 3 € for the bus."
+       },
+       {
+        "n": 36,
+        "type": "mc",
+        "q": "Die Kita sucht",
+        "options": {
+         "a": "einen Bus.",
+         "b": "Eltern, die mitfahren.",
+         "c": "Essen für alle Kinder."
+        },
+        "answer": "b",
+        "why": "„brauchen wir noch zwei Mütter oder Väter, die uns begleiten“."
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "teil": 4,
+    "instruction": "Lesen Sie den Text. Entscheiden Sie, ob die Aussagen 37–39 richtig oder falsch sind.",
+    "document": {
+     "kind": "text",
+     "head": "Stadtbibliothek – Informationen für neue Leserinnen und Leser",
+     "body": "Bibliotheksausweis\nEinen Ausweis bekommen Sie an der Information im Erdgeschoss. Bitte bringen Sie Ihren Personalausweis oder Reisepass und eine Meldebescheinigung mit. Kinder und Jugendliche unter 18 Jahren brauchen außerdem die Unterschrift eines Elternteils. Der Ausweis kostet für Erwachsene 12 € im Jahr. Für Kinder, Jugendliche, Studierende und Menschen mit Bürgergeld ist er kostenlos.\n\nAusleihe\nSie können bis zu 20 Medien gleichzeitig ausleihen. Bücher dürfen Sie vier Wochen behalten, DVDs und Zeitschriften eine Woche. Sie können die Leihfrist zweimal verlängern – online, telefonisch oder an der Information. Das geht aber nicht, wenn eine andere Person das Medium bestellt hat.\n\nGebühren\nWenn Sie ein Medium zu spät zurückgeben, kostet das 0,50 € pro Tag und Medium. Verlorene oder beschädigte Medien müssen Sie ersetzen.\n\nAngebote\nIm 1. Stock finden Sie Computerarbeitsplätze mit kostenlosem Internet. Jeden Mittwoch um 16 Uhr gibt es eine Vorlesestunde für Kinder von 4 bis 8 Jahren. Eine Anmeldung ist nicht nötig."
+    },
+    "groups": [
+     {
+      "items": [
+       {
+        "n": 37,
+        "type": "rf",
+        "q": "Für einen Ausweis braucht man auch eine Meldebescheinigung.",
+        "answer": "richtig",
+        "why": "„Bitte bringen Sie … und eine Meldebescheinigung mit.“"
+       },
+       {
+        "n": 38,
+        "type": "rf",
+        "q": "Eine DVD darf man vier Wochen behalten.",
+        "answer": "falsch",
+        "why": "Books four weeks – „DVDs und Zeitschriften eine Woche“."
+       },
+       {
+        "n": 39,
+        "type": "rf",
+        "q": "Für die Vorlesestunde muss man sich vorher anmelden.",
+        "answer": "falsch",
+        "why": "„Eine Anmeldung ist nicht nötig.“"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "teil": 5,
+    "instruction": "Lesen Sie den Text und schließen Sie die Lücken 40–45. Welche Lösung (a, b oder c) passt am besten?",
+    "document": {
+     "kind": "letter",
+     "head": "Samira Haddad · Rosenweg 7 · 51465 Bergstadt\n\nVolkshochschule Bergstadt\nKursbüro\nMarktplatz 3\n51465 Bergstadt\n\n12.09.\n\nAnfrage zum Kurs „Computer für Anfänger“",
+     "body": "Sehr geehrte Damen und Herren,\n\nich habe in Ihrem Programmheft den Kurs „Computer für Anfänger“ gefunden und interessiere mich (40) diesen Kurs. Leider kann ich nicht zu dem Termin am Dienstagvormittag kommen, (41) ich von 8 bis 14 Uhr arbeite. Gibt es den Kurs (42) am Abend oder am Wochenende?\n\nAußerdem habe ich noch eine Frage zu den Kosten. Ich bekomme Bürgergeld. Ist es richtig, (43) es dann eine Ermäßigung gibt? Welche Unterlagen muss ich (44) mitbringen?\n\nIch freue mich auf Ihre (45).\n\nMit freundlichen Grüßen\nSamira Haddad"
+    },
+    "groups": [
+     {
+      "items": [
+       {
+        "n": 40,
+        "type": "mc",
+        "q": "Lücke 40",
+        "options": {
+         "a": "für",
+         "b": "an",
+         "c": "auf"
+        },
+        "answer": "a",
+        "why": "sich interessieren für + Akkusativ: „für diesen Kurs“."
+       },
+       {
+        "n": 41,
+        "type": "mc",
+        "q": "Lücke 41",
+        "options": {
+         "a": "deshalb",
+         "b": "weil",
+         "c": "denn"
+        },
+        "answer": "b",
+        "why": "The verb is at the end („… arbeite“) → subordinate clause → weil. denn would need „denn ich arbeite“."
+       },
+       {
+        "n": 42,
+        "type": "mc",
+        "q": "Lücke 42",
+        "options": {
+         "a": "noch",
+         "b": "schon",
+         "c": "auch"
+        },
+        "answer": "c",
+        "why": "„Gibt es den Kurs auch am Abend?“ – also, in addition to Tuesday morning."
+       },
+       {
+        "n": 43,
+        "type": "mc",
+        "q": "Lücke 43",
+        "options": {
+         "a": "ob",
+         "b": "dass",
+         "c": "wenn"
+        },
+        "answer": "b",
+        "why": "„Ist es richtig, dass …“ – a statement she wants confirmed."
+       },
+       {
+        "n": 44,
+        "type": "mc",
+        "q": "Lücke 44",
+        "options": {
+         "a": "davon",
+         "b": "darüber",
+         "c": "dafür"
+        },
+        "answer": "c",
+        "why": "„Welche Unterlagen muss ich dafür mitbringen?“ – for that (the reduction)."
+       },
+       {
+        "n": 45,
+        "type": "mc",
+        "q": "Lücke 45",
+        "options": {
+         "a": "Antwort",
+         "b": "Frage",
+         "c": "Termin"
+        },
+        "answer": "a",
+        "why": "Fixed phrase: „Ich freue mich auf Ihre Antwort.“"
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

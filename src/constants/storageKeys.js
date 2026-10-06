@@ -22,4 +22,5 @@ export const STORAGE_KEYS = {
   DAILY: "daily:v1", // 🎯 Heute lernen: what was done today (engine/dailyPlan.js)
   NEW_PER_DAY: "newPerDay:v1", // 🎯 daily goal for new words
   GRAMMAR_REVIEW: "grammarReview:v1", // 📅 when each grammar topic is due again (engine/grammarReview.js)
+  DTZ_RESULTS: "dtzResults:v1", // 🎓 DTZ trainer: last results [{ at, mode, label, right, total }]
 };
