@@ -1870,8 +1870,8 @@
     "group": {"de": "Konnektoren", "en": "Connectors"},
     "title": {"de": "Nebensätze: dass, weil, wenn, ob, als", "en": "Subordinate Clauses: dass, weil, wenn, ob, als"},
     "summary": {
-      "de": "Nach **dass, weil, wenn, ob, als** steht das konjugierte Verb **am Ende**.",
-      "en": "After **dass, weil, wenn, ob, als**, the conjugated verb goes to the **end**."
+      "de": "Nach **dass, weil, wenn, ob, als** steht das konjugierte Verb **am Ende**. Nebensatz zuerst? Dann **Verb, Verb**.",
+      "en": "After **dass, weil, wenn, ob, als**, the conjugated verb goes to the **end**. Clause first? Then **verb, verb**."
     },
     "sections": [
       {
@@ -1884,6 +1884,16 @@
           ["ob", "whether, if", "Ich weiß nicht, ob er **kommt**."],
           ["als", "when (once, in the past)", "Als ich klein **war**, …"],
           ["wo, wann, wie …", "where, when, how …", "Weißt du, wo er **wohnt**?"]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Welche Frage? Welcher Konnektor?", "en": "Which question? Which connector?"},
+        "head": [{"de": "Frage", "en": "Question"}, {"de": "Satz – Verb am Ende", "en": "Sentence – verb at the end"}],
+        "rows": [
+          ["Warum? → **weil**", "Ich lerne Deutsch, weil ich in Deutschland **lebe**."],
+          ["Wann? → **wenn**", "Ich nehme die U-Bahn, wenn ich zum Kurs fahren **will**."],
+          ["Was? → **dass**", "Ich glaube, dass die U-Bahn pünktlich **ankommt**."]
         ]
       },
       {
@@ -1906,6 +1916,25 @@
           ["Ich weiß,", "dass er nicht kommen", "**kann**."],
           ["Gut,", "dass du reserviert", "**hast**."],
           ["…,", "weil der Zug", "**ankommt**."]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Nebensatz zuerst: Position 1 – Position 2", "en": "Clause first: position 1 – position 2"},
+        "head": [{"de": "Position 1", "en": "Position 1"}, {"de": "Position 2", "en": "Position 2"}, {"de": "Rest", "en": "Rest"}],
+        "rows": [
+          ["Wenn ich nach Hause **fahre**,", "**nehme**", "ich den Bus."],
+          ["Weil der Bus nicht **kommt**,", "**gehe**", "ich zu Fuß."],
+          ["Dass du **mitkommst**,", "**freut**", "mich sehr."]
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "Wo steht der Nebensatz?", "en": "Where does the clause go?"},
+        "items": [
+          {"de": "Der ganze Nebensatz ist **Position 1**. Das Verb vom Hauptsatz kommt direkt danach – am Komma stehen **Verb, Verb**.", "en": "The whole clause is **position 1**. The main clause's verb comes straight after it – **verb, verb** meet at the comma."},
+          {"de": "Oft beginnt der Hauptsatz dann mit **dann**: Wenn ich nach Hause fahre, **dann nehme** ich den Bus.", "en": "The main clause often starts with **dann** (then): Wenn ich nach Hause fahre, **dann nehme** ich den Bus."},
+          {"de": "**wenn**-Sätze stehen oft am Anfang, **weil**- und **dass**-Sätze selten – sie kommen meist nach dem Hauptsatz.", "en": "**wenn** clauses often come first, **weil** and **dass** clauses rarely – they usually follow the main clause."}
         ]
       },
       {
@@ -1972,6 +2001,17 @@
       },
       {
         "type": "points",
+        "title": {"de": "Noch mehr Regeln", "en": "More rules"},
+        "items": [
+          {"de": "Das **Subjekt** steht meist direkt nach dem Konnektor: weil **ich** …, dass **die U-Bahn** …, wenn **es** …", "en": "The **subject** usually comes right after the connector: weil **ich** …, dass **die U-Bahn** …, wenn **es** …"},
+          {"de": "Perfekt: **haben / sein** ganz am Ende, das Partizip davor: …, weil ich den Bus **verpasst habe** · …, weil er nach Berlin **gefahren ist**.", "en": "Perfekt: **haben / sein** at the very end, the participle before it: …, weil ich den Bus **verpasst habe** (because I missed the bus) · …, weil er nach Berlin **gefahren ist**."},
+          {"de": "Reflexiv: **sich / mich** direkt nach dem Subjekt: …, weil ich **mich** sehr **freue** · …, dass er **sich** nicht gut **fühlt**.", "en": "Reflexive: **sich / mich** right after the subject: …, weil ich **mich** sehr **freue** (because I'm very happy) · …, dass er **sich** nicht gut **fühlt**."},
+          {"de": "Im Gespräch reicht als Antwort oft nur der Nebensatz: Warum lernst du Deutsch? – **Weil** ich hier arbeiten **möchte**. Im Brief lieber ganze Sätze.", "en": "In conversation, the clause alone is often enough as an answer: Warum lernst du Deutsch? – **Weil** ich hier arbeiten **möchte**. In a letter, write full sentences."},
+          {"de": "DTZ: Sätze mit **weil, dass, wenn** verbinden bringt Punkte (Schreiben: „Kommunikative Gestaltung“) – benutze sie in jeder Antwort.", "en": "DTZ: linking sentences with **weil, dass, wenn** earns points (Schreiben: „Kommunikative Gestaltung“) – use them in every answer."}
+        ]
+      },
+      {
+        "type": "points",
         "title": {"de": "Gut zu wissen", "en": "Good to know"},
         "items": [
           {
@@ -2015,7 +2055,9 @@
       {"de": "Ich bleibe zu Hause, weil ich krank bin.", "en": "I'm staying at home because I'm sick."},
       {"de": "Wenn es regnet, fahre ich mit dem Bus.", "en": "When it rains, I take the bus."},
       {"de": "Als ich klein war, hatte ich einen Hund.", "en": "When I was little, I had a dog."},
-      {"de": "Können Sie mir sagen, wo der Bahnhof ist?", "en": "Can you tell me where the station is?"}
+      {"de": "Können Sie mir sagen, wo der Bahnhof ist?", "en": "Can you tell me where the station is?"},
+      {"de": "Ich nehme die U-Bahn, wenn ich zum Kurs fahren will.", "en": "I take the underground when I want to go to the course."},
+      {"de": "Wenn ich nach Hause fahre, dann nehme ich den Bus.", "en": "When I go home, I take the bus."}
     ]
   },
   {

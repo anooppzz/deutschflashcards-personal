@@ -56,6 +56,21 @@ was done, newest first. Every change adds a log entry here in the same commit
 ## Log
 
 ### 2026-10-06
+- **📖 Nebensätze mit weil, wenn, dass (Menschen A2 grammar page 46) – extended the existing
+  topic `nebensatz`** instead of adding a duplicate (it already covered dass/weil/wenn/ob/als,
+  verb at the end, comma, two verbs, separable verbs, weil vs. denn, dass vs. das). New:
+  - table "Welche Frage? Welcher Konnektor?" – Warum? → weil, Wann? → wenn, Was? → dass with
+    the page's examples (2 columns so it fits 360px);
+  - table "Nebensatz zuerst: Position 1 – Position 2" + points: the clause is position 1,
+    verb, verb at the comma, "dann" to start the main clause, wenn-clauses often first,
+    weil/dass rarely;
+  - "Noch mehr Regeln": subject right after the connector, Perfekt (…, weil ich den Bus
+    verpasst habe), reflexive pronoun after the subject, short spoken answers „Weil …“ vs.
+    full sentences in letters, DTZ tip (Kommunikative Gestaltung);
+  - summary mentions "Verb, Verb"; 2 more examples.
+  - ✏️ Üben: 6 new questions (16 now) on word order: modal + infinitive, verb, verb after a
+    wenn-clause, separable verb, Perfekt, sich, dass/das. None uses the answers of the
+    book's exercises 1 and 2. Checked at 360/390: no table past the edge.
 - **🗣 DTZ-Training step 3: Sprechen + banner.** The start-screen banner now reads
   "🎓 DTZ-Prüfungstraining · Hören · Lesen · Schreiben · Sprechen"; the DTZ home explains all
   four parts and the overall result (Sprechen + Hören/Lesen or Schreiben at the same level).
