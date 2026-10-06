@@ -34,6 +34,11 @@ was done, newest first. Every change adds a log entry here in the same commit
 ## Log
 
 ### 2026-10-06
+- **Satzbau: "↺ Rückgängig"** after "Meine Reihenfolge ist auch richtig" (the learner tapped it
+  by mistake): shows "Deine Reihenfolge: …" and takes the point back – the sentence returns
+  to the round's mistakes – until "Weiter". (That button never saved anything beyond the
+  round; Satzbau stores nothing.) Tested at 360/390px: accept → 1/1, undo → 0/1, the
+  sentence is in "Fehler üben".
 - **Learning audit, phase 2:**
   - **🎯 Heute lernen** (`engine/dailyPlan.js`, `components/DailyPlan.jsx`) replaces the
     "Heute fällig" and Fehlerheft banners: one card with four steps – 📅 due reviews,

@@ -8,7 +8,8 @@ import { buildSatzbauRound, chipsFor, isCorrectOrder } from "./buildSatzbau";
 // 🧩 Satzbau trainer (see buildSatzbau.js). Tap the chips to build the
 // sentence after the given first word; tap a placed word to take it back.
 // German sometimes allows another order, so after a "wrong" check the
-// learner can say "Meine Reihenfolge ist auch richtig" and it counts.
+// learner can say "Meine Reihenfolge ist auch richtig" and it counts;
+// "↺ Rückgängig" takes that back (until "Weiter").
 // The round is built when the trainer opens; the parent re-keys it when the
 // selection changes.
 
@@ -31,7 +32,7 @@ function SatzbauTrainer({ pool }) {
   const [round, setRound] = useState(() => buildSatzbauRound(pool));
   const [idx, setIdx] = useState(0);
   const [state, setState] = useState(() => newItemState(round[0]));
-  const [checked, setChecked] = useState(null); // { correct, own }
+  const [checked, setChecked] = useState(null); // { correct, own, given }
   const [right, setRight] = useState(0);
   const [mistakes, setMistakes] = useState([]); // { item, given }
 
@@ -86,15 +87,22 @@ function SatzbauTrainer({ pool }) {
   const check = () => {
     if (!complete || checked) return;
     const correct = isCorrectOrder(item, arranged);
-    setChecked({ correct, own: false });
+    const given = sentenceOf(arranged);
+    setChecked({ correct, own: false, given });
     if (correct) setRight((r) => r + 1);
-    else setMistakes((m) => [...m, { item, given: sentenceOf(arranged) }]);
+    else setMistakes((m) => [...m, { item, given }]);
   };
   // "my order is right too": count it, take it off the mistakes
   const acceptOwn = () => {
-    setChecked({ correct: true, own: true });
+    setChecked((c) => ({ ...c, correct: true, own: true }));
     setRight((r) => r + 1);
     setMistakes((m) => m.filter((x) => x.item !== item));
+  };
+  // tapped by mistake: back to "wrong", the sentence goes back on the mistakes
+  const undoOwn = () => {
+    setChecked((c) => ({ ...c, correct: false, own: false }));
+    setRight((r) => r - 1);
+    setMistakes((m) => [...m, { item, given: checked.given }]);
   };
   const next = () => {
     const n = idx + 1;
@@ -143,6 +151,14 @@ function SatzbauTrainer({ pool }) {
               <button type="button" onClick={acceptOwn} style={{ marginTop: 8, background: "none", border: "none", color: "#8fb8d8", fontSize: 12, cursor: "pointer", textDecoration: "underline" }}>
                 Meine Reihenfolge ist auch richtig
               </button>
+            )}
+            {checked.own && (
+              <div style={{ marginTop: 8, fontSize: 12, color: "#9ab0c2" }}>
+                Deine Reihenfolge: {checked.given}
+                <button type="button" onClick={undoOwn} style={{ display: "block", margin: "6px auto 0", padding: "4px 10px", borderRadius: 8, border: "1px solid #2c3a47", background: "#1a232b", color: "#cdd8e2", fontSize: 12, fontWeight: 700, cursor: "pointer" }}>
+                  ↺ Rückgängig
+                </button>
+              </div>
             )}
           </div>
         )}
