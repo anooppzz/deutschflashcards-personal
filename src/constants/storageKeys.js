@@ -23,6 +23,7 @@ export const STORAGE_KEYS = {
   NEW_PER_DAY: "newPerDay:v1", // 🎯 daily goal for new words
   GRAMMAR_REVIEW: "grammarReview:v1", // 📅 when each grammar topic is due again (engine/grammarReview.js)
   DTZ_RESULTS: "dtzResults:v1", // 🎓 DTZ trainer: last results [{ at, mode, label, right, total }]
+  AI_INBOX: "aiInbox:v1", // 📥 KI-Eingang: AI answers to add to the app later (engine/aiInbox.js)
 };
 
 // Keys that stay on this device only. They are deliberately NOT in

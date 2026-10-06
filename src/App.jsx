@@ -49,7 +49,7 @@ import {
   scheduleTopic, isTopicDue, nextGrammarTopic,
   distinctLevels, distinctSources, passesGlobalFilters,
   buildGrammarIndex, buildGrammarSearchIndex, searchCards, searchGrammar, dueCards, applyRenames,
-  loadAiSettings, saveAiSettings, aiReady,
+  loadAiSettings, saveAiSettings, aiReady, parseInbox, addInboxItem, removeInboxItems, markExported,
 } from "./engine";
 import {
   FlipCard, Controls, NoResults, CategoryFilter,
@@ -61,6 +61,7 @@ import { GrammarNavCtx } from "./context/GrammarNavCtx";
 import { AiCtx } from "./context/AiCtx";
 import AiChat from "./components/AiChat";
 import AiSettingsModal from "./components/AiSettingsModal";
+import AiInboxModal from "./components/AiInboxModal";
 import { useBackButton } from "./engine/useBackButton";
 import {
   DeckView, buildDeckViews, visibleCards, initialSlice,
@@ -607,6 +608,14 @@ function App() {
   const [aiSettings, setAiSettings] = useState(() => loadAiSettings());
   const [aiSettingsOpen, setAiSettingsOpen] = useState(false);
   const [aiChat, setAiChat] = useState(null);
+  // 📥 KI-Eingang (engine/aiInbox.js): answers to add to the app via a Claude Code chat
+  const [aiInbox, setAiInbox] = useState(() => parseInbox(readSaved(STORAGE_KEYS.AI_INBOX)));
+  const [inboxOpen, setInboxOpen] = useState(false);
+  const changeInbox = useCallback((fn) => setAiInbox((prev) => {
+    const next = fn(prev);
+    try { localStorage.setItem(STORAGE_KEYS.AI_INBOX, JSON.stringify(next)); } catch { /* storage off */ }
+    return next;
+  }), []);
   const changeAiSettings = useCallback((s) => { setAiSettings(s); saveAiSettings(s); if (!s.enabled) setAiChat(null); }, []);
   const aiNav = useMemo(() => ({
     enabled: aiSettings.enabled,
@@ -1034,6 +1043,7 @@ function App() {
   // to the Karten tab; only from there does back leave the app.
   const backAction =
     aiSettingsOpen ? () => setAiSettingsOpen(false)
+    : inboxOpen ? () => setInboxOpen(false)
     : aiChat ? () => setAiChat(null)
     : showWelcome ? () => { setShowWelcome(false); saveWelcomeSeen(); }
     : showHelp ? () => setShowHelp(false)
@@ -1679,6 +1689,12 @@ function App() {
           onClick={() => setAiSettingsOpen(true)}
           style={{ display: "block", margin: "8px auto 0", padding: "8px 14px", borderRadius: 10, border: `1px solid ${aiSettings.enabled ? "#5fa85f" : "#2c3a47"}`, background: "#1a232b", color: aiSettings.enabled ? "#5fa85f" : "#9ab0c2", fontSize: 12, fontWeight: 700, cursor: "pointer" }}
         >🤖 KI-Assistent: {aiSettings.enabled ? "an" : "aus"}</button>
+        {(aiInbox.length > 0 || aiSettings.enabled) && (
+          <button
+            onClick={() => setInboxOpen(true)}
+            style={{ display: "block", margin: "8px auto 0", padding: "8px 14px", borderRadius: 10, border: `1px solid ${aiInbox.length ? "#e0833b" : "#2c3a47"}`, background: "#1a232b", color: aiInbox.length ? "#e0833b" : "#9ab0c2", fontSize: 12, fontWeight: 700, cursor: "pointer" }}
+          >📥 KI-Eingang · {aiInbox.length}</button>
+        )}
         <div style={{ marginTop: 10, fontSize: 11, color: "#5a6b78", textAlign: "center" }}>{buildLabel()}</div>
       </div>
       {showWelcome && (
@@ -1689,7 +1705,22 @@ function App() {
         />
       )}
       {aiChat && aiReady(aiSettings) && (
-        <AiChat settings={aiSettings} subject={aiChat} onClose={() => setAiChat(null)} onOpenSettings={() => setAiSettingsOpen(true)} />
+        <AiChat
+          settings={aiSettings}
+          subject={aiChat}
+          onClose={() => setAiChat(null)}
+          onOpenSettings={() => setAiSettingsOpen(true)}
+          onSaveToInbox={(entry) => changeInbox((items) => addInboxItem(items, entry))}
+        />
+      )}
+      {inboxOpen && (
+        <AiInboxModal
+          items={aiInbox}
+          onAdd={(entry) => changeInbox((items) => addInboxItem(items, entry))}
+          onRemove={(ids) => changeInbox((items) => removeInboxItems(items, ids))}
+          onExported={(ids) => changeInbox((items) => markExported(items, ids))}
+          onClose={() => setInboxOpen(false)}
+        />
       )}
       {aiSettingsOpen && <AiSettingsModal settings={aiSettings} onChange={changeAiSettings} onClose={() => setAiSettingsOpen(false)} />}
       {showHelp && <HelpModal lang={lang} onClose={() => setShowHelp(false)} />}

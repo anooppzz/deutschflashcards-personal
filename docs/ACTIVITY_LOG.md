@@ -30,11 +30,11 @@ was done, newest first. Every change adds a log entry here in the same commit
   Next: step 2 Schreiben (task A/B, 4 Leitpunkte, 30-min timer, checklist, model answer,
   self-rating on the 4 official criteria), step 3 Sprechen (Teil 1–3 tasks + phrases,
   record yourself – stays on the phone), more sets (2, 3 …), results over time.
-- [ ] **Decide – AI answers into the app** (brainstorm given 2026-10-06, nothing built):
-  recommended start = "📌 Für die App vorschlagen" in the chat → a 📥 inbox on the phone →
-  export one Markdown file → a Claude Code session checks it (correct? A2? duplicate?) and
-  adds what fits (cards / grammar text / exercises) with an ACTIVITY_LOG entry. Later
-  maybe: AI-suggested cards the learner ticks straight into a personal deck on the phone.
+- [ ] **To check on the learner's phone – 📥 KI-Eingang:** "📤 Teilen" opens Android's
+  share sheet with the `.md` file (falls back to `.txt`, then plain text, then a download).
+  First real round trip: export → Claude Code chat "Bitte den KI-Eingang einarbeiten".
+- Idea for later (option B of the brainstorm, not requested): AI-suggested cards the
+  learner ticks straight into a personal deck on the phone.
 - [ ] **To check on the learner's phone – 🔒 key lock:** "👆 Auch mit Fingerabdruck" needs
   Android Chrome with Google Password Manager passkeys (WebAuthn PRF). If the phone says it
   can't, the password alone protects the key. Tested with Chrome's virtual authenticator.
@@ -56,6 +56,26 @@ was done, newest first. Every change adds a log entry here in the same commit
 ## Log
 
 ### 2026-10-06
+- **📥 KI-Eingang – AI answers into the app (options A + D of the brainstorm).**
+  - In the KI chat, under each answer: **"📌 Für die App vorschlagen"** → chips for what
+    should go in (🃏 Karten, 📖 Grammatik-Text, ✏️ Übungen, 💡 Sonstiges) + a note → saved in
+    the inbox (`aiInbox:v1`, in the backup; no secrets). The answer shows "📌 im KI-Eingang".
+  - **"📥 KI-Eingang · n"** button at the bottom (when the AI is on or the inbox has
+    entries) opens the inbox (`components/AiInboxModal.jsx`): entries (title, time,
+    source, wants; tap = answer + 🗑), **"＋ Text einfügen"** for answers from the
+    Claude/ChatGPT/Gemini websites, export of all entries as one Markdown file via
+    **📤 Teilen** (Android share sheet; `.md`, else `.txt`, else text, else download),
+    **⬇ Datei** or **📋 Kopieren**; exported entries get "📤 exportiert" and
+    **"🗑 Exportierte löschen"** clears them after Claude has worked them in.
+  - The file (`engine/aiInbox.js` `inboxMarkdown`): instructions on top, entries oldest
+    first with source, wishes, note, question, and the answer **quoted** (its own headings
+    can't break the structure).
+  - **Workflow for Claude Code sessions:** `docs/ai-inbox/README.md` (check correctness,
+    A2, duplicates → add in the app's formats → report ✅/✏️/❌ per entry → archive in
+    `docs/ai-inbox/done/`); CLAUDE.md points to it.
+  - Tests: `aiInbox.test.js` (add/cap/parse/mark/remove, Markdown export). Headless Chrome
+    at 360/390: save from the chat, paste an entry, export via share/file/copy, delete
+    exported, back gesture – no sideways scrolling, no errors.
 - **🔒 AI key lock + 🤖 Frag ChatGPT / Gemini.** The learner wanted the key safe even when
   someone else holds the phone.
   - **Encrypted keys** (`engine/aiVault.js`): a random data key (AES-GCM) encrypts the API

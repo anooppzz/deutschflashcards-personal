@@ -15,6 +15,9 @@ handoff between chat sessions: a new session should be able to continue from the
   (`git log origin/main -1`), the Actions run for it is green (build + deploy), and the
   learner can see it: the app shows **"Version <date> · <commit>"** at the very bottom
   – tell the learner which commit to look for.
+- **"Bitte den KI-Eingang einarbeiten" / a `ki-eingang-*.md` file?** Follow
+  `docs/ai-inbox/README.md`: AI answers are unchecked suggestions – verify, dedupe, add
+  in the app's formats, report per entry, archive in `docs/ai-inbox/done/`.
 - **New chapter?** Give it `"added": "YYYY-MM-DD"` (today). For three weeks the start
   screen shows "🆕 Neues Kapitel … Öffnen →", because new chapters are not ticked
   under 📚 Themen automatically and are easy to miss. Also write its 📰 Lesen text
@@ -128,6 +131,10 @@ src/engine/ai.js           🤖 KI-Assistent (OFF by default; footer "🤖 KI-As
                            unlocked in memory only, 15 min idle lock; a saved key is
                            never shown again. Never store or log a key in clear.
                            UI: AiKeySection.jsx, AiUnlock.jsx
+src/engine/aiInbox.js      📥 KI-Eingang: answers saved from the chat ("📌 Für die App
+                           vorschlagen") or pasted; export = one Markdown file
+                           (📤 Teilen / ⬇ Datei / 📋 Kopieren) for docs/ai-inbox/README.md.
+                           UI: components/AiInboxModal.jsx, InboxWantsForm.jsx
                            UI: components/AiSettingsModal.jsx, AiChat.jsx ("✨ KI fragen"
                            under a flipped card / grammar topic via context/AiCtx.js),
                            AiText.jsx + engine/aiText.js (safe mini-Markdown, no HTML)

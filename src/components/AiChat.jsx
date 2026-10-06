@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import AiText from "./AiText";
 import AiUnlock from "./AiUnlock";
+import InboxWantsForm from "./InboxWantsForm";
 import { askAi, followUps, modelLabel, formatUsd, MAX_QUESTIONS, PROVIDERS } from "../engine/ai";
 import { readKeys } from "../engine/aiVault";
 import { useVaultUnlocked } from "../engine/useVaultUnlocked";
@@ -13,6 +14,8 @@ import { useVaultUnlocked } from "../engine/useVaultUnlocked";
 // below Modal (z 200), so the ⚙️ settings open on top of it. While the keys
 // are locked (engine/aiVault.js), the unlock panel replaces the questions;
 // the key is read from the vault for each request and never kept.
+// "📌 Für die App vorschlagen" under an answer puts it into the 📥 KI-Eingang
+// (engine/aiInbox.js) via onSaveToInbox.
 // subject: { kind: "word" | "topic", title, question, context } (engine/lookup.js)
 
 const ACCENT = "#e0833b";
@@ -23,11 +26,12 @@ const chip = (primary) => ({
 });
 const smallBtn = { padding: "4px 10px", borderRadius: 8, border: "1px solid #2c3a47", background: "#1a232b", color: "#9ab0c2", fontSize: 11, fontWeight: 700, cursor: "pointer" };
 
-function AiChat({ settings, subject, onClose, onOpenSettings }) {
+function AiChat({ settings, subject, onClose, onOpenSettings, onSaveToInbox }) {
   // turns: [{ q, label, a, streaming, cost, error, refused, aborted, truncated, fallback }]
   const [turns, setTurns] = useState([]);
   const [draft, setDraft] = useState("");
   const [copied, setCopied] = useState(null);
+  const [saving, setSaving] = useState(null); // index of the answer whose 📌 form is open
   const abortRef = useRef(null);
   const endRef = useRef(null);
   const busy = turns.some((t) => t.streaming);
@@ -132,8 +136,21 @@ function AiChat({ settings, subject, onClose, onOpenSettings }) {
                   <div style={{ display: "flex", gap: 6, alignItems: "center", marginTop: 8, flexWrap: "wrap" }}>
                     {t.a && <button type="button" onClick={() => copy(i)} style={smallBtn}>{copied === i ? "✓ kopiert" : "📋 Kopieren"}</button>}
                     {(t.error || t.refused || t.aborted) && i === turns.length - 1 && <button type="button" onClick={() => retry(i)} style={smallBtn}>↻ Nochmal</button>}
+                    {t.a && !t.error && !t.refused && (t.saved
+                      ? <span style={{ fontSize: 11, color: "#5fa85f", fontWeight: 700 }}>📌 im KI-Eingang</span>
+                      : saving !== i && <button type="button" onClick={() => setSaving(i)} style={smallBtn}>📌 Für die App vorschlagen</button>)}
                     {isClaude && t.cost > 0 && <span style={{ fontSize: 11, color: "#7d8d9c" }}>≈ {formatUsd(t.cost)}</span>}
                   </div>
+                )}
+                {saving === i && (
+                  <InboxWantsForm
+                    onCancel={() => setSaving(null)}
+                    onSave={({ wants, note }) => {
+                      onSaveToInbox({ title: subject.title, kind: subject.kind, question: t.label, answer: t.a, source: modelLabel(settings), wants, note });
+                      update(i, { saved: true });
+                      setSaving(null);
+                    }}
+                  />
                 )}
               </div>
             </div>
@@ -184,6 +201,7 @@ AiChat.propTypes = {
   }).isRequired,
   onClose: PropTypes.func.isRequired,
   onOpenSettings: PropTypes.func.isRequired,
+  onSaveToInbox: PropTypes.func.isRequired,
 };
 
 export default AiChat;
