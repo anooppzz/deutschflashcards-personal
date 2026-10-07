@@ -56,6 +56,10 @@ was done, newest first. Every change adds a log entry here in the same commit
 ## Log
 
 ### 2026-10-07
+- ⭐ Meine Wörter +2: *belegte Brötchen* (phrase card – sub shows ein belegtes / die belegten
+  Brötchen, linked to Adjektivendungen; a noun card would make the plural trainer say „die
+  belegte Brötchen“) and *belegen* (hat belegt; note: einen Kurs belegen, Der Platz ist
+  belegt). No existing card had beleg-/Belag. `card-ids.json` updated.
 - **Words around "Essgewohnheiten"** (the learner asked for the meaning, then for the important
   words as cards). Checked all decks first: *die Gewohnheit* (Lebensmittel & Einkaufen) and
   *das Frühstück*, *frühstücken* (Essen) already exist and were not added again.

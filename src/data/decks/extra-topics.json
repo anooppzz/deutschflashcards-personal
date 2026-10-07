@@ -11916,6 +11916,29 @@
         "example": "Zu viel Zucker ist ungesund.",
         "exampleEn": "Too much sugar is unhealthy.",
         "level": "A2"
+      },
+      {
+        "type": "sonst",
+        "front": "belegte Brötchen",
+        "sub": "ein belegtes Brötchen · die belegten Brötchen",
+        "english": "filled (sandwich) rolls",
+        "example": "Ich hätte gern zwei belegte Brötchen mit Käse.",
+        "exampleEn": "I'd like two cheese rolls, please.",
+        "note": "Adjektivendung: ein belegtes / das belegte Brötchen",
+        "level": "A2",
+        "grammar": [
+          "adjektivendungen"
+        ]
+      },
+      {
+        "type": "v",
+        "front": "belegen",
+        "sub": "hat belegt",
+        "english": "to top / fill (bread); to take (a course)",
+        "example": "Ich belege das Brot mit Käse und Tomaten.",
+        "exampleEn": "I put cheese and tomatoes on the bread.",
+        "note": "einen Kurs belegen = to take a course · Der Platz ist belegt. = The seat is taken.",
+        "level": "A2"
       }
     ]
   }
