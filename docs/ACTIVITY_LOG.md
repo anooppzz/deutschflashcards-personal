@@ -55,6 +55,17 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 ## Log
 
+### 2026-10-07
+- **Words around "Essgewohnheiten"** (the learner asked for the meaning, then for the important
+  words as cards). Checked all decks first: *die Gewohnheit* (Lebensmittel & Einkaufen) and
+  *das Frühstück*, *frühstücken* (Essen) already exist and were not added again.
+  - ⭐ Meine Wörter +4: *die Essgewohnheit* (Pl. -en, note: mostly plural), *gewöhnen (sich)*
+    (hat sich gewöhnt, note: sich gewöhnen an + Akk. → Verben mit Präposition), *gesund*
+    (↔ ungesund, gesünder → Komparativ), *ungesund*.
+  - 🍽 Essen +2, next to *das Frühstück*: *das Mittagessen*, *das Abendessen* (A1; notes: zu
+    Mittag / zu Abend essen, das Abendbrot).
+  - `card-ids.json` updated (`npm run ids:update`); search finds all six at 360/390.
+
 ### 2026-10-06
 - **📖 Nebensätze mit weil, wenn, dass (Menschen A2 grammar page 46) – extended the existing
   topic `nebensatz`** instead of adding a duplicate (it already covered dass/weil/wenn/ob/als,

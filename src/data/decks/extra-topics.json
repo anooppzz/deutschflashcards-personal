@@ -3828,6 +3828,28 @@
       },
       {
         "type": "n",
+        "gender": "das",
+        "front": "das Mittagessen",
+        "sub": "Pl. -",
+        "english": "lunch",
+        "example": "Was gibt es heute zum Mittagessen?",
+        "exampleEn": "What's for lunch today?",
+        "note": "zu Mittag essen = to have lunch",
+        "level": "A1"
+      },
+      {
+        "type": "n",
+        "gender": "das",
+        "front": "das Abendessen",
+        "sub": "Pl. -",
+        "english": "dinner, supper",
+        "example": "Zum Abendessen gibt es oft Brot und Käse.",
+        "exampleEn": "For dinner there's often bread and cheese.",
+        "note": "zu Abend essen = to have dinner · in Deutschland oft kalt: das Abendbrot",
+        "level": "A1"
+      },
+      {
+        "type": "n",
         "gender": "der",
         "front": "der Hunger",
         "sub": "kein Plural · Hunger haben",
@@ -11847,6 +11869,52 @@
         "example": "Die beiden küssen sich zum Abschied.",
         "exampleEn": "The two of them kiss goodbye.",
         "note": "reziprok: sich = einander · jemanden küssen: Er küsst sie.",
+        "level": "A2"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Essgewohnheit",
+        "sub": "Pl. -en",
+        "english": "eating habit",
+        "example": "Meine Essgewohnheiten haben sich in Deutschland verändert.",
+        "exampleEn": "My eating habits have changed in Germany.",
+        "note": "meist im Plural · essen + die Gewohnheit",
+        "level": "A2"
+      },
+      {
+        "type": "v",
+        "front": "gewöhnen (sich)",
+        "sub": "hat sich gewöhnt",
+        "english": "to get used to",
+        "example": "Ich habe mich an das kalte Wetter gewöhnt.",
+        "exampleEn": "I've got used to the cold weather.",
+        "note": "sich gewöhnen an + Akk. · gewohnt sein = to be used to",
+        "level": "A2",
+        "grammar": [
+          "verben-praeposition"
+        ]
+      },
+      {
+        "type": "adj",
+        "front": "gesund",
+        "sub": "↔ ungesund",
+        "english": "healthy",
+        "example": "Obst und Gemüse sind gesund.",
+        "exampleEn": "Fruit and vegetables are healthy.",
+        "note": "gesund essen = to eat healthily · gesünder, am gesündesten · auch: ↔ krank",
+        "level": "A1",
+        "grammar": [
+          "komparativ-superlativ"
+        ]
+      },
+      {
+        "type": "adj",
+        "front": "ungesund",
+        "sub": "↔ gesund",
+        "english": "unhealthy",
+        "example": "Zu viel Zucker ist ungesund.",
+        "exampleEn": "Too much sugar is unhealthy.",
         "level": "A2"
       }
     ]
