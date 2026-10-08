@@ -124,7 +124,11 @@ src/components/WordLookup.jsx  🔍 a searched word that isn't in the app: ⚡ q
                            (engine/quickMeaning.js – MyMemory de→en, else en→de, after
                            700 ms without typing), 🔎 dictionaries, 🤖 AI sites, ✨ in-app
                            AI, 📌 "Als Karte vorschlagen" → KI-Eingang; with results,
-                           "Nicht dabei?" opens it (modes/search/SearchResults.jsx)
+                           "Nicht dabei?" opens it (modes/search/SearchResults.jsx);
+                           📖 Wörterbuch box: engine/wiktionary.js reads de.wiktionary
+                           templates (Wortart, Genus, Nominativ Plural, Verb/Adjektiv
+                           Übersicht, Bedeutungen, Beispiele, {{Ü|en|…}}); CC BY-SA –
+                           keep the source line
 src/engine/ai.js           🤖 KI-Assistent (OFF by default; footer "🤖 KI-Assistent: an/aus"):
                            Gemini (free tier, REST) or Claude (prepaid, official SDK,
                            low effort + server-side fallbacks on Opus/Sonnet). The

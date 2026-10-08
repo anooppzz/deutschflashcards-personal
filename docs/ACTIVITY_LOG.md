@@ -35,9 +35,10 @@ was done, newest first. Every change adds a log entry here in the same commit
 - [ ] **To check on the learner's phone – 📥 KI-Eingang:** "📤 Teilen" opens Android's
   share sheet with the `.md` file (falls back to `.txt`, then plain text, then a download).
   First real round trip: export → Claude Code chat "Bitte den KI-Eingang einarbeiten".
-- [ ] **To check on the learner's phone – 🔍 search lookup:** the real MyMemory answer for a
-  few missing words (tested with a fake service only). Idea for later (option C, not
-  requested): Wiktionary details (article, plural, word type) inside the app.
+- [ ] **To check on the learner's phone – 🔍 search lookup:** the real MyMemory and Wiktionary
+  answers for a few missing words (both tested with fake services only – this environment
+  can't reach either). If the 📖 box stays empty for common words, the parser in
+  `engine/wiktionary.js` needs a look at a real page's wikitext.
 - Idea for later (option B of the brainstorm, not requested): AI-suggested cards the
   learner ticks straight into a personal deck on the phone.
 - [ ] **To check on the learner's phone – 🔒 key lock:** "👆 Auch mit Fingerabdruck" needs
@@ -59,6 +60,22 @@ was done, newest first. Every change adds a log entry here in the same commit
 ## Log
 
 ### 2026-10-08
+- **📖 Wörterbuch (Wiktionary) in the search lookup (option C).** Under ⚡ Kurz erklärt, a
+  dictionary box shows what a card would: article in the gender colour, plural (or „kein
+  Plural“), verb forms (isst · aß · hat gegessen), comparison (gesünder · am gesündesten),
+  word type, 🇬🇧 English, up to 2 German meanings and an example – read from German
+  Wiktionary's fixed templates (`engine/wiktionary.js`). One request asks for the word as
+  typed, capitalised and in lower case (fernweh → das Fernweh; essen → the verb and the
+  noun; up to 3 entries). For an English word it looks up the German word the quick
+  meaning found (breakfast → das Frühstück). Nothing found → no box; offline → a note.
+  Source line with a link (CC BY-SA). 📌 Als Karte vorschlagen now adds the Wiktionary line
+  (e.g. „das Fernweh, kein Plural (Substantiv) – wanderlust“) to the KI-Eingang entry.
+  - Tests: `wiktionary.test.js` (noun, verb, several parts of speech, adjective with „am“,
+    kein Plural, English-only page, markup cleanup, one request for all spellings + memory,
+    missing/offline, links) with samples in Wiktionary's format. Headless Chrome at 360/390
+    with fake Wiktionary/MyMemory: fernweh, essen (Nicht dabei?), breakfast → Frühstück,
+    unknown word, offline, 📌 – no sideways scrolling, no errors. This environment can't reach
+    Wiktionary, so the real pages are still to be checked on the phone.
 - **🔍 Look up words that aren't in the app – from the search (options A + B + D + E).**
   When the search finds nothing, "Keine Treffer" is replaced by a lookup panel
   (`components/WordLookup.jsx`): „Fernweh“ ist noch nicht in der App →
