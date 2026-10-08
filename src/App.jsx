@@ -1431,6 +1431,7 @@ function App() {
             lang={lang}
             onOpenTopic={openGrammar}
             onOpenChapter={openChapterAt}
+            onSuggestCard={(entry) => changeInbox((items) => addInboxItem(items, entry))}
           />
         ) : dtzOpen ? (
           <DtzTrainer

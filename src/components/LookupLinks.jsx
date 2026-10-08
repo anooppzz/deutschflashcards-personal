@@ -22,9 +22,9 @@ const chip = {
   border: "1px solid #3a5670", color: "#8fb8d8", background: "transparent",
 };
 
-function LookupLinks({ links, question, aiSubject }) {
+function LookupLinks({ links, question, aiSubject, defaultOpen = false }) {
   const ai = useContext(AiCtx);
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(defaultOpen);
   const [copied, setCopied] = useState(null); // the site the question was copied for
   useEffect(() => {
     if (!copied) return;
@@ -80,6 +80,7 @@ LookupLinks.propTypes = {
   links: PropTypes.arrayOf(PropTypes.shape({ label: PropTypes.string.isRequired, url: PropTypes.string.isRequired })).isRequired,
   question: PropTypes.string.isRequired,
   aiSubject: PropTypes.shape({ kind: PropTypes.string, title: PropTypes.string, question: PropTypes.string, context: PropTypes.string }),
+  defaultOpen: PropTypes.bool, // 🔎 dictionary chips shown from the start (search lookups)
 };
 
 export default LookupLinks;

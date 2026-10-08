@@ -82,3 +82,18 @@ export const topicSubject = (title) => ({
   question: topicQuestion(title),
   context: `${LEARNER} I'm studying the grammar topic „${title}“.`,
 });
+
+// 🔍 a word typed into the search that is not in the app – German or English
+export const searchQuestion = (q) => [
+  `${LEARNER} I looked up „${q}“ – it isn't in my flashcards.`,
+  "If it is German: explain the meaning, the grammar (article and plural for a noun; Perfekt and the case it takes for a verb), 3 simple example sentences with English translations and the mistakes learners often make.",
+  "If it is English: give me the German word(s) with article and plural, and 3 simple example sentences with English translations.",
+  "Keep it at A2 level.",
+].join("\n");
+
+export const searchSubject = (q, meaning) => ({
+  kind: "word",
+  title: q,
+  question: searchQuestion(q),
+  context: `${LEARNER} I looked up „${q}“${meaning ? ` (machine translation: ${meaning})` : ""} – it isn't in my flashcards.`,
+});

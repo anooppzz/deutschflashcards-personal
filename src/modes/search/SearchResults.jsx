@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { FlipCard, NoResults, Reveal } from "../../components";
+import { FlipCard, Reveal } from "../../components";
+import WordLookup from "../../components/WordLookup";
 import { GENDER_COLORS } from "../../constants";
 import { DECK_META } from "../../data";
 import { idOf, matchRanges, MIN_QUERY } from "../../engine";
@@ -10,7 +11,9 @@ import { localize } from "../grammar/richText";
 // first - there are few and each opens its page - then cards from every
 // deck. A card row opens into the full card right there (flip, audio,
 // ✓ Gekonnt / Üben, grammar chips), so the learner never has to leave the
-// search to study what they found.
+// search to study what they found. A word that isn't in the app gets the
+// lookup panel (components/WordLookup.jsx: quick meaning, dictionaries, AI,
+// 📌 suggest as a card); with results, "Nicht dabei?" opens the same panel.
 
 const ACCENT = "#e0833b";
 const PAGE = 20;
@@ -59,16 +62,17 @@ function CardFront({ card, q }) {
   );
 }
 
-function SearchResults({ query, cards, topics, lang, onOpenTopic, onOpenChapter }) {
+function SearchResults({ query, cards, topics, lang, onOpenTopic, onOpenChapter, onSuggestCard }) {
   const [open, setOpen] = useState(null); // index of the opened card
   const [shown, setShown] = useState(PAGE);
-  useEffect(() => { setOpen(null); setShown(PAGE); }, [query]);
+  const [lookup, setLookup] = useState(false); // "Nicht dabei?" panel
+  useEffect(() => { setOpen(null); setShown(PAGE); setLookup(false); }, [query]);
 
   const q = query.trim();
   if (q.length < MIN_QUERY) {
     return <div role="status" style={{ textAlign: "center", padding: "40px 20px", color: "#7d8d9c", fontSize: 13 }}>Mindestens {MIN_QUERY} Buchstaben eingeben …</div>;
   }
-  if (!cards.length && !topics.length) return <NoResults q={q} />;
+  if (!cards.length && !topics.length) return <WordLookup q={q} missing onSuggest={onSuggestCard} />;
 
   return (
     <div>
@@ -147,6 +151,11 @@ function SearchResults({ query, cards, topics, lang, onOpenTopic, onOpenChapter 
           )}
         </>
       )}
+
+      <button type="button" aria-expanded={lookup} onClick={() => setLookup((v) => !v)} style={{ ...rowStyle, justifyContent: "center", marginTop: 14, border: "1px dashed #3a5670", background: "transparent", color: "#8fb8d8", fontSize: 13, fontWeight: 700 }}>
+        Nicht dabei? „{q}“ nachschlagen {lookup ? "▴" : "▾"}
+      </button>
+      {lookup && <WordLookup q={q} onSuggest={onSuggestCard} />}
     </div>
   );
 }
@@ -168,6 +177,7 @@ SearchResults.propTypes = {
   lang: PropTypes.string,
   onOpenTopic: PropTypes.func.isRequired,
   onOpenChapter: PropTypes.func.isRequired,
+  onSuggestCard: PropTypes.func.isRequired,
 };
 Marked.propTypes = { text: PropTypes.string, q: PropTypes.string.isRequired };
 CardFront.propTypes = { card: PropTypes.object.isRequired, q: PropTypes.string.isRequired };

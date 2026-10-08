@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { lookupTerm, wordLinks, wordQuestion, claudeUrl, topicLinks, topicQuestion, wordSubject, topicSubject, aiSiteLinks } from "./lookup";
+import { lookupTerm, wordLinks, wordQuestion, claudeUrl, topicLinks, topicQuestion, wordSubject, topicSubject, aiSiteLinks, searchSubject } from "./lookup";
 
 describe("lookupTerm", () => {
   it("strips article, dot, brackets and alternatives", () => {
@@ -50,5 +50,16 @@ describe("AI site links", () => {
     expect(claude.url).toBe(`https://claude.ai/new?q=${encodeURIComponent("Was heißt „Haus“?")}`);
     expect(gpt).toMatchObject({ label: "ChatGPT", prefill: true, url: `https://chatgpt.com/?q=${encodeURIComponent("Was heißt „Haus“?")}` });
     expect(gemini).toMatchObject({ label: "Gemini", prefill: false, url: "https://gemini.google.com/app" });
+  });
+});
+
+describe("search lookups", () => {
+  it("ask about a typed word that may be German or English", () => {
+    const s = searchSubject("Fernweh", "wanderlust");
+    expect(s).toMatchObject({ kind: "word", title: "Fernweh" });
+    expect(s.question).toContain("„Fernweh“");
+    expect(s.question).toContain("If it is English");
+    expect(s.context).toContain("machine translation: wanderlust");
+    expect(searchSubject("x").context).not.toContain("machine translation");
   });
 });

@@ -120,6 +120,11 @@ src/components/LookupLinks.jsx  🔎 Nachschlagen (Duden, DWDS, Verbformen, Reve
                            card and a grammar topic; URLs and questions in
                            engine/lookup.js (Claude/ChatGPT take ?q=, Gemini can't – the
                            question is copied to paste). Free: only links
+src/components/WordLookup.jsx  🔍 a searched word that isn't in the app: ⚡ quick meaning
+                           (engine/quickMeaning.js – MyMemory de→en, else en→de, after
+                           700 ms without typing), 🔎 dictionaries, 🤖 AI sites, ✨ in-app
+                           AI, 📌 "Als Karte vorschlagen" → KI-Eingang; with results,
+                           "Nicht dabei?" opens it (modes/search/SearchResults.jsx)
 src/engine/ai.js           🤖 KI-Assistent (OFF by default; footer "🤖 KI-Assistent: an/aus"):
                            Gemini (free tier, REST) or Claude (prepaid, official SDK,
                            low effort + server-side fallbacks on Opus/Sonnet). The

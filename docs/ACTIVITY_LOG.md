@@ -35,6 +35,9 @@ was done, newest first. Every change adds a log entry here in the same commit
 - [ ] **To check on the learner's phone – 📥 KI-Eingang:** "📤 Teilen" opens Android's
   share sheet with the `.md` file (falls back to `.txt`, then plain text, then a download).
   First real round trip: export → Claude Code chat "Bitte den KI-Eingang einarbeiten".
+- [ ] **To check on the learner's phone – 🔍 search lookup:** the real MyMemory answer for a
+  few missing words (tested with a fake service only). Idea for later (option C, not
+  requested): Wiktionary details (article, plural, word type) inside the app.
 - Idea for later (option B of the brainstorm, not requested): AI-suggested cards the
   learner ticks straight into a personal deck on the phone.
 - [ ] **To check on the learner's phone – 🔒 key lock:** "👆 Auch mit Fingerabdruck" needs
@@ -54,6 +57,28 @@ was done, newest first. Every change adds a log entry here in the same commit
   trainer, Reverse articles, 12 grammar topics, ✏️ Üben, data cleanup, code tidying).
 
 ## Log
+
+### 2026-10-08
+- **🔍 Look up words that aren't in the app – from the search (options A + B + D + E).**
+  When the search finds nothing, "Keine Treffer" is replaced by a lookup panel
+  (`components/WordLookup.jsx`): „Fernweh“ ist noch nicht in der App →
+  - **⚡ Kurz erklärt** inside the app: machine translation via MyMemory (the free service the
+    app already uses; `engine/quickMeaning.js`): German → English, and if the word comes
+    back unchanged, English → German (typed *breakfast* → *das Frühstück*). Asked once,
+    700 ms after the last keystroke (typing letter by letter = one request), remembered for
+    the session; MyMemory warnings/errors filtered; labelled as automatic and unchecked;
+    offline → a note, the links still work.
+  - **🔎 Nachschlagen** (Duden, DWDS, Verbformen, Reverso, Leo, Google – open from the start)
+    and **🤖 Frag: Claude · ChatGPT · Gemini** with a question that works for a German or an
+    English word (`searchQuestion`); **✨ KI fragen** in the app when the AI is on.
+  - **📌 Als Karte vorschlagen** → the 📥 KI-Eingang (word + quick meaning, wish: cards), so
+    the export → Claude Code workflow turns it into a card.
+  - With results, a **"Nicht dabei? „…“ nachschlagen"** row at the end opens the same panel
+    (the translation is only fetched then).
+  - Tests: `quickMeaning.test.js` (de→en, en→de fallback, nothing found + memory, short
+    input, offline, warnings), `lookup.test.js` (search question/subject). Headless Chrome at
+    360/390 with a fake MyMemory: missing word, links, 📌 into the inbox, "Nicht dabei?" with
+    English → German, offline – no sideways scrolling, no errors.
 
 ### 2026-10-07
 - ⭐ Meine Wörter +2: *belegte Brötchen* (phrase card – sub shows ein belegtes / die belegten

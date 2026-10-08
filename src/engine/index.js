@@ -28,3 +28,4 @@ export * from "./ai";
 export * from "./aiText";
 export * from "./aiVault";
 export * from "./aiInbox";
+export * from "./quickMeaning";
