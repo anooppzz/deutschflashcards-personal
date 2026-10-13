@@ -1176,5 +1176,43 @@
     "answer": "Ali"
    }
   ]
+ },
+ {
+  "key": "sprachen-lernen",
+  "level": "A2",
+  "deck": "sprachen-lernen",
+  "title": "Wie lernt Ana Deutsch?",
+  "paragraphs": [
+   "Ana lernt seit einem Jahr Deutsch an der [[Volkshochschule|die Volkshochschule]]. [[Als|als]] sie nach Deutschland gekommen ist, konnte sie nur „Hallo“ und „Danke“ sagen. Heute [[löst|lösen]] sie im Kurs schon schwierige [[Aufgaben|die Aufgabe]].",
+   "Ana ist ein visueller [[Lernertyp|der Lernertyp]]. Neue Wörter [[schreibt|auf·schreiben]] sie immer auf, so kann sie sich die Wörter besser [[merken|merken (sich)]]. Jeden Abend [[wiederholt|wiederholen]] sie die Wörter und sieht die [[Nachrichten|die Nachrichten]] auf Deutsch.",
+   "[[Am allerwichtigsten|am allerwichtigsten]] ist für Ana das Sprechen. Sie spricht so viel wie [[möglich]] mit ihren Nachbarn. [[Tests|der Test]] findet sie nicht so wichtig. Im Juni macht sie die DTZ-Prüfung – danach möchte sie an einer [[Sprachenschule|die Sprachenschule]] weiterlernen."
+  ],
+  "en": [
+   "Ana has been learning German at the adult education centre for a year. When she came to Germany, she could only say “Hallo” and “Danke”. Today she already does difficult exercises in the course.",
+   "Ana is a visual learner. She always writes new words down, so she can remember them better. Every evening she revises the words and watches the news in German.",
+   "Most important of all for Ana is speaking. She speaks as much as possible with her neighbours. She doesn't find tests so important. In June she's taking the DTZ exam – afterwards she wants to keep learning at a language school."
+  ],
+  "questions": [
+   {
+    "q": "Ana hat schon in ihrem Heimatland viel Deutsch gelernt.",
+    "en": "Ana already learned a lot of German in her home country.",
+    "answer": "falsch"
+   },
+   {
+    "q": "Ana schreibt neue Wörter auf.",
+    "en": "Ana writes new words down.",
+    "answer": "richtig"
+   },
+   {
+    "q": "Was ist für Ana am allerwichtigsten?",
+    "en": "What is most important of all for Ana?",
+    "options": [
+     "das Sprechen",
+     "die Tests",
+     "die Nachrichten"
+    ],
+    "answer": "das Sprechen"
+   }
+  ]
  }
 ]

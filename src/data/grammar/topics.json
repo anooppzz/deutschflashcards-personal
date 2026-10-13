@@ -1952,6 +1952,35 @@
         ]
       },
       {
+        "type": "table",
+        "title": {"de": "als: Nebensatz vor dem Hauptsatz", "en": "als: clause before the main clause"},
+        "head": [{"de": "Nebensatz", "en": "Clause"}, {"de": "Hauptsatz", "en": "Main clause"}],
+        "rows": [
+          ["**Als** ich im vierten Semester **war**,", "**habe ich** das Stipendium bekommen."],
+          ["**Als** ich nach Deutschland **kam**,", "**konnte ich** nur wenig Deutsch."]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "als: Hauptsatz vor dem Nebensatz", "en": "als: main clause before the clause"},
+        "head": [{"de": "Hauptsatz", "en": "Main clause"}, {"de": "Nebensatz", "en": "Clause"}],
+        "rows": [
+          ["Ich **habe** das Stipendium bekommen,", "**als** ich im vierten Semester **war**."],
+          ["Ich **war** sehr glücklich,", "**als** ich die Prüfung bestanden **habe**."]
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "als – genau", "en": "als in detail"},
+        "items": [
+          {"de": "**als** = **einmal** oder eine Zeit lang in der **Vergangenheit**: Als ich Kind war, … · Als ich 2020 in Berlin war, …", "en": "**als** = **one time** or one period in the **past**: Als ich Kind war, … (when I was a child) · Als ich 2020 in Berlin war, …"},
+          {"de": "Mit sein, haben und Modalverben meist **Präteritum**: als ich klein **war** / keine Zeit **hatte** / nicht kommen **konnte**. Sonst oft Perfekt: als ich nach Deutschland gekommen **bin**.", "en": "With sein, haben and modal verbs usually **Präteritum**: als ich klein **war** / keine Zeit **hatte** / nicht kommen **konnte**. Otherwise often Perfekt: als ich nach Deutschland gekommen **bin**."},
+          {"de": "Immer wieder in der Vergangenheit? → **wenn** (oft **immer wenn**): Immer wenn ich Zeit hatte, habe ich gelesen.", "en": "Again and again in the past? → **wenn** (often **immer wenn**): Immer wenn ich Zeit hatte, habe ich gelesen. (Whenever I had time, I read.)"},
+          {"de": "Frage nach der Zeit → **wann**: Wann bist du gekommen? · Ich weiß nicht, **wann** der Kurs beginnt.", "en": "Asking about time → **wann**: Wann bist du gekommen? · Ich weiß nicht, **wann** der Kurs beginnt."},
+          {"de": "Nicht verwechseln: Komparativ + **als** = „than“: Er ist größer **als** ich. – kein Nebensatz.", "en": "Don't mix up: comparative + **als** = “than”: Er ist größer **als** ich. – not a clause."}
+        ]
+      },
+      {
         "type": "points",
         "title": {"de": "Typische Satzanfänge", "en": "Typical openers"},
         "items": [

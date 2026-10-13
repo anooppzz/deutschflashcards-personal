@@ -59,6 +59,31 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 ## Log
 
+### 2026-10-13
+- **🔤 New chapter „Sprachen lernen“ (Menschen A2 · Einheit 13)** – `sprachen-lernen`, added
+  2026-10-13 (🆕 banner for 3 weeks), 30 cards from the Lernwortschatz page: Aufgabe,
+  Goethe-Institut, Klasse, die Nachrichten (nur Plural – note: die Nachricht = message; that
+  card stays in Tourismus 2), Semester, Sprachenschule (A/CH: Sprachschule), Test, Typ,
+  Lernertyp, Volkshochschule, Gegenwart, Vergangenheit; an·schauen, auf·schreiben, bewegen
+  (sich), korrigieren, lösen, merken (sich), übersetzen, wiederholen, planen, verreisen (ist
+  verreist); möglich (so viel wie möglich), am allerwichtigsten; and the Kommunikation box as
+  phrase cards (Ich finde es wichtig, dass man …; Für mich gibt es nur einen Weg: …; Am
+  wichtigsten ist für mich …; … finde ich gar nicht wichtig.). „Ich muss immer/oft …“ left
+  out (no new word). *wichtig* already exists (Stadt).
+  - **Moved, not duplicated:** *verlieben (sich)* and *als* from ⭐ Meine Wörter into the
+    chapter (their textbook home) – `renames.json` + `npm run ids:update`; progress follows
+    (checked in the browser: persoenlich::als → sprachen-lernen::als).
+  - **📰 Lesen:** „Wie lernt Ana Deutsch?“ (als-clause, Lernertyp, aufschreiben, merken,
+    wiederholen, Nachrichten, am allerwichtigsten, Sprachenschule) + 3 questions.
+  - **Grammar (Konjunktion als)** – added to the existing topic `nebensatz` (no duplicate):
+    the page's two tables (Nebensatz vor / nach dem Hauptsatz: „Als ich im vierten Semester
+    war, habe ich das Stipendium bekommen.“) and „als – genau“ (one time/period in the past;
+    Präteritum with sein/haben/Modalverben, else often Perfekt; immer wenn for repeated;
+    wann for questions; comparative als = than). ✏️ Üben +3 (19): als vs. wenn, immer wenn,
+    verb, verb after an als-clause.
+  - Checked at 360/390: banner, chapter, reading text links, als tables – no sideways
+    scrolling, no errors.
+
 ### 2026-10-08
 - **📖 Wörterbuch (Wiktionary) in the search lookup (option C).** Under ⚡ Kurz erklärt, a
   dictionary box shows what a card would: article in the gender colour, plural (or „kein

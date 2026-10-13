@@ -11595,6 +11595,366 @@
     ]
   },
   {
+    "key": "sprachen-lernen",
+    "icon": "🔤",
+    "label": "Sprachen lernen",
+    "added": "2026-10-13",
+    "note": "Sprachen lernen, Lernertypen, als",
+    "cards": [
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Aufgabe",
+        "sub": "Pl. -n",
+        "english": "task, exercise",
+        "example": "Die Aufgabe ist sehr schwer.",
+        "exampleEn": "The exercise is very difficult.",
+        "note": "eine Aufgabe lösen = to do / solve an exercise",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 13"
+      },
+      {
+        "type": "n",
+        "gender": "das",
+        "front": "das Goethe-Institut",
+        "sub": "Pl. -e",
+        "english": "Goethe-Institut (German cultural institute)",
+        "example": "Ich habe am Goethe-Institut Deutsch gelernt.",
+        "exampleEn": "I learned German at the Goethe-Institut.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 13"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Klasse",
+        "sub": "Pl. -n",
+        "english": "class (school)",
+        "example": "In meiner Klasse sind zwanzig Schüler.",
+        "exampleEn": "There are twenty pupils in my class.",
+        "note": "in der ersten Klasse = in first grade",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 13"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Nachrichten",
+        "sub": "nur Plural",
+        "english": "the news",
+        "example": "Ich sehe jeden Abend die Nachrichten.",
+        "exampleEn": "I watch the news every evening.",
+        "note": "die Nachricht, -en = message",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 13"
+      },
+      {
+        "type": "n",
+        "gender": "das",
+        "front": "das Semester",
+        "sub": "Pl. -",
+        "english": "semester",
+        "example": "Im vierten Semester habe ich ein Stipendium bekommen.",
+        "exampleEn": "In the fourth semester I got a scholarship.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 13"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Sprachenschule",
+        "sub": "Pl. -n · A/CH: die Sprachschule, -n",
+        "english": "language school",
+        "example": "Sie lernt Englisch an einer Sprachenschule.",
+        "exampleEn": "She's learning English at a language school.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 13",
+        "acceptableAlternates": [
+          "Sprachschule"
+        ]
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Test",
+        "sub": "Pl. -s",
+        "english": "test",
+        "example": "Morgen schreiben wir einen Test.",
+        "exampleEn": "We're writing a test tomorrow.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 13"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Typ",
+        "sub": "Pl. -en",
+        "english": "type",
+        "example": "Ich bin ein visueller Typ.",
+        "exampleEn": "I'm a visual type.",
+        "note": "ugs. auch: guy – Er ist ein netter Typ.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 13"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Lernertyp",
+        "sub": "Pl. -en",
+        "english": "learner type",
+        "example": "Welcher Lernertyp sind Sie?",
+        "exampleEn": "What type of learner are you?",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 13"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Volkshochschule",
+        "sub": "Pl. -n",
+        "english": "adult education centre",
+        "example": "An der Volkshochschule gibt es viele Sprachkurse.",
+        "exampleEn": "There are lots of language courses at the adult education centre.",
+        "note": "kurz: die VHS",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 13"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Gegenwart",
+        "sub": "kein Plural",
+        "english": "present (time)",
+        "example": "Die Gegenwart ist für mich wichtiger als die Vergangenheit.",
+        "exampleEn": "The present is more important to me than the past.",
+        "note": "↔ die Vergangenheit, die Zukunft",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 13"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Vergangenheit",
+        "sub": "kein Plural",
+        "english": "past",
+        "example": "In der Vergangenheit habe ich viel gearbeitet.",
+        "exampleEn": "In the past I worked a lot.",
+        "note": "↔ die Gegenwart, die Zukunft",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 13"
+      },
+      {
+        "type": "v",
+        "front": "an·schauen",
+        "sub": "hat angeschaut",
+        "english": "to look at, to watch",
+        "example": "Ich schaue mir die Bilder im Buch an.",
+        "exampleEn": "I look at the pictures in the book.",
+        "note": "sich (Dat.) etwas anschauen ≈ ansehen",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 13"
+      },
+      {
+        "type": "v",
+        "front": "auf·schreiben",
+        "sub": "hat aufgeschrieben",
+        "english": "to write down",
+        "example": "Ich schreibe neue Wörter immer auf.",
+        "exampleEn": "I always write down new words.",
+        "note": "schrieb auf · hat aufgeschrieben",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 13"
+      },
+      {
+        "type": "v",
+        "front": "bewegen (sich)",
+        "sub": "hat sich bewegt",
+        "english": "to move, to exercise",
+        "example": "Beim Lernen bewege ich mich gern.",
+        "exampleEn": "I like to move around while I'm learning.",
+        "note": "sich bewegen = to move (yourself) · etwas bewegen = to move sth.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 13"
+      },
+      {
+        "type": "v",
+        "front": "korrigieren",
+        "sub": "hat korrigiert",
+        "english": "to correct",
+        "example": "Die Lehrerin korrigiert unsere Fehler.",
+        "exampleEn": "The teacher corrects our mistakes.",
+        "note": "-ieren-Verben: Perfekt ohne ge-",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 13"
+      },
+      {
+        "type": "v",
+        "front": "lösen",
+        "sub": "hat gelöst",
+        "english": "to solve",
+        "example": "Kannst du diese Aufgabe lösen?",
+        "exampleEn": "Can you solve this exercise?",
+        "note": "ein Problem / eine Aufgabe lösen",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 13"
+      },
+      {
+        "type": "v",
+        "front": "merken (sich)",
+        "sub": "hat sich gemerkt",
+        "english": "to remember, to memorise",
+        "example": "Ich kann mir neue Wörter gut merken.",
+        "exampleEn": "I can remember new words well.",
+        "note": "sich (Dat.) etwas merken: Ich merke mir …",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 13"
+      },
+      {
+        "type": "v",
+        "front": "übersetzen",
+        "sub": "hat übersetzt",
+        "english": "to translate",
+        "example": "Kannst du den Satz ins Englische übersetzen?",
+        "exampleEn": "Can you translate the sentence into English?",
+        "note": "nicht trennbar: ich übersetze",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 13"
+      },
+      {
+        "type": "v",
+        "front": "wiederholen",
+        "sub": "hat wiederholt",
+        "english": "to repeat, to revise",
+        "example": "Ich wiederhole die Wörter jeden Abend.",
+        "exampleEn": "I revise the words every evening.",
+        "note": "nicht trennbar: ich wiederhole",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 13"
+      },
+      {
+        "type": "v",
+        "front": "planen",
+        "sub": "hat geplant",
+        "english": "to plan",
+        "example": "Wir planen eine Reise nach Berlin.",
+        "exampleEn": "We're planning a trip to Berlin.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 13"
+      },
+      {
+        "type": "v",
+        "front": "verlieben (sich)",
+        "sub": "hat sich verliebt",
+        "english": "to fall in love",
+        "example": "Sie hat sich in ihren Kollegen verliebt.",
+        "exampleEn": "She fell in love with her colleague.",
+        "note": "sich verlieben in + Akk. · verliebt sein = to be in love",
+        "level": "A2",
+        "grammar": [
+          "verben-praeposition"
+        ],
+        "source": "Menschen A2 · Einheit 13"
+      },
+      {
+        "type": "v",
+        "front": "verreisen",
+        "sub": "ist verreist",
+        "english": "to go away (on a trip)",
+        "example": "Im Sommer verreisen wir für drei Wochen.",
+        "exampleEn": "In summer we're going away for three weeks.",
+        "note": "Perfekt mit sein: Sie ist verreist. = She is away.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 13"
+      },
+      {
+        "type": "adj",
+        "front": "möglich",
+        "sub": "↔ unmöglich",
+        "english": "possible",
+        "example": "Ich lerne so viel wie möglich.",
+        "exampleEn": "I learn as much as possible.",
+        "note": "so viel wie möglich = as much as possible · so schnell wie möglich",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 13"
+      },
+      {
+        "type": "sonst",
+        "front": "am allerwichtigsten",
+        "sub": "aller- + Superlativ",
+        "english": "most important of all",
+        "example": "Am allerwichtigsten ist für mich das Sprechen.",
+        "exampleEn": "Most important of all for me is speaking.",
+        "note": "aller- macht den Superlativ noch stärker: der allerbeste",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 13",
+        "grammar": [
+          "komparativ-superlativ"
+        ]
+      },
+      {
+        "type": "sonst",
+        "front": "als",
+        "sub": "Zeit: einmal in der Vergangenheit",
+        "english": "when (once, in the past)",
+        "example": "Als ich klein war, hatte ich einen Hund.",
+        "exampleEn": "When I was little, I had a dog.",
+        "note": "Verb am Ende · immer / Zukunft: wenn",
+        "level": "A2",
+        "grammar": [
+          "nebensatz"
+        ],
+        "source": "Menschen A2 · Einheit 13"
+      },
+      {
+        "type": "sonst",
+        "front": "Ich finde es wichtig, dass man …",
+        "sub": "",
+        "english": "I think it's important that you …",
+        "example": "Ich finde es wichtig, dass man jeden Tag Wörter wiederholt.",
+        "exampleEn": "I think it's important that you revise words every day.",
+        "note": "dass → Verb am Ende",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 13",
+        "grammar": [
+          "nebensatz"
+        ]
+      },
+      {
+        "type": "sonst",
+        "front": "Für mich gibt es nur einen Weg: …",
+        "sub": "",
+        "english": "For me there's only one way: …",
+        "example": "Für mich gibt es nur einen Weg: viel sprechen!",
+        "exampleEn": "For me there's only one way: speak a lot!",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 13"
+      },
+      {
+        "type": "sonst",
+        "front": "Am wichtigsten ist für mich …",
+        "sub": "auch: Am allerwichtigsten ist für mich …",
+        "english": "The most important thing for me is …",
+        "example": "Am wichtigsten ist für mich die Grammatik.",
+        "exampleEn": "The most important thing for me is grammar.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 13",
+        "grammar": [
+          "komparativ-superlativ"
+        ]
+      },
+      {
+        "type": "sonst",
+        "front": "… finde ich gar nicht wichtig.",
+        "sub": "auch: … helfen mir nicht.",
+        "english": "I don't think … is important at all.",
+        "example": "Tests finde ich gar nicht wichtig.",
+        "exampleEn": "I don't think tests are important at all.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 13"
+      }
+    ]
+  },
+  {
     "key": "persoenlich",
     "icon": "⭐",
     "label": "Meine Wörter",
@@ -11663,19 +12023,6 @@
         "example": "Wenn es regnet, bleibe ich zu Hause.",
         "exampleEn": "If it rains, I stay at home.",
         "note": "Verb am Ende · einmal in der Vergangenheit: als",
-        "level": "A2",
-        "grammar": [
-          "nebensatz"
-        ]
-      },
-      {
-        "type": "sonst",
-        "front": "als",
-        "sub": "Zeit: einmal in der Vergangenheit",
-        "english": "when (once, in the past)",
-        "example": "Als ich klein war, hatte ich einen Hund.",
-        "exampleEn": "When I was little, I had a dog.",
-        "note": "Verb am Ende · immer / Zukunft: wenn",
         "level": "A2",
         "grammar": [
           "nebensatz"
@@ -11834,19 +12181,6 @@
         "exampleEn": "May I introduce myself? My name is Anna.",
         "note": "jemanden vorstellen = to introduce sb. · sich (Dat.) etwas vorstellen = to imagine",
         "level": "A2"
-      },
-      {
-        "type": "v",
-        "front": "verlieben (sich)",
-        "sub": "hat sich verliebt",
-        "english": "to fall in love",
-        "example": "Sie hat sich in ihren Kollegen verliebt.",
-        "exampleEn": "She fell in love with her colleague.",
-        "note": "sich verlieben in + Akk. · verliebt sein = to be in love",
-        "level": "A2",
-        "grammar": [
-          "verben-praeposition"
-        ]
       },
       {
         "type": "v",
