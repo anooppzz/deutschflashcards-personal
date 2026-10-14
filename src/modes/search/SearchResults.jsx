@@ -14,9 +14,13 @@ import { localize } from "../grammar/richText";
 // search to study what they found. A word that isn't in the app gets the
 // lookup panel (components/WordLookup.jsx: quick meaning, dictionaries, AI,
 // 📌 suggest as a card); with results, "Nicht dabei?" opens the same panel.
+// Shown inside the full-screen search layer (SearchOverlay.jsx). With both
+// kinds of results, tabs on top switch between Alle / Karten / Grammatik;
+// "Alle" shows the first GRAMMAR_PREVIEW topics, then the cards.
 
 const ACCENT = "#e0833b";
 const PAGE = 20;
+const GRAMMAR_PREVIEW = 3;
 
 // text with every occurrence of q highlighted
 function Marked({ text, q }) {
@@ -66,24 +70,58 @@ function SearchResults({ query, cards, topics, lang, onOpenTopic, onOpenChapter,
   const [open, setOpen] = useState(null); // index of the opened card
   const [shown, setShown] = useState(PAGE);
   const [lookup, setLookup] = useState(false); // "Nicht dabei?" panel
-  useEffect(() => { setOpen(null); setShown(PAGE); setLookup(false); }, [query]);
+  const [tab, setTab] = useState("all"); // all | cards | grammar
+  useEffect(() => { setOpen(null); setShown(PAGE); setLookup(false); setTab("all"); }, [query]);
 
   const q = query.trim();
+  if (!q) {
+    return <div role="status" style={{ textAlign: "center", padding: "40px 20px", color: "#7d8d9c", fontSize: 14, lineHeight: 1.6 }}>Ein Wort eingeben – Deutsch oder Englisch.<br />Gesucht wird in allen Kapiteln und der Grammatik.</div>;
+  }
   if (q.length < MIN_QUERY) {
     return <div role="status" style={{ textAlign: "center", padding: "40px 20px", color: "#7d8d9c", fontSize: 13 }}>Mindestens {MIN_QUERY} Buchstaben eingeben …</div>;
   }
   if (!cards.length && !topics.length) return <WordLookup q={q} missing onSuggest={onSuggestCard} />;
 
+  const both = cards.length > 0 && topics.length > 0;
+  const showTopics = tab === "cards" ? [] : tab === "all" ? topics.slice(0, GRAMMAR_PREVIEW) : topics;
+  const showCards = tab === "grammar" ? [] : cards;
+  const tabs = [
+    ["all", "Alle", cards.length + topics.length],
+    ["cards", "🃏 Karten", cards.length],
+    ["grammar", "📖 Grammatik", topics.length],
+  ];
+
   return (
     <div>
-      <div role="status" style={{ fontSize: 12, color: "#7d8d9c", textAlign: "center" }}>
-        Alle Themen · {cards.length} {cards.length === 1 ? "Karte" : "Karten"} · {topics.length} Grammatik
-      </div>
+      {both ? (
+        <div role="tablist" aria-label="Ergebnisse" style={{ display: "flex", gap: 6 }}>
+          {tabs.map(([key, label, n]) => {
+            const on = tab === key;
+            return (
+              <button
+                key={key}
+                type="button"
+                role="tab"
+                aria-selected={on}
+                onClick={() => setTab(key)}
+                style={{
+                  flex: key === "all" ? "0 0 auto" : 1, minHeight: 40, padding: "6px 12px", borderRadius: 12, fontSize: 13, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap",
+                  border: on ? "none" : "1px solid #2c3a47", background: on ? ACCENT : "#1a232b", color: on ? "#0e1419" : "#9ab0c2",
+                }}
+              >{label} <span style={{ fontWeight: 600, opacity: 0.8 }}>{n}</span></button>
+            );
+          })}
+        </div>
+      ) : (
+        <div role="status" style={{ fontSize: 12, color: "#7d8d9c", textAlign: "center" }}>
+          {cards.length ? `${cards.length} ${cards.length === 1 ? "Karte" : "Karten"}` : `${topics.length} Grammatik`} · alle Kapitel
+        </div>
+      )}
 
-      {topics.length > 0 && (
+      {showTopics.length > 0 && (
         <>
           <div style={sectionTitle}>📖 Grammatik</div>
-          {topics.map(({ topic, snippet }) => {
+          {showTopics.map(({ topic, snippet }) => {
             const title = localize(topic.title, lang);
             const showSnippet = snippet && snippet !== title && !snippet.startsWith(title);
             return (
@@ -96,13 +134,18 @@ function SearchResults({ query, cards, topics, lang, onOpenTopic, onOpenChapter,
               </button>
             );
           })}
+          {tab === "all" && topics.length > GRAMMAR_PREVIEW && (
+            <button type="button" onClick={() => setTab("grammar")} style={{ ...rowStyle, justifyContent: "center", color: "#8fb8d8", fontSize: 13, fontWeight: 700 }}>
+              Alle {topics.length} Grammatik-Treffer →
+            </button>
+          )}
         </>
       )}
 
-      {cards.length > 0 && (
+      {showCards.length > 0 && (
         <>
           <div style={sectionTitle}>🃏 Karten</div>
-          {cards.slice(0, shown).map((card, i) => {
+          {showCards.slice(0, shown).map((card, i) => {
             const meta = DECK_META[card.deck];
             const isOpen = open === i;
             return (

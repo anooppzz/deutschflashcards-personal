@@ -38,6 +38,10 @@ export function useBackButton(onBack) {
       if (handler.current) handler.current();
       setPops((n) => n + 1);
     };
+    // Our entries are guards, not pages: the browser must not jump back to
+    // the scroll position it saved with one - the app scrolls to what back
+    // shows (e.g. a closed grammar topic's row) itself.
+    if ("scrollRestoration" in window.history) window.history.scrollRestoration = "manual";
     window.addEventListener("popstate", onPop);
     return () => window.removeEventListener("popstate", onPop);
   }, []);

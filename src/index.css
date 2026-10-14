@@ -22,3 +22,7 @@ body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
 /* the search box has its own × button - hide the browser's built-in one */
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; appearance: none; }
+
+/* a row that scrolls sideways on its own (grammar group chips) without a visible bar */
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }

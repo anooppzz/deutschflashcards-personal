@@ -71,7 +71,7 @@ import {
   ReverseTrainer, ReverseSummary,
   ClozeTrainer, ClozeSummary, buildClozePool, buildClozeRound, saveClozeSizePref, resolveClozeRoundSize, isClozeCorrect,
   WordSearchTrainer, WordSearchSummary, buildWordSearchPool, buildWordSearchRound, resolveWordSearchSize,
-  GrammarView, SearchResults, ReviewSession, FormsTrainer, buildFormsPool, MistakeBook,
+  GrammarView, SearchResults, SearchOverlay, ReviewSession, FormsTrainer, buildFormsPool, MistakeBook,
   SatzbauTrainer, buildSatzbauPool, ReadingView, DtzTrainer,
 } from "./modes";
 
@@ -255,6 +255,8 @@ function App() {
   // stays near the top of a phone screen
   const [topicsOpen, setTopicsOpen] = useState(false);
   const [query, setQuery] = useState("");
+  // 🔍 the full-screen search layer (modes/search/SearchOverlay.jsx)
+  const [searchOpen, setSearchOpen] = useState(false);
 
   // combined (multi-topic) mode state
   const [comboFilter, setComboFilter] = useState(FULL_KEYS);
@@ -568,12 +570,19 @@ function App() {
     updateDaily((d) => ({ ...d, grammar: true }));
   };
   const [grammarFrom, setGrammarFrom] = useState(null);
+  // the topic shown as its own page in the Grammatik tab (null: the list)
+  const [grammarTopic, setGrammarTopic] = useState(null);
+  // the topic was opened from the search layer: "← Zurück" reopens it
+  const [grammarFromSearch, setGrammarFromSearch] = useState(false);
   const openGrammar = useCallback((key) => {
     setShowMistakes(false);
     setGrammarFrom(mode === MODE.GRAMMAR ? null : mode);
     setGrammarFocus({ key, n: Date.now() });
+    setGrammarTopic(key);
     setMode(MODE.GRAMMAR);
-  }, [mode]);
+    setGrammarFromSearch(searchOpen);
+    setSearchOpen(false);
+  }, [mode, searchOpen]);
   const grammarNav = useMemo(() => ({ openGrammar, linksFor: grammarLinksById }), [openGrammar]);
   // Entering a training mode normally starts a new round (see the
   // round-building effect below). "← Zurück" from the Grammatik tab should
@@ -584,11 +593,17 @@ function App() {
   // drop the way back to it; switching tabs then starts a fresh round
   useEffect(() => { setGrammarFrom(null); }, [selectionCards]);
   const backFromGrammar = () => {
-    resumeRoundRef.current = true;
-    setMode(grammarFrom);
+    if (grammarFrom) {
+      resumeRoundRef.current = true;
+      setMode(grammarFrom);
+    }
     setGrammarFrom(null);
     setGrammarFocus(null);
-    showContent("tabs");
+    setGrammarTopic(null);
+    if (grammarFromSearch) {
+      setGrammarFromSearch(false);
+      setSearchOpen(true);
+    } else showContent("tabs");
   };
 
   // #2: language toggle - EN/RU/AR, personal + persisted
@@ -911,11 +926,16 @@ function App() {
   );
   const comboCard = filteredCombo[comboIdx % (filteredCombo.length || 1)];
 
-  // ---- app-wide search (engine/globalSearch.js): while there is a query,
-  // the results replace the mode content below. Every card and every grammar
-  // topic is searched, whatever topics are selected. A grammar result opens
-  // its topic; "← Zurück" there returns to the results (the query stays).
-  const searching = query.trim() !== "" && !grammarFocus;
+  // ---- app-wide search (engine/globalSearch.js) in a full-screen layer
+  // over the app (SearchOverlay). Every card and every grammar topic is
+  // searched, whatever topics are selected. A grammar result opens its
+  // topic and hides the layer; "← Zurück" there brings it back (the query
+  // stays).
+  const closeSearch = () => setSearchOpen(false);
+  // a topic opened by openGrammar (a card's 📖 chip, a search result, the
+  // 🎯 plan) shows on top of a review, the Fehlerheft or DTZ; ← Zurück
+  // returns to them
+  const grammarOnTop = mode === MODE.GRAMMAR && Boolean(grammarFocus);
 
   // ---- "📅 Heute fällig" (engine/review.js): every studied card whose
   // review date has come, from all decks, reviewed in sessions of
@@ -928,13 +948,14 @@ function App() {
     setShowMistakes(false);
     setReview({ cards, n: Date.now(), ...opts });
     setQuery("");
+    setSearchOpen(false);
     setGrammarFocus(null);
     setTopicsOpen(false);
     showContent("content");
   };
-  const reviewing = Boolean(review) && !searching;
-  const dtzOpen = Boolean(dtzView) && !searching && !reviewing;
-  const mistakesOpen = showMistakes && !searching && !reviewing && !dtzOpen;
+  const reviewing = Boolean(review) && !grammarOnTop;
+  const dtzOpen = Boolean(dtzView) && !grammarOnTop && !reviewing;
+  const mistakesOpen = showMistakes && !grammarOnTop && !reviewing && !dtzOpen;
   // the Fehlerheft's entries that still exist (renamed or removed cards and
   // questions drop out)
   const mistakeEntries = useMemo(() => {
@@ -964,8 +985,8 @@ function App() {
   });
   const progressCount = Object.keys(progress).length;
   const backupDue = progressCount >= 20 && (!lastBackupAt || Date.now() - lastBackupAt > 14 * DAY_MS);
-  // search results or a review session cover the mode's own controls
-  const overlay = searching || reviewing || mistakesOpen || dtzOpen;
+  // a review session, the Fehlerheft or DTZ cover the mode's own controls
+  const overlay = reviewing || mistakesOpen || dtzOpen;
   const searchCardResults = useMemo(() => searchCards(ALL_CARDS, query), [query]);
   const searchTopicResults = useMemo(() => searchGrammar(GRAMMAR_SEARCH, query, lang), [query, lang]);
   // "… öffnen →" under a found card: select its chapter and show that card,
@@ -975,9 +996,12 @@ function App() {
     if (view) setExtraSlice(deck)({ ...initialSlice(view), idx: Math.max(0, view.cards.findIndex((c) => c.front === front)) });
     setTabs([deck]);
     setQuery("");
+    setSearchOpen(false);
     setMode(MODE.CARDS);
     setGrammarFocus(null);
     setGrammarFrom(null);
+    setGrammarTopic(null);
+    setGrammarFromSearch(false);
     setShowMistakes(false);
     showContent("tabs");
   };
@@ -1031,7 +1055,7 @@ function App() {
     {
       key: "grammar", icon: "✏️",
       label: nextGrammar ? `${nextGrammar.due ? "Wiederholen" : "Neu"}: ${nextGrammarTitle}` : "Grammatik",
-      detail: day.grammar ? "Heute schon geübt" : nextGrammar ? "Thema lesen, dann ✏️ Übung am Ende" : "Nichts fällig",
+      detail: day.grammar ? "Heute schon geübt" : nextGrammar ? "Thema lesen, dann ✏️ Üben" : "Nichts fällig",
       done: day.grammar || !nextGrammar,
       action: "Öffnen",
       onStart: nextGrammar ? () => openGrammar(nextGrammar.key) : undefined,
@@ -1049,8 +1073,9 @@ function App() {
     : showHelp ? () => setShowHelp(false)
     : showBackup ? () => setShowBackup(false)
     : langOpen ? () => setLangOpen(false)
-    : mode === MODE.GRAMMAR && grammarFrom ? backFromGrammar
-    : query !== "" ? () => setQuery("")
+    : searchOpen ? closeSearch
+    : mode === MODE.GRAMMAR && (grammarFrom || grammarFromSearch) ? backFromGrammar
+    : mode === MODE.GRAMMAR && grammarTopic ? () => { setGrammarTopic(null); setGrammarFocus(null); }
     : review ? () => setReview(null)
     : dtzView && dtzView.kind !== "home" ? () => {
       if (dtzView.kind === "sim" && !dtzView.done && !window.confirm("Simulation abbrechen? Die Antworten gehen verloren.")) return;
@@ -1061,7 +1086,7 @@ function App() {
     : showMistakes ? () => setShowMistakes(false)
     : mode === MODE.READING && readingKey ? () => setReadingKey(null)
     : topicsOpen ? () => setTopicsOpen(false)
-    : mode !== MODE.CARDS ? () => { setMode(MODE.CARDS); setGrammarFocus(null); setGrammarFrom(null); }
+    : mode !== MODE.CARDS ? () => { setMode(MODE.CARDS); setGrammarFocus(null); setGrammarFrom(null); setGrammarTopic(null); }
     : null;
   useBackButton(backAction);
 
@@ -1090,6 +1115,24 @@ function App() {
     ...EXTRA_TOPICS.map((t) => [t.key, `${t.icon} ${t.label}`]),
   ];
 
+  // the Grammatik tab: a list of topics, or one topic as its own page
+  const grammarView = (
+    <GrammarView
+      topics={GRAMMAR_TOPICS}
+      words={GRAMMAR_INDEX.wordsByTopic}
+      lang={lang}
+      openKey={grammarTopic}
+      onOpenTopic={(key) => { setGrammarTopic(key); if (!key) setGrammarFocus(null); }}
+      focus={grammarFocus}
+      onBack={grammarFrom || grammarFromSearch ? backFromGrammar : undefined}
+      backLabel={grammarFromSearch ? "← Zurück zur Suche" : "← Zurück"}
+      onOpenChapter={openChapterAt}
+      onExerciseAnswer={(key, item, correct) => recordMistake(grammarMistakeId(key, item.q), correct)}
+      dueKeys={grammarDueKeys}
+      onExerciseDone={finishGrammarRound}
+    />
+  );
+
   const typeColor = (key) => (key === "n" ? "#4f86c6" : TYPE_META[key].color);
 
   const typeFilterRow = (cats, allKeys, active, setActive, setIdx) => (
@@ -1108,6 +1151,21 @@ function App() {
     <GrammarNavCtx.Provider value={grammarNav}>
     <AiCtx.Provider value={aiNav}>
     <div style={{ minHeight: "100vh", background: "#0e1419", fontFamily: "system-ui, sans-serif", padding: "28px 16px" }}>
+      {searchOpen && (
+        <SearchOverlay query={query} onQuery={setQuery} onClose={closeSearch}>
+          <ErrorBoundary resetKey={query} label="search">
+            <SearchResults
+              query={query}
+              cards={searchCardResults}
+              topics={searchTopicResults}
+              lang={lang}
+              onOpenTopic={openGrammar}
+              onOpenChapter={openChapterAt}
+              onSuggestCard={(entry) => changeInbox((items) => addInboxItem(items, entry))}
+            />
+          </ErrorBoundary>
+        </SearchOverlay>
+      )}
       <div style={{ maxWidth: 480, margin: "0 auto" }}>
         <div style={{ position: "relative", minHeight: 40 }}>
           <h1 style={{ color: "#f2f5f8", fontSize: "clamp(18px, 5.6vw, 22px)", fontWeight: 800, textAlign: "center", margin: "0 0 4px", padding: "0 52px", lineHeight: "40px", whiteSpace: "nowrap", pointerEvents: "none" }}>
@@ -1197,6 +1255,24 @@ function App() {
         <div style={{ height: 14 }} />
 
         <StreakBar streak={displayStreak} count={streakData.count} goal={streakData.goal} recordStreak={streakData.recordStreak} onCycleGoal={cycleGoal} />
+
+        {/* SEARCH - looks like a search box near the top; a tap opens the
+            full-screen search layer (SearchOverlay) */}
+        <button
+          type="button"
+          onClick={() => setSearchOpen(true)}
+          aria-label="Suchen in allen Wörtern und der Grammatik"
+          style={{
+            display: "flex", width: "100%", alignItems: "center", gap: 10, marginBottom: 12, minHeight: 44,
+            padding: "0 14px", borderRadius: 12, border: "1px solid #2c3a47", background: "#161d24",
+            color: "#7d8d9c", fontSize: 15, cursor: "text", textAlign: "left", font: "inherit",
+          }}
+        >
+          <span aria-hidden="true" style={{ fontSize: 14 }}>🔍</span>
+          <span style={{ flex: 1, minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", fontSize: 15, color: query ? "#f2f5f8" : "#7d8d9c" }}>
+            {query || "Suchen: Wörter & Grammatik"}
+          </span>
+        </button>
 
         {backupDue && !reviewing && (
           <button
@@ -1300,34 +1376,6 @@ function App() {
         </>
         )}
 
-        {/* SEARCH */}
-        <div style={{ position: "relative", marginBottom: 18 }}>
-          <span style={{ position: "absolute", left: 14, top: "50%", transform: "translateY(-50%)", fontSize: 14, color: "#7d8d9c", pointerEvents: "none" }}>🔍</span>
-          <input
-            type="search"
-            aria-label="Suchen in allen Wörtern und der Grammatik"
-            value={query}
-            onChange={(e) => { setQuery(e.target.value); setGrammarFocus(null); }}
-            placeholder="Suchen: Wörter & Grammatik"
-            style={{
-              width: "100%", boxSizing: "border-box", padding: "10px 36px 10px 36px",
-              borderRadius: 12, border: "1px solid #2c3a47", background: "#161d24",
-              // 16px: smaller text makes iPhones zoom into the page on focus
-              color: "#f2f5f8", fontSize: 16, outline: "none", appearance: "none",
-            }}
-          />
-          {query && (
-            <button
-              onClick={() => setQuery("")}
-              aria-label="Suche löschen"
-              style={{
-                position: "absolute", right: 8, top: "50%", transform: "translateY(-50%)",
-                background: "none", border: "none", color: "#7d8d9c", fontSize: 18, cursor: "pointer",
-              }}
-            >×</button>
-          )}
-        </div>
-
         {/* LEVEL / SOURCE FILTERS - crosscutting facets independent of topic.
             Level row is always shown (every card is classified). Source row
             only appears once 2+ distinct chapters exist in the current
@@ -1369,7 +1417,7 @@ function App() {
             return (
               <button
                 key={tab.mode}
-                onClick={() => { setMode(tab.mode); setGrammarFocus(null); setGrammarFrom(null); setQuery(""); setReview(null); setShowMistakes(false); setDtzView(null); showContent("tabs"); }}
+                onClick={() => { setMode(tab.mode); setGrammarFocus(null); setGrammarFrom(null); setGrammarTopic(null); setGrammarFromSearch(false); setReview(null); setShowMistakes(false); setDtzView(null); showContent("tabs"); }}
                 aria-pressed={active}
                 aria-label={tab.count !== undefined ? `${tab.label} (${tab.count})` : tab.label}
                 style={{
@@ -1423,17 +1471,7 @@ function App() {
 
         <div ref={contentRef} />
         <ErrorBoundary resetKey={mode} label={mode}>
-        {searching ? (
-          <SearchResults
-            query={query}
-            cards={searchCardResults}
-            topics={searchTopicResults}
-            lang={lang}
-            onOpenTopic={openGrammar}
-            onOpenChapter={openChapterAt}
-            onSuggestCard={(entry) => changeInbox((items) => addInboxItem(items, entry))}
-          />
-        ) : dtzOpen ? (
+        {grammarOnTop ? grammarView : dtzOpen ? (
           <DtzTrainer
             sets={DTZ_SETS}
             writing={DTZ_WRITING}
@@ -1614,17 +1652,7 @@ function App() {
             onOpenChapter={openChapterAt}
           />
         ) : mode === MODE.GRAMMAR ? (
-          <GrammarView
-            topics={GRAMMAR_TOPICS}
-            words={GRAMMAR_INDEX.wordsByTopic}
-            lang={lang}
-            focus={grammarFocus}
-            onBack={grammarFrom ? backFromGrammar : undefined}
-            onOpenChapter={openChapterAt}
-            onExerciseAnswer={(key, item, correct) => recordMistake(grammarMistakeId(key, item.q), correct)}
-            dueKeys={grammarDueKeys}
-            onExerciseDone={finishGrammarRound}
-          />
+          grammarView
         ) : (
         <>
         {/* ONE DECK - the original five and every chapter (modes/cards) */}

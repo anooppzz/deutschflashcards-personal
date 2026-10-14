@@ -52,12 +52,39 @@ was done, newest first. Every change adds a log entry here in the same commit
 - [ ] **To check on the learner's phone:** ⏸ Pause / ▶ Weiter in 🎓 DTZ Hören and 📰 Lesen
   Vorlesen with the phone's German voice (tested with a simulated voice in headless Chrome),
   and that the page now scrolls to what a tab or button opens.
+- [ ] **To check on the learner's phone – new search + Grammatik layout (2026-10-14):** the
+  keyboard opens when the 🔍 layer opens (iPhones may need a second tap), the group chips
+  scroll sideways with a finger, back gesture inside a grammar topic returns to its row.
 - [ ] **To check on the learner's phone:** the "📲 App installieren" button (Android/Chrome) –
   headless Chrome never offers installation, so it is untested.
 - The audit of 2026-10-01 is fully done (search, backup + PWA, Heute fällig, Formen
   trainer, Reverse articles, 12 grammar topics, ✏️ Üben, data cleanup, code tidying).
 
 ## Log
+
+### 2026-10-14
+- **🔍 Search as a full-screen layer** (learner: "results show after the mode buttons, I have to
+  scroll"). The search box now sits right under the streak bar; a tap opens
+  `modes/search/SearchOverlay.jsx`: the box stays at the top (keyboard opens), results fill the
+  screen under it. With cards *and* grammar found, tabs **Alle · 🃏 Karten · 📖 Grammatik**
+  (Alle shows 3 topics + "Alle N Grammatik-Treffer →", then the cards). ← or the back gesture
+  closes it; the query stays for next time. A grammar result (or a 📖 chip on a found card)
+  opens the topic and hides the layer; "←" there brings the search back. "… öffnen →" on a
+  card closes it.
+- **📖 Grammatik tab reorganised** (learner: "the grammar section is getting long"). The list
+  is one short row per topic (level, title, 📅 fällig, ✏️ best, word count) with **sticky
+  group chips** on top (Alle · 📅 fällig · Nomen & Artikel · Verben · …) that filter it. A
+  topic opens as **its own page**: a sticky bar with ← (back to the list, or to the card /
+  search it came from), the title and ‹ › for the previous/next topic, and tabs **📖 Regel ·
+  ✏️ Üben · 🗂 Wörter** (an opened topic used to add ~2,400px to the page). The open topic
+  lives in App.jsx (`grammarTopic`) so the back gesture closes it and returns to its row.
+  A topic opened from a card chip, search or the 🎯 plan now shows on top of a running
+  review / Fehlerheft / DTZ (it used to stay hidden under them); ← returns there.
+- `useBackButton`: `history.scrollRestoration = "manual"` – the browser used to jump to an old
+  scroll position on back; the app scrolls to what back shows itself.
+- Tested in headless Chromium at 360px and 390px: no sideways scroll; search → topic → back,
+  card chip → topic → back, plan → topic → back, chip inside a search result → back to the
+  search.
 
 ### 2026-10-13
 - **🔤 New chapter „Sprachen lernen“ (Menschen A2 · Einheit 13)** – `sprachen-lernen`, added
