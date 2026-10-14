@@ -14,7 +14,7 @@ function CategoryFilter({ cats, active, onChange, setIdx, colorFor, allKeys }) {
       aria-pressed={on}
       aria-label={label}
       style={{
-        padding: "5px 12px", borderRadius: 8, fontSize: 11, fontWeight: 600, cursor: "pointer",
+        minHeight: 34, padding: "6px 14px", borderRadius: 10, fontSize: 12, fontWeight: 600, cursor: "pointer",
         border: on ? "none" : "1px solid #2c3a47",
         background: on ? color : "#1e2630",
         color: on ? "#fff" : "#9aa7b3",

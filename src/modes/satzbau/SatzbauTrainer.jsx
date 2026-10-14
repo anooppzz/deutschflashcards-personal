@@ -17,7 +17,7 @@ const ACCENT = "#e0833b";
 const GREEN = "#5fa85f";
 const RED = "#e07b6f";
 const chip = (placed) => ({
-  padding: "8px 11px", borderRadius: 10, fontSize: 16, fontWeight: 600, cursor: "pointer", lineHeight: 1.2,
+  minHeight: 44, padding: "8px 12px", borderRadius: 10, fontSize: 16, fontWeight: 600, cursor: "pointer", lineHeight: 1.2,
   border: `1px solid ${placed ? ACCENT : "#3a5670"}`, background: placed ? "rgba(224,131,59,.15)" : "#16202a", color: "#f2f5f8",
 });
 const btn = (primary, enabled = true) => ({
@@ -155,7 +155,7 @@ function SatzbauTrainer({ pool }) {
             {checked.own && (
               <div style={{ marginTop: 8, fontSize: 12, color: "#9ab0c2" }}>
                 Deine Reihenfolge: {checked.given}
-                <button type="button" onClick={undoOwn} style={{ display: "block", margin: "6px auto 0", padding: "4px 10px", borderRadius: 8, border: "1px solid #2c3a47", background: "#1a232b", color: "#cdd8e2", fontSize: 12, fontWeight: 700, cursor: "pointer" }}>
+                <button type="button" onClick={undoOwn} style={{ display: "block", margin: "6px auto 0", minHeight: 36, padding: "6px 14px", borderRadius: 10, border: "1px solid #2c3a47", background: "#1a232b", color: "#cdd8e2", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>
                   ↺ Rückgängig
                 </button>
               </div>

@@ -132,7 +132,7 @@ function ArticleTrainer({ nouns, idx, choice, score, onChoose, onNext, totalAvai
             ) : (
               <button
                 onClick={() => setPeek(true)}
-                style={{ marginTop: 10, background: "none", border: "none", color: "#7fb0d6", fontSize: 12, fontWeight: 600, cursor: "pointer", textDecoration: "underline" }}
+                style={{ marginTop: 6, minHeight: 40, padding: "0 12px", background: "none", border: "none", color: "#7fb0d6", fontSize: 13, fontWeight: 600, cursor: "pointer", textDecoration: "underline" }}
               >👁 Bedeutung zeigen</button>
             )}
           </div>

@@ -10,7 +10,7 @@ function RoundSizeSelector({ onCycle, label }) {
       <button
         onClick={onCycle}
         aria-label={`Rundengröße: ${label}. Zum Ändern tippen.`}
-        style={{ background: "none", border: "1px solid #2c3a47", borderRadius: 8, padding: "4px 10px", color: "#9ab0c2", fontSize: 11, fontWeight: 600, cursor: "pointer" }}
+        style={{ background: "none", border: "1px solid #2c3a47", borderRadius: 10, minHeight: 36, padding: "6px 14px", color: "#9ab0c2", fontSize: 12, fontWeight: 600, cursor: "pointer" }}
       >🔢 Runde: {label}</button>
     </div>
   );

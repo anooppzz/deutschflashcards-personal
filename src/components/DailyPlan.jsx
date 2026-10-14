@@ -38,7 +38,7 @@ function DailyPlan({ steps, collapsed, onToggle }) {
                 <button
                   type="button"
                   onClick={s.onStart}
-                  style={{ flexShrink: 0, padding: "6px 10px", borderRadius: 9, fontSize: 12, fontWeight: 700, cursor: "pointer", border: s.done ? "1px solid #2c3a47" : "none", background: s.done ? "transparent" : ACCENT, color: s.done ? "#9ab0c2" : "#0e1419" }}
+                  style={{ flexShrink: 0, minHeight: 38, padding: "6px 14px", borderRadius: 10, fontSize: 13, fontWeight: 700, cursor: "pointer", border: s.done ? "1px solid #2c3a47" : "none", background: s.done ? "transparent" : ACCENT, color: s.done ? "#9ab0c2" : "#0e1419" }}
                 >{s.action || "Start"} →</button>
               )}
             </div>

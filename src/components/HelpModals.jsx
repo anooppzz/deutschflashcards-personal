@@ -29,7 +29,7 @@ export function WelcomeModal({ onClose, lang, onSelectLang }) {
               key={key}
               onClick={() => onSelectLang(key)}
               style={{
-                padding: "5px 12px", borderRadius: 10, fontSize: 12, fontWeight: 700, cursor: "pointer",
+                minHeight: 36, padding: "6px 14px", borderRadius: 10, fontSize: 13, fontWeight: 700, cursor: "pointer",
                 border: lang === key ? "none" : "1px solid #2c3a47",
                 background: lang === key ? "#e0833b" : "#1a232b",
                 color: lang === key ? "#0e1419" : "#9ab0c2",
@@ -187,7 +187,7 @@ export function HelpModal({ onClose, lang }) {
           onClick={() => setDeOverride((v) => !v)}
           title="Anleitung auf Deutsch anzeigen"
           style={{
-            display: "block", marginLeft: "auto", marginBottom: 14, padding: "4px 10px", borderRadius: 8, fontSize: 11, fontWeight: 700, cursor: "pointer",
+            display: "block", marginLeft: "auto", marginBottom: 14, minHeight: 34, padding: "6px 12px", borderRadius: 10, fontSize: 12, fontWeight: 700, cursor: "pointer",
             border: deOverride ? "none" : "1px solid #2c3a47",
             background: deOverride ? "#e0833b" : "#1a232b",
             color: deOverride ? "#0e1419" : "#9ab0c2",

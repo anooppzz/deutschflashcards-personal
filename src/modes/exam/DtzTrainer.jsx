@@ -33,9 +33,9 @@ const bigBtn = (primary) => ({
   display: "block", width: "100%", textAlign: "left", padding: "12px 14px", marginBottom: 8, borderRadius: 12, cursor: "pointer", font: "inherit",
   border: primary ? "none" : "1px solid #2c3a47", background: primary ? ACCENT : "#1a232b", color: primary ? "#0e1419" : "#f2f5f8",
 });
-const smallBtn = { padding: "7px 12px", borderRadius: 10, border: "1px solid #2c3a47", background: "#1a232b", color: "#cdd8e2", fontSize: 13, fontWeight: 700, cursor: "pointer" };
+const smallBtn = { minHeight: 40, padding: "7px 12px", borderRadius: 10, border: "1px solid #2c3a47", background: "#1a232b", color: "#cdd8e2", fontSize: 13, fontWeight: 700, cursor: "pointer" };
 const choiceBtn = (state, picked) => ({
-  padding: "8px 11px", borderRadius: 10, fontSize: 14, textAlign: "left", cursor: state ? "default" : "pointer", lineHeight: 1.35,
+  minHeight: 44, minWidth: 44, padding: "8px 11px", borderRadius: 10, fontSize: 14, textAlign: "left", cursor: state ? "default" : "pointer", lineHeight: 1.35,
   border: `1px solid ${state === "right" ? GREEN : state === "wrong" ? RED : picked ? ACCENT : "#2c3a47"}`,
   background: state === "right" ? "rgba(95,168,95,.15)" : state === "wrong" ? "rgba(224,123,111,.12)" : picked ? "rgba(224,131,59,.15)" : "#0e1419",
   color: state === "right" ? GREEN : state === "wrong" ? RED : "#f2f5f8",

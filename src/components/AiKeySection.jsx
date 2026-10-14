@@ -106,7 +106,7 @@ function AiKeySection({ settings, onChange }) {
   };
 
   const help = (
-    <a href={KEY_PAGES[provider]} target="_blank" rel="noopener noreferrer" style={{ ...smallBtn, color: "#8fb8d8" }}>{NAMES[provider]}-Schlüssel holen ↗</a>
+    <a className="tap" href={KEY_PAGES[provider]} target="_blank" rel="noopener noreferrer" style={{ ...smallBtn, color: "#8fb8d8" }}>{NAMES[provider]}-Schlüssel holen ↗</a>
   );
   const status = vault && (
     <div style={{ display: "flex", gap: 12, flexWrap: "wrap", fontSize: 13, color: "#cdd8e2", marginBottom: 8 }}>

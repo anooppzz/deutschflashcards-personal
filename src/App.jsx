@@ -1206,7 +1206,7 @@ function App() {
               onClick={() => { setLang(key); saveLang(key); setLangOpen(false); }}
               title="Sprache der Übersetzungen"
               style={{
-                padding: "5px 12px", borderRadius: 10, fontSize: 12, fontWeight: 700, cursor: "pointer",
+                minHeight: 36, padding: "6px 14px", borderRadius: 10, fontSize: 13, fontWeight: 700, cursor: "pointer",
                 border: lang === key ? "none" : "1px solid #2c3a47",
                 background: lang === key ? "#e0833b" : "#1a232b",
                 color: lang === key ? "#0e1419" : "#9ab0c2",
@@ -1217,12 +1217,12 @@ function App() {
             <span key={name} style={{ display: "inline-flex", alignItems: "center", borderRadius: 10, overflow: "hidden", border: lang === name ? "none" : "1px solid #2c3a47" }}>
               <button
                 onClick={() => { setLang(name); saveLang(name); setLangOpen(false); }}
-                style={{ padding: "5px 10px", border: "none", fontSize: 12, fontWeight: 700, cursor: "pointer", background: lang === name ? "#e0833b" : "#1a232b", color: lang === name ? "#0e1419" : "#9ab0c2" }}
+                style={{ minHeight: 36, padding: "6px 12px", border: "none", fontSize: 13, fontWeight: 700, cursor: "pointer", background: lang === name ? "#e0833b" : "#1a232b", color: lang === name ? "#0e1419" : "#9ab0c2" }}
               >{name}</button>
               <button
                 onClick={() => removeCustomLang(name)}
                 title="Entfernen"
-                style={{ padding: "5px 8px", border: "none", fontSize: 12, cursor: "pointer", background: lang === name ? "#e0833b" : "#1a232b", color: lang === name ? "#0e1419" : "#7d8d9c" }}
+                style={{ minHeight: 36, minWidth: 32, padding: "6px 8px", border: "none", fontSize: 14, cursor: "pointer", background: lang === name ? "#e0833b" : "#1a232b", color: lang === name ? "#0e1419" : "#7d8d9c" }}
               >×</button>
             </span>
           ))}
@@ -1243,7 +1243,7 @@ function App() {
             <button
               onClick={() => setAddingLang(true)}
               title="Weitere Sprache hinzufügen"
-              style={{ padding: "5px 10px", borderRadius: 10, border: "1px dashed #2c3a47", background: "transparent", color: "#7d8d9c", fontSize: 12, fontWeight: 700, cursor: "pointer" }}
+              style={{ minWidth: 44, minHeight: 36, padding: "5px 10px", borderRadius: 10, border: "1px dashed #2c3a47", background: "transparent", color: "#7d8d9c", fontSize: 13, fontWeight: 700, cursor: "pointer" }}
             >➕</button>
           )}
         </div>
@@ -1303,7 +1303,7 @@ function App() {
               <span>🆕 Neues Kapitel: {t.icon} {t.label} · {t.cards.length} Karten</span>
               <span style={{ color: "#5fa85f", whiteSpace: "nowrap" }}>Öffnen →</span>
             </button>
-            <button onClick={() => markTopicSeen(t.key)} aria-label={`Hinweis ausblenden: ${t.label}`} style={{ flexShrink: 0, padding: "4px 8px", background: "none", border: "none", color: "#7d8d9c", fontSize: 16, cursor: "pointer" }}>✕</button>
+            <button onClick={() => markTopicSeen(t.key)} aria-label={`Hinweis ausblenden: ${t.label}`} style={{ flexShrink: 0, width: 40, height: 40, padding: 0, background: "none", border: "none", color: "#7d8d9c", fontSize: 16, cursor: "pointer" }}>✕</button>
           </div>
         ))}
 
@@ -1339,7 +1339,7 @@ function App() {
               <button
                 onClick={() => { setTabs(allOn ? ["kleidung"] : TABS.map(([k]) => k)); setQuery(""); }}
                 style={{
-                  padding: "7px 12px", borderRadius: 10, fontSize: 12, fontWeight: 700, cursor: "pointer",
+                  minHeight: 36, padding: "7px 13px", borderRadius: 10, fontSize: 13, fontWeight: 700, cursor: "pointer",
                   border: allOn ? "none" : "1px solid #2c3a47",
                   background: allOn ? "#e0833b" : "#1a232b",
                   color: allOn ? "#0e1419" : "#9ab0c2",
@@ -1359,7 +1359,7 @@ function App() {
                   setQuery("");
                 }}
                 style={{
-                  padding: "7px 12px", borderRadius: 10, fontSize: 12, fontWeight: 700, cursor: "pointer",
+                  minHeight: 36, padding: "7px 13px", borderRadius: 10, fontSize: 13, fontWeight: 700, cursor: "pointer",
                   border: on ? "none" : "1px solid #2c3a47",
                   background: on ? "#e0833b" : "#1a232b",
                   color: on ? "#0e1419" : "#9ab0c2",
@@ -1715,11 +1715,11 @@ function App() {
         </div>
         <button
           onClick={() => setShowBackup(true)}
-          style={{ display: "block", margin: "12px auto 0", padding: "8px 14px", borderRadius: 10, border: "1px solid #2c3a47", background: "#1a232b", color: "#9ab0c2", fontSize: 12, fontWeight: 700, cursor: "pointer" }}
+          style={{ display: "block", margin: "12px auto 0", minHeight: 40, padding: "8px 16px", borderRadius: 10, border: "1px solid #2c3a47", background: "#1a232b", color: "#9ab0c2", fontSize: 13, fontWeight: 700, cursor: "pointer" }}
         >💾 Fortschritt sichern & App installieren</button>
         <button
           onClick={() => setAiSettingsOpen(true)}
-          style={{ display: "block", margin: "8px auto 0", padding: "8px 14px", borderRadius: 10, border: `1px solid ${aiSettings.enabled ? "#5fa85f" : "#2c3a47"}`, background: "#1a232b", color: aiSettings.enabled ? "#5fa85f" : "#9ab0c2", fontSize: 12, fontWeight: 700, cursor: "pointer" }}
+          style={{ display: "block", margin: "8px auto 0", minHeight: 40, padding: "8px 16px", borderRadius: 10, border: `1px solid ${aiSettings.enabled ? "#5fa85f" : "#2c3a47"}`, background: "#1a232b", color: aiSettings.enabled ? "#5fa85f" : "#9ab0c2", fontSize: 13, fontWeight: 700, cursor: "pointer" }}
         >🤖 KI-Assistent: {aiSettings.enabled ? "an" : "aus"}</button>
         {(aiInbox.length > 0 || aiSettings.enabled) && (
           <button

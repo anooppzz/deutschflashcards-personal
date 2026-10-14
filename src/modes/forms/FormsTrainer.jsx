@@ -15,7 +15,7 @@ import { buildFormsRound } from "./buildForms";
 
 const ACCENT = "#e0833b";
 const btn = (on, color = ACCENT) => ({
-  flex: 1, padding: "10px 0", borderRadius: 10, fontSize: 15, fontWeight: 700, cursor: "pointer",
+  flex: 1, minHeight: 44, padding: "10px 0", borderRadius: 10, fontSize: 15, fontWeight: 700, cursor: "pointer",
   border: on ? "none" : "1px solid #2c3a47", background: on ? color : "#1a232b", color: on ? "#0e1419" : "#cdd8e2",
 });
 const inputStyle = {

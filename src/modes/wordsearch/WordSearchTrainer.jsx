@@ -17,7 +17,7 @@ function WordSearchTrainer({ roundData, foundWords, onFound, hintedWords, onHint
       <div style={{ display: "flex", justifyContent: "space-between", fontSize: 12, color: "#7d8d9c", marginBottom: 14 }}>
         <span>Gefunden: {foundWords.size} / {placements.length}</span>
         {!revealed && !allFound && (
-          <button onClick={onReveal} style={{ background: "none", border: "none", color: "#7d8d9c", fontSize: 11, textDecoration: "underline", cursor: "pointer" }}>
+          <button onClick={onReveal} style={{ background: "none", border: "none", padding: "4px 0", color: "#7d8d9c", fontSize: 12, textDecoration: "underline", cursor: "pointer" }}>
             Wörter anzeigen
           </button>
         )}
@@ -50,7 +50,7 @@ function WordSearchTrainer({ roundData, foundWords, onFound, hintedWords, onHint
               disabled={found}
               aria-label={showGerman ? `${p.card.english} - ${p.card.front}` : `${p.card.english}. Tippen, um das deutsche Wort zu sehen.`}
               style={{
-                padding: "5px 12px", borderRadius: 8, fontSize: 12, fontWeight: 600,
+                minHeight: 36, padding: "6px 12px", borderRadius: 10, fontSize: 13, fontWeight: 600,
                 cursor: found ? "default" : "pointer",
                 background: found ? "#1c2b1f" : hinted ? "#1e2a33" : "#161d24",
                 color: found ? "#5fa85f" : hinted ? "#8fb8d8" : "#cdd8e2",

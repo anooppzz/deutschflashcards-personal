@@ -18,7 +18,7 @@ const RED = "#e07b6f";
 const ACCENT = "#e0833b";
 
 const optionStyle = (state) => ({
-  width: "100%", textAlign: "left", padding: "10px 12px", borderRadius: 10, fontSize: 14, fontWeight: 600, cursor: state ? "default" : "pointer",
+  width: "100%", textAlign: "left", minHeight: 44, padding: "10px 12px", borderRadius: 10, fontSize: 15, fontWeight: 600, cursor: state ? "default" : "pointer",
   border: `1px solid ${state === "right" ? GREEN : state === "wrong" ? RED : "#2c3a47"}`,
   background: state === "right" ? "rgba(95,168,95,.15)" : state === "wrong" ? "rgba(224,123,111,.12)" : "#0e1419",
   color: state === "right" ? GREEN : state === "wrong" ? RED : "#f2f5f8",

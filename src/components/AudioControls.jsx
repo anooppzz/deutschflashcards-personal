@@ -11,7 +11,7 @@ import { createPlayer, sentencesOf } from "../engine/speech";
 
 const ACCENT = "#e0833b";
 const btn = (active, disabled) => ({
-  padding: "7px 12px", borderRadius: 10, fontSize: 13, fontWeight: 700, cursor: disabled ? "default" : "pointer",
+  minHeight: 40, padding: "7px 14px", borderRadius: 10, fontSize: 13, fontWeight: 700, cursor: disabled ? "default" : "pointer",
   border: `1px solid ${active ? ACCENT : "#2c3a47"}`, background: active ? "rgba(224,131,59,.12)" : "#1a232b",
   color: disabled ? "#5a6b78" : active ? ACCENT : "#cdd8e2",
 });

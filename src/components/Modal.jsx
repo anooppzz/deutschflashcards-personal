@@ -22,7 +22,7 @@ function Modal({ title, onClose, children, primaryLabel, onPrimary }) {
       >
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "16px 18px", borderBottom: "1px solid #1f2a33" }}>
           <h2 id="modal-title" style={{ margin: 0, fontSize: 16, color: "#f2f5f8" }}>{title}</h2>
-          <button onClick={onClose} aria-label="Schließen" style={{ background: "none", border: "none", color: "#7d8d9c", fontSize: 18, cursor: "pointer", padding: 4 }}>×</button>
+          <button onClick={onClose} aria-label="Schließen" style={{ width: 44, height: 44, margin: "-10px -12px -10px 0", background: "none", border: "none", color: "#7d8d9c", fontSize: 22, cursor: "pointer", padding: 0 }}>×</button>
         </div>
         <div style={{ padding: "16px 18px", overflowY: "auto" }}>{children}</div>
         {primaryLabel && (

@@ -50,7 +50,7 @@ const around = (text, q, before = 40, after = 70) => {
 const sectionTitle = { margin: "18px 0 8px", fontSize: 11, fontWeight: 700, letterSpacing: 0.5, color: "#7d8d9c", textTransform: "uppercase" };
 const rowStyle = {
   display: "flex", width: "100%", boxSizing: "border-box", alignItems: "center", gap: 10, textAlign: "left",
-  padding: "10px 12px", marginBottom: 6, borderRadius: 12, border: "1px solid #2c3a47", background: "#1a232b",
+  minHeight: 48, padding: "10px 12px", marginBottom: 6, borderRadius: 12, border: "1px solid #2c3a47", background: "#1a232b",
   color: "#f2f5f8", cursor: "pointer", font: "inherit",
 };
 const chipStyle = { flexShrink: 0, maxWidth: 120, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", fontSize: 11, color: "#8fb8d8", background: "#16202a", borderRadius: 8, padding: "2px 7px" };
@@ -178,7 +178,7 @@ function SearchResults({ query, cards, topics, lang, onOpenTopic, onOpenChapter,
                       note={card.note}
                     />
                     {meta && (
-                      <button type="button" onClick={() => onOpenChapter(card.deck, card.front)} style={{ display: "block", margin: "8px auto 0", background: "none", border: "none", color: "#8fb8d8", fontSize: 13, cursor: "pointer" }}>
+                      <button type="button" onClick={() => onOpenChapter(card.deck, card.front)} style={{ display: "block", margin: "4px auto 0", minHeight: 40, padding: "0 12px", background: "none", border: "none", color: "#8fb8d8", fontSize: 14, cursor: "pointer" }}>
                         {meta.icon} {meta.label} öffnen →
                       </button>
                     )}

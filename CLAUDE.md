@@ -112,6 +112,9 @@ src/modes/                 one folder per study mode (cards, article, quiz, reve
                            card's sub line – keep `sub` formats as below)
                            + reverse also has 🎧 Hören: the phone says the card, the
                            learner types it (validation.js isDictatable/checkDictation)
+src/index.css              tap targets: every <button> (and <a className="tap">) gets an
+                           invisible ≥ 44×44px tap area; a button inside running text
+                           needs className="inline-tap" (see 📰 Lesen words)
 src/components/FlipCard.jsx  the card (front/back, note, 📖 grammar chips)
 src/components/Swipeable.jsx  swipe left/right on a card = next/previous
 src/components/AudioControls.jsx  ▶ / ⏸ Pause / ▶ Weiter / ⏹ Stopp for longer texts (DTZ Hören,

@@ -20,11 +20,11 @@ const rowStyle = {
   color: "#f2f5f8", cursor: "pointer", font: "inherit",
 };
 const toggle = (on) => ({
-  padding: "7px 12px", borderRadius: 10, fontSize: 13, fontWeight: 700, cursor: "pointer",
+  minHeight: 40, padding: "7px 14px", borderRadius: 10, fontSize: 13, fontWeight: 700, cursor: "pointer",
   border: `1px solid ${on ? ACCENT : "#2c3a47"}`, background: on ? "rgba(224,131,59,.12)" : "#1a232b", color: on ? ACCENT : "#9ab0c2",
 });
 const answerBtn = (state) => ({
-  padding: "8px 12px", borderRadius: 10, fontSize: 14, fontWeight: 600, cursor: state ? "default" : "pointer", textAlign: "left",
+  minHeight: 44, padding: "8px 12px", borderRadius: 10, fontSize: 14, fontWeight: 600, cursor: state ? "default" : "pointer", textAlign: "left",
   border: `1px solid ${state === "right" ? GREEN : state === "wrong" ? RED : "#2c3a47"}`,
   background: state === "right" ? "rgba(95,168,95,.15)" : state === "wrong" ? "rgba(224,123,111,.12)" : "#0e1419",
   color: state === "right" ? GREEN : state === "wrong" ? RED : "#f2f5f8",
@@ -81,7 +81,7 @@ function TextView({ text, lang, best, onScore, onBack, onOpenChapter }) {
 
   return (
     <div>
-      <button type="button" onClick={onBack} style={{ marginBottom: 12, background: ACCENT, border: "none", borderRadius: 10, padding: "8px 14px", color: "#0e1419", fontSize: 13, fontWeight: 800, cursor: "pointer" }}>← Alle Texte</button>
+      <button type="button" onClick={onBack} style={{ marginBottom: 12, background: ACCENT, border: "none", borderRadius: 10, minHeight: 40, padding: "8px 14px", color: "#0e1419", fontSize: 13, fontWeight: 800, cursor: "pointer" }}>← Alle Texte</button>
       {meta && <div style={{ fontSize: 12, color: "#8fb8d8" }}>{meta.icon} {meta.label} · {text.level}</div>}
       <h2 style={{ margin: "4px 0 10px", fontSize: 20, color: "#f2f5f8" }}>{text.title}</h2>
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 12 }}>
@@ -103,6 +103,7 @@ function TextView({ text, lang, best, onScore, onBack, onOpenChapter }) {
                   type="button"
                   aria-expanded={openSeg === si}
                   onClick={() => setOpen(openSeg === si ? null : `${pi}:${si}`)}
+                  className="inline-tap"
                   style={{ background: openSeg === si ? "rgba(224,131,59,.18)" : "none", border: "none", padding: 0, font: "inherit", color: openSeg === si ? ACCENT : "#cfe3f3", cursor: "pointer", textDecoration: "underline dotted", textUnderlineOffset: 4, borderRadius: 4 }}
                 >{s.text}</button>
               ) : <Fragment key={si}>{s.text}</Fragment>))}

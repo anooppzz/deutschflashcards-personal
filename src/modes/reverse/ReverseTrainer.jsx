@@ -11,7 +11,7 @@ import { FloatingNext } from "../../components";
    stays hidden until asked for - listening + spelling practice. */
 const SLOW = 0.6;
 const toggleBtn = (on) => ({
-  flex: 1, padding: "8px 0", borderRadius: 10, fontSize: 13, fontWeight: 700, cursor: "pointer",
+  flex: 1, minHeight: 42, padding: "8px 0", borderRadius: 10, fontSize: 14, fontWeight: 700, cursor: "pointer",
   border: on ? "none" : "1px solid #2c3a47", background: on ? "#e0833b" : "#1a232b", color: on ? "#0e1419" : "#9ab0c2",
 });
 const roundBtn = { padding: "10px 16px", borderRadius: 12, border: "1px solid #e0833b", background: "rgba(224,131,59,.12)", color: "#f2f5f8", fontSize: 15, fontWeight: 700, cursor: "pointer" };

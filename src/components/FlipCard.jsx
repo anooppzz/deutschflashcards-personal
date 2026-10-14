@@ -145,7 +145,7 @@ function FlipCard({ front, sub, back, english, example, exampleEn, accent, badge
         </div>
         {/* BACK */}
         {/* bottom padding keeps long backs clear of the ✓ Gekonnt / ↻ Üben buttons */}
-        <div style={{ ...faceStyle(computedAccent), transform: "rotateY(180deg)", paddingBottom: cardId && showMarks ? 46 : 24 }}>
+        <div style={{ ...faceStyle(computedAccent), transform: "rotateY(180deg)", paddingBottom: cardId && showMarks ? 62 : 24 }}>
           <div dir="auto" style={{ fontSize: 24, fontWeight: 700, color: "#f2f5f8", textAlign: "center" }}>{backText}</div>
           {lang !== "en" && cardId && (
             correcting ? (
@@ -159,8 +159,8 @@ function FlipCard({ front, sub, back, english, example, exampleEn, accent, badge
                   placeholder="richtige Übersetzung…"
                   style={{ flex: 1, minWidth: 0, padding: "4px 8px", borderRadius: 8, border: "1px solid #e0833b", background: "#161d24", color: "#f2f5f8", fontSize: 12, outline: "none" }}
                 />
-                <button onClick={stop(submitTransCorrection)} aria-label="Korrektur speichern" style={{ padding: "4px 9px", borderRadius: 8, border: "none", background: "#5fa85f", color: "#0e1419", fontSize: 12, fontWeight: 700, cursor: "pointer" }}>✓</button>
-                <button onClick={stop(() => { setCorrecting(false); setCorrectionText(""); })} aria-label="Korrektur abbrechen" style={{ padding: "4px 9px", borderRadius: 8, border: "1px solid #2c3a47", background: "transparent", color: "#7d8d9c", fontSize: 12, cursor: "pointer" }}>×</button>
+                <button onClick={stop(submitTransCorrection)} aria-label="Korrektur speichern" style={{ minWidth: 36, minHeight: 32, padding: "4px 9px", borderRadius: 8, border: "none", background: "#5fa85f", color: "#0e1419", fontSize: 12, fontWeight: 700, cursor: "pointer" }}>✓</button>
+                <button onClick={stop(() => { setCorrecting(false); setCorrectionText(""); })} aria-label="Korrektur abbrechen" style={{ minWidth: 36, minHeight: 32, padding: "4px 9px", borderRadius: 8, border: "1px solid #2c3a47", background: "transparent", color: "#7d8d9c", fontSize: 12, cursor: "pointer" }}>×</button>
               </div>
             ) : (
               <button
@@ -215,12 +215,12 @@ function FlipCard({ front, sub, back, english, example, exampleEn, accent, badge
               <button
                 onClick={stop(() => mark(cardId, status === "known" ? null : "known"))}
                 aria-pressed={status === "known"}
-                style={{ padding: "4px 10px", borderRadius: 8, fontSize: 11, fontWeight: 700, cursor: "pointer", border: "1px solid #5fa85f", background: status === "known" ? "#5fa85f" : "transparent", color: status === "known" ? "#0e1419" : "#5fa85f" }}
+                style={{ minHeight: 38, padding: "6px 16px", borderRadius: 10, fontSize: 13, fontWeight: 700, cursor: "pointer", border: "1px solid #5fa85f", background: status === "known" ? "#5fa85f" : "transparent", color: status === "known" ? "#0e1419" : "#5fa85f" }}
               >✓ Gekonnt</button>
               <button
                 onClick={stop(() => mark(cardId, status === "review" ? null : "review"))}
                 aria-pressed={status === "review"}
-                style={{ padding: "4px 10px", borderRadius: 8, fontSize: 11, fontWeight: 700, cursor: "pointer", border: "1px solid #e0833b", background: status === "review" ? "#e0833b" : "transparent", color: status === "review" ? "#0e1419" : "#e0833b" }}
+                style={{ minHeight: 38, padding: "6px 16px", borderRadius: 10, fontSize: 13, fontWeight: 700, cursor: "pointer", border: "1px solid #e0833b", background: status === "review" ? "#e0833b" : "transparent", color: status === "review" ? "#0e1419" : "#e0833b" }}
               >↻ Üben</button>
             </div>
           )}
@@ -235,7 +235,7 @@ function FlipCard({ front, sub, back, english, example, exampleEn, accent, badge
 
 const grammarChipStyle = {
   marginTop: 10, fontSize: 12, fontWeight: 600, color: "#8fb8d8", background: "transparent",
-  border: "1px solid #3a5670", borderRadius: 8, padding: "3px 10px", cursor: "pointer",
+  border: "1px solid #3a5670", borderRadius: 8, padding: "6px 12px", cursor: "pointer",
 };
 
 export default FlipCard;

@@ -62,6 +62,22 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 ## Log
 
+### 2026-10-14 – bigger tap targets
+- **Every button is at least 44×44px to tap** (the phone guideline), without moving the
+  layout: `index.css` gives each `button` (and `a.tap`) an invisible `::after` that grows
+  the tappable area around it. Buttons inside running text opt out with
+  `className="inline-tap"` (📰 Lesen's tappable words – a bigger area would cover the lines
+  above and below).
+- **Visibly bigger where you tap most:** ← Prev / Next → / Shuffle (44px), ✓ Gekonnt / ↻ Üben
+  on the card (38px, 13px text), 📖 grammar chips on cards, the A1/A2 and Nomen/Verben
+  filter chips, 📚 Themen and language chips, 🎯 plan buttons, the 🆕 banner ✕ (40×40), the
+  Modal ✕ (44×44), round-size button, 🔎 Nachschlagen and 🤖 Frag links, ✏️ Üben / DTZ /
+  Lesen answer options (44px), search result rows (48px), Satzbau chips, Wortgitter word
+  chips, Reverse/Formen tabs, ▶/⏸ audio buttons, the footer buttons.
+- Checked with a script at 360px and 390px: every button on every main screen has a ≥ 44px
+  tap area, and tapping the middle or edges of any button never lands on a neighbour.
+  No sideways scroll.
+
 ### 2026-10-14
 - **🔍 Search as a full-screen layer** (learner: "results show after the mode buttons, I have to
   scroll"). The search box now sits right under the streak bar; a tap opens

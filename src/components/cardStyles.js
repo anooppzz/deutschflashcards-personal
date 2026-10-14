@@ -40,7 +40,8 @@ export const iconBtn = {
 };
 
 export const ctrlBtn = {
-  padding: "8px 14px",
+  minHeight: 44,
+  padding: "8px 16px",
   borderRadius: 10,
   border: "1px solid #2c3a47",
   background: "#1a232b",

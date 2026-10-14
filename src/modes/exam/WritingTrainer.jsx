@@ -31,7 +31,7 @@ const bigBtn = (primary) => ({
   display: "block", width: "100%", padding: "12px 14px", marginBottom: 8, borderRadius: 12, cursor: "pointer", font: "inherit", fontWeight: 800, textAlign: "center",
   border: primary ? "none" : "1px solid #2c3a47", background: primary ? ACCENT : "#1a232b", color: primary ? "#0e1419" : "#f2f5f8",
 });
-const smallBtn = { padding: "7px 12px", borderRadius: 10, border: "1px solid #2c3a47", background: "#1a232b", color: "#cdd8e2", fontSize: 13, fontWeight: 700, cursor: "pointer" };
+const smallBtn = { minHeight: 40, padding: "7px 12px", borderRadius: 10, border: "1px solid #2c3a47", background: "#1a232b", color: "#cdd8e2", fontSize: 13, fontWeight: 700, cursor: "pointer" };
 const chip = { padding: "4px 8px", borderRadius: 8, fontSize: 12, fontWeight: 600, textDecoration: "none", border: "1px solid #3a5670", color: "#8fb8d8" };
 
 // ---- drafts ----

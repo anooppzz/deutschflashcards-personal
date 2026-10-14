@@ -13,12 +13,13 @@ import { AiCtx } from "../context/AiCtx";
 
 const ACCENT = "#e0833b";
 const btn = (on) => ({
-  padding: "6px 12px", borderRadius: 10, fontSize: 12, fontWeight: 700, cursor: "pointer", textDecoration: "none",
+  minHeight: 36, padding: "6px 14px", borderRadius: 10, fontSize: 13, fontWeight: 700, cursor: "pointer", textDecoration: "none",
   border: `1px solid ${on ? ACCENT : "#2c3a47"}`, background: on ? "rgba(224,131,59,.12)" : "#1a232b", color: on ? ACCENT : "#9ab0c2",
   display: "inline-flex", alignItems: "center", gap: 4,
 });
 const chip = {
-  padding: "4px 10px", borderRadius: 8, fontSize: 12, fontWeight: 600, textDecoration: "none",
+  display: "inline-flex", alignItems: "center", minHeight: 34, boxSizing: "border-box",
+  padding: "4px 12px", borderRadius: 8, fontSize: 13, fontWeight: 600, textDecoration: "none",
   border: "1px solid #3a5670", color: "#8fb8d8", background: "transparent",
 };
 
@@ -55,14 +56,14 @@ function LookupLinks({ links, question, aiSubject, defaultOpen = false }) {
       {open && (
         <div style={{ display: "flex", gap: 6, justifyContent: "center", flexWrap: "wrap", marginTop: 8 }}>
           {links.map((l) => (
-            <a key={l.label} href={l.url} target="_blank" rel="noopener noreferrer" style={chip}>{l.label} ↗</a>
+            <a className="tap" key={l.label} href={l.url} target="_blank" rel="noopener noreferrer" style={chip}>{l.label} ↗</a>
           ))}
         </div>
       )}
       <div style={{ display: "flex", gap: 5, justifyContent: "center", alignItems: "center", flexWrap: "wrap", marginTop: 8 }}>
         <span style={{ fontSize: 12, fontWeight: 700, color: "#9ab0c2" }}>🤖 Frag:</span>
         {aiSiteLinks(question).map((l) => (
-          <a key={l.label} href={l.url} target="_blank" rel="noopener noreferrer" onClick={() => copyQuestion(l)} style={{ ...chip, padding: "4px 8px" }}>{l.label} ↗</a>
+          <a className="tap" key={l.label} href={l.url} target="_blank" rel="noopener noreferrer" onClick={() => copyQuestion(l)} style={{ ...chip, padding: "4px 10px" }}>{l.label} ↗</a>
         ))}
       </div>
       {copied && (

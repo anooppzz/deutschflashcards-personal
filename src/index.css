@@ -26,3 +26,19 @@ input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; appe
 /* a row that scrolls sideways on its own (grammar group chips) without a visible bar */
 .no-scrollbar { scrollbar-width: none; }
 .no-scrollbar::-webkit-scrollbar { display: none; }
+
+/* Tap targets: every button (and a link with class "tap") is easy to hit on
+   a phone - at least 44x44px - even when it looks smaller (🔊 icons,
+   "Ziel ändern"). An invisible ::after grows the tappable area around the
+   button; the layout doesn't move. Opt out with class "inline-tap" for
+   buttons inside running text (📰 Lesen words), where a bigger area would
+   cover the lines above and below. */
+button:not(.inline-tap), a.tap { position: relative; }
+button:not(.inline-tap)::after, a.tap::after {
+  content: "";
+  position: absolute;
+  top: min(0px, calc(50% - 22px));
+  bottom: min(0px, calc(50% - 22px));
+  left: min(0px, calc(50% - 22px));
+  right: min(0px, calc(50% - 22px));
+}
