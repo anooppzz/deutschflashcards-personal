@@ -6,6 +6,44 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 ## Pending
 
+- [ ] **NEXT WEEK – 🗣 Speaking practice (the learner asked for it on 2026-10-14).** Goal: say
+  German out loud every day using each chapter's words and everyday phrases, record it,
+  listen back later. Build it as one new area, "🗣 Sprechen üben", in the 🃏 Lernen row,
+  separate from 🎓 DTZ → 🗣 Sprechen. Reuse `modes/exam/speakingMedia.js` (useRecorder,
+  📝 useSpeechToText) and `engine/speech.js` (createPlayer).
+  Agreed items, in order of value to the learner:
+  1. **🧱 Sätze & Dialoge per chapter (chunks to learn by heart)** – the learner's own idea
+     and the core of this work. For each chapter: ~10 ready-made everyday sentences built
+     from the chapter's words, plus 1–2 short dialogues (A/B lines), each line German +
+     English, like the post-office role-play given in chat (Paket schicken, Päckchen or
+     Paket, Wie viel kostet das?, Wo muss ich unterschreiben?). Steps per line: 🔊 listen →
+     say it along (shadowing) → see only the English and say the German → 🎙 record. Data
+     in a new `src/data/speaking/chunks.json` (`{ key = deck, sentences: [{de, en}],
+     dialogues: [{title, lines: [{who, de, en}]}] }`), with a test like
+     `engine/reading.test.js`. Start with 📦 Post & Pakete and 5–6 everyday chapters
+     (Einkaufen, Arzt, Restaurant, Wohnung, Arbeit), plus one "Alltag / Überleben" set: Wie
+     bitte?, Können Sie das wiederholen?, Sprechen Sie bitte langsamer, Wie sagt man … auf
+     Deutsch?, Ich hätte gern …, Moment, ich überlege kurz.
+  2. **🗣 Sprich-Karte:** a word card asks "Sag einen Satz mit …"; the learner speaks,
+     🎙 records, 📝 (optional, Google) shows what was heard, then the card's example
+     appears as a model to compare.
+  3. **🎭 Rollenspiele per chapter:** the phone speaks role A (German voice) and waits; the
+     learner answers as role B and records; then swap roles. Reuse the item 1 dialogues.
+  4. **💬 Erzähl mal:** one short daily question to answer out loud in Perfekt ("Was hast du
+     gestern gemacht?", "Wie war dein Wochenende?", "Was hast du heute eingekauft?") with
+     2–3 useful chunks as help; record.
+  - **🎧 Meine Aufnahmen (needed by 1–4):** today recordings live in memory only and are
+    lost when the page closes. Keep them on the device in **IndexedDB** (audio blobs: date,
+    chapter, sentence), list them, ▶ play mine right after ▶ the phone's voice (compare),
+    delete old ones, cap the total size. NOT in the backup file (too big) – say so in the UI.
+  - **Ideas suggested in chat, waiting for the learner's yes/no:** a hands-free
+    🎧 Hörschleife (German → pause to repeat → English, for walks and travel); substitution
+    drills ("Ich möchte **ein Paket / einen Brief / ein Päckchen** schicken"); chunk
+    sentences scheduled like cards (FSRS: "flüssig" / "stockend"); a 🗣 step in 🎯 Heute lernen
+    (e.g. 5 sentences a day) with spoken minutes counted in the streak.
+  - Check on the phone: microphone permission, recording on Android Chrome, playback after
+    the app is closed and opened again.
+
 - [ ] **Old repo leftovers:** branch `claude/epic-meitner-f5b32y` in
   `anooppzz/deutschflashcards` couldn't be deleted by the agent (403). The learner can
   delete it on GitHub or leave it.
@@ -64,6 +102,12 @@ was done, newest first. Every change adds a log entry here in the same commit
   trainer, Reverse articles, 12 grammar topics, ✏️ Üben, data cleanup, code tidying).
 
 ## Log
+
+### 2026-10-14 – plan: speaking practice for next week
+- Planning only, no app change yet: the learner asked how to improve their spoken German. The
+  plan is under Pending ("NEXT WEEK – 🗣 Speaking practice"): chunk sentences and dialogues
+  per chapter (the learner's idea), Sprich-Karte, Rollenspiele, Erzähl mal, recordings kept
+  on the device.
 
 ### 2026-10-14 – Lektion 14: Post & Pakete chapter, reading text
 - New chapter **📦 Post & Pakete** (`post-pakete`, Menschen A2 · Einheit 14, `added`
