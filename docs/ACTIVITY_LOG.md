@@ -65,6 +65,35 @@ was done, newest first. Every change adds a log entry here in the same commit
       = pronunciation was understandable. For real pronunciation feedback: 📤 share a
       recording with a teacher / tandem partner.
     - Option: "✍️ erst tippen" – type the sentence, get it checked, then say it.
+    - **Hint first, answer second** (research: prompts that make the learner fix it
+      themselves help more than just showing the right form): on a mistake show a hint
+      ("Prüf den Artikel von *Brief*" / "Verb an Position 2?"), let the learner try once
+      more, then show the corrected sentence.
+  - **Research-backed additions (web review 2026-10-14, agreed to go into the plan):**
+    - **3× retelling, less time each round (Nation's 4/3/2):** in 💬 Erzähl mal, tell the same
+      answer three times with a shrinking timer (e.g. 90 → 60 → 45 s) and record each;
+      repetition under time pressure builds fluency. Fluency practice with known words is
+      the most neglected part of most courses.
+    - **30 s planning before speaking:** for free tasks (2, 4, 🎭 free mode) show the
+      question + a few chunks for 30 s, then hide them and speak. Planning time improves
+      what learners say.
+    - **🎭 Freies Rollenspiel with the AI (optional, needs the learner's key):** after the
+      fixed dialogue, the AI plays the clerk/doctor/waiter freely, A2 level, short turns,
+      using the chapter's words; at the end a short correction list (hint-first, as above).
+      Studies show chatbot practice raises confidence/willingness to speak, but AI can be
+      inaccurate → a supplement, not a teacher.
+    - **🌍 Wochenmission (real life):** one small real speaking task a week tied to the
+      chapter ("Frag bei der Post, wie lange ein Paket nach Indien braucht"), tick it off,
+      note what was hard → becomes a chunk to learn. Real communication = the "meaning-
+      focused output" part of a balanced course; low-stakes steps reduce speaking anxiety.
+  - **Optional, later (after using the plan for 1–2 weeks):**
+    - **📈 Progress recording:** once a month record the same text (e.g. "Ein Paket für
+      Oma"); play month 1 next to month 3.
+    - **🔤 Difficult sounds:** first **hear** (which word did you hear: *schön / schon*,
+      *müssen / Mus*, *ich / ach*, German r – research: listening training with several
+      voices transfers to speaking), then say them. Use every German voice the phone has.
+    - **🎓 DTZ link:** tag chunks for the DTZ Sprechen parts (sich vorstellen, über ein Bild
+      / Erfahrungen sprechen, gemeinsam etwas planen).
   - Check on the phone: microphone permission, recording on Android Chrome, playback after
     the app is closed and opened again.
 
@@ -133,7 +162,10 @@ was done, newest first. Every change adds a log entry here in the same commit
   per chapter (the learner's idea), Sprich-Karte, Rollenspiele, Erzähl mal, recordings kept
   on the device. Then: items 5–8 accepted, and a ✅ correction design (fixed sentences
   compared word by word with speech recognition; free sentences checked by the in-app AI
-  or the 🤖 Frag links; mistakes into the Fehlerheft).
+  or the 🤖 Frag links; mistakes into the Fehlerheft). After a web review of speaking
+  research: hint-first correction, 3× retelling with shrinking time, 30 s planning, free AI
+  role-play, a weekly real-life mission; progress recording, difficult sounds and DTZ
+  tags as optional extras for later.
 
 ### 2026-10-14 – Lektion 14: Post & Pakete chapter, reading text
 - New chapter **📦 Post & Pakete** (`post-pakete`, Menschen A2 · Einheit 14, `added`
