@@ -19,3 +19,5 @@ export { default as DailyPlan } from "./DailyPlan";
 export { default as LookupLinks } from "./LookupLinks";
 export { default as AudioControls } from "./AudioControls";
 export { default as Reveal } from "./Reveal";
+export { default as BottomNav, NAV_HEIGHT } from "./BottomNav";
+export { default as MoreSheet } from "./MoreSheet";

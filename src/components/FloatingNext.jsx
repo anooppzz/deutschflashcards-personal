@@ -32,7 +32,7 @@ function FloatingNext({ onNext, label = "Weiter →", autoFocus = false, onKeyDo
   // renders right after the content, in its natural place - no special-casing
   // needed for screen size, the CSS itself adapts.
   return (
-    <div style={{ position: "sticky", bottom: "calc(16px + env(safe-area-inset-bottom, 0px))", paddingTop: 14, marginTop: 14, zIndex: 50 }}>
+    <div style={{ position: "sticky", bottom: "calc(78px + env(safe-area-inset-bottom, 0px))", paddingTop: 14, marginTop: 14, zIndex: 50 }}>
       <button
         ref={buttonRef}
         onClick={onNext}

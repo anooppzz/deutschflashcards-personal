@@ -115,6 +115,11 @@ src/modes/                 one folder per study mode (cards, article, quiz, reve
 src/index.css              tap targets: every <button> (and <a className="tap">) gets an
                            invisible ≥ 44×44px tap area; a button inside running text
                            needs className="inline-tap" (see 📰 Lesen words)
+src/components/BottomNav.jsx  the bar at the bottom: 🏠 Heute · 🃏 Lernen · 📖 Grammatik ·
+                           📕 Fehlerheft · ☰ Mehr (MoreSheet.jsx: Lesen, DTZ, backup, KI,
+                           language, help). App.jsx `section` / `goSection` decide the area;
+                           a new study mode goes into the Lernen row, anything else into
+                           ☰ Mehr (moreItems)
 src/components/FlipCard.jsx  the card (front/back, note, 📖 grammar chips)
 src/components/Swipeable.jsx  swipe left/right on a card = next/previous
 src/components/AudioControls.jsx  ▶ / ⏸ Pause / ▶ Weiter / ⏹ Stopp for longer texts (DTZ Hören,

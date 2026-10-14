@@ -52,6 +52,9 @@ was done, newest first. Every change adds a log entry here in the same commit
 - [ ] **To check on the learner's phone:** ⏸ Pause / ▶ Weiter in 🎓 DTZ Hören and 📰 Lesen
   Vorlesen with the phone's German voice (tested with a simulated voice in headless Chrome),
   and that the page now scrolls to what a tab or button opens.
+- [ ] **To check on the learner's phone – bottom bar (2026-10-14):** the bar stays above the
+  phone's own gesture bar (safe-area padding), the ☰ Mehr sheet, the mode row swipes
+  sideways, back gesture from each area returns to 🏠 Heute.
 - [ ] **To check on the learner's phone – new search + Grammatik layout (2026-10-14):** the
   keyboard opens when the 🔍 layer opens (iPhones may need a second tap), the group chips
   scroll sideways with a finger, back gesture inside a grammar topic returns to its row.
@@ -61,6 +64,31 @@ was done, newest first. Every change adds a log entry here in the same commit
   trainer, Reverse articles, 12 grammar topics, ✏️ Üben, data cleanup, code tidying).
 
 ## Log
+
+### 2026-10-14 – bottom bar (step 4 of the mobile review)
+- **Bottom bar** (`components/BottomNav.jsx`), fixed, always in thumb reach:
+  **🏠 Heute · 🃏 Lernen · 📖 Grammatik · 📕 Fehlerheft · ☰ Mehr** – the learner's choices
+  after the mock-up: Fehlerheft instead of DTZ in the bar, Lesen in ☰ Mehr, filters stay
+  visible, a "Weiter, wo du warst" card. Badges: 📅 due grammar topics, open Fehlerheft entries.
+- **🏠 Heute** (the app always opens here): header, streak, search box, 🎯 Heute lernen, the
+  🆕 new chapters in **one box**, **"Weiter, wo du warst"** (last study mode + topics →
+  Lernen), 🎓 DTZ button.
+- **🃏 Lernen:** 📚 Themen + 🔍 in one row, the study modes as **one row that scrolls
+  sideways** (Karten … Satzbau; Grammatik and Lesen moved out), then the A1/A2 and chapter
+  filters, progress and the card – the card now starts ~390px down instead of ~1,100px.
+  Going back to Lernen returns to the last study mode.
+- **☰ Mehr** (`components/MoreSheet.jsx`, a sheet above the bar): 📰 Lesen, 🎓 DTZ, 💾 Sichern &
+  App, 🤖 KI-Assistent, 📥 KI-Eingang (when used), 🌐 Übersetzungssprache, ❓ Hilfe, version.
+  The old footer buttons are gone (the version line stays at the bottom of every page).
+- App.jsx: `home` + `section` (fehler / heute / grammatik / lesen / lernen) decide what shows;
+  `goSection` switches; a review or DTZ "takes over" the area it was started from.
+  `grammarFrom` is now `{ mode, home, mistakes }`, so ← from a grammar topic returns to the
+  exact area. Back gesture: closes the top layer, then any area → 🏠 Heute → leaves the app.
+  `FloatingNext` sits above the bar.
+- Help: new "Bottom bar" entry and updated DTZ/welcome lines in all six languages.
+- Tested at 360/390px: every bar item, ☰ Mehr items, Weiter, plan → grammar topic → back,
+  review from the plan, DTZ, search from Lernen, back gestures; no sideways scroll; tap check
+  (no button's tap area lands on a neighbour).
 
 ### 2026-10-14 – bigger tap targets
 - **Every button is at least 44×44px to tap** (the phone guideline), without moving the

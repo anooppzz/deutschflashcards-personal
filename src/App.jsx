@@ -54,6 +54,7 @@ import {
 import {
   FlipCard, Controls, NoResults, CategoryFilter,
   StreakBar, ProgressBar, RoundSizeSelector, ErrorBoundary, BackupModal, WelcomeModal, HelpModal, Swipeable, DailyPlan,
+  BottomNav, MoreSheet, NAV_HEIGHT,
 } from "./components";
 import RENAMES from "./data/renames.json";
 import { ProgressCtx } from "./context/ProgressCtx";
@@ -124,6 +125,8 @@ const savedMode = () => {
   const v = readSaved(STORAGE_KEYS.MODE);
   return Object.values(MODE).includes(v) ? v : MODE.CARDS;
 };
+// the study modes of 🃏 Lernen (Grammatik and Lesen have their own places)
+const isStudyMode = (m) => m !== MODE.GRAMMAR && m !== MODE.READING;
 
 // Unified card normalization (schema v1)
 // Converts all deck shapes (irregular, inseparable, typed, extra topics) into one consistent output.
@@ -556,6 +559,14 @@ function App() {
   // ---- study mode: cards | article | quiz ----
   const [mode, setMode] = useState(savedMode);
   useEffect(() => { storage.set(STORAGE_KEYS.MODE, JSON.stringify(mode)); }, [mode]);
+  // 🃏 Lernen returns to the last study mode (after Grammatik or Lesen)
+  const [studyMode, setStudyMode] = useState(() => { const m = savedMode(); return isStudyMode(m) ? m : MODE.CARDS; });
+  useEffect(() => { if (isStudyMode(mode)) setStudyMode(mode); }, [mode]);
+  // The bottom bar's areas (components/BottomNav.jsx): 🏠 Heute (home), or
+  // what mode and showMistakes say - see `section` below. The app always
+  // opens on 🏠 Heute.
+  const [home, setHome] = useState(true);
+  const [moreOpen, setMoreOpen] = useState(false); // ☰ Mehr sheet
   // grammar links: a card's 📖 chip opens the Grammatik tab on that topic,
   // remembering which mode it came from so "← Zurück" can return there.
   const [grammarFocus, setGrammarFocus] = useState(null);
@@ -574,15 +585,18 @@ function App() {
   const [grammarTopic, setGrammarTopic] = useState(null);
   // the topic was opened from the search layer: "← Zurück" reopens it
   const [grammarFromSearch, setGrammarFromSearch] = useState(false);
+  // grammarFrom: { mode, home, mistakes } - the area to return to
   const openGrammar = useCallback((key) => {
+    const inGrammar = mode === MODE.GRAMMAR && !home && !showMistakes;
+    setGrammarFrom(inGrammar ? null : { mode, home, mistakes: showMistakes });
     setShowMistakes(false);
-    setGrammarFrom(mode === MODE.GRAMMAR ? null : mode);
+    setHome(false);
     setGrammarFocus({ key, n: Date.now() });
     setGrammarTopic(key);
     setMode(MODE.GRAMMAR);
     setGrammarFromSearch(searchOpen);
     setSearchOpen(false);
-  }, [mode, searchOpen]);
+  }, [mode, home, showMistakes, searchOpen]);
   const grammarNav = useMemo(() => ({ openGrammar, linksFor: grammarLinksById }), [openGrammar]);
   // Entering a training mode normally starts a new round (see the
   // round-building effect below). "← Zurück" from the Grammatik tab should
@@ -594,8 +608,10 @@ function App() {
   useEffect(() => { setGrammarFrom(null); }, [selectionCards]);
   const backFromGrammar = () => {
     if (grammarFrom) {
-      resumeRoundRef.current = true;
-      setMode(grammarFrom);
+      if (grammarFrom.mode !== MODE.GRAMMAR) resumeRoundRef.current = true;
+      setMode(grammarFrom.mode);
+      setHome(grammarFrom.home);
+      setShowMistakes(grammarFrom.mistakes);
     }
     setGrammarFrom(null);
     setGrammarFocus(null);
@@ -997,6 +1013,9 @@ function App() {
     setTabs([deck]);
     setQuery("");
     setSearchOpen(false);
+    setHome(false);
+    setReview(null);
+    setDtzView(null);
     setMode(MODE.CARDS);
     setGrammarFocus(null);
     setGrammarFrom(null);
@@ -1062,6 +1081,37 @@ function App() {
     },
   ];
 
+  // ---- the bottom bar (components/BottomNav.jsx). The area shown:
+  // 📕 Fehlerheft, 🏠 Heute, 📖 Grammatik, 📰 Lesen (opened from ☰ Mehr) or
+  // 🃏 Lernen (every study mode). A review session or 🎓 DTZ takes over the
+  // area it was started from (`takeover`).
+  const section = showMistakes ? "fehler" : home ? "heute"
+    : mode === MODE.GRAMMAR ? "grammatik" : mode === MODE.READING ? "lesen" : "lernen";
+  const takeover = reviewing || dtzOpen;
+  // a DTZ simulation in progress asks before it is thrown away
+  const leaveDtzOk = () => !dtzView || dtzView.done
+    || !((dtzView.kind === "sim") || (dtzView.kind === "sprechen" && dtzView.teil === "sim"))
+    || window.confirm("Prüfung abbrechen? Deine Antworten gehen verloren.");
+  const goSection = (key) => {
+    if (key === "mehr") { setMoreOpen((o) => !o); return; }
+    if (!leaveDtzOk()) return;
+    const same = key === section && !takeover;
+    setMoreOpen(false);
+    setReview(null);
+    setDtzView(null);
+    setTopicsOpen(false);
+    setGrammarFocus(null);
+    setGrammarFrom(null);
+    setGrammarFromSearch(false);
+    if (key !== "grammatik" || same) setGrammarTopic(null);
+    setShowMistakes(key === "fehler");
+    setHome(key === "heute");
+    if (key === "grammatik") setMode(MODE.GRAMMAR);
+    else if (key === "lesen") setMode(MODE.READING);
+    else if (key === "lernen" && !isStudyMode(mode)) setMode(studyMode);
+    window.scrollTo({ top: 0 });
+  };
+
   // Phone back button / back swipe: undo the top-most thing first (a dialog,
   // a picker, the grammar page a card opened, the search, a review), then go
   // to the Karten tab; only from there does back leave the app.
@@ -1072,6 +1122,7 @@ function App() {
     : showWelcome ? () => { setShowWelcome(false); saveWelcomeSeen(); }
     : showHelp ? () => setShowHelp(false)
     : showBackup ? () => setShowBackup(false)
+    : moreOpen ? () => setMoreOpen(false)
     : langOpen ? () => setLangOpen(false)
     : searchOpen ? closeSearch
     : mode === MODE.GRAMMAR && (grammarFrom || grammarFromSearch) ? backFromGrammar
@@ -1083,10 +1134,10 @@ function App() {
       setDtzView({ kind: "home" });
     }
     : dtzView ? () => setDtzView(null)
-    : showMistakes ? () => setShowMistakes(false)
+    : showMistakes ? () => { setShowMistakes(false); setHome(true); }
     : mode === MODE.READING && readingKey ? () => setReadingKey(null)
     : topicsOpen ? () => setTopicsOpen(false)
-    : mode !== MODE.CARDS ? () => { setMode(MODE.CARDS); setGrammarFocus(null); setGrammarFrom(null); setGrammarTopic(null); }
+    : !home ? () => goSection("heute")
     : null;
   useBackButton(backAction);
 
@@ -1113,6 +1164,33 @@ function App() {
     ["irregular", "🎵 Irregular"],
     ["inseparable", "🔑 Nicht trennbar"],
     ...EXTRA_TOPICS.map((t) => [t.key, `${t.icon} ${t.label}`]),
+  ];
+  // the selected topics in a few words ("👕 Kleidung", "3 Themen · 👕 🚦 🧹")
+  const topicsSummary = (() => {
+    const labelOf = (k) => (TABS.find(([key]) => key === k) || [k, k])[1];
+    if (TABS.every(([k]) => tabs.includes(k))) return `Alle · ${TABS.length} Themen`;
+    if (tabs.length === 1) return labelOf(tabs[0]);
+    return `${tabs.length} Themen · ${tabs.map((k) => labelOf(k).split(" ")[0]).join(" ")}`;
+  })();
+
+  // the bottom bar and the ☰ Mehr sheet
+  const navItems = [
+    { key: "heute", icon: "🏠", label: "Heute" },
+    { key: "lernen", icon: "🃏", label: "Lernen" },
+    { key: "grammatik", icon: "📖", label: "Grammatik", badge: grammarDueKeys.length },
+    { key: "fehler", icon: "📕", label: "Fehlerheft", badge: mistakesOpenToday },
+    { key: "mehr", icon: "☰", label: "Mehr" },
+  ];
+  const fromMore = (fn) => () => { setMoreOpen(false); fn(); };
+  const curLang = LANGUAGES.find(([k]) => k === lang);
+  const moreItems = [
+    { key: "lesen", icon: "📰", label: "Lesen", detail: "Ein kurzer Text pro Kapitel", onClick: fromMore(() => goSection("lesen")) },
+    { key: "dtz", icon: "🎓", label: "DTZ-Prüfungstraining", detail: "Hören · Lesen · Schreiben · Sprechen", onClick: fromMore(() => { goSection("heute"); setDtzView({ kind: "home" }); }) },
+    { key: "backup", icon: "💾", label: "Fortschritt sichern & App", detail: lastBackupAt ? `Zuletzt gesichert vor ${Math.floor((Date.now() - lastBackupAt) / DAY_MS)} Tagen` : "Noch nie gesichert", accent: backupDue ? "#e0833b" : undefined, onClick: fromMore(() => setShowBackup(true)) },
+    { key: "ai", icon: "🤖", label: "KI-Assistent", detail: aiSettings.enabled ? "an" : "aus", accent: aiSettings.enabled ? "#5fa85f" : undefined, onClick: fromMore(() => setAiSettingsOpen(true)) },
+    ...(aiInbox.length > 0 || aiSettings.enabled ? [{ key: "inbox", icon: "📥", label: "KI-Eingang", detail: `${aiInbox.length} ${aiInbox.length === 1 ? "Vorschlag" : "Vorschläge"}`, accent: aiInbox.length ? "#e0833b" : undefined, onClick: fromMore(() => setInboxOpen(true)) }] : []),
+    { key: "lang", icon: "🌐", label: "Übersetzungssprache", detail: curLang ? `${curLang[2]} ${curLang[1]}` : lang, onClick: fromMore(() => { goSection("heute"); setLangOpen(true); }) },
+    { key: "help", icon: "❓", label: "Hilfe & Übersicht", onClick: fromMore(() => setShowHelp(true)) },
   ];
 
   // the Grammatik tab: a list of topics, or one topic as its own page
@@ -1150,7 +1228,7 @@ function App() {
     <ProgressCtx.Provider value={{ progress, mark }}>
     <GrammarNavCtx.Provider value={grammarNav}>
     <AiCtx.Provider value={aiNav}>
-    <div style={{ minHeight: "100vh", background: "#0e1419", fontFamily: "system-ui, sans-serif", padding: "28px 16px" }}>
+    <div style={{ minHeight: "100vh", background: "#0e1419", fontFamily: "system-ui, sans-serif", padding: "16px 16px", paddingBottom: `calc(${NAV_HEIGHT + 24}px + env(safe-area-inset-bottom, 0px))` }}>
       {searchOpen && (
         <SearchOverlay query={query} onQuery={setQuery} onClose={closeSearch}>
           <ErrorBoundary resetKey={query} label="search">
@@ -1167,6 +1245,9 @@ function App() {
         </SearchOverlay>
       )}
       <div style={{ maxWidth: 480, margin: "0 auto" }}>
+        {/* ===== 🏠 HEUTE ===== */}
+        {section === "heute" && !takeover && (
+        <>
         <div style={{ position: "relative", minHeight: 40 }}>
           <h1 style={{ color: "#f2f5f8", fontSize: "clamp(18px, 5.6vw, 22px)", fontWeight: 800, textAlign: "center", margin: "0 0 4px", padding: "0 52px", lineHeight: "40px", whiteSpace: "nowrap", pointerEvents: "none" }}>
             Deutsch Flashcards
@@ -1293,20 +1374,67 @@ function App() {
           <DailyPlan steps={planSteps} collapsed={day.collapsed} onToggle={() => updateDaily((d) => ({ ...d, collapsed: !d.collapsed }))} />
         )}
 
-        {/* 🆕 NEW CHAPTER - new chapters aren't ticked automatically */}
-        {!overlay && newTopics.slice(0, 2).map((t) => (
-          <div key={t.key} style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12, padding: "8px 8px 8px 14px", borderRadius: 12, border: "1px solid #5fa85f", background: "rgba(95,168,95,.1)" }}>
-            <button
-              onClick={() => { markTopicSeen(t.key); openChapterAt(t.key, t.cards[0].front); }}
-              style={{ flex: 1, minWidth: 0, display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8, background: "none", border: "none", padding: 0, color: "#f2f5f8", fontSize: 14, fontWeight: 700, cursor: "pointer", textAlign: "left" }}
-            >
-              <span>🆕 Neues Kapitel: {t.icon} {t.label} · {t.cards.length} Karten</span>
-              <span style={{ color: "#5fa85f", whiteSpace: "nowrap" }}>Öffnen →</span>
-            </button>
-            <button onClick={() => markTopicSeen(t.key)} aria-label={`Hinweis ausblenden: ${t.label}`} style={{ flexShrink: 0, width: 40, height: 40, padding: 0, background: "none", border: "none", color: "#7d8d9c", fontSize: 16, cursor: "pointer" }}>✕</button>
+        {/* 🆕 NEW CHAPTERS - new chapters aren't ticked automatically; one box for all */}
+        {newTopics.length > 0 && (
+          <div style={{ marginBottom: 12, padding: "8px 6px 6px 14px", borderRadius: 12, border: "1px solid #5fa85f", background: "rgba(95,168,95,.1)" }}>
+            <div style={{ fontSize: 12, fontWeight: 800, color: "#5fa85f", padding: "2px 0 2px" }}>🆕 {newTopics.length === 1 ? "Neues Kapitel" : `${newTopics.length} neue Kapitel`}</div>
+            {newTopics.map((t) => (
+              <div key={t.key} style={{ display: "flex", alignItems: "center", gap: 4 }}>
+                <button
+                  onClick={() => { markTopicSeen(t.key); openChapterAt(t.key, t.cards[0].front); }}
+                  style={{ flex: 1, minWidth: 0, minHeight: 40, display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8, background: "none", border: "none", padding: 0, color: "#f2f5f8", fontSize: 14, fontWeight: 700, cursor: "pointer", textAlign: "left" }}
+                >
+                  <span>{t.icon} {t.label} <span style={{ fontWeight: 600, color: "#9ab0c2" }}>· {t.cards.length} Karten</span></span>
+                  <span style={{ color: "#5fa85f", whiteSpace: "nowrap" }}>Öffnen →</span>
+                </button>
+                <button onClick={() => markTopicSeen(t.key)} aria-label={`Hinweis ausblenden: ${t.label}`} style={{ flexShrink: 0, width: 40, height: 40, padding: 0, background: "none", border: "none", color: "#7d8d9c", fontSize: 16, cursor: "pointer" }}>✕</button>
+              </div>
+            ))}
           </div>
-        ))}
+        )}
 
+        {/* ↩ WEITER - back to the study mode and topics of last time */}
+        {(() => {
+          const tab = MODE_TABS().find((t) => t.mode === studyMode) || MODE_TABS()[0];
+          return (
+            <button
+              type="button"
+              onClick={() => goSection("lernen")}
+              style={{
+                display: "flex", width: "100%", alignItems: "center", gap: 10, marginBottom: 12, minHeight: 56,
+                padding: "10px 12px 10px 14px", borderRadius: 12, border: "1px solid #3a5670", background: "rgba(143,184,216,.08)",
+                color: "#f2f5f8", cursor: "pointer", textAlign: "left", font: "inherit",
+              }}
+            >
+              <span style={{ flex: 1, minWidth: 0 }}>
+                <span style={{ display: "block", fontSize: 12, color: "#7d8d9c" }}>Weiter, wo du warst</span>
+                <span style={{ display: "block", fontSize: 15, fontWeight: 700, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{tab.icon} {tab.label} · {topicsSummary}</span>
+              </span>
+              <span style={{ flexShrink: 0, padding: "8px 14px", borderRadius: 10, background: "#8fb8d8", color: "#0e1419", fontSize: 13, fontWeight: 800 }}>Weiter →</span>
+            </button>
+          );
+        })()}
+
+        {/* 🎓 DTZ - exam practice, independent of the selected topics */}
+        {(
+          <button
+            onClick={() => { setDtzView({ kind: "home" }); setTopicsOpen(false); showContent("content"); }}
+            style={{
+              display: "flex", width: "100%", alignItems: "center", justifyContent: "space-between", gap: 10, marginBottom: 12,
+              padding: "10px 14px", borderRadius: 12, border: "1px solid #3a5670", background: "rgba(143,184,216,.08)",
+              color: "#f2f5f8", fontSize: 14, fontWeight: 700, cursor: "pointer", textAlign: "left",
+            }}
+          >
+            <span>🎓 DTZ-Prüfungstraining <span style={{ fontSize: 12, fontWeight: 600, color: "#9ab0c2" }}>· Hören · Lesen · Schreiben · Sprechen</span></span>
+            <span style={{ color: "#8fb8d8", whiteSpace: "nowrap" }}>Öffnen →</span>
+          </button>
+        )}
+        </>
+        )}
+
+        {/* ===== 🃏 LERNEN ===== */}
+        {section === "lernen" && !takeover && (
+        <>
         {/* TABS - multi-select topics, folded into one summary row */}
         {(() => {
           const allOn = TABS.every(([k]) => tabs.includes(k));
@@ -1315,11 +1443,12 @@ function App() {
             : tabs.length === 1 ? labelOf(tabs[0])
             : `${tabs.length} Themen · ${tabs.map((k) => labelOf(k).split(" ")[0]).join(" ")}`;
           return (
+            <div style={{ display: "flex", gap: 8, marginBottom: topicsOpen ? 10 : 12 }}>
             <button
               onClick={() => setTopicsOpen((o) => !o)}
               aria-expanded={topicsOpen}
               style={{
-                display: "flex", width: "100%", alignItems: "center", gap: 8, marginBottom: topicsOpen ? 10 : 12,
+                display: "flex", flex: 1, minWidth: 0, alignItems: "center", gap: 8, minHeight: 44,
                 padding: "10px 14px", borderRadius: 12, border: "1px solid #2c3a47", background: "#1a232b",
                 color: "#f2f5f8", fontSize: 14, cursor: "pointer", textAlign: "left",
               }}
@@ -1328,6 +1457,13 @@ function App() {
               <span style={{ flex: 1, minWidth: 0, fontWeight: 700, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{summary}</span>
               <span aria-hidden="true" style={{ color: "#7d8d9c" }}>{topicsOpen ? "▴" : "▾"}</span>
             </button>
+            <button
+              type="button"
+              onClick={() => setSearchOpen(true)}
+              aria-label="Suchen in allen Wörtern und der Grammatik"
+              style={{ flexShrink: 0, width: 44, height: 44, borderRadius: 12, border: "1px solid #2c3a47", background: "#1a232b", color: "#9ab0c2", fontSize: 16, cursor: "pointer" }}
+            >🔍</button>
+            </div>
           );
         })()}
         {topicsOpen && (
@@ -1376,6 +1512,40 @@ function App() {
         </>
         )}
 
+        {/* MODES - the study modes in one row that scrolls sideways (Grammatik
+            and Lesen have their own places: the bottom bar and ☰ Mehr);
+            counts are small badges */}
+        <div ref={tabsRef} className="no-scrollbar" style={{ display: "flex", gap: 6, overflowX: "auto", margin: "4px -16px 14px", padding: "8px 16px 2px", scrollMarginTop: 8 }}>
+          {MODE_TABS({
+            article: articleNouns.length, cloze: clozePool.length, wordsearch: wsPool.length,
+            forms: formsPools.perfekt.length + formsPools.plural.length, satzbau: satzbauPool.length,
+          }).filter((tab) => isStudyMode(tab.mode)).map((tab) => {
+            const active = mode === tab.mode;
+            return (
+              <button
+                key={tab.mode}
+                ref={active ? (el) => { if (el && el.scrollIntoView && el.parentElement && (el.offsetLeft + el.offsetWidth > el.parentElement.scrollLeft + el.parentElement.clientWidth || el.offsetLeft < el.parentElement.scrollLeft)) el.parentElement.scrollLeft = el.offsetLeft - 16; } : undefined}
+                onClick={() => { setMode(tab.mode); setGrammarFocus(null); setGrammarFrom(null); setGrammarTopic(null); setGrammarFromSearch(false); setReview(null); setShowMistakes(false); setDtzView(null); }}
+                aria-pressed={active}
+                aria-label={tab.count !== undefined ? `${tab.label} (${tab.count})` : tab.label}
+                style={{
+                  flexShrink: 0, display: "flex", alignItems: "center", gap: 5, minHeight: 40, padding: "0 13px",
+                  borderRadius: 20, border: active ? "1px solid #e0833b" : "1px solid #2c3a47",
+                  background: active ? "#e0833b" : "#1a232b", color: active ? "#0e1419" : "#9ab0c2",
+                  fontSize: 13, fontWeight: 700, whiteSpace: "nowrap", cursor: "pointer",
+                }}
+              >
+                <span aria-hidden="true">{tab.icon}</span>{tab.label}
+                {tab.count !== undefined && (
+                  <span aria-hidden="true" style={{
+                    minWidth: 16, padding: "0 5px", borderRadius: 8, fontSize: 10, fontWeight: 800, lineHeight: "16px", textAlign: "center",
+                    background: active ? "rgba(14,20,25,.22)" : "#2c3a47", color: active ? "#0e1419" : "#cdd8e2",
+                  }}>{tab.count}</span>
+                )}
+              </button>
+            );
+          })}
+        </div>
         {/* LEVEL / SOURCE FILTERS - crosscutting facets independent of topic.
             Level row is always shown (every card is classified). Source row
             only appears once 2+ distinct chapters exist in the current
@@ -1404,57 +1574,6 @@ function App() {
           />
         )}
 
-        {/* MODE SWITCH + PROGRESS */}
-        {/* Ten tabs in two even rows of five, the same on every screen
-            (the column is at most 480px, too narrow for ten in a row):
-            every button is icon over label, counts are corner badges. */}
-        <div ref={tabsRef} style={{ display: "grid", gridTemplateColumns: "repeat(5, minmax(0, 1fr))", gap: "10px 5px", marginTop: 8, marginBottom: 14 }}>
-          {MODE_TABS({
-            article: articleNouns.length, cloze: clozePool.length, wordsearch: wsPool.length,
-            forms: formsPools.perfekt.length + formsPools.plural.length, satzbau: satzbauPool.length, reading: readingTexts.length,
-          }).map((tab) => {
-            const active = mode === tab.mode;
-            return (
-              <button
-                key={tab.mode}
-                onClick={() => { setMode(tab.mode); setGrammarFocus(null); setGrammarFrom(null); setGrammarTopic(null); setGrammarFromSearch(false); setReview(null); setShowMistakes(false); setDtzView(null); showContent("tabs"); }}
-                aria-pressed={active}
-                aria-label={tab.count !== undefined ? `${tab.label} (${tab.count})` : tab.label}
-                style={{
-                  position: "relative",
-                  display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 2,
-                  minHeight: 52, padding: "6px 2px", borderRadius: 12, border: "1px solid #2c3a47",
-                  background: active ? "#e0833b" : "#1a232b", color: active ? "#0e1419" : "#9ab0c2",
-                  cursor: "pointer",
-                }}
-              >
-                <span aria-hidden="true" style={{ fontSize: 16, lineHeight: 1 }}>{tab.icon}</span>
-                <span style={{ fontSize: "clamp(10px, 2.9vw, 12px)", fontWeight: 700, whiteSpace: "nowrap", letterSpacing: -0.2 }}>{tab.label}</span>
-                {tab.count !== undefined && (
-                  <span aria-hidden="true" style={{
-                    position: "absolute", top: -7, right: -3, minWidth: 16, padding: "0 4px", borderRadius: 8,
-                    fontSize: 10, fontWeight: 700, lineHeight: "15px", textAlign: "center", border: "1px solid #0e1419",
-                    background: active ? "rgba(14,20,25,.22)" : "#2c3a47", color: active ? "#0e1419" : "#cdd8e2",
-                  }}>{tab.count}</span>
-                )}
-              </button>
-            );
-          })}
-        </div>
-        {/* 🎓 DTZ - exam practice, independent of the selected topics */}
-        {!overlay && (
-          <button
-            onClick={() => { setDtzView({ kind: "home" }); setTopicsOpen(false); showContent("content"); }}
-            style={{
-              display: "flex", width: "100%", alignItems: "center", justifyContent: "space-between", gap: 10, marginTop: -4, marginBottom: 14,
-              padding: "10px 14px", borderRadius: 12, border: "1px solid #3a5670", background: "rgba(143,184,216,.08)",
-              color: "#f2f5f8", fontSize: 14, fontWeight: 700, cursor: "pointer", textAlign: "left",
-            }}
-          >
-            <span>🎓 DTZ-Prüfungstraining <span style={{ fontSize: 12, fontWeight: 600, color: "#9ab0c2" }}>· Hören · Lesen · Schreiben · Sprechen</span></span>
-            <span style={{ color: "#8fb8d8", whiteSpace: "nowrap" }}>Öffnen →</span>
-          </button>
-        )}
         {!overlay && mode === MODE.CARDS && selectionCards.length > 0 && <ProgressBar known={knownCount} total={selectionCards.length} due={dueCount} />}
         {!overlay && mode === MODE.ARTICLE && !aFinished && (
           <RoundSizeSelector onCycle={cycleArticleSize} label={articleSizeLabel(articleSizePref)} />
@@ -1469,9 +1588,12 @@ function App() {
           <RoundSizeSelector onCycle={cycleWsSize} label={articleSizeLabel(wsSizePref)} />
         )}
 
+        </>
+        )}
+
         <div ref={contentRef} />
         <ErrorBoundary resetKey={mode} label={mode}>
-        {grammarOnTop ? grammarView : dtzOpen ? (
+        {section === "heute" && !takeover ? null : grammarOnTop ? grammarView : dtzOpen ? (
           <DtzTrainer
             sets={DTZ_SETS}
             writing={DTZ_WRITING}
@@ -1490,7 +1612,7 @@ function App() {
             onPracticeWords={() => startReview(mistakeEntries.words.map((w) => w.card))}
             onGrammarAnswer={recordMistake}
             onOpenChapter={openChapterAt}
-            onClose={() => setShowMistakes(false)}
+            onClose={() => goSection("heute")}
           />
         ) : reviewing ? (
           <ReviewSession
@@ -1710,25 +1832,15 @@ function App() {
         )}
         </ErrorBoundary>
 
-        <div style={{ marginTop: 28, color: "#4a5a68", fontSize: 11, textAlign: "center" }}>
-          Tap a card to flip • swipe or ← → for the next card
-        </div>
-        <button
-          onClick={() => setShowBackup(true)}
-          style={{ display: "block", margin: "12px auto 0", minHeight: 40, padding: "8px 16px", borderRadius: 10, border: "1px solid #2c3a47", background: "#1a232b", color: "#9ab0c2", fontSize: 13, fontWeight: 700, cursor: "pointer" }}
-        >💾 Fortschritt sichern & App installieren</button>
-        <button
-          onClick={() => setAiSettingsOpen(true)}
-          style={{ display: "block", margin: "8px auto 0", minHeight: 40, padding: "8px 16px", borderRadius: 10, border: `1px solid ${aiSettings.enabled ? "#5fa85f" : "#2c3a47"}`, background: "#1a232b", color: aiSettings.enabled ? "#5fa85f" : "#9ab0c2", fontSize: 13, fontWeight: 700, cursor: "pointer" }}
-        >🤖 KI-Assistent: {aiSettings.enabled ? "an" : "aus"}</button>
-        {(aiInbox.length > 0 || aiSettings.enabled) && (
-          <button
-            onClick={() => setInboxOpen(true)}
-            style={{ display: "block", margin: "8px auto 0", padding: "8px 14px", borderRadius: 10, border: `1px solid ${aiInbox.length ? "#e0833b" : "#2c3a47"}`, background: "#1a232b", color: aiInbox.length ? "#e0833b" : "#9ab0c2", fontSize: 12, fontWeight: 700, cursor: "pointer" }}
-          >📥 KI-Eingang · {aiInbox.length}</button>
+        {section === "lernen" && !takeover && mode === MODE.CARDS && (
+          <div style={{ marginTop: 28, color: "#4a5a68", fontSize: 11, textAlign: "center" }}>
+            Tap a card to flip • swipe or ← → for the next card
+          </div>
         )}
-        <div style={{ marginTop: 10, fontSize: 11, color: "#5a6b78", textAlign: "center" }}>{buildLabel()}</div>
+        <div style={{ marginTop: 24, fontSize: 11, color: "#5a6b78", textAlign: "center" }}>{buildLabel()}</div>
       </div>
+      <BottomNav items={navItems} active={moreOpen ? "mehr" : section === "lesen" ? "mehr" : section} onSelect={goSection} />
+      {moreOpen && <MoreSheet items={moreItems} onClose={() => setMoreOpen(false)} footer={buildLabel()} />}
       {showWelcome && (
         <WelcomeModal
           lang={lang}

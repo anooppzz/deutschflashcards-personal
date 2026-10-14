@@ -72,6 +72,8 @@ function HelpVisual({ kind }) {
     }}>{label}</span>
   );
   switch (kind) {
+    case "help.nav":
+      return <div style={wrap}>{pill("🏠 Heute", true, "#e0833b")}{pill("🃏 Lernen", false)}{pill("📖 Grammatik", false)}{pill("📕", false)}{pill("☰", false)}</div>;
     case "help.tabs":
       return <div style={wrap}>{pill("👕 Kleidung", true, "#e0833b")}{pill("🌦️ Wetter", false)}</div>;
     case "help.search":
@@ -85,7 +87,7 @@ function HelpVisual({ kind }) {
     case "help.language":
       return <div style={wrap}>{pill("🇬🇧 EN", false)}{pill("🇦🇱 SQ", true, "#e0833b")}{pill("🇸🇦 AR", false)}</div>;
     case "help.badge":
-      return <div style={wrap}><span style={badgeStyle(GENDER_COLORS.die)}>👕 Kleidung · Nomen · die</span></div>;
+      return <div style={wrap}><span style={{ ...badgeStyle(GENDER_COLORS.die), position: "static", display: "inline-block" }}>👕 Kleidung · Nomen · die</span></div>;
     case "help.filter":
       return <div style={wrap}>{pill("✓ Alle", true, "#e0833b")}{pill("Nomen", true, "#4f86c6")}{pill("Verben", false)}</div>;
     case "help.known":
@@ -194,7 +196,7 @@ export function HelpModal({ onClose, lang }) {
           }}
         >🇩🇪 DE</button>
       )}
-      <HelpSection lang={effectiveLang} titleKey="help.section.start" items={["help.tabs", "help.search", "help.modes", "help.language"]} />
+      <HelpSection lang={effectiveLang} titleKey="help.section.start" items={["help.nav", "help.tabs", "help.search", "help.modes", "help.language"]} />
       <HelpSection lang={effectiveLang} titleKey="help.section.studying" items={["help.badge", "help.filter", "help.known", "help.wrong", "help.shuffle", "help.interval"]} />
       <HelpSection lang={effectiveLang} titleKey="help.section.article" items={["help.roundSize", "help.peek"]} />
       <HelpSection lang={effectiveLang} titleKey="help.section.afterRound" items={["help.summary"]} />
