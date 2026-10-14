@@ -36,11 +36,35 @@ was done, newest first. Every change adds a log entry here in the same commit
     lost when the page closes. Keep them on the device in **IndexedDB** (audio blobs: date,
     chapter, sentence), list them, ▶ play mine right after ▶ the phone's voice (compare),
     delete old ones, cap the total size. NOT in the backup file (too big) – say so in the UI.
-  - **Ideas suggested in chat, waiting for the learner's yes/no:** a hands-free
-    🎧 Hörschleife (German → pause to repeat → English, for walks and travel); substitution
-    drills ("Ich möchte **ein Paket / einen Brief / ein Päckchen** schicken"); chunk
-    sentences scheduled like cards (FSRS: "flüssig" / "stockend"); a 🗣 step in 🎯 Heute lernen
-    (e.g. 5 sentences a day) with spoken minutes counted in the streak.
+  Also agreed (the learner said yes to all four on 2026-10-14):
+  5. **🎧 Hörschleife:** hands-free playlist of a chapter's chunks: German → pause to repeat →
+     English → German again, for walks and travel (createPlayer; check whether speech keeps
+     going with the screen off – probably not, so say so).
+  6. **🔄 Substitution drills:** one pattern, swapped words: "Ich möchte **ein Paket / einen
+     Brief / ein Päckchen** schicken" – practises articles/cases at the same time. Data:
+     `{pattern, slots: [{de, en}]}` in chunks.json.
+  7. **Chunks repeat like cards:** after a sentence the learner taps "flüssig" (fluent) /
+     "stockend" (halting) → FSRS schedule as for cards, own id space (`chunk::deck::n`).
+  8. **🗣 step in 🎯 Heute lernen:** e.g. 5 sentences a day spoken out loud; spoken minutes
+     count toward the streak.
+  - **✅ CORRECTION – who checks what I said? (the learner's question, must be built in,
+    not one-sided):**
+    - **Fixed sentences (1, 3, 5, 6, 7):** the right answer is known. With 📝 Mitschrift on,
+      compare the speech-recognition text with the target word by word (reuse/extend
+      `checkDictation` in validation.js): ✅ words right, ❌ wrong/missing words highlighted,
+      article/ending mistakes named ("einen Brief, nicht ein Brief – Akkusativ"). Free, no AI.
+      Without Mitschrift: ▶ model then ▶ own recording, and the learner self-rates.
+    - **Free sentences (2, 4):** nobody knows the answer in advance → AI check. Transcript
+      (or typed text) → ✨ in-app AI (engine/ai.js, learner's own Gemini/Claude key) with a
+      fixed prompt: corrected sentence, each mistake with a one-line rule + English, ✅ what
+      was good, A2-level only, "richtig" if nothing is wrong. Without a key: "🤖 Frag Claude /
+      ChatGPT / Gemini" links with the transcript + correction prompt (engine/lookup.js).
+    - Mistakes found go to the **📕 Fehlerheft** (engine/mistakes.js), so they come back.
+    - Be honest in the UI: speech recognition can mishear (and sometimes "fixes" what was
+      said), and the check covers words/grammar, not accent. A word recognised correctly
+      = pronunciation was understandable. For real pronunciation feedback: 📤 share a
+      recording with a teacher / tandem partner.
+    - Option: "✍️ erst tippen" – type the sentence, get it checked, then say it.
   - Check on the phone: microphone permission, recording on Android Chrome, playback after
     the app is closed and opened again.
 
@@ -107,7 +131,9 @@ was done, newest first. Every change adds a log entry here in the same commit
 - Planning only, no app change yet: the learner asked how to improve their spoken German. The
   plan is under Pending ("NEXT WEEK – 🗣 Speaking practice"): chunk sentences and dialogues
   per chapter (the learner's idea), Sprich-Karte, Rollenspiele, Erzähl mal, recordings kept
-  on the device.
+  on the device. Then: items 5–8 accepted, and a ✅ correction design (fixed sentences
+  compared word by word with speech recognition; free sentences checked by the in-app AI
+  or the 🤖 Frag links; mistakes into the Fehlerheft).
 
 ### 2026-10-14 – Lektion 14: Post & Pakete chapter, reading text
 - New chapter **📦 Post & Pakete** (`post-pakete`, Menschen A2 · Einheit 14, `added`
