@@ -65,6 +65,19 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 ## Log
 
+### 2026-10-14 – Lektion 14: Post & Pakete chapter, reading text
+- New chapter **📦 Post & Pakete** (`post-pakete`, Menschen A2 · Einheit 14, `added`
+  2026-10-14) with 27 cards from the Lernwortschatz page: Post words (Absender, Briefkasten,
+  Empfänger, Päckchen with A: Packerl / CH: Päckli, Paket, Schalter, Unterschrift, ein·packen,
+  packen, transportieren, unterschreiben), Gesicht, Junge (A/CH: Bub), Mädchen, Projekt,
+  Schritt, Tafel, Zentimeter, an·kreuzen, benutzen, ergänzen, gebrauchen (CH: auch brauchen),
+  arm, verschieden, schließlich, Creme, Gebrauchsanweisung.
+- Not added (already in the app): **denken an** – the card `denken` (Mein Tag) already
+  teaches "denken an + Akk."; **die Post** (Wegbeschreibung, Gesundheit & Fitness) is only
+  the page heading.
+- New 📰 Lesen text: "Ein Paket für Oma".
+- No grammar added – the learner sent only the word page.
+
 ### 2026-10-14 – bottom bar (step 4 of the mobile review)
 - **Bottom bar** (`components/BottomNav.jsx`), fixed, always in thumb reach:
   **🏠 Heute · 🃏 Lernen · 📖 Grammatik · 📕 Fehlerheft · ☰ Mehr** – the learner's choices

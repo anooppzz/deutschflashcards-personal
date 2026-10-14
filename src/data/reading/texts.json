@@ -1214,5 +1214,43 @@
     "answer": "das Sprechen"
    }
   ]
+ },
+ {
+  "key": "post-pakete",
+  "level": "A2",
+  "deck": "post-pakete",
+  "title": "Ein Paket für Oma",
+  "paragraphs": [
+   "Jonas ist zwölf. Der [[Junge|der Junge]] will seiner Oma zum Geburtstag eine [[Creme|die Creme]] und ein Foto schicken. Zusammen mit seiner Schwester [[packt|packen]] er alles in einen Karton. Das [[Mädchen|das Mädchen]] möchte das Foto schön [[einpacken|ein·packen]].",
+   "Auf der Post wartet Jonas am [[Schalter|der Schalter]]. Die Frau misst den Karton: 40 [[Zentimeter|der Zentimeter]] lang. „Das ist kein [[Päckchen|das Päckchen]] mehr, das ist ein [[Paket|das Paket]]“, sagt sie. Jonas schreibt den [[Empfänger|der Empfänger]] und den [[Absender|der Absender]] auf den Karton.",
+   "Zwei Tage später kommt das Paket bei Oma an. Sie muss mit ihrer [[Unterschrift|die Unterschrift]] bestätigen, dass sie es bekommen hat. Als sie das Foto sieht, lacht ihr ganzes [[Gesicht|das Gesicht]]. Die Creme [[benutzt|benutzen]] sie jeden Abend – [[schließlich]] ist sie ein Geschenk von Jonas!"
+  ],
+  "en": [
+   "Jonas is twelve. The boy wants to send his grandma a cream and a photo for her birthday. Together with his sister he packs everything into a box. The girl wants to wrap the photo nicely.",
+   "At the post office Jonas waits at the counter. The woman measures the box: 40 centimetres long. “That's no longer a small parcel, that's a parcel,” she says. Jonas writes the recipient's and the sender's address on the box.",
+   "Two days later the parcel arrives at Grandma's. She has to confirm with her signature that she has received it. When she sees the photo, her whole face lights up. She uses the cream every evening – after all, it's a present from Jonas!"
+  ],
+  "questions": [
+   {
+    "q": "Jonas schickt seiner Oma ein Buch.",
+    "en": "Jonas sends his grandma a book.",
+    "answer": "falsch"
+   },
+   {
+    "q": "Oma muss für das Paket unterschreiben.",
+    "en": "Grandma has to sign for the parcel.",
+    "answer": "richtig"
+   },
+   {
+    "q": "Warum ist es kein Päckchen?",
+    "en": "Why is it not a small parcel?",
+    "options": [
+     "Der Karton ist zu groß.",
+     "Jonas hat kein Geld.",
+     "Der Schalter ist geschlossen."
+    ],
+    "answer": "Der Karton ist zu groß."
+   }
+  ]
  }
 ]
