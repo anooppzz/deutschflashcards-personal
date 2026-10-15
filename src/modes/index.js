@@ -34,4 +34,5 @@ export { default as MistakeBook } from "./mistakes/MistakeBook";
 export { default as SatzbauTrainer } from "./satzbau/SatzbauTrainer";
 export { buildSatzbauPool } from "./satzbau/buildSatzbau";
 export { default as ReadingView } from "./reading/ReadingView";
+export { default as ChunkView } from "./saetze/ChunkView";
 export { default as DtzTrainer } from "./exam/DtzTrainer";

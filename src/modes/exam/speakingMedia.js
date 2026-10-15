@@ -14,7 +14,7 @@ const micError = (e) => {
 
 export const recorderSupported = () => typeof window !== "undefined" && Boolean(navigator.mediaDevices?.getUserMedia) && typeof window.MediaRecorder !== "undefined";
 
-// start(onDone(url)) · stop() · { recording, seconds, error }
+// start(onDone(url, blob)) · stop() · { recording, seconds, error }
 export function useRecorder({ maxSeconds = 180 } = {}) {
   const [recording, setRecording] = useState(false);
   const [seconds, setSeconds] = useState(0);
@@ -40,7 +40,9 @@ export function useRecorder({ maxSeconds = 180 } = {}) {
       r.onstop = () => {
         release();
         setRecording(false);
-        if (chunks.length) onDone(URL.createObjectURL(new Blob(chunks, { type: r.mimeType || "audio/webm" })));
+        if (!chunks.length) return;
+        const blob = new Blob(chunks, { type: r.mimeType || "audio/webm" });
+        onDone(URL.createObjectURL(blob), blob);
       };
       rec.current = r;
       r.start();

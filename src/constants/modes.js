@@ -12,6 +12,7 @@ export const MODE = {
   FORMS: "forms",
   GRAMMAR: "grammar",
   SATZBAU: "satzbau",
+  SAETZE: "saetze",
   READING: "reading",
 };
 
@@ -31,6 +32,7 @@ export const MODE_TABS = (counts = {}) => [
   { mode: MODE.WORDSEARCH, icon: "🔤", label: "Wortgitter", count: counts.wordsearch },
   { mode: MODE.FORMS, icon: "🔁", label: "Formen", count: counts.forms },
   { mode: MODE.SATZBAU, icon: "🧩", label: "Satzbau", count: counts.satzbau },
+  { mode: MODE.SAETZE, icon: "🧱", label: "Sätze", count: counts.saetze },
   { mode: MODE.READING, icon: "📰", label: "Lesen", count: counts.reading },
   { mode: MODE.GRAMMAR, icon: "📖", label: "Grammatik" },
 ];

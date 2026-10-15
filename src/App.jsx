@@ -34,7 +34,7 @@ import {
 import {
   IRREGULAR_VERBS, INSEPARABLE_VERBS, HAUSHALT, VERKEHR, KLEIDUNG,
   EXTRA_TOPICS, DECK_META, GRAMMAR_TOPICS,
-  DECK_SOURCE, EXTRA_BY_KEY, ALL_CARDS, GRAMMAR_EXERCISES, READING_TEXTS, DTZ_SETS, DTZ_WRITING, DTZ_SPEAKING,
+  DECK_SOURCE, EXTRA_BY_KEY, ALL_CARDS, GRAMMAR_EXERCISES, READING_TEXTS, DTZ_SETS, DTZ_WRITING, DTZ_SPEAKING, CHUNK_SETS,
 } from "./data";
 import {
   storage,
@@ -44,7 +44,7 @@ import {
   localDateStr, addDaysStr, saveStreak, effectiveStreakDisplay,
   weightedSample, shuffled,
   checkReverseAnswer, checkDictation, isDictatable, isArticleCorrect,
-  recordAnswer, sortedEntries, grammarMistakeId, isGrammarMistakeId, newTopicsOf, textsForDecks,
+  recordAnswer, sortedEntries, grammarMistakeId, isGrammarMistakeId, newTopicsOf, textsForDecks, setsForDecks,
   freshDaily, addNewId, newCardsFor, NEW_PER_DAY_PRESETS, DEFAULT_NEW_PER_DAY,
   scheduleTopic, isTopicDue, nextGrammarTopic,
   distinctLevels, distinctSources, passesGlobalFilters,
@@ -73,7 +73,7 @@ import {
   ClozeTrainer, ClozeSummary, buildClozePool, buildClozeRound, saveClozeSizePref, resolveClozeRoundSize, isClozeCorrect,
   WordSearchTrainer, WordSearchSummary, buildWordSearchPool, buildWordSearchRound, resolveWordSearchSize,
   GrammarView, SearchResults, SearchOverlay, ReviewSession, FormsTrainer, buildFormsPool, MistakeBook,
-  SatzbauTrainer, buildSatzbauPool, ReadingView, DtzTrainer,
+  SatzbauTrainer, buildSatzbauPool, ReadingView, DtzTrainer, ChunkView,
 } from "./modes";
 
 /* ============================================================
@@ -548,6 +548,9 @@ function App() {
   const satzbauPool = useMemo(() => buildSatzbauPool(selectionCards), [selectionCards]);
   const readingTexts = useMemo(() => textsForDecks(READING_TEXTS, tabs), [tabs]);
   const [readingKey, setReadingKey] = useState(null); // the open text
+  // 🧱 Sätze: the everyday sets + the selection's chapter sets; the open set
+  const chunkSets = useMemo(() => setsForDecks(CHUNK_SETS, tabs), [tabs]);
+  const [chunkKey, setChunkKey] = useState(null);
   const [readingScores, setReadingScores] = useState(() => readSaved(STORAGE_KEYS.READING_SCORES) || {});
   const saveReadingScore = (key, right) => setReadingScores((prev) => {
     if (prev[key] != null && prev[key] >= right) return prev;
@@ -1136,6 +1139,7 @@ function App() {
     : dtzView ? () => setDtzView(null)
     : showMistakes ? () => { setShowMistakes(false); setHome(true); }
     : mode === MODE.READING && readingKey ? () => setReadingKey(null)
+    : mode === MODE.SAETZE && chunkKey ? () => setChunkKey(null)
     : topicsOpen ? () => setTopicsOpen(false)
     : !home ? () => goSection("heute")
     : null;
@@ -1519,6 +1523,7 @@ function App() {
           {MODE_TABS({
             article: articleNouns.length, cloze: clozePool.length, wordsearch: wsPool.length,
             forms: formsPools.perfekt.length + formsPools.plural.length, satzbau: satzbauPool.length,
+            saetze: chunkSets.length,
           }).filter((tab) => isStudyMode(tab.mode)).map((tab) => {
             const active = mode === tab.mode;
             return (
@@ -1762,6 +1767,13 @@ function App() {
           </>
         ) : mode === MODE.SATZBAU ? (
           <SatzbauTrainer key={`${tabs.join(",")}|${satzbauPool.length}`} pool={satzbauPool} />
+        ) : mode === MODE.SAETZE ? (
+          <ChunkView
+            sets={chunkSets}
+            allSets={CHUNK_SETS}
+            openKey={chunkKey}
+            onOpen={(key) => { setChunkKey(key); showContent("content"); }}
+          />
         ) : mode === MODE.READING ? (
           <ReadingView
             texts={readingTexts}

@@ -12,7 +12,9 @@ was done, newest first. Every change adds a log entry here in the same commit
   separate from 🎓 DTZ → 🗣 Sprechen. Reuse `modes/exam/speakingMedia.js` (useRecorder,
   📝 useSpeechToText) and `engine/speech.js` (createPlayer).
   Agreed items, in order of value to the learner:
-  1. **🧱 Sätze & Dialoge per chapter (chunks to learn by heart)** – the learner's own idea
+  1. ✅ **DONE 2026-10-15 – 🧱 Sätze (see the log).** Still open from it: the automatic
+     word-by-word check (see ✅ CORRECTION below), more sets for other chapters.
+     Original description: **Sätze & Dialoge per chapter (chunks to learn by heart)** – the learner's own idea
      and the core of this work. For each chapter: ~10 ready-made everyday sentences built
      from the chapter's words, plus 1–2 short dialogues (A/B lines), each line German +
      English, like the post-office role-play given in chat (Paket schicken, Päckchen or
@@ -32,8 +34,10 @@ was done, newest first. Every change adds a log entry here in the same commit
   4. **💬 Erzähl mal:** one short daily question to answer out loud in Perfekt ("Was hast du
      gestern gemacht?", "Wie war dein Wochenende?", "Was hast du heute eingekauft?") with
      2–3 useful chunks as help; record.
-  - **🎧 Meine Aufnahmen (needed by 1–4):** today recordings live in memory only and are
-    lost when the page closes. Keep them on the device in **IndexedDB** (audio blobs: date,
+  - **🎧 Meine Aufnahmen (needed by 1–4):** ✅ storage done for 🧱 Sätze
+    (engine/recordings.js, IndexedDB, one recording per line); still to do: a list of all
+    recordings, and use it in items 2–4. Before: recordings lived in memory only and were
+    lost when the page closed. Keep them on the device in **IndexedDB** (audio blobs: date,
     chapter, sentence), list them, ▶ play mine right after ▶ the phone's voice (compare),
     delete old ones, cap the total size. NOT in the backup file (too big) – say so in the UI.
   Also agreed (the learner said yes to all four on 2026-10-14):
@@ -149,12 +153,40 @@ was done, newest first. Every change adds a log entry here in the same commit
 - [ ] **To check on the learner's phone – new search + Grammatik layout (2026-10-14):** the
   keyboard opens when the 🔍 layer opens (iPhones may need a second tap), the group chips
   scroll sideways with a finger, back gesture inside a grammar topic returns to its row.
+- [ ] **To check on the learner's phone – 🧱 Sätze (2026-10-15):** microphone permission and
+  🎙 recording on Android Chrome, ▶ Ich / 🔁 Vergleichen playback, recordings still there
+  after closing and reopening the app, the A/B voices in "Dialog anhören".
 - [ ] **To check on the learner's phone:** the "📲 App installieren" button (Android/Chrome) –
   headless Chrome never offers installation, so it is untested.
 - The audit of 2026-10-01 is fully done (search, backup + PWA, Heute fällig, Formen
   trainer, Reverse articles, 12 grammar topics, ✏️ Üben, data cleanup, code tidying).
 
 ## Log
+
+### 2026-10-15 – 🧱 Sätze: speaking chunks and dialogues (speaking plan, item 1)
+- New study mode **🧱 Sätze** in the 🃏 Lernen row (`modes/saetze/ChunkView.jsx`): ready-made
+  everyday sentences and one dialogue per set, German + English, to learn as whole chunks.
+  Per line: 🔊 / 🐢 listen, 🎙 record (30 s max), ▶ Ich (own recording), 🔁 Vergleichen (the
+  phone's model, then your recording), 🗑. "🙈 Aus dem Kopf" shows only the English
+  (👀 Deutsch zeigen to check); in the dialogue "🙈 Meine Rolle (B) verdecken" hides only
+  the learner's lines. "🔊 Alle anhören" / "Dialog anhören" (A and B in different voices
+  where the phone has two). A short "So übst du" guide (listen → say along → from the
+  English → record).
+- **7 sets, 79 sentences, 7 dialogues** (`src/data/speaking/chunks.json`): 🗣 Alltag
+  (survival phrases, always shown), 📦 Auf der Post, 🛒 Einkaufen, 🍽 Im Restaurant,
+  🩺 Beim Arzt (chapter Unfall & Notfall), 🏠 Wohnung suchen (Haus & Natur), 💼 Bei der
+  Arbeit (Arbeitsleben). Chapter sets show when their chapter is selected, the rest under
+  "Alle 7 Sets zeigen"; the list shows 🎙 recorded/total per set.
+- **Recordings stay on the device** (`engine/recordings.js`, IndexedDB `dfc-recordings`), one per
+  line, keyed by the German text; not in the backup file (the view says so). useRecorder now
+  also hands over the audio blob.
+- Back gesture closes an open set (App.jsx `chunkKey`). Help text (6 languages) and
+  CLAUDE.md (file map + chunks format) updated. New test `engine/chunks.test.js`.
+- Checked in headless Chromium at 360/390 px: no sideways scroll; a recording with a fake
+  microphone is saved, and is still there after a reload.
+- Not in this step (next week, per the plan): automatic correction (word-by-word check),
+  Sprich-Karte, Rollenspiele with the phone, Erzähl mal, Hörschleife, drills, scheduling,
+  🗣 step in Heute lernen.
 
 ### 2026-10-14 – plan: speaking practice for next week
 - Planning only, no app change yet: the learner asked how to improve their spoken German. The

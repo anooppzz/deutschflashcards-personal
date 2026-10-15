@@ -172,6 +172,10 @@ src/engine/reading.js      📰 Lesen: [[surface|front]] links in texts → card
 src/modes/satzbau/         🧩 Satzbau: order the words of a card's example sentence
                            (first word given; 4–10 words; no …, /, quotes)
 src/modes/reading/         📰 Lesen view (list, text, linked words, questions)
+src/modes/saetze/          🧱 Sätze: ready-made sentences + dialogues per chapter (chunks to say
+                           aloud, 🙈 from the English, 🎙 record, 🔁 compare); content in
+                           src/data/speaking/chunks.json, logic engine/chunks.js; recordings
+                           on the device in IndexedDB (engine/recordings.js, NOT in backups)
 src/modes/exam/            🎓 DTZ trainer: dtz.js (scoring 20 → A2, 33 → B1), DtzTrainer.jsx
                            (practise a Teil / timed simulation / results); the learner's
                            exam is the DTZ (integration course) – see docs/DTZ_FORMAT.md
@@ -284,6 +288,21 @@ that chapter's words, with an English translation per paragraph and 3 questions:
   front unchanged. A separable verb can link the whole phrase (`[[kommt er an|ankommen]]`).
 - A question without `options` is "Richtig oder falsch?".
 - `engine/reading.test.js` fails if a link has no card or a question is malformed.
+
+## Speaking chunks (`speaking/chunks.json`, the 🧱 Sätze mode)
+
+Sets of everyday sentences to learn by heart and say aloud – one set per chapter where
+it fits, plus sets without a chapter (`"deck": null`, e.g. "Alltag") that show for every
+selection:
+
+`{ "key", "deck", "icon", "title", "en", "sentences": [{ "de", "en" }],
+"dialogues": [{ "title", "en", "lines": [{ "who": "A" | "B", "de", "en" }] }] }`
+
+- ~10–12 sentences (≥ 6) and one dialogue (≥ 4 lines); B is the learner. Natural,
+  correct A2 German the learner can really use; use the chapter's words.
+- A recording is stored per line under an id built from the German text
+  (`engine/chunks.js` lineId) – editing a sentence's German drops its recording.
+- `engine/chunks.test.js` checks the format, end punctuation and repeats.
 
 ## Editing the JSON
 

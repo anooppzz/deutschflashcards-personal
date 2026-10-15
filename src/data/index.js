@@ -16,6 +16,7 @@ import READING_TEXTS from "./reading/texts.json";
 import DTZ_SETS from "./exam/dtz-sets.json";
 import DTZ_WRITING from "./exam/dtz-schreiben.json";
 import DTZ_SPEAKING from "./exam/dtz-sprechen.json";
+import CHUNK_SETS from "./speaking/chunks.json";
 
 export {
   IRREGULAR_VERBS,
@@ -32,6 +33,7 @@ export {
   DTZ_SETS,
   DTZ_WRITING,
   DTZ_SPEAKING,
+  CHUNK_SETS,
 };
 
 // Deck registry for the multi-topic (combined) mode - maps each deck key to

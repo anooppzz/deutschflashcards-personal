@@ -1,0 +1,772 @@
+[
+ {
+  "key": "alltag",
+  "deck": null,
+  "icon": "🗣",
+  "title": "Alltag: Überleben im Gespräch",
+  "en": "Everyday survival phrases",
+  "sentences": [
+   {
+    "de": "Wie bitte?",
+    "en": "Sorry? / Pardon?"
+   },
+   {
+    "de": "Können Sie das bitte wiederholen?",
+    "en": "Could you repeat that, please?"
+   },
+   {
+    "de": "Sprechen Sie bitte etwas langsamer.",
+    "en": "Please speak a little more slowly."
+   },
+   {
+    "de": "Das habe ich nicht verstanden.",
+    "en": "I didn't understand that."
+   },
+   {
+    "de": "Was bedeutet das Wort „Absender“?",
+    "en": "What does the word “Absender” mean?"
+   },
+   {
+    "de": "Wie sagt man „receipt“ auf Deutsch?",
+    "en": "How do you say “receipt” in German?"
+   },
+   {
+    "de": "Können Sie das bitte aufschreiben?",
+    "en": "Could you write that down, please?"
+   },
+   {
+    "de": "Moment, ich überlege kurz.",
+    "en": "One moment, let me think."
+   },
+   {
+    "de": "Ich lerne noch Deutsch.",
+    "en": "I'm still learning German."
+   },
+   {
+    "de": "Entschuldigung, wo ist hier die Toilette?",
+    "en": "Excuse me, where is the toilet here?"
+   },
+   {
+    "de": "Ich hätte gern einen Termin.",
+    "en": "I'd like an appointment."
+   },
+   {
+    "de": "Vielen Dank für Ihre Hilfe!",
+    "en": "Thank you very much for your help!"
+   }
+  ],
+  "dialogues": [
+   {
+    "title": "Ich verstehe nicht alles",
+    "en": "I don't understand everything",
+    "lines": [
+     {
+      "who": "A",
+      "de": "Guten Tag! Sie müssen dieses Formular ausfüllen und unten unterschreiben.",
+      "en": "Hello! You have to fill in this form and sign at the bottom."
+     },
+     {
+      "who": "B",
+      "de": "Entschuldigung, können Sie das bitte wiederholen? Ich lerne noch Deutsch.",
+      "en": "Sorry, could you repeat that, please? I'm still learning German."
+     },
+     {
+      "who": "A",
+      "de": "Kein Problem. Bitte füllen Sie das Formular aus.",
+      "en": "No problem. Please fill in the form."
+     },
+     {
+      "who": "B",
+      "de": "Was bedeutet „ausfüllen“?",
+      "en": "What does “ausfüllen” mean?"
+     },
+     {
+      "who": "A",
+      "de": "Sie schreiben Ihren Namen und Ihre Adresse hier hinein.",
+      "en": "You write your name and your address in here."
+     },
+     {
+      "who": "B",
+      "de": "Ah, jetzt verstehe ich. Und wo muss ich unterschreiben?",
+      "en": "Ah, now I understand. And where do I have to sign?"
+     },
+     {
+      "who": "A",
+      "de": "Ganz unten, hier.",
+      "en": "Right at the bottom, here."
+     },
+     {
+      "who": "B",
+      "de": "Vielen Dank für Ihre Hilfe!",
+      "en": "Thank you very much for your help!"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "key": "post-pakete",
+  "deck": "post-pakete",
+  "icon": "📦",
+  "title": "Auf der Post",
+  "en": "At the post office",
+  "sentences": [
+   {
+    "de": "Ich möchte dieses Paket nach Indien schicken.",
+    "en": "I'd like to send this parcel to India."
+   },
+   {
+    "de": "Ist das ein Päckchen oder ein Paket?",
+    "en": "Is that a small parcel or a parcel?"
+   },
+   {
+    "de": "Wie viel kostet ein Brief nach Österreich?",
+    "en": "How much does a letter to Austria cost?"
+   },
+   {
+    "de": "Wie lange braucht das Paket?",
+    "en": "How long does the parcel take?"
+   },
+   {
+    "de": "Wo muss ich unterschreiben?",
+    "en": "Where do I have to sign?"
+   },
+   {
+    "de": "Ich habe den Absender vergessen.",
+    "en": "I forgot the sender's address."
+   },
+   {
+    "de": "Der Empfänger war nicht zu Hause.",
+    "en": "The recipient wasn't at home."
+   },
+   {
+    "de": "Ich möchte ein Paket abholen.",
+    "en": "I'd like to pick up a parcel."
+   },
+   {
+    "de": "Hier ist mein Ausweis.",
+    "en": "Here is my ID."
+   },
+   {
+    "de": "Wo ist der nächste Briefkasten?",
+    "en": "Where is the nearest postbox?"
+   },
+   {
+    "de": "Ich muss das Geschenk noch einpacken.",
+    "en": "I still have to wrap the present."
+   },
+   {
+    "de": "Haben Sie auch Briefmarken?",
+    "en": "Do you also have stamps?"
+   }
+  ],
+  "dialogues": [
+   {
+    "title": "Ein Paket nach Indien",
+    "en": "A parcel to India",
+    "lines": [
+     {
+      "who": "A",
+      "de": "Guten Tag! Was kann ich für Sie tun?",
+      "en": "Hello! What can I do for you?"
+     },
+     {
+      "who": "B",
+      "de": "Guten Tag. Ich möchte dieses Paket nach Indien schicken.",
+      "en": "Hello. I'd like to send this parcel to India."
+     },
+     {
+      "who": "A",
+      "de": "Legen Sie es bitte auf die Waage. Es wiegt vier Kilo.",
+      "en": "Please put it on the scale. It weighs four kilos."
+     },
+     {
+      "who": "B",
+      "de": "Wie viel kostet das?",
+      "en": "How much is that?"
+     },
+     {
+      "who": "A",
+      "de": "Das kostet 45 Euro.",
+      "en": "That costs 45 euros."
+     },
+     {
+      "who": "B",
+      "de": "Und wie lange braucht das Paket?",
+      "en": "And how long does the parcel take?"
+     },
+     {
+      "who": "A",
+      "de": "Ungefähr eine Woche. Bitte unterschreiben Sie hier.",
+      "en": "About a week. Please sign here."
+     },
+     {
+      "who": "B",
+      "de": "Hier? Gut. Kann ich mit Karte bezahlen?",
+      "en": "Here? Okay. Can I pay by card?"
+     },
+     {
+      "who": "A",
+      "de": "Ja, natürlich. Hier ist Ihre Quittung.",
+      "en": "Yes, of course. Here is your receipt."
+     },
+     {
+      "who": "B",
+      "de": "Vielen Dank. Auf Wiedersehen!",
+      "en": "Thank you very much. Goodbye!"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "key": "einkaufen",
+  "deck": "lebensmittel-einkaufen",
+  "icon": "🛒",
+  "title": "Einkaufen",
+  "en": "Shopping for food",
+  "sentences": [
+   {
+    "de": "Ich hätte gern ein Kilo Tomaten.",
+    "en": "I'd like a kilo of tomatoes."
+   },
+   {
+    "de": "Haben Sie auch fettarme Milch?",
+    "en": "Do you also have low-fat milk?"
+   },
+   {
+    "de": "Wo finde ich das Mehl?",
+    "en": "Where can I find the flour?"
+   },
+   {
+    "de": "Ich brauche noch eine Packung Reis.",
+    "en": "I still need a packet of rice."
+   },
+   {
+    "de": "Was kostet ein Liter Saft?",
+    "en": "How much is a litre of juice?"
+   },
+   {
+    "de": "Ist das Gemüse frisch?",
+    "en": "Are the vegetables fresh?"
+   },
+   {
+    "de": "Ich nehme zwei Dosen Bohnen.",
+    "en": "I'll take two tins of beans."
+   },
+   {
+    "de": "Darf es noch etwas sein?",
+    "en": "Would you like anything else?"
+   },
+   {
+    "de": "Nein, danke. Das ist alles.",
+    "en": "No, thank you. That's all."
+   },
+   {
+    "de": "Ich brauche keine Tüte.",
+    "en": "I don't need a bag."
+   },
+   {
+    "de": "Ich habe meinen Einkaufszettel vergessen.",
+    "en": "I forgot my shopping list."
+   }
+  ],
+  "dialogues": [
+   {
+    "title": "Auf dem Markt",
+    "en": "At the market",
+    "lines": [
+     {
+      "who": "A",
+      "de": "Guten Morgen! Was darf es sein?",
+      "en": "Good morning! What would you like?"
+     },
+     {
+      "who": "B",
+      "de": "Guten Morgen. Ich hätte gern ein Kilo Tomaten.",
+      "en": "Good morning. I'd like a kilo of tomatoes."
+     },
+     {
+      "who": "A",
+      "de": "Gern. Darf es noch etwas sein?",
+      "en": "Sure. Would you like anything else?"
+     },
+     {
+      "who": "B",
+      "de": "Ja, ein Pfund Bananen, bitte. Sind die Birnen frisch?",
+      "en": "Yes, a pound of bananas, please. Are the pears fresh?"
+     },
+     {
+      "who": "A",
+      "de": "Ja, die sind von heute.",
+      "en": "Yes, they're from today."
+     },
+     {
+      "who": "B",
+      "de": "Dann nehme ich auch ein Kilo Birnen.",
+      "en": "Then I'll take a kilo of pears too."
+     },
+     {
+      "who": "A",
+      "de": "Noch etwas?",
+      "en": "Anything else?"
+     },
+     {
+      "who": "B",
+      "de": "Nein, danke. Das ist alles. Was macht das?",
+      "en": "No, thank you. That's all. How much is that?"
+     },
+     {
+      "who": "A",
+      "de": "Das macht 6,80 Euro.",
+      "en": "That's 6.80 euros."
+     },
+     {
+      "who": "B",
+      "de": "Hier, bitte. Ich brauche keine Tüte.",
+      "en": "Here you are. I don't need a bag."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "key": "restaurant",
+  "deck": "restaurant",
+  "icon": "🍽",
+  "title": "Im Restaurant",
+  "en": "At the restaurant",
+  "sentences": [
+   {
+    "de": "Ich habe einen Tisch für zwei Personen reserviert.",
+    "en": "I've reserved a table for two people."
+   },
+   {
+    "de": "Können wir bitte die Speisekarte haben?",
+    "en": "Could we have the menu, please?"
+   },
+   {
+    "de": "Wir würden gern bestellen.",
+    "en": "We'd like to order."
+   },
+   {
+    "de": "Ich hätte gern das Schnitzel mit Pommes frites.",
+    "en": "I'd like the schnitzel with chips."
+   },
+   {
+    "de": "Bringen Sie mir bitte ein Glas Wasser.",
+    "en": "Please bring me a glass of water."
+   },
+   {
+    "de": "Könnte ich bitte ein anderes Messer bekommen?",
+    "en": "Could I get another knife, please?"
+   },
+   {
+    "de": "Die Suppe ist leider versalzen.",
+    "en": "Unfortunately the soup is too salty."
+   },
+   {
+    "de": "Wir würden gern zahlen.",
+    "en": "We'd like to pay."
+   },
+   {
+    "de": "Zusammen, bitte.",
+    "en": "Together, please."
+   },
+   {
+    "de": "Das stimmt so.",
+    "en": "Keep the change."
+   },
+   {
+    "de": "Es hat sehr gut geschmeckt.",
+    "en": "It was very tasty."
+   }
+  ],
+  "dialogues": [
+   {
+    "title": "Bestellen und zahlen",
+    "en": "Ordering and paying",
+    "lines": [
+     {
+      "who": "A",
+      "de": "Guten Abend! Was kann ich Ihnen bringen?",
+      "en": "Good evening! What can I bring you?"
+     },
+     {
+      "who": "B",
+      "de": "Guten Abend. Ich hätte gern das Hähnchen mit Reis.",
+      "en": "Good evening. I'd like the chicken with rice."
+     },
+     {
+      "who": "A",
+      "de": "Und was möchten Sie trinken?",
+      "en": "And what would you like to drink?"
+     },
+     {
+      "who": "B",
+      "de": "Ein Glas Apfelsaft, bitte.",
+      "en": "A glass of apple juice, please."
+     },
+     {
+      "who": "A",
+      "de": "Gern. Ich komme gleich.",
+      "en": "Sure. I'll be right back."
+     },
+     {
+      "who": "B",
+      "de": "Entschuldigung, wir würden gern zahlen.",
+      "en": "Excuse me, we'd like to pay."
+     },
+     {
+      "who": "A",
+      "de": "Zusammen oder getrennt?",
+      "en": "Together or separately?"
+     },
+     {
+      "who": "B",
+      "de": "Getrennt, bitte. Ich zahle das Hähnchen und den Saft.",
+      "en": "Separately, please. I'm paying for the chicken and the juice."
+     },
+     {
+      "who": "A",
+      "de": "Das macht 17,50 Euro.",
+      "en": "That's 17.50 euros."
+     },
+     {
+      "who": "B",
+      "de": "Hier sind 20 Euro. Das stimmt so.",
+      "en": "Here's 20 euros. Keep the change."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "key": "arzt",
+  "deck": "unfall-notfall",
+  "icon": "🩺",
+  "title": "Beim Arzt",
+  "en": "At the doctor's",
+  "sentences": [
+   {
+    "de": "Ich möchte einen Termin beim Arzt machen.",
+    "en": "I'd like to make an appointment with the doctor."
+   },
+   {
+    "de": "Ich fühle mich nicht gut.",
+    "en": "I don't feel well."
+   },
+   {
+    "de": "Ich habe seit drei Tagen Fieber.",
+    "en": "I've had a fever for three days."
+   },
+   {
+    "de": "Mir tut der Kopf weh.",
+    "en": "My head hurts."
+   },
+   {
+    "de": "Ich bin stark erkältet.",
+    "en": "I have a bad cold."
+   },
+   {
+    "de": "Ich habe Bauchschmerzen.",
+    "en": "I have a stomach ache."
+   },
+   {
+    "de": "Ich bin gestern hingefallen.",
+    "en": "I fell over yesterday."
+   },
+   {
+    "de": "Muss ich ins Krankenhaus?",
+    "en": "Do I have to go to hospital?"
+   },
+   {
+    "de": "Wie oft muss ich die Tabletten nehmen?",
+    "en": "How often do I have to take the tablets?"
+   },
+   {
+    "de": "Ich brauche eine Krankmeldung für meinen Arbeitgeber.",
+    "en": "I need a sick note for my employer."
+   },
+   {
+    "de": "Wann ist die Sprechstunde?",
+    "en": "When are the surgery hours?"
+   }
+  ],
+  "dialogues": [
+   {
+    "title": "In der Praxis",
+    "en": "At the doctor's surgery",
+    "lines": [
+     {
+      "who": "A",
+      "de": "Guten Tag, was fehlt Ihnen denn?",
+      "en": "Hello, what's the matter?"
+     },
+     {
+      "who": "B",
+      "de": "Guten Tag. Ich fühle mich nicht gut. Ich habe Kopfschmerzen und Fieber.",
+      "en": "Hello. I don't feel well. I have a headache and a fever."
+     },
+     {
+      "who": "A",
+      "de": "Seit wann haben Sie das?",
+      "en": "Since when have you had that?"
+     },
+     {
+      "who": "B",
+      "de": "Seit drei Tagen. Und ich huste viel.",
+      "en": "For three days. And I'm coughing a lot."
+     },
+     {
+      "who": "A",
+      "de": "Ich untersuche Sie jetzt. … Sie haben eine Grippe.",
+      "en": "I'll examine you now. … You have the flu."
+     },
+     {
+      "who": "B",
+      "de": "Was soll ich machen?",
+      "en": "What should I do?"
+     },
+     {
+      "who": "A",
+      "de": "Bleiben Sie drei Tage im Bett und trinken Sie viel Tee.",
+      "en": "Stay in bed for three days and drink lots of tea."
+     },
+     {
+      "who": "B",
+      "de": "Ich brauche eine Krankmeldung für meinen Arbeitgeber.",
+      "en": "I need a sick note for my employer."
+     },
+     {
+      "who": "A",
+      "de": "Kein Problem. Gute Besserung!",
+      "en": "No problem. Get well soon!"
+     },
+     {
+      "who": "B",
+      "de": "Danke schön. Auf Wiedersehen!",
+      "en": "Thank you. Goodbye!"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "key": "wohnung",
+  "deck": "haus",
+  "icon": "🏠",
+  "title": "Wohnung suchen",
+  "en": "Looking for a flat",
+  "sentences": [
+   {
+    "de": "Ich suche eine Wohnung mit zwei Zimmern.",
+    "en": "I'm looking for a flat with two rooms."
+   },
+   {
+    "de": "Ist die Wohnung noch frei?",
+    "en": "Is the flat still available?"
+   },
+   {
+    "de": "Wie hoch ist die Miete?",
+    "en": "How much is the rent?"
+   },
+   {
+    "de": "Sind die Nebenkosten in der Miete dabei?",
+    "en": "Are the utility costs included in the rent?"
+   },
+   {
+    "de": "In welchem Stock liegt die Wohnung?",
+    "en": "Which floor is the flat on?"
+   },
+   {
+    "de": "Gibt es einen Balkon?",
+    "en": "Is there a balcony?"
+   },
+   {
+    "de": "Ist die Wohnung möbliert?",
+    "en": "Is the flat furnished?"
+   },
+   {
+    "de": "Kann ich die Wohnung besichtigen?",
+    "en": "Can I view the flat?"
+   },
+   {
+    "de": "Wann kann ich einziehen?",
+    "en": "When can I move in?"
+   },
+   {
+    "de": "Die Heizung in der Küche funktioniert nicht.",
+    "en": "The heating in the kitchen isn't working."
+   },
+   {
+    "de": "Wo kommt der Müll hin?",
+    "en": "Where does the rubbish go?"
+   }
+  ],
+  "dialogues": [
+   {
+    "title": "Anruf beim Vermieter",
+    "en": "Calling the landlord",
+    "lines": [
+     {
+      "who": "A",
+      "de": "Meier, guten Tag.",
+      "en": "Meier speaking, hello."
+     },
+     {
+      "who": "B",
+      "de": "Guten Tag, Herr Meier. Ich rufe wegen der Anzeige an. Ist die Wohnung noch frei?",
+      "en": "Hello, Mr Meier. I'm calling about the advert. Is the flat still available?"
+     },
+     {
+      "who": "A",
+      "de": "Ja, sie ist noch frei.",
+      "en": "Yes, it's still available."
+     },
+     {
+      "who": "B",
+      "de": "Wie hoch ist die Miete?",
+      "en": "How much is the rent?"
+     },
+     {
+      "who": "A",
+      "de": "650 Euro warm, also mit Nebenkosten.",
+      "en": "650 euros including heating, so with utility costs."
+     },
+     {
+      "who": "B",
+      "de": "In welchem Stock liegt die Wohnung?",
+      "en": "Which floor is the flat on?"
+     },
+     {
+      "who": "A",
+      "de": "Im dritten Stock. Es gibt leider keinen Aufzug.",
+      "en": "On the third floor. Unfortunately there's no lift."
+     },
+     {
+      "who": "B",
+      "de": "Das ist kein Problem. Kann ich die Wohnung besichtigen?",
+      "en": "That's no problem. Can I view the flat?"
+     },
+     {
+      "who": "A",
+      "de": "Ja, am Samstag um elf Uhr?",
+      "en": "Yes, on Saturday at eleven?"
+     },
+     {
+      "who": "B",
+      "de": "Das passt gut. Bis Samstag!",
+      "en": "That suits me well. See you on Saturday!"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "key": "arbeit",
+  "deck": "arbeitsleben",
+  "icon": "💼",
+  "title": "Bei der Arbeit",
+  "en": "At work",
+  "sentences": [
+   {
+    "de": "Ich arbeite seit zwei Jahren in diesem Betrieb.",
+    "en": "I've worked at this company for two years."
+   },
+   {
+    "de": "Ich bin als Mechatroniker angestellt.",
+    "en": "I'm employed as a mechatronics technician."
+   },
+   {
+    "de": "Können Sie mir das bitte noch einmal erklären?",
+    "en": "Could you explain that to me again, please?"
+   },
+   {
+    "de": "Ich bin heute leider krank.",
+    "en": "Unfortunately I'm ill today."
+   },
+   {
+    "de": "Ich komme heute etwas später.",
+    "en": "I'll be a bit late today."
+   },
+   {
+    "de": "Wann ist die Besprechung?",
+    "en": "When is the meeting?"
+   },
+   {
+    "de": "Die Maschine ist kaputt.",
+    "en": "The machine is broken."
+   },
+   {
+    "de": "Das ist dringend.",
+    "en": "That's urgent."
+   },
+   {
+    "de": "Ich möchte nächste Woche Urlaub nehmen.",
+    "en": "I'd like to take holiday next week."
+   },
+   {
+    "de": "Kann ich heute früher gehen?",
+    "en": "Can I leave earlier today?"
+   },
+   {
+    "de": "Ich arbeite gern im Team.",
+    "en": "I like working in a team."
+   }
+  ],
+  "dialogues": [
+   {
+    "title": "Ein Anruf bei der Chefin",
+    "en": "Calling the boss",
+    "lines": [
+     {
+      "who": "A",
+      "de": "Firma Weber, Schulz am Apparat.",
+      "en": "Weber company, Schulz speaking."
+     },
+     {
+      "who": "B",
+      "de": "Guten Morgen, Frau Schulz. Hier ist Ravi. Ich bin heute leider krank.",
+      "en": "Good morning, Ms Schulz. This is Ravi. Unfortunately I'm ill today."
+     },
+     {
+      "who": "A",
+      "de": "Oh, das tut mir leid. Was haben Sie denn?",
+      "en": "Oh, I'm sorry. What's wrong?"
+     },
+     {
+      "who": "B",
+      "de": "Ich habe Fieber. Ich gehe heute Vormittag zum Arzt.",
+      "en": "I have a fever. I'm going to the doctor this morning."
+     },
+     {
+      "who": "A",
+      "de": "Gut. Bringen Sie bitte eine Krankmeldung.",
+      "en": "Fine. Please bring a sick note."
+     },
+     {
+      "who": "B",
+      "de": "Ja, natürlich. Die Reparatur für Herrn Braun ist leider noch nicht fertig.",
+      "en": "Yes, of course. Unfortunately the repair for Mr Braun isn't finished yet."
+     },
+     {
+      "who": "A",
+      "de": "Kein Problem, das macht heute Tim.",
+      "en": "No problem, Tim will do it today."
+     },
+     {
+      "who": "B",
+      "de": "Danke. Ich melde mich morgen wieder.",
+      "en": "Thanks. I'll get back in touch tomorrow."
+     },
+     {
+      "who": "A",
+      "de": "Gute Besserung!",
+      "en": "Get well soon!"
+     }
+    ]
+   }
+  ]
+ }
+]

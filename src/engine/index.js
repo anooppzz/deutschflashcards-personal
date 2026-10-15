@@ -30,3 +30,5 @@ export * from "./aiVault";
 export * from "./aiInbox";
 export * from "./quickMeaning";
 export * from "./wiktionary";
+export * from "./chunks";
+export * from "./recordings";
