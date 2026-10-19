@@ -10,7 +10,7 @@ import FlipCard from "../../components/FlipCard";
 import Reveal from "../../components/Reveal";
 import LookupLinks from "../../components/LookupLinks";
 import { topicLinks, topicQuestion, topicSubject } from "../../engine/lookup";
-import TopicBody from "./GrammarSections";
+import TopicBody, { GLOSSARY_KEY } from "./GrammarSections";
 import { localize } from "./richText";
 
 // Grammar reference - a static, hand-curated table (same authoring
@@ -179,7 +179,7 @@ function GrammarTopicPage({ topic, words = [], lang, exercises = [], best, due, 
       </div>
 
       <div {...panel("regel")}>
-        <TopicBody topic={topic} lang={lang} />
+        <TopicBody topic={topic} lang={lang} onGlossary={topic.key !== GLOSSARY_KEY ? () => onGo(GLOSSARY_KEY) : null} />
         <div style={{ ...sectionLabel, margin: "16px 0 8px" }}>BEISPIELE</div>
         {topic.examples.map((ex, i) => (
           <div key={i} style={{ marginBottom: i === topic.examples.length - 1 ? 0 : 10, padding: "8px 12px", borderRadius: 10, background: "#161d24" }}>

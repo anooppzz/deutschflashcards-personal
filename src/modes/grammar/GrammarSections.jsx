@@ -144,6 +144,7 @@ const INTRO_TEXT = {
   when: { de: "Wann brauchst du es?", en: "When do you need it?" },
   english: { de: "Im Vergleich zum Englischen", en: "Compared with English" },
   remember: { de: "Merksatz", en: "Remember this" },
+  glossary: { de: "📘 Grammatik-Wörter erklärt →", en: "📘 Grammar words explained →" },
   how: { de: "So lernst du ein Thema", en: "How to learn a topic" },
   steps: {
     de: "1. Regel lesen · 2. Beispiele laut sagen 🔊 · 3. ✏️ Üben · 4. 🗂 Wörter",
@@ -182,7 +183,8 @@ function IntroRow({ icon, label, children }) {
   );
 }
 
-function TopicIntro({ intro, lang }) {
+// onGlossary: opens the "Grammatik-Wörter" topic (not shown on that topic itself)
+function TopicIntro({ intro, lang, onGlossary }) {
   return (
     <details style={{ padding: "8px 12px", marginBottom: 10, borderRadius: 10, background: "#161d24", border: "1px solid #24313c" }}>
       <summary style={{ fontSize: 14, fontWeight: 700, color: "#f2f5f8", cursor: "pointer", minHeight: 28, display: "flex", alignItems: "center" }}>
@@ -196,11 +198,18 @@ function TopicIntro({ intro, lang }) {
         <button type="button" onClick={() => speak(intro.remember.de)} aria-label={`Aussprechen: ${intro.remember.de}`} className="inline-tap" style={{ border: "none", background: "none", fontSize: 12, cursor: "pointer", padding: 0 }}>🔊</button>
         <div style={{ fontSize: 12, color: "#7d8d9c" }}>{intro.remember.en}</div>
       </IntroRow>
+      {onGlossary && (
+        <button type="button" onClick={onGlossary} style={{ marginTop: 10, padding: "4px 0", border: "none", background: "none", color: "#e0833b", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>
+          {localize(INTRO_TEXT.glossary, lang)}
+        </button>
+      )}
     </details>
   );
 }
 
-function TopicBody({ topic, lang }) {
+export const GLOSSARY_KEY = "grammatik-woerter";
+
+function TopicBody({ topic, lang, onGlossary }) {
   // older/free-text topics without structure still render as a paragraph
   if (!topic.summary && !topic.sections) {
     return topic.explanation ? (
@@ -210,7 +219,7 @@ function TopicBody({ topic, lang }) {
   return (
     <>
       {topic.intro && <HowToTip lang={lang} />}
-      {topic.intro && <TopicIntro intro={topic.intro} lang={lang} />}
+      {topic.intro && <TopicIntro intro={topic.intro} lang={lang} onGlossary={onGlossary} />}
       {topic.summary && (
         <div style={{ padding: "10px 12px", borderRadius: 8, borderLeft: `3px solid ${ACCENT}`, background: "#1e2a36", fontSize: 14, fontWeight: 600, color: "#f2f5f8", lineHeight: 1.5 }}>
           <Rich text={localize(topic.summary, lang)} />
@@ -250,6 +259,7 @@ TopicBody.propTypes = {
     explanation: textShape,
   }).isRequired,
   lang: PropTypes.string,
+  onGlossary: PropTypes.func,
 };
 TableSection.propTypes = { section: sectionShape.isRequired, lang: PropTypes.string };
 PointsSection.propTypes = { section: sectionShape.isRequired, lang: PropTypes.string };
@@ -258,6 +268,6 @@ Rich.propTypes = { text: PropTypes.string.isRequired };
 HowToTip.propTypes = { lang: PropTypes.string };
 IntroRow.propTypes = { icon: PropTypes.string.isRequired, label: PropTypes.string.isRequired, children: PropTypes.node };
 GlossCell.propTypes = { cell: PropTypes.shape({ t: PropTypes.string.isRequired, en: PropTypes.string.isRequired }).isRequired, showAll: PropTypes.bool };
-TopicIntro.propTypes = { intro: introShape.isRequired, lang: PropTypes.string };
+TopicIntro.propTypes = { intro: introShape.isRequired, lang: PropTypes.string, onGlossary: PropTypes.func };
 
 export default TopicBody;

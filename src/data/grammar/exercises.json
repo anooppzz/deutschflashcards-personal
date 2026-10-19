@@ -1,4 +1,16 @@
 {
+  "grammatik-woerter": [
+    {"q": "In „Die Katze schläft“ ist „die Katze“ das ___.", "options": ["Subjekt", "Objekt", "Verb"], "answer": "Subjekt", "en": "In 'Die Katze schläft', 'die Katze' is the subject.", "why": {"de": "Wer schläft? Die Katze → Subjekt.", "en": "Who is sleeping? The cat → subject."}},
+    {"q": "„schwimmen“ ist der ___.", "options": ["Infinitiv", "Stamm", "Imperativ"], "answer": "Infinitiv", "en": "'schwimmen' is the infinitive.", "why": {"de": "Die Grundform auf -en ist der Infinitiv.", "en": "The base form ending in -en is the infinitive."}},
+    {"q": "„gegangen“ ist ein ___.", "options": ["Partizip II", "Infinitiv", "Imperativ"], "answer": "Partizip II", "en": "'gegangen' (gone) is a past participle.", "why": {"de": "ge- … -en: Partizip II, wie im Perfekt.", "en": "ge- … -en: past participle, as in the Perfekt."}},
+    {"q": "Die Frage „Wem?“ gehört zum ___.", "options": ["Dativ", "Akkusativ", "Nominativ"], "answer": "Dativ", "en": "The question 'to whom?' belongs to the dative.", "why": {"de": "Wem? = Dativ.", "en": "Wem? (to whom?) = dative."}},
+    {"q": "Die Frage „Wen?“ gehört zum ___.", "options": ["Akkusativ", "Dativ", "Genitiv"], "answer": "Akkusativ", "en": "The question 'whom?' belongs to the accusative.", "why": {"de": "Wen? = Akkusativ.", "en": "Wen? (whom?) = accusative."}},
+    {"q": "„Geh!“ ist ein ___.", "options": ["Imperativ", "Infinitiv", "Partizip II"], "answer": "Imperativ", "en": "'Geh!' (Go!) is an imperative.", "why": {"de": "Eine Aufforderung ist ein Imperativ.", "en": "A command is an imperative."}},
+    {"q": "Nach „weil“ kommt ein ___.", "options": ["Nebensatz", "Hauptsatz", "Imperativ"], "answer": "Nebensatz", "en": "After 'weil' comes a subordinate clause.", "why": {"de": "weil leitet einen Nebensatz ein – Verb ans Ende.", "en": "weil starts a subordinate clause – verb to the end."}},
+    {"q": "„klein“ ist ein ___.", "options": ["Adjektiv", "Nomen", "Verb"], "answer": "Adjektiv", "en": "'klein' (small) is an adjective.", "why": {"de": "klein beschreibt ein Nomen: das kleine Haus.", "en": "klein describes a noun: das kleine Haus (the small house)."}},
+    {"q": "Ein Nomen schreibt man immer ___.", "options": ["groß", "klein", "fett"], "answer": "groß", "en": "A noun is always written with a capital letter.", "why": {"de": "Nomen immer groß: der Tisch, die Lampe.", "en": "Nouns always have a capital: der Tisch, die Lampe."}},
+    {"q": "„auf“ in „aufstehen“ ist ein ___.", "options": ["Präfix", "Artikel", "Pronomen"], "answer": "Präfix", "en": "'auf' in 'aufstehen' (get up) is a prefix.", "why": {"de": "Die Vorsilbe vor dem Verb ist ein Präfix.", "en": "The part in front of the verb is a prefix."}}
+  ],
   "artikel-nominativ": [
     {"q": "___ Tisch ist neu.", "options": ["Der", "Die", "Das"], "answer": "Der", "en": "The table is new.", "why": {"de": "Tisch ist maskulin: der Tisch.", "en": "Tisch is masculine: der Tisch."}},
     {"q": "___ Lampe ist kaputt.", "options": ["Der", "Die", "Das"], "answer": "Die", "en": "The lamp is broken.", "why": {"de": "Lampe ist feminin: die Lampe.", "en": "Lampe is feminine: die Lampe."}},

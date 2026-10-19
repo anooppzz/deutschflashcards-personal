@@ -269,7 +269,13 @@ found in the example are left out of Cloze, which is fine for phrases).
 - Every text is `{de, en}`; a table cell may be a plain string (German forms).
   `**x**` highlights x (use it for endings: `wohn**st**`). Use ❌/✅ for wrong/right.
 - Topics of one `group` must sit together; groups are headings in the Grammatik tab:
-  Nomen & Artikel · Verben · Adjektive · Satz & Fragen · Konnektoren · Präpositionen.
+  Grundbegriffe · Nomen & Artikel · Verben · Adjektive · Satz & Fragen · Konnektoren ·
+  Präpositionen. The first topic is `grammatik-woerter` (📘 Grammar words explained: noun,
+  subject, cases, infinitive, participle, clause …); every 🧭 box links to it – add a new
+  grammar term there. A test keeps it first.
+- Every topic has at least one ⚠ `warning` (a common mistake) – a test checks it.
+- **Word meanings:** German words in English text get their meaning in brackets
+  (`helfen (help), danken (thank)`); a German word list in a table is `{t, en}`.
 - Tables must fit a 360px phone: at most ~4 short columns; put long text in bullets.
 - `match` rules link cards automatically: `type`, `gender`, `decks`, `endings`,
   `subPattern` (regex on `sub`), `frontPattern` (regex on `front`), `except` (card

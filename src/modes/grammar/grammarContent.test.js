@@ -1,6 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { localize, parseHighlights, isGloss } from "./richText";
 import GRAMMAR_TOPICS from "../../data/grammar/topics.json";
+import { GLOSSARY_KEY } from "./GrammarSections";
 import GRAMMAR_EXERCISES from "../../data/grammar/exercises.json";
 
 describe("parseHighlights", () => {
@@ -122,6 +123,16 @@ describe("🧭 Worum geht's? and complete sentences", () => {
       }
     }
     expect(bad).toEqual([]);
+  });
+});
+
+describe("help for learners", () => {
+  it("every topic names at least one common mistake (⚠ warning)", () => {
+    expect(GRAMMAR_TOPICS.filter((t) => !t.sections.some((s) => s.type === "warning")).map((t) => t.key)).toEqual([]);
+  });
+
+  it("📘 the grammar words topic exists and comes first", () => {
+    expect(GRAMMAR_TOPICS[0].key).toBe(GLOSSARY_KEY);
   });
 });
 

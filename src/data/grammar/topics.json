@@ -1,5 +1,268 @@
 [
   {
+    "key": "grammatik-woerter",
+    "level": "A1",
+    "group": {"de": "Grundbegriffe", "en": "Basics"},
+    "title": {"de": "Grammatik-Wörter erklärt", "en": "Grammar Words Explained"},
+    "intro": {
+      "what": {
+        "de": "Die Fachwörter aus den Grammatikthemen – kurz erklärt, mit Beispiel.",
+        "en": "The grammar words used in the topics – explained briefly, with an example."
+      },
+      "when": {
+        "de": "Wenn du in einem Thema ein Wort wie **Akkusativ** oder **Partizip** nicht verstehst.",
+        "en": "When a topic uses a word like **accusative** or **participle** and you're not sure what it means."
+      },
+      "english": {
+        "de": "Viele Wörter sind fast wie im Englischen: Nomen = noun, Verb = verb, Subjekt = subject, Infinitiv = infinitive.",
+        "en": "Many are almost the same as in English: Nomen = noun, Verb = verb, Subjekt = subject, Infinitiv = infinitive."
+      },
+      "remember": {"de": "Der Mann kauft einen Apfel.", "en": "The man buys an apple. (subject – verb – object)"}
+    },
+    "summary": {
+      "de": "Die wichtigsten Grammatik-Wörter auf einen Blick – mit englischer Bedeutung und einem Beispiel.",
+      "en": "The most important grammar words at a glance – with their meaning and an example."
+    },
+    "sections": [
+      {
+        "type": "table",
+        "title": {"de": "Wortarten", "en": "Kinds of words"},
+        "head": [
+          {"de": "Wort", "en": "Term"},
+          {"de": "Bedeutung", "en": "Meaning"},
+          {"de": "Beispiel", "en": "Example"}
+        ],
+        "rows": [
+          [
+            "Nomen",
+            {"de": "Ding, Person, Idee – immer groß geschrieben", "en": "noun – always with a capital letter"},
+            {"t": "der Tisch, die Freundin", "en": "the table, the (girl)friend"}
+          ],
+          [
+            "Artikel",
+            {"de": "Begleiter des Nomens", "en": "article: the / a"},
+            {"t": "der, die, das · ein, eine", "en": "the · a"}
+          ],
+          ["Verb", {"de": "Tuwort", "en": "verb – a doing word"}, {"t": "lernen, gehen, sein", "en": "learn, go, be"}],
+          [
+            "Adjektiv",
+            {"de": "Eigenschaftswort", "en": "adjective – describes a noun"},
+            {"t": "groß, neu, schön", "en": "big, new, beautiful"}
+          ],
+          [
+            "Pronomen",
+            {"de": "steht für ein Nomen", "en": "pronoun – stands for a noun"},
+            {"t": "ich, du, er · mich, mir", "en": "I, you, he · me, to me"}
+          ],
+          [
+            "Präposition",
+            {
+              "de": "kleines Wort für Ort, Zeit, Richtung",
+              "en": "preposition – small word for place, time, direction"
+            },
+            {"t": "mit, in, auf, für", "en": "with, in, on, for"}
+          ],
+          [
+            "Konnektor",
+            {"de": "verbindet Sätze", "en": "connector – joins sentences"},
+            {"t": "und, aber, weil, dass", "en": "and, but, because, that"}
+          ]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Verbformen", "en": "Verb forms"},
+        "head": [
+          {"de": "Wort", "en": "Term"},
+          {"de": "Bedeutung", "en": "Meaning"},
+          {"de": "Beispiel", "en": "Example"}
+        ],
+        "rows": [
+          [
+            "Infinitiv",
+            {"de": "Grundform, wie im Wörterbuch (-en)", "en": "infinitive – the dictionary form (-en)"},
+            {"t": "lernen, fahren", "en": "(to) learn, (to) drive"}
+          ],
+          [
+            "Stamm",
+            {"de": "Infinitiv ohne -en", "en": "stem – the infinitive without -en"},
+            {"t": "lern-, fahr-", "en": "learn-, drive-"}
+          ],
+          [
+            {"de": "konjugiertes Verb", "en": "konjugiertes Verb"},
+            {"de": "Verb mit Endung für die Person", "en": "conjugated verb – with the ending for the person"},
+            {"t": "ich lern**e**, du lern**st**", "en": "I learn, you learn"}
+          ],
+          [
+            "Partizip II",
+            {"de": "Form für Perfekt und Passiv", "en": "past participle (done, gone)"},
+            {"t": "gemacht, gegangen", "en": "done / made, gone"}
+          ],
+          [
+            "Hilfsverb",
+            {"de": "hilft beim Bilden der Zeiten", "en": "helper verb (have, be, will)"},
+            {"t": "haben, sein, werden", "en": "have, be, become"}
+          ],
+          [
+            "Modalverb",
+            {
+              "de": "können, müssen, dürfen, wollen, sollen, mögen",
+              "en": "modal verb: can, must, may, want, should, like"
+            },
+            {"t": "Ich **kann** schwimmen.", "en": "I can swim."}
+          ],
+          [
+            "Präfix",
+            {"de": "Vorsilbe", "en": "prefix – the front part of a verb"},
+            {"t": "**an**rufen, **be**suchen", "en": "call, visit"}
+          ]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Der Satz", "en": "The sentence"},
+        "head": [
+          {"de": "Wort", "en": "Term"},
+          {"de": "Bedeutung", "en": "Meaning"},
+          {"de": "Beispiel", "en": "Example"}
+        ],
+        "rows": [
+          [
+            "Subjekt",
+            {"de": "wer oder was etwas tut (Nominativ)", "en": "subject – who or what does it (nominative)"},
+            {"t": "**Der Hund** schläft.", "en": "The dog is sleeping."}
+          ],
+          [
+            "Objekt",
+            {
+              "de": "wen/was oder wem (Akkusativ, Dativ)",
+              "en": "object – whom / what, or to whom (accusative, dative)"
+            },
+            {"t": "Ich sehe **den Hund**.", "en": "I see the dog."}
+          ],
+          [
+            "Hauptsatz",
+            {"de": "steht allein, Verb auf Position 2", "en": "main clause – stands alone, verb in position 2"},
+            {"t": "Ich **bin** müde.", "en": "I'm tired."}
+          ],
+          [
+            "Nebensatz",
+            {
+              "de": "beginnt mit weil, dass, wenn – Verb am Ende",
+              "en": "subordinate clause – starts with weil, dass, wenn; verb at the end"
+            },
+            {"t": "Ich schlafe, weil ich müde **bin**.", "en": "I'm sleeping because I'm tired."}
+          ],
+          [
+            "Position 2",
+            {"de": "der Platz des Verbs im Hauptsatz", "en": "place 2 – where the verb goes in a main clause"},
+            {"t": "Heute **gehe** ich ins Kino.", "en": "Today I'm going to the cinema."}
+          ]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Die vier Fälle (Kasus)", "en": "The four cases"},
+        "head": [{"de": "Fall", "en": "Case"}, {"de": "Frage", "en": "Question"}, {"de": "Beispiel", "en": "Example"}],
+        "rows": [
+          [
+            "Nominativ",
+            {"de": "Wer? Was? – das Subjekt", "en": "Who? What? – the subject (like he)"},
+            {"t": "**Der** Mann kommt.", "en": "The man is coming."}
+          ],
+          [
+            "Akkusativ",
+            {"de": "Wen? Was? – direktes Objekt", "en": "Whom? What? – direct object (like him)"},
+            {"t": "Ich sehe **den** Mann.", "en": "I see the man."}
+          ],
+          [
+            "Dativ",
+            {"de": "Wem? – indirektes Objekt", "en": "To whom? – indirect object (like to him)"},
+            {"t": "Ich helfe **dem** Mann.", "en": "I'm helping the man."}
+          ],
+          [
+            "Genitiv",
+            {"de": "Wessen? – Besitz", "en": "Whose? – like 's / of"},
+            {"t": "das Auto **des** Mannes", "en": "the man's car"}
+          ]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Zeiten und Formen", "en": "Tenses and forms"},
+        "head": [
+          {"de": "Wort", "en": "Term"},
+          {"de": "Bedeutung", "en": "Meaning"},
+          {"de": "Beispiel", "en": "Example"}
+        ],
+        "rows": [
+          [
+            "Präsens",
+            {"de": "jetzt (oft auch Zukunft)", "en": "present (I learn / I'm learning)"},
+            {"t": "Ich lerne.", "en": "I learn. / I'm learning."}
+          ],
+          [
+            "Perfekt",
+            {"de": "Vergangenheit beim Sprechen", "en": "past tense for speaking (I learned)"},
+            {"t": "Ich habe gelernt.", "en": "I learned."}
+          ],
+          [
+            "Präteritum",
+            {"de": "Vergangenheit: war, hatte", "en": "simple past: was, had"},
+            {"t": "Ich war müde.", "en": "I was tired."}
+          ],
+          ["Imperativ", {"de": "Bitte, Aufforderung", "en": "command, request"}, {"t": "Komm!", "en": "Come!"}],
+          [
+            "Konjunktiv II",
+            {"de": "Wunsch, Höflichkeit, nicht real", "en": "would / could – wishes, politeness, unreal"},
+            {"t": "Ich hätte gern Tee.", "en": "I'd like tea."}
+          ],
+          [
+            "Passiv",
+            {"de": "wichtig ist die Handlung", "en": "passive – the action matters, not who does it"},
+            {"t": "Das Paket wird gebracht.", "en": "The parcel is delivered."}
+          ],
+          [
+            "Singular / Plural",
+            {"de": "eins / mehr als eins", "en": "one / more than one"},
+            {"t": "das Kind · die Kinder", "en": "the child · the children"}
+          ],
+          [
+            "Genus",
+            {"de": "maskulin, feminin, neutral", "en": "gender: masculine, feminine, neuter"},
+            {"t": "der · die · das", "en": "masculine · feminine · neuter"}
+          ]
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "So nutzt du die Liste", "en": "How to use this list"},
+        "items": [
+          {
+            "de": "Du musst die Wörter nicht auswendig lernen – erkennen reicht. Wichtig ist immer der Beispielsatz.",
+            "en": "You don't have to learn these words by heart – recognising them is enough. The example sentence is what counts."
+          },
+          {
+            "de": "Im 🧭-Kasten jedes Themas führt „📘 Grammatik-Wörter“ hierher zurück.",
+            "en": "In every topic's 🧭 box, \"📘 Grammar words\" brings you back here."
+          }
+        ]
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "**Nomen** schreibt man im Deutschen immer **groß** – auch mitten im Satz: Ich trinke **K**affee. ❌ Ich trinke kaffee.",
+          "en": "German **nouns** always start with a **capital letter** – even in the middle of a sentence: Ich trinke **K**affee (I drink coffee). ❌ Ich trinke kaffee."
+        }
+      }
+    ],
+    "examples": [
+      {"de": "Der Hund sieht die Katze.", "en": "The dog sees the cat. (subject – verb – object)"},
+      {"de": "Ich gebe dem Kind das Buch.", "en": "I give the child the book. (dative – accusative)"},
+      {"de": "Gestern habe ich Pizza gegessen.", "en": "Yesterday I ate pizza. (Perfekt: haben + participle)"}
+    ]
+  },
+  {
     "key": "artikel-nominativ",
     "level": "A1",
     "group": {"de": "Nomen & Artikel", "en": "Nouns & Articles"},
@@ -54,6 +317,13 @@
             "en": "Some endings give it away: -ung → die (see \"Gender by Ending\")."
           }
         ]
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "**kein** ≠ **nicht**: **kein** steht vor einem Nomen (Ich habe **kein** Auto.), **nicht** verneint den Rest (Ich komme **nicht**.). ❌ Ich habe nicht Auto.",
+          "en": "**kein** ≠ **nicht**: **kein** goes before a noun (Ich habe **kein** Auto. – I have no car.), **nicht** negates the rest (Ich komme **nicht**. – I'm not coming.). ❌ Ich habe nicht Auto."
+        }
       }
     ],
     "examples": [
@@ -315,22 +585,22 @@
         "rows": [
           [{"de": "Subjekt", "en": "subject"}, "Nom.", {"t": "**Der Bus** kommt.", "en": "The bus is coming."}],
           [
-            {"de": "nach sein, werden, heißen", "en": "after sein, werden, heißen"},
+            {"de": "nach sein, werden, heißen", "en": "after sein (be), werden (become), heißen (be called)"},
             "Nom.",
             {"t": "Das ist **der** Chef.", "en": "That's the boss."}
           ],
           [
-            {"de": "die meisten Verben: haben, sehen, kaufen …", "en": "most verbs: haben, sehen, kaufen …"},
+            {"de": "die meisten Verben: haben, sehen, kaufen …", "en": "most verbs: haben (have), sehen (see), kaufen (buy) …"},
             "Akk.",
             {"t": "Ich habe **einen** Hund.", "en": "I have a dog."}
           ],
           [
-            {"de": "helfen, danken, gefallen, gehören …", "en": "helfen, danken, gefallen, gehören …"},
+            {"de": "helfen, danken, gefallen, gehören …", "en": "helfen (help), danken (thank), gefallen (please), gehören (belong to) …"},
             "Dat.",
             {"t": "Ich helfe **dem** Mann.", "en": "I'm helping the man."}
           ],
           [
-            {"de": "geben, schenken, zeigen, bringen", "en": "geben, schenken, zeigen, bringen"},
+            {"de": "geben, schenken, zeigen, bringen", "en": "geben (give), schenken (give as a present), zeigen (show), bringen (bring)"},
             "Dat.+Akk.",
             {"t": "Ich gebe **dir den** Schlüssel.", "en": "I'm giving you the key."}
           ],
@@ -393,7 +663,12 @@
     "sections": [
       {
         "type": "table",
-        "head": ["Person", {"de": "Endung", "en": "Ending"}, "wohnen", "lernen"],
+        "head": [
+          "Person",
+          {"de": "Endung", "en": "Ending"},
+          {"de": "wohnen", "en": "wohnen (live)"},
+          {"de": "lernen", "en": "lernen (learn)"}
+        ],
         "rows": [
           ["ich", "-e", "wohn**e**", "lern**e**"],
           ["du", "-st", "wohn**st**", "lern**st**"],
@@ -601,14 +876,14 @@
         "title": {"de": "du-Form", "en": "du form"},
         "head": ["Verb", "du …", "Imperativ"],
         "rows": [
-          ["machen", "du machst", {"t": "**Mach**!", "en": "Do it! / Make it!"}],
-          ["nehmen", "du nimmst", {"t": "**Nimm**!", "en": "Take it!"}],
-          ["lesen", "du liest", {"t": "**Lies**!", "en": "Read!"}],
-          ["essen", "du isst", {"t": "**Iss**!", "en": "Eat!"}],
-          ["fahren", "du fährst", {"t": "**Fahr**!", "en": "Drive! / Go!"}],
-          ["arbeiten", "du arbeitest", {"t": "**Arbeite**!", "en": "Work!"}],
-          ["anrufen", "du rufst an", {"t": "**Ruf** mich **an**!", "en": "Call me!"}],
-          ["sich beeilen", "du beeilst dich", {"t": "**Beeil dich**!", "en": "Hurry up!"}]
+          [{"t": "machen", "en": "do, make"}, "du machst", {"t": "**Mach**!", "en": "Do it! / Make it!"}],
+          [{"t": "nehmen", "en": "take"}, "du nimmst", {"t": "**Nimm**!", "en": "Take it!"}],
+          [{"t": "lesen", "en": "read"}, "du liest", {"t": "**Lies**!", "en": "Read!"}],
+          [{"t": "essen", "en": "eat"}, "du isst", {"t": "**Iss**!", "en": "Eat!"}],
+          [{"t": "fahren", "en": "drive, go (by vehicle)"}, "du fährst", {"t": "**Fahr**!", "en": "Drive! / Go!"}],
+          [{"t": "arbeiten", "en": "work"}, "du arbeitest", {"t": "**Arbeite**!", "en": "Work!"}],
+          [{"t": "anrufen", "en": "call (phone)"}, "du rufst an", {"t": "**Ruf** mich **an**!", "en": "Call me!"}],
+          [{"t": "sich beeilen", "en": "hurry"}, "du beeilst dich", {"t": "**Beeil dich**!", "en": "Hurry up!"}]
         ]
       },
       {
@@ -728,14 +1003,14 @@
           ],
           [
             "**sein**",
-            {"de": "Bewegung: gehen, fahren, kommen", "en": "movement: gehen, fahren, kommen"},
+            {"de": "Bewegung: gehen, fahren, kommen", "en": "movement: gehen (go), fahren (drive), kommen (come)"},
             {"t": "ich **bin** gefahren", "en": "I drove / I went"}
           ],
           [
             "**sein**",
             {
               "de": "Zustandsänderung: werden, sterben – und bleiben",
-              "en": "change of state: werden, sterben – and bleiben"
+              "en": "change of state: werden (become), sterben (die) – and bleiben (stay)"
             },
             {"t": "ich **bin** geblieben", "en": "I stayed"}
           ]
@@ -785,6 +1060,13 @@
             "en": "Learn irregular participles one by one – e.g. in the \"Irregular\" deck."
           }
         ]
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "Bewegung von A nach B → **sein**: Ich **bin** nach Hamburg gefahren. ❌ Ich habe nach Hamburg gefahren.",
+          "en": "Movement from A to B → **sein**: Ich **bin** nach Hamburg gefahren (I went to Hamburg). ❌ Ich habe nach Hamburg gefahren."
+        }
       }
     ],
     "examples": [
@@ -866,7 +1148,7 @@
           },
           {
             "de": "Gesprochen: **sein, haben, Modalverben → Präteritum**, alle anderen Verben → **Perfekt**: Ich **war** im Kino und **habe** einen Film **gesehen**.",
-            "en": "Spoken German: **sein, haben, modal verbs → Präteritum**, all other verbs → **Perfekt**: Ich **war** im Kino und **habe** einen Film **gesehen**."
+            "en": "Spoken German: **sein, haben, modal verbs → Präteritum**, all other verbs → **Perfekt**: Ich **war** im Kino und **habe** einen Film **gesehen** (I was at the cinema and saw a film)."
           },
           {
             "de": "Modalverben: kein Umlaut im Präteritum: k**ö**nnen → k**o**nnte, m**ü**ssen → m**u**sste.",
@@ -903,7 +1185,7 @@
         "type": "warning",
         "text": {
           "de": "**war** (was) ≠ **wahr** (true) – gleich gesprochen: Das **war** schön. – Das ist nicht **wahr**!",
-          "en": "**war** (was) ≠ **wahr** (true) – they sound the same: Das **war** schön. – Das ist nicht **wahr**!"
+          "en": "**war** (was) ≠ **wahr** (true) – they sound the same: Das **war** schön (that was nice). – Das ist nicht **wahr**! (that's not true!)"
         }
       }
     ],
@@ -1301,7 +1583,7 @@
           },
           {
             "de": "Mit einem Nomen als Subjekt steht sich oft davor: Heute freut **sich** mein Bruder. (Mit Pronomen: Heute freut er **sich**.)",
-            "en": "With a noun as subject, sich often comes before it: Heute freut **sich** mein Bruder. (With a pronoun: Heute freut er **sich**.)"
+            "en": "With a noun as subject, sich often comes before it: Heute freut **sich** mein Bruder (today my brother is happy). (With a pronoun: Heute freut er **sich**.)"
           },
           {
             "de": "Lerne das Verb immer **mit sich und Präposition**: sich freuen auf, sich erinnern an.",
@@ -1509,12 +1791,24 @@
         "title": {"de": "Dativ + Akkusativ", "en": "Dative + accusative"},
         "head": ["Verb", {"de": "Beispiel", "en": "Example"}],
         "rows": [
-          ["geben", {"t": "Ich gebe **dem Kind den Ball**.", "en": "I give the child the ball."}],
-          ["schenken", {"t": "Er schenkt **ihr Blumen**.", "en": "He gives her flowers."}],
-          ["zeigen", {"t": "Zeig **mir das Foto**!", "en": "Show me the photo!"}],
-          ["erklären", {"t": "Erklär **mir das** bitte.", "en": "Explain that to me, please."}],
-          ["bringen, schicken", {"t": "Ich bringe **dir einen Kaffee**.", "en": "I'll bring you a coffee."}],
-          ["empfehlen, leihen", {"t": "Kannst du **mir dein Rad** leihen?", "en": "Can you lend me your bike?"}]
+          [{"t": "geben", "en": "give"}, {"t": "Ich gebe **dem Kind den Ball**.", "en": "I give the child the ball."}],
+          [
+            {"t": "schenken", "en": "give (as a present)"},
+            {"t": "Er schenkt **ihr Blumen**.", "en": "He gives her flowers."}
+          ],
+          [{"t": "zeigen", "en": "show"}, {"t": "Zeig **mir das Foto**!", "en": "Show me the photo!"}],
+          [
+            {"t": "erklären", "en": "explain"},
+            {"t": "Erklär **mir das** bitte.", "en": "Explain that to me, please."}
+          ],
+          [
+            {"t": "bringen, schicken", "en": "bring, send"},
+            {"t": "Ich bringe **dir einen Kaffee**.", "en": "I'll bring you a coffee."}
+          ],
+          [
+            {"t": "empfehlen, leihen", "en": "recommend, lend"},
+            {"t": "Kannst du **mir dein Rad** leihen?", "en": "Can you lend me your bike?"}
+          ]
         ]
       },
       {
@@ -1550,7 +1844,7 @@
         "type": "warning",
         "text": {
           "de": "**fragen** und **anrufen** sind Akkusativ: Ich frage **dich**. Ich rufe **dich** an.",
-          "en": "**fragen** and **anrufen** take the accusative: Ich frage **dich**. Ich rufe **dich** an."
+          "en": "**fragen** (ask) and **anrufen** (call) take the accusative: Ich frage **dich** (I'm asking you). Ich rufe **dich** an (I'll call you)."
         }
       }
     ],
@@ -1770,7 +2064,7 @@
           },
           {
             "de": "Das Partizip ist dasselbe wie im Perfekt: packen → **gepackt**, schreiben → **geschrieben**, transportieren → **transportiert**.",
-            "en": "The participle is the same as in the Perfekt: packen → **gepackt**, schreiben → **geschrieben**, transportieren → **transportiert**."
+            "en": "The participle is the same as in the Perfekt: packen (pack) → **gepackt**, schreiben (write) → **geschrieben**, transportieren (transport) → **transportiert**."
           },
           {
             "de": "Das Akkusativ-Objekt aus dem Aktiv wird im Passiv das **Subjekt** (Nominativ): **den** Brief → **der** Brief.",
@@ -1917,7 +2211,7 @@
           },
           {
             "de": "**ein/kein/mein**: Wo ein keine Endung hat, zeigt das Adjektiv das Genus: ein alt**er** Mann (de**r**), ein klein**es** Kind (da**s**).",
-            "en": "**ein/kein/mein**: where ein has no ending, the adjective shows the gender: ein alt**er** Mann (de**r**), ein klein**es** Kind (da**s**)."
+            "en": "**ein/kein/mein**: where ein has no ending, the adjective shows the gender: ein alt**er** Mann (an old man – de**r**), ein klein**es** Kind (a small child – da**s**)."
           },
           {
             "de": "**Ohne Artikel** übernimmt das Adjektiv die Endung von der/die/das: frisch**er** Kaffee (de**r**), kalt**e** Milch (di**e**), mit heiß**em** Wasser (de**m**).",
@@ -1939,15 +2233,15 @@
         "items": [
           {
             "de": "Nach **sein / werden** keine Endung: Die Suppe ist **heiß**. ❌ Die Suppe ist heiße.",
-            "en": "After **sein / werden** no ending: Die Suppe ist **heiß**. ❌ Die Suppe ist heiße."
+            "en": "After **sein / werden** no ending: Die Suppe ist **heiß** (the soup is hot). ❌ Die Suppe ist heiße."
           },
           {
             "de": "-er/-el verlieren das e: teuer → ein **teures** Auto, dunkel → eine **dunkle** Jacke; hoch → ein **hoher** Turm.",
-            "en": "-er/-el lose the e: teuer → ein **teures** Auto, dunkel → eine **dunkle** Jacke; hoch → ein **hoher** Turm."
+            "en": "-er/-el lose the e: teuer (expensive) → ein **teures** Auto, dunkel (dark) → eine **dunkle** Jacke; hoch (high) → ein **hoher** Turm (a tall tower)."
           },
           {
             "de": "Keine Endung bei **prima, lila, rosa, orange**: eine prima Idee, ein rosa Kleid.",
-            "en": "No ending for **prima, lila, rosa, orange**: eine prima Idee, ein rosa Kleid."
+            "en": "No ending for **prima, lila, rosa, orange**: eine prima Idee (a great idea), ein rosa Kleid (a pink dress)."
           },
           {
             "de": "Auch Komparativ und Superlativ bekommen Endungen: ein **größeres** Auto, der **schnellste** Zug.",
@@ -2020,11 +2314,11 @@
           {"de": "Superlativ", "en": "Superlative"}
         ],
         "rows": [
-          ["schnell", "schnell**er**", "am schnell**sten**"],
-          ["klein", "klein**er**", "am klein**sten**"],
-          ["warm", "w**ä**rm**er**", "am w**ä**rm**sten**"],
-          ["alt", "**ä**lt**er**", "am **ä**lt**esten**"],
-          ["groß", "gr**ö**ß**er**", "am gr**ö**ß**ten**"]
+          [{"t": "schnell", "en": "fast"}, "schnell**er**", "am schnell**sten**"],
+          [{"t": "klein", "en": "small"}, "klein**er**", "am klein**sten**"],
+          [{"t": "warm", "en": "warm"}, "w**ä**rm**er**", "am w**ä**rm**sten**"],
+          [{"t": "alt", "en": "old"}, "**ä**lt**er**", "am **ä**lt**esten**"],
+          [{"t": "groß", "en": "big, tall"}, "gr**ö**ß**er**", "am gr**ö**ß**ten**"]
         ]
       },
       {
@@ -2036,9 +2330,9 @@
           {"de": "Superlativ", "en": "Superlative"}
         ],
         "rows": [
-          ["gut", "**besser**", "am **besten**"],
-          ["viel", "**mehr**", "am **meisten**"],
-          ["gern", "**lieber**", "am **liebsten**"]
+          [{"t": "gut", "en": "good"}, "**besser**", "am **besten**"],
+          [{"t": "viel", "en": "much, a lot"}, "**mehr**", "am **meisten**"],
+          [{"t": "gern", "en": "gladly (like doing)"}, "**lieber**", "am **liebsten**"]
         ]
       },
       {
@@ -2054,7 +2348,7 @@
           },
           {
             "de": "Kurze Adjektive mit a, o, u bekommen oft einen **Umlaut**: alt → älter, groß → größer, jung → jünger.",
-            "en": "Short adjectives with a, o, u often take an **umlaut**: alt → älter, groß → größer, jung → jünger."
+            "en": "Short adjectives with a, o, u often take an **umlaut**: alt (old) → älter, groß (big) → größer, jung (young) → jünger."
           }
         ]
       },
@@ -2130,6 +2424,13 @@
             "en": "In a subordinate clause (dass, weil, wenn …), on the other hand, the verb goes **to the end** (see \"Connectors\")."
           }
         ]
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "Nicht die englische Reihenfolge kopieren: ❌ Heute Abend ich koche Pasta. ✅ Heute Abend **koche** ich Pasta.",
+          "en": "Don't copy the English order: ❌ Heute Abend ich koche Pasta. ✅ Heute Abend **koche** ich Pasta. (Tonight I'm cooking pasta.)"
+        }
       }
     ],
     "examples": [
@@ -2206,17 +2507,17 @@
         "rows": [
           [
             {"de": "Subjekt", "en": "the subject"},
-            "kommen, wohnen, arbeiten",
+            {"t": "kommen, wohnen, arbeiten", "en": "come, live, work"},
             {"t": "**Wer** kommt?", "en": "Who is coming?"}
           ],
           [
             {"de": "Akkusativ-Objekt", "en": "accusative object"},
-            "sehen, treffen, fragen, lieben",
+            {"t": "sehen, treffen, fragen, lieben", "en": "see, meet, ask, love"},
             {"t": "**Wen** triffst du?", "en": "Who are you meeting?"}
           ],
           [
             {"de": "Dativ-Objekt", "en": "dative object"},
-            "helfen, gehören, danken, gefallen",
+            {"t": "helfen, gehören, danken, gefallen", "en": "help, belong to, thank, please"},
             {"t": "**Wem** hilfst du?", "en": "Who are you helping?"}
           ]
         ]
@@ -2231,12 +2532,12 @@
         ],
         "rows": [
           [
-            "mit, bei, von, zu, aus, nach, seit",
+            {"t": "mit, bei, von, zu, aus, nach, seit", "en": "with, at, from, to, out of, to / after, since"},
             "+ **wem**",
             {"t": "**Mit wem** gehst du ins Kino?", "en": "Who are you going to the cinema with?"}
           ],
           [
-            "für, ohne, durch, gegen, um",
+            {"t": "für, ohne, durch, gegen, um", "en": "for, without, through, against, around / at"},
             "+ **wen**",
             {"t": "**Für wen** kaufst du das Geschenk?", "en": "Who are you buying the present for?"}
           ]
@@ -2251,11 +2552,11 @@
           },
           {
             "de": "geben, schenken, zeigen …: Person im Dativ, Sache im Akkusativ – **Wem** schenkst du **was**?",
-            "en": "geben, schenken, zeigen …: the person is dative, the thing accusative – **Wem** schenkst du **was**?"
+            "en": "geben (give), schenken (give as a present), zeigen (show) …: the person is dative, the thing accusative – **Wem** schenkst du **was**?"
           },
           {
             "de": "Dativ-Verben merken: helfen, danken, gehören, gefallen, antworten, gratulieren, glauben, passen, schmecken, fehlen.",
-            "en": "Dative verbs to memorize: helfen, danken, gehören, gefallen, antworten, gratulieren, glauben, passen, schmecken, fehlen."
+            "en": "Dative verbs to memorize: helfen (help), danken (thank), gehören (belong to), gefallen (please), antworten (answer), gratulieren (congratulate), glauben (believe), passen (suit, fit), schmecken (taste), fehlen (be missing)."
           },
           {
             "de": "Im Dativ fragt man nur nach Personen (Lebewesen), nicht nach Sachen.",
@@ -2313,17 +2614,17 @@
         "rows": [
           [
             {"de": "Verbinder", "en": "joiners"},
-            "und, aber, oder, denn, sondern",
+            {"t": "und, aber, oder, denn, sondern", "en": "and, but, or, because, but rather"},
             {"de": "bleibt auf **Position 2**", "en": "stays in **position 2**"}
           ],
           [
             {"de": "Nebensatz", "en": "subordinate clause"},
-            "dass, weil, wenn, ob, als",
+            {"t": "dass, weil, wenn, ob, als", "en": "that, because, if / when, whether, when (past)"},
             {"de": "geht **ans Ende**", "en": "goes to the **end**"}
           ],
           [
             {"de": "Adverb", "en": "adverb"},
-            "deshalb, trotzdem, dann, danach …",
+            {"t": "deshalb, trotzdem, dann, danach …", "en": "so, still, then, afterwards"},
             {"de": "kommt **direkt danach**", "en": "comes **right after it**"}
           ]
         ]
@@ -2353,7 +2654,7 @@
         "items": [
           {
             "de": "**ADUSO** merken: **a**ber, **d**enn, **u**nd, **s**ondern, **o**der – diese fünf ändern nichts.",
-            "en": "Memorize **ADUSO**: **a**ber, **d**enn, **u**nd, **s**ondern, **o**der – these five change nothing."
+            "en": "Memorize **ADUSO**: **a**ber (but), **d**enn (because), **u**nd (and), **s**ondern (but rather), **o**der (or) – these five change nothing."
           },
           {
             "de": "Steht das Wort allein vorne und das Verb folgt sofort? → Adverb: Deshalb **bleibe** ich zu Hause.",
@@ -2455,7 +2756,7 @@
         "items": [
           {
             "de": "**ADUSO**: **a**ber, **d**enn, **u**nd, **s**ondern, **o**der – sie stehen auf „Position 0“ und zählen nicht mit.",
-            "en": "**ADUSO**: **a**ber, **d**enn, **u**nd, **s**ondern, **o**der – they sit at \"position 0\" and don't count."
+            "en": "**ADUSO**: **a**ber (but), **d**enn (because), **u**nd (and), **s**ondern (but rather), **o**der (or) – they sit at \"position 0\" and don't count."
           },
           {
             "de": "Test für sondern: Ersetzt der zweite Teil den ersten? → **sondern**. Stimmt beides? → **aber**.",
@@ -2541,21 +2842,21 @@
         "head": [{"de": "Frage", "en": "Question"}, {"de": "Satz – Verb am Ende", "en": "Sentence – verb at the end"}],
         "rows": [
           [
-            "Warum? → **weil**",
+            {"t": "Warum? → **weil**", "en": "Why? → because"},
             {
               "t": "Ich lerne Deutsch, weil ich in Deutschland **lebe**.",
               "en": "I'm learning German because I live in Germany."
             }
           ],
           [
-            "Wann? → **wenn**",
+            {"t": "Wann? → **wenn**", "en": "When? → when / if"},
             {
               "t": "Ich nehme die U-Bahn, wenn ich zum Kurs fahren **will**.",
               "en": "I take the underground when I want to go to the course."
             }
           ],
           [
-            "Was? → **dass**",
+            {"t": "Was? → **dass**", "en": "What? → that"},
             {
               "t": "Ich glaube, dass die U-Bahn pünktlich **ankommt**.",
               "en": "I think the underground will arrive on time."
@@ -2700,7 +3001,7 @@
           {"de": "**als** = **einmal** oder eine Zeit lang in der **Vergangenheit**: Als ich Kind war, habe ich viel gespielt. · Als ich 2020 in Berlin war, habe ich Deutsch gelernt.", "en": "**als** = **one time** or one period in the **past**: Als ich Kind war, habe ich viel gespielt (when I was a child, I played a lot). · Als ich 2020 in Berlin war, habe ich Deutsch gelernt (when I was in Berlin in 2020, I learned German)."},
           {"de": "Mit sein, haben und Modalverben meist **Präteritum**: als ich klein **war** / keine Zeit **hatte** / nicht kommen **konnte**. Sonst oft Perfekt: als ich nach Deutschland gekommen **bin**.", "en": "With sein, haben and modal verbs usually **Präteritum**: als ich klein **war** / keine Zeit **hatte** / nicht kommen **konnte**. Otherwise often Perfekt: als ich nach Deutschland gekommen **bin**."},
           {"de": "Immer wieder in der Vergangenheit? → **wenn** (oft **immer wenn**): Immer wenn ich Zeit hatte, habe ich gelesen.", "en": "Again and again in the past? → **wenn** (often **immer wenn**): Immer wenn ich Zeit hatte, habe ich gelesen. (Whenever I had time, I read.)"},
-          {"de": "Frage nach der Zeit → **wann**: Wann bist du gekommen? · Ich weiß nicht, **wann** der Kurs beginnt.", "en": "Asking about time → **wann**: Wann bist du gekommen? · Ich weiß nicht, **wann** der Kurs beginnt."},
+          {"de": "Frage nach der Zeit → **wann**: Wann bist du gekommen? · Ich weiß nicht, **wann** der Kurs beginnt.", "en": "Asking about time → **wann**: Wann bist du gekommen? (When did you come?) · Ich weiß nicht, **wann** der Kurs beginnt (I don't know when the course starts)."},
           {"de": "Nicht verwechseln: Komparativ + **als** = „than“: Er ist größer **als** ich. – kein Nebensatz.", "en": "Don't mix up: comparative + **als** = “than”: Er ist größer **als** ich. – not a clause."}
         ]
       },
@@ -2773,7 +3074,7 @@
           },
           {
             "de": "Im Gespräch fällt dass nach denken, glauben, hoffen oft weg – dann bleibt das Verb auf Position 2: Ich denke, ich **nehme** den Fisch.",
-            "en": "In speech, dass is often dropped after denken, glauben, hoffen – then the verb stays in position 2: Ich denke, ich **nehme** den Fisch."
+            "en": "In speech, dass is often dropped after denken, glauben, hoffen – then the verb stays in position 2: Ich denke, ich **nehme** den Fisch (I think I'll have the fish)."
           },
           {
             "de": "**nicht** steht vor dem Verb am Ende: Sie sagt, dass er heute **nicht kommt**.",
@@ -2799,7 +3100,7 @@
         "type": "warning",
         "text": {
           "de": "**dass** (Konnektor) ≠ **das** (Artikel / Pronomen): Ich weiß, **dass das** Essen gut ist. Trick: Passt „dieses“ oder „welches“? Dann **das** – sonst **dass**.",
-          "en": "**dass** (connector) ≠ **das** (article / pronoun): Ich weiß, **dass das** Essen gut ist. Trick: can you swap in „dieses“ or „welches“? Then write **das** – otherwise **dass**."
+          "en": "**dass** (connector) ≠ **das** (article / pronoun): Ich weiß, **dass das** Essen gut ist (I know that the food is good). Trick: can you swap in „dieses“ or „welches“? Then write **das** – otherwise **dass**."
         }
       }
     ],
@@ -2897,11 +3198,11 @@
           },
           {
             "de": "**deswegen** und **darum** bedeuten dasselbe wie deshalb.",
-            "en": "**deswegen** and **darum** mean the same as deshalb."
+            "en": "**deswegen** and **darum** mean the same as deshalb (so, that's why)."
           },
           {
             "de": "Sie können auch in der Satzmitte stehen: Ich bleibe **deshalb** zu Hause.",
-            "en": "They can also go in the middle: Ich bleibe **deshalb** zu Hause."
+            "en": "They can also go in the middle: Ich bleibe **deshalb** zu Hause (so I'm staying at home)."
           }
         ]
       },
@@ -2911,11 +3212,11 @@
         "items": [
           {
             "de": "Drei Bedeutungen: **deshalb** → Folge · **sonst** → Warnung, Alternative · **dann, danach** → Zeit.",
-            "en": "Three meanings: **deshalb** → result · **sonst** → warning, alternative · **dann, danach** → time."
+            "en": "Three meanings: **deshalb** (so) → result · **sonst** (otherwise) → warning, alternative · **dann, danach** (then, afterwards) → time."
           },
           {
             "de": "Zum Erzählen (Tagesablauf, Urlaub): **zuerst → dann → danach → später → zum Schluss**.",
-            "en": "For telling a story (daily routine, holiday): **zuerst → dann → danach → später → zum Schluss**."
+            "en": "For telling a story (daily routine, holiday): **zuerst → dann → danach → später → zum Schluss** (first → then → after that → later → finally)."
           },
           {
             "de": "Grund oder Folge? **weil** + Grund (Verb am Ende) · **deshalb** + Folge (Verb direkt danach).",
@@ -2941,15 +3242,15 @@
         "items": [
           {
             "de": "Punkt oder Komma – beides geht: Ich brauche Geld. Deshalb arbeite ich. · Ich brauche Geld, deshalb arbeite ich.",
-            "en": "Full stop or comma – both work: Ich brauche Geld. Deshalb arbeite ich. · Ich brauche Geld, deshalb arbeite ich."
+            "en": "Full stop or comma – both work: Ich brauche Geld. Deshalb arbeite ich. · Ich brauche Geld, deshalb arbeite ich. (I need money, so I work.)"
           },
           {
             "de": "Mit **und** davor: und zählt nicht mit – Ich koche, und dann **gehen** wir ins Kino.",
-            "en": "With **und** in front: und doesn't count – Ich koche, und dann **gehen** wir ins Kino."
+            "en": "With **und** in front: und doesn't count – Ich koche, und dann **gehen** wir ins Kino (I'll cook and then we'll go to the cinema)."
           },
           {
             "de": "**dann** auch nach einem wenn-Satz: Wenn es regnet, dann **bleibe** ich zu Hause.",
-            "en": "**dann** also follows a wenn clause: Wenn es regnet, dann **bleibe** ich zu Hause."
+            "en": "**dann** also follows a wenn clause: Wenn es regnet, dann **bleibe** ich zu Hause (if it rains, I stay at home)."
           },
           {
             "de": "**vorher** (davor) ↔ **nachher** (danach, später): Ich rufe dich vorher an. · Bis nachher!",
@@ -2975,7 +3276,7 @@
         "type": "warning",
         "text": {
           "de": "**danach** (Adverb) ≠ **nachdem** (Nebensatz, Verb am Ende): Ich esse. Danach **gehe** ich. · Nachdem ich gegessen **habe**, gehe ich.",
-          "en": "**danach** (adverb) ≠ **nachdem** (subordinate clause, verb at the end): Ich esse. Danach **gehe** ich. · Nachdem ich gegessen **habe**, gehe ich."
+          "en": "**danach** (adverb) ≠ **nachdem** (subordinate clause, verb at the end): Ich esse. Danach **gehe** ich (I eat, then I go). · Nachdem ich gegessen **habe**, gehe ich (after I've eaten, I go)."
         }
       },
       {
@@ -3028,10 +3329,28 @@
         "title": {"de": "Welcher Fall?", "en": "Which case?"},
         "head": [{"de": "Fall", "en": "Case"}, {"de": "Präpositionen", "en": "Prepositions"}],
         "rows": [
-          [{"de": "Akkusativ", "en": "accusative"}, "bis, durch, für, gegen, ohne, um"],
-          [{"de": "Dativ", "en": "dative"}, "aus, bei, mit, nach, seit, von, zu, gegenüber, ab, außer"],
-          [{"de": "Wechsel", "en": "two-way"}, "an, auf, hinter, in, neben, über, unter, vor, zwischen"],
-          [{"de": "Genitiv", "en": "genitive"}, "wegen, während, trotz, statt"],
+          [
+            {"de": "Akkusativ", "en": "accusative"},
+            {"t": "bis, durch, für, gegen, ohne, um", "en": "until, through, for, against, without, around / at"}
+          ],
+          [
+            {"de": "Dativ", "en": "dative"},
+            {
+              "t": "aus, bei, mit, nach, seit, von, zu, gegenüber, ab, außer",
+              "en": "out of, at, with, to / after, since, from, to, opposite, from (a time), except"
+            }
+          ],
+          [
+            {"de": "Wechsel", "en": "two-way"},
+            {
+              "t": "an, auf, hinter, in, neben, über, unter, vor, zwischen",
+              "en": "at, on, behind, in, next to, over, under, in front of, between"
+            }
+          ],
+          [
+            {"de": "Genitiv", "en": "genitive"},
+            {"t": "wegen, während, trotz, statt", "en": "because of, during, despite, instead of"}
+          ],
           [
             {"de": "Nominativ", "en": "nominative"},
             {"de": "keine – nur nach als / wie (Vergleich)", "en": "none – only after als / wie (comparisons)"}
@@ -3044,11 +3363,11 @@
         "items": [
           {
             "de": "Akkusativ: **DOGFU** – **d**urch, **o**hne, **g**egen, **f**ür, **u**m – dazu **bis**.",
-            "en": "Accusative: **DOGFU** – **d**urch, **o**hne, **g**egen, **f**ür, **u**m – plus **bis**."
+            "en": "Accusative: **DOGFU** – **d**urch (through), **o**hne (without), **g**egen (against), **f**ür (for), **u**m (around, at) – plus **bis** (until)."
           },
           {
             "de": "Dativ: singen – **aus-bei-mit-nach-seit-von-zu**.",
-            "en": "Dative: sing it – **aus-bei-mit-nach-seit-von-zu**."
+            "en": "Dative: sing it – **aus-bei-mit-nach-seit-von-zu** (out of, at, with, to / after, since, from, to)."
           },
           {
             "de": "Wechsel: **Wo?** → Dativ, **Wohin?** → Akkusativ.",
@@ -3192,7 +3511,7 @@
         "items": [
           {
             "de": "**DOGFU**: **d**urch, **o**hne, **g**egen, **f**ür, **u**m – dazu **bis**.",
-            "en": "**DOGFU**: **d**urch, **o**hne, **g**egen, **f**ür, **u**m – plus **bis**."
+            "en": "**DOGFU**: **d**urch (through), **o**hne (without), **g**egen (against), **f**ür (for), **u**m (around, at) – plus **bis** (until)."
           },
           {
             "de": "Nur maskulin ändert sich: der → **den**, ein → **einen**. die, das und Plural bleiben gleich.",
@@ -3445,7 +3764,12 @@
         "type": "table",
         "title": {"de": "Verbpaare", "en": "Verb pairs"},
         "head": [{"de": "Wo? + Dativ", "en": "Wo? + dative"}, {"de": "Wohin? + Akkusativ", "en": "Wohin? + accusative"}],
-        "rows": [["liegen", "legen"], ["stehen", "stellen"], ["sitzen", "setzen"], ["hängen", "hängen"]]
+        "rows": [
+          [{"t": "liegen", "en": "lie (be lying)"}, {"t": "legen", "en": "lay, put (flat)"}],
+          [{"t": "stehen", "en": "stand"}, {"t": "stellen", "en": "put (upright)"}],
+          [{"t": "sitzen", "en": "sit (be sitting)"}, {"t": "setzen", "en": "seat, put (sich setzen = sit down)"}],
+          [{"t": "hängen", "en": "hang (be hanging)"}, {"t": "hängen", "en": "hang (up)"}]
+        ]
       },
       {
         "type": "points",
@@ -3459,6 +3783,13 @@
             "en": "Short forms: in dem → **im**, an dem → **am**, in das → **ins**, an das → **ans**."
           }
         ]
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "**legen, stellen, setzen** (etwas hinbringen) → Akkusativ; **liegen, stehen, sitzen** (dort sein) → Dativ: Ich setze das Kind auf **den** Stuhl. – Das Kind sitzt auf **dem** Stuhl.",
+          "en": "**legen, stellen, setzen** (putting something somewhere) → accusative; **liegen, stehen, sitzen** (being there) → dative: Ich setze das Kind auf **den** Stuhl (I sit the child on the chair). – Das Kind sitzt auf **dem** Stuhl (the child is sitting on the chair)."
+        }
       }
     ],
     "examples": [
@@ -3741,7 +4072,7 @@
           },
           {
             "de": "**nach**: nur Städte, Länder ohne Artikel, nach Hause – und Richtungen: nach links.",
-            "en": "**nach**: only cities, countries without an article, nach Hause – and directions: nach links."
+            "en": "**nach**: only cities, countries without an article, nach Hause – and directions: nach links (to the left)."
           },
           {
             "de": "**zu**: Personen und Orte, zu denen man geht: zum Arzt, zur Bank.",

@@ -163,6 +163,25 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 ## Log
 
+### 2026-10-19 – Grammar: 📘 grammar words, word meanings, a ⚠ mistake in every topic (review step 2 of 2)
+- **📘 Grammatik-Wörter erklärt** (`grammatik-woerter`, new first group "Grundbegriffe"):
+  kinds of words, verb forms, the sentence (subject, object, main/subordinate clause,
+  position 2), the four cases (like he / him / to him / 's), tenses and forms – each with
+  its meaning and a German example with English; 10 ✏️ Üben questions. Every topic's 🧭 box
+  has "📘 Grammar words explained →" (not on the glossary itself).
+- **Word meanings** where German words stood without English: Imperativ verbs, Verben mit
+  Dativ, Komparativ adjectives, Wechselpräpositionen verb pairs (liegen = lie / legen = lay),
+  preposition and connector lists, question-word verb lists (all as tap-for-English cells);
+  meanings in brackets in ~35 English tips (kasus verb lists, ADUSO, DOGFU, zuerst → dann …,
+  adjective examples, Präsens table: wohnen (live) / lernen (learn)).
+- **⚠ Common mistake** added where there was none: kein ≠ nicht (Artikel), movement → sein
+  (Perfekt), ❌ Heute Abend ich koche (Wortstellung), legen/stellen/setzen + Akk. vs.
+  liegen/stehen/sitzen + Dat. (Wechselpräpositionen). Now every topic has one (test).
+- Tests: a warning in every topic; the glossary comes first. CLAUDE.md (groups, glossary,
+  word-meaning rule) and help text (6 languages) updated.
+- Checked all 31 topics at 360/390 px with all English shown: no sideways scroll; the 📘
+  link opens the glossary.
+
 ### 2026-10-19 – Grammar: 🇬🇧 compared with English + English for German in tables (review step 1 of 2)
 - After a review of all 30 topics as an English speaker sees them (only 5 compared German
   with English; ~120 German sentences in tables had no English), the learner chose all five
