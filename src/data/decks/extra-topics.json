@@ -6016,6 +6016,34 @@
         "note": "neue Wohnung, Stadt, Arbeit: Hast du dich schon eingelebt?",
         "level": "A2",
         "source": "KI-Eingang · 2026-10-19"
+      },
+      {
+        "type": "v",
+        "front": "pflanzen",
+        "sub": "hat gepflanzt",
+        "english": "to plant",
+        "example": "Im Frühling pflanzen wir einen Baum im Garten.",
+        "exampleEn": "In spring we're planting a tree in the garden.",
+        "note": "Passiv: Der Baum wird gepflanzt. · die Pflanze = plant",
+        "level": "A2",
+        "source": "Grammatik B1 · Passiv",
+        "grammar": [
+          "passiv-praesens"
+        ]
+      },
+      {
+        "type": "v",
+        "front": "gießen",
+        "sub": "goss · hat gegossen",
+        "english": "to water (plants); to pour",
+        "example": "Im Sommer muss ich die Blumen jeden Tag gießen.",
+        "exampleEn": "In summer I have to water the flowers every day.",
+        "note": "Passiv mit Modalverb: Der Baum muss gegossen werden.",
+        "level": "A2",
+        "source": "Grammatik B1 · Passiv",
+        "grammar": [
+          "passiv-praesens"
+        ]
       }
     ]
   },

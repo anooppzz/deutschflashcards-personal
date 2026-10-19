@@ -1995,8 +1995,8 @@
         "en": "Signs, instructions, recipes, at the post office, in the news."
       },
       "english": {
-        "de": "Englisch nimmt **be**, Deutsch nimmt **werden**: The parcel **is packed** = Das Paket **wird** gepackt. „Das Paket **ist** gepackt“ heißt: Es ist schon fertig.",
-        "en": "English uses **be**, German uses **werden**: the parcel **is (being) packed** = Das Paket **wird** gepackt. \"Das Paket **ist** gepackt\" means it's already done."
+        "de": "Englisch nimmt **be**, Deutsch nimmt **werden**: The parcel **is packed** = Das Paket **wird** gepackt. „Das Paket **ist** gepackt“ heißt: Es ist schon fertig. Mit Modalverb: must be watered = **muss gegossen werden**.",
+        "en": "English uses **be**, German uses **werden**: the parcel **is (being) packed** = Das Paket **wird** gepackt. \"Das Paket **ist** gepackt\" means it's already done. With a modal: must be watered = **muss gegossen werden**."
       },
       "remember": {"de": "Das Paket wird morgen gebracht.", "en": "The parcel will be delivered tomorrow."}
     },
@@ -2029,10 +2029,29 @@
         "rows": [
           ["ich", "werde", {"t": "ich **werde** gefragt", "en": "I am asked"}],
           ["du", "**wirst**", {"t": "du **wirst** gefragt", "en": "you are asked"}],
-          ["er/sie/es", "**wird**", {"t": "es **wird** gepackt", "en": "it is packed"}],
+          ["er/sie/es/man", "**wird**", {"t": "es **wird** gepackt", "en": "it is packed"}],
           ["wir", "werden", {"t": "wir **werden** gefragt", "en": "we are asked"}],
           ["ihr", "werdet", {"t": "ihr **werdet** gefragt", "en": "you all are asked"}],
           ["sie/Sie", "werden", {"t": "sie **werden** gepackt", "en": "they are packed"}]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Wo steht was?", "en": "What goes where?"},
+        "head": [
+          {"de": "Subjekt", "en": "Subject"},
+          "Position 2",
+          {"de": "Mitte", "en": "Middle"},
+          {"de": "Ende", "en": "End"}
+        ],
+        "rows": [
+          [
+            "Der Baum",
+            "**wird**",
+            "jetzt im Wald",
+            {"t": "**gepflanzt**.", "en": "The tree is being planted in the forest now."}
+          ],
+          ["Der Baum", "**muss**", "jetzt", {"t": "**gegossen werden**.", "en": "The tree has to be watered now."}]
         ]
       },
       {
@@ -2051,6 +2070,10 @@
           [
             {"t": "Der Briefträger bringt **den** Brief.", "en": "The postman brings the letter."},
             {"t": "**Der** Brief **wird** gebracht.", "en": "The letter is (being) delivered."}
+          ],
+          [
+            {"t": "Der Arbeiter pflanzt **den** Baum.", "en": "The worker plants the tree."},
+            {"t": "**Der** Baum **wird** (von dem Arbeiter) gepflanzt.", "en": "The tree is planted (by the worker)."}
           ]
         ]
       },
@@ -2083,6 +2106,31 @@
             "en": "Typical for processes, instructions, recipes and signs: Hier **wird** Deutsch **gesprochen** (German is spoken here)."
           }
         ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "Passiv mit Modalverben (B1)", "en": "Passive with modal verbs (B1)"},
+        "items": [
+          {
+            "de": "Modalverb auf Position 2, am Ende **Partizip + werden** (Infinitiv): Der Baum **muss** jetzt **gegossen werden**.",
+            "en": "Modal verb in position 2, at the end **participle + werden** (infinitive): Der Baum **muss** jetzt **gegossen werden** (the tree has to be watered now)."
+          },
+          {
+            "de": "Das geht mit allen Modalverben: Das Formular **kann** online **ausgefüllt werden**. Hier **darf** nicht **geraucht werden**.",
+            "en": "It works with every modal verb: Das Formular **kann** online **ausgefüllt werden** (the form can be filled in online). Hier **darf** nicht **geraucht werden** (smoking isn't allowed here)."
+          },
+          {
+            "de": "Im Nebensatz steht das Modalverb ganz am Ende: Ich gehe in den Garten, weil der Baum gegossen werden **muss**.",
+            "en": "In a subordinate clause the modal verb goes to the very end: Ich gehe in den Garten, weil der Baum gegossen werden **muss** (I'm going into the garden because the tree has to be watered)."
+          }
+        ]
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "Mit Modalverb steht am Ende **werden** (Infinitiv): Der Baum muss gegossen **werden**. ❌ Der Baum muss gegossen wird.",
+          "en": "With a modal verb, **werden** (infinitive) goes at the end: Der Baum muss gegossen **werden**. ❌ Der Baum muss gegossen wird."
+        }
       },
       {
         "type": "warning",

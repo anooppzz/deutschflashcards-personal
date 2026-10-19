@@ -163,6 +163,19 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 ## Log
 
+### 2026-10-19 – Passiv: modal verbs, sentence frame, exercises (grammar book p. 62, B1)
+- From a photo of "62 Der Baum wird gepflanzt – Passiv" (B1 grammar book). The topic
+  `passiv-praesens` already existed, so it was extended rather than duplicated:
+  - **Wo steht was?** – the page's frame: Subjekt | Position 2 | Mitte | Ende
+    (Der Baum **wird** jetzt im Wald **gepflanzt**. / Der Baum **muss** jetzt **gegossen werden**.)
+  - **Passiv mit Modalverben (B1)**: modal in position 2, Partizip + werden at the end;
+    all modal verbs; in a subordinate clause the modal goes last; ⚠ ❌ muss gegossen wird.
+  - Aktiv → Passiv: the page's example with von + Dativ (Der Baum wird (von dem Arbeiter)
+    gepflanzt); werden table: er/sie/es/**man**; 🇬🇧 line: must be watered = muss gegossen werden.
+  - ✏️ 10 new questions (now 20): the page's exercise 1 (senden, operieren, verkaufen,
+    informieren, behandeln, bestellen) + modal passive.
+- New cards in 🏠 Haus & Natur: **pflanzen**, **gießen** (goss · hat gegossen), linked to Passiv.
+
 ### 2026-10-19 – KI-Eingang: 19 searched words → 16 new cards
 - The learner pasted a KI-Eingang export (19 words searched in the app, with automatic
   translations and Wiktionary lines). Worked in per `docs/ai-inbox/README.md`; per-entry
