@@ -243,6 +243,7 @@ found in the example are left out of Cloze, which is fine for phrases).
   "intro": {                                   // 🧭 Worum geht's? (folded box above the rule)
     "what": {"de": "…", "en": "…"},            //   what it is, in plain words
     "when": {"de": "…", "en": "…"},            //   when you need it in real life
+    "english": {"de": "…", "en": "…"},         //   🇬🇧 compared with English (bridge, false friends)
     "remember": {"de": "Ich fahre mit dem Bus.", "en": "I go by bus."}  // one sentence, 🔊
   },
   "summary": {"de": "…", "en": "…"},          // the rule in one line
@@ -261,6 +262,10 @@ found in the example are left out of Cloze, which is fine for phrases).
 - **Complete sentences, not "…"**: an example is always a whole sentence (`Ich komme
   nicht, weil ich krank bin.`, not `…, weil ich krank bin.`). "…" only for a pattern
   (`ge- … -t`, `entweder … oder`) or a list's "etc."; a test flags cut-off examples.
+- **German with its English:** a German phrase/sentence in a table is
+  `{"t": "Ich stehe um 7 Uhr **auf**.", "en": "I get up at 7."}` – the German always shows,
+  the English on tap (or 🇬🇧 English above the table). A test fails if a German sentence in
+  a table has no English (tables with an "English"/"Meaning" column are exempt).
 - Every text is `{de, en}`; a table cell may be a plain string (German forms).
   `**x**` highlights x (use it for endings: `wohn**st**`). Use ❌/✅ for wrong/right.
 - Topics of one `group` must sit together; groups are headings in the Grammatik tab:

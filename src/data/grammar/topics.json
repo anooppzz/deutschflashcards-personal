@@ -13,6 +13,10 @@
         "de": "Immer – in fast jedem Satz mit einem Nomen.",
         "en": "All the time – in almost every sentence with a noun."
       },
+      "english": {
+        "de": "Englisch hat nur ein **the**, Deutsch hat drei: **der, die, das**. Das Genus ist Grammatik, nicht Bedeutung: **das** Mädchen – ein Mädchen, aber das Wort ist neutral.",
+        "en": "English has one **the**, German has three: **der, die, das**. The gender is grammar, not meaning: **das** Mädchen (the girl) – a girl, but neuter!"
+      },
       "remember": {
         "de": "Der Tisch, die Lampe und das Sofa sind neu.",
         "en": "The table, the lamp and the sofa are new."
@@ -71,6 +75,10 @@
       "when": {
         "de": "Bei einem neuen Wort, wenn du den Artikel nicht weißt.",
         "en": "With a new word when you don't know its article."
+      },
+      "english": {
+        "de": "Englisch hat kein Genus – darum ist jede Hilfe gut: Endungen wie **-ung** (wie englisch **-ing**: die Zeitung) und **-tion** (die Station) sind immer **die**.",
+        "en": "English has no gender at all – so every clue helps: endings like **-ung** (a bit like English **-ing**: die Zeitung) and **-tion** (die Station, the station) are always **die**."
       },
       "remember": {
         "de": "Die Zeitung und die Information sind neu.",
@@ -136,6 +144,10 @@
       "when": {
         "de": "Wenn du über deine Familie, deine Wohnung und deine Sachen sprichst.",
         "en": "Talking about your family, your flat and your things."
+      },
+      "english": {
+        "de": "Wie my, your, his, her – aber mit Endungen (mein**e** Mutter). Achtung: **ihr** = her **oder** their, **Ihr** (groß) = your (höflich).",
+        "en": "Like my, your, his, her – but with endings (mein**e** Mutter, my mother). Careful: **ihr** = her **or** their, **Ihr** (capital I) = your (polite)."
       },
       "remember": {
         "de": "Das ist meine Schwester und das ist mein Bruder.",
@@ -210,6 +222,10 @@
         "de": "In jedem Satz mit mehr als einem Nomen – und nach vielen Präpositionen.",
         "en": "In every sentence with more than one noun – and after many prepositions."
       },
+      "english": {
+        "de": "Englisch hat die Fälle noch bei Pronomen: he → him, who → whom. Deutsch macht das auch mit dem Artikel: **der** Mann → **den** Mann → **dem** Mann.",
+        "en": "English still has cases in pronouns: he → him, who → whom. German does the same with the article too: **der** Mann → **den** Mann → **dem** Mann (the man)."
+      },
       "remember": {"de": "Ich gebe dem Kellner das Geld.", "en": "I give the money to the waiter."}
     },
     "summary": {
@@ -222,9 +238,13 @@
         "title": {"de": "Ein Satz, drei Fälle: Der Mann schenkt dem Kind einen Ball.", "en": "One sentence, three cases: Der Mann schenkt dem Kind einen Ball. (The man gives the child a ball.)"},
         "head": [{"de": "Kasus", "en": "Case"}, {"de": "Frage", "en": "Question"}, {"de": "Im Satz", "en": "In the sentence"}],
         "rows": [
-          ["Nominativ", "Wer/Was?", "**Der Mann** schenkt …"],
-          ["Dativ", "Wem?", "… **dem Kind** …"],
-          ["Akkusativ", "Wen/Was?", "… **einen Ball**."]
+          ["Nominativ", {"t": "Wer/Was?", "en": "who? / what?"}, "**Der Mann** schenkt …"],
+          ["Dativ", {"t": "Wem?", "en": "to whom?"}, "… **dem Kind** …"],
+          [
+            "Akkusativ",
+            {"t": "Wen/Was?", "en": "whom? / what?"},
+            {"t": "… **einen Ball**.", "en": "The man gives the child a ball."}
+          ]
         ]
       },
       {
@@ -293,27 +313,31 @@
         "title": {"de": "Was bestimmt den Kasus?", "en": "What decides the case?"},
         "head": [{"de": "Wann?", "en": "When?"}, {"de": "Kasus", "en": "Case"}, {"de": "Beispiel", "en": "Example"}],
         "rows": [
-          [{"de": "Subjekt", "en": "subject"}, "Nom.", "**Der Bus** kommt."],
-          [{"de": "nach sein, werden, heißen", "en": "after sein, werden, heißen"}, "Nom.", "Das ist **der** Chef."],
+          [{"de": "Subjekt", "en": "subject"}, "Nom.", {"t": "**Der Bus** kommt.", "en": "The bus is coming."}],
+          [
+            {"de": "nach sein, werden, heißen", "en": "after sein, werden, heißen"},
+            "Nom.",
+            {"t": "Das ist **der** Chef.", "en": "That's the boss."}
+          ],
           [
             {"de": "die meisten Verben: haben, sehen, kaufen …", "en": "most verbs: haben, sehen, kaufen …"},
             "Akk.",
-            "Ich habe **einen** Hund."
+            {"t": "Ich habe **einen** Hund.", "en": "I have a dog."}
           ],
           [
             {"de": "helfen, danken, gefallen, gehören …", "en": "helfen, danken, gefallen, gehören …"},
             "Dat.",
-            "Ich helfe **dem** Mann."
+            {"t": "Ich helfe **dem** Mann.", "en": "I'm helping the man."}
           ],
           [
             {"de": "geben, schenken, zeigen, bringen", "en": "geben, schenken, zeigen, bringen"},
             "Dat.+Akk.",
-            "Ich gebe **dir den** Schlüssel."
+            {"t": "Ich gebe **dir den** Schlüssel.", "en": "I'm giving you the key."}
           ],
           [
             {"de": "nach Präpositionen", "en": "after prepositions"},
             {"de": "je nach Präp.", "en": "depends"},
-            "mit **dem** Bus · für **den** Chef"
+            {"t": "mit **dem** Bus · für **den** Chef", "en": "by bus · for the boss"}
           ]
         ]
       },
@@ -352,6 +376,10 @@
       "when": {
         "de": "Immer – wenn du sagst, was du machst, magst und planst.",
         "en": "All the time – saying what you do, like and plan."
+      },
+      "english": {
+        "de": "Eine deutsche Form = zwei englische: **Ich lerne** = I learn **und** I'm learning. Oft auch für die Zukunft: Ich komme morgen = I'll come tomorrow.",
+        "en": "One German form = two English ones: **Ich lerne** = I learn **and** I'm learning. Often the future too: Ich komme morgen = I'll come tomorrow."
       },
       "remember": {
         "de": "Ich wohne in Berlin und arbeite in einem Büro.",
@@ -417,6 +445,10 @@
         "de": "Im Alltag ständig: aufstehen, einkaufen, anrufen, abholen.",
         "en": "Constantly in daily life: aufstehen (get up), einkaufen (shop), anrufen (call), abholen (pick up)."
       },
+      "english": {
+        "de": "Wie englische Phrasal Verbs (get **up**, call **up**, go **out**) – aber das kleine Wort springt ganz ans **Ende**: Ich stehe um 7 Uhr **auf** = I get **up** at 7.",
+        "en": "Like English phrasal verbs (get **up**, call **up**, go **out**) – but the little word jumps to the very **end**: Ich stehe um 7 Uhr **auf** = I get **up** at 7."
+      },
       "remember": {"de": "Ich stehe jeden Tag um sechs Uhr auf.", "en": "I get up at six every day."}
     },
     "summary": {
@@ -429,12 +461,21 @@
         "title": {"de": "Wo steht das Präfix?", "en": "Where does the prefix go?"},
         "head": [{"de": "Satz", "en": "Sentence"}, {"de": "Beispiel", "en": "Example"}],
         "rows": [
-          [{"de": "Präsens", "en": "present"}, "Ich **stehe** um 7 Uhr **auf**."],
-          [{"de": "Frage", "en": "question"}, "**Stehst** du früh **auf**?"],
-          [{"de": "Imperativ", "en": "imperative"}, "**Steh** bitte **auf**!"],
-          [{"de": "mit Modalverb", "en": "with a modal"}, "Ich muss früh **aufstehen**."],
-          ["Perfekt", "Ich bin früh **aufgestanden**."],
-          [{"de": "Nebensatz", "en": "subordinate clause"}, "Ich gehe früh ins Bett, weil ich früh **aufstehe**."]
+          [{"de": "Präsens", "en": "present"}, {"t": "Ich **stehe** um 7 Uhr **auf**.", "en": "I get up at 7."}],
+          [{"de": "Frage", "en": "question"}, {"t": "**Stehst** du früh **auf**?", "en": "Do you get up early?"}],
+          [{"de": "Imperativ", "en": "imperative"}, {"t": "**Steh** bitte **auf**!", "en": "Get up, please!"}],
+          [
+            {"de": "mit Modalverb", "en": "with a modal"},
+            {"t": "Ich muss früh **aufstehen**.", "en": "I have to get up early."}
+          ],
+          ["Perfekt", {"t": "Ich bin früh **aufgestanden**.", "en": "I got up early."}],
+          [
+            {"de": "Nebensatz", "en": "subordinate clause"},
+            {
+              "t": "Ich gehe früh ins Bett, weil ich früh **aufstehe**.",
+              "en": "I go to bed early because I get up early."
+            }
+          ]
         ]
       },
       {
@@ -484,8 +525,11 @@
         "head": [{"de": "trennbar", "en": "separable"}, {"de": "untrennbar", "en": "inseparable"}],
         "rows": [
           ["ab-, an-, auf-, aus-, ein-, mit-, vor-, zu- …", "be-, emp-, ent-, er-, ge-, miss-, ver-, zer-"],
-          ["Ich **rufe** dich **an**.", "Ich **besuche** dich."],
-          ["an**ge**rufen", "besucht (kein ge-)"]
+          [
+            {"t": "Ich **rufe** dich **an**.", "en": "I'll call you."},
+            {"t": "Ich **besuche** dich.", "en": "I'll visit you."}
+          ],
+          ["an**ge**rufen", {"t": "besucht (kein ge-)", "en": "visited (no ge-)"}]
         ]
       },
       {
@@ -531,6 +575,10 @@
         "de": "Rezepte, Wegbeschreibungen, beim Arzt, mit Kindern und Freunden.",
         "en": "Recipes, directions, at the doctor's, with children and friends."
       },
+      "english": {
+        "de": "Englisch hat eine Form: **Come!** Deutsch hat drei – je nachdem, mit wem du sprichst: **Komm!** (du), **Kommt!** (ihr), **Kommen Sie!** (Sie).",
+        "en": "English has one form: **Come!** German has three, depending on who you're talking to: **Komm!** (du), **Kommt!** (ihr), **Kommen Sie!** (Sie)."
+      },
       "remember": {"de": "Nehmen Sie bitte Platz!", "en": "Please take a seat!"}
     },
     "summary": {
@@ -542,10 +590,10 @@
         "type": "table",
         "head": ["Person", {"de": "Präsens", "en": "Present"}, "Imperativ"],
         "rows": [
-          ["du", "du komm**st**", "**Komm**!"],
-          ["ihr", "ihr kommt", "**Kommt**!"],
-          ["Sie", "Sie kommen", "**Kommen Sie**!"],
-          ["wir", "wir gehen", "**Gehen wir**!"]
+          ["du", "du komm**st**", {"t": "**Komm**!", "en": "Come!"}],
+          ["ihr", "ihr kommt", {"t": "**Kommt**!", "en": "Come! (you all)"}],
+          ["Sie", "Sie kommen", {"t": "**Kommen Sie**!", "en": "Come! (polite)"}],
+          ["wir", "wir gehen", {"t": "**Gehen wir**!", "en": "Let's go!"}]
         ]
       },
       {
@@ -553,21 +601,25 @@
         "title": {"de": "du-Form", "en": "du form"},
         "head": ["Verb", "du …", "Imperativ"],
         "rows": [
-          ["machen", "du machst", "**Mach**!"],
-          ["nehmen", "du nimmst", "**Nimm**!"],
-          ["lesen", "du liest", "**Lies**!"],
-          ["essen", "du isst", "**Iss**!"],
-          ["fahren", "du fährst", "**Fahr**!"],
-          ["arbeiten", "du arbeitest", "**Arbeite**!"],
-          ["anrufen", "du rufst an", "**Ruf** mich **an**!"],
-          ["sich beeilen", "du beeilst dich", "**Beeil dich**!"]
+          ["machen", "du machst", {"t": "**Mach**!", "en": "Do it! / Make it!"}],
+          ["nehmen", "du nimmst", {"t": "**Nimm**!", "en": "Take it!"}],
+          ["lesen", "du liest", {"t": "**Lies**!", "en": "Read!"}],
+          ["essen", "du isst", {"t": "**Iss**!", "en": "Eat!"}],
+          ["fahren", "du fährst", {"t": "**Fahr**!", "en": "Drive! / Go!"}],
+          ["arbeiten", "du arbeitest", {"t": "**Arbeite**!", "en": "Work!"}],
+          ["anrufen", "du rufst an", {"t": "**Ruf** mich **an**!", "en": "Call me!"}],
+          ["sich beeilen", "du beeilst dich", {"t": "**Beeil dich**!", "en": "Hurry up!"}]
         ]
       },
       {
         "type": "table",
         "title": {"de": "sein ist anders", "en": "sein is different"},
         "head": ["Person", "Imperativ"],
-        "rows": [["du", "**Sei** ruhig!"], ["ihr", "**Seid** leise!"], ["Sie", "**Seien Sie** pünktlich!"]]
+        "rows": [
+          ["du", {"t": "**Sei** ruhig!", "en": "Be quiet!"}],
+          ["ihr", {"t": "**Seid** leise!", "en": "Be quiet! (you all)"}],
+          ["Sie", {"t": "**Seien Sie** pünktlich!", "en": "Be on time! (polite)"}]
+        ]
       },
       {
         "type": "points",
@@ -649,6 +701,10 @@
         "de": "Wenn du erzählst, was du gemacht hast – gestern, am Wochenende, im Urlaub.",
         "en": "Telling what you did – yesterday, at the weekend, on holiday."
       },
+      "english": {
+        "de": "Sieht aus wie **I have done**, bedeutet aber meist **I did**: Ich **habe** gestern **gearbeitet** = I worked yesterday (nicht: I have worked yesterday).",
+        "en": "Looks like **I have done**, but usually means **I did**: Ich **habe** gestern **gearbeitet** = I worked yesterday (not \"I have worked yesterday\")."
+      },
       "remember": {"de": "Am Wochenende habe ich meine Eltern besucht.", "en": "At the weekend I visited my parents."}
     },
     "summary": {
@@ -665,11 +721,15 @@
           {"de": "Beispiel", "en": "Example"}
         ],
         "rows": [
-          ["**haben**", {"de": "die meisten Verben", "en": "most verbs"}, "ich **habe** gelernt"],
+          [
+            "**haben**",
+            {"de": "die meisten Verben", "en": "most verbs"},
+            {"t": "ich **habe** gelernt", "en": "I (have) learned"}
+          ],
           [
             "**sein**",
             {"de": "Bewegung: gehen, fahren, kommen", "en": "movement: gehen, fahren, kommen"},
-            "ich **bin** gefahren"
+            {"t": "ich **bin** gefahren", "en": "I drove / I went"}
           ],
           [
             "**sein**",
@@ -677,7 +737,7 @@
               "de": "Zustandsänderung: werden, sterben – und bleiben",
               "en": "change of state: werden, sterben – and bleiben"
             },
-            "ich **bin** geblieben"
+            {"t": "ich **bin** geblieben", "en": "I stayed"}
           ]
         ]
       },
@@ -686,19 +746,27 @@
         "title": {"de": "Partizip II bilden", "en": "Forming the past participle"},
         "head": [{"de": "Verb", "en": "Verb"}, {"de": "Muster", "en": "Pattern"}, {"de": "Beispiel", "en": "Example"}],
         "rows": [
-          [{"de": "regelmäßig", "en": "regular"}, "ge- … -t", "machen → **ge**mach**t**"],
+          [{"de": "regelmäßig", "en": "regular"}, "ge- … -t", {"t": "machen → **ge**mach**t**", "en": "make → made"}],
           [
             {"de": "unregelmäßig", "en": "irregular"},
             {"de": "ge- … -en, oft neuer Stamm", "en": "ge- … -en, often a new stem"},
-            "gehen → **ge**gang**en**"
+            {"t": "gehen → **ge**gang**en**", "en": "go → gone"}
           ],
           [
             {"de": "trennbar", "en": "separable"},
             {"de": "Präfix + ge + …", "en": "prefix + ge + …"},
-            "einkaufen → ein**ge**kauft"
+            {"t": "einkaufen → ein**ge**kauft", "en": "go shopping → gone shopping"}
           ],
-          [{"de": "auf -ieren", "en": "-ieren verbs"}, {"de": "ohne ge-", "en": "no ge-"}, "reservieren → reserviert"],
-          [{"de": "untrennbar", "en": "inseparable"}, {"de": "ohne ge-", "en": "no ge-"}, "bekommen → bekommen"]
+          [
+            {"de": "auf -ieren", "en": "-ieren verbs"},
+            {"de": "ohne ge-", "en": "no ge-"},
+            {"t": "reservieren → reserviert", "en": "book → booked"}
+          ],
+          [
+            {"de": "untrennbar", "en": "inseparable"},
+            {"de": "ohne ge-", "en": "no ge-"},
+            {"t": "bekommen → bekommen", "en": "get → got"}
+          ]
         ]
       },
       {
@@ -739,6 +807,10 @@
       "when": {
         "de": "Beim Erzählen (ich war, ich hatte, ich musste) – und beim Lesen von Texten und Geschichten.",
         "en": "Telling what happened (ich war – I was, ich hatte – I had, ich musste – I had to) – and when reading texts and stories."
+      },
+      "english": {
+        "de": "**war, hatte** = was, had – wie das englische Simple Past. Aber beim Sprechen nimmt man es fast nur für sein, haben und die Modalverben.",
+        "en": "**war, hatte** = was, had – like the English simple past. But in speech German uses it almost only for sein, haben and the modal verbs."
       },
       "remember": {
         "de": "Gestern war ich müde, ich hatte viel Arbeit.",
@@ -859,6 +931,10 @@
       "when": {
         "de": "Ständig: um Erlaubnis bitten, Pläne machen, Pflichten nennen.",
         "en": "Constantly: asking permission, making plans, saying what you have to do."
+      },
+      "english": {
+        "de": "Falsche Freunde: **Ich will** = I want (nicht: I will). **Ich muss nicht** = I don't have to. **I must not** = Ich **darf nicht**.",
+        "en": "False friends: **Ich will** = I want (not \"I will\"). **Ich muss nicht** = I don't have to. **I must not** = Ich **darf nicht**."
       },
       "remember": {"de": "Ich muss heute lange arbeiten.", "en": "I have to work late today."}
     },
@@ -983,6 +1059,10 @@
         "de": "Beim Bestellen, beim Bitten, beim Ratgeben und wenn du über Träume sprichst.",
         "en": "Ordering in a café, asking someone for help, giving advice, talking about your dreams."
       },
+      "english": {
+        "de": "Englisch sagt **would / could**: Ich **würde** = I would, ich **könnte** = I could, ich **hätte gern** = I'd like. Wie im Englischen: Wenn ich reich **wäre** = If I **were** rich.",
+        "en": "English uses **would / could**: ich **würde** = I would, ich **könnte** = I could, ich **hätte gern** = I'd like. Just like English: Wenn ich reich **wäre** = If I **were** rich."
+      },
       "remember": {"de": "Ich hätte gern einen Kaffee.", "en": "I'd like a coffee, please."}
     },
     "summary": {
@@ -1021,16 +1101,37 @@
         "rows": [
           [
             {"de": "höflich bitten", "en": "asking politely"},
-            "**Könnten** Sie mir helfen? **Würden** Sie bitte das Fenster öffnen?"
+            {
+              "t": "**Könnten** Sie mir helfen? **Würden** Sie bitte das Fenster öffnen?",
+              "en": "Could you help me? Would you open the window, please?"
+            }
           ],
-          [{"de": "bestellen", "en": "ordering"}, "Ich **hätte** gern einen Kaffee."],
+          [
+            {"de": "bestellen", "en": "ordering"},
+            {"t": "Ich **hätte** gern einen Kaffee.", "en": "I'd like a coffee."}
+          ],
           [
             {"de": "Wunsch, Traum", "en": "wish, dream"},
-            "Ich **würde** gern nach Australien reisen. Er **wäre** gern Profisportler."
+            {
+              "t": "Ich **würde** gern nach Australien reisen. Er **wäre** gern Profisportler.",
+              "en": "I'd like to travel to Australia. He'd like to be a pro athlete."
+            }
           ],
-          [{"de": "Ratschlag (sollen)", "en": "advice (sollen)"}, "Du **solltest** mehr schlafen."],
-          [{"de": "Vorschlag (können)", "en": "suggestion (können)"}, "Wir **könnten** ins Kino gehen."],
-          [{"de": "nicht real", "en": "unreal"}, "Wenn ich viel Geld **hätte**, (dann) **wäre** ich glücklich."]
+          [
+            {"de": "Ratschlag (sollen)", "en": "advice (sollen)"},
+            {"t": "Du **solltest** mehr schlafen.", "en": "You should sleep more."}
+          ],
+          [
+            {"de": "Vorschlag (können)", "en": "suggestion (können)"},
+            {"t": "Wir **könnten** ins Kino gehen.", "en": "We could go to the cinema."}
+          ],
+          [
+            {"de": "nicht real", "en": "unreal"},
+            {
+              "t": "Wenn ich viel Geld **hätte**, (dann) **wäre** ich glücklich.",
+              "en": "If I had a lot of money, I'd be happy."
+            }
+          ]
         ]
       },
       {
@@ -1158,6 +1259,10 @@
         "de": "Morgenroutine, Gefühle, Verabredungen: sich anziehen, sich freuen, sich treffen.",
         "en": "Morning routine, feelings, meeting people: sich anziehen (get dressed), sich freuen (be happy), sich treffen (meet)."
       },
+      "english": {
+        "de": "Im Englischen oft ohne „myself“: sich freuen = be happy, sich beeilen = hurry. Im Deutschen ist **sich** Pflicht: Ich beeile **mich**.",
+        "en": "English often has no \"myself\": sich freuen = be happy, sich beeilen = hurry. In German **sich** is a must: Ich beeile **mich** (I hurry)."
+      },
       "remember": {"de": "Ich freue mich auf das Wochenende.", "en": "I'm looking forward to the weekend."}
     },
     "summary": {
@@ -1170,12 +1275,12 @@
         "title": {"de": "Reflexivpronomen", "en": "Reflexive pronouns"},
         "head": [{"de": "Person", "en": "Person"}, "Akkusativ", "Dativ", {"de": "Beispiel", "en": "Example"}],
         "rows": [
-          ["ich", "**mich**", "**mir**", "ich wasche **mich**"],
-          ["du", "**dich**", "**dir**", "du wäschst **dich**"],
-          ["er/sie/es", "**sich**", "**sich**", "er wäscht **sich**"],
-          ["wir", "uns", "uns", "wir waschen uns"],
-          ["ihr", "euch", "euch", "ihr wascht euch"],
-          ["sie/Sie", "**sich**", "**sich**", "Sie waschen **sich**"]
+          ["ich", "**mich**", "**mir**", {"t": "ich wasche **mich**", "en": "I wash (myself)"}],
+          ["du", "**dich**", "**dir**", {"t": "du wäschst **dich**", "en": "you wash (yourself)"}],
+          ["er/sie/es", "**sich**", "**sich**", {"t": "er wäscht **sich**", "en": "he washes (himself)"}],
+          ["wir", "uns", "uns", {"t": "wir waschen uns", "en": "we wash (ourselves)"}],
+          ["ihr", "euch", "euch", {"t": "ihr wascht euch", "en": "you all wash (yourselves)"}],
+          ["sie/Sie", "**sich**", "**sich**", {"t": "Sie waschen **sich**", "en": "they wash / you wash (polite)"}]
         ]
       },
       {
@@ -1275,13 +1380,28 @@
         "title": {"de": "Wo steht sich?", "en": "Where does sich go?"},
         "head": [{"de": "Satz", "en": "Sentence"}, {"de": "Beispiel", "en": "Example"}],
         "rows": [
-          [{"de": "Hauptsatz", "en": "Main clause"}, "Ich **freue mich** auf morgen."],
-          [{"de": "Frage / Inversion", "en": "Question / inversion"}, "Freust du **dich**? Heute freue ich **mich**."],
-          ["Perfekt", "Ich **habe mich** gefreut."],
-          [{"de": "Modalverb", "en": "Modal verb"}, "Ich muss **mich** beeilen."],
-          [{"de": "trennbar", "en": "Separable"}, "Ich ruhe **mich** aus."],
-          [{"de": "Nebensatz", "en": "Subordinate clause"}, "Er ist sauer, weil er **sich** über den Chef geärgert hat."],
-          [{"de": "Imperativ", "en": "Imperative"}, "Beeil **dich**! Freuen Sie **sich**!"]
+          [
+            {"de": "Hauptsatz", "en": "Main clause"},
+            {"t": "Ich **freue mich** auf morgen.", "en": "I'm looking forward to tomorrow."}
+          ],
+          [
+            {"de": "Frage / Inversion", "en": "Question / inversion"},
+            {"t": "Freust du **dich**? Heute freue ich **mich**.", "en": "Are you happy? Today I'm happy."}
+          ],
+          ["Perfekt", {"t": "Ich **habe mich** gefreut.", "en": "I was happy."}],
+          [{"de": "Modalverb", "en": "Modal verb"}, {"t": "Ich muss **mich** beeilen.", "en": "I have to hurry."}],
+          [{"de": "trennbar", "en": "Separable"}, {"t": "Ich ruhe **mich** aus.", "en": "I'm having a rest."}],
+          [
+            {"de": "Nebensatz", "en": "Subordinate clause"},
+            {
+              "t": "Er ist sauer, weil er **sich** über den Chef geärgert hat.",
+              "en": "He's angry because he got annoyed with the boss."
+            }
+          ],
+          [
+            {"de": "Imperativ", "en": "Imperative"},
+            {"t": "Beeil **dich**! Freuen Sie **sich**!", "en": "Hurry up! Be happy! (polite)"}
+          ]
         ]
       },
       {
@@ -1352,6 +1472,10 @@
         "de": "Beim Einkaufen (Das gefällt mir.), wenn du Hilfe brauchst oder dich bedankst.",
         "en": "Shopping (Das gefällt mir. – I like it.), asking for help, saying thank you."
       },
+      "english": {
+        "de": "Bei einigen Verben ist es andersherum: Das gefällt **mir** = I like it (wörtlich: it pleases **me**). Im Englischen hört man den Dativ nicht: help **me** = hilf **mir**.",
+        "en": "Some verbs work back to front: Das gefällt **mir** = I like it (literally: it pleases **me**). English doesn't show the dative: help **me** = hilf **mir**."
+      },
       "remember": {"de": "Kannst du mir bitte helfen?", "en": "Can you help me, please?"}
     },
     "summary": {
@@ -1385,12 +1509,12 @@
         "title": {"de": "Dativ + Akkusativ", "en": "Dative + accusative"},
         "head": ["Verb", {"de": "Beispiel", "en": "Example"}],
         "rows": [
-          ["geben", "Ich gebe **dem Kind den Ball**."],
-          ["schenken", "Er schenkt **ihr Blumen**."],
-          ["zeigen", "Zeig **mir das Foto**!"],
-          ["erklären", "Erklär **mir das** bitte."],
-          ["bringen, schicken", "Ich bringe **dir einen Kaffee**."],
-          ["empfehlen, leihen", "Kannst du **mir dein Rad** leihen?"]
+          ["geben", {"t": "Ich gebe **dem Kind den Ball**.", "en": "I give the child the ball."}],
+          ["schenken", {"t": "Er schenkt **ihr Blumen**.", "en": "He gives her flowers."}],
+          ["zeigen", {"t": "Zeig **mir das Foto**!", "en": "Show me the photo!"}],
+          ["erklären", {"t": "Erklär **mir das** bitte.", "en": "Explain that to me, please."}],
+          ["bringen, schicken", {"t": "Ich bringe **dir einen Kaffee**.", "en": "I'll bring you a coffee."}],
+          ["empfehlen, leihen", {"t": "Kannst du **mir dein Rad** leihen?", "en": "Can you lend me your bike?"}]
         ]
       },
       {
@@ -1451,6 +1575,10 @@
         "de": "Wenn du über Pläne, Gefühle und Interessen sprichst.",
         "en": "Talking about plans, feelings and interests."
       },
+      "english": {
+        "de": "Die Präposition passt oft **nicht** zum Englischen: wait **for** = warten **auf**, think **of** = denken **an**, be afraid **of** = Angst haben **vor**.",
+        "en": "The preposition often **doesn't** match English: wait **for** = warten **auf**, think **of** = denken **an**, be afraid **of** = Angst haben **vor**."
+      },
       "remember": {"de": "Ich warte schon zehn Minuten auf dich.", "en": "I've been waiting for you for ten minutes."}
     },
     "summary": {
@@ -1484,8 +1612,16 @@
         "title": {"de": "Fragen und Antworten", "en": "Questions and answers"},
         "head": ["", {"de": "Sache", "en": "Thing"}, "Person"],
         "rows": [
-          [{"de": "Frage", "en": "Question"}, "**Worauf** wartest du?", "**Auf wen** wartest du?"],
-          [{"de": "Antwort", "en": "Answer"}, "Ich warte **darauf**.", "Ich warte **auf ihn**."]
+          [
+            {"de": "Frage", "en": "Question"},
+            {"t": "**Worauf** wartest du?", "en": "What are you waiting for?"},
+            {"t": "**Auf wen** wartest du?", "en": "Who are you waiting for?"}
+          ],
+          [
+            {"de": "Antwort", "en": "Answer"},
+            {"t": "Ich warte **darauf**.", "en": "I'm waiting for it."},
+            {"t": "Ich warte **auf ihn**.", "en": "I'm waiting for him."}
+          ]
         ]
       },
       {
@@ -1564,6 +1700,10 @@
         "de": "Schilder, Anleitungen, Rezepte, auf der Post, in den Nachrichten.",
         "en": "Signs, instructions, recipes, at the post office, in the news."
       },
+      "english": {
+        "de": "Englisch nimmt **be**, Deutsch nimmt **werden**: The parcel **is packed** = Das Paket **wird** gepackt. „Das Paket **ist** gepackt“ heißt: Es ist schon fertig.",
+        "en": "English uses **be**, German uses **werden**: the parcel **is (being) packed** = Das Paket **wird** gepackt. \"Das Paket **ist** gepackt\" means it's already done."
+      },
       "remember": {"de": "Das Paket wird morgen gebracht.", "en": "The parcel will be delivered tomorrow."}
     },
     "summary": {
@@ -1576,8 +1716,16 @@
         "title": {"de": "Passiv Präsens", "en": "Passive, present tense"},
         "head": ["", "werden", "Partizip"],
         "rows": [
-          [{"de": "Singular: Das Päckchen", "en": "Singular: Das Päckchen"}, "**wird**", "**gepackt**."],
-          [{"de": "Plural: Die Geschenke", "en": "Plural: Die Geschenke"}, "**werden** in den Karton", "**gelegt**."]
+          [
+            {"de": "Singular: Das Päckchen", "en": "Singular: Das Päckchen"},
+            "**wird**",
+            {"t": "**gepackt**.", "en": "The small parcel is being packed."}
+          ],
+          [
+            {"de": "Plural: Die Geschenke", "en": "Plural: Die Geschenke"},
+            "**werden** in den Karton",
+            {"t": "**gelegt**.", "en": "The presents are being put in the box."}
+          ]
         ]
       },
       {
@@ -1585,12 +1733,12 @@
         "title": {"de": "werden im Präsens", "en": "werden in the present"},
         "head": ["", "werden", {"de": "Beispiel", "en": "Example"}],
         "rows": [
-          ["ich", "werde", "ich **werde** gefragt"],
-          ["du", "**wirst**", "du **wirst** gefragt"],
-          ["er/sie/es", "**wird**", "es **wird** gepackt"],
-          ["wir", "werden", "wir **werden** gefragt"],
-          ["ihr", "werdet", "ihr **werdet** gefragt"],
-          ["sie/Sie", "werden", "sie **werden** gepackt"]
+          ["ich", "werde", {"t": "ich **werde** gefragt", "en": "I am asked"}],
+          ["du", "**wirst**", {"t": "du **wirst** gefragt", "en": "you are asked"}],
+          ["er/sie/es", "**wird**", {"t": "es **wird** gepackt", "en": "it is packed"}],
+          ["wir", "werden", {"t": "wir **werden** gefragt", "en": "we are asked"}],
+          ["ihr", "werdet", {"t": "ihr **werdet** gefragt", "en": "you all are asked"}],
+          ["sie/Sie", "werden", {"t": "sie **werden** gepackt", "en": "they are packed"}]
         ]
       },
       {
@@ -1598,9 +1746,18 @@
         "title": {"de": "Aktiv → Passiv", "en": "Active → passive"},
         "head": ["Aktiv", "Passiv"],
         "rows": [
-          ["Die Frau packt **das** Päckchen.", "**Das** Päckchen **wird** gepackt."],
-          ["Man legt **die** Geschenke in den Karton.", "**Die** Geschenke **werden** in den Karton gelegt."],
-          ["Der Briefträger bringt **den** Brief.", "**Der** Brief **wird** gebracht."]
+          [
+            {"t": "Die Frau packt **das** Päckchen.", "en": "The woman packs the small parcel."},
+            {"t": "**Das** Päckchen **wird** gepackt.", "en": "The small parcel is (being) packed."}
+          ],
+          [
+            {"t": "Man legt **die** Geschenke in den Karton.", "en": "Someone puts the presents in the box."},
+            {"t": "**Die** Geschenke **werden** in den Karton gelegt.", "en": "The presents are put in the box."}
+          ],
+          [
+            {"t": "Der Briefträger bringt **den** Brief.", "en": "The postman brings the letter."},
+            {"t": "**Der** Brief **wird** gebracht.", "en": "The letter is (being) delivered."}
+          ]
         ]
       },
       {
@@ -1669,6 +1826,10 @@
         "de": "Beim Beschreiben: Kleidung, Wohnung, Menschen, Essen.",
         "en": "Describing things: clothes, your flat, people, food."
       },
+      "english": {
+        "de": "Englische Adjektive ändern sich nie: a new coat, the new coat, with the new coat. Deutsche bekommen vor dem Nomen eine **Endung**: ein neu**er** Mantel.",
+        "en": "English adjectives never change: a new coat, the new coat, with the new coat. German ones take an **ending** before a noun: ein neu**er** Mantel."
+      },
       "remember": {
         "de": "Ich suche eine kleine Wohnung mit einem großen Balkon.",
         "en": "I'm looking for a small flat with a big balcony."
@@ -1714,12 +1875,36 @@
         "title": {"de": "Beispiele: der Rock, die Jacke, das Kleid", "en": "Examples: der Rock, die Jacke, das Kleid"},
         "head": ["", {"de": "der, die, das", "en": "der, die, das"}, {"de": "ein, eine", "en": "ein, eine"}],
         "rows": [
-          [{"de": "m", "en": "m"}, "der neu**e** Rock", "ein neu**er** Rock"],
-          [{"de": "f", "en": "f"}, "die neu**e** Jacke", "eine neu**e** Jacke"],
-          [{"de": "n", "en": "n"}, "das neu**e** Kleid", "ein neu**es** Kleid"],
-          [{"de": "Pl.", "en": "pl."}, "die neu**en** Schuhe", "keine neu**en** Schuhe"],
-          [{"de": "Akk. m", "en": "acc. m"}, "den neu**en** Rock", "einen neu**en** Rock"],
-          [{"de": "Dativ", "en": "dative"}, "mit dem neu**en** Rock", "mit einem neu**en** Rock"]
+          [
+            {"de": "m", "en": "m"},
+            {"t": "der neu**e** Rock", "en": "the new skirt"},
+            {"t": "ein neu**er** Rock", "en": "a new skirt"}
+          ],
+          [
+            {"de": "f", "en": "f"},
+            {"t": "die neu**e** Jacke", "en": "the new jacket"},
+            {"t": "eine neu**e** Jacke", "en": "a new jacket"}
+          ],
+          [
+            {"de": "n", "en": "n"},
+            {"t": "das neu**e** Kleid", "en": "the new dress"},
+            {"t": "ein neu**es** Kleid", "en": "a new dress"}
+          ],
+          [
+            {"de": "Pl.", "en": "pl."},
+            {"t": "die neu**en** Schuhe", "en": "the new shoes"},
+            {"t": "keine neu**en** Schuhe", "en": "no new shoes"}
+          ],
+          [
+            {"de": "Akk. m", "en": "acc. m"},
+            {"t": "den neu**en** Rock", "en": "the new skirt (object)"},
+            {"t": "einen neu**en** Rock", "en": "a new skirt (object)"}
+          ],
+          [
+            {"de": "Dativ", "en": "dative"},
+            {"t": "mit dem neu**en** Rock", "en": "with the new skirt"},
+            {"t": "mit einem neu**en** Rock", "en": "with a new skirt"}
+          ]
         ]
       },
       {
@@ -1815,6 +2000,10 @@
         "de": "Beim Einkaufen, für Meinungen und Wünsche: billiger, besser, am liebsten.",
         "en": "Shopping, giving opinions and wishes: billiger (cheaper), besser (better), am liebsten (most of all)."
       },
+      "english": {
+        "de": "Wie **-er / -est** (faster, fastest) – aber nie mit „more“: interessant**er** ❌ mehr interessant. **than** = **als**, nicht wie.",
+        "en": "Like **-er / -est** (faster, fastest) – but never with \"more\": interessant**er** (more interesting) ❌ mehr interessant. **than** = **als**, not wie."
+      },
       "remember": {"de": "Der Zug ist schneller als der Bus.", "en": "The train is faster than the bus."}
     },
     "summary": {
@@ -1897,6 +2086,10 @@
         "de": "In jedem Satz – besonders, wenn du mit einer Zeit oder einem Ort anfängst.",
         "en": "In every sentence – especially when you start with a time or a place."
       },
+      "english": {
+        "de": "Englisch: **Tomorrow I go** (Subjekt vor dem Verb). Deutsch: Das Verb bleibt auf Platz 2, das Subjekt kommt dahinter: **Morgen gehe ich**.",
+        "en": "English: **Tomorrow I go** (subject before the verb). German keeps the verb in place 2, so the subject moves behind it: **Morgen gehe ich**."
+      },
       "remember": {"de": "Morgen fahre ich nach Hamburg.", "en": "Tomorrow I'm going to Hamburg."}
     },
     "summary": {
@@ -1912,9 +2105,9 @@
           {"de": "Rest", "en": "Rest"}
         ],
         "rows": [
-          ["Ich", "**trinke**", "morgens Kaffee."],
-          ["Morgens", "**trinke**", "ich Kaffee."],
-          ["Am Montag um 8 Uhr", "**trinke**", "ich Kaffee."]
+          ["Ich", "**trinke**", {"t": "morgens Kaffee.", "en": "I drink coffee in the morning."}],
+          ["Morgens", "**trinke**", {"t": "ich Kaffee.", "en": "In the morning I drink coffee."}],
+          ["Am Montag um 8 Uhr", "**trinke**", {"t": "ich Kaffee.", "en": "On Monday at 8 I drink coffee."}]
         ]
       },
       {
@@ -1959,6 +2152,10 @@
         "de": "Wenn du nachfragst: Wer kommt? Wen besuchst du? Wem gehört das?",
         "en": "When you ask: Wer kommt? (Who's coming?) Wen besuchst du? (Who are you visiting?) Wem gehört das? (Whose is that?)"
       },
+      "english": {
+        "de": "Englisch kennt das auch: **who** – **whom** – **to whom** = **wer** – **wen** – **wem**. Im Deutschen muss man es immer richtig sagen.",
+        "en": "English has this too: **who** – **whom** – **to whom** = **wer** – **wen** – **wem**. In German you always have to get it right."
+      },
       "remember": {"de": "Wem schenkst du die Blumen?", "en": "Who are you giving the flowers to?"}
     },
     "summary": {
@@ -1970,9 +2167,17 @@
         "type": "table",
         "head": [{"de": "Kasus", "en": "Case"}, {"de": "Person", "en": "Person"}, {"de": "Sache", "en": "Thing"}],
         "rows": [
-          [{"de": "Nominativ (Subjekt)", "en": "nominative (subject)"}, "**Wer?**", "**Was?**"],
-          [{"de": "Akkusativ (Objekt)", "en": "accusative (object)"}, "**Wen?**", "**Was?**"],
-          [{"de": "Dativ", "en": "dative"}, "**Wem?**", "–"]
+          [
+            {"de": "Nominativ (Subjekt)", "en": "nominative (subject)"},
+            {"t": "**Wer?**", "en": "Who?"},
+            {"t": "**Was?**", "en": "What?"}
+          ],
+          [
+            {"de": "Akkusativ (Objekt)", "en": "accusative (object)"},
+            {"t": "**Wen?**", "en": "Whom?"},
+            {"t": "**Was?**", "en": "What?"}
+          ],
+          [{"de": "Dativ", "en": "dative"}, {"t": "**Wem?**", "en": "To whom?"}, "–"]
         ]
       },
       {
@@ -1999,13 +2204,21 @@
           {"de": "Frage", "en": "Question"}
         ],
         "rows": [
-          [{"de": "Subjekt", "en": "the subject"}, "kommen, wohnen, arbeiten", "**Wer** kommt?"],
+          [
+            {"de": "Subjekt", "en": "the subject"},
+            "kommen, wohnen, arbeiten",
+            {"t": "**Wer** kommt?", "en": "Who is coming?"}
+          ],
           [
             {"de": "Akkusativ-Objekt", "en": "accusative object"},
             "sehen, treffen, fragen, lieben",
-            "**Wen** triffst du?"
+            {"t": "**Wen** triffst du?", "en": "Who are you meeting?"}
           ],
-          [{"de": "Dativ-Objekt", "en": "dative object"}, "helfen, gehören, danken, gefallen", "**Wem** hilfst du?"]
+          [
+            {"de": "Dativ-Objekt", "en": "dative object"},
+            "helfen, gehören, danken, gefallen",
+            {"t": "**Wem** hilfst du?", "en": "Who are you helping?"}
+          ]
         ]
       },
       {
@@ -2017,8 +2230,16 @@
           {"de": "Beispiel", "en": "Example"}
         ],
         "rows": [
-          ["mit, bei, von, zu, aus, nach, seit", "+ **wem**", "**Mit wem** gehst du ins Kino?"],
-          ["für, ohne, durch, gegen, um", "+ **wen**", "**Für wen** kaufst du das Geschenk?"]
+          [
+            "mit, bei, von, zu, aus, nach, seit",
+            "+ **wem**",
+            {"t": "**Mit wem** gehst du ins Kino?", "en": "Who are you going to the cinema with?"}
+          ],
+          [
+            "für, ohne, durch, gegen, um",
+            "+ **wen**",
+            {"t": "**Für wen** kaufst du das Geschenk?", "en": "Who are you buying the present for?"}
+          ]
         ]
       },
       {
@@ -2071,6 +2292,10 @@
         "de": "Sobald du mehr als einen kurzen Satz sagst oder schreibst.",
         "en": "As soon as you say or write more than one short sentence."
       },
+      "english": {
+        "de": "Im Englischen ändert „because“ die Wortstellung nicht. Im Deutschen entscheidet das Wort, wo das **Verb** steht: denn → Platz 2, weil → Ende, deshalb → sofort danach.",
+        "en": "In English \"because\" doesn't change the word order. In German the word decides where the **verb** goes: denn → place 2, weil → the end, deshalb → straight after it."
+      },
       "remember": {
         "de": "Ich bin müde, deshalb gehe ich früh ins Bett.",
         "en": "I'm tired, so I'm going to bed early."
@@ -2108,9 +2333,18 @@
         "title": {"de": "Gleiche Idee, drei Satzbauten", "en": "Same idea, three word orders"},
         "head": [{"de": "Wort", "en": "Word"}, {"de": "Satz", "en": "Sentence"}],
         "rows": [
-          ["denn", "Ich bleibe zu Hause, denn ich **bin** krank."],
-          ["weil", "Ich bleibe zu Hause, weil ich krank **bin**."],
-          ["deshalb", "Ich bin krank, deshalb **bleibe** ich zu Hause."]
+          [
+            "denn",
+            {"t": "Ich bleibe zu Hause, denn ich **bin** krank.", "en": "I'm staying at home, because I'm ill."}
+          ],
+          [
+            "weil",
+            {"t": "Ich bleibe zu Hause, weil ich krank **bin**.", "en": "I'm staying at home because I'm ill."}
+          ],
+          [
+            "deshalb",
+            {"t": "Ich bin krank, deshalb **bleibe** ich zu Hause.", "en": "I'm ill, so I'm staying at home."}
+          ]
         ]
       },
       {
@@ -2172,6 +2406,10 @@
       "when": {
         "de": "Ständig – beim Erzählen und wenn du etwas begründest.",
         "en": "All the time – when telling a story or giving a reason."
+      },
+      "english": {
+        "de": "Englisch hat ein **but**, Deutsch hat zwei: **aber** (but) und **sondern** (but rather – nach einem „nicht“ oder „kein“).",
+        "en": "English has one **but**, German has two: **aber** (but) and **sondern** (but rather – after \"nicht\" or \"kein\")."
       },
       "remember": {
         "de": "Ich komme gern, aber ich habe nur eine Stunde Zeit.",
@@ -2271,6 +2509,10 @@
         "de": "Gründe nennen (weil), Meinung sagen (dass), Bedingungen (wenn), höflich fragen (ob).",
         "en": "Giving reasons (weil), opinions (dass), conditions (wenn), asking politely (ob)."
       },
+      "english": {
+        "de": "Nach **because, that, if** bleibt die englische Wortstellung gleich. Im Deutschen geht das Verb nach **weil, dass, wenn, ob** ans **Ende**: Ich bleibe zu Hause, weil ich krank **bin** (because I **am** ill).",
+        "en": "After **because, that, if** English word order stays the same. In German, after **weil, dass, wenn, ob** the verb goes to the **end**: weil ich krank **bin** (because I **am** ill)."
+      },
       "remember": {
         "de": "Ich lerne Deutsch, weil ich in Deutschland arbeite.",
         "en": "I'm learning German because I work in Germany."
@@ -2298,9 +2540,27 @@
         "title": {"de": "Welche Frage? Welcher Konnektor?", "en": "Which question? Which connector?"},
         "head": [{"de": "Frage", "en": "Question"}, {"de": "Satz – Verb am Ende", "en": "Sentence – verb at the end"}],
         "rows": [
-          ["Warum? → **weil**", "Ich lerne Deutsch, weil ich in Deutschland **lebe**."],
-          ["Wann? → **wenn**", "Ich nehme die U-Bahn, wenn ich zum Kurs fahren **will**."],
-          ["Was? → **dass**", "Ich glaube, dass die U-Bahn pünktlich **ankommt**."]
+          [
+            "Warum? → **weil**",
+            {
+              "t": "Ich lerne Deutsch, weil ich in Deutschland **lebe**.",
+              "en": "I'm learning German because I live in Germany."
+            }
+          ],
+          [
+            "Wann? → **wenn**",
+            {
+              "t": "Ich nehme die U-Bahn, wenn ich zum Kurs fahren **will**.",
+              "en": "I take the underground when I want to go to the course."
+            }
+          ],
+          [
+            "Was? → **dass**",
+            {
+              "t": "Ich glaube, dass die U-Bahn pünktlich **ankommt**.",
+              "en": "I think the underground will arrive on time."
+            }
+          ]
         ]
       },
       {
@@ -2308,10 +2568,22 @@
         "title": {"de": "Hauptsatz → Nebensatz", "en": "Main clause → subordinate clause"},
         "head": [{"de": "Hauptsatz", "en": "Main clause"}, {"de": "Nebensatz", "en": "Subordinate clause"}],
         "rows": [
-          ["Es **gibt** keine Pizza.", "Schade, dass es keine Pizza **gibt**."],
-          ["Ich **bin** krank.", "Ich gehe zum Arzt, weil ich krank **bin**."],
-          ["Du **hast** reserviert.", "Gut, dass du reserviert **hast**."],
-          ["**Kommt** er?", "Ich weiß nicht, ob er **kommt**."]
+          [
+            {"t": "Es **gibt** keine Pizza.", "en": "There's no pizza."},
+            {"t": "Schade, dass es keine Pizza **gibt**.", "en": "A pity there's no pizza."}
+          ],
+          [
+            {"t": "Ich **bin** krank.", "en": "I'm ill."},
+            {"t": "Ich gehe zum Arzt, weil ich krank **bin**.", "en": "I'm going to the doctor because I'm ill."}
+          ],
+          [
+            {"t": "Du **hast** reserviert.", "en": "You've booked."},
+            {"t": "Gut, dass du reserviert **hast**.", "en": "Good that you've booked."}
+          ],
+          [
+            {"t": "**Kommt** er?", "en": "Is he coming?"},
+            {"t": "Ich weiß nicht, ob er **kommt**.", "en": "I don't know if he's coming."}
+          ]
         ]
       },
       {
@@ -2319,10 +2591,14 @@
         "title": {"de": "Satzbau", "en": "Word order"},
         "head": ["", {"de": "Nebensatz", "en": "Clause"}, {"de": "Verb am Ende", "en": "Verb at the end"}],
         "rows": [
-          ["Ich hoffe,", "dass sie Pommes", "**haben**."],
-          ["Ich weiß,", "dass er nicht kommen", "**kann**."],
-          ["Gut,", "dass du reserviert", "**hast**."],
-          ["Ich hole dich ab,", "wenn der Zug", "**ankommt**."]
+          ["Ich hoffe,", "dass sie Pommes", {"t": "**haben**.", "en": "I hope they have chips."}],
+          ["Ich weiß,", "dass er nicht kommen", {"t": "**kann**.", "en": "I know that he can't come."}],
+          ["Gut,", "dass du reserviert", {"t": "**hast**.", "en": "Good that you've booked."}],
+          [
+            "Ich hole dich ab,",
+            "wenn der Zug",
+            {"t": "**ankommt**.", "en": "I'll pick you up when the train arrives."}
+          ]
         ]
       },
       {
@@ -2330,9 +2606,21 @@
         "title": {"de": "Nebensatz zuerst: Position 1 – Position 2", "en": "Clause first: position 1 – position 2"},
         "head": [{"de": "Position 1", "en": "Position 1"}, {"de": "Position 2", "en": "Position 2"}, {"de": "Rest", "en": "Rest"}],
         "rows": [
-          ["Wenn ich nach Hause **fahre**,", "**nehme**", "ich den Bus."],
-          ["Weil der Bus nicht **kommt**,", "**gehe**", "ich zu Fuß."],
-          ["Dass du **mitkommst**,", "**freut**", "mich sehr."]
+          [
+            "Wenn ich nach Hause **fahre**,",
+            "**nehme**",
+            {"t": "ich den Bus.", "en": "When I go home, I take the bus."}
+          ],
+          [
+            "Weil der Bus nicht **kommt**,",
+            "**gehe**",
+            {"t": "ich zu Fuß.", "en": "Because the bus isn't coming, I'm walking."}
+          ],
+          [
+            "Dass du **mitkommst**,",
+            "**freut**",
+            {"t": "mich sehr.", "en": "I'm very happy that you're coming along."}
+          ]
         ]
       },
       {
@@ -2352,10 +2640,18 @@
           [
             "**wenn**",
             {"de": "Bedingung; immer wenn; Zukunft", "en": "condition; whenever; future"},
-            "Wenn ich Zeit habe, koche ich."
+            {"t": "Wenn ich Zeit habe, koche ich.", "en": "When I have time, I cook."}
           ],
-          ["**als**", {"de": "einmal in der Vergangenheit", "en": "one time in the past"}, "Als ich in Berlin war, habe ich Anna getroffen."],
-          ["**ob**", {"de": "Ja/Nein-Frage im Satz", "en": "yes/no question inside a sentence"}, "Ich frage, ob du mitkommst."]
+          [
+            "**als**",
+            {"de": "einmal in der Vergangenheit", "en": "one time in the past"},
+            {"t": "Als ich in Berlin war, habe ich Anna getroffen.", "en": "When I was in Berlin, I met Anna."}
+          ],
+          [
+            "**ob**",
+            {"de": "Ja/Nein-Frage im Satz", "en": "yes/no question inside a sentence"},
+            {"t": "Ich frage, ob du mitkommst.", "en": "I'm asking if you're coming along."}
+          ]
         ]
       },
       {
@@ -2363,8 +2659,20 @@
         "title": {"de": "als: Nebensatz vor dem Hauptsatz", "en": "als: clause before the main clause"},
         "head": [{"de": "Nebensatz", "en": "Clause"}, {"de": "Hauptsatz", "en": "Main clause"}],
         "rows": [
-          ["**Als** ich im vierten Semester **war**,", "**habe ich** das Stipendium bekommen."],
-          ["**Als** ich nach Deutschland **kam**,", "**konnte ich** nur wenig Deutsch."]
+          [
+            "**Als** ich im vierten Semester **war**,",
+            {
+              "t": "**habe ich** das Stipendium bekommen.",
+              "en": "When I was in my fourth semester, I got the scholarship."
+            }
+          ],
+          [
+            "**Als** ich nach Deutschland **kam**,",
+            {
+              "t": "**konnte ich** nur wenig Deutsch.",
+              "en": "When I came to Germany, I could speak only a little German."
+            }
+          ]
         ]
       },
       {
@@ -2372,8 +2680,17 @@
         "title": {"de": "als: Hauptsatz vor dem Nebensatz", "en": "als: main clause before the clause"},
         "head": [{"de": "Hauptsatz", "en": "Main clause"}, {"de": "Nebensatz", "en": "Clause"}],
         "rows": [
-          ["Ich **habe** das Stipendium bekommen,", "**als** ich im vierten Semester **war**."],
-          ["Ich **war** sehr glücklich,", "**als** ich die Prüfung bestanden **habe**."]
+          [
+            "Ich **habe** das Stipendium bekommen,",
+            {
+              "t": "**als** ich im vierten Semester **war**.",
+              "en": "I got the scholarship when I was in my fourth semester."
+            }
+          ],
+          [
+            "Ich **war** sehr glücklich,",
+            {"t": "**als** ich die Prüfung bestanden **habe**.", "en": "I was very happy when I passed the exam."}
+          ]
         ]
       },
       {
@@ -2510,6 +2827,10 @@
         "de": "Für Folgen und Reihenfolgen: beim Erzählen, Erklären und Planen.",
         "en": "For consequences and sequences: telling, explaining and planning."
       },
+      "english": {
+        "de": "Englisch: **That's why I** stay. Deutsch: **Deshalb bleibe ich** – das Verb kommt sofort nach deshalb. Falscher Freund: **also** = so, deshalb (englisch also = **auch**).",
+        "en": "English: **That's why I** stay. German: **Deshalb bleibe ich** – the verb comes straight after deshalb. False friend: **also** = so / therefore (English also = **auch**)."
+      },
       "remember": {
         "de": "Zuerst kaufe ich ein, danach koche ich.",
         "en": "First I'll do the shopping, then I'll cook."
@@ -2529,9 +2850,9 @@
           {"de": "3: Subjekt …", "en": "3: subject …"}
         ],
         "rows": [
-          ["Deshalb", "**habe**", "ich viel Zeit für dich."],
-          ["Sonst", "**bin**", "ich so allein."],
-          ["Dann", "**gehen**", "wir ins Kino."]
+          ["Deshalb", "**habe**", {"t": "ich viel Zeit für dich.", "en": "That's why I have a lot of time for you."}],
+          ["Sonst", "**bin**", {"t": "ich so allein.", "en": "Otherwise I'm so lonely."}],
+          ["Dann", "**gehen**", {"t": "wir ins Kino.", "en": "Then we'll go to the cinema."}]
         ]
       },
       {
@@ -2691,6 +3012,10 @@
         "de": "Für Ort, Zeit und Richtung – in fast jedem Satz.",
         "en": "For place, time and direction – in almost every sentence."
       },
+      "english": {
+        "de": "Es gibt keine 1:1-Übersetzung: **to** = nach, zu oder in; **at** = an, bei oder um. Lern die Präposition mit einem Beispiel, nicht allein.",
+        "en": "There's no 1:1 match: **to** = nach, zu or in; **at** = an, bei or um. Learn each preposition with an example, not on its own."
+      },
       "remember": {"de": "Ich fahre mit dem Bus zur Arbeit.", "en": "I go to work by bus."}
     },
     "summary": {
@@ -2795,14 +3120,14 @@
         "title": {"de": "Kurzformen", "en": "Short forms"},
         "head": [{"de": "lang", "en": "long"}, {"de": "kurz", "en": "short"}, {"de": "Beispiel", "en": "Example"}],
         "rows": [
-          ["zu dem", "**zum**", "zum Arzt"],
-          ["zu der", "**zur**", "zur Schule"],
-          ["bei dem", "**beim**", "beim Bäcker"],
-          ["von dem", "**vom**", "vom Bahnhof"],
-          ["an dem", "**am**", "am Montag"],
-          ["in dem", "**im**", "im Kino"],
-          ["an das", "**ans**", "ans Meer"],
-          ["in das", "**ins**", "ins Kino"]
+          ["zu dem", "**zum**", {"t": "zum Arzt", "en": "to the doctor"}],
+          ["zu der", "**zur**", {"t": "zur Schule", "en": "to school"}],
+          ["bei dem", "**beim**", {"t": "beim Bäcker", "en": "at the baker's"}],
+          ["von dem", "**vom**", {"t": "vom Bahnhof", "en": "from the station"}],
+          ["an dem", "**am**", {"t": "am Montag", "en": "on Monday"}],
+          ["in dem", "**im**", {"t": "im Kino", "en": "at the cinema"}],
+          ["an das", "**ans**", {"t": "ans Meer", "en": "to the seaside"}],
+          ["in das", "**ins**", {"t": "ins Kino", "en": "to the cinema"}]
         ]
       },
       {
@@ -2833,6 +3158,10 @@
       "when": {
         "de": "Geschenke (für dich), Uhrzeiten (um acht Uhr), ohne etwas.",
         "en": "Presents (für dich – for you), times (um acht Uhr – at eight), doing without something."
+      },
+      "english": {
+        "de": "**für** = for, **ohne** = without, **gegen** = against, **durch** = through, **um** = at (time) / around. Im Englischen hört man den Kasus nicht – im Deutschen schon: für **den** Chef.",
+        "en": "**für** = for, **ohne** = without, **gegen** = against, **durch** = through, **um** = at (time) / around. In English you don't hear the case – in German you do: für **den** Chef (for the boss)."
       },
       "remember": {"de": "Das Geschenk ist für meinen Bruder.", "en": "The present is for my brother."}
     },
@@ -2920,6 +3249,10 @@
       "when": {
         "de": "Woher du kommst, mit wem, seit wann, wohin du gehst.",
         "en": "Where you're from, who with, since when, where you're going."
+      },
+      "english": {
+        "de": "Vorsicht bei **since / for**: I **have lived** here **for** two years = Ich **wohne seit** zwei Jahren hier (Präsens, nicht Perfekt!).",
+        "en": "Watch **since / for**: I **have lived** here **for** two years = Ich **wohne seit** zwei Jahren hier (present tense, not Perfekt!)."
       },
       "remember": {
         "de": "Ich wohne seit einem Jahr bei meiner Tante.",
@@ -3015,6 +3348,10 @@
         "de": "Beim Einrichten, Aufräumen und Wegbeschreiben.",
         "en": "Furnishing, tidying up, giving directions."
       },
+      "english": {
+        "de": "Englisch kennt das: **in** (wo?) / **into** (wohin?), **on** / **onto**, **lie / lay**, **sit / set**. Deutsch zeigt den Unterschied mit dem Kasus: im Kino / ins Kino.",
+        "en": "English knows this: **in** (where?) / **into** (where to?), **on** / **onto**, **lie / lay**, **sit / set**. German shows the difference with the case: im Kino / ins Kino."
+      },
       "remember": {
         "de": "Ich lege das Buch auf den Tisch – jetzt liegt es auf dem Tisch.",
         "en": "I put the book on the table – now it's lying on the table."
@@ -3030,15 +3367,51 @@
         "title": {"de": "Die neun", "en": "The nine"},
         "head": [{"de": "Präposition", "en": "Preposition"}, "Wo? (Dat.)", "Wohin? (Akk.)"],
         "rows": [
-          ["**an** – at, on (side)", "am Fenster", "ans Fenster"],
-          ["**auf** – on (top)", "auf dem Tisch", "auf den Tisch"],
-          ["**hinter** – behind", "hinter dem Haus", "hinter das Haus"],
-          ["**in** – in, into", "im Kino", "ins Kino"],
-          ["**neben** – next to", "neben dem Bett", "neben das Bett"],
-          ["**über** – above, over", "über dem Sofa", "über das Sofa"],
-          ["**unter** – under", "unter dem Bett", "unter das Bett"],
-          ["**vor** – in front of", "vor der Tür", "vor die Tür"],
-          ["**zwischen** – between", "zwischen den Stühlen", "zwischen die Stühle"]
+          [
+            "**an** – at, on (side)",
+            {"t": "am Fenster", "en": "at the window"},
+            {"t": "ans Fenster", "en": "(over) to the window"}
+          ],
+          [
+            "**auf** – on (top)",
+            {"t": "auf dem Tisch", "en": "on the table"},
+            {"t": "auf den Tisch", "en": "onto the table"}
+          ],
+          [
+            "**hinter** – behind",
+            {"t": "hinter dem Haus", "en": "behind the house"},
+            {"t": "hinter das Haus", "en": "(to) behind the house"}
+          ],
+          [
+            "**in** – in, into",
+            {"t": "im Kino", "en": "at / in the cinema"},
+            {"t": "ins Kino", "en": "to the cinema"}
+          ],
+          [
+            "**neben** – next to",
+            {"t": "neben dem Bett", "en": "next to the bed"},
+            {"t": "neben das Bett", "en": "(to) next to the bed"}
+          ],
+          [
+            "**über** – above, over",
+            {"t": "über dem Sofa", "en": "above the sofa"},
+            {"t": "über das Sofa", "en": "(to) above the sofa"}
+          ],
+          [
+            "**unter** – under",
+            {"t": "unter dem Bett", "en": "under the bed"},
+            {"t": "unter das Bett", "en": "(to) under the bed"}
+          ],
+          [
+            "**vor** – in front of",
+            {"t": "vor der Tür", "en": "in front of the door"},
+            {"t": "vor die Tür", "en": "out of the door (outside)"}
+          ],
+          [
+            "**zwischen** – between",
+            {"t": "zwischen den Stühlen", "en": "between the chairs"},
+            {"t": "zwischen die Stühle", "en": "(to) between the chairs"}
+          ]
         ]
       },
       {
@@ -3048,12 +3421,12 @@
           [
             {"de": "**Wo?** – Position, keine Bewegung", "en": "**Wo?** – position, no movement"},
             {"de": "Dativ", "en": "dative"},
-            "Das Buch liegt auf **dem** Tisch."
+            {"t": "Das Buch liegt auf **dem** Tisch.", "en": "The book is lying on the table."}
           ],
           [
             {"de": "**Wohin?** – Richtung, Bewegung zu einem Ziel", "en": "**Wohin?** – direction, moving to a place"},
             {"de": "Akkusativ", "en": "accusative"},
-            "Ich lege das Buch auf **den** Tisch."
+            {"t": "Ich lege das Buch auf **den** Tisch.", "en": "I'm putting the book on the table."}
           ]
         ]
       },
@@ -3107,6 +3480,10 @@
       "when": {
         "de": "In Briefen, E-Mails, Durchsagen und Nachrichten – im Alltag hört man oft den Dativ.",
         "en": "In letters, emails, announcements and the news – in everyday speech you often hear the dative."
+      },
+      "english": {
+        "de": "Der Genitiv ist wie englisch **of the** / **'s**: wegen **des** Regens = because **of the** rain. Im Alltag hört man oft den Dativ (wegen **dem** Regen).",
+        "en": "The genitive is like English **of the** / **'s**: wegen **des** Regens = because **of the** rain. In everyday speech you often hear the dative (wegen **dem** Regen)."
       },
       "remember": {"de": "Wegen des Regens fällt das Fest aus.", "en": "The party is cancelled because of the rain."}
     },
@@ -3186,6 +3563,10 @@
         "de": "Termine, Öffnungszeiten, wenn du über deinen Tag sprichst.",
         "en": "Appointments, opening hours, talking about your day."
       },
+      "english": {
+        "de": "**ago** = **vor** (vor einer Woche = a week ago, das vor kommt zuerst!). **for** (bis jetzt) = **seit**. **at** 8 = **um** 8, **on** Monday = **am** Montag.",
+        "en": "**ago** = **vor** (vor einer Woche = a week ago – vor comes first!). **for** (until now) = **seit**. **at** 8 = **um** 8, **on** Monday = **am** Montag."
+      },
       "remember": {"de": "Der Kurs beginnt am Montag um neun Uhr.", "en": "The course starts on Monday at nine."}
     },
     "summary": {
@@ -3201,23 +3582,51 @@
           {"de": "Beispiel", "en": "Example"}
         ],
         "rows": [
-          [{"de": "Uhrzeit", "en": "clock time"}, "**um**", "um 8 Uhr"],
+          [{"de": "Uhrzeit", "en": "clock time"}, "**um**", {"t": "um 8 Uhr", "en": "at 8 o'clock"}],
           [
             {"de": "Tag, Datum, Tageszeit", "en": "day, date, part of day"},
             "**am**",
-            "am Montag · am 3. Mai · am Abend"
+            {"t": "am Montag · am 3. Mai · am Abend", "en": "on Monday · on 3 May · in the evening"}
           ],
-          [{"de": "Monat, Jahreszeit", "en": "month, season"}, "**im**", "im Mai · im Winter"],
-          [{"de": "Jahr", "en": "year"}, {"de": "– (kein Wort)", "en": "– (no word)"}, "2026 · im Jahr 2026"],
-          [{"de": "von damals bis jetzt", "en": "from then until now"}, "**seit**", "seit einem Jahr"],
-          [{"de": "vor jetzt (= ago)", "en": "before now (ago)"}, "**vor**", "vor einer Woche"],
-          [{"de": "nach jetzt (Zukunft)", "en": "from now (future)"}, "**in**", "in einer Stunde"],
-          [{"de": "ab einem Zeitpunkt", "en": "from a point on"}, "**ab**", "ab Montag"],
-          [{"de": "Anfang und Ende", "en": "start and end"}, "**von … bis**", "von 9 bis 17 Uhr"],
+          [
+            {"de": "Monat, Jahreszeit", "en": "month, season"},
+            "**im**",
+            {"t": "im Mai · im Winter", "en": "in May · in winter"}
+          ],
+          [
+            {"de": "Jahr", "en": "year"},
+            {"de": "– (kein Wort)", "en": "– (no word)"},
+            {"t": "2026 · im Jahr 2026", "en": "in 2026"}
+          ],
+          [
+            {"de": "von damals bis jetzt", "en": "from then until now"},
+            "**seit**",
+            {"t": "seit einem Jahr", "en": "for a year (until now)"}
+          ],
+          [
+            {"de": "vor jetzt (= ago)", "en": "before now (ago)"},
+            "**vor**",
+            {"t": "vor einer Woche", "en": "a week ago"}
+          ],
+          [
+            {"de": "nach jetzt (Zukunft)", "en": "from now (future)"},
+            "**in**",
+            {"t": "in einer Stunde", "en": "in an hour"}
+          ],
+          [
+            {"de": "ab einem Zeitpunkt", "en": "from a point on"},
+            "**ab**",
+            {"t": "ab Montag", "en": "from Monday (on)"}
+          ],
+          [
+            {"de": "Anfang und Ende", "en": "start and end"},
+            "**von … bis**",
+            {"t": "von 9 bis 17 Uhr", "en": "from 9 to 5 pm"}
+          ],
           [
             {"de": "vor / nach etwas", "en": "before / after something"},
             "**vor** / **nach**",
-            "vor dem Essen · nach der Arbeit"
+            {"t": "vor dem Essen · nach der Arbeit", "en": "before the meal · after work"}
           ]
         ]
       },
@@ -3267,6 +3676,10 @@
         "de": "Wegbeschreibungen, Reisen, Termine: Ich gehe zum Arzt.",
         "en": "Directions, travel, appointments: Ich gehe zum Arzt (I'm going to the doctor)."
       },
+      "english": {
+        "de": "Ein englisches **to** = drei deutsche Wörter: **nach** Berlin, **zum** Arzt, **ins** Kino. Und **home**: nach Hause (wohin?) / zu Hause (wo?).",
+        "en": "One English **to** = three German words: **nach** Berlin, **zum** Arzt, **ins** Kino. And **home**: nach Hause (going home) / zu Hause (at home)."
+      },
       "remember": {
         "de": "Ich komme aus Indien und fahre morgen nach Köln.",
         "en": "I'm from India and I'm going to Cologne tomorrow."
@@ -3281,13 +3694,41 @@
         "type": "table",
         "head": [{"de": "Ort", "en": "Place"}, "Wo?", "Wohin?"],
         "rows": [
-          [{"de": "Stadt, Land ohne Artikel", "en": "city, country (no article)"}, "in Berlin", "**nach** Berlin"],
-          [{"de": "Land mit Artikel", "en": "country with article"}, "in der Schweiz", "**in die** Schweiz"],
-          [{"de": "Person, Arzt", "en": "person, doctor"}, "**beim** Arzt", "**zum** Arzt"],
-          [{"de": "Gebäude (hinein)", "en": "building (going in)"}, "im Kino", "**ins** Kino"],
-          [{"de": "Zuhause", "en": "home"}, "**zu** Hause", "**nach** Hause"],
-          [{"de": "Meer, See, Fluss", "en": "sea, lake, river"}, "am Meer", "**ans** Meer"],
-          [{"de": "Party, Insel, Markt", "en": "party, island, market"}, "auf der Party", "**auf die** Party"]
+          [
+            {"de": "Stadt, Land ohne Artikel", "en": "city, country (no article)"},
+            {"t": "in Berlin", "en": "in Berlin"},
+            {"t": "**nach** Berlin", "en": "to Berlin"}
+          ],
+          [
+            {"de": "Land mit Artikel", "en": "country with article"},
+            {"t": "in der Schweiz", "en": "in Switzerland"},
+            {"t": "**in die** Schweiz", "en": "to Switzerland"}
+          ],
+          [
+            {"de": "Person, Arzt", "en": "person, doctor"},
+            {"t": "**beim** Arzt", "en": "at the doctor's"},
+            {"t": "**zum** Arzt", "en": "to the doctor"}
+          ],
+          [
+            {"de": "Gebäude (hinein)", "en": "building (going in)"},
+            {"t": "im Kino", "en": "at the cinema"},
+            {"t": "**ins** Kino", "en": "to the cinema"}
+          ],
+          [
+            {"de": "Zuhause", "en": "home"},
+            {"t": "**zu** Hause", "en": "at home"},
+            {"t": "**nach** Hause", "en": "home (going home)"}
+          ],
+          [
+            {"de": "Meer, See, Fluss", "en": "sea, lake, river"},
+            {"t": "am Meer", "en": "at the seaside"},
+            {"t": "**ans** Meer", "en": "to the seaside"}
+          ],
+          [
+            {"de": "Party, Insel, Markt", "en": "party, island, market"},
+            {"t": "auf der Party", "en": "at the party"},
+            {"t": "**auf die** Party", "en": "to the party"}
+          ]
         ]
       },
       {

@@ -2,7 +2,7 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import { STORAGE_KEYS } from "../../constants";
 import { speak } from "../../engine/speech";
-import { localize, parseHighlights } from "./richText";
+import { localize, parseHighlights, isGloss } from "./richText";
 
 // Renders a grammar topic's body so it can be scanned rather than read:
 // a one-line summary, then sections - tables for forms that change by
@@ -17,6 +17,9 @@ import { localize, parseHighlights } from "./richText";
 // Above the rule: a folded "🧭 Worum geht's?" box (topic.intro: what it is,
 // when you need it, one sentence to remember) and, until it is closed once,
 // a short tip on how to learn a topic.
+//
+// German sentences in tables carry their English ({ t, en }): tap one to see
+// it, or "🇬🇧 English" above the table to show all of that table's.
 
 const ACCENT = "#e0833b";
 
@@ -38,13 +41,48 @@ const sectionTitleStyle = {
 const wrapStyle = (text) => (text.replace(/\*\*/g, "").length <= 12 ? { whiteSpace: "nowrap" } : null);
 // Tables with 5+ columns (e.g. modal verb conjugation) get slightly
 // smaller text and padding so they still fit a 360px phone screen.
+const GLOSS_TEXT = { show: { de: "🇬🇧 Englisch", en: "🇬🇧 English" }, hide: { de: "🇬🇧 ausblenden", en: "🇬🇧 Hide" } };
+
+// a German cell with its meaning: tap the German to show / hide the English
+function GlossCell({ cell, showAll }) {
+  const [open, setOpen] = useState(false);
+  const shown = open || showAll;
+  return (
+    <>
+      <button
+        type="button"
+        className="inline-tap"
+        onClick={() => setOpen((o) => !o)}
+        aria-expanded={shown}
+        style={{ border: "none", background: "none", padding: 0, margin: 0, font: "inherit", color: "inherit", textAlign: "left", cursor: "pointer", textDecoration: "underline dotted #4b5d6d", textUnderlineOffset: 3 }}
+      ><Rich text={cell.t} /></button>
+      {shown && <div style={{ marginTop: 2, fontSize: 11, fontWeight: 400, fontStyle: "italic", color: "#8fa3b5", whiteSpace: "normal" }}>{cell.en}</div>}
+    </>
+  );
+}
+
 function TableSection({ section, lang }) {
   const wide = section.head.length >= 5;
   const cellPad = wide ? "6px 5px" : "6px 7px";
+  const hasGloss = section.rows.some((row) => row.some(isGloss));
+  const [showAll, setShowAll] = useState(false);
+  const content = (cell) => (isGloss(cell) ? <GlossCell cell={cell} showAll={showAll} /> : <Rich text={localize(cell, lang)} />);
   return (
     <>
-      {section.title && <div style={sectionTitleStyle}>{localize(section.title, lang)}</div>}
-      <div style={{ overflowX: "auto", borderRadius: 10, border: "1px solid #2c3a47", marginTop: section.title ? 0 : 12 }}>
+      {(section.title || hasGloss) && (
+        <div style={{ display: "flex", alignItems: "flex-end", gap: 8, marginTop: section.title ? 0 : 12 }}>
+          <div style={{ ...sectionTitleStyle, flex: 1, minWidth: 0 }}>{section.title ? localize(section.title, lang) : ""}</div>
+          {hasGloss && (
+            <button
+              type="button"
+              onClick={() => setShowAll((v) => !v)}
+              aria-pressed={showAll}
+              style={{ flex: "none", margin: "0 0 4px", padding: "2px 8px", borderRadius: 999, border: "1px solid #2c3a47", background: showAll ? "#24313c" : "none", color: "#9ab0c2", fontSize: 11, fontWeight: 700, cursor: "pointer" }}
+            >{localize(showAll ? GLOSS_TEXT.hide : GLOSS_TEXT.show, lang)}</button>
+          )}
+        </div>
+      )}
+      <div style={{ overflowX: "auto", borderRadius: 10, border: "1px solid #2c3a47", marginTop: section.title || hasGloss ? 0 : 12 }}>
         <table style={{ width: "100%", borderCollapse: "collapse", fontSize: wide ? 12 : 13 }}>
           <thead>
             <tr>
@@ -60,11 +98,11 @@ function TableSection({ section, lang }) {
               <tr key={r} style={{ borderTop: "1px solid #22303c" }}>
                 {row.map((cell, c) => (c === 0 ? (
                   <th key={c} scope="row" style={{ padding: cellPad, textAlign: "left", fontWeight: 600, color: "#f2f5f8", ...wrapStyle(localize(cell, lang)) }}>
-                    <Rich text={localize(cell, lang)} />
+                    {content(cell)}
                   </th>
                 ) : (
                   <td key={c} style={{ padding: cellPad, color: "#cdd8e2", ...wrapStyle(localize(cell, lang)) }}>
-                    <Rich text={localize(cell, lang)} />
+                    {content(cell)}
                   </td>
                 )))}
               </tr>
@@ -104,6 +142,7 @@ const INTRO_TEXT = {
   head: { de: "🧭 Worum geht's?", en: "🧭 What's this about?" },
   what: { de: "Was ist das?", en: "What is it?" },
   when: { de: "Wann brauchst du es?", en: "When do you need it?" },
+  english: { de: "Im Vergleich zum Englischen", en: "Compared with English" },
   remember: { de: "Merksatz", en: "Remember this" },
   how: { de: "So lernst du ein Thema", en: "How to learn a topic" },
   steps: {
@@ -151,6 +190,7 @@ function TopicIntro({ intro, lang }) {
       </summary>
       <IntroRow icon="🧭" label={localize(INTRO_TEXT.what, lang)}><Rich text={localize(intro.what, lang)} /></IntroRow>
       <IntroRow icon="🗓" label={localize(INTRO_TEXT.when, lang)}><Rich text={localize(intro.when, lang)} /></IntroRow>
+      <IntroRow icon="🇬🇧" label={localize(INTRO_TEXT.english, lang)}><Rich text={localize(intro.english, lang)} /></IntroRow>
       <IntroRow icon="💬" label={localize(INTRO_TEXT.remember, lang)}>
         <em style={{ color: "#f2f5f8", fontSize: 14 }}>{intro.remember.de}</em>{" "}
         <button type="button" onClick={() => speak(intro.remember.de)} aria-label={`Aussprechen: ${intro.remember.de}`} className="inline-tap" style={{ border: "none", background: "none", fontSize: 12, cursor: "pointer", padding: 0 }}>🔊</button>
@@ -198,6 +238,7 @@ const sectionShape = PropTypes.shape({
 const introShape = PropTypes.shape({
   what: textShape.isRequired,
   when: textShape.isRequired,
+  english: textShape.isRequired,
   remember: PropTypes.shape({ de: PropTypes.string.isRequired, en: PropTypes.string.isRequired }).isRequired,
 });
 
@@ -216,6 +257,7 @@ WarningSection.propTypes = { section: sectionShape.isRequired, lang: PropTypes.s
 Rich.propTypes = { text: PropTypes.string.isRequired };
 HowToTip.propTypes = { lang: PropTypes.string };
 IntroRow.propTypes = { icon: PropTypes.string.isRequired, label: PropTypes.string.isRequired, children: PropTypes.node };
+GlossCell.propTypes = { cell: PropTypes.shape({ t: PropTypes.string.isRequired, en: PropTypes.string.isRequired }).isRequired, showAll: PropTypes.bool };
 TopicIntro.propTypes = { intro: introShape.isRequired, lang: PropTypes.string };
 
 export default TopicBody;

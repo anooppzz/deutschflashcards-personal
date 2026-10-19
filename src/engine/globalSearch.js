@@ -150,7 +150,7 @@ export const searchGrammar = (index, q, lang = "en") => {
 // Same search over one language's texts only; null when nothing in that
 // language matches as well as the best match did.
 const localizedSnippet = (topic, fq, lang, score) => {
-  const pick = (field) => (typeof field === "string" ? field : field && (field[lang] || field.en));
+  const pick = (field) => (typeof field === "string" ? field : field && (field.t ?? (field[lang] || field.en)));
   const texts = [];
   const add = (field, weight) => { const s = pick(field); if (s) texts.push({ text: plain(s), weight }); };
   add(topic.title, 100);

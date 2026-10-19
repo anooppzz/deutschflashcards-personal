@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { localize, parseHighlights } from "./richText";
+import { localize, parseHighlights, isGloss } from "./richText";
 import GRAMMAR_TOPICS from "../../data/grammar/topics.json";
 import GRAMMAR_EXERCISES from "../../data/grammar/exercises.json";
 
@@ -32,13 +32,14 @@ describe("localize", () => {
 // Every piece of text in a topic, with a label saying where it is.
 const textsOf = (topic) => {
   const out = [["title", topic.title], ["summary", topic.summary]];
-  if (topic.intro) for (const k of ["what", "when", "remember"]) out.push([`intro.${k}`, topic.intro[k]]);
+  if (topic.intro) for (const k of ["what", "when", "english", "remember"]) out.push([`intro.${k}`, topic.intro[k]]);
   topic.sections.forEach((s, i) => {
     const at = `sections[${i}] (${s.type})`;
     if (s.title) out.push([`${at}.title`, s.title]);
     if (s.type === "table") {
       s.head.forEach((h, c) => out.push([`${at}.head[${c}]`, h]));
-      s.rows.forEach((row, r) => row.forEach((cell, c) => out.push([`${at}.rows[${r}][${c}]`, cell])));
+      // a German cell with its meaning ({ t, en }) counts as German + English
+      s.rows.forEach((row, r) => row.forEach((cell, c) => out.push([`${at}.rows[${r}][${c}]`, isGloss(cell) ? { de: cell.t, en: cell.en } : cell])));
     }
     if (s.type === "points") s.items.forEach((item, j) => out.push([`${at}.items[${j}]`, item]));
     if (s.type === "warning") out.push([`${at}.text`, s.text]);
@@ -91,10 +92,10 @@ describe("grammar topics data", () => {
 });
 
 describe("🧭 Worum geht's? and complete sentences", () => {
-  it("every topic has an intro: what it is, when you need it, a sentence to remember", () => {
+  it("every topic has an intro: what it is, when you need it, compared with English, a sentence to remember", () => {
     const bad = GRAMMAR_TOPICS.filter((t) => {
       const i = t.intro;
-      return !(i && i.what?.de && i.what?.en && i.when?.de && i.when?.en && i.remember?.de && i.remember?.en);
+      return !(i && ["what", "when", "english", "remember"].every((k) => i[k]?.de && i[k]?.en));
     }).map((t) => t.key);
     expect(bad).toEqual([]);
   });
@@ -121,6 +122,39 @@ describe("🧭 Worum geht's? and complete sentences", () => {
       }
     }
     expect(bad).toEqual([]);
+  });
+});
+
+describe("🇬🇧 German in tables comes with its English", () => {
+  it("a German table cell with a meaning has both parts", () => {
+    const bad = [];
+    for (const t of GRAMMAR_TOPICS) for (const s of t.sections) if (s.type === "table")
+      for (const row of s.rows) for (const cell of row) if (isGloss(cell) && !(cell.t.trim() && cell.en?.trim())) bad.push(`${t.key}: ${cell.t}`);
+    expect(bad).toEqual([]);
+  });
+
+  // tables with an "English" / "Meaning" column already translate their rows
+  it("every German sentence in a table can show its English", () => {
+    const bad = [];
+    for (const t of GRAMMAR_TOPICS) {
+      for (const s of t.sections) {
+        if (s.type !== "table") continue;
+        if (s.head.some((h) => /english|meaning/i.test(localize(h, "en")))) continue;
+        for (const row of s.rows) for (const cell of row) {
+          const plain = typeof cell === "string" ? cell.replace(/\*\*/g, "") : "";
+          if (plain.split(" ").length >= 3 && /[.!?]$/.test(plain)) bad.push(`${t.key}: ${cell}`);
+        }
+      }
+    }
+    expect(bad).toEqual([]);
+  });
+
+  it("localize shows the German of such a cell in every language", () => {
+    const cell = { t: "Ich stehe auf.", en: "I get up." };
+    expect(localize(cell, "en")).toBe("Ich stehe auf.");
+    expect(localize(cell, "de")).toBe("Ich stehe auf.");
+    expect(isGloss(cell)).toBe(true);
+    expect(isGloss({ de: "Endung", en: "Ending" })).toBe(false);
   });
 });
 

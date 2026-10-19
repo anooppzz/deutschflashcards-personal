@@ -163,6 +163,20 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 ## Log
 
+### 2026-10-19 – Grammar: 🇬🇧 compared with English + English for German in tables (review step 1 of 2)
+- After a review of all 30 topics as an English speaker sees them (only 5 compared German
+  with English; ~120 German sentences in tables had no English), the learner chose all five
+  proposals: 1+2 now, 3–5 next.
+- **🇬🇧 Compared with English** – a 4th row in the 🧭 box (`intro.english`) for all 30 topics:
+  bridges and false friends (Ich will = I want; muss nicht = don't have to; Perfekt looks like
+  "I have done" but means "I did"; Tomorrow I go → Morgen gehe ich; one "to" = nach/zu/in …).
+- **English for German in tables** – 193 cells became `{t, en}`: tap the dotted-underlined
+  German for its English, or "🇬🇧 English" above the table for all (`GrammarSections.jsx`
+  GlossCell). `localize` always shows the German of such a cell; search snippets too.
+- Tests: intro needs `english`; every German sentence in a table needs its English.
+  Help text (6 languages) and CLAUDE.md updated.
+- Checked all 30 topics at 360/390 px with every table's English shown: no sideways scroll.
+
 ### 2026-10-19 – Grammar: 🧭 Worum geht's? for all 30 topics, complete example sentences
 - The learner missed an orientation at the start of a topic and found the "…" example
   sentences too thin. Mock-up first (box open / folded, page heights compared); the learner
