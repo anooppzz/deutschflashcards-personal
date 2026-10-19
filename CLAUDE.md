@@ -240,6 +240,11 @@ found in the example are left out of Cloze, which is fine for phrases).
   "level": "A1",
   "group": {"de": "Präpositionen", "en": "Prepositions"},
   "title": {"de": "Präpositionen mit Dativ", "en": "Prepositions with the Dative"},
+  "intro": {                                   // 🧭 Worum geht's? (folded box above the rule)
+    "what": {"de": "…", "en": "…"},            //   what it is, in plain words
+    "when": {"de": "…", "en": "…"},            //   when you need it in real life
+    "remember": {"de": "Ich fahre mit dem Bus.", "en": "I go by bus."}  // one sentence, 🔊
+  },
   "summary": {"de": "…", "en": "…"},          // the rule in one line
   "sections": [
     {"type": "table", "title": {…}, "head": [cell, …], "rows": [[cell, …], …]},
@@ -252,6 +257,10 @@ found in the example are left out of Cloze, which is fine for phrases).
 }
 ```
 
+- Every topic needs an `intro` (test). Keep each line short; no "…" in it.
+- **Complete sentences, not "…"**: an example is always a whole sentence (`Ich komme
+  nicht, weil ich krank bin.`, not `…, weil ich krank bin.`). "…" only for a pattern
+  (`ge- … -t`, `entweder … oder`) or a list's "etc."; a test flags cut-off examples.
 - Every text is `{de, en}`; a table cell may be a plain string (German forms).
   `**x**` highlights x (use it for endings: `wohn**st**`). Use ❌/✅ for wrong/right.
 - Topics of one `group` must sit together; groups are headings in the Grammatik tab:

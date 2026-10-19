@@ -163,6 +163,27 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 ## Log
 
+### 2026-10-19 – Grammar: 🧭 Worum geht's? for all 30 topics, complete example sentences
+- The learner missed an orientation at the start of a topic and found the "…" example
+  sentences too thin. Mock-up first (box open / folded, page heights compared); the learner
+  chose **B: folded**.
+- **🧭 Worum geht's?** (`intro` in topics.json, rendered in `GrammarSections.jsx`): a folded
+  box above the rule; tapped open it shows 🧭 what it is, 🗓 when you need it, 💬 one
+  sentence to remember (🔊). Written for all 30 topics, German + English.
+- **💡 So lernst du ein Thema** (read the rule → say the examples aloud → ✏️ Üben →
+  🗂 Wörter): a tip above the topic until closed once (`STORAGE_KEYS.GRAMMAR_TIP_SEEN`),
+  then in ❓ Hilfe (help.json, all six languages).
+- **44 cut-off examples completed** ("…, weil ich krank bin." → "Ich gehe zum Arzt, weil ich
+  krank bin.", "Könnten Sie bitte …?" → a full question, ❌ examples too), most in
+  Nebensätze and Konjunktiv II. "…" stays only for patterns (ge- … -t, entweder … oder)
+  and list endings.
+- Tests (`grammarContent.test.js`): every topic has an intro; intros/examples without "…";
+  no cut-off sentence anywhere (the check flags all 46 old cases); intros count for "no
+  exercise answer on the page". CLAUDE.md: topic format + the complete-sentence rule.
+- Checked all 30 topics in headless Chromium at 360/390 px: box folded, opens with all
+  three parts, no sideways scroll; tip gone after closing and reloading. The folded box adds
+  about 60 px at the top of a topic.
+
 ### 2026-10-19 – Grammar: Passiv Präsens (new), Konjunktiv II extended, 🎁 Danke & Freude
 - From two textbook photos: the Lektion 14 Grammatik/Kommunikation box (Passiv Präsens,
   "Freude ausdrücken") and a grammar-book page "61 Wenn ich viel Geld hätte … – Konjunktiv 2:

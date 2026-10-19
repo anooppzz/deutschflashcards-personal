@@ -4,6 +4,20 @@
     "level": "A1",
     "group": {"de": "Nomen & Artikel", "en": "Nouns & Articles"},
     "title": {"de": "Artikel im Nominativ", "en": "Articles in the Nominative Case"},
+    "intro": {
+      "what": {
+        "de": "Jedes Nomen hat ein Genus: **der**, **die** oder **das**. Der Artikel zeigt es – lern ihn immer mit dem Wort.",
+        "en": "Every German noun has a gender: **der**, **die** or **das**. The article shows it – always learn it together with the word."
+      },
+      "when": {
+        "de": "Immer – in fast jedem Satz mit einem Nomen.",
+        "en": "All the time – in almost every sentence with a noun."
+      },
+      "remember": {
+        "de": "Der Tisch, die Lampe und das Sofa sind neu.",
+        "en": "The table, the lamp and the sofa are new."
+      }
+    },
     "summary": {
       "de": "Jedes Nomen hat einen Artikel: **der**, **die** oder **das**.",
       "en": "Every noun has an article: **der**, **die** or **das**."
@@ -49,6 +63,20 @@
     "level": "A2",
     "group": {"de": "Nomen & Artikel", "en": "Nouns & Articles"},
     "title": {"de": "Genus nach Endung", "en": "Gender by Ending"},
+    "intro": {
+      "what": {
+        "de": "Viele Endungen verraten das Genus: Nomen auf **-ung**, **-heit**, **-keit**, **-ion**, **-schaft** sind immer **die**.",
+        "en": "Many endings give the gender away: nouns ending in **-ung**, **-heit**, **-keit**, **-ion**, **-schaft** are always **die**."
+      },
+      "when": {
+        "de": "Bei einem neuen Wort, wenn du den Artikel nicht weißt.",
+        "en": "With a new word when you don't know its article."
+      },
+      "remember": {
+        "de": "Die Zeitung und die Information sind neu.",
+        "en": "The newspaper and the information are new."
+      }
+    },
     "summary": {
       "de": "Nomen auf **-ung**, **-heit**, **-keit**, **-ion**, **-schaft** sind immer feminin: **die**.",
       "en": "Nouns ending in **-ung**, **-heit**, **-keit**, **-ion**, **-schaft** are always feminine: **die**."
@@ -100,6 +128,20 @@
     "level": "A1",
     "group": {"de": "Nomen & Artikel", "en": "Nouns & Articles"},
     "title": {"de": "Possessivartikel", "en": "Possessive Articles"},
+    "intro": {
+      "what": {
+        "de": "Wörter für „Wem gehört es?“: **mein**, **dein**, **sein**, **ihr**, **unser**, **euer**. Sie bekommen dieselben Endungen wie ein/eine.",
+        "en": "Words that say whose something is: **mein** (my), **dein** (your), **sein** (his), **ihr** (her/their), **unser** (our), **euer** (your, plural). They take the same endings as ein/eine."
+      },
+      "when": {
+        "de": "Wenn du über deine Familie, deine Wohnung und deine Sachen sprichst.",
+        "en": "Talking about your family, your flat and your things."
+      },
+      "remember": {
+        "de": "Das ist meine Schwester und das ist mein Bruder.",
+        "en": "This is my sister and this is my brother."
+      }
+    },
     "summary": {
       "de": "Possessivartikel zeigen, **wem** etwas gehört: mein Buch, deine Tasche.",
       "en": "Possessive articles show **who owns** something: mein Buch (my book), deine Tasche (your bag)."
@@ -159,6 +201,17 @@
     "level": "A2",
     "group": {"de": "Nomen & Artikel", "en": "Nouns & Articles"},
     "title": {"de": "Kasus: Nominativ, Akkusativ, Dativ", "en": "Cases: Nominative, Accusative, Dative"},
+    "intro": {
+      "what": {
+        "de": "Der Kasus zeigt die **Rolle** im Satz: Wer macht es? (Nominativ) Wen oder was? (Akkusativ) Wem? (Dativ). Er ändert vor allem den Artikel.",
+        "en": "The case shows a word's **role** in the sentence: who does it? (nominative) whom or what? (accusative) to whom? (dative). It mainly changes the article."
+      },
+      "when": {
+        "de": "In jedem Satz mit mehr als einem Nomen – und nach vielen Präpositionen.",
+        "en": "In every sentence with more than one noun – and after many prepositions."
+      },
+      "remember": {"de": "Ich gebe dem Kellner das Geld.", "en": "I give the money to the waiter."}
+    },
     "summary": {
       "de": "Der Kasus zeigt die **Rolle** im Satz: wer handelt → **Nominativ**, was/wen → **Akkusativ**, wem → **Dativ**.",
       "en": "The case shows the **role** in the sentence: who acts → **nominative**, what/whom → **accusative**, to whom → **dative**."
@@ -166,7 +219,7 @@
     "sections": [
       {
         "type": "table",
-        "title": {"de": "Ein Satz, drei Fälle", "en": "One sentence, three cases"},
+        "title": {"de": "Ein Satz, drei Fälle: Der Mann schenkt dem Kind einen Ball.", "en": "One sentence, three cases: Der Mann schenkt dem Kind einen Ball. (The man gives the child a ball.)"},
         "head": [{"de": "Kasus", "en": "Case"}, {"de": "Frage", "en": "Question"}, {"de": "Im Satz", "en": "In the sentence"}],
         "rows": [
           ["Nominativ", "Wer/Was?", "**Der Mann** schenkt …"],
@@ -291,6 +344,20 @@
     "level": "A1",
     "group": {"de": "Verben", "en": "Verbs"},
     "title": {"de": "Präsens - regelmäßige Verben", "en": "Present Tense - Regular Verbs"},
+    "intro": {
+      "what": {
+        "de": "Die Grundform der Verben für **jetzt** und oft auch für die **Zukunft**: Stamm + Endung (wohn**e**, wohn**st**, wohn**t**).",
+        "en": "The basic verb form for **now** and often for the **future** too: stem + ending (wohn**e**, wohn**st**, wohn**t**)."
+      },
+      "when": {
+        "de": "Immer – wenn du sagst, was du machst, magst und planst.",
+        "en": "All the time – saying what you do, like and plan."
+      },
+      "remember": {
+        "de": "Ich wohne in Berlin und arbeite in einem Büro.",
+        "en": "I live in Berlin and work in an office."
+      }
+    },
     "summary": {
       "de": "**Stamm + Endung**: wohnen → wohn- → ich wohn**e**.",
       "en": "**Stem + ending**: wohnen → wohn- → ich wohn**e**."
@@ -341,6 +408,17 @@
     "level": "A1",
     "group": {"de": "Verben", "en": "Verbs"},
     "title": {"de": "Trennbare Verben: anrufen, aufstehen", "en": "Separable Verbs: anrufen, aufstehen"},
+    "intro": {
+      "what": {
+        "de": "Verben mit einer Vorsilbe (an-, auf-, ein-), die im Satz **ans Ende** springt: anrufen → Ich rufe dich morgen **an**.",
+        "en": "Verbs with a prefix (an-, auf-, ein-) that jumps **to the end** of the sentence: anrufen → Ich rufe dich morgen **an** (I'll call you tomorrow)."
+      },
+      "when": {
+        "de": "Im Alltag ständig: aufstehen, einkaufen, anrufen, abholen.",
+        "en": "Constantly in daily life: aufstehen (get up), einkaufen (shop), anrufen (call), abholen (pick up)."
+      },
+      "remember": {"de": "Ich stehe jeden Tag um sechs Uhr auf.", "en": "I get up at six every day."}
+    },
     "summary": {
       "de": "Das Präfix geht **ans Satzende**: Ich **rufe** dich morgen **an**.",
       "en": "The prefix goes **to the end of the sentence**: Ich **rufe** dich morgen **an** (I'll call you tomorrow)."
@@ -356,7 +434,7 @@
           [{"de": "Imperativ", "en": "imperative"}, "**Steh** bitte **auf**!"],
           [{"de": "mit Modalverb", "en": "with a modal"}, "Ich muss früh **aufstehen**."],
           ["Perfekt", "Ich bin früh **aufgestanden**."],
-          [{"de": "Nebensatz", "en": "subordinate clause"}, "…, weil ich früh **aufstehe**."]
+          [{"de": "Nebensatz", "en": "subordinate clause"}, "Ich gehe früh ins Bett, weil ich früh **aufstehe**."]
         ]
       },
       {
@@ -391,8 +469,8 @@
             "en": "On the cards a dot marks the split: an·rufen, auf·stehen."
           },
           {
-            "de": "Zusammen bleibt es am Ende: mit Modalverb (Ich muss **anrufen**) und im Nebensatz (…, dass ich **anrufe**).",
-            "en": "It stays together at the end: with a modal (Ich muss **anrufen**) and in a subordinate clause (…, dass ich **anrufe**)."
+            "de": "Zusammen bleibt es am Ende: mit Modalverb (Ich muss **anrufen**.) und im Nebensatz (Mama freut sich, wenn ich **anrufe**.).",
+            "en": "It stays together at the end: with a modal (Ich muss **anrufen**. – I have to call.) and in a subordinate clause (Mama freut sich, wenn ich **anrufe**. – Mum is happy when I call.)"
           },
           {
             "de": "Perfekt: **ge** in die Mitte – an**ge**rufen, auf**ge**standen, ein**ge**kauft.",
@@ -420,8 +498,8 @@
       {
         "type": "warning",
         "text": {
-          "de": "Im Nebensatz nicht trennen: …, weil ich früh **aufstehe**. ❌ weil ich früh stehe auf.",
-          "en": "Don't split it in a subordinate clause: …, weil ich früh **aufstehe**. ❌ weil ich früh stehe auf."
+          "de": "Im Nebensatz nicht trennen: Ich bin müde, weil ich früh **aufstehe**. ❌ weil ich früh stehe auf.",
+          "en": "Don't split it in a subordinate clause: Ich bin müde, weil ich früh **aufstehe**. (I'm tired because I get up early.) ❌ weil ich früh stehe auf."
         }
       }
     ],
@@ -444,6 +522,17 @@
     "level": "A1",
     "group": {"de": "Verben", "en": "Verbs"},
     "title": {"de": "Imperativ: Komm! Kommt! Kommen Sie!", "en": "Imperative: Komm! Kommt! Kommen Sie!"},
+    "intro": {
+      "what": {
+        "de": "Die Form für Bitten, Anweisungen und Tipps: **Komm!** (du), **Kommt!** (ihr), **Kommen Sie!** (Sie).",
+        "en": "The form for requests, instructions and tips: **Komm!** (du), **Kommt!** (ihr), **Kommen Sie!** (Sie)."
+      },
+      "when": {
+        "de": "Rezepte, Wegbeschreibungen, beim Arzt, mit Kindern und Freunden.",
+        "en": "Recipes, directions, at the doctor's, with children and friends."
+      },
+      "remember": {"de": "Nehmen Sie bitte Platz!", "en": "Please take a seat!"}
+    },
     "summary": {
       "de": "Bitten und Aufforderungen: **du** → Komm!, **ihr** → Kommt!, **Sie** → Kommen Sie!",
       "en": "Requests and instructions: **du** → Komm!, **ihr** → Kommt!, **Sie** → Kommen Sie!"
@@ -470,7 +559,7 @@
           ["essen", "du isst", "**Iss**!"],
           ["fahren", "du fährst", "**Fahr**!"],
           ["arbeiten", "du arbeitest", "**Arbeite**!"],
-          ["anrufen", "du rufst an", "**Ruf** … **an**!"],
+          ["anrufen", "du rufst an", "**Ruf** mich **an**!"],
           ["sich beeilen", "du beeilst dich", "**Beeil dich**!"]
         ]
       },
@@ -519,8 +608,8 @@
             "en": "**mal** makes it casual: Guck **mal**! (Have a look!) Komm **mal** her!"
           },
           {
-            "de": "Noch höflicher als Frage: **Könnten** Sie bitte …? (Konjunktiv II)",
-            "en": "Even politer as a question: **Könnten** Sie bitte …? (Konjunktiv II)"
+            "de": "Noch höflicher als Frage: **Könnten** Sie bitte das Fenster schließen? (Konjunktiv II)",
+            "en": "Even politer as a question: **Könnten** Sie bitte das Fenster schließen? (Could you close the window, please? – Konjunktiv II)"
           }
         ]
       },
@@ -551,6 +640,17 @@
     "level": "A2",
     "group": {"de": "Verben", "en": "Verbs"},
     "title": {"de": "Perfekt (Vergangenheit)", "en": "Perfekt (Past Tense)"},
+    "intro": {
+      "what": {
+        "de": "Die normale Vergangenheit beim Sprechen: **haben** oder **sein** + Partizip am Ende.",
+        "en": "The normal past tense when speaking: **haben** or **sein** + past participle at the end."
+      },
+      "when": {
+        "de": "Wenn du erzählst, was du gemacht hast – gestern, am Wochenende, im Urlaub.",
+        "en": "Telling what you did – yesterday, at the weekend, on holiday."
+      },
+      "remember": {"de": "Am Wochenende habe ich meine Eltern besucht.", "en": "At the weekend I visited my parents."}
+    },
     "summary": {
       "de": "Perfekt = **haben / sein** (Position 2) + **Partizip II** (am Ende).",
       "en": "Perfekt = **haben / sein** (position 2) + **past participle** (at the end)."
@@ -631,6 +731,20 @@
     "level": "A2",
     "group": {"de": "Verben", "en": "Verbs"},
     "title": {"de": "Präteritum: war, hatte (und Modalverben)", "en": "Simple Past: war, hatte (and modal verbs)"},
+    "intro": {
+      "what": {
+        "de": "Eine zweite Vergangenheit. Beim Sprechen nimmt man sie fast nur für **sein**, **haben** und die **Modalverben**: war, hatte, konnte.",
+        "en": "A second past tense. In speech it is used almost only for **sein**, **haben** and the **modal verbs**: war, hatte, konnte."
+      },
+      "when": {
+        "de": "Beim Erzählen (ich war, ich hatte, ich musste) – und beim Lesen von Texten und Geschichten.",
+        "en": "Telling what happened (ich war – I was, ich hatte – I had, ich musste – I had to) – and when reading texts and stories."
+      },
+      "remember": {
+        "de": "Gestern war ich müde, ich hatte viel Arbeit.",
+        "en": "Yesterday I was tired, I had a lot of work."
+      }
+    },
     "summary": {
       "de": "Bei **sein**, **haben** und den **Modalverben** sagt man die Vergangenheit meist im Präteritum: Ich **war** krank. Ich **hatte** keine Zeit.",
       "en": "With **sein**, **haben** and the **modal verbs**, the past is usually the Präteritum: Ich **war** krank (I was ill). Ich **hatte** keine Zeit (I had no time)."
@@ -737,6 +851,17 @@
     "level": "A2",
     "group": {"de": "Verben", "en": "Verbs"},
     "title": {"de": "Modalverben", "en": "Modal Verbs"},
+    "intro": {
+      "what": {
+        "de": "Sechs Hilfsverben: können, müssen, wollen, dürfen, sollen, mögen. Das zweite Verb steht im Infinitiv **am Ende**.",
+        "en": "Six helper verbs: können (can), müssen (must), wollen (want), dürfen (may), sollen (should), mögen (like). The second verb goes **to the end** as an infinitive."
+      },
+      "when": {
+        "de": "Ständig: um Erlaubnis bitten, Pläne machen, Pflichten nennen.",
+        "en": "Constantly: asking permission, making plans, saying what you have to do."
+      },
+      "remember": {"de": "Ich muss heute lange arbeiten.", "en": "I have to work late today."}
+    },
     "summary": {
       "de": "Modalverb auf **Position 2**, das zweite Verb im **Infinitiv am Ende**.",
       "en": "Modal verb in **position 2**, the other verb as an **infinitive at the end**."
@@ -849,9 +974,20 @@
     "level": "A2",
     "group": {"de": "Verben", "en": "Verbs"},
     "title": {"de": "Konjunktiv II: würde, hätte, wäre, könnte", "en": "Subjunctive II: würde, hätte, wäre, könnte"},
+    "intro": {
+      "what": {
+        "de": "Eine eigene Verbform für alles, was **nicht real** ist – Wünsche, Träume, „wenn“ – und für **höfliche** Bitten.",
+        "en": "A special verb form for things that are **not real** – wishes, dreams, \"if\" – and for **polite** requests. English uses would / could for the same job."
+      },
+      "when": {
+        "de": "Beim Bestellen, beim Bitten, beim Ratgeben und wenn du über Träume sprichst.",
+        "en": "Ordering in a café, asking someone for help, giving advice, talking about your dreams."
+      },
+      "remember": {"de": "Ich hätte gern einen Kaffee.", "en": "I'd like a coffee, please."}
+    },
     "summary": {
-      "de": "Konjunktiv II klingt **höflich** oder zeigt einen **Wunsch**: Ich **hätte** gern …, **Könnten** Sie …?, Ich **würde** gern …",
-      "en": "Konjunktiv II sounds **polite** or expresses a **wish**: Ich **hätte** gern … (I'd like …), **Könnten** Sie …? (Could you …?), Ich **würde** gern … (I'd like to …)."
+      "de": "Konjunktiv II klingt **höflich** oder zeigt einen **Wunsch**: Ich **hätte** gern einen Tee. **Könnten** Sie mir helfen? Ich **würde** gern reisen.",
+      "en": "Konjunktiv II sounds **polite** or expresses a **wish**: Ich **hätte** gern einen Tee (I'd like a tea). **Könnten** Sie mir helfen? (Could you help me?) Ich **würde** gern reisen (I'd like to travel)."
     },
     "sections": [
       {
@@ -928,12 +1064,12 @@
             "en": "Konjunktiv II goes in **both** clauses: Wenn ich Zeit **hätte**, **würde** ich kommen (If I had time, I would come)."
           },
           {
-            "de": "Die Wirklichkeit ist anders: Ich habe nicht viel Geld. → Wenn ich viel Geld **hätte**, …",
-            "en": "Reality is different: I don't have much money. → Wenn ich viel Geld **hätte**, … (If I had a lot of money, …)"
+            "de": "Die Wirklichkeit ist anders: Ich habe nicht viel Geld. → Wenn ich viel Geld **hätte**, **würde** ich eine Weltreise machen.",
+            "en": "Reality is different: I don't have much money. → Wenn ich viel Geld **hätte**, **würde** ich eine Weltreise machen (If I had a lot of money, I'd travel round the world)."
           },
           {
-            "de": "Wenn-Satz zuerst → das Verb kommt sofort danach: Wenn …, **wäre** ich … (Verb, Verb).",
-            "en": "Wenn clause first → the verb comes straight after it: Wenn …, **wäre** ich … (verb, verb)."
+            "de": "Wenn-Satz zuerst → das Verb kommt sofort danach: Wenn ich krank **wäre**, **würde** ich zu Hause bleiben. (Verb, Verb)",
+            "en": "Wenn clause first → the verb comes straight after it: Wenn ich krank **wäre**, **würde** ich zu Hause bleiben (If I were ill, I'd stay at home). (verb, verb)"
           }
         ]
       },
@@ -954,12 +1090,12 @@
             "en": "Trick: Präteritum + **umlaut**: hatte → h**ä**tte, war → w**ä**re, konnte → k**ö**nnte, wurde → w**ü**rde."
           },
           {
-            "de": "**sollte** und **wollte** bleiben ohne Umlaut: Du **solltest** … = you should …",
-            "en": "**sollte** and **wollte** keep no umlaut: Du **solltest** … = you should …"
+            "de": "**sollte** und **wollte** bleiben ohne Umlaut: Du **solltest** mehr Wasser trinken.",
+            "en": "**sollte** and **wollte** keep no umlaut: Du **solltest** mehr Wasser trinken (You should drink more water)."
           },
           {
-            "de": "**möchte** ist schon der Konjunktiv II von mögen: Ich möchte … = I would like …",
-            "en": "**möchte** already is the Konjunktiv II of mögen: Ich möchte … = I would like …"
+            "de": "**möchte** ist schon der Konjunktiv II von mögen: Ich **möchte** ein Brötchen.",
+            "en": "**möchte** already is the Konjunktiv II of mögen: Ich **möchte** ein Brötchen (I'd like a bread roll)."
           },
           {
             "de": "Endungen wie im Präteritum: ich = er/sie/es, du **-st**, wir/sie **-n**, ihr **-t**.",
@@ -972,16 +1108,16 @@
         "title": {"de": "Wie höflich?", "en": "How polite?"},
         "items": [
           {
-            "de": "Gib mir das Salz! → Kannst du mir das Salz geben? → **Könntest** du mir bitte das Salz geben? (am höflichsten)",
-            "en": "Gib mir das Salz! (Give me the salt!) → Kannst du …? (Can you …?) → **Könntest** du mir bitte …? (Could you please …? – most polite)"
+            "de": "Gib mir das Salz! → **Kannst** du mir das Salz geben? → **Könntest** du mir bitte das Salz geben? (am höflichsten)",
+            "en": "Gib mir das Salz! (Give me the salt!) → **Kannst** du mir das Salz geben? (Can you pass me the salt?) → **Könntest** du mir bitte das Salz geben? (Could you please pass me the salt? – most polite)"
           },
           {
             "de": "Sehr höflich: Entschuldigung, **dürfte** ich Sie um einen Gefallen bitten?",
             "en": "Very polite: Excuse me, **dürfte** ich Sie um einen Gefallen bitten? (Could I ask you a favour?)"
           },
           {
-            "de": "Im Geschäft und Restaurant: **Ich hätte gern** … klingt freundlicher als „Ich will …“.",
-            "en": "In shops and restaurants: **Ich hätte gern** … sounds friendlier than \"Ich will …\" (I want …)."
+            "de": "Im Geschäft und Restaurant: „**Ich hätte gern** ein Stück Kuchen.“ klingt freundlicher als „Ich will ein Stück Kuchen.“",
+            "en": "In shops and restaurants: \"**Ich hätte gern** ein Stück Kuchen\" (I'd like a piece of cake) sounds friendlier than \"Ich will ein Stück Kuchen\" (I want a piece of cake)."
           }
         ]
       },
@@ -1013,6 +1149,17 @@
     "level": "A2",
     "group": {"de": "Verben", "en": "Verbs"},
     "title": {"de": "Reflexive Verben: sich freuen, sich erinnern", "en": "Reflexive Verbs: sich freuen, sich erinnern"},
+    "intro": {
+      "what": {
+        "de": "Verben mit **sich**: Die Handlung geht zurück zur Person – ich wasche **mich**, du freust **dich**.",
+        "en": "Verbs with **sich**: the action goes back to the person – ich wasche **mich** (I wash myself), du freust **dich** (you're happy)."
+      },
+      "when": {
+        "de": "Morgenroutine, Gefühle, Verabredungen: sich anziehen, sich freuen, sich treffen.",
+        "en": "Morning routine, feelings, meeting people: sich anziehen (get dressed), sich freuen (be happy), sich treffen (meet)."
+      },
+      "remember": {"de": "Ich freue mich auf das Wochenende.", "en": "I'm looking forward to the weekend."}
+    },
     "summary": {
       "de": "Das Reflexivpronomen passt zur Person: ich wasche **mich**, du wäschst **dich**, er wäscht **sich**.",
       "en": "The reflexive pronoun matches the person: ich wasche **mich**, du wäschst **dich**, er wäscht **sich**."
@@ -1068,7 +1215,7 @@
           ["sich schminken", {"de": "Make-up auftragen", "en": "put on make-up"}],
           ["sich anziehen", {"de": "Kleidung anziehen", "en": "get dressed"}],
           ["sich vorstellen", {"de": "Name und Person nennen", "en": "introduce yourself"}],
-          ["sich anmelden", {"de": "für einen Kurs …", "en": "register, sign up"}],
+          ["sich anmelden", {"de": "sich für einen Kurs eintragen", "en": "register, sign up"}],
           ["sich fühlen", {"de": "Ich fühle mich gut.", "en": "feel"}],
           ["sich beeilen", {"de": "schnell machen", "en": "hurry"}],
           ["sich ausruhen", {"de": "Pause machen", "en": "rest"}]
@@ -1086,7 +1233,7 @@
           ["sich ärgern **über**", "Akk.", {"de": "böse sein", "en": "be annoyed about"}],
           ["sich kümmern **um**", "Akk.", {"de": "sorgen für", "en": "take care of"}],
           ["sich Sorgen machen **um**", "Akk.", {"de": "Angst haben um", "en": "worry about"}],
-          ["sich anmelden **für**", "Akk.", {"de": "für einen Kurs …", "en": "register for"}],
+          ["sich anmelden **für**", "Akk.", {"de": "sich für einen Kurs eintragen", "en": "register for"}],
           ["sich verabreden **mit**", "Dat.", {"de": "ein Treffen ausmachen", "en": "arrange to meet"}],
           ["sich bedanken **bei** … **für**", "Dat.+Akk.", {"de": "Danke sagen", "en": "thank sb. for"}],
           ["sich streiten **mit** … **über**", "Dat.+Akk.", {"de": "Streit haben", "en": "argue with sb. about"}],
@@ -1133,7 +1280,7 @@
           ["Perfekt", "Ich **habe mich** gefreut."],
           [{"de": "Modalverb", "en": "Modal verb"}, "Ich muss **mich** beeilen."],
           [{"de": "trennbar", "en": "Separable"}, "Ich ruhe **mich** aus."],
-          [{"de": "Nebensatz", "en": "Subordinate clause"}, "…, weil er **sich** geärgert hat."],
+          [{"de": "Nebensatz", "en": "Subordinate clause"}, "Er ist sauer, weil er **sich** über den Chef geärgert hat."],
           [{"de": "Imperativ", "en": "Imperative"}, "Beeil **dich**! Freuen Sie **sich**!"]
         ]
       },
@@ -1173,8 +1320,8 @@
       {
         "type": "warning",
         "text": {
-          "de": "Perfekt immer mit **haben**: Ich **habe mich** verletzt. ❌ Ich bin mich …",
-          "en": "Perfekt always with **haben**: Ich **habe mich** verletzt. ❌ Ich bin mich …"
+          "de": "Perfekt immer mit **haben**: Ich **habe mich** verletzt. ❌ Ich bin mich verletzt.",
+          "en": "Perfekt always with **haben**: Ich **habe mich** verletzt (I hurt myself). ❌ Ich bin mich verletzt."
         }
       }
     ],
@@ -1196,6 +1343,17 @@
     "level": "A2",
     "group": {"de": "Verben", "en": "Verbs"},
     "title": {"de": "Verben mit Dativ: helfen, gefallen, gehören", "en": "Verbs with the Dative: helfen, gefallen, gehören"},
+    "intro": {
+      "what": {
+        "de": "Einige Verben nehmen den **Dativ**, nicht den Akkusativ: helfen, gefallen, gehören, danken.",
+        "en": "Some verbs take the **dative**, not the accusative: helfen (help), gefallen (please), gehören (belong to), danken (thank)."
+      },
+      "when": {
+        "de": "Beim Einkaufen (Das gefällt mir.), wenn du Hilfe brauchst oder dich bedankst.",
+        "en": "Shopping (Das gefällt mir. – I like it.), asking for help, saying thank you."
+      },
+      "remember": {"de": "Kannst du mir bitte helfen?", "en": "Can you help me, please?"}
+    },
     "summary": {
       "de": "Manche Verben brauchen den **Dativ** statt Akkusativ: Ich helfe **dir**. Das gefällt **mir**.",
       "en": "Some verbs take the **dative** instead of the accusative: Ich helfe **dir** (I help you). Das gefällt **mir** (I like it)."
@@ -1217,7 +1375,7 @@
           ["gratulieren", "Ich gratuliere **dir**.", "congratulate"],
           ["glauben", "Ich glaube **dir**.", "believe sb."],
           ["vertrauen", "Ich vertraue **ihm**.", "trust"],
-          ["raten", "Er rät **mir**, …", "advise"],
+          ["raten", "Was rätst du **mir**?", "advise"],
           ["wehtun", "Der Kopf tut **mir** weh.", "hurt"],
           ["zuhören", "Hör **mir** zu!", "listen to"]
         ]
@@ -1284,6 +1442,17 @@
     "level": "A2",
     "group": {"de": "Verben", "en": "Verbs"},
     "title": {"de": "Verben mit Präposition: warten auf, denken an", "en": "Verbs with Prepositions: warten auf, denken an"},
+    "intro": {
+      "what": {
+        "de": "Viele Verben haben eine feste Präposition – lern sie als Paar: warten **auf**, denken **an**, sich interessieren **für**.",
+        "en": "Many verbs come with a fixed preposition – learn them as a pair: warten **auf** (wait for), denken **an** (think of), sich interessieren **für** (be interested in)."
+      },
+      "when": {
+        "de": "Wenn du über Pläne, Gefühle und Interessen sprichst.",
+        "en": "Talking about plans, feelings and interests."
+      },
+      "remember": {"de": "Ich warte schon zehn Minuten auf dich.", "en": "I've been waiting for you for ten minutes."}
+    },
     "summary": {
       "de": "Viele Verben haben eine feste **Präposition** – lerne sie zusammen: warten **auf** + Akk., denken **an** + Akk.",
       "en": "Many verbs have a fixed **preposition** – learn them together: warten **auf** + acc. (wait for), denken **an** + acc. (think of)."
@@ -1386,6 +1555,17 @@
     "level": "A2",
     "group": {"de": "Verben", "en": "Verbs"},
     "title": {"de": "Passiv Präsens: Das Paket wird gepackt", "en": "Passive (present): Das Paket wird gepackt"},
+    "intro": {
+      "what": {
+        "de": "Ein Satz ohne „wer macht es?“ – wichtig ist die Handlung: **werden** + Partizip am Ende.",
+        "en": "A sentence without \"who does it?\" – the action is what matters: **werden** + past participle at the end."
+      },
+      "when": {
+        "de": "Schilder, Anleitungen, Rezepte, auf der Post, in den Nachrichten.",
+        "en": "Signs, instructions, recipes, at the post office, in the news."
+      },
+      "remember": {"de": "Das Paket wird morgen gebracht.", "en": "The parcel will be delivered tomorrow."}
+    },
     "summary": {
       "de": "Passiv = **werden + Partizip II** am Ende. Wichtig ist, **was passiert** – nicht, wer es macht.",
       "en": "Passive = **werden + past participle** at the end. What matters is **what happens** – not who does it."
@@ -1440,8 +1620,8 @@
             "en": "The accusative object of the active sentence becomes the **subject** (nominative) in the passive: **den** Brief → **der** Brief."
           },
           {
-            "de": "Singular → **wird**, Plural → **werden**: Das Paket **wird** … – Die Pakete **werden** …",
-            "en": "Singular → **wird**, plural → **werden**: Das Paket **wird** … – Die Pakete **werden** … (the parcel is / the parcels are …)"
+            "de": "Singular → **wird**, Plural → **werden**: Das Paket **wird** gebracht. – Die Pakete **werden** gebracht.",
+            "en": "Singular → **wird**, plural → **werden**: Das Paket **wird** gebracht. – Die Pakete **werden** gebracht. (The parcel is / the parcels are delivered.)"
           },
           {
             "de": "Wer es macht, ist oft egal. Wenn doch wichtig: **von + Dativ** – Der Brief wird **vom** Briefträger gebracht.",
@@ -1480,6 +1660,20 @@
     "level": "A2",
     "group": {"de": "Adjektive", "en": "Adjectives"},
     "title": {"de": "Adjektivendungen", "en": "Adjective Endings"},
+    "intro": {
+      "what": {
+        "de": "Steht ein Adjektiv **vor** einem Nomen, bekommt es eine Endung. Sie hängt vom Artikel, vom Genus und vom Kasus ab.",
+        "en": "When an adjective comes **before** a noun, it takes an ending. Which one depends on the article, the gender and the case."
+      },
+      "when": {
+        "de": "Beim Beschreiben: Kleidung, Wohnung, Menschen, Essen.",
+        "en": "Describing things: clothes, your flat, people, food."
+      },
+      "remember": {
+        "de": "Ich suche eine kleine Wohnung mit einem großen Balkon.",
+        "en": "I'm looking for a small flat with a big balcony."
+      }
+    },
     "summary": {
       "de": "Vor einem Nomen bekommt das Adjektiv eine Endung: der neu**e** Rock, ein neu**er** Rock. Nach **sein** keine: Der Rock ist **neu**.",
       "en": "Before a noun the adjective takes an ending: der neu**e** Rock, ein neu**er** Rock. After **sein** none: Der Rock ist **neu**."
@@ -1612,9 +1806,20 @@
     "level": "A2",
     "group": {"de": "Adjektive", "en": "Adjectives"},
     "title": {"de": "Komparativ und Superlativ", "en": "Comparative and Superlative"},
+    "intro": {
+      "what": {
+        "de": "Vergleichen: **-er + als** (größer als) und **am -sten** (am größten).",
+        "en": "Comparing: **-er + als** (bigger than) and **am -sten** (the biggest)."
+      },
+      "when": {
+        "de": "Beim Einkaufen, für Meinungen und Wünsche: billiger, besser, am liebsten.",
+        "en": "Shopping, giving opinions and wishes: billiger (cheaper), besser (better), am liebsten (most of all)."
+      },
+      "remember": {"de": "Der Zug ist schneller als der Bus.", "en": "The train is faster than the bus."}
+    },
     "summary": {
-      "de": "Komparativ: **-er + als**. Superlativ: **am … -sten**.",
-      "en": "Comparative: **-er + als**. Superlative: **am … -sten**."
+      "de": "Komparativ: **-er + als** – Der Bus ist schnell**er als** das Fahrrad. Superlativ: **am -sten** – Das Flugzeug ist **am** schnell**sten**.",
+      "en": "Comparative: **-er + als** – Der Bus ist schnell**er als** das Fahrrad (the bus is faster than the bike). Superlative: **am -sten** – Das Flugzeug ist **am** schnell**sten** (the plane is the fastest)."
     },
     "sections": [
       {
@@ -1683,6 +1888,17 @@
     "level": "A1",
     "group": {"de": "Satz & Fragen", "en": "Sentences & Questions"},
     "title": {"de": "Wortstellung im Hauptsatz", "en": "Word Order in Main Clauses"},
+    "intro": {
+      "what": {
+        "de": "Im Hauptsatz steht das Verb immer auf **Position 2** – egal, was vorne steht.",
+        "en": "In a main clause the verb is always in **position 2** – whatever comes first."
+      },
+      "when": {
+        "de": "In jedem Satz – besonders, wenn du mit einer Zeit oder einem Ort anfängst.",
+        "en": "In every sentence – especially when you start with a time or a place."
+      },
+      "remember": {"de": "Morgen fahre ich nach Hamburg.", "en": "Tomorrow I'm going to Hamburg."}
+    },
     "summary": {
       "de": "Das konjugierte Verb steht **immer auf Position 2**.",
       "en": "The conjugated verb is **always in position 2**."
@@ -1713,8 +1929,8 @@
             "en": "If something else takes position 1, the subject comes **right after the verb**."
           },
           {
-            "de": "Position 1 kann aus mehreren Wörtern bestehen: Am Montag um 8 Uhr …",
-            "en": "Position 1 can be several words long: Am Montag um 8 Uhr …"
+            "de": "Position 1 kann aus mehreren Wörtern bestehen: Am Montag um 8 Uhr **beginnt** der Kurs.",
+            "en": "Position 1 can be several words long: Am Montag um 8 Uhr **beginnt** der Kurs (On Monday at 8 the course starts)."
           },
           {
             "de": "Im Nebensatz (dass, weil, wenn …) steht das Verb dagegen **am Ende** (siehe „Konnektoren“).",
@@ -1734,6 +1950,17 @@
     "level": "A2",
     "group": {"de": "Satz & Fragen", "en": "Sentences & Questions"},
     "title": {"de": "Fragewörter: wer, wen, wem, was", "en": "Question Words: wer, wen, wem, was"},
+    "intro": {
+      "what": {
+        "de": "Mit **wer**, **wen**, **wem** und **was** fragst du nach Personen und Sachen – die Form zeigt den Kasus.",
+        "en": "With **wer**, **wen**, **wem** and **was** you ask about people and things – the form shows the case."
+      },
+      "when": {
+        "de": "Wenn du nachfragst: Wer kommt? Wen besuchst du? Wem gehört das?",
+        "en": "When you ask: Wer kommt? (Who's coming?) Wen besuchst du? (Who are you visiting?) Wem gehört das? (Whose is that?)"
+      },
+      "remember": {"de": "Wem schenkst du die Blumen?", "en": "Who are you giving the flowers to?"}
+    },
     "summary": {
       "de": "Das Fragewort hat den Kasus der Antwort: **wer** → der, **wen** → den, **wem** → dem.",
       "en": "The question word takes the case of the answer: **wer** → der, **wen** → den, **wem** → dem."
@@ -1818,8 +2045,8 @@
       {
         "type": "warning",
         "text": {
-          "de": "**wen** (Akkusativ) ≠ **wenn** (falls, sobald). Und: **Wem** gehört …? – gehören steht immer mit Dativ.",
-          "en": "**wen** (whom) ≠ **wenn** (if / when). And: **Wem** gehört …? – gehören always takes the dative."
+          "de": "**wen** (Akkusativ) ≠ **wenn** (falls, sobald). Und: **Wem** gehört das Handy? – gehören steht immer mit Dativ.",
+          "en": "**wen** (whom) ≠ **wenn** (if / when). And: **Wem** gehört das Handy? (Whose phone is this?) – gehören always takes the dative."
         }
       }
     ],
@@ -1835,6 +2062,20 @@
     "level": "A2",
     "group": {"de": "Konnektoren", "en": "Connectors"},
     "title": {"de": "Konnektoren: Überblick", "en": "Connectors: Overview"},
+    "intro": {
+      "what": {
+        "de": "Konnektoren verbinden Sätze. Es gibt drei Gruppen – jede stellt das **Verb** an einen anderen Platz.",
+        "en": "Connectors join sentences. There are three groups – each one puts the **verb** in a different place."
+      },
+      "when": {
+        "de": "Sobald du mehr als einen kurzen Satz sagst oder schreibst.",
+        "en": "As soon as you say or write more than one short sentence."
+      },
+      "remember": {
+        "de": "Ich bin müde, deshalb gehe ich früh ins Bett.",
+        "en": "I'm tired, so I'm going to bed early."
+      }
+    },
     "summary": {
       "de": "Drei Typen – und jeder macht etwas anderes mit dem **Verb**.",
       "en": "Three types – and each one does something different to the **verb**."
@@ -1881,8 +2122,8 @@
             "en": "Memorize **ADUSO**: **a**ber, **d**enn, **u**nd, **s**ondern, **o**der – these five change nothing."
           },
           {
-            "de": "Steht das Wort allein vorne und das Verb folgt sofort? → Adverb: Deshalb **bleibe** ich …",
-            "en": "Does the word stand alone at the front with the verb right after it? → adverb: Deshalb **bleibe** ich …"
+            "de": "Steht das Wort allein vorne und das Verb folgt sofort? → Adverb: Deshalb **bleibe** ich zu Hause.",
+            "en": "Does the word stand alone at the front with the verb right after it? → adverb: Deshalb **bleibe** ich zu Hause (So I'm staying at home)."
           },
           {
             "de": "Fast alle anderen Wörter, die einen Satzteil einleiten (dass, weil, wenn, ob, als …), schicken das Verb ans Ende.",
@@ -1907,8 +2148,8 @@
       {
         "type": "warning",
         "text": {
-          "de": "Häufigster Fehler – ❌ …, weil ich bin krank. ✅ …, weil ich krank **bin**. Im Alltag hört man ❌ oft, beim Schreiben und im Test zählt ✅.",
-          "en": "Most common mistake – ❌ …, weil ich bin krank. ✅ …, weil ich krank **bin**. You'll hear ❌ in everyday speech, but in writing and exams ✅ counts."
+          "de": "Häufigster Fehler – ❌ Ich komme nicht, weil ich bin krank. ✅ Ich komme nicht, weil ich krank **bin**. Im Alltag hört man ❌ oft, beim Schreiben und im Test zählt ✅.",
+          "en": "Most common mistake – ❌ Ich komme nicht, weil ich bin krank. ✅ Ich komme nicht, weil ich krank **bin**. (I'm not coming because I'm ill.) You'll hear ❌ in everyday speech, but in writing and exams ✅ counts."
         }
       }
     ],
@@ -1923,6 +2164,20 @@
     "level": "A1",
     "group": {"de": "Konnektoren", "en": "Connectors"},
     "title": {"de": "und, aber, oder, denn, sondern", "en": "und, aber, oder, denn, sondern"},
+    "intro": {
+      "what": {
+        "de": "**und**, **aber**, **oder**, **denn**, **sondern** verbinden zwei Hauptsätze – die Wortstellung bleibt normal (Position 0).",
+        "en": "**und**, **aber**, **oder**, **denn**, **sondern** (and, but, or, because, but rather) join two main clauses – the word order stays normal (position 0)."
+      },
+      "when": {
+        "de": "Ständig – beim Erzählen und wenn du etwas begründest.",
+        "en": "All the time – when telling a story or giving a reason."
+      },
+      "remember": {
+        "de": "Ich komme gern, aber ich habe nur eine Stunde Zeit.",
+        "en": "I'd love to come, but I only have an hour."
+      }
+    },
     "summary": {
       "de": "Diese Wörter verbinden zwei Sätze – die **Wortstellung bleibt normal**.",
       "en": "These words join two sentences – the **word order stays normal**."
@@ -1991,8 +2246,8 @@
       {
         "type": "warning",
         "text": {
-          "de": "Kein nicht / kein davor → kein **sondern**: ❌ Ich mag Fisch, sondern … ✅ Ich mag Fisch, **aber** …",
-          "en": "No nicht / kein before it → no **sondern**: ❌ Ich mag Fisch, sondern … ✅ Ich mag Fisch, **aber** …"
+          "de": "Kein nicht / kein davor → kein **sondern**: ❌ Ich mag Fisch, sondern ich esse ihn selten. ✅ Ich mag Fisch, **aber** ich esse ihn selten.",
+          "en": "No nicht / kein before it → no **sondern**: ❌ Ich mag Fisch, sondern ich esse ihn selten. ✅ Ich mag Fisch, **aber** ich esse ihn selten. (I like fish, but I rarely eat it.)"
         }
       }
     ],
@@ -2007,6 +2262,20 @@
     "level": "A2",
     "group": {"de": "Konnektoren", "en": "Connectors"},
     "title": {"de": "Nebensätze: dass, weil, wenn, ob, als", "en": "Subordinate Clauses: dass, weil, wenn, ob, als"},
+    "intro": {
+      "what": {
+        "de": "Ein Nebensatz beginnt mit **dass**, **weil**, **wenn**, **ob** oder **als** – und das Verb geht **ans Ende**.",
+        "en": "A subordinate clause starts with **dass**, **weil**, **wenn**, **ob** or **als** – and the verb goes **to the end**."
+      },
+      "when": {
+        "de": "Gründe nennen (weil), Meinung sagen (dass), Bedingungen (wenn), höflich fragen (ob).",
+        "en": "Giving reasons (weil), opinions (dass), conditions (wenn), asking politely (ob)."
+      },
+      "remember": {
+        "de": "Ich lerne Deutsch, weil ich in Deutschland arbeite.",
+        "en": "I'm learning German because I work in Germany."
+      }
+    },
     "summary": {
       "de": "Nach **dass, weil, wenn, ob, als** steht das konjugierte Verb **am Ende**. Nebensatz zuerst? Dann **Verb, Verb**.",
       "en": "After **dass, weil, wenn, ob, als**, the conjugated verb goes to the **end**. Clause first? Then **verb, verb**."
@@ -2020,7 +2289,7 @@
           ["weil", "because", "Ich bleibe hier, weil ich krank **bin**."],
           ["wenn", "if; when(ever)", "Wenn es **regnet**, bleibe ich zu Hause."],
           ["ob", "whether, if", "Ich weiß nicht, ob er **kommt**."],
-          ["als", "when (once, in the past)", "Als ich klein **war**, …"],
+          ["als", "when (once, in the past)", "Als ich klein **war**, hatte ich einen Hund."],
           ["wo, wann, wie …", "where, when, how …", "Weißt du, wo er **wohnt**?"]
         ]
       },
@@ -2040,7 +2309,7 @@
         "head": [{"de": "Hauptsatz", "en": "Main clause"}, {"de": "Nebensatz", "en": "Subordinate clause"}],
         "rows": [
           ["Es **gibt** keine Pizza.", "Schade, dass es keine Pizza **gibt**."],
-          ["Ich **bin** krank.", "…, weil ich krank **bin**."],
+          ["Ich **bin** krank.", "Ich gehe zum Arzt, weil ich krank **bin**."],
           ["Du **hast** reserviert.", "Gut, dass du reserviert **hast**."],
           ["**Kommt** er?", "Ich weiß nicht, ob er **kommt**."]
         ]
@@ -2053,7 +2322,7 @@
           ["Ich hoffe,", "dass sie Pommes", "**haben**."],
           ["Ich weiß,", "dass er nicht kommen", "**kann**."],
           ["Gut,", "dass du reserviert", "**hast**."],
-          ["…,", "weil der Zug", "**ankommt**."]
+          ["Ich hole dich ab,", "wenn der Zug", "**ankommt**."]
         ]
       },
       {
@@ -2083,10 +2352,10 @@
           [
             "**wenn**",
             {"de": "Bedingung; immer wenn; Zukunft", "en": "condition; whenever; future"},
-            "Wenn ich Zeit habe, …"
+            "Wenn ich Zeit habe, koche ich."
           ],
-          ["**als**", {"de": "einmal in der Vergangenheit", "en": "one time in the past"}, "Als ich in Berlin war, …"],
-          ["**ob**", {"de": "Ja/Nein-Frage im Satz", "en": "yes/no question inside a sentence"}, "Ich frage, ob …"]
+          ["**als**", {"de": "einmal in der Vergangenheit", "en": "one time in the past"}, "Als ich in Berlin war, habe ich Anna getroffen."],
+          ["**ob**", {"de": "Ja/Nein-Frage im Satz", "en": "yes/no question inside a sentence"}, "Ich frage, ob du mitkommst."]
         ]
       },
       {
@@ -2111,7 +2380,7 @@
         "type": "points",
         "title": {"de": "als – genau", "en": "als in detail"},
         "items": [
-          {"de": "**als** = **einmal** oder eine Zeit lang in der **Vergangenheit**: Als ich Kind war, … · Als ich 2020 in Berlin war, …", "en": "**als** = **one time** or one period in the **past**: Als ich Kind war, … (when I was a child) · Als ich 2020 in Berlin war, …"},
+          {"de": "**als** = **einmal** oder eine Zeit lang in der **Vergangenheit**: Als ich Kind war, habe ich viel gespielt. · Als ich 2020 in Berlin war, habe ich Deutsch gelernt.", "en": "**als** = **one time** or one period in the **past**: Als ich Kind war, habe ich viel gespielt (when I was a child, I played a lot). · Als ich 2020 in Berlin war, habe ich Deutsch gelernt (when I was in Berlin in 2020, I learned German)."},
           {"de": "Mit sein, haben und Modalverben meist **Präteritum**: als ich klein **war** / keine Zeit **hatte** / nicht kommen **konnte**. Sonst oft Perfekt: als ich nach Deutschland gekommen **bin**.", "en": "With sein, haben and modal verbs usually **Präteritum**: als ich klein **war** / keine Zeit **hatte** / nicht kommen **konnte**. Otherwise often Perfekt: als ich nach Deutschland gekommen **bin**."},
           {"de": "Immer wieder in der Vergangenheit? → **wenn** (oft **immer wenn**): Immer wenn ich Zeit hatte, habe ich gelesen.", "en": "Again and again in the past? → **wenn** (often **immer wenn**): Immer wenn ich Zeit hatte, habe ich gelesen. (Whenever I had time, I read.)"},
           {"de": "Frage nach der Zeit → **wann**: Wann bist du gekommen? · Ich weiß nicht, **wann** der Kurs beginnt.", "en": "Asking about time → **wann**: Wann bist du gekommen? · Ich weiß nicht, **wann** der Kurs beginnt."},
@@ -2123,20 +2392,20 @@
         "title": {"de": "Typische Satzanfänge", "en": "Typical openers"},
         "items": [
           {
-            "de": "Meinung: Ich **denke / glaube / finde**, dass …",
-            "en": "Opinion: Ich **denke / glaube / finde**, dass … (I think / believe / find that …)"
+            "de": "Meinung: Ich **denke / glaube / finde**, dass Deutsch schön ist.",
+            "en": "Opinion: Ich **denke / glaube / finde**, dass Deutsch schön ist. (I think / believe / find that German is beautiful.)"
           },
           {
-            "de": "Wissen und Hoffnung: Ich **weiß**, dass … · Ich **hoffe**, dass …",
-            "en": "Knowing and hoping: Ich **weiß**, dass … (I know that) · Ich **hoffe**, dass … (I hope that)"
+            "de": "Wissen und Hoffnung: Ich **weiß**, dass du müde bist. · Ich **hoffe**, dass es morgen nicht regnet.",
+            "en": "Knowing and hoping: Ich **weiß**, dass du müde bist (I know that you're tired). · Ich **hoffe**, dass es morgen nicht regnet (I hope it won't rain tomorrow)."
           },
           {
-            "de": "Gefühl: **Gut / Schön / Schade**, dass … · Vermutung: **Kann es sein**, dass …?",
-            "en": "Feeling: **Gut / Schön / Schade**, dass … (good / nice / a pity that) · Guessing: **Kann es sein**, dass …?"
+            "de": "Gefühl: **Gut / Schön / Schade**, dass du da bist. · Vermutung: **Kann es sein**, dass der Bus heute nicht fährt?",
+            "en": "Feeling: **Gut / Schön / Schade**, dass du da bist (good / nice / a pity that you're here). · Guessing: **Kann es sein**, dass der Bus heute nicht fährt? (Could it be that the bus isn't running today?)"
           },
           {
-            "de": "Höflich fragen: **Können Sie mir sagen**, wo der Bahnhof **ist**? · Ich weiß nicht, **ob** …",
-            "en": "Asking politely: **Können Sie mir sagen**, wo der Bahnhof **ist**? · Ich weiß nicht, **ob** … (I don't know whether …)"
+            "de": "Höflich fragen: **Können Sie mir sagen**, wo der Bahnhof **ist**? · Ich weiß nicht, **ob** der Laden noch offen ist.",
+            "en": "Asking politely: **Können Sie mir sagen**, wo der Bahnhof **ist**? (Can you tell me where the station is?) · Ich weiß nicht, **ob** der Laden noch offen ist (I don't know whether the shop is still open)."
           }
         ]
       },
@@ -2153,12 +2422,12 @@
             "en": "There's always a **comma** before the subordinate clause."
           },
           {
-            "de": "Zwei Verben? Das **konjugierte** steht ganz hinten: …, dass du reserviert **hast** · …, weil er arbeiten **muss**.",
-            "en": "Two verbs? The **conjugated** one goes last: …, dass du reserviert **hast** · …, weil er arbeiten **muss**."
+            "de": "Zwei Verben? Das **konjugierte** steht ganz hinten: Gut, dass du reserviert **hast**. · Er kommt nicht, weil er arbeiten **muss**.",
+            "en": "Two verbs? The **conjugated** one goes last: Gut, dass du reserviert **hast** (good that you've booked). · Er kommt nicht, weil er arbeiten **muss** (he isn't coming because he has to work)."
           },
           {
-            "de": "Trennbare Verben kommen wieder zusammen: Der Zug **kommt** spät **an**. → …, weil der Zug spät **ankommt**.",
-            "en": "Separable verbs join up again: Der Zug **kommt** spät **an**. → …, weil der Zug spät **ankommt**."
+            "de": "Trennbare Verben kommen wieder zusammen: Der Zug **kommt** spät **an**. → Ich bin sauer, weil der Zug spät **ankommt**.",
+            "en": "Separable verbs join up again: Der Zug **kommt** spät **an**. → Ich bin sauer, weil der Zug spät **ankommt** (I'm annoyed because the train arrives late)."
           },
           {
             "de": "Nebensatz zuerst? Dann **Verb, Verb** am Komma: Wenn es **regnet**, **bleibe** ich zu Hause.",
@@ -2170,9 +2439,9 @@
         "type": "points",
         "title": {"de": "Noch mehr Regeln", "en": "More rules"},
         "items": [
-          {"de": "Das **Subjekt** steht meist direkt nach dem Konnektor: weil **ich** …, dass **die U-Bahn** …, wenn **es** …", "en": "The **subject** usually comes right after the connector: weil **ich** …, dass **die U-Bahn** …, wenn **es** …"},
-          {"de": "Perfekt: **haben / sein** ganz am Ende, das Partizip davor: …, weil ich den Bus **verpasst habe** · …, weil er nach Berlin **gefahren ist**.", "en": "Perfekt: **haben / sein** at the very end, the participle before it: …, weil ich den Bus **verpasst habe** (because I missed the bus) · …, weil er nach Berlin **gefahren ist**."},
-          {"de": "Reflexiv: **sich / mich** direkt nach dem Subjekt: …, weil ich **mich** sehr **freue** · …, dass er **sich** nicht gut **fühlt**.", "en": "Reflexive: **sich / mich** right after the subject: …, weil ich **mich** sehr **freue** (because I'm very happy) · …, dass er **sich** nicht gut **fühlt**."},
+          {"de": "Das **Subjekt** steht meist direkt nach dem Konnektor: Ich bleibe zu Hause, weil **ich** müde bin. · Ich glaube, dass **die U-Bahn** heute nicht fährt.", "en": "The **subject** usually comes right after the connector: Ich bleibe zu Hause, weil **ich** müde bin (because I'm tired). · Ich glaube, dass **die U-Bahn** heute nicht fährt (I think the underground isn't running today)."},
+          {"de": "Perfekt: **haben / sein** ganz am Ende, das Partizip davor: Ich komme zu spät, weil ich den Bus **verpasst habe**. · Sie ist traurig, weil er nach Berlin **gefahren ist**.", "en": "Perfekt: **haben / sein** at the very end, the participle before it: Ich komme zu spät, weil ich den Bus **verpasst habe** (I'm late because I missed the bus). · Sie ist traurig, weil er nach Berlin **gefahren ist** (she's sad because he's gone to Berlin)."},
+          {"de": "Reflexiv: **sich / mich** direkt nach dem Subjekt: Ich kann nicht schlafen, weil ich **mich** so auf morgen **freue**. · Er bleibt im Bett, weil er **sich** nicht gut **fühlt**.", "en": "Reflexive: **sich / mich** right after the subject: Ich kann nicht schlafen, weil ich **mich** so auf morgen **freue** (I can't sleep because I'm so looking forward to tomorrow). · Er bleibt im Bett, weil er **sich** nicht gut **fühlt** (he's staying in bed because he doesn't feel well)."},
           {"de": "Im Gespräch reicht als Antwort oft nur der Nebensatz: Warum lernst du Deutsch? – **Weil** ich hier arbeiten **möchte**. Im Brief lieber ganze Sätze.", "en": "In conversation, the clause alone is often enough as an answer: Warum lernst du Deutsch? – **Weil** ich hier arbeiten **möchte**. In a letter, write full sentences."},
           {"de": "DTZ: Sätze mit **weil, dass, wenn** verbinden bringt Punkte (Schreiben: „Kommunikative Gestaltung“) – benutze sie in jeder Antwort.", "en": "DTZ: linking sentences with **weil, dass, wenn** earns points (Schreiben: „Kommunikative Gestaltung“) – use them in every answer."}
         ]
@@ -2190,16 +2459,16 @@
             "en": "In speech, dass is often dropped after denken, glauben, hoffen – then the verb stays in position 2: Ich denke, ich **nehme** den Fisch."
           },
           {
-            "de": "**nicht** steht vor dem Verb am Ende: …, dass er heute **nicht kommt**.",
-            "en": "**nicht** goes before the verb at the end: …, dass er heute **nicht kommt**."
+            "de": "**nicht** steht vor dem Verb am Ende: Sie sagt, dass er heute **nicht kommt**.",
+            "en": "**nicht** goes before the verb at the end: Sie sagt, dass er heute **nicht kommt** (she says he isn't coming today)."
           }
         ]
       },
       {
         "type": "warning",
         "text": {
-          "de": "Häufigster Fehler – ❌ …, dass ich nehme den Fisch. ✅ …, dass ich den Fisch **nehme**.",
-          "en": "Most common mistake – ❌ …, dass ich nehme den Fisch. ✅ …, dass ich den Fisch **nehme**."
+          "de": "Häufigster Fehler – ❌ Ich glaube, dass ich nehme den Fisch. ✅ Ich glaube, dass ich den Fisch **nehme**.",
+          "en": "Most common mistake – ❌ Ich glaube, dass ich nehme den Fisch. ✅ Ich glaube, dass ich den Fisch **nehme**. (I think I'll have the fish.)"
         }
       },
       {
@@ -2232,6 +2501,20 @@
     "level": "A2",
     "group": {"de": "Konnektoren", "en": "Connectors"},
     "title": {"de": "deshalb, sonst, dann, danach (Position 1)", "en": "deshalb, sonst, dann, danach (position 1)"},
+    "intro": {
+      "what": {
+        "de": "Wörter wie **deshalb**, **sonst**, **dann**, **danach** stehen auf Position 1 – darum kommt sofort das **Verb**.",
+        "en": "Words like **deshalb** (so), **sonst** (otherwise), **dann** (then), **danach** (afterwards) take position 1 – so the **verb** comes straight after them."
+      },
+      "when": {
+        "de": "Für Folgen und Reihenfolgen: beim Erzählen, Erklären und Planen.",
+        "en": "For consequences and sequences: telling, explaining and planning."
+      },
+      "remember": {
+        "de": "Zuerst kaufe ich ein, danach koche ich.",
+        "en": "First I'll do the shopping, then I'll cook."
+      }
+    },
     "summary": {
       "de": "Diese Wörter verbinden zwei Hauptsätze und stehen auf **Position 1** – dann kommt das **Verb**, danach das **Subjekt**.",
       "en": "These words join two main clauses and take **position 1** – then comes the **verb**, then the **subject**."
@@ -2284,8 +2567,8 @@
             "en": "Formula **1 – 2 – 3**: connector – **verb** – subject – rest."
           },
           {
-            "de": "Das Wort **zählt als Position 1** – dann kommt sofort das Verb, danach das Subjekt: Deshalb **bleibe ich** …",
-            "en": "The word **counts as position 1** – so the verb comes next, then the subject: Deshalb **bleibe ich** …"
+            "de": "Das Wort **zählt als Position 1** – dann kommt sofort das Verb, danach das Subjekt: Deshalb **bleibe ich** zu Hause.",
+            "en": "The word **counts as position 1** – so the verb comes next, then the subject: Deshalb **bleibe ich** zu Hause (So I'm staying at home)."
           },
           {
             "de": "**sonst** = „wenn nicht …, dann …“: Ich brauche Geld, sonst **kann** ich nichts kaufen. (= Wenn ich kein Geld habe, kann ich nichts kaufen.)",
@@ -2399,6 +2682,17 @@
     "level": "A2",
     "group": {"de": "Präpositionen", "en": "Prepositions"},
     "title": {"de": "Präpositionen: Überblick", "en": "Prepositions: Overview"},
+    "intro": {
+      "what": {
+        "de": "Präpositionen wie in, mit, für, auf bestimmen den **Kasus** des Nomens danach.",
+        "en": "Prepositions like in, mit, für, auf decide the **case** of the noun after them."
+      },
+      "when": {
+        "de": "Für Ort, Zeit und Richtung – in fast jedem Satz.",
+        "en": "For place, time and direction – in almost every sentence."
+      },
+      "remember": {"de": "Ich fahre mit dem Bus zur Arbeit.", "en": "I go to work by bus."}
+    },
     "summary": {
       "de": "Die Präposition bestimmt den Fall: **Akkusativ**, **Dativ** oder **Genitiv** – nie Nominativ.",
       "en": "The preposition decides the case: **accusative**, **dative** or **genitive** – never nominative."
@@ -2531,6 +2825,17 @@
     "level": "A1",
     "group": {"de": "Präpositionen", "en": "Prepositions"},
     "title": {"de": "Präpositionen mit Akkusativ", "en": "Prepositions with the Accusative"},
+    "intro": {
+      "what": {
+        "de": "Nach **bis**, **durch**, **für**, **gegen**, **ohne**, **um** steht immer der Akkusativ.",
+        "en": "After **bis** (until), **durch** (through), **für** (for), **gegen** (against), **ohne** (without), **um** (around, at) always use the accusative."
+      },
+      "when": {
+        "de": "Geschenke (für dich), Uhrzeiten (um acht Uhr), ohne etwas.",
+        "en": "Presents (für dich – for you), times (um acht Uhr – at eight), doing without something."
+      },
+      "remember": {"de": "Das Geschenk ist für meinen Bruder.", "en": "The present is for my brother."}
+    },
     "summary": {
       "de": "**bis, durch, für, gegen, ohne, um** – immer mit **Akkusativ**.",
       "en": "**bis, durch, für, gegen, ohne, um** – always with the **accusative**."
@@ -2607,6 +2912,20 @@
     "level": "A1",
     "group": {"de": "Präpositionen", "en": "Prepositions"},
     "title": {"de": "Präpositionen mit Dativ", "en": "Prepositions with the Dative"},
+    "intro": {
+      "what": {
+        "de": "Nach **aus**, **bei**, **mit**, **nach**, **seit**, **von**, **zu** steht immer der Dativ.",
+        "en": "After **aus**, **bei**, **mit**, **nach**, **seit**, **von**, **zu** always use the dative."
+      },
+      "when": {
+        "de": "Woher du kommst, mit wem, seit wann, wohin du gehst.",
+        "en": "Where you're from, who with, since when, where you're going."
+      },
+      "remember": {
+        "de": "Ich wohne seit einem Jahr bei meiner Tante.",
+        "en": "I've been living with my aunt for a year."
+      }
+    },
     "summary": {
       "de": "**aus, bei, mit, nach, seit, von, zu** – immer mit **Dativ**.",
       "en": "**aus, bei, mit, nach, seit, von, zu** – always with the **dative**."
@@ -2687,6 +3006,20 @@
     "level": "A2",
     "group": {"de": "Präpositionen", "en": "Prepositions"},
     "title": {"de": "Wechselpräpositionen (Dativ/Akkusativ)", "en": "Two-Way Prepositions (Dative/Accusative)"},
+    "intro": {
+      "what": {
+        "de": "Neun Präpositionen (in, an, auf, unter, über und andere) nehmen den **Dativ** für „Wo?“ und den **Akkusativ** für „Wohin?“.",
+        "en": "Nine prepositions (in, an, auf, unter, über and others) take the **dative** for \"where?\" and the **accusative** for \"where to?\"."
+      },
+      "when": {
+        "de": "Beim Einrichten, Aufräumen und Wegbeschreiben.",
+        "en": "Furnishing, tidying up, giving directions."
+      },
+      "remember": {
+        "de": "Ich lege das Buch auf den Tisch – jetzt liegt es auf dem Tisch.",
+        "en": "I put the book on the table – now it's lying on the table."
+      }
+    },
     "summary": {
       "de": "**Wo?** → Dativ. **Wohin?** → Akkusativ.",
       "en": "**Wo?** (where) → dative. **Wohin?** (where to) → accusative."
@@ -2766,6 +3099,17 @@
     "level": "A2",
     "group": {"de": "Präpositionen", "en": "Prepositions"},
     "title": {"de": "Präpositionen mit Genitiv", "en": "Prepositions with the Genitive"},
+    "intro": {
+      "what": {
+        "de": "Einige Präpositionen nehmen den Genitiv: **wegen**, **trotz**, **während**, **statt**.",
+        "en": "A few prepositions take the genitive: **wegen** (because of), **trotz** (despite), **während** (during), **statt** (instead of)."
+      },
+      "when": {
+        "de": "In Briefen, E-Mails, Durchsagen und Nachrichten – im Alltag hört man oft den Dativ.",
+        "en": "In letters, emails, announcements and the news – in everyday speech you often hear the dative."
+      },
+      "remember": {"de": "Wegen des Regens fällt das Fest aus.", "en": "The party is cancelled because of the rain."}
+    },
     "summary": {
       "de": "**wegen, während, trotz, statt** – mit **Genitiv**: des / der.",
       "en": "**wegen, während, trotz, statt** – with the **genitive**: des / der."
@@ -2833,6 +3177,17 @@
     "level": "A1",
     "group": {"de": "Präpositionen", "en": "Prepositions"},
     "title": {"de": "Präpositionen der Zeit", "en": "Prepositions of Time"},
+    "intro": {
+      "what": {
+        "de": "Kleine Wörter für **Wann?**: um acht Uhr, am Montag, im Mai, seit einem Jahr.",
+        "en": "Little words for **when?**: um acht Uhr (at eight), am Montag (on Monday), im Mai (in May), seit einem Jahr (for a year)."
+      },
+      "when": {
+        "de": "Termine, Öffnungszeiten, wenn du über deinen Tag sprichst.",
+        "en": "Appointments, opening hours, talking about your day."
+      },
+      "remember": {"de": "Der Kurs beginnt am Montag um neun Uhr.", "en": "The course starts on Monday at nine."}
+    },
     "summary": {
       "de": "**um** + Uhrzeit, **am** + Tag, **im** + Monat / Jahreszeit.",
       "en": "**um** + clock time, **am** + day, **im** + month / season."
@@ -2903,6 +3258,20 @@
     "level": "A2",
     "group": {"de": "Präpositionen", "en": "Prepositions"},
     "title": {"de": "Woher? Wo? Wohin? – Orte", "en": "Woher? Wo? Wohin? – Places"},
+    "intro": {
+      "what": {
+        "de": "**Woher?** aus / von, **Wo?** in / bei / an, **Wohin?** nach / zu / in – je nach Ort ein anderes Wort.",
+        "en": "**Where from?** aus / von, **where?** in / bei / an, **where to?** nach / zu / in – a different word depending on the place."
+      },
+      "when": {
+        "de": "Wegbeschreibungen, Reisen, Termine: Ich gehe zum Arzt.",
+        "en": "Directions, travel, appointments: Ich gehe zum Arzt (I'm going to the doctor)."
+      },
+      "remember": {
+        "de": "Ich komme aus Indien und fahre morgen nach Köln.",
+        "en": "I'm from India and I'm going to Cologne tomorrow."
+      }
+    },
     "summary": {
       "de": "**Woher?** aus / von · **Wo?** in / bei / an · **Wohin?** nach / zu / in.",
       "en": "**Woher?** (from) aus / von · **Wo?** (where) in / bei / an · **Wohin?** (to) nach / zu / in."

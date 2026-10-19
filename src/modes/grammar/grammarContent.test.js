@@ -32,6 +32,7 @@ describe("localize", () => {
 // Every piece of text in a topic, with a label saying where it is.
 const textsOf = (topic) => {
   const out = [["title", topic.title], ["summary", topic.summary]];
+  if (topic.intro) for (const k of ["what", "when", "remember"]) out.push([`intro.${k}`, topic.intro[k]]);
   topic.sections.forEach((s, i) => {
     const at = `sections[${i}] (${s.type})`;
     if (s.title) out.push([`${at}.title`, s.title]);
@@ -86,6 +87,40 @@ describe("grammar topics data", () => {
       }
     }
     expect(problems).toEqual([]);
+  });
+});
+
+describe("🧭 Worum geht's? and complete sentences", () => {
+  it("every topic has an intro: what it is, when you need it, a sentence to remember", () => {
+    const bad = GRAMMAR_TOPICS.filter((t) => {
+      const i = t.intro;
+      return !(i && i.what?.de && i.what?.en && i.when?.de && i.when?.en && i.remember?.de && i.remember?.en);
+    }).map((t) => t.key);
+    expect(bad).toEqual([]);
+  });
+
+  it("intros and examples are complete sentences, without …", () => {
+    const bad = [];
+    for (const t of GRAMMAR_TOPICS) {
+      const texts = [t.intro, ...t.examples].flatMap((x) => (x ? Object.values(x).flatMap((v) => (typeof v === "string" ? [v] : Object.values(v))) : []));
+      for (const v of texts) if (v.includes("…")) bad.push(`${t.key}: ${v}`);
+    }
+    expect(bad).toEqual([]);
+  });
+
+  // "…" may stand for a pattern (ge- … -t, entweder … oder) or end a list, but
+  // an example sentence must not be cut off: no "…, weil …" fragments,
+  // no "Wenn ich Zeit habe, …", no "Könnten Sie …?".
+  it("no cut-off example sentences anywhere in a topic", () => {
+    const cutOff = [/(^|[:·→(✅❌–]\s?)…,/, /, …/, /\b(dass|ob) …/, /…\?/];
+    const bad = [];
+    for (const t of GRAMMAR_TOPICS) {
+      for (const [where, field] of textsOf(t)) {
+        const values = typeof field === "string" ? [field] : Object.values(field);
+        for (const v of values) if (cutOff.some((re) => re.test(v.replace(/\*\*/g, "")))) bad.push(`${t.key} ${where}: ${v}`);
+      }
+    }
+    expect(bad).toEqual([]);
   });
 });
 

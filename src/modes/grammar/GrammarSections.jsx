@@ -1,4 +1,7 @@
+import { useState } from "react";
 import PropTypes from "prop-types";
+import { STORAGE_KEYS } from "../../constants";
+import { speak } from "../../engine/speech";
 import { localize, parseHighlights } from "./richText";
 
 // Renders a grammar topic's body so it can be scanned rather than read:
@@ -10,6 +13,10 @@ import { localize, parseHighlights } from "./richText";
 //
 // Inline markup: **x** highlights x (see richText.js) - used for endings and
 // changed letters (wohn**st**, gr**ö**ß**er**) so the part that changes stands out.
+//
+// Above the rule: a folded "🧭 Worum geht's?" box (topic.intro: what it is,
+// when you need it, one sentence to remember) and, until it is closed once,
+// a short tip on how to learn a topic.
 
 const ACCENT = "#e0833b";
 
@@ -93,6 +100,66 @@ function WarningSection({ section, lang }) {
 
 const SECTIONS = { table: TableSection, points: PointsSection, warning: WarningSection };
 
+const INTRO_TEXT = {
+  head: { de: "🧭 Worum geht's?", en: "🧭 What's this about?" },
+  what: { de: "Was ist das?", en: "What is it?" },
+  when: { de: "Wann brauchst du es?", en: "When do you need it?" },
+  remember: { de: "Merksatz", en: "Remember this" },
+  how: { de: "So lernst du ein Thema", en: "How to learn a topic" },
+  steps: {
+    de: "1. Regel lesen · 2. Beispiele laut sagen 🔊 · 3. ✏️ Üben · 4. 🗂 Wörter",
+    en: "1. Read the rule · 2. Say the examples aloud 🔊 · 3. ✏️ Üben (practise) · 4. 🗂 Wörter (your words)",
+  },
+};
+
+const tipSeen = () => {
+  try { return localStorage.getItem(STORAGE_KEYS.GRAMMAR_TIP_SEEN) === "1"; } catch { return false; }
+};
+
+// shown above the first topics until the learner closes it (then it lives in ❓ Hilfe)
+function HowToTip({ lang }) {
+  const [open, setOpen] = useState(() => !tipSeen());
+  if (!open) return null;
+  const close = () => {
+    setOpen(false);
+    try { localStorage.setItem(STORAGE_KEYS.GRAMMAR_TIP_SEEN, "1"); } catch { /* storage off */ }
+  };
+  return (
+    <div style={{ display: "flex", gap: 8, alignItems: "flex-start", padding: "8px 10px", marginBottom: 10, borderRadius: 8, border: "1px dashed #2c3a47", fontSize: 12, color: "#9ab0c2", lineHeight: 1.5 }}>
+      <div style={{ flex: 1, minWidth: 0 }}>
+        <strong style={{ color: "#cdd8e2" }}>💡 {localize(INTRO_TEXT.how, lang)}:</strong> {localize(INTRO_TEXT.steps, lang)}
+      </div>
+      <button type="button" onClick={close} aria-label="Tipp schließen" style={{ border: "none", background: "none", color: "#7d8d9c", fontSize: 14, cursor: "pointer", padding: 0 }}>✕</button>
+    </div>
+  );
+}
+
+function IntroRow({ icon, label, children }) {
+  return (
+    <div style={{ marginTop: 8 }}>
+      <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 0.3, color: "#7d8d9c", textTransform: "uppercase" }}>{icon} {label}</div>
+      <div style={{ fontSize: 13, color: "#cdd8e2", lineHeight: 1.5 }}>{children}</div>
+    </div>
+  );
+}
+
+function TopicIntro({ intro, lang }) {
+  return (
+    <details style={{ padding: "8px 12px", marginBottom: 10, borderRadius: 10, background: "#161d24", border: "1px solid #24313c" }}>
+      <summary style={{ fontSize: 14, fontWeight: 700, color: "#f2f5f8", cursor: "pointer", minHeight: 28, display: "flex", alignItems: "center" }}>
+        {localize(INTRO_TEXT.head, lang)} ▸
+      </summary>
+      <IntroRow icon="🧭" label={localize(INTRO_TEXT.what, lang)}><Rich text={localize(intro.what, lang)} /></IntroRow>
+      <IntroRow icon="🗓" label={localize(INTRO_TEXT.when, lang)}><Rich text={localize(intro.when, lang)} /></IntroRow>
+      <IntroRow icon="💬" label={localize(INTRO_TEXT.remember, lang)}>
+        <em style={{ color: "#f2f5f8", fontSize: 14 }}>{intro.remember.de}</em>{" "}
+        <button type="button" onClick={() => speak(intro.remember.de)} aria-label={`Aussprechen: ${intro.remember.de}`} className="inline-tap" style={{ border: "none", background: "none", fontSize: 12, cursor: "pointer", padding: 0 }}>🔊</button>
+        <div style={{ fontSize: 12, color: "#7d8d9c" }}>{intro.remember.en}</div>
+      </IntroRow>
+    </details>
+  );
+}
+
 function TopicBody({ topic, lang }) {
   // older/free-text topics without structure still render as a paragraph
   if (!topic.summary && !topic.sections) {
@@ -102,6 +169,8 @@ function TopicBody({ topic, lang }) {
   }
   return (
     <>
+      {topic.intro && <HowToTip lang={lang} />}
+      {topic.intro && <TopicIntro intro={topic.intro} lang={lang} />}
       {topic.summary && (
         <div style={{ padding: "10px 12px", borderRadius: 8, borderLeft: `3px solid ${ACCENT}`, background: "#1e2a36", fontSize: 14, fontWeight: 600, color: "#f2f5f8", lineHeight: 1.5 }}>
           <Rich text={localize(topic.summary, lang)} />
@@ -126,8 +195,15 @@ const sectionShape = PropTypes.shape({
   text: textShape,
 });
 
+const introShape = PropTypes.shape({
+  what: textShape.isRequired,
+  when: textShape.isRequired,
+  remember: PropTypes.shape({ de: PropTypes.string.isRequired, en: PropTypes.string.isRequired }).isRequired,
+});
+
 TopicBody.propTypes = {
   topic: PropTypes.shape({
+    intro: introShape,
     summary: textShape,
     sections: PropTypes.arrayOf(sectionShape),
     explanation: textShape,
@@ -138,5 +214,8 @@ TableSection.propTypes = { section: sectionShape.isRequired, lang: PropTypes.str
 PointsSection.propTypes = { section: sectionShape.isRequired, lang: PropTypes.string };
 WarningSection.propTypes = { section: sectionShape.isRequired, lang: PropTypes.string };
 Rich.propTypes = { text: PropTypes.string.isRequired };
+HowToTip.propTypes = { lang: PropTypes.string };
+IntroRow.propTypes = { icon: PropTypes.string.isRequired, label: PropTypes.string.isRequired, children: PropTypes.node };
+TopicIntro.propTypes = { intro: introShape.isRequired, lang: PropTypes.string };
 
 export default TopicBody;
