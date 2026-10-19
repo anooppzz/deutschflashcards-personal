@@ -6569,7 +6569,8 @@
         "level": "A1",
         "grammar": [
           "praeteritum",
-          "konjunktiv-2"
+          "konjunktiv-2",
+          "passiv-praesens"
         ]
       },
       {
@@ -12052,7 +12053,10 @@
         "exampleEn": "I'm wrapping the present nicely.",
         "note": "↔ aus·packen · trennbar: ich packe … ein",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 14"
+        "source": "Menschen A2 · Einheit 14",
+        "grammar": [
+          "passiv-praesens"
+        ]
       },
       {
         "type": "v",
@@ -12062,7 +12066,10 @@
         "example": "Ich muss noch meinen Koffer packen.",
         "exampleEn": "I still have to pack my suitcase.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 14"
+        "source": "Menschen A2 · Einheit 14",
+        "grammar": [
+          "passiv-praesens"
+        ]
       },
       {
         "type": "v",
@@ -12073,7 +12080,10 @@
         "exampleEn": "The post transports millions of parcels every day.",
         "note": "-ieren: Perfekt ohne ge-",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 14"
+        "source": "Menschen A2 · Einheit 14",
+        "grammar": [
+          "passiv-praesens"
+        ]
       },
       {
         "type": "v",

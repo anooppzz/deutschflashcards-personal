@@ -129,7 +129,12 @@
     {"q": "___ du mir das Salz geben?", "options": ["Könntest", "Konntest", "Könnest"], "answer": "Könntest", "en": "Could you pass me the salt?", "why": {"de": "Höfliche Bitte: Könntest du …? (mit Umlaut).", "en": "Polite request: Könntest du …? (with umlaut)."}},
     {"q": "Wenn ich Zeit ___, würde ich dich besuchen.", "options": ["hätte", "hatte", "habe"], "answer": "hätte", "en": "If I had time, I would visit you.", "why": {"de": "Nicht real (ich habe keine Zeit): hätte.", "en": "Not real (I have no time): hätte."}},
     {"q": "An deiner Stelle ___ ich zum Arzt gehen.", "options": ["würde", "wurde", "werde"], "answer": "würde", "en": "If I were you, I'd go to the doctor.", "why": {"de": "Ratschlag: an deiner Stelle würde ich …", "en": "Advice: an deiner Stelle würde ich …"}},
-    {"q": "Wenn ich reich ___, würde ich ein Haus kaufen.", "options": ["wäre", "war", "bin"], "answer": "wäre", "en": "If I were rich, I'd buy a house.", "why": {"de": "Nicht real: wäre.", "en": "Not real: wäre."}}
+    {"q": "Wenn ich reich ___, würde ich ein Haus kaufen.", "options": ["wäre", "war", "bin"], "answer": "wäre", "en": "If I were rich, I'd buy a house.", "why": {"de": "Nicht real: wäre.", "en": "Not real: wäre."}},
+    {"q": "Er ist klein. Er ___ gern größer.", "options": ["wäre", "war", "würde"], "answer": "wäre", "en": "He's short. He'd like to be taller.", "why": {"de": "Wunsch mit sein: wäre gern …", "en": "A wish with sein: wäre gern …"}},
+    {"q": "Sie hat ein normales Fahrrad. Sie ___ lieber ein Elektro-Fahrrad.", "options": ["hätte", "hatte", "würde"], "answer": "hätte", "en": "She has a normal bike. She'd rather have an e-bike.", "why": {"de": "Wunsch mit haben: hätte lieber …", "en": "A wish with haben: hätte lieber …"}},
+    {"q": "Wir haben ein altes Auto. Wir ___ am liebsten ein neues Auto.", "options": ["hätten", "hatten", "würden"], "answer": "hätten", "en": "We have an old car. Most of all we'd like a new car.", "why": {"de": "haben → hätten (würden braucht einen Infinitiv).", "en": "haben → hätten (würden needs an infinitive)."}},
+    {"q": "Wenn ich mehr Zeit hätte, ___ ich glücklicher.", "options": ["wäre", "war", "bin"], "answer": "wäre", "en": "If I had more time, I'd be happier.", "why": {"de": "Konjunktiv II im Haupt- und Nebensatz: hätte …, wäre …", "en": "Konjunktiv II in both clauses: hätte …, wäre …"}},
+    {"q": "Entschuldigung, ___ ich kurz Ihr Telefon benutzen?", "options": ["dürfte", "durfte", "dürfe"], "answer": "dürfte", "en": "Excuse me, might I use your phone for a moment?", "why": {"de": "Sehr höfliche Bitte: dürfte (mit Umlaut).", "en": "Very polite request: dürfte (with umlaut)."}}
   ],
   "reflexive-verben": [
     {"q": "Du freust ___ auf den Urlaub.", "options": ["dich", "dir", "sich"], "answer": "dich", "en": "You're looking forward to the holiday.", "why": {"de": "du → dich (sich nur für er/sie/es/sie/Sie).", "en": "du → dich (sich only for er/sie/es/sie/Sie)."}},
@@ -166,6 +171,18 @@
     {"q": "Ich habe Angst ___ dem Hund.", "options": ["vor", "von", "für"], "answer": "vor", "en": "I'm afraid of the dog.", "why": {"de": "Angst haben vor + Dativ.", "en": "Angst haben vor + dative."}},
     {"q": "___ denkst du? – An meinen Urlaub.", "options": ["Woran", "Worauf", "Wovon"], "answer": "Woran", "en": "What are you thinking about? – My holiday.", "why": {"de": "denken an → Woran?", "en": "denken an → Woran?"}},
     {"q": "Sie bedankt sich ___ das Geschenk.", "options": ["für", "über", "auf"], "answer": "für", "en": "She says thank you for the present.", "why": {"de": "sich bedanken für + Akkusativ.", "en": "sich bedanken für + accusative."}}
+  ],
+  "passiv-praesens": [
+    {"q": "Das Paket ___ heute gebracht.", "options": ["wird", "werden", "wirst"], "answer": "wird", "en": "The parcel is being delivered today.", "why": {"de": "Ein Paket (Singular) → wird + Partizip.", "en": "One parcel (singular) → wird + participle."}},
+    {"q": "Die Briefe ___ morgen abgeholt.", "options": ["werden", "wird", "werdet"], "answer": "werden", "en": "The letters will be collected tomorrow.", "why": {"de": "Die Briefe (Plural) → werden.", "en": "Die Briefe (plural) → werden."}},
+    {"q": "Der Brief wird von Anna ___.", "options": ["geschrieben", "geschreibt", "schreiben"], "answer": "geschrieben", "en": "The letter is written by Anna.", "why": {"de": "Partizip wie im Perfekt: hat geschrieben.", "en": "Participle as in the Perfekt: hat geschrieben."}},
+    {"q": "Die Pakete werden mit dem Flugzeug ___.", "options": ["transportiert", "getransportiert", "transportieren"], "answer": "transportiert", "en": "The parcels are transported by plane.", "why": {"de": "Verben auf -ieren: Partizip ohne ge-.", "en": "Verbs in -ieren: participle without ge-."}},
+    {"q": "In der Schweiz ___ auch Französisch gesprochen.", "options": ["wird", "werden", "ist"], "answer": "wird", "en": "French is also spoken in Switzerland.", "why": {"de": "Französisch ist Singular → wird gesprochen.", "en": "Französisch is singular → wird gesprochen."}},
+    {"q": "Das Geschenk wird in buntes Papier ___.", "options": ["eingepackt", "geeinpackt", "einpacken"], "answer": "eingepackt", "en": "The present is wrapped in colourful paper.", "why": {"de": "Trennbares Verb: ein·ge·packt.", "en": "Separable verb: ein·ge·packt."}},
+    {"q": "Das Formular wird ___ der Kundin unterschrieben.", "options": ["von", "mit", "bei"], "answer": "von", "en": "The form is signed by the customer.", "why": {"de": "Wer es macht: von + Dativ.", "en": "Who does it: von + dative."}},
+    {"q": "Ich ___ morgen vom Arzt untersucht.", "options": ["werde", "wird", "werden"], "answer": "werde", "en": "I'll be examined by the doctor tomorrow.", "why": {"de": "ich → werde.", "en": "ich → werde."}},
+    {"q": "Du ___ am Telefon verlangt!", "options": ["wirst", "wird", "werdest"], "answer": "wirst", "en": "You're wanted on the phone!", "why": {"de": "du → wirst (ohne d).", "en": "du → wirst (no d)."}},
+    {"q": "Man repariert das Auto. → Das Auto ___ repariert.", "options": ["wird", "hat", "werden"], "answer": "wird", "en": "Someone is repairing the car. → The car is being repaired.", "why": {"de": "Passiv = werden + Partizip; das Auto = Singular.", "en": "Passive = werden + participle; das Auto = singular."}}
   ],
   "adjektivendungen": [
     {"q": "Ich kaufe einen neu___ Computer.", "options": ["-en", "-er", "-e"], "answer": "-en", "en": "I'm buying a new computer.", "why": {"de": "Akkusativ maskulin: einen neu-en Computer.", "en": "Accusative masculine: einen neu-en Computer."}},

@@ -890,11 +890,51 @@
           [{"de": "bestellen", "en": "ordering"}, "Ich **hätte** gern einen Kaffee."],
           [
             {"de": "Wunsch, Traum", "en": "wish, dream"},
-            "Ich **würde** gern nach Australien reisen. Ich **wäre** gern reich."
+            "Ich **würde** gern nach Australien reisen. Er **wäre** gern Profisportler."
           ],
-          [{"de": "Ratschlag", "en": "advice"}, "Du **solltest** mehr schlafen."],
-          [{"de": "Vorschlag", "en": "suggestion"}, "Wir **könnten** ins Kino gehen."],
-          [{"de": "nicht real", "en": "unreal"}, "Wenn ich Zeit **hätte**, **würde** ich kommen."]
+          [{"de": "Ratschlag (sollen)", "en": "advice (sollen)"}, "Du **solltest** mehr schlafen."],
+          [{"de": "Vorschlag (können)", "en": "suggestion (können)"}, "Wir **könnten** ins Kino gehen."],
+          [{"de": "nicht real", "en": "unreal"}, "Wenn ich viel Geld **hätte**, (dann) **wäre** ich glücklich."]
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "Wünsche: gern – lieber – am liebsten", "en": "Wishes: gern – lieber – am liebsten"},
+        "items": [
+          {
+            "de": "In Wunschsätzen steht Konjunktiv II meistens mit **gern**, **lieber** oder **am liebsten**.",
+            "en": "In wishes, Konjunktiv II usually comes with **gern** (would like), **lieber** (would rather) or **am liebsten** (would like most)."
+          },
+          {
+            "de": "Er **wäre gern** Profisportler. Er **hätte am liebsten** eine Goldmedaille.",
+            "en": "Er **wäre gern** Profisportler (he'd like to be a pro athlete). Er **hätte am liebsten** eine Goldmedaille (most of all he'd like a gold medal)."
+          },
+          {
+            "de": "Er **würde** sich **gern** eine Villa **kaufen**. – gern steht nach dem Pronomen sich.",
+            "en": "Er **würde** sich **gern** eine Villa **kaufen** (he'd like to buy himself a villa). – gern comes after the pronoun sich."
+          },
+          {
+            "de": "Aus der Wirklichkeit einen Wunsch machen: Ich bin müde. → Ich **wäre lieber** wach.",
+            "en": "Turn reality into a wish: Ich bin müde (I'm tired). → Ich **wäre lieber** wach (I'd rather be awake)."
+          }
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "Nicht real: Wenn …, (dann) …", "en": "Unreal: Wenn …, (dann) … (if …, then …)"},
+        "items": [
+          {
+            "de": "Konjunktiv II steht im **Haupt- und im Nebensatz**: Wenn ich Zeit **hätte**, **würde** ich kommen.",
+            "en": "Konjunktiv II goes in **both** clauses: Wenn ich Zeit **hätte**, **würde** ich kommen (If I had time, I would come)."
+          },
+          {
+            "de": "Die Wirklichkeit ist anders: Ich habe nicht viel Geld. → Wenn ich viel Geld **hätte**, …",
+            "en": "Reality is different: I don't have much money. → Wenn ich viel Geld **hätte**, … (If I had a lot of money, …)"
+          },
+          {
+            "de": "Wenn-Satz zuerst → das Verb kommt sofort danach: Wenn …, **wäre** ich … (Verb, Verb).",
+            "en": "Wenn clause first → the verb comes straight after it: Wenn …, **wäre** ich … (verb, verb)."
+          }
         ]
       },
       {
@@ -934,6 +974,10 @@
           {
             "de": "Gib mir das Salz! → Kannst du mir das Salz geben? → **Könntest** du mir bitte das Salz geben? (am höflichsten)",
             "en": "Gib mir das Salz! (Give me the salt!) → Kannst du …? (Can you …?) → **Könntest** du mir bitte …? (Could you please …? – most polite)"
+          },
+          {
+            "de": "Sehr höflich: Entschuldigung, **dürfte** ich Sie um einen Gefallen bitten?",
+            "en": "Very polite: Excuse me, **dürfte** ich Sie um einen Gefallen bitten? (Could I ask you a favour?)"
           },
           {
             "de": "Im Geschäft und Restaurant: **Ich hätte gern** … klingt freundlicher als „Ich will …“.",
@@ -1335,6 +1379,100 @@
       {"de": "Woran denkst du? – An den Urlaub.", "en": "What are you thinking of? – The holiday."},
       {"de": "Was hältst du von der Idee?", "en": "What do you think of the idea?"},
       {"de": "Sie nimmt an einem Deutschkurs teil.", "en": "She's taking part in a German course."}
+    ]
+  },
+  {
+    "key": "passiv-praesens",
+    "level": "A2",
+    "group": {"de": "Verben", "en": "Verbs"},
+    "title": {"de": "Passiv Präsens: Das Paket wird gepackt", "en": "Passive (present): Das Paket wird gepackt"},
+    "summary": {
+      "de": "Passiv = **werden + Partizip II** am Ende. Wichtig ist, **was passiert** – nicht, wer es macht.",
+      "en": "Passive = **werden + past participle** at the end. What matters is **what happens** – not who does it."
+    },
+    "sections": [
+      {
+        "type": "table",
+        "title": {"de": "Passiv Präsens", "en": "Passive, present tense"},
+        "head": ["", "werden", "Partizip"],
+        "rows": [
+          [{"de": "Singular: Das Päckchen", "en": "Singular: Das Päckchen"}, "**wird**", "**gepackt**."],
+          [{"de": "Plural: Die Geschenke", "en": "Plural: Die Geschenke"}, "**werden** in den Karton", "**gelegt**."]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "werden im Präsens", "en": "werden in the present"},
+        "head": ["", "werden", {"de": "Beispiel", "en": "Example"}],
+        "rows": [
+          ["ich", "werde", "ich **werde** gefragt"],
+          ["du", "**wirst**", "du **wirst** gefragt"],
+          ["er/sie/es", "**wird**", "es **wird** gepackt"],
+          ["wir", "werden", "wir **werden** gefragt"],
+          ["ihr", "werdet", "ihr **werdet** gefragt"],
+          ["sie/Sie", "werden", "sie **werden** gepackt"]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Aktiv → Passiv", "en": "Active → passive"},
+        "head": ["Aktiv", "Passiv"],
+        "rows": [
+          ["Die Frau packt **das** Päckchen.", "**Das** Päckchen **wird** gepackt."],
+          ["Man legt **die** Geschenke in den Karton.", "**Die** Geschenke **werden** in den Karton gelegt."],
+          ["Der Briefträger bringt **den** Brief.", "**Der** Brief **wird** gebracht."]
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "So bildest du es", "en": "How to form it"},
+        "items": [
+          {
+            "de": "**werden** auf Position 2, das **Partizip II** ans Ende: Das Päckchen **wird** heute **gepackt**.",
+            "en": "**werden** in position 2, the **past participle** at the end: Das Päckchen **wird** heute **gepackt** (The small parcel is being packed today)."
+          },
+          {
+            "de": "Das Partizip ist dasselbe wie im Perfekt: packen → **gepackt**, schreiben → **geschrieben**, transportieren → **transportiert**.",
+            "en": "The participle is the same as in the Perfekt: packen → **gepackt**, schreiben → **geschrieben**, transportieren → **transportiert**."
+          },
+          {
+            "de": "Das Akkusativ-Objekt aus dem Aktiv wird im Passiv das **Subjekt** (Nominativ): **den** Brief → **der** Brief.",
+            "en": "The accusative object of the active sentence becomes the **subject** (nominative) in the passive: **den** Brief → **der** Brief."
+          },
+          {
+            "de": "Singular → **wird**, Plural → **werden**: Das Paket **wird** … – Die Pakete **werden** …",
+            "en": "Singular → **wird**, plural → **werden**: Das Paket **wird** … – Die Pakete **werden** … (the parcel is / the parcels are …)"
+          },
+          {
+            "de": "Wer es macht, ist oft egal. Wenn doch wichtig: **von + Dativ** – Der Brief wird **vom** Briefträger gebracht.",
+            "en": "Who does it often doesn't matter. If it does: **von + dative** – Der Brief wird **vom** Briefträger gebracht (by the postman)."
+          },
+          {
+            "de": "Typisch für Abläufe, Anleitungen, Rezepte und Schilder: Hier **wird** Deutsch **gesprochen**.",
+            "en": "Typical for processes, instructions, recipes and signs: Hier **wird** Deutsch **gesprochen** (German is spoken here)."
+          }
+        ]
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "**werden** hat drei Aufgaben: Er **wird** Arzt. (Vollverb) – Es **wird** regnen. (Futur) – Das Paket **wird** gepackt. (Passiv)",
+          "en": "**werden** has three jobs: Er **wird** Arzt (he becomes a doctor – full verb). – Es **wird** regnen (it will rain – future). – Das Paket **wird** gepackt (the parcel is being packed – passive)."
+        }
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "**wird** ≠ **würde**: Das Paket **wird** gebracht. (Passiv) – Ich **würde** gern kommen. (Konjunktiv II)",
+          "en": "**wird** ≠ **würde**: Das Paket **wird** gebracht (the parcel is being delivered – passive). – Ich **würde** gern kommen (I'd like to come – Konjunktiv II)."
+        }
+      }
+    ],
+    "examples": [
+      {"de": "Die Pakete werden mit dem Lastwagen transportiert.", "en": "The parcels are transported by lorry."},
+      {"de": "In Deutschland wird viel Brot gegessen.", "en": "A lot of bread is eaten in Germany."},
+      {"de": "Das Formular wird hier unterschrieben.", "en": "The form is signed here."},
+      {"de": "Das Geschenk wird schön eingepackt.", "en": "The present is wrapped nicely."}
     ]
   },
   {

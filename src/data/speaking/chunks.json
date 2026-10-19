@@ -220,6 +220,111 @@
   ]
  },
  {
+  "key": "danke-freude",
+  "deck": "post-pakete",
+  "icon": "🎁",
+  "title": "Danke & Freude",
+  "en": "Saying thanks and showing you're happy",
+  "sentences": [
+   {
+    "de": "Vielen Dank für deine tollen Geschenke!",
+    "en": "Thank you so much for your great presents!"
+   },
+   {
+    "de": "Schön, dass du an mich gedacht hast.",
+    "en": "How nice that you thought of me."
+   },
+   {
+    "de": "Das Buch hat mich sehr gefreut.",
+    "en": "I was really pleased with the book."
+   },
+   {
+    "de": "Die Blumen haben mich sehr gefreut.",
+    "en": "I was really pleased with the flowers."
+   },
+   {
+    "de": "Ich liebe Schokolade!",
+    "en": "I love chocolate!"
+   },
+   {
+    "de": "Den Schal mag ich besonders gern.",
+    "en": "I especially like the scarf."
+   },
+   {
+    "de": "Die Tasse ist super!",
+    "en": "The mug is great!"
+   },
+   {
+    "de": "Das ist eine tolle Idee.",
+    "en": "That's a great idea."
+   },
+   {
+    "de": "Ich bin sehr froh, dass du kommst.",
+    "en": "I'm very glad that you're coming."
+   },
+   {
+    "de": "Ich freue mich sehr auf deinen Besuch.",
+    "en": "I'm really looking forward to your visit."
+   },
+   {
+    "de": "Ich habe mich sehr über dein Paket gefreut.",
+    "en": "I was really happy about your parcel."
+   },
+   {
+    "de": "Das ist aber lieb von dir!",
+    "en": "That's really sweet of you!"
+   }
+  ],
+  "dialogues": [
+   {
+    "title": "Das Paket von Oma",
+    "en": "Grandma's parcel",
+    "lines": [
+     {
+      "who": "A",
+      "de": "Hallo! Ist mein Paket schon angekommen?",
+      "en": "Hello! Has my parcel arrived yet?"
+     },
+     {
+      "who": "B",
+      "de": "Ja, heute Morgen! Vielen Dank für die tollen Geschenke!",
+      "en": "Yes, this morning! Thank you so much for the great presents!"
+     },
+     {
+      "who": "A",
+      "de": "Gern geschehen. Gefällt dir der Schal?",
+      "en": "You're welcome. Do you like the scarf?"
+     },
+     {
+      "who": "B",
+      "de": "Ja, sehr! Den mag ich besonders gern.",
+      "en": "Yes, a lot! I especially like it."
+     },
+     {
+      "who": "A",
+      "de": "Und die Schokolade?",
+      "en": "And the chocolate?"
+     },
+     {
+      "who": "B",
+      "de": "Die ist super! Schön, dass du an mich gedacht hast.",
+      "en": "It's great! How nice that you thought of me."
+     },
+     {
+      "who": "A",
+      "de": "Kommst du uns im Dezember besuchen?",
+      "en": "Are you coming to visit us in December?"
+     },
+     {
+      "who": "B",
+      "de": "Ja, klar! Ich freue mich schon sehr auf euch.",
+      "en": "Yes, of course! I'm already really looking forward to seeing you."
+     }
+    ]
+   }
+  ]
+ },
+ {
   "key": "einkaufen",
   "deck": "lebensmittel-einkaufen",
   "icon": "🛒",

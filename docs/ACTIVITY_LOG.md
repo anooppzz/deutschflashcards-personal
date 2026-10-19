@@ -163,6 +163,24 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 ## Log
 
+### 2026-10-19 – Grammar: Passiv Präsens (new), Konjunktiv II extended, 🎁 Danke & Freude
+- From two textbook photos: the Lektion 14 Grammatik/Kommunikation box (Passiv Präsens,
+  "Freude ausdrücken") and a grammar-book page "61 Wenn ich viel Geld hätte … – Konjunktiv 2:
+  Gebrauch" (marked B1).
+- **New topic `passiv-praesens`** (Verben, A2): werden + Partizip II (the textbook table
+  Das Päckchen wird gepackt / Die Geschenke werden in den Karton gelegt), werden forms,
+  Aktiv → Passiv, von + Dativ, werden's three jobs, wird ≠ würde; 10 ✏️ Üben questions.
+  Linked cards: werden, packen, ein·packen, transportieren.
+- **`konjunktiv-2` extended** (it already existed, so no second topic): Wünsche with
+  gern / lieber / am liebsten (Er wäre gern Profisportler …), irreale Bedingung with
+  Konjunktiv II in Haupt- and Nebensatz (Wenn ich viel Geld hätte, wäre ich glücklich),
+  "dürfte ich Sie um einen Gefallen bitten?", Ratschlag (sollen) / Vorschlag (können)
+  labelled in the table. 5 new questions (now 15), incl. the page's Wunschsätze exercise.
+- **Kommunikation "Freude ausdrücken"** → new 🧱 Sätze set **🎁 Danke & Freude** (chapter
+  Post & Pakete): 12 sentences + dialogue "Das Paket von Oma". Not added as cards: Vielen
+  Dank, froh, Ich bin froh, dass …, freuen (sich), Gute Idee! already exist.
+- Checked in headless Chromium at 360/390 px: no sideways scroll on both topics.
+
 ### 2026-10-15 – 🧱 Sätze: speaking chunks and dialogues (speaking plan, item 1)
 - New study mode **🧱 Sätze** in the 🃏 Lernen row (`modes/saetze/ChunkView.jsx`): ready-made
   everyday sentences and one dialogue per set, German + English, to learn as whole chunks.
