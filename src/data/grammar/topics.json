@@ -229,7 +229,7 @@
           ],
           [
             "Genus",
-            {"de": "maskulin, feminin, neutral", "en": "gender: masculine, feminine, neuter"},
+            {"de": "das grammatische Geschlecht: maskulin, feminin, neutral", "en": "gender (das Geschlecht): masculine, feminine, neuter"},
             {"t": "der · die · das", "en": "masculine · feminine · neuter"}
           ]
         ]

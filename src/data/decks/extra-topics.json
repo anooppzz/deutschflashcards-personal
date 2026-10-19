@@ -2802,6 +2802,17 @@
         "example": "Er raucht seit Jahren nicht mehr.",
         "exampleEn": "He hasn't smoked in years.",
         "level": "A2"
+      },
+      {
+        "type": "v",
+        "front": "tauchen",
+        "sub": "ist getaucht",
+        "english": "to dive",
+        "example": "Im Urlaub möchte ich im Meer tauchen.",
+        "exampleEn": "On holiday I'd like to dive in the sea.",
+        "note": "das Tauchen = diving (als Hobby)",
+        "level": "A2",
+        "source": "KI-Eingang · 2026-10-19"
       }
     ]
   },
@@ -4719,6 +4730,16 @@
         "example": "Wirklich? Das wusste ich nicht!",
         "exampleEn": "Really? I didn't know that!",
         "level": "A1"
+      },
+      {
+        "type": "adj",
+        "front": "müde",
+        "sub": "↔ wach",
+        "english": "tired",
+        "example": "Nach der Arbeit bin ich oft sehr müde.",
+        "exampleEn": "After work I'm often very tired.",
+        "level": "A1",
+        "source": "KI-Eingang · 2026-10-19"
       }
     ]
   },
@@ -5984,6 +6005,17 @@
         "example": "Ich bezahle die Miete jeden Monat.",
         "exampleEn": "I pay the rent every month.",
         "level": "A1"
+      },
+      {
+        "type": "v",
+        "front": "ein·leben (sich)",
+        "sub": "hat sich eingelebt",
+        "english": "to settle in",
+        "example": "Ich habe mich in Deutschland gut eingelebt.",
+        "exampleEn": "I've settled in well in Germany.",
+        "note": "neue Wohnung, Stadt, Arbeit: Hast du dich schon eingelebt?",
+        "level": "A2",
+        "source": "KI-Eingang · 2026-10-19"
       }
     ]
   },
@@ -7916,7 +7948,7 @@
         "front": "an·bieten",
         "sub": "hat angeboten",
         "english": "to offer",
-        "example": "Das Hotel bietet einen kostenlosen Frühstück an.",
+        "example": "Das Hotel bietet ein kostenloses Frühstück an.",
         "exampleEn": "The hotel offers a free breakfast.",
         "level": "A2",
         "source": "Menschen A2 · Einheit 3"
@@ -9457,6 +9489,17 @@
         "grammar": [
           "praep-zeit"
         ]
+      },
+      {
+        "type": "v",
+        "front": "entspannen (sich)",
+        "sub": "hat sich entspannt",
+        "english": "to relax",
+        "example": "Am Wochenende will ich mich nur entspannen.",
+        "exampleEn": "At the weekend I just want to relax.",
+        "note": "auch ohne sich: Yoga entspannt mich. = Yoga relaxes me.",
+        "level": "A2",
+        "source": "KI-Eingang · 2026-10-19"
       }
     ]
   },
@@ -11952,6 +11995,53 @@
         "exampleEn": "I don't think tests are important at all.",
         "level": "A2",
         "source": "Menschen A2 · Einheit 13"
+      },
+      {
+        "type": "v",
+        "front": "üben",
+        "sub": "hat geübt",
+        "english": "to practise",
+        "example": "Ich übe jeden Tag zehn neue Wörter.",
+        "exampleEn": "I practise ten new words every day.",
+        "note": "die Übung = exercise (✏️ Üben in der App)",
+        "level": "A1",
+        "source": "KI-Eingang · 2026-10-19"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Fleiß",
+        "sub": "kein Plural",
+        "english": "hard work, diligence",
+        "example": "Mit Fleiß lernt man jede Sprache.",
+        "exampleEn": "With hard work you can learn any language.",
+        "level": "A2",
+        "source": "KI-Eingang · 2026-10-19"
+      },
+      {
+        "type": "adj",
+        "front": "fleißig",
+        "sub": "↔ faul",
+        "english": "hard-working, diligent",
+        "example": "Sie ist sehr fleißig und lernt jeden Abend.",
+        "exampleEn": "She is very hard-working and studies every evening.",
+        "level": "A2",
+        "source": "KI-Eingang · 2026-10-19"
+      },
+      {
+        "type": "n",
+        "gender": "das",
+        "front": "das Geschlecht",
+        "sub": "Pl. -er",
+        "english": "gender; sex",
+        "example": "Im Formular muss man das Geschlecht ankreuzen.",
+        "exampleEn": "On the form you have to tick your gender.",
+        "note": "Grammatik: das grammatische Geschlecht = das Genus (der, die, das)",
+        "level": "A2",
+        "source": "KI-Eingang · 2026-10-19",
+        "grammar": [
+          "grammatik-woerter"
+        ]
       }
     ]
   },
@@ -12274,6 +12364,83 @@
         "note": "gebrauchen + die Anweisung",
         "level": "A2",
         "source": "Menschen A2 · Einheit 14"
+      },
+      {
+        "type": "v",
+        "front": "verteilen",
+        "sub": "hat verteilt",
+        "english": "to distribute, to hand out, to deliver",
+        "example": "Der Briefträger verteilt jeden Morgen die Post.",
+        "exampleEn": "The postman delivers the post every morning.",
+        "level": "A2",
+        "source": "KI-Eingang · 2026-10-19"
+      },
+      {
+        "type": "n",
+        "gender": "das",
+        "front": "das Etikett",
+        "sub": "Pl. -en",
+        "english": "label, tag",
+        "example": "Auf dem Etikett steht die Adresse.",
+        "exampleEn": "The address is on the label.",
+        "note": "Plural auch: die Etikette",
+        "level": "A2",
+        "source": "KI-Eingang · 2026-10-19"
+      },
+      {
+        "type": "v",
+        "front": "auf·kleben",
+        "sub": "hat aufgeklebt",
+        "english": "to stick on",
+        "example": "Kannst du bitte die Briefmarke aufkleben?",
+        "exampleEn": "Can you stick the stamp on, please?",
+        "level": "A2",
+        "source": "KI-Eingang · 2026-10-19"
+      },
+      {
+        "type": "v",
+        "front": "bekleben",
+        "sub": "hat beklebt",
+        "english": "to stick (labels, stickers) on something",
+        "example": "Wir bekleben das Paket mit Etiketten.",
+        "exampleEn": "We're putting labels on the parcel.",
+        "note": "etwas mit etwas bekleben · aufkleben = etwas auf etwas kleben",
+        "level": "A2",
+        "source": "KI-Eingang · 2026-10-19"
+      },
+      {
+        "type": "v",
+        "front": "ab·schicken",
+        "sub": "hat abgeschickt",
+        "english": "to send off, to post",
+        "example": "Ich muss das Paket heute noch abschicken.",
+        "exampleEn": "I have to send the parcel off today.",
+        "level": "A2",
+        "source": "KI-Eingang · 2026-10-19"
+      },
+      {
+        "type": "v",
+        "front": "verschließen",
+        "sub": "verschloss · hat verschlossen",
+        "english": "to close tightly, to seal; to lock",
+        "example": "Du musst das Paket gut verschließen.",
+        "exampleEn": "You have to seal the parcel well.",
+        "level": "A2",
+        "source": "KI-Eingang · 2026-10-19"
+      },
+      {
+        "type": "v",
+        "front": "legen",
+        "sub": "hat gelegt",
+        "english": "to lay, to put (down flat)",
+        "example": "Ich lege die Geschenke in den Karton.",
+        "exampleEn": "I put the presents in the box.",
+        "note": "legen (wohin? + Akk.) ↔ liegen (wo? + Dat.): Das Buch liegt auf dem Tisch.",
+        "level": "A2",
+        "source": "KI-Eingang · 2026-10-19",
+        "grammar": [
+          "wechselpraepositionen"
+        ]
       }
     ]
   },
@@ -12596,6 +12763,18 @@
         "exampleEn": "I put cheese and tomatoes on the bread.",
         "note": "einen Kurs belegen = to take a course · Der Platz ist belegt. = The seat is taken.",
         "level": "A2"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Spaßvogel",
+        "sub": "Pl. ¨",
+        "english": "joker (someone who likes to make others laugh)",
+        "example": "Mein Kollege ist ein echter Spaßvogel.",
+        "exampleEn": "My colleague is a real joker.",
+        "note": "umgangssprachlich, freundlich gemeint",
+        "level": "A2",
+        "source": "KI-Eingang · 2026-10-19"
       }
     ]
   }

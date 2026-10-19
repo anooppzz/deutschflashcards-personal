@@ -163,6 +163,26 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 ## Log
 
+### 2026-10-19 – KI-Eingang: 19 searched words → 16 new cards
+- The learner pasted a KI-Eingang export (19 words searched in the app, with automatic
+  translations and Wiktionary lines). Worked in per `docs/ai-inbox/README.md`; per-entry
+  report in `docs/ai-inbox/done/ki-eingang-2026-10-19.md`.
+- **16 new cards** (source `KI-Eingang · 2026-10-19`), each in the chapter where it fits:
+  📦 Post & Pakete: verteilen, das Etikett, auf·kleben, bekleben, ab·schicken, verschließen,
+  legen (→ Wechselpräpositionen) · 🔤 Sprachen lernen: üben, der Fleiß, fleißig, das
+  Geschlecht (→ 📘 Grammatik-Wörter) · 📅 Mein Tag: müde · 🏠 Haus & Natur: ein·leben (sich)
+  · ⚽ Freizeit: tauchen · 🏋️ Gesundheit & Fitness: entspannen (sich) · ⭐ Meine Wörter:
+  der Spaßvogel. No new chapter needed.
+- Already in the app: an·bieten, das Wort (Pl. Wörter), an·kreuzen. Fixed the an·bieten
+  example: "ein kostenloses Frühstück" (was "einen kostenlosen").
+- Corrected AI readings: Uben → üben, verteil → verteilen, einleben/entspannen are
+  reflexive; wrong quick translations (müde ≠ fatigue, bekleben ≠ laminate, legen ≠ "on
+  position", anbieten = offer). 📘 Grammatik-Wörter: Genus row names "das Geschlecht".
+- **Search fix (root cause of 2 entries):** 🔍 didn't ignore the · of separable verbs, so
+  "ankreuzen"/"anbieten" found nothing although an·kreuzen/an·bieten exist – the app then
+  offered "📌 Als Karte vorschlagen". `globalSearch.js` fold now skips "·" (test added).
+- `npm run ids:update` run (card-ids.json).
+
 ### 2026-10-19 – Grammar: 📘 grammar words, word meanings, a ⚠ mistake in every topic (review step 2 of 2)
 - **📘 Grammatik-Wörter erklärt** (`grammatik-woerter`, new first group "Grundbegriffe"):
   kinds of words, verb forms, the sentence (subject, object, main/subordinate clause,

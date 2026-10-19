@@ -2,7 +2,8 @@
 // plus the text of every grammar topic. Matching is forgiving the way a
 // learner types on a phone: case, umlauts and ß don't matter, and the
 // ae/oe/ue spellings work too - "fruhstuck", "fruehstueck" and "Frühstück"
-// all find "frühstücken".
+// all find "frühstücken". The · of separable verbs is ignored: "ankreuzen"
+// finds "an·kreuzen".
 
 // Folds one string for matching. Returns the folded text plus, for every
 // folded character, the index of the original character it came from - so
@@ -13,6 +14,7 @@ export const foldWithMap = (s) => {
   for (let i = 0; i < s.length; i++) {
     // NFD splits ä into a + combining diaeresis; dropping the combining
     // marks leaves the base letter (also for é, à …)
+    if (s[i] === "·") continue; // an·kreuzen is typed "ankreuzen"
     const base = s[i].toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
     for (const ch of base === "ß" ? "ss" : base) {
       // ae / oe / ue are how umlauts are typed without them: fold to a / o / u

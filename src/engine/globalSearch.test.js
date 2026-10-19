@@ -16,6 +16,19 @@ describe("fold", () => {
   });
 });
 
+describe("separable verbs", () => {
+  it("finds an·kreuzen when typed without the dot", () => {
+    expect(fold("an·kreuzen")).toBe("ankreuzen");
+    expect(fronts("ankreuzen")).toContain("an·kreuzen");
+    expect(fronts("anbieten")).toContain("an·bieten");
+    expect(fronts("einleben")).toContain("ein·leben (sich)");
+  });
+
+  it("highlights the whole word, dot included", () => {
+    expect(matchRanges("an·kreuzen", "ankreuzen")).toEqual([[0, 10]]);
+  });
+});
+
 describe("matchRanges", () => {
   it("finds the match in the original text, umlauts included", () => {
     expect(matchRanges("Ich frühstücke gern.", "fruhstuck")).toEqual([[4, 13]]);
