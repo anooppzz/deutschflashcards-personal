@@ -10,6 +10,9 @@ describe("perfektOf", () => {
     expect(perfektOf(v("kaufen", "hat gekauft"))).toEqual({ aux: "hat", reflexive: false, partizip: "gekauft" });
     expect(perfektOf(v("fahren", "fuhr · ist gefahren"))).toEqual({ aux: "ist", reflexive: false, partizip: "gefahren" });
     expect(perfektOf(v("einladen", "du lädst ein, er lädt ein · hat eingeladen")).partizip).toBe("eingeladen");
+    // two possible answers: not drilled
+    expect(perfektOf(v("hängen", "hing · hat gehängt/gehangen"))).toBeNull();
+    expect(perfektOf(v("ausziehen", "zog aus · ist/hat ausgezogen"))).toBeNull();
     expect(perfektOf(v("freuen (sich)", "hat sich gefreut"))).toEqual({ aux: "hat", reflexive: true, partizip: "gefreut" });
     expect(perfektOf(v("liegen in", "hat gelegen · A/CH: ist gelegen")).aux).toBe("hat");
   });

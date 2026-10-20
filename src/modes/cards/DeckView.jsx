@@ -47,6 +47,7 @@ function DeckView({ view, slice, setSlice, lang, levelFilter, sourceFilter }) {
             lang={lang}
             level={card.level}
             source={card.source}
+            sources={card.sources}
             note={card.note}
           />
           </Swipeable>

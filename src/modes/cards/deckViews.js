@@ -5,7 +5,7 @@
 // irregular verbs), the optional banner above the card, and the card's
 // colour and badge.
 import { genderColor, TYPE_META, GROUP_COLORS } from "../../constants";
-import { IRREGULAR_VERBS, INSEPARABLE_VERBS, HAUSHALT, VERKEHR, KLEIDUNG, EXTRA_TOPICS, DECK_META } from "../../data";
+import { IRREGULAR_VERBS, INSEPARABLE_VERBS, HAUSHALT, VERKEHR, KLEIDUNG, EXTRA_TOPICS, DECK_META, sourcesOf } from "../../data";
 import { passesGlobalFilters } from "../../engine";
 
 const TYPE_CATS = [["n", "Nomen"], ["v", "Verben"], ["adj", "Adjektive"], ["sonst", "Sonstige"]];
@@ -20,7 +20,11 @@ const typeColor = (key) => (key === "n" ? "#4f86c6" : TYPE_META[key].color);
 const typeBadge = (icon, label) => (c) =>
   `${icon} ${label} · ${c.type === "n" ? `Nomen · ${c.gender}` : TYPE_META[c.type].label}`;
 
-const typedView = (key, icon, label, cards, banner) => {
+// each card with all its sources (its own + the books of its word lists)
+const withSources = (key, cards) => cards.map((c) => ({ ...c, sources: sourcesOf(key, c.front, c.source) }));
+
+const typedView = (key, icon, label, rawCards, banner) => {
+  const cards = withSources(key, rawCards);
   const cats = typeCats(cards);
   return {
     key, cards, banner, filterField: "type", cats, keys: cats.map(([k]) => k), colorFor: typeColor,
@@ -36,7 +40,8 @@ export const buildDeckViews = () => {
       key: "irregular",
       cards: IRREGULAR_VERBS.map((v) => ({
         type: "v", front: v.infinitiv, sub: `${v.präteritum} · ${v.hilfsverb} ${v.partizip}`, english: v.english,
-        example: v.example, level: v.level, source: v.source, group: v.group,
+        example: v.example, exampleEn: v.exampleEn, note: v.note, level: v.level, source: v.source, group: v.group,
+        sources: sourcesOf("irregular", v.infinitiv, v.source),
       })),
       filterField: "group", cats: GROUP_KEYS.map((g) => [g, g]), keys: GROUP_KEYS,
       colorFor: (g) => GROUP_COLORS[g] || "#4f86c6",
@@ -48,6 +53,7 @@ export const buildDeckViews = () => {
       cards: INSEPARABLE_VERBS.map((v) => ({
         type: "v", front: v.infinitiv, sub: `hat ${v.partizip}${v.tip ? "  💡" : ""}`, english: v.english,
         example: v.example, exampleEn: v.exampleEn, level: v.level, source: v.source, tip: v.tip,
+        sources: sourcesOf("inseparable", v.infinitiv, v.source),
       })),
       banner: { text: "🔑 Inseparable prefixes never add **ge-** in Partizip II", bg: "#1e2a1e", color: "#7ec87e" },
       filterField: "type", cats: [], keys: ["v"], colorFor: typeColor,

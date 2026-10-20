@@ -6,6 +6,10 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 ## Pending
 
+- [ ] **📋 Wortlisten – more from Grammatik aktiv:** "Wichtige Verben mit Präpositionen"
+  (the next page after the dative verbs, not photographed yet). New lists go into
+  `src/data/lists/lists.json` (see CLAUDE.md "Word lists").
+
 - [ ] **NEXT WEEK – 🗣 Speaking practice (the learner asked for it on 2026-10-14).** Goal: say
   German out loud every day using each chapter's words and everyday phrases, record it,
   listen back later. Build it as one new area, "🗣 Sprechen üben", in the 🃏 Lernen row,
@@ -162,6 +166,31 @@ was done, newest first. Every change adds a log entry here in the same commit
   trainer, Reverse articles, 12 grammar topics, ✏️ Üben, data cleanup, code tidying).
 
 ## Log
+
+### 2026-10-20 – 📋 Wortlisten: Grammatik aktiv verb lists, multi-source cards
+- From photos of a separate grammar book, **Grammatik aktiv** (not Menschen A2): the
+  "Unregelmäßige Verben" table (130 verbs, 3 pages) and "Verben mit Akkusativ und Dativ /
+  Verben mit Dativ" (26 + 15). The page's third list, "Wichtige Verben mit Präpositionen",
+  was not in the photos.
+- Agreed with the learner: **no duplicates**. Words stay in their chapters; a list only
+  points at cards, so studying it trains (and saves progress on) the chapter cards.
+  - `src/data/lists/lists.json`: each row = the book's forms (Präsens er, Präteritum,
+    Perfekt) or example + English, and `cards: ["deck::front", …]` (first = the card the
+    list studies; a word in two decks has both ids, both get tagged).
+  - New words: **44 verbs → 🎵 Irregular** (new vowel groups `ei – i – i` and `Sonstige`),
+    **5 → new chapter 📚 Andere Quellen** (liefern, renovieren, servieren, verkaufen,
+    zuhören; `added` today). All carry `"source": "Grammatik aktiv"`. Linked instead of
+    added: streiten (sich), unterhalten (sich), vor·stellen (sich).
+  - **A card can have several sources** (`data/index.js sourcesOf`): its own + the book of
+    every list naming it. The 📖 line on the card shows both; the source chips match any.
+    New chip **"Ohne Quelle"** for untagged cards (most older chapters), so e.g. Reisen →
+    only Grammatik aktiv works (8 verbs). Before, untagged cards always passed.
+  - **📚 Themen** has a "📋 Wortlisten" row: pick a list like a topic (all modes); the card
+    view then shows "📋 … · Tabelle →". **☰ Mehr → 📋 Wortlisten**: the list as a table
+    with search, ✓ for known words, tap a word for its card, "🃏 Lernen".
+- 🔁 Formen skips Perfekt with two answers (hat gehängt/gehangen, ist/hat ausgezogen).
+- Book forms kept as printed in the table: buk/backte, hat/ist gesessen, hat/ist gestanden,
+  hat/ist umgezogen (chapter cards unchanged).
 
 ### 2026-10-19 – Passiv: modal verbs, sentence frame, exercises (grammar book p. 62, B1)
 - From a photo of "62 Der Baum wird gepflanzt – Passiv" (B1 grammar book). The topic

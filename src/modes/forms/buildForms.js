@@ -8,8 +8,9 @@ import { ROUND_SIZE } from "../../constants";
 // ---- Perfekt ----
 // "hat gekauft", "fuhr · ist gefahren", "du lädst ein · hat eingeladen",
 // "hat sich gefreut". Only one-word participles: "hat Musik gehört" is a
-// phrase, not a form to drill.
-const PERFEKT = /(?:^|[·,] )(hat|ist) (sich )?([^\s·,]+)(?=$| ·|,)/;
+// phrase, not a form to drill; nor are two answers ("hat gehängt/gehangen",
+// "ist/hat ausgezogen").
+const PERFEKT = /(?:^|[·,] )(hat|ist) (sich )?([^\s·,/]+)(?=$| ·|,)/;
 
 export const perfektOf = (card) => {
   if (!card || card.type !== "v" || !card.sub) return null;

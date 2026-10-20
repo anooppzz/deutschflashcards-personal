@@ -21,5 +21,7 @@ export const GROUP_COLORS = {
   "i – a – u": "#3ba39b",
   "ie – o – o": "#c69a3b",
   "ei – ie – ie": "#5fa85f",
+  "ei – i – i": "#c66f9c",
   "Mischverben": "#9c6cc4",
+  "Sonstige": "#7d8d9c",
 };

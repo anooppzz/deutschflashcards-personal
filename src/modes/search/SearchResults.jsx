@@ -175,6 +175,7 @@ function SearchResults({ query, cards, topics, lang, onOpenTopic, onOpenChapter,
                       lang={lang}
                       level={card.level}
                       source={card.source}
+                      sources={card.sources}
                       note={card.note}
                     />
                     {meta && (

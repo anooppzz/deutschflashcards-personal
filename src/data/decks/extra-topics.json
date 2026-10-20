@@ -12473,6 +12473,82 @@
     ]
   },
   {
+    "key": "andere-quellen",
+    "icon": "📚",
+    "label": "Andere Quellen",
+    "added": "2026-10-20",
+    "note": "Wörter aus anderen Büchern (Grammatik aktiv), nicht aus Menschen A2",
+    "cards": [
+      {
+        "type": "v",
+        "front": "liefern",
+        "sub": "hat geliefert",
+        "english": "to deliver",
+        "example": "Die Firma liefert uns die Möbel am Freitag.",
+        "exampleEn": "The company is delivering the furniture to us on Friday.",
+        "level": "A2",
+        "source": "Grammatik aktiv",
+        "grammar": [
+          "verben-dativ"
+        ]
+      },
+      {
+        "type": "v",
+        "front": "renovieren",
+        "sub": "hat renoviert",
+        "english": "to renovate, redecorate",
+        "example": "Wir renovieren unseren Freunden die Wohnung.",
+        "exampleEn": "We're redecorating the flat for our friends.",
+        "level": "A2",
+        "source": "Grammatik aktiv",
+        "grammar": [
+          "verben-dativ"
+        ]
+      },
+      {
+        "type": "v",
+        "front": "servieren",
+        "sub": "hat serviert",
+        "english": "to serve (food, drinks)",
+        "example": "Sie serviert ihren Gästen Kaffee und Kuchen.",
+        "exampleEn": "She serves her guests coffee and cake.",
+        "level": "A2",
+        "source": "Grammatik aktiv",
+        "grammar": [
+          "verben-dativ"
+        ]
+      },
+      {
+        "type": "v",
+        "front": "verkaufen",
+        "sub": "hat verkauft",
+        "english": "to sell",
+        "example": "Er verkauft seinem kleinen Bruder seinen alten Laptop.",
+        "exampleEn": "He's selling his old laptop to his little brother.",
+        "level": "A2",
+        "source": "Grammatik aktiv",
+        "grammar": [
+          "verben-dativ"
+        ],
+        "note": "↔ kaufen"
+      },
+      {
+        "type": "v",
+        "front": "zuhören",
+        "sub": "hat zugehört",
+        "english": "to listen (to)",
+        "example": "Bitte hören Sie mir genau zu.",
+        "exampleEn": "Please listen to me carefully.",
+        "level": "A2",
+        "source": "Grammatik aktiv",
+        "grammar": [
+          "verben-dativ"
+        ],
+        "note": "trennbar, mit Dativ: Ich höre dir zu."
+      }
+    ]
+  },
+  {
     "key": "persoenlich",
     "icon": "⭐",
     "label": "Meine Wörter",

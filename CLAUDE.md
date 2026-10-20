@@ -91,6 +91,7 @@ src/data/decks/            vocabulary
 src/data/grammar/topics.json   grammar reference (the Grammatik tab)
 src/data/grammar/exercises.json  ✏️ Üben questions per topic (see below)
 src/data/reading/texts.json  📰 Lesen: one short A2 text per chapter (see below)
+src/data/lists/lists.json  📋 Wortlisten: lists from other books (see "Word lists" below)
 src/data/exam/dtz-sets.json  🎓 DTZ practice sets (Hören 1–20 + Lesen 21–45) – the format
                            is in docs/DTZ_FORMAT.md; follow it exactly for new sets
 src/data/index.js          exports; ALL_CARDS = every card in one flat list
@@ -308,6 +309,24 @@ that chapter's words, with an English translation per paragraph and 3 questions:
   front unchanged. A separable verb can link the whole phrase (`[[kommt er an|ankommen]]`).
 - A question without `options` is "Richtig oder falsch?".
 - `engine/reading.test.js` fails if a link has no card or a question is malformed.
+
+## Word lists (`lists/lists.json`, 📋 Wortlisten)
+
+Lists from books other than Menschen A2 (first: **Grammatik aktiv** – unregelmäßige
+Verben, Verben mit Dativ). A list never copies cards: each row names existing cards.
+
+`{ "key", "icon", "label", "source": "Grammatik aktiv", "note", "rows": [{ "inf", "praes",
+"praet", "perf", "cards": ["irregular::fahren"] }] }` – or rows with `"group"`, `"example"`,
+`"en"` instead of the forms (Verben mit Dativ).
+
+- Before adding a row, search all decks. A missing word becomes a card first (verbs from a
+  verb table → 🎵 Irregular; others → a fitting chapter or 📚 Andere Quellen) with
+  `"source"` = the book; then the row points at it. `cards[0]` is the one the list
+  studies; list every copy so all of them get the book as a source.
+- A card's sources = its own `source` + the `source` of each list naming it
+  (`data/index.js sourcesOf`); the source chips match any of them ("Ohne Quelle" = none).
+- Renaming a card: update its id in the lists too – `src/data/lists.test.js` fails otherwise.
+- A list key is picked like a topic in 📚 Themen (App.jsx `tabs`, `listCards`).
 
 ## Speaking chunks (`speaking/chunks.json`, the 🧱 Sätze mode)
 

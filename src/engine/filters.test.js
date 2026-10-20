@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { distinctLevels, distinctSources, passesLevelFilter, passesSourceFilter, passesGlobalFilters } from "./filters";
+import { distinctLevels, distinctSources, passesLevelFilter, passesSourceFilter, passesGlobalFilters, NO_SOURCE } from "./filters";
 
 describe("distinctLevels", () => {
   it("returns only the levels actually present, in A1-then-A2 order", () => {
@@ -13,8 +13,16 @@ describe("distinctLevels", () => {
 
 describe("distinctSources", () => {
   it("returns unique, sorted source strings", () => {
-    const cards = [{ source: "B" }, { source: "A" }, { source: "A" }, {}];
+    const cards = [{ source: "B" }, { source: "A" }, { source: "A" }];
     expect(distinctSources(cards)).toEqual(["A", "B"]);
+  });
+  it("adds NO_SOURCE last when some cards have no source", () => {
+    expect(distinctSources([{ source: "A" }, {}])).toEqual(["A", NO_SOURCE]);
+    expect(distinctSources([{}])).toEqual([NO_SOURCE]);
+  });
+  it("counts every source of a card that comes from two books", () => {
+    const cards = [{ source: "Menschen", sources: ["Menschen", "Grammatik aktiv"] }, { source: "Menschen" }];
+    expect(distinctSources(cards)).toEqual(["Grammatik aktiv", "Menschen"]);
   });
 });
 
@@ -37,8 +45,15 @@ describe("passesSourceFilter", () => {
   it("excludes a card whose source was deselected", () => {
     expect(passesSourceFilter({ source: "Einheit 4" }, ["Einheit 3"])).toBe(false);
   });
-  it("always passes an untagged card so filtering by chapter never hides untagged content", () => {
-    expect(passesSourceFilter({}, ["Einheit 3"])).toBe(true);
+  it("passes an untagged card only while the NO_SOURCE chip is on", () => {
+    expect(passesSourceFilter({}, ["Einheit 3", NO_SOURCE])).toBe(true);
+    expect(passesSourceFilter({}, ["Einheit 3"])).toBe(false);
+  });
+  it("passes a card from two books when either one is selected", () => {
+    const card = { source: "Einheit 7", sources: ["Einheit 7", "Grammatik aktiv"] };
+    expect(passesSourceFilter(card, ["Grammatik aktiv"])).toBe(true);
+    expect(passesSourceFilter(card, ["Einheit 7"])).toBe(true);
+    expect(passesSourceFilter(card, ["Einheit 3"])).toBe(false);
   });
 });
 

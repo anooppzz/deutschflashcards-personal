@@ -144,8 +144,9 @@ describe("real data", () => {
     expect(missing).toEqual([]);
   });
 
+  // the Partizip may lack ge- (abgeflogen, behalten); "ist/hat": both are used
   it("irregular verbs show hat or ist before the Partizip II", () => {
-    const bad = ALL_CARDS.filter((c) => c.deck === "irregular" && !/ · (hat|ist) ge\S+$/.test(c.sub)).map((c) => c.sub);
+    const bad = ALL_CARDS.filter((c) => c.deck === "irregular" && !/ · (hat|ist)(\/(hat|ist))? \S+$/.test(c.sub)).map((c) => c.sub);
     expect(bad).toEqual([]);
   });
 });

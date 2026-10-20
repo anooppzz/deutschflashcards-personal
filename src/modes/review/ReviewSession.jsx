@@ -80,6 +80,7 @@ function ReviewSession({ cards, lang, onGrade, onExit, onRepeat, moreCount, onMo
         lang={lang}
         level={card.level}
         source={card.source}
+        sources={card.sources}
         note={card.note}
         showMarks={false}
       />

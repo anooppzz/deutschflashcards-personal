@@ -10,11 +10,13 @@ import { faceStyle, badgeStyle, iconBtn } from "./cardStyles";
 import LookupLinks from "./LookupLinks";
 import { wordLinks, wordQuestion, wordSubject } from "../engine/lookup";
 
-function FlipCard({ front, sub, back, english, example, exampleEn, accent, badge, type, gender, deck, cardId, lang = "en", level, source, note, showMarks = true }) {
+function FlipCard({ front, sub, back, english, example, exampleEn, accent, badge, type, gender, deck, cardId, lang = "en", level, source, sources, note, showMarks = true }) {
   const { progress, mark } = useContext(ProgressCtx);
   const { openGrammar, linksFor } = useContext(GrammarNavCtx);
   const entry = cardId ? progress[cardId] : undefined;
   const status = statusOfFsrs(entry);
+  // a card from two books shows both ("Menschen A2 · Einheit 7 · Grammatik aktiv")
+  const sourceText = sources && sources.length ? sources.join(" · ") : source;
   const [flipped, setFlipped] = useState(false);
   const [ai, setAi] = useState(null); // { de, en } - only ever populated from a static example or a vestigial cached value; V1 never generates one
   const [audioErr, setAudioErr] = useState(false);
@@ -139,7 +141,7 @@ function FlipCard({ front, sub, back, english, example, exampleEn, accent, badge
             </div>
           )}
           <div style={{ position: "absolute", bottom: 14, fontSize: 10, color: "#5a6b78", letterSpacing: 1 }}>
-            {source && <div style={{ marginBottom: 4, letterSpacing: 0, fontSize: 10, color: "#7d8d9c" }}>📖 {source}</div>}
+            {sourceText && <div style={{ marginBottom: 4, letterSpacing: 0, fontSize: 10, color: "#7d8d9c" }}>📖 {sourceText}</div>}
             TAP TO FLIP
           </div>
         </div>
@@ -256,6 +258,7 @@ FlipCard.propTypes = {
   lang: PropTypes.string,
   level: PropTypes.oneOf(["A1", "A2"]),
   source: PropTypes.string,
+  sources: PropTypes.arrayOf(PropTypes.string),
   note: PropTypes.string,
   showMarks: PropTypes.bool,
 };

@@ -34,7 +34,7 @@ import {
 import {
   IRREGULAR_VERBS, INSEPARABLE_VERBS, HAUSHALT, VERKEHR, KLEIDUNG,
   EXTRA_TOPICS, DECK_META, GRAMMAR_TOPICS,
-  DECK_SOURCE, EXTRA_BY_KEY, ALL_CARDS, GRAMMAR_EXERCISES, READING_TEXTS, DTZ_SETS, DTZ_WRITING, DTZ_SPEAKING, CHUNK_SETS,
+  DECK_SOURCE, EXTRA_BY_KEY, ALL_CARDS, WORD_LISTS, LIST_BY_KEY, sourcesOf, GRAMMAR_EXERCISES, READING_TEXTS, DTZ_SETS, DTZ_WRITING, DTZ_SPEAKING, CHUNK_SETS,
 } from "./data";
 import {
   storage,
@@ -47,7 +47,7 @@ import {
   recordAnswer, sortedEntries, grammarMistakeId, isGrammarMistakeId, newTopicsOf, textsForDecks, setsForDecks,
   freshDaily, addNewId, newCardsFor, NEW_PER_DAY_PRESETS, DEFAULT_NEW_PER_DAY,
   scheduleTopic, isTopicDue, nextGrammarTopic,
-  distinctLevels, distinctSources, passesGlobalFilters,
+  distinctLevels, distinctSources, passesGlobalFilters, NO_SOURCE,
   buildGrammarIndex, buildGrammarSearchIndex, searchCards, searchGrammar, dueCards, applyRenames,
   loadAiSettings, saveAiSettings, aiReady, parseInbox, addInboxItem, removeInboxItems, markExported,
 } from "./engine";
@@ -73,7 +73,7 @@ import {
   ClozeTrainer, ClozeSummary, buildClozePool, buildClozeRound, saveClozeSizePref, resolveClozeRoundSize, isClozeCorrect,
   WordSearchTrainer, WordSearchSummary, buildWordSearchPool, buildWordSearchRound, resolveWordSearchSize,
   GrammarView, SearchResults, SearchOverlay, ReviewSession, FormsTrainer, buildFormsPool, MistakeBook,
-  SatzbauTrainer, buildSatzbauPool, ReadingView, DtzTrainer, ChunkView,
+  SatzbauTrainer, buildSatzbauPool, ReadingView, DtzTrainer, ChunkView, ListView,
 } from "./modes";
 
 /* ============================================================
@@ -106,6 +106,19 @@ EXTRA_TOPICS.forEach((t) => {
   DECK_SOURCE[t.key] = t.cards;
 });
 
+// 📋 word lists (data/lists): selectable like a topic; their label in the
+// topic summaries comes from DECK_META too
+WORD_LISTS.forEach((l) => { DECK_META[l.key] = { label: l.label, icon: l.icon }; });
+// every card's raw entry by id, to build a list's cards from their own decks
+const RAW_BY_ID = new Map(Object.entries(DECK_SOURCE).flatMap(([deck, cards]) =>
+  cards.map((c) => [`${deck}::${c.front || c.infinitiv}`, { deck, raw: c }])));
+// a list's cards: the first card of each row, normalized in its own deck so
+// its id - and so its progress - is the chapter card's
+const listCards = (key) => LIST_BY_KEY[key].rows
+  .map((r) => RAW_BY_ID.get(r.cards[0]))
+  .filter(Boolean)
+  .map(({ deck, raw }) => normalizeCard(deck, raw));
+
 // every deck the Karten mode shows on its own (modes/cards/deckViews.js)
 const DECK_VIEWS = buildDeckViews();
 
@@ -118,7 +131,7 @@ const readSaved = (key) => {
 };
 const savedTabs = () => {
   const v = readSaved(STORAGE_KEYS.TABS);
-  const valid = Array.isArray(v) ? v.filter((k) => k in DECK_SOURCE) : [];
+  const valid = Array.isArray(v) ? v.filter((k) => k in DECK_SOURCE || k in LIST_BY_KEY) : [];
   return valid.length ? valid : ["kleidung"];
 };
 const savedMode = () => {
@@ -164,8 +177,11 @@ function normalizeCard(deckKey, c) {
         group: c.group,
       },
     };
+    if (c.exampleEn) normalizedIrregular.exampleEn = c.exampleEn;
+    if (c.note) normalizedIrregular.note = c.note;
     if (c.level) normalizedIrregular.level = c.level;
     if (c.source) normalizedIrregular.source = c.source;
+    normalizedIrregular.sources = sourcesOf(deckKey, c.infinitiv, c.source);
     return normalizedIrregular;
   }
 
@@ -184,6 +200,7 @@ function normalizeCard(deckKey, c) {
     };
     if (c.level) normalizedInseparable.level = c.level;
     if (c.source) normalizedInseparable.source = c.source;
+    normalizedInseparable.sources = sourcesOf(deckKey, c.infinitiv, c.source);
     return normalizedInseparable;
   }
 
@@ -210,6 +227,8 @@ function normalizeCard(deckKey, c) {
   // existing generic search find every card from a given chapter across
   // ALL topics at once, regardless of which thematic deck it landed in.
   if (c.source) normalized.source = c.source;
+  // every source, also the books of its word lists (data/index.js sourcesOf)
+  normalized.sources = sourcesOf(deckKey, c.front, c.source);
 
   // optional: a short per-card note shown on the back (e.g. "von zeichnen")
   if (c.note) normalized.note = c.note;
@@ -279,14 +298,22 @@ function App() {
   const setExtraSlice = (key) => (patch) =>
     setExtra((prev) => ({ ...prev, [key]: { ...prev[key], ...patch } }));
 
-  const single = tabs.length === 1;
+  // one deck on its own (DeckView); a 📋 word list shows like a mix of decks
+  const single = tabs.length === 1 && !(tabs[0] in LIST_BY_KEY);
   const onlyTab = single ? tabs[0] : null;
 
-  // base combined deck (natural order) from selected topics
-  const comboBase = useMemo(
-    () => tabs.flatMap((k) => DECK_SOURCE[k].map((c) => normalizeCard(k, c))),
-    [tabs]
-  );
+  // base combined deck (natural order) from selected topics - each card once,
+  // even when a list and the chapter it names are both selected
+  const comboBase = useMemo(() => {
+    const seen = new Set();
+    return tabs.flatMap((k) => (k in LIST_BY_KEY ? listCards(k) : DECK_SOURCE[k].map((c) => normalizeCard(k, c))))
+      .filter((c) => {
+        const id = idOf(c.deck, c.front);
+        if (seen.has(id)) return false;
+        seen.add(id);
+        return true;
+      });
+  }, [tabs]);
   // which category chips to show in combined mode (only types actually present)
   const comboCats = useMemo(() => {
     const present = new Set(comboBase.map((c) => c.type));
@@ -456,6 +483,8 @@ function App() {
     });
   }, []);
   const [showMistakes, setShowMistakes] = useState(false);
+  // 📋 Wortlisten layer (modes/lists): null = closed, else { key } (key null: the lists)
+  const [listsView, setListsView] = useState(null);
   // 🎓 DTZ trainer (modes/exam): null = closed, else { kind: "home" | "teil" | "sim", … }
   const [dtzView, setDtzView] = useState(null);
   // On a phone the mode tabs sit at the bottom of the first screen, so what
@@ -519,7 +548,9 @@ function App() {
         base = t ? t.cards.map((c) => ({ deck: onlyTab, front: c.front, type: c.type, gender: c.gender, english: c.english, example: c.example, exampleEn: c.exampleEn, level: c.level, source: c.source })) : [];
       }
     }
-    return base.filter((c) => passesGlobalFilters(c, levelFilter, sourceFilter));
+    return base
+      .map((c) => ({ ...c, sources: sourcesOf(c.deck, c.front, c.source) }))
+      .filter((c) => passesGlobalFilters(c, levelFilter, sourceFilter));
   }, [single, onlyTab, comboBase, levelFilter, sourceFilter]);
 
   const knownCount = useMemo(
@@ -1028,6 +1059,13 @@ function App() {
     showContent("tabs");
   };
   const newTopics = newTopicsOf(EXTRA_TOPICS, { seen: seenNew, selected: tabs });
+  // 📋 "🃏 Lernen" in a word list: the list becomes the selection
+  const studyList = (key) => {
+    setTabs([key]);
+    setListsView(null);
+    goSection("lernen");
+    showContent("tabs");
+  };
 
   // 🎯 Heute lernen: the four steps of today's plan
   const today = localDateStr();
@@ -1128,6 +1166,7 @@ function App() {
     : moreOpen ? () => setMoreOpen(false)
     : langOpen ? () => setLangOpen(false)
     : searchOpen ? closeSearch
+    : listsView ? () => setListsView(listsView.key ? { key: null } : null)
     : mode === MODE.GRAMMAR && (grammarFrom || grammarFromSearch) ? backFromGrammar
     : mode === MODE.GRAMMAR && grammarTopic ? () => { setGrammarTopic(null); setGrammarFocus(null); }
     : review ? () => setReview(null)
@@ -1169,9 +1208,32 @@ function App() {
     ["inseparable", "🔑 Nicht trennbar"],
     ...EXTRA_TOPICS.map((t) => [t.key, `${t.icon} ${t.label}`]),
   ];
+  // 📋 the word lists, picked like topics (their own row in 📚 Themen)
+  const LIST_TABS = WORD_LISTS.map((l) => [l.key, `${l.icon} ${l.label}`]);
+  const labelOf = (k) => ([...TABS, ...LIST_TABS].find(([key]) => key === k) || [k, k])[1];
+  // one topic (or list) in the 📚 Themen picker: toggles it, never leaving
+  // the selection empty
+  const topicChip = (key, lbl) => {
+    const on = tabs.includes(key);
+    return (
+      <button
+        key={key}
+        onClick={() => {
+          const next = on ? tabs.filter((k) => k !== key) : [...tabs, key];
+          setTabs(next.length ? next : [key]);
+          setQuery("");
+        }}
+        style={{
+          minHeight: 36, padding: "7px 13px", borderRadius: 10, fontSize: 13, fontWeight: 700, cursor: "pointer",
+          border: on ? "none" : "1px solid #2c3a47",
+          background: on ? "#e0833b" : "#1a232b",
+          color: on ? "#0e1419" : "#9ab0c2",
+        }}
+      >{on ? "✓ " : ""}{lbl}</button>
+    );
+  };
   // the selected topics in a few words ("👕 Kleidung", "3 Themen · 👕 🚦 🧹")
   const topicsSummary = (() => {
-    const labelOf = (k) => (TABS.find(([key]) => key === k) || [k, k])[1];
     if (TABS.every(([k]) => tabs.includes(k))) return `Alle · ${TABS.length} Themen`;
     if (tabs.length === 1) return labelOf(tabs[0]);
     return `${tabs.length} Themen · ${tabs.map((k) => labelOf(k).split(" ")[0]).join(" ")}`;
@@ -1189,6 +1251,7 @@ function App() {
   const curLang = LANGUAGES.find(([k]) => k === lang);
   const moreItems = [
     { key: "lesen", icon: "📰", label: "Lesen", detail: "Ein kurzer Text pro Kapitel", onClick: fromMore(() => goSection("lesen")) },
+    { key: "lists", icon: "📋", label: "Wortlisten", detail: WORD_LISTS.map((l) => l.label).join(" · "), onClick: fromMore(() => setListsView({ key: null })) },
     { key: "dtz", icon: "🎓", label: "DTZ-Prüfungstraining", detail: "Hören · Lesen · Schreiben · Sprechen", onClick: fromMore(() => { goSection("heute"); setDtzView({ kind: "home" }); }) },
     { key: "backup", icon: "💾", label: "Fortschritt sichern & App", detail: lastBackupAt ? `Zuletzt gesichert vor ${Math.floor((Date.now() - lastBackupAt) / DAY_MS)} Tagen` : "Noch nie gesichert", accent: backupDue ? "#e0833b" : undefined, onClick: fromMore(() => setShowBackup(true)) },
     { key: "ai", icon: "🤖", label: "KI-Assistent", detail: aiSettings.enabled ? "an" : "aus", accent: aiSettings.enabled ? "#5fa85f" : undefined, onClick: fromMore(() => setAiSettingsOpen(true)) },
@@ -1233,6 +1296,20 @@ function App() {
     <GrammarNavCtx.Provider value={grammarNav}>
     <AiCtx.Provider value={aiNav}>
     <div style={{ minHeight: "100vh", background: "#0e1419", fontFamily: "system-ui, sans-serif", padding: "16px 16px", paddingBottom: `calc(${NAV_HEIGHT + 24}px + env(safe-area-inset-bottom, 0px))` }}>
+      {listsView && (
+        <ErrorBoundary resetKey={listsView.key || "lists"} label="lists">
+          <ListView
+            lists={WORD_LISTS}
+            openKey={listsView.key}
+            onOpen={(key) => setListsView({ key })}
+            onStudy={studyList}
+            onClose={() => setListsView(null)}
+            cardById={CARD_BY_ID}
+            deckMeta={DECK_META}
+            lang={lang}
+          />
+        </ErrorBoundary>
+      )}
       {searchOpen && (
         <SearchOverlay query={query} onQuery={setQuery} onClose={closeSearch}>
           <ErrorBoundary resetKey={query} label="search">
@@ -1442,7 +1519,6 @@ function App() {
         {/* TABS - multi-select topics, folded into one summary row */}
         {(() => {
           const allOn = TABS.every(([k]) => tabs.includes(k));
-          const labelOf = (k) => (TABS.find(([key]) => key === k) || [k, k])[1];
           const summary = allOn ? `Alle · ${TABS.length} Themen`
             : tabs.length === 1 ? labelOf(tabs[0])
             : `${tabs.length} Themen · ${tabs.map((k) => labelOf(k).split(" ")[0]).join(" ")}`;
@@ -1487,26 +1563,14 @@ function App() {
               >{allOn ? "✓ " : ""}Alle</button>
             );
           })()}
-          {TABS.map(([key, lbl]) => {
-            const on = tabs.includes(key);
-            return (
-              <button
-                key={key}
-                onClick={() => {
-                  // toggle, but never allow an empty selection
-                  const next = on ? tabs.filter((k) => k !== key) : [...tabs, key];
-                  setTabs(next.length ? next : [key]);
-                  setQuery("");
-                }}
-                style={{
-                  minHeight: 36, padding: "7px 13px", borderRadius: 10, fontSize: 13, fontWeight: 700, cursor: "pointer",
-                  border: on ? "none" : "1px solid #2c3a47",
-                  background: on ? "#e0833b" : "#1a232b",
-                  color: on ? "#0e1419" : "#9ab0c2",
-                }}
-              >{on ? "✓ " : ""}{lbl}</button>
-            );
-          })}
+          {TABS.map(([key, lbl]) => topicChip(key, lbl))}
+        </div>
+        {/* 📋 word lists from other books: the words stay in their chapters */}
+        <div style={{ margin: "4px 0 6px", fontSize: 11, fontWeight: 800, letterSpacing: 0.5, color: "#7d8d9c", textAlign: "center" }}>
+          📋 WORTLISTEN · {[...new Set(WORD_LISTS.map((l) => l.source))].join(" · ").toUpperCase()}
+        </div>
+        <div style={{ display: "flex", gap: 6, justifyContent: "center", marginBottom: 10, flexWrap: "wrap" }}>
+          {LIST_TABS.map(([key, lbl]) => topicChip(key, lbl))}
         </div>
 
         <button
@@ -1570,7 +1634,7 @@ function App() {
         )}
         {!overlay && availableSources.length > 1 && (
           <CategoryFilter
-            cats={availableSources.map((s) => [s, s.replace(/^Menschen A2 · /, "")])}
+            cats={availableSources.map((s) => [s, s === NO_SOURCE ? "Ohne Quelle" : s.replace(/^Menschen A2 · /, "")])}
             allKeys={availableSources}
             active={sourceFilter}
             onChange={setSourceFilter}
@@ -1804,9 +1868,20 @@ function App() {
         {/* COMBINED - two or more topics selected ★ NEW */}
         {!single && (
           <>
-            <div style={{ background: "#16202a", borderRadius: 12, padding: "10px 16px", marginBottom: 16, fontSize: 12, color: "#8fb8d8", textAlign: "center" }}>
-              🔀 Gemischt - {tabs.map((k) => DECK_META[k].label).join(" · ")} · {comboBase.length} Karten
-            </div>
+            {tabs.length === 1 ? (
+              <div style={{ display: "flex", alignItems: "center", gap: 10, background: "#16202a", borderRadius: 12, padding: "8px 8px 8px 16px", marginBottom: 16, fontSize: 12, color: "#8fb8d8" }}>
+                <span style={{ flex: 1, minWidth: 0 }}>📋 {DECK_META[tabs[0]].label} · 📖 {LIST_BY_KEY[tabs[0]].source} · {comboBase.length} Karten</span>
+                <button
+                  type="button"
+                  onClick={() => setListsView({ key: tabs[0] })}
+                  style={{ flexShrink: 0, minHeight: 36, padding: "0 12px", borderRadius: 10, border: "1px solid #3a5670", background: "none", color: "#8fb8d8", fontSize: 12, fontWeight: 700, cursor: "pointer" }}
+                >Tabelle →</button>
+              </div>
+            ) : (
+              <div style={{ background: "#16202a", borderRadius: 12, padding: "10px 16px", marginBottom: 16, fontSize: 12, color: "#8fb8d8", textAlign: "center" }}>
+                🔀 Gemischt - {tabs.map((k) => DECK_META[k].label).join(" · ")} · {comboBase.length} Karten
+              </div>
+            )}
             {comboCats.length > 1 &&
               typeFilterRow(comboCats, comboKeys, comboFilter, setComboFilter, setComboIdx)}
             {comboCard ? (
@@ -1824,6 +1899,7 @@ function App() {
                   lang={lang}
                   level={comboCard.level}
                   source={comboCard.source}
+                  sources={comboCard.sources}
                   note={comboCard.note}
                 />
                 </Swipeable>
