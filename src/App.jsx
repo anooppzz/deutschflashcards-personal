@@ -338,6 +338,12 @@ function App() {
   // same reset pattern already used for comboFilter/comboKeys below.
   useEffect(() => { setLevelFilter(availableLevels); }, [availableLevels]);
   useEffect(() => { setSourceFilter(availableSources); }, [availableSources]);
+  // the level + source chips start folded; the button says what is chosen
+  const [filtersOpen, setFiltersOpen] = useState(false);
+  const filterSummary = [
+    levelFilter.length === availableLevels.length ? "alle Niveaus" : levelFilter.join(" · ") || "kein Niveau",
+    sourceFilter.length === availableSources.length ? "alle Quellen" : `${sourceFilter.length} von ${availableSources.length} Quellen`,
+  ].join(" · ");
 
   // when topic selection changes, reset the combined deck order + select all kinds
   useEffect(() => {
@@ -1622,32 +1628,56 @@ function App() {
             );
           })}
         </div>
-        {/* LEVEL / SOURCE FILTERS - crosscutting facets independent of topic.
-            Level row is always shown (every card is classified). Source row
+        {/* LEVEL / SOURCE FILTERS - crosscutting facets independent of topic,
+            folded behind one "🎚 Filter" button (closed on every start). Source row
             only appears once 2+ distinct chapters exist in the current
             selection - mirrors how the type-filter row already hides itself
             when only one card type is present. Both narrow every mode below,
             not just Cards - see selectionCards, which feeds Quiz/Article/
             Reverse/Cloze/Word Search rounds. */}
-        {!overlay && availableLevels.length > 1 && (
-          <CategoryFilter
-            cats={availableLevels.map((l) => [l, l])}
-            allKeys={availableLevels}
-            active={levelFilter}
-            onChange={setLevelFilter}
-            setIdx={resetDeckPositions}
-            colorFor={(l) => (l === "A1" ? "#5fa85f" : "#e0833b")}
-          />
-        )}
-        {!overlay && availableSources.length > 1 && (
-          <CategoryFilter
-            cats={availableSources.map((s) => [s, s === NO_SOURCE ? "Ohne Quelle" : s.replace(/^Menschen A2 · /, "")])}
-            allKeys={availableSources}
-            active={sourceFilter}
-            onChange={setSourceFilter}
-            setIdx={resetDeckPositions}
-            colorFor={() => "#4f86c6"}
-          />
+        {/* folded by default: one button with what's chosen; tap to open */}
+        {!overlay && (availableLevels.length > 1 || availableSources.length > 1) && (
+          <>
+            <button
+              type="button"
+              onClick={() => setFiltersOpen((o) => !o)}
+              aria-expanded={filtersOpen}
+              style={{
+                display: "flex", alignItems: "center", gap: 8, width: "100%", minHeight: 40, padding: "8px 14px", marginBottom: filtersOpen ? 12 : 18,
+                borderRadius: 12, border: "1px solid #2c3a47", background: "#16202a", color: "#cdd8e2", fontSize: 13, fontWeight: 700, cursor: "pointer",
+              }}
+            >
+              <span aria-hidden="true">🎚</span>
+              <span style={{ flex: 1, minWidth: 0, textAlign: "left", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                Filter · {filterSummary}
+              </span>
+              <span aria-hidden="true" style={{ color: "#8fb8d8" }}>{filtersOpen ? "▴" : "▾"}</span>
+            </button>
+            {filtersOpen && (
+              <>
+                {availableLevels.length > 1 && (
+                  <CategoryFilter
+                    cats={availableLevels.map((l) => [l, l])}
+                    allKeys={availableLevels}
+                    active={levelFilter}
+                    onChange={setLevelFilter}
+                    setIdx={resetDeckPositions}
+                    colorFor={(l) => (l === "A1" ? "#5fa85f" : "#e0833b")}
+                  />
+                )}
+                {availableSources.length > 1 && (
+                  <CategoryFilter
+                    cats={availableSources.map((s) => [s, s === NO_SOURCE ? "Ohne Quelle" : s.replace(/^Menschen A2 · /, "")])}
+                    allKeys={availableSources}
+                    active={sourceFilter}
+                    onChange={setSourceFilter}
+                    setIdx={resetDeckPositions}
+                    colorFor={() => "#4f86c6"}
+                  />
+                )}
+              </>
+            )}
+          </>
         )}
 
         {!overlay && mode === MODE.CARDS && selectionCards.length > 0 && <ProgressBar known={knownCount} total={selectionCards.length} due={dueCount} />}

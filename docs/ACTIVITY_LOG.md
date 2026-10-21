@@ -167,6 +167,14 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 ## Log
 
+### 2026-10-22 – 🎚 Filter folded by default
+- The learner's screenshot: the level (A1/A2) and source chips (Einheit 3 … 15,
+  Grammatik aktiv, KI-Eingang …, Ohne Quelle) filled the screen above the card. Now they
+  sit behind one button **"🎚 Filter · alle Niveaus · alle Quellen ▾"**, closed on every
+  start; tap to open/close. The button says what is chosen ("A2 · 7 von 8 Quellen"), so
+  a narrowed filter isn't forgotten while folded. App.jsx `filtersOpen`, `filterSummary`.
+  The word-type chips (Nomen/Verben/…) stay as they were.
+
 ### 2026-10-21 – KI-Eingang: 8 searched words → 8 new cards
 - Export pasted by the learner (all "Suche" entries); worked in per
   `docs/ai-inbox/README.md`, report in `docs/ai-inbox/done/ki-eingang-2026-10-21.md`.
