@@ -6,6 +6,7 @@ import { statusOfFsrs, dueLabel, submitCorrection, getCachedAiExample, translate
 import { speak } from "../engine/speech";
 import { ProgressCtx } from "../context/ProgressCtx";
 import { GrammarNavCtx } from "../context/GrammarNavCtx";
+import { ConjugationCtx } from "../context/ConjugationCtx";
 import { faceStyle, badgeStyle, iconBtn } from "./cardStyles";
 import LookupLinks from "./LookupLinks";
 import { wordLinks, wordQuestion, wordSubject } from "../engine/lookup";
@@ -13,6 +14,7 @@ import { wordLinks, wordQuestion, wordSubject } from "../engine/lookup";
 function FlipCard({ front, sub, back, english, example, exampleEn, accent, badge, type, gender, deck, cardId, lang = "en", level, source, sources, note, showMarks = true }) {
   const { progress, mark } = useContext(ProgressCtx);
   const { openGrammar, linksFor } = useContext(GrammarNavCtx);
+  const { openConjugation } = useContext(ConjugationCtx);
   const entry = cardId ? progress[cardId] : undefined;
   const status = statusOfFsrs(entry);
   // a verb's forms (data/index.js VERB_FORMS): shown on the back only, so
@@ -186,6 +188,13 @@ function FlipCard({ front, sub, back, english, example, exampleEn, accent, badge
                 ))}
               </tbody>
             </table>
+          )}
+          {forms && forms.praes && forms.praet && openConjugation && (
+            <button
+              onClick={stop(() => openConjugation(cardId))}
+              aria-label={`Alle Formen: ${front}`}
+              style={{ ...grammarChipStyle, color: "#e8c39e", borderColor: "#6b5a44" }}
+            >📊 Alle Formen</button>
           )}
           {opposite && (
             <div style={{ marginTop: 10, fontSize: 12, fontWeight: 600, color: computedAccent, border: `1px solid ${computedAccent}`, borderRadius: 8, padding: "3px 10px" }}>

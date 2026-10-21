@@ -6,6 +6,11 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 ## Pending
 
+- [ ] **📊 Alle Formen – learner review (asked 2026-10-22):** show the learner where the
+  buttons are (card back, 🔁 Formen after an answer, 📋 Wortlisten row) and adjust.
+  Data question found while checking: `um·ziehen` (Feste) has "hat/ist umgezogen" – the
+  table uses the first (hat); for moving house it is **ist** umgezogen. Ask before changing.
+
 - [ ] **📋 Wortlisten – more from Grammatik aktiv:** "Wichtige Verben mit Präpositionen"
   (the next page after the dative verbs, not photographed yet). New lists go into
   `src/data/lists/lists.json` (see CLAUDE.md "Word lists").
@@ -166,6 +171,30 @@ was done, newest first. Every change adds a log entry here in the same commit
   trainer, Reverse articles, 12 grammar topics, ✏️ Üben, data cleanup, code tidying).
 
 ## Log
+
+### 2026-10-22 – 📊 Alle Formen: a verb's whole conjugation
+- The learner showed another app's "More Conjugation" window and asked for it here, A2
+  first. New full-screen layer `components/ConjugationSheet.jsx` (z 150, back gesture
+  steps back: App.jsx `conjStack` first in `backAction`), opened via
+  `context/ConjugationCtx.js` `openConjugation(cardId)` from: the back of every verb card
+  (**📊 Alle Formen** under the forms table – so Karten, Heute fällig, 🔍 search, Lesen,
+  Fehlerheft all have it), 🔁 Formen after each answer, and 📋 Wortlisten (an opened row).
+- Forms are built offline in `engine/conjugate.js` from the card's infinitive + er-Präsens
+  + Präteritum + Perfekt (VERB_FORMS): rules for the persons, own tables for sein, haben,
+  werden, wissen, tun and the modal verbs; separable (fahre ab), reflexive (freue mich,
+  merke mir), phrases (höre Musik, wohne in …). Alternatives (bäckt/backt, hat/ist
+  gesessen) → modern form in the table, the other as a 💡 note. möchten: Präsens +
+  Präteritum (wollte) only.
+- Open: Präsens, Perfekt, Präteritum, Imperativ, Konjunktiv II (own form for sein/haben/
+  modals/wissen, else würde + Inf.), Futur I. Folded "➕ Mehr Zeitformen (B1)":
+  Plusquamperfekt, Futur II, Konjunktiv I (+ Perfekt), Konjunktiv II Präteritum (läse) and
+  Plusquamperfekt. Endings blue, irregular stems orange; "Merk dir: liest · las · gelesen".
+- **🙈 Selbst testen** hides every form; say it, tap the row to check (+ 🔊). **🔗 Geht
+  wie …**: the app's verbs with the same pattern (strong verbs by stem vowels, e.g. lesen
+  e – ie – a – e like sehen; regular ones by kind: -ieren, -e- (arbeitest), -eln/-ern;
+  modal verbs together); a tap opens that verb on top.
+- Checked all 338 verbs by eye; `engine/conjugate.test.js` holds hand-checked forms and
+  makes every verb in the app conjugate.
 
 ### 2026-10-22 – 🎚 Filter folded by default
 - The learner's screenshot: the level (A1/A2) and source chips (Einheit 3 … 15,

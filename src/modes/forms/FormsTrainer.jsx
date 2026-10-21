@@ -1,10 +1,11 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import { GENDER_COLORS } from "../../constants";
-import { DECK_META } from "../../data";
 import { idOf, validateGermanWord } from "../../engine";
 import { faceStyle, badgeStyle } from "../../components";
 import { buildFormsRound } from "./buildForms";
+import { ConjugationCtx } from "../../context/ConjugationCtx";
+import { DECK_META, VERB_FORMS } from "../../data";
 
 // 🔁 Formen: drill the forms the cards show.
 // - Perfekt: pick hat / ist, type the Partizip II (gehen → ist gegangen)
@@ -44,6 +45,7 @@ function FormsTrainer({ kind, pool, progress, onGrade }) {
   const [right, setRight] = useState(0);
   const inputRef = useRef(null);
   const nextRef = useRef(null);
+  const { openConjugation } = useContext(ConjugationCtx);
 
   const item = round[idx];
   const done = idx >= round.length;
@@ -159,6 +161,13 @@ function FormsTrainer({ kind, pool, progress, onGrade }) {
             {checked.correct ? "✓ Richtig: " : `✗ ${why} – richtig: `}
             <span style={{ color: "#f2f5f8" }}>{answerText(item, kind)}</span>
           </div>
+        )}
+        {checked && item.type === "v" && openConjugation && VERB_FORMS.has(idOf(item.deck, item.front)) && (
+          <button
+            type="button"
+            onClick={() => openConjugation(idOf(item.deck, item.front))}
+            style={{ marginTop: 8, padding: "6px 12px", borderRadius: 8, border: "1px solid #6b5a44", background: "transparent", color: "#e8c39e", fontSize: 13, fontWeight: 600, cursor: "pointer" }}
+          >📊 Alle Formen von {item.front.replace(/·/g, "")}</button>
         )}
       </div>
 

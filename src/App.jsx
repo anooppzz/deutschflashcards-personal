@@ -60,6 +60,8 @@ import RENAMES from "./data/renames.json";
 import { ProgressCtx } from "./context/ProgressCtx";
 import { GrammarNavCtx } from "./context/GrammarNavCtx";
 import { AiCtx } from "./context/AiCtx";
+import { ConjugationCtx } from "./context/ConjugationCtx";
+import ConjugationSheet from "./components/ConjugationSheet";
 import AiChat from "./components/AiChat";
 import AiSettingsModal from "./components/AiSettingsModal";
 import AiInboxModal from "./components/AiInboxModal";
@@ -645,6 +647,11 @@ function App() {
     setSearchOpen(false);
   }, [mode, home, showMistakes, searchOpen]);
   const grammarNav = useMemo(() => ({ openGrammar, linksFor: grammarLinksById }), [openGrammar]);
+  // 📊 Alle Formen: the verbs opened, the top one shown ("Geht wie …" opens
+  // another on top; back returns to the one before)
+  const [conjStack, setConjStack] = useState([]);
+  const openConjugation = useCallback((id) => setConjStack((s) => (s[s.length - 1] === id ? s : [...s, id])), []);
+  const conjNav = useMemo(() => ({ openConjugation }), [openConjugation]);
   // Entering a training mode normally starts a new round (see the
   // round-building effect below). "← Zurück" from the Grammatik tab should
   // instead return to the round in progress, so it sets this ref and that
@@ -1170,7 +1177,8 @@ function App() {
   // a picker, the grammar page a card opened, the search, a review), then go
   // to the Karten tab; only from there does back leave the app.
   const backAction =
-    aiSettingsOpen ? () => setAiSettingsOpen(false)
+    conjStack.length ? () => setConjStack((s) => s.slice(0, -1))
+    : aiSettingsOpen ? () => setAiSettingsOpen(false)
     : inboxOpen ? () => setInboxOpen(false)
     : aiChat ? () => setAiChat(null)
     : showWelcome ? () => { setShowWelcome(false); saveWelcomeSeen(); }
@@ -1308,6 +1316,7 @@ function App() {
     <ProgressCtx.Provider value={{ progress, mark }}>
     <GrammarNavCtx.Provider value={grammarNav}>
     <AiCtx.Provider value={aiNav}>
+    <ConjugationCtx.Provider value={conjNav}>
     <div style={{ minHeight: "100vh", background: "#0e1419", fontFamily: "system-ui, sans-serif", padding: "16px 16px", paddingBottom: `calc(${NAV_HEIGHT + 24}px + env(safe-area-inset-bottom, 0px))` }}>
       {listsView && (
         <ErrorBoundary resetKey={listsView.key || "lists"} label="lists">
@@ -2001,7 +2010,21 @@ function App() {
           onSaved={setLastBackupAt}
         />
       )}
+      {conjStack.length > 0 && (
+        <ErrorBoundary resetKey={conjStack[conjStack.length - 1]} label="conjugation">
+          <ConjugationSheet
+            cardId={conjStack[conjStack.length - 1]}
+            english={CARD_BY_ID.get(conjStack[conjStack.length - 1])?.english}
+            depth={conjStack.length}
+            onOpen={openConjugation}
+            onBack={() => setConjStack((s) => s.slice(0, -1))}
+            onClose={() => setConjStack([])}
+            onGrammar={(key) => { setConjStack([]); openGrammar(key); }}
+          />
+        </ErrorBoundary>
+      )}
     </div>
+    </ConjugationCtx.Provider>
     </AiCtx.Provider>
     </GrammarNavCtx.Provider>
     </ProgressCtx.Provider>

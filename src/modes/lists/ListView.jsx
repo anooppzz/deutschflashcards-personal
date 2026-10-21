@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { FlipCard } from "../../components";
 import Reveal from "../../components/Reveal";
 import { ProgressCtx } from "../../context/ProgressCtx";
+import { ConjugationCtx } from "../../context/ConjugationCtx";
+import { VERB_FORMS } from "../../data";
 import { isKnownStability } from "../../engine";
 
 // 📋 Wortlisten (data/lists/lists.json): word lists from other books, as a
@@ -16,6 +18,7 @@ const norm = (s) => s.toLowerCase().replace(/[()]/g, "");
 
 function ListView({ lists, openKey, onOpen, onStudy, onClose, cardById, deckMeta, lang }) {
   const { progress } = useContext(ProgressCtx);
+  const { openConjugation } = useContext(ConjugationCtx);
   const [filter, setFilter] = useState("");
   const [shown, setShown] = useState(null); // the row whose card is open
   const scrollRef = useRef(null);
@@ -143,6 +146,13 @@ function ListView({ lists, openKey, onOpen, onStudy, onClose, cardById, deckMeta
         </button>
         {open && card && (
           <Reveal style={{ margin: "4px 0 14px" }}>
+            {openConjugation && VERB_FORMS.has(id) && (
+              <button
+                type="button"
+                onClick={() => openConjugation(id)}
+                style={{ display: "block", margin: "0 0 8px", padding: "6px 12px", borderRadius: 8, border: "1px solid #6b5a44", background: "transparent", color: "#e8c39e", fontSize: 13, fontWeight: 600, cursor: "pointer" }}
+              >📊 Alle Formen von {r.inf}</button>
+            )}
             <FlipCard
               front={card.front}
               sub={card.sub}

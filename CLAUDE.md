@@ -162,6 +162,12 @@ src/engine/aiInbox.js      📥 KI-Eingang: answers saved from the chat ("📌 F
                            UI: components/AiSettingsModal.jsx, AiChat.jsx ("✨ KI fragen"
                            under a flipped card / grammar topic via context/AiCtx.js),
                            AiText.jsx + engine/aiText.js (safe mini-Markdown, no HTML)
+src/engine/conjugate.js    📊 Alle Formen: a verb's whole conjugation from VERB_FORMS (rules +
+                           own tables for sein/haben/werden/wissen/tun/modals), segments for
+                           ending/irregular colours, "Geht wie …" pattern index; view
+                           components/ConjugationSheet.jsx (A2 open, B1 folded, 🙈 Selbst
+                           testen), opened via context/ConjugationCtx.js openConjugation(id)
+                           from the card back, 🔁 Formen and 📋 Wortlisten; App.jsx conjStack
 src/engine/mistakes.js     📕 Fehlerheft: every wrong answer (App.jsx reviewResult +
                            grammar exercises) until right on 2 different days;
                            view in modes/mistakes/MistakeBook.jsx
