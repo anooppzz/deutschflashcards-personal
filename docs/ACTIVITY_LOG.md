@@ -172,6 +172,13 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 ## Log
 
+### 2026-10-22 – Back from a grammar topic: card already on its back, no flip animation
+- The learner noticed the card played its flip after "← Zurück" (as if tapped), while
+  📊 Alle Formen comes back without movement. Cause: the card is rebuilt after the
+  Grammatik tab and started on its front, then turned. FlipCard now starts on its back
+  (`useState(startFlipped)`), and the reset effect only turns a card to its front when
+  a *different* card is shown (not on mount). Checked frame by frame: only 180°.
+
 ### 2026-10-22 – "← Zurück" from a grammar topic returns to the card's back
 - The learner: after 📖 Perfekt on a card's back, back went to the list (Wortlisten) or
   to the card's front (Heute fällig) – they had to find the word and flip it again.

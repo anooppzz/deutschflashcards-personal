@@ -24,7 +24,8 @@ function FlipCard({ front, sub, back, english, example, exampleEn, accent, badge
   const forms = cardId ? VERB_FORMS.get(cardId) : undefined;
   // a card from two books shows both ("Menschen A2 · Einheit 7 · Grammatik aktiv")
   const sourceText = sources && sources.length ? sources.join(" · ") : source;
-  const [flipped, setFlipped] = useState(false);
+  // starts on its back already, so coming back doesn't play the flip
+  const [flipped, setFlipped] = useState(startFlipped.current);
   const [ai, setAi] = useState(null); // { de, en } - only ever populated from a static example or a vestigial cached value; V1 never generates one
   const [audioErr, setAudioErr] = useState(false);
 
@@ -49,9 +50,11 @@ function FlipCard({ front, sub, back, english, example, exampleEn, accent, badge
     ? `${deckMeta.icon} ${deckMeta.label} · ${type === "n" ? `Nomen · ${gender}` : TYPE_META[type]?.label || type}`
     : null);
 
+  // a new card starts on its front; the first one keeps its start side
+  const shownCard = useRef(cardId || front);
   useEffect(() => {
-    setFlipped(startFlipped.current);
-    startFlipped.current = false;
+    if (shownCard.current !== (cardId || front)) setFlipped(false);
+    shownCard.current = cardId || front;
     setAi(null);
     setAudioErr(false);
     setCorrecting(false);
