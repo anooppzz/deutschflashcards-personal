@@ -167,6 +167,20 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 ## Log
 
+### 2026-10-21 – New chapter 📺 Medien (Menschen A2 · Einheit 15)
+- From a photo of the Lernwortschatz page of Einheit 15: new chapter `medien` (`added`
+  today), **31 cards** – Medien (die DVD, die Folge, der Krimi, das Programm, der Rundfunk,
+  der Sender, der Privatsender, die Sendung, die Serie, der Spielfilm, das Video, der
+  Zuschauer, gucken, produzieren, öffentlich, privat) and Weitere wichtige Wörter (der
+  Anzug, der Fahrplan, die Gaststätte, die Gegend, der Kinderwagen, das Parfüm, die Rose,
+  der Topf, bedeuten, eigen, fest, knapp, sozial, außer, inzwischen). A/CH variants in `sub`.
+- **Not added (already in the app):** das Fernsehen (🏙 Stadt & Zeit); die Gewohnheit
+  (Lebensmittel & Einkaufen) – the page's "feste Gewohnheit" is the example on **fest**.
+- Readings to note: Privatsender has no plural printed (card says `Pl. -` like Sender);
+  "eigen-" is printed with a hyphen (card front `eigen`, note: always with an ending);
+  außer linked to Präpositionen mit Dativ.
+- 📰 Lesen: "Sonntagabend: Tatort" (3 paragraphs, 3 questions).
+
 ### 2026-10-21 – Verb forms on every verb card, card overlap fixed, Formen: Präsens + Präteritum
 - **Overlap fix** (learner's screenshot: freuen (sich) – meaning over the top edge, English
   under ✓ Gekonnt): the card had a fixed 300px height with both faces on top of it. Now

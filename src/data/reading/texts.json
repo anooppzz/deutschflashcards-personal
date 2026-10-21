@@ -1252,5 +1252,43 @@
     "answer": "Der Karton ist zu groß."
    }
   ]
+ },
+ {
+  "key": "medien",
+  "level": "A2",
+  "deck": "medien",
+  "title": "Sonntagabend: Tatort",
+  "paragraphs": [
+   "Für Familie Weber ist der Sonntagabend eine [[feste|fest]] Gewohnheit: Um 20:15 Uhr [[gucken|gucken]] alle den Tatort. Der [[Krimi|der Krimi]] kommt im Ersten, das ist ein [[öffentlicher|öffentlich]] [[Sender|der Sender]]. Jede Woche sitzen Millionen [[Zuschauer|der Zuschauer]] vor dem Fernseher.",
+   "Tochter Mia findet das langweilig. Sie sieht lieber [[Serien|die Serie]] und kurze [[Videos|das Video]] auf dem Handy. „Bei mir gibt es keine [[Sendung|die Sendung]] zu einer festen Zeit“, sagt sie. „Ich sehe die nächste [[Folge|die Folge]], wann ich will – auch drei Folgen hintereinander.“",
+   "[[Inzwischen|inzwischen]] [[produzieren|produzieren]] auch [[Privatsender|der Privatsender]] und Internetfirmen eigene Krimis. [[Außer|außer]] Oma schaut aber niemand mehr das ganze [[Programm|das Programm]] am Abend. Trotzdem: Den Tatort am Sonntag guckt sogar Mia manchmal mit – mit dem Handy in der Hand."
+  ],
+  "en": [
+   "For the Weber family, Sunday evening is a fixed habit: at 8:15 pm everyone watches the Tatort. The crime drama is on Das Erste, a public channel. Every week millions of viewers sit in front of the TV.",
+   "Daughter Mia finds that boring. She prefers watching series and short videos on her phone. “For me there's no programme at a fixed time,” she says. “I watch the next episode whenever I want – even three episodes in a row.”",
+   "Meanwhile, private channels and internet companies produce their own crime dramas too. But apart from Grandma, nobody watches the whole evening's programme any more. Still: even Mia sometimes watches the Tatort on Sunday – with her phone in her hand."
+  ],
+  "questions": [
+   {
+    "q": "Der Tatort kommt auf einem Privatsender.",
+    "en": "The Tatort is on a private channel.",
+    "answer": "falsch"
+   },
+   {
+    "q": "Mia sieht Serien, wann sie will.",
+    "en": "Mia watches series whenever she wants.",
+    "answer": "richtig"
+   },
+   {
+    "q": "Wer schaut noch das ganze Programm am Abend?",
+    "en": "Who still watches the whole evening's programme?",
+    "options": [
+     "Oma",
+     "Mia",
+     "die ganze Familie"
+    ],
+    "answer": "Oma"
+   }
+  ]
  }
 ]

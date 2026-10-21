@@ -13131,6 +13131,377 @@
     ]
   },
   {
+    "key": "medien",
+    "icon": "📺",
+    "label": "Medien",
+    "added": "2026-10-21",
+    "note": "Fernsehen, Sender, Serien",
+    "cards": [
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die DVD",
+        "sub": "Pl. -s",
+        "english": "DVD",
+        "example": "Wir sehen heute Abend eine DVD.",
+        "exampleEn": "We're watching a DVD tonight.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 15"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Folge",
+        "sub": "Pl. -n",
+        "english": "episode",
+        "example": "Hast du die neue Folge schon gesehen?",
+        "exampleEn": "Have you seen the new episode yet?",
+        "note": "auch: die Folge = consequence",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 15"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Krimi",
+        "sub": "Pl. -s",
+        "english": "crime thriller, detective story",
+        "example": "Am Sonntag sehe ich immer einen Krimi.",
+        "exampleEn": "On Sundays I always watch a crime drama.",
+        "note": "der Tatort = the famous Sunday TV-Krimi",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 15"
+      },
+      {
+        "type": "n",
+        "gender": "das",
+        "front": "das Programm",
+        "sub": "Pl. -e",
+        "english": "TV channel; programme (schedule)",
+        "example": "Was kommt heute im Programm?",
+        "exampleEn": "What's on TV today?",
+        "note": "das Fernsehprogramm = TV listings",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 15"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Rundfunk",
+        "sub": "kein Plural · CH: Radio und Fernsehen",
+        "english": "broadcasting (radio and TV)",
+        "example": "Der Rundfunk in Deutschland ist zum Teil öffentlich.",
+        "exampleEn": "Broadcasting in Germany is partly public.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 15"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Sender",
+        "sub": "Pl. -",
+        "english": "(TV/radio) station, channel",
+        "example": "Auf welchem Sender kommt das Fußballspiel?",
+        "exampleEn": "Which channel is the football match on?",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 15"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Privatsender",
+        "sub": "Pl. -",
+        "english": "private (commercial) TV station",
+        "example": "Privatsender zeigen viel Werbung.",
+        "exampleEn": "Private channels show a lot of adverts.",
+        "note": "↔ öffentlich-rechtlicher Sender (ARD, ZDF)",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 15"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Sendung",
+        "sub": "Pl. -en",
+        "english": "programme, show (on TV/radio)",
+        "example": "Die Sendung beginnt um 20:15 Uhr.",
+        "exampleEn": "The programme starts at 8:15 pm.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 15"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Serie",
+        "sub": "Pl. -n",
+        "english": "series",
+        "example": "Meine Lieblingsserie hat zehn Folgen.",
+        "exampleEn": "My favourite series has ten episodes.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 15"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Spielfilm",
+        "sub": "Pl. -e",
+        "english": "feature film",
+        "example": "Nach den Nachrichten kommt ein Spielfilm.",
+        "exampleEn": "After the news there's a feature film.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 15"
+      },
+      {
+        "type": "n",
+        "gender": "das",
+        "front": "das Video",
+        "sub": "Pl. -s",
+        "english": "video",
+        "example": "Er schaut Videos auf dem Handy.",
+        "exampleEn": "He watches videos on his phone.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 15"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Zuschauer",
+        "sub": "Pl. -",
+        "english": "viewer, spectator",
+        "example": "Die Sendung hat jeden Abend fünf Millionen Zuschauer.",
+        "exampleEn": "The show has five million viewers every evening.",
+        "note": "die Zuschauerin, -nen",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 15"
+      },
+      {
+        "type": "v",
+        "front": "gucken",
+        "sub": "hat geguckt · A/CH: schauen, hat geschaut",
+        "english": "to watch, to look (informal)",
+        "example": "Wir gucken heute Abend einen Film.",
+        "exampleEn": "We're watching a film tonight.",
+        "note": "Fernsehen gucken = fernsehen (informal)",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 15",
+        "forms": {
+          "praes": "guckt",
+          "praet": "guckte"
+        }
+      },
+      {
+        "type": "v",
+        "front": "produzieren",
+        "sub": "hat produziert",
+        "english": "to produce",
+        "example": "Der Sender produziert eine neue Serie.",
+        "exampleEn": "The station is producing a new series.",
+        "note": "-ieren: Perfekt ohne ge-",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 15",
+        "forms": {
+          "praes": "produziert",
+          "praet": "produzierte"
+        }
+      },
+      {
+        "type": "adj",
+        "front": "öffentlich",
+        "sub": "↔ privat",
+        "english": "public",
+        "example": "Die öffentlichen Sender zeigen wenig Werbung.",
+        "exampleEn": "The public channels show few adverts.",
+        "note": "öffentlich-rechtlich = public-service (ARD, ZDF)",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 15"
+      },
+      {
+        "type": "adj",
+        "front": "privat",
+        "sub": "↔ öffentlich",
+        "english": "private",
+        "example": "Das ist ein privates Gespräch.",
+        "exampleEn": "That's a private conversation.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 15"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Anzug",
+        "sub": "Pl. ¨-e",
+        "english": "suit",
+        "example": "Zur Hochzeit trägt er einen Anzug.",
+        "exampleEn": "He's wearing a suit to the wedding.",
+        "note": "Pl. die Anzüge",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 15"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Fahrplan",
+        "sub": "Pl. ¨-e",
+        "english": "timetable (bus, train)",
+        "example": "Schau mal auf den Fahrplan: Wann fährt der nächste Bus?",
+        "exampleEn": "Look at the timetable: when does the next bus leave?",
+        "note": "Pl. die Fahrpläne",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 15"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Gaststätte",
+        "sub": "Pl. -n · A: auch das Gasthaus, ¨-er · CH: das Restaurant, -s",
+        "english": "restaurant, inn",
+        "example": "Im Dorf gibt es nur eine Gaststätte.",
+        "exampleEn": "There's only one restaurant in the village.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 15"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Gegend",
+        "sub": "Pl. -en",
+        "english": "area, region",
+        "example": "Wohnst du hier in der Gegend?",
+        "exampleEn": "Do you live in this area?",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 15"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Kinderwagen",
+        "sub": "Pl. -",
+        "english": "pram, baby buggy",
+        "example": "Sie schiebt den Kinderwagen in den Park.",
+        "exampleEn": "She pushes the pram to the park.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 15"
+      },
+      {
+        "type": "n",
+        "gender": "das",
+        "front": "das Parfüm",
+        "sub": "Pl. -e und -s",
+        "english": "perfume",
+        "example": "Zum Geburtstag bekommt sie ein Parfüm.",
+        "exampleEn": "She gets a perfume for her birthday.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 15"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Rose",
+        "sub": "Pl. -n",
+        "english": "rose",
+        "example": "Er schenkt ihr rote Rosen.",
+        "exampleEn": "He gives her red roses.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 15"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Topf",
+        "sub": "Pl. ¨-e · CH: die Pfanne, -n",
+        "english": "pot, saucepan",
+        "example": "Die Suppe kocht im Topf.",
+        "exampleEn": "The soup is cooking in the pot.",
+        "note": "Pl. die Töpfe · in Deutschland: die Pfanne = frying pan",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 15"
+      },
+      {
+        "type": "v",
+        "front": "bedeuten",
+        "sub": "hat bedeutet",
+        "english": "to mean",
+        "example": "Was bedeutet das Wort „Krimi“?",
+        "exampleEn": "What does the word 'Krimi' mean?",
+        "note": "die Bedeutung = meaning",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 15",
+        "forms": {
+          "praes": "bedeutet",
+          "praet": "bedeutete"
+        }
+      },
+      {
+        "type": "adj",
+        "front": "eigen",
+        "sub": "",
+        "english": "own",
+        "example": "Ich möchte eine eigene Wohnung.",
+        "exampleEn": "I'd like my own flat.",
+        "note": "im Buch: eigen- – immer mit Endung: mein eigenes Zimmer",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 15"
+      },
+      {
+        "type": "adj",
+        "front": "fest",
+        "sub": "feste Gewohnheit",
+        "english": "fixed, firm, regular",
+        "example": "Der Tatort am Sonntag ist für viele eine feste Gewohnheit.",
+        "exampleEn": "For many people, the Tatort on Sunday is a fixed habit.",
+        "note": "die Gewohnheit = habit",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 15"
+      },
+      {
+        "type": "adj",
+        "front": "knapp",
+        "sub": "",
+        "english": "scarce, tight; just under",
+        "example": "Der Film dauert knapp zwei Stunden.",
+        "exampleEn": "The film lasts just under two hours.",
+        "note": "Die Zeit ist knapp. = Time is short.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 15"
+      },
+      {
+        "type": "adj",
+        "front": "sozial",
+        "sub": "",
+        "english": "social",
+        "example": "Viele Menschen nutzen soziale Netzwerke.",
+        "exampleEn": "Many people use social networks.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 15"
+      },
+      {
+        "type": "sonst",
+        "front": "außer",
+        "sub": "+ Dativ",
+        "english": "except, apart from",
+        "example": "Außer mir sieht niemand gern Krimis.",
+        "exampleEn": "Apart from me, nobody likes watching crime dramas.",
+        "note": "außer + Dativ: außer dem Kind, außer mir",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 15",
+        "grammar": [
+          "praep-dativ"
+        ]
+      },
+      {
+        "type": "sonst",
+        "front": "inzwischen",
+        "sub": "",
+        "english": "meanwhile; by now",
+        "example": "Inzwischen schaue ich Serien lieber im Internet.",
+        "exampleEn": "By now I prefer watching series online.",
+        "note": "≈ mittlerweile",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 15"
+      }
+    ]
+  },
+  {
     "key": "andere-quellen",
     "icon": "📚",
     "label": "Andere Quellen",
