@@ -64,7 +64,8 @@ npm run ids:update  # after adding/renaming/removing cards (see rule 6b)
    result is the check then.)
 5. **Update `docs/ACTIVITY_LOG.md` in the same commit:** add a log entry, and add or
    close items under "Pending".
-6. **Never duplicate cards.** Search all decks for a word before adding it. Words may
+6. **Never duplicate cards.** Search all decks for a word before adding it; if the
+   chapter's page lists it, link it with `alsoCards` (see below) instead of a copy. Words may
    exist in another chapter; adding the same word to a new chapter is fine only when
    the learner asks for it (progress is tracked per chapter).
 6b. **Never lose the learner's progress.** Progress is stored per card id
@@ -199,7 +200,11 @@ src/engine/pwa.js, public/ installable app: manifest, icons, sw.js (offline cach
 ```
 
 Chapters in `extra-topics.json` appear automatically as topic buttons; nothing else
-needs registering. The last chapter, `persoenlich` ("Meine Wörter" ⭐), is where the
+needs registering. A chapter can also **show cards from other chapters** without copying
+them: `"alsoCards": ["stadt::das Fernsehen"]` (card ids) – same card, same progress, with
+a 🔗 badge naming its home chapter (`data/index.js alsoCardsOf`). Use it when a textbook
+page lists a word the app already has; `src/data/alsoCards.test.js` checks the ids
+(rename a card → update its id here too). The last chapter, `persoenlich` ("Meine Wörter" ⭐), is where the
 learner's own single words go.
 
 ## Card format (`extra-topics.json` → `cards`)

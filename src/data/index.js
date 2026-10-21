@@ -52,6 +52,13 @@ export const DECK_SOURCE = {
 export const EXTRA_KEYS = EXTRA_TOPICS.map((t) => t.key);
 export const EXTRA_BY_KEY = Object.fromEntries(EXTRA_TOPICS.map((t) => [t.key, t]));
 
+// A chapter can also show cards that live in another chapter
+// ("alsoCards": ["deck::front", …]) - the same card, never a copy: it keeps
+// its own id, so its progress is shared. For a textbook page that lists a
+// word the app already has elsewhere.
+const EXTRA_CARD_BY_ID = new Map(EXTRA_TOPICS.flatMap((t) => t.cards.map((c) => [`${t.key}::${c.front}`, { deck: t.key, raw: c }])));
+export const alsoCardsOf = (key) => (EXTRA_BY_KEY[key]?.alsoCards || []).map((id) => EXTRA_CARD_BY_ID.get(id)).filter(Boolean);
+
 // 📋 Word lists from other books (data/lists/lists.json): each row names
 // existing cards by id ("deck::front"), so a list is a way to fetch words
 // from wherever they live - never a copy. Studying a list trains the same

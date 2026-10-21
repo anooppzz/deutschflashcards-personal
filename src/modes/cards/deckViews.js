@@ -5,7 +5,7 @@
 // irregular verbs), the optional banner above the card, and the card's
 // colour and badge.
 import { genderColor, TYPE_META, GROUP_COLORS } from "../../constants";
-import { IRREGULAR_VERBS, INSEPARABLE_VERBS, HAUSHALT, VERKEHR, KLEIDUNG, EXTRA_TOPICS, DECK_META, sourcesOf } from "../../data";
+import { IRREGULAR_VERBS, INSEPARABLE_VERBS, HAUSHALT, VERKEHR, KLEIDUNG, EXTRA_TOPICS, DECK_META, sourcesOf, alsoCardsOf } from "../../data";
 import { passesGlobalFilters } from "../../engine";
 
 const TYPE_CATS = [["n", "Nomen"], ["v", "Verben"], ["adj", "Adjektive"], ["sonst", "Sonstige"]];
@@ -17,11 +17,14 @@ const typeCats = (cards) => {
 };
 const typeAccent = (c) => (c.type === "n" ? genderColor(c.gender) : TYPE_META[c.type].color);
 const typeColor = (key) => (key === "n" ? "#4f86c6" : TYPE_META[key].color);
-const typeBadge = (icon, label) => (c) =>
-  `${icon} ${label} · ${c.type === "n" ? `Nomen · ${c.gender}` : TYPE_META[c.type].label}`;
+// a card from another chapter (alsoCards) is badged with that chapter only
+// (with the word type too it would run into the level tag on a phone)
+const typeBadge = (icon, label) => (c) => (c.deck
+  ? `🔗 ${DECK_META[c.deck].icon} ${DECK_META[c.deck].label}`
+  : `${icon} ${label} · ${c.type === "n" ? `Nomen · ${c.gender}` : TYPE_META[c.type].label}`);
 
 // each card with all its sources (its own + the books of its word lists)
-const withSources = (key, cards) => cards.map((c) => ({ ...c, sources: sourcesOf(key, c.front, c.source) }));
+const withSources = (key, cards) => cards.map((c) => ({ ...c, sources: sourcesOf(c.deck || key, c.front, c.source) }));
 
 const typedView = (key, icon, label, rawCards, banner) => {
   const cards = withSources(key, rawCards);
@@ -65,8 +68,13 @@ export const buildDeckViews = () => {
       { text: "🚦 Im Straßenverkehr - CH = Schweiz, A = Österreich", bg: "#1e2630", color: "#7fb0d6" }),
     typedView("kleidung", DECK_META.kleidung.icon, DECK_META.kleidung.label, KLEIDUNG,
       { text: "👕 Kleidung - Komparativ: **schöner als** · Gleichheit: **(genau)so … wie**", bg: "#221c2a", color: "#b89ad6" }),
-    ...EXTRA_TOPICS.map((t) => typedView(t.key, t.icon, t.label, t.cards,
-      t.note ? { text: `${t.icon} ${t.note} · ${t.cards.length} Karten`, bg: "#16202a", color: "#8fb8d8" } : undefined)),
+    ...EXTRA_TOPICS.map((t) => {
+      // the chapter's own cards, then the ones it shows from other chapters
+      // (they keep their deck, so their id and progress)
+      const cards = [...t.cards, ...alsoCardsOf(t.key).map(({ deck, raw }) => ({ ...raw, deck }))];
+      return typedView(t.key, t.icon, t.label, cards,
+        t.note ? { text: `${t.icon} ${t.note} · ${cards.length} Karten`, bg: "#16202a", color: "#8fb8d8" } : undefined);
+    }),
   ];
   return Object.fromEntries(views.map((v) => [v.key, v]));
 };

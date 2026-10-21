@@ -43,7 +43,7 @@ function DeckView({ view, slice, setSlice, lang, levelFilter, sourceFilter }) {
             exampleEn={card.exampleEn}
             accent={view.accentFor(card)}
             badge={view.badgeFor(card)}
-            cardId={idOf(view.key, card.front)}
+            cardId={idOf(card.deck || view.key, card.front)}
             lang={lang}
             level={card.level}
             source={card.source}

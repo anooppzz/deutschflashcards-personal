@@ -167,6 +167,15 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 ## Log
 
+### 2026-10-21 – Chapters can show cards from other chapters (alsoCards)
+- The learner asked to see das Fernsehen and (feste) Gewohnheit in 📺 Medien too, as the
+  same card, not a copy. New chapter field `"alsoCards": ["deck::front", …]`
+  (`data/index.js alsoCardsOf`): the card view, all study modes, the source chips and
+  the 🆕 banner count include them; they keep their own id, so progress is shared
+  (checked: ✓ Gekonnt in Medien saved `stadt::das Fernsehen`). Badge: 🔗 + home chapter.
+- Medien: `stadt::das Fernsehen`, `lebensmittel-einkaufen::die Gewohnheit` → 33 cards.
+- Test `src/data/alsoCards.test.js`: ids exist, from another chapter, no repeats.
+
 ### 2026-10-21 – New chapter 📺 Medien (Menschen A2 · Einheit 15)
 - From a photo of the Lernwortschatz page of Einheit 15: new chapter `medien` (`added`
   today), **31 cards** – Medien (die DVD, die Folge, der Krimi, das Programm, der Rundfunk,

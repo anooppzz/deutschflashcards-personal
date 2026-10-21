@@ -13136,6 +13136,10 @@
     "label": "Medien",
     "added": "2026-10-21",
     "note": "Fernsehen, Sender, Serien",
+    "alsoCards": [
+      "stadt::das Fernsehen",
+      "lebensmittel-einkaufen::die Gewohnheit"
+    ],
     "cards": [
       {
         "type": "n",

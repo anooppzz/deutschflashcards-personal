@@ -34,7 +34,7 @@ import {
 import {
   IRREGULAR_VERBS, INSEPARABLE_VERBS, HAUSHALT, VERKEHR, KLEIDUNG,
   EXTRA_TOPICS, DECK_META, GRAMMAR_TOPICS,
-  DECK_SOURCE, EXTRA_BY_KEY, ALL_CARDS, WORD_LISTS, VERB_FORMS, LIST_BY_KEY, sourcesOf, GRAMMAR_EXERCISES, READING_TEXTS, DTZ_SETS, DTZ_WRITING, DTZ_SPEAKING, CHUNK_SETS,
+  DECK_SOURCE, EXTRA_BY_KEY, ALL_CARDS, WORD_LISTS, VERB_FORMS, LIST_BY_KEY, sourcesOf, alsoCardsOf, GRAMMAR_EXERCISES, READING_TEXTS, DTZ_SETS, DTZ_WRITING, DTZ_SPEAKING, CHUNK_SETS,
 } from "./data";
 import {
   storage,
@@ -306,7 +306,10 @@ function App() {
   // even when a list and the chapter it names are both selected
   const comboBase = useMemo(() => {
     const seen = new Set();
-    return tabs.flatMap((k) => (k in LIST_BY_KEY ? listCards(k) : DECK_SOURCE[k].map((c) => normalizeCard(k, c))))
+    return tabs.flatMap((k) => (k in LIST_BY_KEY ? listCards(k) : [
+      ...DECK_SOURCE[k].map((c) => normalizeCard(k, c)),
+      ...alsoCardsOf(k).map(({ deck, raw }) => normalizeCard(deck, raw)),
+    ]))
       .filter((c) => {
         const id = idOf(c.deck, c.front);
         if (seen.has(id)) return false;
@@ -545,7 +548,8 @@ function App() {
       if (map[onlyTab]) base = map[onlyTab];
       else {
         const t = EXTRA_BY_KEY[onlyTab];
-        base = t ? t.cards.map((c) => ({ deck: onlyTab, front: c.front, type: c.type, gender: c.gender, english: c.english, example: c.example, exampleEn: c.exampleEn, level: c.level, source: c.source })) : [];
+        const own = (deck) => (c) => ({ deck, front: c.front, type: c.type, gender: c.gender, english: c.english, example: c.example, exampleEn: c.exampleEn, level: c.level, source: c.source });
+        base = t ? [...t.cards.map(own(onlyTab)), ...alsoCardsOf(onlyTab).map(({ deck, raw }) => own(deck)(raw))] : [];
       }
     }
     return base
@@ -1468,7 +1472,7 @@ function App() {
                   onClick={() => { markTopicSeen(t.key); openChapterAt(t.key, t.cards[0].front); }}
                   style={{ flex: 1, minWidth: 0, minHeight: 40, display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8, background: "none", border: "none", padding: 0, color: "#f2f5f8", fontSize: 14, fontWeight: 700, cursor: "pointer", textAlign: "left" }}
                 >
-                  <span>{t.icon} {t.label} <span style={{ fontWeight: 600, color: "#9ab0c2" }}>· {t.cards.length} Karten</span></span>
+                  <span>{t.icon} {t.label} <span style={{ fontWeight: 600, color: "#9ab0c2" }}>· {t.cards.length + alsoCardsOf(t.key).length} Karten</span></span>
                   <span style={{ color: "#5fa85f", whiteSpace: "nowrap" }}>Öffnen →</span>
                 </button>
                 <button onClick={() => markTopicSeen(t.key)} aria-label={`Hinweis ausblenden: ${t.label}`} style={{ flexShrink: 0, width: 40, height: 40, padding: 0, background: "none", border: "none", color: "#7d8d9c", fontSize: 16, cursor: "pointer" }}>✕</button>
