@@ -24,12 +24,18 @@ function SearchOverlay({ query, onQuery, onClose, children }) {
     document.body.style.overflow = "hidden";
     return () => { document.body.style.overflow = prev; };
   }, []);
-  // a new query starts at the top of its results
-  useEffect(() => { if (scrollRef.current) scrollRef.current.scrollTop = 0; }, [query]);
+  // a new query starts at the top of its results (not on opening: back from
+  // a grammar topic puts the old position back)
+  const firstQuery = useRef(true);
+  useEffect(() => {
+    if (firstQuery.current) { firstQuery.current = false; return; }
+    if (scrollRef.current) scrollRef.current.scrollTop = 0;
+  }, [query]);
 
   return (
     <div
       ref={scrollRef}
+      data-scroll-layer
       role="dialog"
       aria-modal="true"
       aria-label="Suche"

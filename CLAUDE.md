@@ -129,7 +129,10 @@ src/components/AudioControls.jsx  ▶ / ⏸ Pause / ▶ Weiter / ⏹ Stopp for l
                            Lesen Vorlesen); engine/speech.js createPlayer speaks sentence by
                            sentence, so Pause resumes at the cut-off sentence
 src/components/Reveal.jsx  wrap anything that opens below a tap (a word's card): scrolls it
-                           on screen. App.jsx showContent() does the same for tabs/views
+                           on screen. App.jsx showContent() does the same for tabs/views.
+                           Back from a grammar topic restores the old scroll instead
+                           (engine/scrollBack.js; a scrolling full-screen layer needs
+                           data-scroll-layer)
 src/components/LookupLinks.jsx  🔎 Nachschlagen (Duden, DWDS, Verbformen, Reverso, Leo,
                            Google) + "🤖 Frag: Claude · ChatGPT · Gemini" under a flipped
                            card and a grammar topic; URLs and questions in

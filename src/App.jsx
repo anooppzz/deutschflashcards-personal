@@ -23,7 +23,8 @@
    anyone.
    ============================================================ */
 
-import React, { useState, useCallback, useEffect, useMemo, useRef } from "react";
+import React, { useState, useCallback, useEffect, useLayoutEffect, useMemo, useRef } from "react";
+import { quietScroll, scrollLayer } from "./engine/scrollBack";
 import {
   STORAGE_KEYS,
   TYPE_META,
@@ -646,8 +647,20 @@ function App() {
     const t = setTimeout(() => setReturnCard(null), 2000);
     return () => clearTimeout(t);
   }, [returnCard]);
+  // where the page (and a 📋/🔍 layer) was scrolled to: "← Zurück" puts it
+  // back before the screen is painted - no scrolling to watch
+  const scrollBackRef = useRef(null);
+  const [restoreScroll, setRestoreScroll] = useState(null);
+  useLayoutEffect(() => {
+    if (!restoreScroll) return;
+    window.scrollTo(0, restoreScroll.win);
+    const layer = scrollLayer();
+    if (layer && restoreScroll.layer != null) layer.scrollTop = restoreScroll.layer;
+  }, [restoreScroll]);
   const openGrammar = useCallback((key, fromCard = null) => {
     fromCardRef.current = fromCard;
+    const layer = scrollLayer();
+    scrollBackRef.current = { win: window.scrollY, layer: layer ? layer.scrollTop : null };
     const inGrammar = mode === MODE.GRAMMAR && !home && !showMistakes && !listsView;
     setGrammarFrom(inGrammar ? null : { mode, home, mistakes: showMistakes, lists: listsView });
     setListsView(null);
@@ -689,7 +702,12 @@ function App() {
     if (grammarFromSearch) {
       setGrammarFromSearch(false);
       setSearchOpen(true);
-    } else showContent("tabs");
+    }
+    if (scrollBackRef.current) {
+      quietScroll();
+      setRestoreScroll({ ...scrollBackRef.current, n: Date.now() });
+      scrollBackRef.current = null;
+    } else if (!grammarFromSearch) showContent("tabs");
   };
 
   // #2: language toggle - EN/RU/AR, personal + persisted

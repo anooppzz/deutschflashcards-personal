@@ -199,6 +199,7 @@ function ListView({ lists, openKey, onOpen, onStudy, onClose, cardById, deckMeta
   return (
     <div
       ref={scrollRef}
+      data-scroll-layer
       role="dialog"
       aria-modal="true"
       aria-label="Wortlisten"

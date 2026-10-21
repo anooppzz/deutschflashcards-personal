@@ -172,6 +172,18 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 ## Log
 
+### 2026-10-22 – Back from a grammar topic: page stays where it was, no scrolling
+- The learner: after "← Zurück" the page scrolled down to the card (smooth), unlike
+  📊 Alle Formen, which just closes. Three scrolls caused it: App.jsx
+  `showContent("tabs")`, `Reveal` (scrolls an opened card into view) and the 🔍 search
+  layer jumping to the top when it opens.
+- Now `openGrammar` saves the page's scroll position and that of the open 📋/🔍 layer
+  (`data-scroll-layer`, `engine/scrollBack.js`); `backFromGrammar` puts both back in a
+  `useLayoutEffect` (before the screen is painted) and quiets `Reveal` for 1 s; the
+  search layer only resets to the top for a new query, not on opening.
+- Checked frame by frame in Wortlisten, 🔍 search, Heute fällig and Karten: the scroll
+  value goes straight to the saved one, nothing in between.
+
 ### 2026-10-22 – Back from a grammar topic: card already on its back, no flip animation
 - The learner noticed the card played its flip after "← Zurück" (as if tapped), while
   📊 Alle Formen comes back without movement. Cause: the card is rebuilt after the
