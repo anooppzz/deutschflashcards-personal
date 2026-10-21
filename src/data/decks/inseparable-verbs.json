@@ -5,7 +5,11 @@
     "english": "to recognize",
     "example": "Ich habe das Schild sofort erkannt.",
     "exampleEn": "I recognized the sign immediately.",
-    "level": "A2"
+    "level": "A2",
+    "forms": {
+      "praes": "erkennt",
+      "praet": "erkannte"
+    }
   },
   {
     "infinitiv": "gefallen",
@@ -47,7 +51,11 @@
     "level": "A1",
     "grammar": [
       "reflexive-verben"
-    ]
+    ],
+    "forms": {
+      "praes": "entschuldigt",
+      "praet": "entschuldigte"
+    }
   },
   {
     "infinitiv": "gehören",
@@ -61,7 +69,11 @@
       "fragewoerter-kasus",
       "kasus-ueberblick",
       "verben-dativ"
-    ]
+    ],
+    "forms": {
+      "praes": "gehört",
+      "praet": "gehörte"
+    }
   },
   {
     "infinitiv": "verstehen",

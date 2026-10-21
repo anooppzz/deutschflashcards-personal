@@ -109,8 +109,9 @@ src/modes/                 one folder per study mode (cards, article, quiz, reve
                            topic as a page (tabs Regel · Üben · Wörter); the open topic
                            is App.jsx `grammarTopic`
                            + review ("Heute fällig" session)
-                           + forms (🔁 Formen: Perfekt + Plural, built from each
-                           card's sub line – keep `sub` formats as below)
+                           + forms (🔁 Formen: Perfekt + Plural from each card's sub
+                           line – keep `sub` formats as below; Präsens (er) +
+                           Präteritum from VERB_FORMS)
                            + reverse also has 🎧 Hören: the phone says the card, the
                            learner types it (validation.js isDictatable/checkDictation)
 src/index.css              tap targets: every <button> (and <a className="tap">) gets an
@@ -216,6 +217,7 @@ learner's own single words go.
   "level": "A2",                  // A1 or A2
   "source": "Menschen A2 · Einheit 10",   // chapter cards from the textbook
   "grammar": ["praep-dativ"],     // optional hand links to grammar topics
+  "forms": {"praes": "fährt ab", "praet": "fuhr ab"},  // VERBS: er/sie/es + Präteritum (see below)
   "acceptableAlternates": ["…"]   // optional TRUE synonyms only (Cloze accepts them)
 }
 ```
@@ -227,6 +229,12 @@ learner's own single words go.
   (a `hat …`/`ist …` sub links the verb to the Perfekt topic automatically)
   Every verb needs one – a test checks it. Modal verbs show the Präteritum instead
   (`konnte`) and carry `"grammar": ["modalverben"]`.
+- verb **forms**: every verb needs `"forms": {"praes", "praet"}` (er/sie/es form and
+  Präteritum, with the particle/sich: `"nimmt ab"`, `"freut sich"`; modal verbs also
+  `"perf": "hat gekonnt"`) unless a 📋 word list row already has the book's forms – a
+  test (`src/data/verbForms.test.js`) checks it. The back of the card shows them as a
+  small table (er/sie/es · Präteritum · Perfekt) and the front only the verb;
+  🔁 Formen drills Präsens and Präteritum from them (`data/index.js VERB_FORMS`).
 - adjectives: an opposite as `↔ unangenehm`
 - phrases: alternatives as `auch: Ich nehme …`
 

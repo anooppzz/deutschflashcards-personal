@@ -70,6 +70,27 @@ export const sourcesOf = (deck, front, source) => {
   return [...new Set([source, ...extra].filter(Boolean))];
 };
 
+// Every verb's forms for the card's back and the 🔁 Formen drills, by card
+// id: { praes (er/sie/es), praet, perf }. The book's table (a word list row
+// with praes/praet/perf) wins; else the card's own "forms", the irregular
+// deck's Präteritum + Partizip, and the Perfekt from the card's sub line.
+const PERF_IN_SUB = /(?:^|· )((?:hat|ist)(?:\/(?:hat|ist))? [^·]+?)(?= ·|$)/;
+const rawVerbs = [
+  ...IRREGULAR_VERBS.map((v) => ["irregular", v.infinitiv, v, `${v.hilfsverb} ${v.partizip}`]),
+  ...INSEPARABLE_VERBS.map((v) => ["inseparable", v.infinitiv, v, `hat ${v.partizip}`]),
+  ...[["haushalt", HAUSHALT], ["verkehr", VERKEHR], ["kleidung", KLEIDUNG]].flatMap(([deck, cards]) =>
+    cards.filter((c) => c.type === "v").map((c) => [deck, c.front, c, null])),
+  ...EXTRA_TOPICS.flatMap((t) => t.cards.filter((c) => c.type === "v").map((c) => [t.key, c.front, c, null])),
+];
+export const VERB_FORMS = new Map(rawVerbs.map(([deck, front, c, perf]) => {
+  const f = c.forms || {};
+  const fromSub = c.sub && c.sub.match(PERF_IN_SUB);
+  return [`${deck}::${front}`, { praes: f.praes, praet: f.praet || c.präteritum, perf: f.perf || perf || (fromSub ? fromSub[1] : undefined) }];
+}));
+WORD_LISTS.forEach((l) => l.rows.filter((r) => r.perf).forEach((r) => r.cards.forEach((id) => {
+  VERB_FORMS.set(id, { praes: r.praes, praet: r.praet, perf: r.perf });
+})));
+
 // Every card in the app, across ALL decks and topics, in one flat shape:
 // { deck, front, type, gender?, english, sub?, grammar?, example?,
 // exampleEn?, note?, level?, source?, sources }. The irregular and inseparable decks

@@ -167,6 +167,21 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 ## Log
 
+### 2026-10-21 – Verb forms on every verb card, card overlap fixed, Formen: Präsens + Präteritum
+- **Overlap fix** (learner's screenshot: freuen (sich) – meaning over the top edge, English
+  under ✓ Gekonnt): the card had a fixed 300px height with both faces on top of it. Now
+  both faces share one CSS grid cell (FlipCard.jsx `stacked`), so a full back makes the
+  card taller instead of spilling over.
+- **Verb forms on the card** (learner chose: forms on the back, only the verb on the front):
+  a small table er/sie/es · Präteritum · Perfekt on the back of every verb card.
+  - Source (`data/index.js VERB_FORMS`): the Grammatik aktiv table first (130 verbs), else
+    the card's new `"forms": {praes, praet}` (196 verbs, written and checked by hand;
+    modal verbs also `perf`), the Irregular deck's Präteritum/Partizip, the Perfekt from
+    `sub`. möchten has no Perfekt. Phrases keep their words (Musik hören → hört Musik).
+  - `src/data/verbForms.test.js`: every verb card has praes + praet + Perfekt.
+- **🔁 Formen**: new drills **Präsens (er)** and **Präteritum** next to Perfekt and Plural
+  (2×2 buttons); single verbs only (no phrases), "bäckt/backt" accepts either.
+
 ### 2026-10-20 – 📋 Wortlisten: Grammatik aktiv verb lists, multi-source cards
 - From photos of a separate grammar book, **Grammatik aktiv** (not Menschen A2): the
   "Unregelmäßige Verben" table (130 verbs, 3 pages) and "Verben mit Akkusativ und Dativ /

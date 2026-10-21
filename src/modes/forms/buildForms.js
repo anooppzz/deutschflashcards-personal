@@ -52,11 +52,28 @@ export const pluralOf = (card) => {
   return null;
 };
 
-// ---- pools and rounds ----
-export const FORM_KINDS = ["perfekt", "plural"];
+// ---- Präsens (er/sie/es) and Präteritum ----
+// From the verb's forms (data/index.js VERB_FORMS): { praes, praet }. Only
+// single verbs - not phrases like "Musik hören"; "bäckt/backt": either counts.
+export const verbFormOf = (card, forms, kind) => {
+  if (!card || card.type !== "v" || !forms) return null;
+  const form = kind === "praesens" ? forms.praes : forms.praet;
+  if (!form) return null;
+  if (/\s/.test(card.front.replace(/\s*\(sich\)$/, ""))) return null;
+  if (form.includes("/") && /\s/.test(form)) return null;
+  return { form, answers: form.split("/") };
+};
 
-export const buildFormsPool = (cards, kind) =>
+// ---- pools and rounds ----
+export const FORM_KINDS = ["perfekt", "praesens", "praeteritum", "plural"];
+
+// formsById: the verbs' forms by card id (for Präsens and Präteritum)
+export const buildFormsPool = (cards, kind, formsById = new Map()) =>
   cards.flatMap((card) => {
+    if (kind === "praesens" || kind === "praeteritum") {
+      const f = verbFormOf(card, formsById.get(`${card.deck}::${card.front}`), kind);
+      return f ? [{ ...card, ...f }] : [];
+    }
     if (kind === "perfekt") {
       const p = perfektOf(card);
       return p ? [{ ...card, ...p }] : [];

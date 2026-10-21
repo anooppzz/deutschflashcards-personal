@@ -197,7 +197,11 @@
         "english": "to come from …",
         "example": "Ich komme aus Deutschland.",
         "exampleEn": "I come from Germany.",
-        "level": "A1"
+        "level": "A1",
+        "forms": {
+          "praes": "kommt aus …",
+          "praet": "kam aus …"
+        }
       },
       {
         "type": "n",
@@ -290,7 +294,11 @@
         "english": "to spell",
         "example": "Können Sie bitte Ihren Namen buchstabieren?",
         "exampleEn": "Could you please spell your name?",
-        "level": "A2"
+        "level": "A2",
+        "forms": {
+          "praes": "buchstabiert",
+          "praet": "buchstabierte"
+        }
       },
       {
         "type": "sonst",
@@ -444,7 +452,11 @@
         "english": "to work as / at",
         "example": "Ich arbeite als Lehrer an einer Schule.",
         "exampleEn": "I work as a teacher at a school.",
-        "level": "A1"
+        "level": "A1",
+        "forms": {
+          "praes": "arbeitet als/bei …",
+          "praet": "arbeitete als/bei …"
+        }
       },
       {
         "type": "v",
@@ -453,7 +465,11 @@
         "english": "to study (university)",
         "example": "Sie studiert Medizin in Berlin.",
         "exampleEn": "She is studying medicine in Berlin.",
-        "level": "A2"
+        "level": "A2",
+        "forms": {
+          "praes": "studiert",
+          "praet": "studierte"
+        }
       },
       {
         "type": "adj",
@@ -687,7 +703,11 @@
         "english": "to live",
         "example": "Ich lebe seit fünf Jahren hier.",
         "exampleEn": "I have lived here for five years.",
-        "level": "A1"
+        "level": "A1",
+        "forms": {
+          "praes": "lebt",
+          "praet": "lebte"
+        }
       },
       {
         "type": "v",
@@ -696,7 +716,11 @@
         "english": "to live alone",
         "example": "Er lebt allein in einer kleinen Wohnung.",
         "exampleEn": "He lives alone in a small apartment.",
-        "level": "A2"
+        "level": "A2",
+        "forms": {
+          "praes": "lebt allein",
+          "praet": "lebte allein"
+        }
       },
       {
         "type": "v",
@@ -705,7 +729,11 @@
         "english": "to live together",
         "example": "Wir leben seit drei Jahren zusammen.",
         "exampleEn": "We have lived together for three years.",
-        "level": "A2"
+        "level": "A2",
+        "forms": {
+          "praes": "lebt zusammen",
+          "praet": "lebte zusammen"
+        }
       },
       {
         "type": "v",
@@ -714,7 +742,11 @@
         "english": "to live / reside in",
         "example": "Sie wohnt in Hamburg.",
         "exampleEn": "She lives in Hamburg.",
-        "level": "A1"
+        "level": "A1",
+        "forms": {
+          "praes": "wohnt in",
+          "praet": "wohnte in"
+        }
       },
       {
         "type": "adj",
@@ -756,7 +788,11 @@
           "nebensatz",
           "kasus-ueberblick",
           "verben-dativ"
-        ]
+        ],
+        "forms": {
+          "praes": "glaubt",
+          "praet": "glaubte"
+        }
       },
       {
         "type": "v",
@@ -779,7 +815,11 @@
         "english": "to do / make",
         "example": "Was machst du am Wochenende?",
         "exampleEn": "What are you doing on the weekend?",
-        "level": "A1"
+        "level": "A1",
+        "forms": {
+          "praes": "macht",
+          "praet": "machte"
+        }
       },
       {
         "type": "adj",
@@ -1411,7 +1451,11 @@
         "english": "to cost",
         "example": "Wie viel kostet das Sofa?",
         "exampleEn": "How much does the sofa cost?",
-        "level": "A1"
+        "level": "A1",
+        "forms": {
+          "praes": "kostet",
+          "praet": "kostete"
+        }
       },
       {
         "type": "sonst",
@@ -1467,7 +1511,11 @@
         "english": "to need",
         "example": "Ich brauche ein neues Sofa.",
         "exampleEn": "I need a new sofa.",
-        "level": "A1"
+        "level": "A1",
+        "forms": {
+          "praes": "braucht",
+          "praet": "brauchte"
+        }
       },
       {
         "type": "v",
@@ -1493,7 +1541,11 @@
           "fragewoerter-kasus",
           "kasus-ueberblick",
           "verben-dativ"
-        ]
+        ],
+        "forms": {
+          "praes": "sagt",
+          "praet": "sagte"
+        }
       },
       {
         "type": "sonst",
@@ -2372,7 +2424,11 @@
         "english": "to search / look for",
         "example": "Ich suche meinen Schlüssel.",
         "exampleEn": "I'm looking for my key.",
-        "level": "A1"
+        "level": "A1",
+        "forms": {
+          "praes": "sucht",
+          "praet": "suchte"
+        }
       },
       {
         "type": "sonst",
@@ -2509,7 +2565,11 @@
         "english": "to visit",
         "example": "Wir besuchen unsere Großeltern am Sonntag.",
         "exampleEn": "We visit our grandparents on Sunday.",
-        "level": "A2"
+        "level": "A2",
+        "forms": {
+          "praes": "besucht",
+          "praet": "besuchte"
+        }
       },
       {
         "type": "v",
@@ -2518,7 +2578,11 @@
         "english": "to photograph",
         "example": "Ich fotografiere gern die Natur.",
         "exampleEn": "I like to photograph nature.",
-        "level": "A2"
+        "level": "A2",
+        "forms": {
+          "praes": "fotografiert",
+          "praet": "fotografierte"
+        }
       },
       {
         "type": "v",
@@ -2527,7 +2591,11 @@
         "english": "to cook",
         "example": "Mein Vater kocht jeden Abend.",
         "exampleEn": "My father cooks every evening.",
-        "level": "A1"
+        "level": "A1",
+        "forms": {
+          "praes": "kocht",
+          "praet": "kochte"
+        }
       },
       {
         "type": "v",
@@ -2536,7 +2604,11 @@
         "english": "to love",
         "example": "Ich liebe klassische Musik.",
         "exampleEn": "I love classical music.",
-        "level": "A2"
+        "level": "A2",
+        "forms": {
+          "praes": "liebt",
+          "praet": "liebte"
+        }
       },
       {
         "type": "v",
@@ -2545,7 +2617,11 @@
         "english": "to paint",
         "example": "Sie malt gern Landschaften.",
         "exampleEn": "She likes to paint landscapes.",
-        "level": "A2"
+        "level": "A2",
+        "forms": {
+          "praes": "malt",
+          "praet": "malte"
+        }
       },
       {
         "type": "v",
@@ -2554,7 +2630,11 @@
         "english": "to listen to music",
         "example": "Ich höre gern Musik beim Joggen.",
         "exampleEn": "I like to listen to music while jogging.",
-        "level": "A1"
+        "level": "A1",
+        "forms": {
+          "praes": "hört Musik",
+          "praet": "hörte Musik"
+        }
       },
       {
         "type": "v",
@@ -2563,7 +2643,11 @@
         "english": "to cycle",
         "example": "Am Wochenende fahre ich gern Rad.",
         "exampleEn": "At the weekend I like to cycle.",
-        "level": "A1"
+        "level": "A1",
+        "forms": {
+          "praes": "fährt Rad",
+          "praet": "fuhr Rad"
+        }
       },
       {
         "type": "v",
@@ -2590,7 +2674,11 @@
         "english": "to play football / tennis",
         "example": "Mein Bruder spielt gern Fußball.",
         "exampleEn": "My brother likes to play football.",
-        "level": "A1"
+        "level": "A1",
+        "forms": {
+          "praes": "spielt Fußball",
+          "praet": "spielte Fußball"
+        }
       },
       {
         "type": "v",
@@ -2599,7 +2687,11 @@
         "english": "to play guitar",
         "example": "Er kann sehr gut Gitarre spielen.",
         "exampleEn": "He can play guitar very well.",
-        "level": "A2"
+        "level": "A2",
+        "forms": {
+          "praes": "spielt Gitarre",
+          "praet": "spielte Gitarre"
+        }
       },
       {
         "type": "v",
@@ -2608,7 +2700,11 @@
         "english": "to dance",
         "example": "Sie tanzt jeden Freitag.",
         "exampleEn": "She dances every Friday.",
-        "level": "A1"
+        "level": "A1",
+        "forms": {
+          "praes": "tanzt",
+          "praet": "tanzte"
+        }
       },
       {
         "type": "sonst",
@@ -2711,7 +2807,11 @@
         "english": "to be fun",
         "example": "Dieses Spiel macht wirklich Spaß.",
         "exampleEn": "This game is really fun.",
-        "level": "A2"
+        "level": "A2",
+        "forms": {
+          "praes": "macht Spaß",
+          "praet": "machte Spaß"
+        }
       },
       {
         "type": "v",
@@ -2726,7 +2826,12 @@
           "praeteritum",
           "konjunktiv-2"
         ],
-        "note": "Vergangenheit meist Präteritum: ich konnte"
+        "note": "Vergangenheit meist Präteritum: ich konnte",
+        "forms": {
+          "praes": "kann",
+          "praet": "konnte",
+          "perf": "hat gekonnt"
+        }
       },
       {
         "type": "sonst",
@@ -2801,7 +2906,11 @@
         "english": "to smoke",
         "example": "Er raucht seit Jahren nicht mehr.",
         "exampleEn": "He hasn't smoked in years.",
-        "level": "A2"
+        "level": "A2",
+        "forms": {
+          "praes": "raucht",
+          "praet": "rauchte"
+        }
       },
       {
         "type": "v",
@@ -2812,7 +2921,11 @@
         "exampleEn": "On holiday I'd like to dive in the sea.",
         "note": "das Tauchen = diving (als Hobby)",
         "level": "A2",
-        "source": "KI-Eingang · 2026-10-19"
+        "source": "KI-Eingang · 2026-10-19",
+        "forms": {
+          "praes": "taucht",
+          "praet": "tauchte"
+        }
       }
     ]
   },
@@ -3131,7 +3244,11 @@
           "fragewoerter-kasus",
           "kasus-ueberblick",
           "verben-dativ"
-        ]
+        ],
+        "forms": {
+          "praes": "dankt",
+          "praet": "dankte"
+        }
       },
       {
         "type": "v",
@@ -3145,7 +3262,11 @@
           "fragewoerter-kasus",
           "kasus-ueberblick",
           "verben-dativ"
-        ]
+        ],
+        "forms": {
+          "praes": "fehlt",
+          "praet": "fehlte"
+        }
       },
       {
         "type": "adj",
@@ -3889,7 +4010,11 @@
         "english": "to have breakfast",
         "example": "Wir frühstücken um acht Uhr.",
         "exampleEn": "We have breakfast at eight o'clock.",
-        "level": "A1"
+        "level": "A1",
+        "forms": {
+          "praes": "frühstückt",
+          "praet": "frühstückte"
+        }
       },
       {
         "type": "v",
@@ -3916,7 +4041,11 @@
           "fragewoerter-kasus",
           "kasus-ueberblick",
           "verben-dativ"
-        ]
+        ],
+        "forms": {
+          "praes": "schmeckt",
+          "praet": "schmeckte"
+        }
       },
       {
         "type": "sonst",
@@ -3979,7 +4108,11 @@
           "praeteritum",
           "konjunktiv-2"
         ],
-        "note": "kein eigenes Perfekt – Vergangenheit: ich wollte"
+        "note": "kein eigenes Perfekt – Vergangenheit: ich wollte",
+        "forms": {
+          "praes": "möchte",
+          "praet": "wollte"
+        }
       },
       {
         "type": "v",
@@ -4213,7 +4346,11 @@
         "english": "to pick up",
         "example": "Kannst du mich vom Bahnhof abholen?",
         "exampleEn": "Can you pick me up from the train station?",
-        "level": "A2"
+        "level": "A2",
+        "forms": {
+          "praes": "holt ab",
+          "praet": "holte ab"
+        }
       },
       {
         "type": "v",
@@ -4312,7 +4449,11 @@
         "english": "to shop",
         "example": "Wir gehen am Samstag einkaufen.",
         "exampleEn": "We're going shopping on Saturday.",
-        "level": "A1"
+        "level": "A1",
+        "forms": {
+          "praes": "kauft ein",
+          "praet": "kaufte ein"
+        }
       },
       {
         "type": "v",
@@ -4458,7 +4599,11 @@
         "english": "to tidy up",
         "example": "Ich räume mein Zimmer auf.",
         "exampleEn": "I'm tidying up my room.",
-        "level": "A2"
+        "level": "A2",
+        "forms": {
+          "praes": "räumt auf",
+          "praet": "räumte auf"
+        }
       },
       {
         "type": "v",
@@ -4476,7 +4621,11 @@
         "english": "to buy",
         "example": "Ich kaufe frisches Brot beim Bäcker.",
         "exampleEn": "I buy fresh bread at the bakery.",
-        "level": "A1"
+        "level": "A1",
+        "forms": {
+          "praes": "kauft",
+          "praet": "kaufte"
+        }
       },
       {
         "type": "v",
@@ -4485,7 +4634,11 @@
         "english": "to laugh",
         "example": "Die Kinder lachen viel.",
         "exampleEn": "The children laugh a lot.",
-        "level": "A1"
+        "level": "A1",
+        "forms": {
+          "praes": "lacht",
+          "praet": "lachte"
+        }
       },
       {
         "type": "v",
@@ -4494,7 +4647,11 @@
         "english": "to learn / study",
         "example": "Ich lerne seit einem Jahr Deutsch.",
         "exampleEn": "I've been learning German for a year.",
-        "level": "A1"
+        "level": "A1",
+        "forms": {
+          "praes": "lernt",
+          "praet": "lernte"
+        }
       },
       {
         "type": "v",
@@ -4507,7 +4664,11 @@
         "note": "reden über + Akk. · mit + Dat.",
         "grammar": [
           "verben-praeposition"
-        ]
+        ],
+        "forms": {
+          "praes": "redet",
+          "praet": "redete"
+        }
       },
       {
         "type": "adj",
@@ -4657,7 +4818,11 @@
         "english": "to mean / think",
         "example": "Was meinst du dazu?",
         "exampleEn": "What do you think about that?",
-        "level": "A2"
+        "level": "A2",
+        "forms": {
+          "praes": "meint",
+          "praet": "meinte"
+        }
       },
       {
         "type": "adj",
@@ -4990,7 +5155,11 @@
         "english": "to stop / finish",
         "example": "Die Vorlesung hört um zehn Uhr auf.",
         "exampleEn": "The lecture ends at ten o'clock.",
-        "level": "A2"
+        "level": "A2",
+        "forms": {
+          "praes": "hört auf",
+          "praet": "hörte auf"
+        }
       },
       {
         "type": "v",
@@ -4999,7 +5168,11 @@
         "english": "to celebrate",
         "example": "Wir feiern seinen Geburtstag am Samstag.",
         "exampleEn": "We're celebrating his birthday on Saturday.",
-        "level": "A1"
+        "level": "A1",
+        "forms": {
+          "praes": "feiert",
+          "praet": "feierte"
+        }
       },
       {
         "type": "v",
@@ -5008,7 +5181,11 @@
         "english": "to last",
         "example": "Das Konzert dauert zwei Stunden.",
         "exampleEn": "The concert lasts two hours.",
-        "level": "A2"
+        "level": "A2",
+        "forms": {
+          "praes": "dauert",
+          "praet": "dauerte"
+        }
       },
       {
         "type": "n",
@@ -5056,7 +5233,11 @@
         "english": "to study",
         "example": "Sie studiert Germanistik in Berlin.",
         "exampleEn": "She studies German studies in Berlin.",
-        "level": "A2"
+        "level": "A2",
+        "forms": {
+          "praes": "studiert",
+          "praet": "studierte"
+        }
       },
       {
         "type": "sonst",
@@ -5238,7 +5419,11 @@
         "english": "to turn off",
         "example": "Biegen Sie an der nächsten Straße ab.",
         "exampleEn": "Turn off at the next street.",
-        "level": "A2"
+        "level": "A2",
+        "forms": {
+          "praes": "biegt ab",
+          "praet": "bog ab"
+        }
       },
       {
         "type": "v",
@@ -5247,7 +5432,11 @@
         "english": "to describe",
         "example": "Können Sie mir den Weg beschreiben?",
         "exampleEn": "Can you describe the way to me?",
-        "level": "A2"
+        "level": "A2",
+        "forms": {
+          "praes": "beschreibt",
+          "praet": "beschrieb"
+        }
       },
       {
         "type": "v",
@@ -5256,7 +5445,11 @@
         "english": "to drive on",
         "example": "Fahren Sie geradeaus weiter.",
         "exampleEn": "Continue driving straight ahead.",
-        "level": "A2"
+        "level": "A2",
+        "forms": {
+          "praes": "fährt weiter",
+          "praet": "fuhr weiter"
+        }
       },
       {
         "type": "v",
@@ -5265,7 +5458,11 @@
         "english": "to turn around",
         "example": "Sie müssen hier wenden.",
         "exampleEn": "You have to turn around here.",
-        "level": "A2"
+        "level": "A2",
+        "forms": {
+          "praes": "wendet",
+          "praet": "wendete"
+        }
       },
       {
         "type": "v",
@@ -5274,7 +5471,11 @@
         "english": "to drive back",
         "example": "Wir fahren morgen früh zurück.",
         "exampleEn": "We're driving back early tomorrow.",
-        "level": "A2"
+        "level": "A2",
+        "forms": {
+          "praes": "fährt zurück",
+          "praet": "fuhr zurück"
+        }
       },
       {
         "type": "sonst",
@@ -5506,7 +5707,11 @@
         "english": "to turn on",
         "example": "Kannst du bitte das Licht anmachen?",
         "exampleEn": "Can you please turn on the light?",
-        "level": "A2"
+        "level": "A2",
+        "forms": {
+          "praes": "macht an",
+          "praet": "machte an"
+        }
       },
       {
         "type": "v",
@@ -5519,7 +5724,11 @@
         "note": "fragen nach + Dat. = ask about",
         "grammar": [
           "verben-praeposition"
-        ]
+        ],
+        "forms": {
+          "praes": "fragt",
+          "praet": "fragte"
+        }
       },
       {
         "type": "v",
@@ -5528,7 +5737,11 @@
         "english": "to be correct",
         "example": "Das stimmt nicht ganz.",
         "exampleEn": "That's not quite correct.",
-        "level": "A2"
+        "level": "A2",
+        "forms": {
+          "praes": "stimmt",
+          "praet": "stimmte"
+        }
       },
       {
         "type": "sonst",
@@ -5754,7 +5967,11 @@
         "english": "to rent out",
         "example": "Er vermietet seine Wohnung an Studenten.",
         "exampleEn": "He rents out his apartment to students.",
-        "level": "A2"
+        "level": "A2",
+        "forms": {
+          "praes": "vermietet",
+          "praet": "vermietete"
+        }
       },
       {
         "type": "adj",
@@ -6004,7 +6221,11 @@
         "english": "to pay",
         "example": "Ich bezahle die Miete jeden Monat.",
         "exampleEn": "I pay the rent every month.",
-        "level": "A1"
+        "level": "A1",
+        "forms": {
+          "praes": "bezahlt",
+          "praet": "bezahlte"
+        }
       },
       {
         "type": "v",
@@ -6015,7 +6236,11 @@
         "exampleEn": "I've settled in well in Germany.",
         "note": "neue Wohnung, Stadt, Arbeit: Hast du dich schon eingelebt?",
         "level": "A2",
-        "source": "KI-Eingang · 2026-10-19"
+        "source": "KI-Eingang · 2026-10-19",
+        "forms": {
+          "praes": "lebt sich ein",
+          "praet": "lebte sich ein"
+        }
       },
       {
         "type": "v",
@@ -6029,7 +6254,11 @@
         "source": "Grammatik B1 · Passiv",
         "grammar": [
           "passiv-praesens"
-        ]
+        ],
+        "forms": {
+          "praes": "pflanzt",
+          "praet": "pflanzte"
+        }
       },
       {
         "type": "v",
@@ -6043,7 +6272,11 @@
         "source": "Grammatik B1 · Passiv",
         "grammar": [
           "passiv-praesens"
-        ]
+        ],
+        "forms": {
+          "praes": "gießt",
+          "praet": "goss"
+        }
       }
     ]
   },
@@ -6163,7 +6396,11 @@
         "english": "to let sb know",
         "example": "Bitte sagen Sie mir Bescheid.",
         "exampleEn": "Please let me know.",
-        "level": "A2"
+        "level": "A2",
+        "forms": {
+          "praes": "sagt Bescheid",
+          "praet": "sagte Bescheid"
+        }
       },
       {
         "type": "v",
@@ -6172,7 +6409,11 @@
         "english": "to call for help",
         "example": "Sie musste Hilfe rufen.",
         "exampleEn": "She had to call for help.",
-        "level": "A2"
+        "level": "A2",
+        "forms": {
+          "praes": "ruft Hilfe",
+          "praet": "rief Hilfe"
+        }
       },
       {
         "type": "v",
@@ -6195,7 +6436,11 @@
         "english": "to function / work",
         "example": "Der Fernseher funktioniert nicht mehr.",
         "exampleEn": "The TV doesn't work anymore.",
-        "level": "A2"
+        "level": "A2",
+        "forms": {
+          "praes": "funktioniert",
+          "praet": "funktionierte"
+        }
       },
       {
         "type": "v",
@@ -6208,7 +6453,11 @@
         "note": "sich kümmern um + Akk.",
         "grammar": [
           "verben-praeposition"
-        ]
+        ],
+        "forms": {
+          "praes": "kümmert sich",
+          "praet": "kümmerte sich"
+        }
       },
       {
         "type": "v",
@@ -6217,7 +6466,11 @@
         "english": "to repair",
         "example": "Der Techniker repariert die Dusche.",
         "exampleEn": "The technician is repairing the shower.",
-        "level": "A2"
+        "level": "A2",
+        "forms": {
+          "praes": "repariert",
+          "praet": "reparierte"
+        }
       },
       {
         "type": "v",
@@ -6231,7 +6484,11 @@
           "fragewoerter-kasus",
           "kasus-ueberblick",
           "verben-dativ"
-        ]
+        ],
+        "forms": {
+          "praes": "schickt",
+          "praet": "schickte"
+        }
       },
       {
         "type": "adj",
@@ -6268,7 +6525,11 @@
         "english": "to cancel",
         "example": "Ich muss den Termin leider absagen.",
         "exampleEn": "I unfortunately have to cancel the appointment.",
-        "level": "A2"
+        "level": "A2",
+        "forms": {
+          "praes": "sagt ab",
+          "praet": "sagte ab"
+        }
       },
       {
         "type": "v",
@@ -6277,7 +6538,11 @@
         "english": "to arrange / agree",
         "example": "Wir vereinbaren einen neuen Termin.",
         "exampleEn": "We're arranging a new appointment.",
-        "level": "A2"
+        "level": "A2",
+        "forms": {
+          "praes": "vereinbart",
+          "praet": "vereinbarte"
+        }
       },
       {
         "type": "v",
@@ -6300,7 +6565,11 @@
           "fragewoerter-kasus",
           "kasus-ueberblick",
           "verben-dativ"
-        ]
+        ],
+        "forms": {
+          "praes": "passt",
+          "praet": "passte"
+        }
       },
       {
         "type": "adj",
@@ -6368,7 +6637,11 @@
         "english": "to turn off",
         "example": "Bitte mach das Licht aus.",
         "exampleEn": "Please turn off the light.",
-        "level": "A2"
+        "level": "A2",
+        "forms": {
+          "praes": "macht aus",
+          "praet": "machte aus"
+        }
       },
       {
         "type": "v",
@@ -6380,7 +6653,11 @@
         "level": "A2",
         "grammar": [
           "reflexive-verben"
-        ]
+        ],
+        "forms": {
+          "praes": "lernt kennen",
+          "praet": "lernte kennen"
+        }
       },
       {
         "type": "v",
@@ -6411,7 +6688,11 @@
         "note": "warten auf + Akk.",
         "grammar": [
           "verben-praeposition"
-        ]
+        ],
+        "forms": {
+          "praes": "wartet",
+          "praet": "wartete"
+        }
       },
       {
         "type": "adj",
@@ -6608,7 +6889,11 @@
         "grammar": [
           "reflexive-verben",
           "verben-praeposition"
-        ]
+        ],
+        "forms": {
+          "praes": "meldet an",
+          "praet": "meldete an"
+        }
       },
       {
         "type": "v",
@@ -6617,7 +6902,11 @@
         "english": "to earn (money)",
         "example": "Sie verdient gutes Geld als Ärztin.",
         "exampleEn": "She earns good money as a doctor.",
-        "level": "A2"
+        "level": "A2",
+        "forms": {
+          "praes": "verdient",
+          "praet": "verdiente"
+        }
       },
       {
         "type": "v",
@@ -6645,7 +6934,12 @@
           "modalverben",
           "praeteritum"
         ],
-        "note": "Vergangenheit meist Präteritum: ich wollte"
+        "note": "Vergangenheit meist Präteritum: ich wollte",
+        "forms": {
+          "praes": "will",
+          "praet": "wollte",
+          "perf": "hat gewollt"
+        }
       },
       {
         "type": "sonst",
@@ -6752,7 +7046,11 @@
         "english": "to marry",
         "example": "Sie heiraten im nächsten Sommer.",
         "exampleEn": "They're getting married next summer.",
-        "level": "A2"
+        "level": "A2",
+        "forms": {
+          "praes": "heiratet",
+          "praet": "heiratete"
+        }
       },
       {
         "type": "v",
@@ -6770,7 +7068,11 @@
         "english": "to travel",
         "example": "Wir reisen gern nach Italien.",
         "exampleEn": "We love traveling to Italy.",
-        "level": "A1"
+        "level": "A1",
+        "forms": {
+          "praes": "reist",
+          "praet": "reiste"
+        }
       },
       {
         "type": "v",
@@ -6779,7 +7081,11 @@
         "english": "to clean",
         "example": "Ich putze am Wochenende die Wohnung.",
         "exampleEn": "I clean the apartment on the weekend.",
-        "level": "A1"
+        "level": "A1",
+        "forms": {
+          "praes": "putzt",
+          "praet": "putzte"
+        }
       },
       {
         "type": "sonst",
@@ -7041,7 +7347,11 @@
         "english": "to rain",
         "example": "Es regnet seit dem Morgen.",
         "exampleEn": "It has been raining since morning.",
-        "level": "A1"
+        "level": "A1",
+        "forms": {
+          "praes": "regnet",
+          "praet": "regnete"
+        }
       },
       {
         "type": "v",
@@ -7050,7 +7360,11 @@
         "english": "to snow",
         "example": "Im Dezember schneit es oft.",
         "exampleEn": "It often snows in December.",
-        "level": "A1"
+        "level": "A1",
+        "forms": {
+          "praes": "schneit",
+          "praet": "schneite"
+        }
       },
       {
         "type": "v",
@@ -7244,7 +7558,11 @@
         "english": "to pass (an exam)",
         "example": "Er hat die Prüfung bestanden.",
         "exampleEn": "He passed the exam.",
-        "level": "A2"
+        "level": "A2",
+        "forms": {
+          "praes": "besteht",
+          "praet": "bestand"
+        }
       },
       {
         "type": "v",
@@ -7258,7 +7576,11 @@
           "fragewoerter-kasus",
           "kasus-ueberblick",
           "verben-dativ"
-        ]
+        ],
+        "forms": {
+          "praes": "gratuliert",
+          "praet": "gratulierte"
+        }
       },
       {
         "type": "v",
@@ -7272,7 +7594,11 @@
           "fragewoerter-kasus",
           "kasus-ueberblick",
           "verben-dativ"
-        ]
+        ],
+        "forms": {
+          "praes": "schenkt",
+          "praet": "schenkte"
+        }
       },
       {
         "type": "v",
@@ -7286,7 +7612,11 @@
           "fragewoerter-kasus",
           "kasus-ueberblick",
           "verben-dativ"
-        ]
+        ],
+        "forms": {
+          "praes": "antwortet",
+          "praet": "antwortete"
+        }
       },
       {
         "type": "v",
@@ -7818,7 +8148,11 @@
         "example": "Wir bestellen eine Pizza.",
         "exampleEn": "We're ordering a pizza.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 4"
+        "source": "Menschen A2 · Einheit 4",
+        "forms": {
+          "praes": "bestellt",
+          "praet": "bestellte"
+        }
       },
       {
         "type": "v",
@@ -7831,7 +8165,11 @@
         "source": "Menschen A2 · Einheit 4",
         "grammar": [
           "nebensatz"
-        ]
+        ],
+        "forms": {
+          "praes": "hofft",
+          "praet": "hoffte"
+        }
       },
       {
         "type": "sonst",
@@ -7969,7 +8307,11 @@
         "example": "Am Wochenende wandern wir in den Bergen.",
         "exampleEn": "At the weekend we hike in the mountains.",
         "level": "A1",
-        "source": "Menschen A2 · Einheit 3"
+        "source": "Menschen A2 · Einheit 3",
+        "forms": {
+          "praes": "wandert",
+          "praet": "wanderte"
+        }
       },
       {
         "type": "v",
@@ -7989,7 +8331,11 @@
         "example": "Die Mitarbeiterin berät uns über die beste Reiseroute.",
         "exampleEn": "The staff member advises us on the best route.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 3"
+        "source": "Menschen A2 · Einheit 3",
+        "forms": {
+          "praes": "berät",
+          "praet": "beriet"
+        }
       },
       {
         "type": "v",
@@ -8009,7 +8355,11 @@
         "example": "Wir haben die Reise online gebucht.",
         "exampleEn": "We booked the trip online.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 3"
+        "source": "Menschen A2 · Einheit 3",
+        "forms": {
+          "praes": "bucht",
+          "praet": "buchte"
+        }
       },
       {
         "type": "v",
@@ -8019,7 +8369,11 @@
         "example": "Die Tour endet am Strand.",
         "exampleEn": "The tour ends at the beach.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 3"
+        "source": "Menschen A2 · Einheit 3",
+        "forms": {
+          "praes": "endet",
+          "praet": "endete"
+        }
       },
       {
         "type": "v",
@@ -8029,7 +8383,11 @@
         "example": "Wir haben ein tolles Abenteuer erlebt.",
         "exampleEn": "We experienced a great adventure.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 3"
+        "source": "Menschen A2 · Einheit 3",
+        "forms": {
+          "praes": "erlebt",
+          "praet": "erlebte"
+        }
       },
       {
         "type": "v",
@@ -8039,7 +8397,11 @@
         "example": "Möchtest du bei der Wanderung mitmachen?",
         "exampleEn": "Would you like to join in on the hike?",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 3"
+        "source": "Menschen A2 · Einheit 3",
+        "forms": {
+          "praes": "macht mit",
+          "praet": "machte mit"
+        }
       },
       {
         "type": "n",
@@ -8168,7 +8530,11 @@
         "example": "Wanderurlaub liegt zurzeit im Trend.",
         "exampleEn": "Hiking vacations are trendy right now.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 3"
+        "source": "Menschen A2 · Einheit 3",
+        "forms": {
+          "praes": "liegt in",
+          "praet": "lag in"
+        }
       },
       {
         "type": "sonst",
@@ -8375,7 +8741,11 @@
         "example": "Wir besichtigen morgen das Schloss.",
         "exampleEn": "We're visiting the castle tomorrow.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 5"
+        "source": "Menschen A2 · Einheit 5",
+        "forms": {
+          "praes": "besichtigt",
+          "praet": "besichtigte"
+        }
       },
       {
         "type": "v",
@@ -8389,7 +8759,11 @@
         "note": "sich interessieren für + Akk.",
         "grammar": [
           "verben-praeposition"
-        ]
+        ],
+        "forms": {
+          "praes": "interessiert sich",
+          "praet": "interessierte sich"
+        }
       },
       {
         "type": "v",
@@ -8399,7 +8773,11 @@
         "example": "Ich möchte etwas Geld wechseln.",
         "exampleEn": "I would like to exchange some money.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 5"
+        "source": "Menschen A2 · Einheit 5",
+        "forms": {
+          "praes": "wechselt",
+          "praet": "wechselte"
+        }
       },
       {
         "type": "v",
@@ -8409,7 +8787,11 @@
         "example": "Wo kann ich hier Geld wechseln?",
         "exampleEn": "Where can I exchange money here?",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 5"
+        "source": "Menschen A2 · Einheit 5",
+        "forms": {
+          "praes": "wechselt Geld",
+          "praet": "wechselte Geld"
+        }
       },
       {
         "type": "v",
@@ -8424,7 +8806,11 @@
           "fragewoerter-kasus",
           "kasus-ueberblick",
           "verben-dativ"
-        ]
+        ],
+        "forms": {
+          "praes": "zeigt",
+          "praet": "zeigte"
+        }
       },
       {
         "type": "adj",
@@ -8512,7 +8898,11 @@
         "note": "sich ärgern über + Akk.",
         "grammar": [
           "verben-praeposition"
-        ]
+        ],
+        "forms": {
+          "praes": "ärgert sich",
+          "praet": "ärgerte sich"
+        }
       },
       {
         "type": "v",
@@ -8525,7 +8915,11 @@
         "source": "Menschen A2 · Einheit 5",
         "grammar": [
           "praeteritum"
-        ]
+        ],
+        "forms": {
+          "praes": "ist dafür",
+          "praet": "war dafür"
+        }
       },
       {
         "type": "v",
@@ -8538,7 +8932,11 @@
         "source": "Menschen A2 · Einheit 5",
         "grammar": [
           "praeteritum"
-        ]
+        ],
+        "forms": {
+          "praes": "ist dagegen",
+          "praet": "war dagegen"
+        }
       },
       {
         "type": "v",
@@ -8552,7 +8950,11 @@
         "note": "sich freuen auf (kommt noch) / über (ist da) + Akk.",
         "grammar": [
           "verben-praeposition"
-        ]
+        ],
+        "forms": {
+          "praes": "freut sich",
+          "praet": "freute sich"
+        }
       },
       {
         "type": "adj",
@@ -8765,7 +9167,11 @@
         "example": "Wir haben ein tolles Konzert erlebt.",
         "exampleEn": "We experienced a great concert.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 6"
+        "source": "Menschen A2 · Einheit 6",
+        "forms": {
+          "praes": "erlebt",
+          "praet": "erlebte"
+        }
       },
       {
         "type": "v",
@@ -8785,7 +9191,11 @@
         "example": "Ich zahle den Eintritt für uns beide.",
         "exampleEn": "I'll pay the admission for both of us.",
         "level": "A1",
-        "source": "Menschen A2 · Einheit 6"
+        "source": "Menschen A2 · Einheit 6",
+        "forms": {
+          "praes": "zahlt",
+          "praet": "zahlte"
+        }
       },
       {
         "type": "adj",
@@ -8816,7 +9226,11 @@
         "example": "Wir machen einen Termin für Samstag aus.",
         "exampleEn": "We're arranging an appointment for Saturday.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 6"
+        "source": "Menschen A2 · Einheit 6",
+        "forms": {
+          "praes": "macht aus",
+          "praet": "machte aus"
+        }
       },
       {
         "type": "v",
@@ -8830,7 +9244,11 @@
         "note": "Was hältst du von …? (+ Dat.) = What do you think of …?",
         "grammar": [
           "verben-praeposition"
-        ]
+        ],
+        "forms": {
+          "praes": "hält von",
+          "praet": "hielt von"
+        }
       },
       {
         "type": "sonst",
@@ -8850,7 +9268,11 @@
         "example": "Wir fahren morgen zum Festival hin.",
         "exampleEn": "We're driving to the festival tomorrow.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 6"
+        "source": "Menschen A2 · Einheit 6",
+        "forms": {
+          "praes": "fährt hin",
+          "praet": "fuhr hin"
+        }
       },
       {
         "type": "v",
@@ -8896,7 +9318,11 @@
         "example": "Wir haben uns für Freitag verabredet.",
         "exampleEn": "We arranged to meet on Friday.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 6"
+        "source": "Menschen A2 · Einheit 6",
+        "forms": {
+          "praes": "verabredet sich",
+          "praet": "verabredete sich"
+        }
       },
       {
         "type": "v",
@@ -9131,7 +9557,11 @@
         "example": "Ich möchte fünf Kilo abnehmen.",
         "exampleEn": "I would like to lose five kilos.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 7"
+        "source": "Menschen A2 · Einheit 7",
+        "forms": {
+          "praes": "nimmt ab",
+          "praet": "nahm ab"
+        }
       },
       {
         "type": "v",
@@ -9141,7 +9571,11 @@
         "example": "Nach dem Training ruhe ich mich aus.",
         "exampleEn": "After training I rest.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 7"
+        "source": "Menschen A2 · Einheit 7",
+        "forms": {
+          "praes": "ruht sich aus",
+          "praet": "ruhte sich aus"
+        }
       },
       {
         "type": "v",
@@ -9151,7 +9585,11 @@
         "example": "Wir trainieren dreimal pro Woche.",
         "exampleEn": "We train three times a week.",
         "level": "A1",
-        "source": "Menschen A2 · Einheit 7"
+        "source": "Menschen A2 · Einheit 7",
+        "forms": {
+          "praes": "trainiert",
+          "praet": "trainierte"
+        }
       },
       {
         "type": "v",
@@ -9161,7 +9599,11 @@
         "example": "Der Koffer wiegt zwanzig Kilo.",
         "exampleEn": "The suitcase weighs twenty kilos.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 7"
+        "source": "Menschen A2 · Einheit 7",
+        "forms": {
+          "praes": "wiegt",
+          "praet": "wog"
+        }
       },
       {
         "type": "v",
@@ -9201,7 +9643,11 @@
         "example": "Die Bibliothek öffnet um neun Uhr.",
         "exampleEn": "The library opens at nine o'clock.",
         "level": "A1",
-        "source": "Menschen A2 · Einheit 7"
+        "source": "Menschen A2 · Einheit 7",
+        "forms": {
+          "praes": "öffnet",
+          "praet": "öffnete"
+        }
       },
       {
         "type": "v",
@@ -9527,7 +9973,11 @@
         "exampleEn": "At the weekend I just want to relax.",
         "note": "auch ohne sich: Yoga entspannt mich. = Yoga relaxes me.",
         "level": "A2",
-        "source": "KI-Eingang · 2026-10-19"
+        "source": "KI-Eingang · 2026-10-19",
+        "forms": {
+          "praes": "entspannt sich",
+          "praet": "entspannte sich"
+        }
       }
     ]
   },
@@ -9611,7 +10061,11 @@
         "example": "Sie hat sich beim Sport verletzt.",
         "exampleEn": "She injured herself while doing sports.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 8"
+        "source": "Menschen A2 · Einheit 8",
+        "forms": {
+          "praes": "verletzt sich",
+          "praet": "verletzte sich"
+        }
       },
       {
         "type": "n",
@@ -9720,7 +10174,11 @@
         "example": "Die Wunde blutet noch ein bisschen.",
         "exampleEn": "The wound is still bleeding a little.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 8"
+        "source": "Menschen A2 · Einheit 8",
+        "forms": {
+          "praes": "blutet",
+          "praet": "blutete"
+        }
       },
       {
         "type": "v",
@@ -9730,7 +10188,11 @@
         "example": "Der Arzt hat ihn gestern operiert.",
         "exampleEn": "The doctor operated on him yesterday.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 8"
+        "source": "Menschen A2 · Einheit 8",
+        "forms": {
+          "praes": "operiert",
+          "praet": "operierte"
+        }
       },
       {
         "type": "v",
@@ -9750,7 +10212,11 @@
         "example": "Der Arzt untersucht den Patienten gründlich.",
         "exampleEn": "The doctor examines the patient thoroughly.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 8"
+        "source": "Menschen A2 · Einheit 8",
+        "forms": {
+          "praes": "untersucht",
+          "praet": "untersuchte"
+        }
       },
       {
         "type": "v",
@@ -9760,7 +10226,11 @@
         "example": "Kannst du bitte meine Hand verbinden?",
         "exampleEn": "Can you please bandage my hand?",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 8"
+        "source": "Menschen A2 · Einheit 8",
+        "forms": {
+          "praes": "verbindet",
+          "praet": "verband"
+        }
       },
       {
         "type": "sonst",
@@ -9827,7 +10297,11 @@
         "example": "Das Kind ist im Park hingefallen.",
         "exampleEn": "The child fell down in the park.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 8"
+        "source": "Menschen A2 · Einheit 8",
+        "forms": {
+          "praes": "fällt hin",
+          "praet": "fiel hin"
+        }
       },
       {
         "type": "sonst",
@@ -9850,7 +10324,11 @@
         "source": "Menschen A2 · Einheit 8",
         "grammar": [
           "verben-dativ"
-        ]
+        ],
+        "forms": {
+          "praes": "vertraut",
+          "praet": "vertraute"
+        }
       },
       {
         "type": "sonst",
@@ -10106,7 +10584,11 @@
         "example": "Wir sparen Geld für den Urlaub.",
         "exampleEn": "We're saving money for the vacation.",
         "level": "A1",
-        "source": "Menschen A2 · Einheit 9"
+        "source": "Menschen A2 · Einheit 9",
+        "forms": {
+          "praes": "spart",
+          "praet": "sparte"
+        }
       },
       {
         "type": "v",
@@ -10196,7 +10678,11 @@
           "fragewoerter-kasus",
           "kasus-ueberblick",
           "verben-dativ"
-        ]
+        ],
+        "forms": {
+          "praes": "erklärt",
+          "praet": "erklärte"
+        }
       },
       {
         "type": "adj",
@@ -10354,7 +10840,11 @@
         "example": "Ich möchte einen Tisch für zwei Personen reservieren.",
         "exampleEn": "I'd like to reserve a table for two.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 10"
+        "source": "Menschen A2 · Einheit 10",
+        "forms": {
+          "praes": "reserviert",
+          "praet": "reservierte"
+        }
       },
       {
         "type": "v",
@@ -10364,7 +10854,11 @@
         "example": "Das macht 18,50 Euro. – Hier sind 20 Euro. Stimmt so!",
         "exampleEn": "That's 18.50 euros. – Here's 20 euros. Keep the change!",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 10"
+        "source": "Menschen A2 · Einheit 10",
+        "forms": {
+          "praes": "stimmt",
+          "praet": "stimmte"
+        }
       },
       {
         "type": "v",
@@ -10374,7 +10868,11 @@
         "example": "Wir möchten bitte zusammen zahlen.",
         "exampleEn": "We'd like to pay together, please.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 10"
+        "source": "Menschen A2 · Einheit 10",
+        "forms": {
+          "praes": "zahlt zusammen",
+          "praet": "zahlte zusammen"
+        }
       },
       {
         "type": "v",
@@ -10384,7 +10882,11 @@
         "example": "Können wir bitte getrennt zahlen?",
         "exampleEn": "Can we pay separately, please?",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 10"
+        "source": "Menschen A2 · Einheit 10",
+        "forms": {
+          "praes": "zahlt getrennt",
+          "praet": "zahlte getrennt"
+        }
       },
       {
         "type": "n",
@@ -10528,7 +11030,11 @@
         "example": "Der Kellner hat sofort reagiert.",
         "exampleEn": "The waiter reacted immediately.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 10"
+        "source": "Menschen A2 · Einheit 10",
+        "forms": {
+          "praes": "reagiert",
+          "praet": "reagierte"
+        }
       },
       {
         "type": "sonst",
@@ -10778,7 +11284,11 @@
         "exampleEn": "The company makes bags from old fabrics.",
         "note": "trennbar: Sie stellt … her · der Hersteller = manufacturer",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 11"
+        "source": "Menschen A2 · Einheit 11",
+        "forms": {
+          "praes": "stellt her",
+          "praet": "stellte her"
+        }
       },
       {
         "type": "v",
@@ -10788,7 +11298,11 @@
         "example": "Wer organisiert die Weihnachtsfeier?",
         "exampleEn": "Who is organizing the Christmas party?",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 11"
+        "source": "Menschen A2 · Einheit 11",
+        "forms": {
+          "praes": "organisiert",
+          "praet": "organisierte"
+        }
       },
       {
         "type": "v",
@@ -10799,7 +11313,11 @@
         "exampleEn": "We only use old materials.",
         "note": "≈ benutzen",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 11"
+        "source": "Menschen A2 · Einheit 11",
+        "forms": {
+          "praes": "verwendet",
+          "praet": "verwendete"
+        }
       },
       {
         "type": "n",
@@ -10868,7 +11386,11 @@
         "source": "Menschen A2 · Einheit 11",
         "grammar": [
           "verben-praeposition"
-        ]
+        ],
+        "forms": {
+          "praes": "bedankt sich",
+          "praet": "bedankte sich"
+        }
       },
       {
         "type": "v",
@@ -10879,7 +11401,11 @@
         "exampleEn": "I wish you all the best for your birthday!",
         "note": "jemandem (Dat.) etwas (Akk.) wünschen",
         "level": "A1",
-        "source": "Menschen A2 · Einheit 11"
+        "source": "Menschen A2 · Einheit 11",
+        "forms": {
+          "praes": "wünscht",
+          "praet": "wünschte"
+        }
       },
       {
         "type": "n",
@@ -10976,7 +11502,11 @@
         "source": "Menschen A2 · Einheit 11",
         "grammar": [
           "verben-praeposition"
-        ]
+        ],
+        "forms": {
+          "praes": "erinnert sich",
+          "praet": "erinnerte sich"
+        }
       },
       {
         "type": "v",
@@ -10987,7 +11517,11 @@
         "exampleEn": "I don't feel so good today.",
         "note": "Ich fühle mich stark / müde / wohl.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 11"
+        "source": "Menschen A2 · Einheit 11",
+        "forms": {
+          "praes": "fühlt sich",
+          "praet": "fühlte sich"
+        }
       },
       {
         "type": "v",
@@ -11562,7 +12096,11 @@
         "exampleEn": "Pick a dish!",
         "note": "trennbar: Ich suche mir … aus",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 12"
+        "source": "Menschen A2 · Einheit 12",
+        "forms": {
+          "praes": "sucht aus",
+          "praet": "suchte aus"
+        }
       },
       {
         "type": "v",
@@ -11573,7 +12111,11 @@
         "exampleEn": "I'll just quickly go and get some rolls.",
         "note": "abholen = to pick up (a person)",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 12"
+        "source": "Menschen A2 · Einheit 12",
+        "forms": {
+          "praes": "holt",
+          "praet": "holte"
+        }
       },
       {
         "type": "v",
@@ -11584,7 +12126,11 @@
         "exampleEn": "We want to surprise her with a cake.",
         "note": "nicht trennbar · die Überraschung = surprise",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 12"
+        "source": "Menschen A2 · Einheit 12",
+        "forms": {
+          "praes": "überrascht",
+          "praet": "überraschte"
+        }
       },
       {
         "type": "v",
@@ -11595,7 +12141,11 @@
         "exampleEn": "Germany consumes a lot of water.",
         "note": "der Verbraucher = consumer",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 12"
+        "source": "Menschen A2 · Einheit 12",
+        "forms": {
+          "praes": "verbraucht",
+          "praet": "verbrauchte"
+        }
       },
       {
         "type": "v",
@@ -11606,7 +12156,11 @@
         "exampleEn": "I'm preparing for the exam.",
         "note": "sich vorbereiten auf + Akk. · etwas vorbereiten = to prepare sth.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 12"
+        "source": "Menschen A2 · Einheit 12",
+        "forms": {
+          "praes": "bereitet sich vor",
+          "praet": "bereitete sich vor"
+        }
       },
       {
         "type": "v",
@@ -11617,7 +12171,11 @@
         "exampleEn": "I'm surprised at the price.",
         "note": "sich wundern über + Akk.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 12"
+        "source": "Menschen A2 · Einheit 12",
+        "forms": {
+          "praes": "wundert sich",
+          "praet": "wunderte sich"
+        }
       },
       {
         "type": "adj",
@@ -11824,7 +12382,11 @@
         "exampleEn": "I look at the pictures in the book.",
         "note": "sich (Dat.) etwas anschauen ≈ ansehen",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 13"
+        "source": "Menschen A2 · Einheit 13",
+        "forms": {
+          "praes": "schaut an",
+          "praet": "schaute an"
+        }
       },
       {
         "type": "v",
@@ -11835,7 +12397,11 @@
         "exampleEn": "I always write down new words.",
         "note": "schrieb auf · hat aufgeschrieben",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 13"
+        "source": "Menschen A2 · Einheit 13",
+        "forms": {
+          "praes": "schreibt auf",
+          "praet": "schrieb auf"
+        }
       },
       {
         "type": "v",
@@ -11846,7 +12412,11 @@
         "exampleEn": "I like to move around while I'm learning.",
         "note": "sich bewegen = to move (yourself) · etwas bewegen = to move sth.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 13"
+        "source": "Menschen A2 · Einheit 13",
+        "forms": {
+          "praes": "bewegt sich",
+          "praet": "bewegte sich"
+        }
       },
       {
         "type": "v",
@@ -11857,7 +12427,11 @@
         "exampleEn": "The teacher corrects our mistakes.",
         "note": "-ieren-Verben: Perfekt ohne ge-",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 13"
+        "source": "Menschen A2 · Einheit 13",
+        "forms": {
+          "praes": "korrigiert",
+          "praet": "korrigierte"
+        }
       },
       {
         "type": "v",
@@ -11868,7 +12442,11 @@
         "exampleEn": "Can you solve this exercise?",
         "note": "ein Problem / eine Aufgabe lösen",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 13"
+        "source": "Menschen A2 · Einheit 13",
+        "forms": {
+          "praes": "löst",
+          "praet": "löste"
+        }
       },
       {
         "type": "v",
@@ -11879,7 +12457,11 @@
         "exampleEn": "I can remember new words well.",
         "note": "sich (Dat.) etwas merken: Ich merke mir …",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 13"
+        "source": "Menschen A2 · Einheit 13",
+        "forms": {
+          "praes": "merkt sich",
+          "praet": "merkte sich"
+        }
       },
       {
         "type": "v",
@@ -11890,7 +12472,11 @@
         "exampleEn": "Can you translate the sentence into English?",
         "note": "nicht trennbar: ich übersetze",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 13"
+        "source": "Menschen A2 · Einheit 13",
+        "forms": {
+          "praes": "übersetzt",
+          "praet": "übersetzte"
+        }
       },
       {
         "type": "v",
@@ -11901,7 +12487,11 @@
         "exampleEn": "I revise the words every evening.",
         "note": "nicht trennbar: ich wiederhole",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 13"
+        "source": "Menschen A2 · Einheit 13",
+        "forms": {
+          "praes": "wiederholt",
+          "praet": "wiederholte"
+        }
       },
       {
         "type": "v",
@@ -11911,7 +12501,11 @@
         "example": "Wir planen eine Reise nach Berlin.",
         "exampleEn": "We're planning a trip to Berlin.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 13"
+        "source": "Menschen A2 · Einheit 13",
+        "forms": {
+          "praes": "plant",
+          "praet": "plante"
+        }
       },
       {
         "type": "v",
@@ -11925,7 +12519,11 @@
         "grammar": [
           "verben-praeposition"
         ],
-        "source": "Menschen A2 · Einheit 13"
+        "source": "Menschen A2 · Einheit 13",
+        "forms": {
+          "praes": "verliebt sich",
+          "praet": "verliebte sich"
+        }
       },
       {
         "type": "v",
@@ -11936,7 +12534,11 @@
         "exampleEn": "In summer we're going away for three weeks.",
         "note": "Perfekt mit sein: Sie ist verreist. = She is away.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 13"
+        "source": "Menschen A2 · Einheit 13",
+        "forms": {
+          "praes": "verreist",
+          "praet": "verreiste"
+        }
       },
       {
         "type": "adj",
@@ -12033,7 +12635,11 @@
         "exampleEn": "I practise ten new words every day.",
         "note": "die Übung = exercise (✏️ Üben in der App)",
         "level": "A1",
-        "source": "KI-Eingang · 2026-10-19"
+        "source": "KI-Eingang · 2026-10-19",
+        "forms": {
+          "praes": "übt",
+          "praet": "übte"
+        }
       },
       {
         "type": "n",
@@ -12174,7 +12780,11 @@
         "source": "Menschen A2 · Einheit 14",
         "grammar": [
           "passiv-praesens"
-        ]
+        ],
+        "forms": {
+          "praes": "packt ein",
+          "praet": "packte ein"
+        }
       },
       {
         "type": "v",
@@ -12187,7 +12797,11 @@
         "source": "Menschen A2 · Einheit 14",
         "grammar": [
           "passiv-praesens"
-        ]
+        ],
+        "forms": {
+          "praes": "packt",
+          "praet": "packte"
+        }
       },
       {
         "type": "v",
@@ -12201,7 +12815,11 @@
         "source": "Menschen A2 · Einheit 14",
         "grammar": [
           "passiv-praesens"
-        ]
+        ],
+        "forms": {
+          "praes": "transportiert",
+          "praet": "transportierte"
+        }
       },
       {
         "type": "v",
@@ -12305,7 +12923,11 @@
         "exampleEn": "Tick the correct answer.",
         "note": "trennbar: ich kreuze … an",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 14"
+        "source": "Menschen A2 · Einheit 14",
+        "forms": {
+          "praes": "kreuzt an",
+          "praet": "kreuzte an"
+        }
       },
       {
         "type": "v",
@@ -12315,7 +12937,11 @@
         "example": "Darf ich kurz dein Handy benutzen?",
         "exampleEn": "May I use your mobile for a moment?",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 14"
+        "source": "Menschen A2 · Einheit 14",
+        "forms": {
+          "praes": "benutzt",
+          "praet": "benutzte"
+        }
       },
       {
         "type": "v",
@@ -12325,7 +12951,11 @@
         "example": "Ergänzen Sie die Sätze.",
         "exampleEn": "Complete the sentences.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 14"
+        "source": "Menschen A2 · Einheit 14",
+        "forms": {
+          "praes": "ergänzt",
+          "praet": "ergänzte"
+        }
       },
       {
         "type": "v",
@@ -12336,7 +12966,11 @@
         "exampleEn": "Can you still use this old bag?",
         "note": "gebrauchen = benutzen · brauchen = to need · die Gebrauchsanweisung",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 14"
+        "source": "Menschen A2 · Einheit 14",
+        "forms": {
+          "praes": "gebraucht",
+          "praet": "gebrauchte"
+        }
       },
       {
         "type": "adj",
@@ -12401,7 +13035,11 @@
         "example": "Der Briefträger verteilt jeden Morgen die Post.",
         "exampleEn": "The postman delivers the post every morning.",
         "level": "A2",
-        "source": "KI-Eingang · 2026-10-19"
+        "source": "KI-Eingang · 2026-10-19",
+        "forms": {
+          "praes": "verteilt",
+          "praet": "verteilte"
+        }
       },
       {
         "type": "n",
@@ -12423,7 +13061,11 @@
         "example": "Kannst du bitte die Briefmarke aufkleben?",
         "exampleEn": "Can you stick the stamp on, please?",
         "level": "A2",
-        "source": "KI-Eingang · 2026-10-19"
+        "source": "KI-Eingang · 2026-10-19",
+        "forms": {
+          "praes": "klebt auf",
+          "praet": "klebte auf"
+        }
       },
       {
         "type": "v",
@@ -12434,7 +13076,11 @@
         "exampleEn": "We're putting labels on the parcel.",
         "note": "etwas mit etwas bekleben · aufkleben = etwas auf etwas kleben",
         "level": "A2",
-        "source": "KI-Eingang · 2026-10-19"
+        "source": "KI-Eingang · 2026-10-19",
+        "forms": {
+          "praes": "beklebt",
+          "praet": "beklebte"
+        }
       },
       {
         "type": "v",
@@ -12444,7 +13090,11 @@
         "example": "Ich muss das Paket heute noch abschicken.",
         "exampleEn": "I have to send the parcel off today.",
         "level": "A2",
-        "source": "KI-Eingang · 2026-10-19"
+        "source": "KI-Eingang · 2026-10-19",
+        "forms": {
+          "praes": "schickt ab",
+          "praet": "schickte ab"
+        }
       },
       {
         "type": "v",
@@ -12454,7 +13104,11 @@
         "example": "Du musst das Paket gut verschließen.",
         "exampleEn": "You have to seal the parcel well.",
         "level": "A2",
-        "source": "KI-Eingang · 2026-10-19"
+        "source": "KI-Eingang · 2026-10-19",
+        "forms": {
+          "praes": "verschließt",
+          "praet": "verschloss"
+        }
       },
       {
         "type": "v",
@@ -12468,7 +13122,11 @@
         "source": "KI-Eingang · 2026-10-19",
         "grammar": [
           "wechselpraepositionen"
-        ]
+        ],
+        "forms": {
+          "praes": "legt",
+          "praet": "legte"
+        }
       }
     ]
   },
@@ -12490,7 +13148,11 @@
         "source": "Grammatik aktiv",
         "grammar": [
           "verben-dativ"
-        ]
+        ],
+        "forms": {
+          "praes": "liefert",
+          "praet": "lieferte"
+        }
       },
       {
         "type": "v",
@@ -12503,7 +13165,11 @@
         "source": "Grammatik aktiv",
         "grammar": [
           "verben-dativ"
-        ]
+        ],
+        "forms": {
+          "praes": "renoviert",
+          "praet": "renovierte"
+        }
       },
       {
         "type": "v",
@@ -12516,7 +13182,11 @@
         "source": "Grammatik aktiv",
         "grammar": [
           "verben-dativ"
-        ]
+        ],
+        "forms": {
+          "praes": "serviert",
+          "praet": "servierte"
+        }
       },
       {
         "type": "v",
@@ -12530,7 +13200,11 @@
         "grammar": [
           "verben-dativ"
         ],
-        "note": "↔ kaufen"
+        "note": "↔ kaufen",
+        "forms": {
+          "praes": "verkauft",
+          "praet": "verkaufte"
+        }
       },
       {
         "type": "v",
@@ -12544,7 +13218,11 @@
         "grammar": [
           "verben-dativ"
         ],
-        "note": "trennbar, mit Dativ: Ich höre dir zu."
+        "note": "trennbar, mit Dativ: Ich höre dir zu.",
+        "forms": {
+          "praes": "hört zu",
+          "praet": "hörte zu"
+        }
       }
     ]
   },
@@ -12594,7 +13272,11 @@
         "level": "A2",
         "grammar": [
           "praeteritum"
-        ]
+        ],
+        "forms": {
+          "praes": "reitet",
+          "praet": "ritt"
+        }
       },
       {
         "type": "sonst",
@@ -12744,7 +13426,11 @@
         "example": "Ich dusche mich jeden Morgen.",
         "exampleEn": "I shower every morning.",
         "note": "mit oder ohne sich: Ich dusche. = Ich dusche mich.",
-        "level": "A2"
+        "level": "A2",
+        "forms": {
+          "praes": "duscht sich",
+          "praet": "duschte sich"
+        }
       },
       {
         "type": "v",
@@ -12754,7 +13440,11 @@
         "example": "Mein Vater rasiert sich jeden Morgen.",
         "exampleEn": "My father shaves every morning.",
         "note": "jemanden rasieren: Der Friseur rasiert ihn.",
-        "level": "A2"
+        "level": "A2",
+        "forms": {
+          "praes": "rasiert sich",
+          "praet": "rasierte sich"
+        }
       },
       {
         "type": "v",
@@ -12764,7 +13454,11 @@
         "example": "Sie schminkt sich vor der Party.",
         "exampleEn": "She puts on make-up before the party.",
         "note": "↔ sich abschminken = to take off make-up",
-        "level": "A2"
+        "level": "A2",
+        "forms": {
+          "praes": "schminkt sich",
+          "praet": "schminkte sich"
+        }
       },
       {
         "type": "v",
@@ -12787,7 +13481,11 @@
         "level": "A2",
         "grammar": [
           "verben-praeposition"
-        ]
+        ],
+        "forms": {
+          "praes": "beschwert sich",
+          "praet": "beschwerte sich"
+        }
       },
       {
         "type": "v",
@@ -12797,7 +13495,11 @@
         "example": "Die beiden küssen sich zum Abschied.",
         "exampleEn": "The two of them kiss goodbye.",
         "note": "reziprok: sich = einander · jemanden küssen: Er küsst sie.",
-        "level": "A2"
+        "level": "A2",
+        "forms": {
+          "praes": "küsst",
+          "praet": "küsste"
+        }
       },
       {
         "type": "n",
@@ -12821,7 +13523,11 @@
         "level": "A2",
         "grammar": [
           "verben-praeposition"
-        ]
+        ],
+        "forms": {
+          "praes": "gewöhnt sich",
+          "praet": "gewöhnte sich"
+        }
       },
       {
         "type": "adj",
@@ -12866,7 +13572,11 @@
         "example": "Ich belege das Brot mit Käse und Tomaten.",
         "exampleEn": "I put cheese and tomatoes on the bread.",
         "note": "einen Kurs belegen = to take a course · Der Platz ist belegt. = The seat is taken.",
-        "level": "A2"
+        "level": "A2",
+        "forms": {
+          "praes": "belegt",
+          "praet": "belegte"
+        }
       },
       {
         "type": "n",

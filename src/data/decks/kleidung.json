@@ -190,7 +190,11 @@
     "english": "to have on / be wearing",
     "example": "Sie hat ein rotes Kleid an.",
     "exampleEn": "She has a red dress on.",
-    "level": "A1"
+    "level": "A1",
+    "forms": {
+      "praes": "hat an",
+      "praet": "hatte an"
+    }
   },
   {
     "type": "v",
@@ -208,7 +212,11 @@
     "english": "to tell / narrate",
     "example": "Er hat eine Geschichte erzählt.",
     "exampleEn": "He told a story.",
-    "level": "A2"
+    "level": "A2",
+    "forms": {
+      "praes": "erzählt",
+      "praet": "erzählte"
+    }
   },
   {
     "type": "adj",

@@ -79,7 +79,11 @@
     "english": "to dry (the dishes)",
     "example": "Er hat das Geschirr abgetrocknet.",
     "exampleEn": "He dried the dishes.",
-    "level": "A2"
+    "level": "A2",
+    "forms": {
+      "praes": "trocknet ab",
+      "praet": "trocknete ab"
+    }
   },
   {
     "type": "v",
@@ -88,7 +92,11 @@
     "english": "to wash up",
     "example": "Ich habe abgewaschen.",
     "exampleEn": "I washed up.",
-    "level": "A2"
+    "level": "A2",
+    "forms": {
+      "praes": "wäscht ab",
+      "praet": "wusch ab"
+    }
   },
   {
     "type": "v",
@@ -97,7 +105,11 @@
     "english": "to rinse / wash",
     "example": "Sie spült das Geschirr.",
     "exampleEn": "She rinses the dishes.",
-    "level": "A2"
+    "level": "A2",
+    "forms": {
+      "praes": "spült",
+      "praet": "spülte"
+    }
   },
   {
     "type": "v",

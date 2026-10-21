@@ -8,6 +8,7 @@ import { buildFormsRound } from "./buildForms";
 
 // 🔁 Formen: drill the forms the cards show.
 // - Perfekt: pick hat / ist, type the Partizip II (gehen → ist gegangen)
+// - Präsens / Präteritum: type the er/sie/es form (fahren → fährt / fuhr)
 // - Plural: type the plural (der Stuhl → die Stühle)
 // Each answer is a real review of the card (onGrade), like the Artikel
 // trainer. The round is built when the trainer opens; the parent gives it
@@ -23,7 +24,15 @@ const inputStyle = {
   color: "#f2f5f8", fontSize: 16, fontFamily: "inherit", boxSizing: "border-box",
 };
 
-const answerText = (item, kind) => (kind === "perfekt" ? `${item.aux}${item.reflexive ? " sich" : ""} ${item.partizip}` : `die ${item.plural}`);
+const answerText = (item, kind) => (kind === "perfekt" ? `${item.aux}${item.reflexive ? " sich" : ""} ${item.partizip}`
+  : kind === "plural" ? `die ${item.plural}` : `er ${item.form}`);
+// per kind: the prompt, what is typed, an example, the empty-pool message
+const KIND_TEXT = {
+  perfekt: { prompt: "Perfekt von", field: "Partizip II", placeholder: "Partizip II, z. B. gegangen", empty: "Keine Verben mit Perfekt in dieser Auswahl." },
+  praesens: { prompt: "er/sie/es … (Präsens) von", field: "Präsens", placeholder: "z. B. fährt ab", empty: "Keine Verben mit Präsens-Form in dieser Auswahl." },
+  praeteritum: { prompt: "er/sie/es … (Präteritum) von", field: "Präteritum", placeholder: "z. B. fuhr ab", empty: "Keine Verben mit Präteritum in dieser Auswahl." },
+  plural: { prompt: "Plural von", field: "Plural", placeholder: "Plural …", empty: "Keine Nomen mit Plural in dieser Auswahl." },
+};
 
 function FormsTrainer({ kind, pool, progress, onGrade }) {
   const [round, setRound] = useState(() => buildFormsRound(pool, progress));
@@ -50,7 +59,7 @@ function FormsTrainer({ kind, pool, progress, onGrade }) {
   if (!pool.length) {
     return (
       <div role="status" style={{ textAlign: "center", padding: "40px 16px", color: "#7d8d9c", fontSize: 14 }}>
-        {kind === "perfekt" ? "Keine Verben mit Perfekt in dieser Auswahl." : "Keine Nomen mit Plural in dieser Auswahl."}
+        {KIND_TEXT[kind].empty}
         <div style={{ marginTop: 6, fontSize: 13 }}>Wähle oben andere Themen.</div>
       </div>
     );
@@ -83,15 +92,19 @@ function FormsTrainer({ kind, pool, progress, onGrade }) {
   }
 
   const isPerfekt = kind === "perfekt";
+  const isPlural = kind === "plural";
+  const text = KIND_TEXT[kind];
   const ready = input.trim() && (!isPerfekt || aux);
   const check = () => {
     if (!ready || checked) return;
-    const wordOk = validateGermanWord(input, isPerfekt ? item.partizip : item.plural);
+    const wordOk = isPerfekt ? validateGermanWord(input, item.partizip)
+      : isPlural ? validateGermanWord(input, item.plural)
+      : item.answers.some((a) => validateGermanWord(input, a));
     const auxOk = !isPerfekt || aux === item.aux;
     const correct = wordOk && auxOk;
     setChecked({ correct, auxOk, wordOk });
     if (correct) setRight((r) => r + 1);
-    else setMistakes((m) => [...m, { item, given: isPerfekt ? `${aux}${item.reflexive ? " sich" : ""} ${input.trim()}` : `die ${input.trim()}` }]);
+    else setMistakes((m) => [...m, { item, given: isPerfekt ? `${aux}${item.reflexive ? " sich" : ""} ${input.trim()}` : isPlural ? `die ${input.trim()}` : `er ${input.trim()}` }]);
     onGrade(idOf(item.deck, item.front), correct);
   };
   const next = () => { setIdx(idx + 1); setAux(null); setInput(""); setChecked(null); };
@@ -101,7 +114,7 @@ function FormsTrainer({ kind, pool, progress, onGrade }) {
   const accent = item.type === "n" ? GENDER_COLORS[item.gender] || "#7d8d9c" : "#5fa85f";
   const verdictColor = checked ? (checked.correct ? "#5fa85f" : "#e07b6f") : null;
   const why = checked && !checked.correct
-    ? [!checked.auxOk && "Hilfsverb", !checked.wordOk && (isPerfekt ? "Partizip" : "Plural")].filter(Boolean).join(" + ")
+    ? [!checked.auxOk && "Hilfsverb", !checked.wordOk && (isPerfekt ? "Partizip" : text.field)].filter(Boolean).join(" + ")
     : "";
 
   return (
@@ -112,7 +125,7 @@ function FormsTrainer({ kind, pool, progress, onGrade }) {
       </div>
       <div style={{ ...faceStyle(verdictColor || accent), position: "relative", inset: "auto", minHeight: 260, gap: 6 }}>
         {meta && <span style={badgeStyle(accent)}>{meta.icon} {meta.label}</span>}
-        <div style={{ fontSize: 12, color: "#7d8d9c", marginTop: 18 }}>{isPerfekt ? "Perfekt von" : "Plural von"}</div>
+        <div style={{ fontSize: 12, color: "#7d8d9c", marginTop: 18 }}>{text.prompt}</div>
         <div style={{ fontSize: 30, fontWeight: 800, color: "#f2f5f8", textAlign: "center", lineHeight: 1.2 }}>{item.front}</div>
         <div style={{ fontSize: 13, color: "#9ab0c2", textAlign: "center", marginBottom: 10 }}>{item.english}</div>
 
@@ -124,16 +137,17 @@ function FormsTrainer({ kind, pool, progress, onGrade }) {
           </div>
         )}
         <div style={{ display: "flex", gap: 8, alignItems: "center", width: "100%" }}>
-          {!isPerfekt && <span style={{ fontSize: 16, fontWeight: 700, color: GENDER_COLORS.die }}>die</span>}
+          {isPlural && <span style={{ fontSize: 16, fontWeight: 700, color: GENDER_COLORS.die }}>die</span>}
+          {!isPerfekt && !isPlural && <span style={{ fontSize: 16, fontWeight: 700, color: "#9ab0c2" }}>er</span>}
           <input
             ref={inputRef}
             value={input}
             disabled={Boolean(checked)}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={onKey}
-            aria-label={isPerfekt ? "Partizip II" : "Plural"}
-            placeholder={isPerfekt ? "Partizip II, z. B. gegangen" : "Plural …"}
-            autoCapitalize={isPerfekt ? "none" : "sentences"}
+            aria-label={text.field}
+            placeholder={text.placeholder}
+            autoCapitalize={isPlural ? "sentences" : "none"}
             autoComplete="off"
             spellCheck={false}
             style={inputStyle}
@@ -169,10 +183,12 @@ const itemShape = PropTypes.shape({
   reflexive: PropTypes.bool,
   partizip: PropTypes.string,
   plural: PropTypes.string,
+  form: PropTypes.string,
+  answers: PropTypes.arrayOf(PropTypes.string),
 });
 
 FormsTrainer.propTypes = {
-  kind: PropTypes.oneOf(["perfekt", "plural"]).isRequired,
+  kind: PropTypes.oneOf(["perfekt", "praesens", "praeteritum", "plural"]).isRequired,
   pool: PropTypes.arrayOf(itemShape).isRequired,
   progress: PropTypes.object.isRequired,
   onGrade: PropTypes.func.isRequired,

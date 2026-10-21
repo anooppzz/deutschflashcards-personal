@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import { genderColor, TYPE_META } from "../constants";
-import { DECK_META } from "../data";
+import { DECK_META, VERB_FORMS } from "../data";
 import { statusOfFsrs, dueLabel, submitCorrection, getCachedAiExample, translateText } from "../engine";
 import { speak } from "../engine/speech";
 import { ProgressCtx } from "../context/ProgressCtx";
@@ -15,6 +15,9 @@ function FlipCard({ front, sub, back, english, example, exampleEn, accent, badge
   const { openGrammar, linksFor } = useContext(GrammarNavCtx);
   const entry = cardId ? progress[cardId] : undefined;
   const status = statusOfFsrs(entry);
+  // a verb's forms (data/index.js VERB_FORMS): shown on the back only, so
+  // the front asks for them
+  const forms = cardId ? VERB_FORMS.get(cardId) : undefined;
   // a card from two books shows both ("Menschen A2 · Einheit 7 · Grammatik aktiv")
   const sourceText = sources && sources.length ? sources.join(" · ") : source;
   const [flipped, setFlipped] = useState(false);
@@ -101,16 +104,17 @@ function FlipCard({ front, sub, back, english, example, exampleEn, accent, badge
     >
       <div
         style={{
-          position: "relative",
+          // both faces share one grid cell, so the card is as tall as its
+          // fuller side - a long back grows the card instead of spilling over
+          display: "grid",
           width: "100%",
-          minHeight: 300,
           transformStyle: "preserve-3d",
           transition: "transform .5s cubic-bezier(.4,.2,.2,1)",
           transform: flipped ? "rotateY(180deg)" : "none",
         }}
       >
         {/* FRONT */}
-        <div style={faceStyle(computedAccent)}>
+        <div style={{ ...faceStyle(computedAccent), ...stacked }}>
           {computedBadge && <span style={badgeStyle(computedAccent)}>{computedBadge}</span>}
           {level && (
             <span
@@ -127,7 +131,7 @@ function FlipCard({ front, sub, back, english, example, exampleEn, accent, badge
             {front}
             <button onClick={stop(() => speak(front, () => setAudioErr(true)))} title="Aussprechen" aria-label={`Aussprechen: ${front}`} style={{ ...iconBtn, fontSize: 18 }}>🔊</button>
           </div>
-          {sub && <div style={{ marginTop: 12, fontSize: 14, color: computedAccent, fontWeight: 600, textAlign: "center" }}>{sub}</div>}
+          {sub && !forms && <div style={{ marginTop: 12, fontSize: 14, color: computedAccent, fontWeight: 600, textAlign: "center" }}>{sub}</div>}
           {audioErr && <div style={{ marginTop: 10, fontSize: 11, color: "#c6925a", textAlign: "center" }}>🔇 Audio in dieser Umgebung blockiert</div>}
           {entry && (
             <div
@@ -147,7 +151,7 @@ function FlipCard({ front, sub, back, english, example, exampleEn, accent, badge
         </div>
         {/* BACK */}
         {/* bottom padding keeps long backs clear of the ✓ Gekonnt / ↻ Üben buttons */}
-        <div style={{ ...faceStyle(computedAccent), transform: "rotateY(180deg)", paddingBottom: cardId && showMarks ? 62 : 24 }}>
+        <div style={{ ...faceStyle(computedAccent), ...stacked, transform: "rotateY(180deg)", paddingTop: 30, paddingBottom: cardId && showMarks ? 62 : 24 }}>
           <div dir="auto" style={{ fontSize: 24, fontWeight: 700, color: "#f2f5f8", textAlign: "center" }}>{backText}</div>
           {lang !== "en" && cardId && (
             correcting ? (
@@ -170,6 +174,18 @@ function FlipCard({ front, sub, back, english, example, exampleEn, accent, badge
                 style={{ marginTop: 4, background: "none", border: "none", color: "#5a6b78", fontSize: 11, cursor: "pointer", textDecoration: "underline" }}
               >✗ falsch?</button>
             )
+          )}
+          {forms && (
+            <table aria-label="Verbformen" style={{ marginTop: 10, borderCollapse: "collapse", fontSize: 13, lineHeight: 1.45 }}>
+              <tbody>
+                {[["er/sie/es", forms.praes], ["Präteritum", forms.praet], ["Perfekt", forms.perf]].filter(([, v]) => v).map(([k, v]) => (
+                  <tr key={k}>
+                    <th scope="row" style={{ padding: "0 10px 0 0", textAlign: "right", fontWeight: 500, color: "#7d8d9c", whiteSpace: "nowrap" }}>{k}</th>
+                    <td style={{ padding: 0, textAlign: "left", fontWeight: 600, color: computedAccent }}>{v}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           )}
           {opposite && (
             <div style={{ marginTop: 10, fontSize: 12, fontWeight: 600, color: computedAccent, border: `1px solid ${computedAccent}`, borderRadius: 8, padding: "3px 10px" }}>
@@ -234,6 +250,9 @@ function FlipCard({ front, sub, back, english, example, exampleEn, accent, badge
     </div>
   );
 }
+
+// a face in the card's one grid cell (instead of absolute on top of a fixed height)
+const stacked = { position: "relative", inset: "auto", gridArea: "1 / 1", minHeight: 300, boxSizing: "border-box" };
 
 const grammarChipStyle = {
   marginTop: 10, fontSize: 12, fontWeight: 600, color: "#8fb8d8", background: "transparent",

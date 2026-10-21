@@ -34,7 +34,7 @@ import {
 import {
   IRREGULAR_VERBS, INSEPARABLE_VERBS, HAUSHALT, VERKEHR, KLEIDUNG,
   EXTRA_TOPICS, DECK_META, GRAMMAR_TOPICS,
-  DECK_SOURCE, EXTRA_BY_KEY, ALL_CARDS, WORD_LISTS, LIST_BY_KEY, sourcesOf, GRAMMAR_EXERCISES, READING_TEXTS, DTZ_SETS, DTZ_WRITING, DTZ_SPEAKING, CHUNK_SETS,
+  DECK_SOURCE, EXTRA_BY_KEY, ALL_CARDS, WORD_LISTS, VERB_FORMS, LIST_BY_KEY, sourcesOf, GRAMMAR_EXERCISES, READING_TEXTS, DTZ_SETS, DTZ_WRITING, DTZ_SPEAKING, CHUNK_SETS,
 } from "./data";
 import {
   storage,
@@ -72,7 +72,7 @@ import {
   ReverseTrainer, ReverseSummary,
   ClozeTrainer, ClozeSummary, buildClozePool, buildClozeRound, saveClozeSizePref, resolveClozeRoundSize, isClozeCorrect,
   WordSearchTrainer, WordSearchSummary, buildWordSearchPool, buildWordSearchRound, resolveWordSearchSize,
-  GrammarView, SearchResults, SearchOverlay, ReviewSession, FormsTrainer, buildFormsPool, MistakeBook,
+  GrammarView, SearchResults, SearchOverlay, ReviewSession, FormsTrainer, buildFormsPool, FORM_KINDS, MistakeBook,
   SatzbauTrainer, buildSatzbauPool, ReadingView, DtzTrainer, ChunkView, ListView,
 } from "./modes";
 
@@ -564,12 +564,15 @@ function App() {
       return !e || e.due <= now;
     }).length;
   }, [selectionCards, progress]);
-  // 🔁 Formen (modes/forms): Perfekt and plural questions from the selection
+  // 🔁 Formen (modes/forms): Perfekt, Präsens, Präteritum and plural questions from the selection
   const formsPools = useMemo(() => {
     const cards = selectionCards.map((c) => CARD_BY_ID.get(idOf(c.deck, c.front))).filter(Boolean);
-    return { perfekt: buildFormsPool(cards, "perfekt"), plural: buildFormsPool(cards, "plural") };
+    return Object.fromEntries(FORM_KINDS.map((k) => [k, buildFormsPool(cards, k, VERB_FORMS)]));
   }, [selectionCards]);
-  const [formsKind, setFormsKind] = useState(() => (readSaved(STORAGE_KEYS.FORMS_KIND) === "plural" ? "plural" : "perfekt"));
+  const [formsKind, setFormsKind] = useState(() => {
+    const v = readSaved(STORAGE_KEYS.FORMS_KIND);
+    return FORM_KINDS.includes(v) ? v : "perfekt";
+  });
   useEffect(() => { storage.set(STORAGE_KEYS.FORMS_KIND, JSON.stringify(formsKind)); }, [formsKind]);
   const articleNouns = useMemo(
     () => selectionCards.filter((c) => c.type === "n" && c.gender),
@@ -1586,7 +1589,7 @@ function App() {
         <div ref={tabsRef} className="no-scrollbar" style={{ display: "flex", gap: 6, overflowX: "auto", margin: "4px -16px 14px", padding: "8px 16px 2px", scrollMarginTop: 8 }}>
           {MODE_TABS({
             article: articleNouns.length, cloze: clozePool.length, wordsearch: wsPool.length,
-            forms: formsPools.perfekt.length + formsPools.plural.length, satzbau: satzbauPool.length,
+            forms: FORM_KINDS.reduce((n, k) => n + formsPools[k].length, 0), satzbau: satzbauPool.length,
             saetze: chunkSets.length,
           }).filter((tab) => isStudyMode(tab.mode)).map((tab) => {
             const active = mode === tab.mode;
@@ -1806,15 +1809,15 @@ function App() {
           )
         ) : mode === MODE.FORMS ? (
           <>
-            <div role="group" aria-label="Formen" style={{ display: "flex", gap: 8, marginBottom: 12 }}>
-              {[["perfekt", "Perfekt"], ["plural", "Plural"]].map(([k, label]) => (
+            <div role="group" aria-label="Formen" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8, marginBottom: 12 }}>
+              {[["perfekt", "Perfekt"], ["praesens", "Präsens (er)"], ["praeteritum", "Präteritum"], ["plural", "Plural"]].map(([k, label]) => (
                 <button
                   key={k}
                   type="button"
                   aria-pressed={formsKind === k}
                   onClick={() => setFormsKind(k)}
                   style={{
-                    flex: 1, padding: "9px 0", borderRadius: 10, fontSize: 13, fontWeight: 700, cursor: "pointer",
+                    minHeight: 40, padding: "9px 0", borderRadius: 10, fontSize: 13, fontWeight: 700, cursor: "pointer",
                     border: formsKind === k ? "none" : "1px solid #2c3a47",
                     background: formsKind === k ? "#4f86c6" : "#1a232b", color: formsKind === k ? "#0e1419" : "#9ab0c2",
                   }}
