@@ -634,10 +634,13 @@ function App() {
   const [grammarTopic, setGrammarTopic] = useState(null);
   // the topic was opened from the search layer: "← Zurück" reopens it
   const [grammarFromSearch, setGrammarFromSearch] = useState(false);
-  // grammarFrom: { mode, home, mistakes } - the area to return to
+  // grammarFrom: { mode, home, mistakes, lists } - the area to return to
+  // (lists: the 📋 Wortlisten layer a card's 📖 chip was tapped in; it
+  // covers the screen, so it closes and "← Zurück" reopens it)
   const openGrammar = useCallback((key) => {
-    const inGrammar = mode === MODE.GRAMMAR && !home && !showMistakes;
-    setGrammarFrom(inGrammar ? null : { mode, home, mistakes: showMistakes });
+    const inGrammar = mode === MODE.GRAMMAR && !home && !showMistakes && !listsView;
+    setGrammarFrom(inGrammar ? null : { mode, home, mistakes: showMistakes, lists: listsView });
+    setListsView(null);
     setShowMistakes(false);
     setHome(false);
     setGrammarFocus({ key, n: Date.now() });
@@ -645,7 +648,7 @@ function App() {
     setMode(MODE.GRAMMAR);
     setGrammarFromSearch(searchOpen);
     setSearchOpen(false);
-  }, [mode, home, showMistakes, searchOpen]);
+  }, [mode, home, showMistakes, searchOpen, listsView]);
   const grammarNav = useMemo(() => ({ openGrammar, linksFor: grammarLinksById }), [openGrammar]);
   // 📊 Alle Formen: the verbs opened, the top one shown ("Geht wie …" opens
   // another on top; back returns to the one before)
@@ -666,6 +669,7 @@ function App() {
       setMode(grammarFrom.mode);
       setHome(grammarFrom.home);
       setShowMistakes(grammarFrom.mistakes);
+      if (grammarFrom.lists) setListsView(grammarFrom.lists);
     }
     setGrammarFrom(null);
     setGrammarFocus(null);

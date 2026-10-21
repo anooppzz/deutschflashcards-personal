@@ -172,6 +172,17 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 ## Log
 
+### 2026-10-22 – 📖 chips open from 📋 Wortlisten; filter chips: one tap = only that
+- The learner: in Wortlisten, a card's 📖 Perfekt / Präteritum chip didn't open. It did
+  open the Grammatik tab, but behind the Wortlisten layer (z 100). Now `openGrammar`
+  closes the layer and remembers it (`grammarFrom.lists`): "← Zurück" / the back
+  gesture reopens the list.
+- The learner: to study only Verben they had to untick Alle, then tick Verben – the
+  first tap on Verben took Verben *away*. Now (`engine/filters.js tapChip`, used by
+  `components/CategoryFilter.jsx` – word types, A1/A2 and sources): with all on, a tap
+  on a chip shows **only that one**; further taps add/remove; removing the last one
+  shows all again (never an empty, cardless filter); "Alle" always selects all.
+
 ### 2026-10-22 – 📊 Alle Formen: a verb's whole conjugation
 - The learner showed another app's "More Conjugation" window and asked for it here, A2
   first. New full-screen layer `components/ConjugationSheet.jsx` (z 150, back gesture

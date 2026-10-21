@@ -46,3 +46,13 @@ export const passesSourceFilter = (card, sourceFilter) => {
 
 export const passesGlobalFilters = (card, levelFilter, sourceFilter) =>
   passesLevelFilter(card, levelFilter) && passesSourceFilter(card, sourceFilter);
+
+// 🎚 filter chips (components/CategoryFilter.jsx): what a tap does. All on:
+// show only that one (the first tap picks, it doesn't take away). Otherwise
+// add or remove it; removing the last one goes back to all - an empty
+// filter would show nothing.
+export const tapChip = (active, key, allKeys) => {
+  if (allKeys.every((k) => active.includes(k))) return [key];
+  const next = active.includes(key) ? active.filter((k) => k !== key) : [...active, key];
+  return next.length ? next : [...allKeys];
+};

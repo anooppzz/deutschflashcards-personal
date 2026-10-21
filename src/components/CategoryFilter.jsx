@@ -1,10 +1,8 @@
 import PropTypes from "prop-types";
+import { tapChip } from "../engine/filters";
 
-// Generic array toggle: add key if absent, remove if present.
-const toggle = (arr, key) =>
-  arr.includes(key) ? arr.filter((k) => k !== key) : [...arr, key];
-
-/* Multi-select category filter with a Select-all toggle */
+/* Multi-select category filter: tap one chip = only that; more chips add
+   to it; "Alle" shows everything again */
 function CategoryFilter({ cats, active, onChange, setIdx, colorFor, allKeys }) {
   const allOn = allKeys.every((k) => active.includes(k));
   const chip = (on, color, content, onClick, key, label) => (
@@ -27,18 +25,18 @@ function CategoryFilter({ cats, active, onChange, setIdx, colorFor, allKeys }) {
       {chip(
         allOn, "#e0833b",
         <><span aria-hidden="true">{allOn ? "✓" : "▢"}</span> Alle</>,
-        () => { onChange(allOn ? [] : [...allKeys]); setIdx(0); },
+        () => { onChange([...allKeys]); setIdx(0); },
         "__all__",
-        allOn ? "Alle ausgewählt, zum Abwählen tippen" : "Alle auswählen"
+        allOn ? "Alle ausgewählt" : "Alle auswählen"
       )}
       {cats.map(([key, lbl]) => {
         const on = active.includes(key);
         return chip(
           on, colorFor(key),
           <>{on && <span aria-hidden="true">✓</span>} {lbl}</>,
-          () => { onChange(toggle(active, key)); setIdx(0); },
+          () => { onChange(tapChip(active, key, allKeys)); setIdx(0); },
           key,
-          `${lbl}${on ? ", ausgewählt" : ""}`
+          allOn ? `Nur ${lbl}` : `${lbl}${on ? ", ausgewählt" : ""}`
         );
       })}
     </div>
