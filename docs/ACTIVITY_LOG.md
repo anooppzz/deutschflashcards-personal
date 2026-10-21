@@ -172,6 +172,23 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 ## Log
 
+### 2026-10-22 – Back button: the app no longer closes after two backs in a row
+- The learner: Wortlisten → card → 📖 grammar → back (card, fine) → back again closed the
+  whole app instead of stepping back / going to the start screen; same in other areas.
+- Cause (engine/useBackButton.js): one guard history entry, put back after every back
+  press. Chrome skips history entries a page adds *without a tap* (its protection
+  against back-button traps), so after a re-added guard the next back skipped past the
+  app's own page and left the app.
+- Now a stock of 8 guards (`{appBack: n}`, depth read from history.state) is added
+  while the learner taps (user activation: on every pointerup/keyup and right after a
+  tap opens something); back presses use them up without adding untrusted ones. Back
+  at the start screen, the remaining guards are removed (`history.go(-depth)`), so the
+  next back leaves the app as before.
+- Browser check (back pressed repeatedly): Wortlisten grammar → card back → list → list
+  overview → start screen → leaves; Karten: grammar → Lernen → Heute → leaves; Heute
+  fällig: grammar → review → Heute → leaves. Chrome's skipping itself only happens with
+  the phone's real back button, so the final check is on the learner's phone.
+
 ### 2026-10-22 – Back from a grammar topic: page stays where it was, no scrolling
 - The learner: after "← Zurück" the page scrolled down to the card (smooth), unlike
   📊 Alle Formen, which just closes. Three scrolls caused it: App.jsx

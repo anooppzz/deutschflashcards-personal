@@ -101,7 +101,9 @@ src/engine/                logic: FSRS scheduling, filters, grammarLinks.js,
                            review.js ("Heute fällig": due cards from all decks)
                            useBackButton.js (phone back gesture steps back inside
                            the app – App.jsx `backAction` lists the layers in order;
-                           add a new overlay/dialog there)
+                           add a new overlay/dialog there. Keeps a stock of guard
+                           history entries added on taps: Chrome skips entries added
+                           without a tap, which used to close the app)
 src/modes/cards/deckViews.js  how each deck shows in Karten mode (banner, filter, badge)
 src/modes/                 one folder per study mode (cards, article, quiz, reverse,
                            cloze, wordsearch, grammar) + search (SearchOverlay.jsx: the
