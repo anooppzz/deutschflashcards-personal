@@ -13137,8 +13137,7 @@
     "added": "2026-10-21",
     "note": "Fernsehen, Sender, Serien",
     "alsoCards": [
-      "stadt::das Fernsehen",
-      "lebensmittel-einkaufen::die Gewohnheit"
+      "stadt::das Fernsehen"
     ],
     "cards": [
       {
@@ -13449,11 +13448,22 @@
       {
         "type": "adj",
         "front": "fest",
-        "sub": "feste Gewohnheit",
-        "english": "fixed, firm, regular",
+        "sub": "",
+        "english": "fixed, firm, permanent",
+        "example": "Sie hat jetzt eine feste Stelle.",
+        "exampleEn": "She has a permanent job now.",
+        "note": "feste Gewohnheit = fixed habit (eigene Karte)",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 15"
+      },
+      {
+        "type": "sonst",
+        "front": "feste Gewohnheit",
+        "sub": "die Gewohnheit, -en",
+        "english": "fixed habit, (regular) routine",
         "example": "Der Tatort am Sonntag ist für viele eine feste Gewohnheit.",
         "exampleEn": "For many people, the Tatort on Sunday is a fixed habit.",
-        "note": "die Gewohnheit = habit",
+        "note": "Pl. feste Gewohnheiten · zur festen Gewohnheit werden = to become a habit",
         "level": "A2",
         "source": "Menschen A2 · Einheit 15"
       },

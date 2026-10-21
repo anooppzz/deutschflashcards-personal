@@ -167,13 +167,21 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 ## Log
 
+### 2026-10-21 – 📺 Medien: own card "feste Gewohnheit"
+- The learner pointed out that the page's word is **feste Gewohnheit** (printed under
+  fest). Checked: no card had it (only fest's example) → new card `feste Gewohnheit`
+  (sonst, "fixed habit, routine") after **fest**; fest got its own example (eine feste
+  Stelle). The 🔗 link to die Gewohnheit (Lebensmittel & Einkaufen) was removed again –
+  not on this page; Medien still shows 🔗 das Fernsehen. 📰 Lesen links the new card.
+
 ### 2026-10-21 – Chapters can show cards from other chapters (alsoCards)
 - The learner asked to see das Fernsehen and (feste) Gewohnheit in 📺 Medien too, as the
   same card, not a copy. New chapter field `"alsoCards": ["deck::front", …]`
   (`data/index.js alsoCardsOf`): the card view, all study modes, the source chips and
   the 🆕 banner count include them; they keep their own id, so progress is shared
   (checked: ✓ Gekonnt in Medien saved `stadt::das Fernsehen`). Badge: 🔗 + home chapter.
-- Medien: `stadt::das Fernsehen`, `lebensmittel-einkaufen::die Gewohnheit` → 33 cards.
+- Medien: `stadt::das Fernsehen`, `lebensmittel-einkaufen::die Gewohnheit` → 33 cards
+  (Gewohnheit removed again later the same day, see above).
 - Test `src/data/alsoCards.test.js`: ids exist, from another chapter, no repeats.
 
 ### 2026-10-21 – New chapter 📺 Medien (Menschen A2 · Einheit 15)
