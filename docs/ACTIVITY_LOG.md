@@ -172,6 +172,22 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 ## Log
 
+### 2026-10-22 – Back button, second fix: one guard per tap
+- The learner: still closing after two backs. The earlier test used Playwright's
+  goBack (no Chrome skipping) and page.evaluate (counts as a user gesture), so it
+  couldn't see the bug. New test: headed Chromium on Xvfb, a real OS-level Alt+←
+  (python-xlib XTest) = the browser's own back with its skipping, pauses of 6–7 s
+  like a person reading, state read via CDP with userGesture:false. It reproduced
+  the bug on the live version (Wortlisten: back 3 left the app instead of Heute).
+- Cause: Chrome trusts only ONE new history entry per tap; the 8 guards added in one
+  tap were jumped over. Now every tap (pointerup/keydown) while something is open adds
+  exactly one guard (max 30), and the tap that opens something adds the first one;
+  nothing is added after a back press unless all guards are used up.
+- Same test after the fix, real back each time: Wortlisten grammar → card back → list
+  → list overview → Heute → leaves; Karten grammar → Lernen → Heute → leaves; Heute
+  fällig grammar → review → Heute → leaves; 🔍 grammar → search → Heute → leaves; also
+  with fast backs (0.6 s).
+
 ### 2026-10-22 – Back button: the app no longer closes after two backs in a row
 - The learner: Wortlisten → card → 📖 grammar → back (card, fine) → back again closed the
   whole app instead of stepping back / going to the start screen; same in other areas.

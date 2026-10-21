@@ -12,21 +12,18 @@ import { useEffect, useRef, useState } from "react";
 // runs. When the app returns to its start screen some other way (a tap),
 // the guards are removed again, so the next back leaves the app right away.
 //
-// Why a stock of GUARDS guards and not one: Chrome skips history entries a
-// page added without a tap (its protection against pages that trap the back
-// button). A guard put back right after a back press has no tap behind it,
-// so Chrome marked the page under it "skippable" and the NEXT back left the
-// app. So guards are added while the learner taps (user activation), enough
-// for several backs in a row; only if all are used up without a tap in
-// between is one added without it.
-const GUARDS = 8;
+// Why one guard per tap: Chrome skips history entries a page added without
+// a tap of its own (its protection against pages that trap the back
+// button) - and it trusts only ONE new entry per tap. A guard put back after
+// a back press, or a second one from the same tap, made Chrome jump over
+// the app's entries, so the next back left the app. So every tap while
+// something is open adds one guard (up to MAX_GUARDS); every screen is
+// opened by a tap, so there is a guard for every step back. Only when they
+// are all used up is one added without a tap.
+const MAX_GUARDS = 30;
 
 // how many of our guards are below and including the current entry
 const depthOf = (state) => (state && typeof state.appBack === "number" ? state.appBack : 0);
-const activated = () => {
-  const ua = typeof navigator !== "undefined" && navigator.userActivation;
-  return ua ? ua.isActive : true;
-};
 
 export function useBackButton(onBack) {
   const handler = useRef(onBack);
@@ -36,20 +33,21 @@ export function useBackButton(onBack) {
   const [pops, setPops] = useState(0);
   const active = Boolean(onBack);
 
-  // add guards: a full stock while the learner is tapping, else just one
-  const topUp = useRef(() => {});
-  topUp.current = () => {
-    if (!handler.current) return;
-    const target = activated() ? GUARDS : Math.max(depth.current, 1);
-    while (depth.current < target) {
-      depth.current += 1;
-      window.history.pushState({ appBack: depth.current }, "");
-    }
+  const push = () => {
+    depth.current += 1;
+    window.history.pushState({ appBack: depth.current }, "");
+  };
+  // a tap (user activation): one more guard while something is open
+  const onTapRef = useRef(() => {});
+  onTapRef.current = () => {
+    if (handler.current && depth.current < MAX_GUARDS) push();
   };
 
   useEffect(() => {
-    if (active) topUp.current();
-    else if (depth.current > 0) {
+    // the tap that opened something adds the first guard (its pointerup
+    // came before the click, when nothing was open yet)
+    if (active && depth.current === 0) push();
+    else if (!active && depth.current > 0) {
       // back at the start screen: drop the guards, so back leaves the app
       skipPops.current += 1;
       window.history.go(-depth.current);
@@ -64,19 +62,18 @@ export function useBackButton(onBack) {
       if (handler.current) handler.current();
       setPops((n) => n + 1);
     };
-    // every tap (a user activation) refills the stock
-    const onTap = () => topUp.current();
+    const onTap = () => onTapRef.current();
     // Our entries are guards, not pages: the browser must not jump back to
     // the scroll position it saved with one - the app scrolls to what back
     // shows (e.g. a closed grammar topic's row) itself.
     if ("scrollRestoration" in window.history) window.history.scrollRestoration = "manual";
     window.addEventListener("popstate", onPop);
     window.addEventListener("pointerup", onTap, true);
-    window.addEventListener("keyup", onTap, true);
+    window.addEventListener("keydown", onTap, true);
     return () => {
       window.removeEventListener("popstate", onPop);
       window.removeEventListener("pointerup", onTap, true);
-      window.removeEventListener("keyup", onTap, true);
+      window.removeEventListener("keydown", onTap, true);
     };
   }, []);
 }
