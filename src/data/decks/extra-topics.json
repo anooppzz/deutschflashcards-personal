@@ -12676,6 +12676,18 @@
         "grammar": [
           "grammatik-woerter"
         ]
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Textabschnitt",
+        "sub": "Pl. -e",
+        "english": "section of a text, passage",
+        "example": "Lesen Sie den ersten Textabschnitt.",
+        "exampleEn": "Read the first section of the text.",
+        "note": "der Abschnitt = section · der Absatz = paragraph",
+        "level": "A2",
+        "source": "KI-Eingang · 2026-10-21"
       }
     ]
   },
@@ -13512,6 +13524,92 @@
         "note": "≈ mittlerweile",
         "level": "A2",
         "source": "Menschen A2 · Einheit 15"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Lüge",
+        "sub": "Pl. -n",
+        "english": "lie",
+        "example": "Das ist eine Lüge – das stimmt nicht!",
+        "exampleEn": "That's a lie – that isn't true!",
+        "note": "lügen, log, hat gelogen = to lie · eine Lüge erzählen",
+        "level": "A2",
+        "source": "KI-Eingang · 2026-10-21"
+      },
+      {
+        "type": "n",
+        "gender": "das",
+        "front": "das Geräusch",
+        "sub": "Pl. -e",
+        "english": "noise, sound",
+        "example": "Im Krimi hört man plötzlich ein Geräusch.",
+        "exampleEn": "In the crime drama you suddenly hear a noise.",
+        "note": "Pl. die Geräusche · der Lärm = loud, annoying noise",
+        "level": "A2",
+        "source": "KI-Eingang · 2026-10-21"
+      },
+      {
+        "type": "v",
+        "front": "ab·stellen",
+        "sub": "hat abgestellt",
+        "english": "to switch off; to put down, to park",
+        "example": "Stell bitte den Fernseher ab, wir essen jetzt.",
+        "exampleEn": "Please switch off the TV, we're eating now.",
+        "note": "trennbar · ≈ aus·schalten · das Fahrrad abstellen = to park the bike",
+        "level": "A2",
+        "source": "KI-Eingang · 2026-10-21",
+        "forms": {
+          "praes": "stellt ab",
+          "praet": "stellte ab"
+        }
+      },
+      {
+        "type": "adj",
+        "front": "erfolgreich",
+        "sub": "↔ erfolglos",
+        "english": "successful",
+        "example": "Die Serie ist in Deutschland sehr erfolgreich.",
+        "exampleEn": "The series is very successful in Germany.",
+        "note": "der Erfolg = success · erfolgreicher, am erfolgreichsten",
+        "level": "A2",
+        "source": "KI-Eingang · 2026-10-21"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Darsteller",
+        "sub": "Pl. -",
+        "english": "actor, performer (of a role)",
+        "example": "Der Darsteller von Harry Potter heißt Daniel Radcliffe.",
+        "exampleEn": "The actor who plays Harry Potter is called Daniel Radcliffe.",
+        "note": "die Darstellerin, -nen · der Hauptdarsteller = lead actor · ≈ der Schauspieler",
+        "level": "A2",
+        "source": "KI-Eingang · 2026-10-21"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Regisseur",
+        "sub": "Pl. -e",
+        "english": "(film) director",
+        "example": "Der Regisseur hat schon drei Krimis gedreht.",
+        "exampleEn": "The director has already made three crime films.",
+        "note": "die Regisseurin, -nen · French word: Re-schi-ssöör",
+        "level": "A2",
+        "source": "KI-Eingang · 2026-10-21"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Regie",
+        "sub": "kein Plural",
+        "english": "direction (of a film or play)",
+        "example": "Bei diesem Film führt eine junge Frau Regie.",
+        "exampleEn": "A young woman is directing this film.",
+        "note": "Regie führen = to direct · der Regisseur = director",
+        "level": "A2",
+        "source": "KI-Eingang · 2026-10-21"
       }
     ]
   },

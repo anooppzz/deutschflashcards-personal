@@ -167,6 +167,14 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 ## Log
 
+### 2026-10-21 – KI-Eingang: 8 searched words → 8 new cards
+- Export pasted by the learner (all "Suche" entries); worked in per
+  `docs/ai-inbox/README.md`, report in `docs/ai-inbox/done/ki-eingang-2026-10-21.md`.
+- 📺 Medien: die Lüge, das Geräusch, ab·stellen, erfolgreich, der Darsteller, der
+  Regisseur, die Regie (now 39 + 🔗 das Fernsehen). 📖 Sprachen lernen: der Textabschnitt.
+- Corrected the automatic translations: erfolgreich ≠ "Pass", Darsteller ≠ "Harry
+  Potter", Regie ≠ "Management"; Geräusche → singular card das Geräusch.
+
 ### 2026-10-21 – 📺 Medien: own card "feste Gewohnheit"
 - The learner pointed out that the page's word is **feste Gewohnheit** (printed under
   fest). Checked: no card had it (only fest's example) → new card `feste Gewohnheit`
