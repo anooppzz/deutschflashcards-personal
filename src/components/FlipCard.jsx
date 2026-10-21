@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, useRef } from "react";
 import PropTypes from "prop-types";
 import { genderColor, TYPE_META } from "../constants";
 import { DECK_META, VERB_FORMS } from "../data";
@@ -13,7 +13,9 @@ import { wordLinks, wordQuestion, wordSubject } from "../engine/lookup";
 
 function FlipCard({ front, sub, back, english, example, exampleEn, accent, badge, type, gender, deck, cardId, lang = "en", level, source, sources, note, showMarks = true }) {
   const { progress, mark } = useContext(ProgressCtx);
-  const { openGrammar, linksFor } = useContext(GrammarNavCtx);
+  const { openGrammar, linksFor, returnCard } = useContext(GrammarNavCtx);
+  // back from a grammar topic this card's 📖 chip opened: start on the back
+  const startFlipped = useRef(Boolean(cardId) && cardId === returnCard);
   const { openConjugation } = useContext(ConjugationCtx);
   const entry = cardId ? progress[cardId] : undefined;
   const status = statusOfFsrs(entry);
@@ -48,7 +50,8 @@ function FlipCard({ front, sub, back, english, example, exampleEn, accent, badge
     : null);
 
   useEffect(() => {
-    setFlipped(false);
+    setFlipped(startFlipped.current);
+    startFlipped.current = false;
     setAi(null);
     setAudioErr(false);
     setCorrecting(false);
@@ -207,7 +210,7 @@ function FlipCard({ front, sub, back, english, example, exampleEn, accent, badge
           {grammarLinks.map((l) => (openGrammar ? (
             <button
               key={l.key}
-              onClick={stop(() => openGrammar(l.key))}
+              onClick={stop(() => openGrammar(l.key, cardId))}
               aria-label={`Grammatik öffnen: ${l.label}`}
               style={grammarChipStyle}
             >📖 {l.label}</button>

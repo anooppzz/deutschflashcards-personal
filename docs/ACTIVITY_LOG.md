@@ -172,6 +172,17 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 ## Log
 
+### 2026-10-22 – "← Zurück" from a grammar topic returns to the card's back
+- The learner: after 📖 Perfekt on a card's back, back went to the list (Wortlisten) or
+  to the card's front (Heute fällig) – they had to find the word and flip it again.
+- Now a card's 📖 chip calls `openGrammar(key, cardId)`; on "← Zurück" App.jsx sets
+  `returnCard` (GrammarNavCtx, cleared after 2 s) and the view reopens that card:
+  FlipCard starts on its back; ListView reopens the row, SearchResults / MistakeBook
+  the result, ReadingView the word. Karten and Heute fällig keep their place as before.
+  The 📊 Alle Formen sheet's 📖 chips return to the card it was opened from.
+- Checked in the browser: Wortlisten, 🔍 search, Heute fällig and Karten all come back
+  to the same card, flipped.
+
 ### 2026-10-22 – 📖 chips open from 📋 Wortlisten; filter chips: one tap = only that
 - The learner: in Wortlisten, a card's 📖 Perfekt / Präteritum chip didn't open. It did
   open the Grammatik tab, but behind the Wortlisten layer (z 100). Now `openGrammar`

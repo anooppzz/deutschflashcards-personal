@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext, useRef } from "react";
+import { GrammarNavCtx } from "../../context/GrammarNavCtx";
 import PropTypes from "prop-types";
 import { FlipCard, Reveal } from "../../components";
 import WordLookup from "../../components/WordLookup";
@@ -67,11 +68,18 @@ function CardFront({ card, q }) {
 }
 
 function SearchResults({ query, cards, topics, lang, onOpenTopic, onOpenChapter, onSuggestCard }) {
-  const [open, setOpen] = useState(null); // index of the opened card
-  const [shown, setShown] = useState(PAGE);
+  // back from a grammar topic a card's 📖 chip opened: that card open again
+  const { returnCard } = useContext(GrammarNavCtx);
+  const back = returnCard ? cards.findIndex((c) => `${c.deck}::${c.front}` === returnCard) : -1;
+  const [open, setOpen] = useState(back >= 0 ? back : null); // index of the opened card
+  const [shown, setShown] = useState(Math.max(PAGE, back + 1));
   const [lookup, setLookup] = useState(false); // "Nicht dabei?" panel
   const [tab, setTab] = useState("all"); // all | cards | grammar
-  useEffect(() => { setOpen(null); setShown(PAGE); setLookup(false); setTab("all"); }, [query]);
+  const firstQuery = useRef(true);
+  useEffect(() => {
+    if (firstQuery.current) { firstQuery.current = false; return; }
+    setOpen(null); setShown(PAGE); setLookup(false); setTab("all");
+  }, [query]);
 
   const q = query.trim();
   if (!q) {

@@ -1,4 +1,5 @@
-import { useState, useEffect, useMemo, Fragment } from "react";
+import { useState, useEffect, useMemo, useContext, Fragment } from "react";
+import { GrammarNavCtx } from "../../context/GrammarNavCtx";
 import PropTypes from "prop-types";
 import { FlipCard, AudioControls, Reveal } from "../../components";
 import { DECK_META, ALL_CARDS } from "../../data";
@@ -74,8 +75,19 @@ function Questions({ text, best, onScore }) {
 
 function TextView({ text, lang, best, onScore, onBack, onOpenChapter }) {
   const [showEn, setShowEn] = useState(false);
-  const [open, setOpen] = useState(null); // "paragraph:segment" of the opened word
   const paragraphs = useMemo(() => text.paragraphs.map(parseParagraph), [text]);
+  // back from a grammar topic a word's 📖 chip opened: that word open again
+  const { returnCard } = useContext(GrammarNavCtx);
+  const [open, setOpen] = useState(() => {
+    if (!returnCard) return null;
+    for (const [pi, segs] of paragraphs.entries()) {
+      for (const [si, s] of segs.entries()) {
+        const c = s.front && resolveLink(s.front, text.deck, CARDS_BY_FRONT);
+        if (c && idOf(c.deck, c.front) === returnCard) return `${pi}:${si}`;
+      }
+    }
+    return null;
+  }); // "paragraph:segment" of the opened word
   const meta = DECK_META[text.deck];
   const lines = useMemo(() => text.paragraphs.map((p) => ({ text: plainParagraph(p) })), [text]);
 

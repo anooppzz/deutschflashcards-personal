@@ -637,7 +637,17 @@ function App() {
   // grammarFrom: { mode, home, mistakes, lists } - the area to return to
   // (lists: the 📋 Wortlisten layer a card's 📖 chip was tapped in; it
   // covers the screen, so it closes and "← Zurück" reopens it)
-  const openGrammar = useCallback((key) => {
+  // the card whose 📖 chip opened the topic, and the card to come back to
+  // (see context/GrammarNavCtx.js)
+  const fromCardRef = useRef(null);
+  const [returnCard, setReturnCard] = useState(null);
+  useEffect(() => {
+    if (!returnCard) return undefined;
+    const t = setTimeout(() => setReturnCard(null), 2000);
+    return () => clearTimeout(t);
+  }, [returnCard]);
+  const openGrammar = useCallback((key, fromCard = null) => {
+    fromCardRef.current = fromCard;
     const inGrammar = mode === MODE.GRAMMAR && !home && !showMistakes && !listsView;
     setGrammarFrom(inGrammar ? null : { mode, home, mistakes: showMistakes, lists: listsView });
     setListsView(null);
@@ -649,7 +659,7 @@ function App() {
     setGrammarFromSearch(searchOpen);
     setSearchOpen(false);
   }, [mode, home, showMistakes, searchOpen, listsView]);
-  const grammarNav = useMemo(() => ({ openGrammar, linksFor: grammarLinksById }), [openGrammar]);
+  const grammarNav = useMemo(() => ({ openGrammar, linksFor: grammarLinksById, returnCard }), [openGrammar, returnCard]);
   // 📊 Alle Formen: the verbs opened, the top one shown ("Geht wie …" opens
   // another on top; back returns to the one before)
   const [conjStack, setConjStack] = useState([]);
@@ -674,6 +684,8 @@ function App() {
     setGrammarFrom(null);
     setGrammarFocus(null);
     setGrammarTopic(null);
+    setReturnCard(fromCardRef.current);
+    fromCardRef.current = null;
     if (grammarFromSearch) {
       setGrammarFromSearch(false);
       setSearchOpen(true);
@@ -2023,7 +2035,7 @@ function App() {
             onOpen={openConjugation}
             onBack={() => setConjStack((s) => s.slice(0, -1))}
             onClose={() => setConjStack([])}
-            onGrammar={(key) => { setConjStack([]); openGrammar(key); }}
+            onGrammar={(key) => { const from = conjStack[0]; setConjStack([]); openGrammar(key, from); }}
           />
         </ErrorBoundary>
       )}

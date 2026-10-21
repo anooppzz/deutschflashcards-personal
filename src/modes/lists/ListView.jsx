@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { FlipCard } from "../../components";
 import Reveal from "../../components/Reveal";
 import { ProgressCtx } from "../../context/ProgressCtx";
+import { GrammarNavCtx } from "../../context/GrammarNavCtx";
 import { ConjugationCtx } from "../../context/ConjugationCtx";
 import { VERB_FORMS } from "../../data";
 import { isKnownStability } from "../../engine";
@@ -20,15 +21,19 @@ function ListView({ lists, openKey, onOpen, onStudy, onClose, cardById, deckMeta
   const { progress } = useContext(ProgressCtx);
   const { openConjugation } = useContext(ConjugationCtx);
   const [filter, setFilter] = useState("");
-  const [shown, setShown] = useState(null); // the row whose card is open
-  const scrollRef = useRef(null);
   const list = lists.find((l) => l.key === openKey);
+  const { returnCard } = useContext(GrammarNavCtx);
+  // the row whose card is open (back from its 📖 grammar topic: that row again)
+  const [shown, setShown] = useState(() => (list && list.rows.some((r) => r.cards[0] === returnCard) ? returnCard : null));
+  const scrollRef = useRef(null);
+  const firstKey = useRef(true);
   useEffect(() => {
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     return () => { document.body.style.overflow = prev; };
   }, []);
   useEffect(() => {
+    if (firstKey.current) { firstKey.current = false; return; }
     setFilter("");
     setShown(null);
     if (scrollRef.current) scrollRef.current.scrollTop = 0;

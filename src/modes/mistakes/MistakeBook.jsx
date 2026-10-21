@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { GrammarNavCtx } from "../../context/GrammarNavCtx";
 import PropTypes from "prop-types";
 import { FlipCard, Reveal } from "../../components";
 import { DECK_META } from "../../data";
@@ -31,8 +32,11 @@ function Tally({ wrong, rightDays }) {
 }
 
 function MistakeBook({ words, grammar, lang, onPracticeWords, onGrammarAnswer, onOpenChapter, onClose }) {
-  const [open, setOpen] = useState(null); // id of the opened word
-  const [shown, setShown] = useState(PAGE);
+  // back from a grammar topic a card's 📖 chip opened: that word open again
+  const { returnCard } = useContext(GrammarNavCtx);
+  const back = returnCard ? words.findIndex((w) => w.id === returnCard) : -1;
+  const [open, setOpen] = useState(back >= 0 ? returnCard : null); // id of the opened word
+  const [shown, setShown] = useState(Math.max(PAGE, back + 1));
   // the grammar round is fixed when the book opens: answering clears entries,
   // which must not reshuffle the questions under the learner's finger
   const [grammarRound] = useState(() => grammar.map((g) => ({ ...g.item, topicTitle: g.topicTitle, mistakeId: g.id })));
