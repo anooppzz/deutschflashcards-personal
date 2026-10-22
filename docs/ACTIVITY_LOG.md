@@ -171,6 +171,30 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 ## Log
 
+### 2026-10-22 – 🔍 Fehler-Check: two-way prepositions, endings without article, 📖 unknown words
+- **Wechselpräpositionen** (round 6 Kasus): in/an/auf/hinter/neben/über/unter/vor/zwischen
+  and im/am/ins/ans. The verb of the clause part (split at und/oder/aber) decides:
+  placing verbs (legen, stellen, bringen …) → Akkusativ (error), going verbs (gehen,
+  fahren …) → Akkusativ but only 🔎 "check" (im Park spazieren gehen is Dativ), place
+  verbs (sein, wohnen, liegen, arbeiten …) → Dativ (error). Skipped: fixed verb +
+  preposition (warten auf, denken an, sich freuen über …), a particle at the end (Die
+  Sonne geht im Osten auf), sein/haben as helper verbs; time words (in der Woche, vor
+  einem Jahr) → Dativ; Ferien/Urlaub: both cases are right.
+- **Adjective endings without an article** (round 7): strong endings (gutes Wetter, mit
+  kaltem Wasser, liebe Grüße, zwei neue Autos); a bare adjective counts only after a
+  preposition or ist/sind (else it is an adverb: Ich mache regelmäßig Sport).
+- **Words without a card:** the check lists them ("📖 3 Wörter kennt die App nicht …");
+  "🌐 Im Wörterbuch nachschlagen" looks them up in de.wiktionary (engine/wiktionary.js,
+  online; inflected forms are followed to the base word via {{Grundformverweis …}}, new
+  `entry.lemma`) and checks the text again with them (textCheck.js unknownWords,
+  lookUpUnknown, extendLexicon; buildLexicon now built from addNoun/addVerb/addAdjective).
+  Kept in memory per text while the app is open. Names after Liebe/Frau/Herr are skipped.
+- New permanent test: the app's 1,676 own sentences must give 0 errors and 0 Kasus
+  hints (it found and fixed: Urlaub is no time word, das Essen ≠ essen, regelmäßig/häufig
+  as adverbs, „und fahren“ in the same clause, ist/hat as helper verbs).
+- This sandbox can't reach Wiktionary; tested with pages in its format and a browser
+  test that answers the app's real request.
+
 ### 2026-10-22 – 🔍 Fehler-Check: noun subjects, Perfekt, articles, cases, endings; ist umgezogen
 - `um·ziehen`: the 📋 Grammatik-aktiv row said "hat/ist umgezogen" and overrode the
   card's "ist umgezogen"; now "ist/hat umgezogen" (learner's choice: ist first, the

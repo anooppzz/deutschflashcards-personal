@@ -1,5 +1,6 @@
 import { describe, it, expect } from "vitest";
-import { buildLexicon, checkText, pieces, weakOrder, weakLines, ROUNDS } from "./textCheck";
+import { buildLexicon, checkText, pieces, weakOrder, weakLines, ROUNDS, unknownWords, extendLexicon, lookUpUnknown } from "./textCheck";
+import { parseWikitext } from "./wiktionary";
 import { ALL_CARDS, VERB_FORMS, LIST_BY_KEY } from "../data";
 import { pluralOf } from "../modes/forms/buildForms";
 
@@ -96,5 +97,100 @@ describe("noun subjects, Perfekt, articles, cases, endings", () => {
     expect(fixes("Ich fahre mit dem neu Auto.", "adj-endung")).toEqual(["neuen"]);
     expect(fixes("Das ist ein schöne Tisch.", "adj-endung")).toEqual(["schöner"]);
     expect(fixes("Der neue Tisch ist teuer. Ich habe ein neues Auto. Mit dem neuen Auto.", "adj-endung")).toEqual([]);
+  });
+});
+
+describe("two-way prepositions and endings without an article", () => {
+  it("Wo? → Dativ, Wohin? → Akkusativ (from the verb)", () => {
+    expect(fixes("Ich wohne in die Stadt.", "kasus")).toEqual(["in der Stadt"]);
+    expect(fixes("Ich gehe in der Schule.", "kasus")).toEqual(["in die Schule"]);
+    expect(kinds("Ich gehe in der Schule.", "kasus")).toEqual(["check"]); // im Park laufen is fine
+    expect(fixes("Ich bin ins Kino.", "kasus")).toEqual(["im Kino"]);
+    expect(fixes("Ich fahre im Kino.", "kasus")).toEqual(["ins Kino"]);
+    expect(fixes("Ich wohne in der Stadt. Ich gehe in die Schule. Ich warte auf den Bus. In der Woche arbeite ich.", "kasus")).toEqual([]);
+  });
+  it("adjective endings without an article", () => {
+    expect(fixes("Heute ist schön Wetter.", "adj-endung")).toEqual(["schönes"]);
+    expect(fixes("Ich wasche mit kalte Wasser.", "adj-endung")).toEqual(["kaltem"]);
+    expect(fixes("Heute ist schönes Wetter. Ich trinke kalten Kaffee. Liebe Grüße. Er spricht gut Deutsch.", "adj-endung")).toEqual([]);
+  });
+});
+
+// samples in de.wiktionary's format: a noun, an inflected form, a verb
+const KOMMODE = `== Kommode ({{Sprache|Deutsch}}) ==
+=== {{Wortart|Substantiv|Deutsch}}, {{f}} ===
+{{Deutsch Substantiv Übersicht
+|Genus=f
+|Nominativ Singular=Kommode
+|Nominativ Plural=Kommoden
+}}
+{{Bedeutungen}}
+:[1] Möbelstück mit Schubladen
+`;
+const KOMMODEN = `== Kommoden ({{Sprache|Deutsch}}) ==
+=== {{Wortart|Deklinierte Form|Deutsch}} ===
+{{Grammatische Merkmale}}
+* Nominativ Plural des Substantivs [[Kommode]]
+{{Grundformverweis Dekl|Kommode}}
+`;
+const STREICHEN = `== streichen ({{Sprache|Deutsch}}) ==
+=== {{Wortart|Verb|Deutsch}} ===
+{{Deutsch Verb Übersicht
+|Präsens_er, sie, es=streicht
+|Präteritum_ich=strich
+|Partizip II=gestrichen
+|Hilfsverb=haben
+}}
+`;
+const PAGES = { Kommode: KOMMODE, Kommoden: KOMMODEN, streichen: STREICHEN };
+const fakeLookup = async (w) => (PAGES[w] ? parseWikitext(w, PAGES[w]) : []);
+
+describe("words without a card (Wiktionary)", () => {
+  it("lists the words the app doesn't know, not names after Liebe/Frau", () => {
+    const u = unknownWords("Liebe Mona, ich habe die Kommoden gestern streichen lassen.", lex);
+    expect(u).toContain("Kommoden");
+    expect(u).not.toContain("Mona");
+    expect(u).not.toContain("habe");
+  });
+  it("an inflected form is followed to its base word", () => {
+    const [e] = parseWikitext("Kommoden", KOMMODEN);
+    expect(e.lemma).toBe("Kommode");
+  });
+  it("looked-up words are checked too", async () => {
+    expect(fixes("Ich kaufe einen Kommode.", "artikel")).toEqual([]); // unknown: nothing to say
+    const r = await lookUpUnknown(["Kommoden", "streichen", "Mona"], lex, fakeLookup);
+    expect(r.found).toEqual(["Kommoden", "streichen"]);
+    expect(r.missing).toEqual(["Mona"]);
+    expect(checkText("Ich kaufe einen Kommode.", r.lex).artikel.map((m) => m.fix)).toEqual(["eine Kommode"]);
+    expect(checkText("Ich streichen die Wand.", r.lex)["verb-konjugiert"].map((m) => m.fix)).toEqual(["Ich streiche"]);
+  });
+  it("offline: the first lookup fails → an error for the UI", async () => {
+    await expect(lookUpUnknown(["Kommode"], lex, async () => { throw new Error("offline"); })).rejects.toThrow();
+  });
+  it("extendLexicon leaves the app's lexicon unchanged", () => {
+    const next = extendLexicon(lex, parseWikitext("Kommode", KOMMODE));
+    expect(next.nounInfo.has("kommode")).toBe(true);
+    expect(lex.nounInfo.has("kommode")).toBe(false);
+  });
+});
+
+// the app's own sentences are correct German: the check must not mark any of them
+describe("no false alarms on the app's own sentences", () => {
+  it("📰 Lesen, 🧱 Sätze, DTZ model letters and card examples: 0 errors", async () => {
+    const { READING_TEXTS, DTZ_WRITING, CHUNK_SETS } = await import("../data");
+    const texts = [];
+    for (const t of READING_TEXTS) for (const p of t.paragraphs) texts.push(p.replace(/\[\[([^|\]]+)(\|[^\]]+)?\]\]/g, "$1"));
+    const pairs = Array.isArray(DTZ_WRITING) ? DTZ_WRITING : Object.values(DTZ_WRITING);
+    for (const p of pairs) for (const t of [p.a, p.b]) texts.push([t.model.anrede, ...t.model.parts, t.model.gruss].join("\n"));
+    for (const s of CHUNK_SETS) {
+      for (const x of s.sentences) texts.push(x.de);
+      for (const d of s.dialogues || []) for (const l of d.lines) texts.push(l.de);
+    }
+    for (const c of ALL_CARDS) if (c.example) texts.push(c.example);
+    expect(texts.length).toBeGreaterThan(1000);
+    const wrong = texts.flatMap((t) => Object.entries(checkText(t, lex)).flatMap(([round, ms]) => ms
+      .filter((m) => m.kind === "error" || round === "kasus")
+      .map((m) => `${round}: ${t.slice(m.start, m.end)} (${t.slice(0, 60)})`)));
+    expect(wrong).toEqual([]);
   });
 });

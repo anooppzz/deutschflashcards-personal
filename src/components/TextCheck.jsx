@@ -2,7 +2,7 @@ import { useContext, useMemo, useState } from "react";
 import PropTypes from "prop-types";
 import { ALL_CARDS, VERB_FORMS, LIST_BY_KEY } from "../data";
 import { pluralOf } from "../modes/forms/buildForms";
-import { ROUNDS, buildLexicon, checkText, pieces, weakOrder, readWeak, saveWeak } from "../engine/textCheck";
+import { ROUNDS, buildLexicon, checkText, pieces, weakOrder, readWeak, saveWeak, unknownWords, lookUpUnknown } from "../engine/textCheck";
 import { GrammarNavCtx } from "../context/GrammarNavCtx";
 
 // 🔍 Fehler-Check (engine/textCheck.js): the learner's text, read once per
@@ -10,6 +10,8 @@ import { GrammarNavCtx } from "../context/GrammarNavCtx";
 // "⭐ Das mache ich oft falsch" (saved) puts those rounds first; the
 // learner's own points become extra rounds without marks. Used in ✍️ Text
 // prüfen (TextCheckView.jsx) and after DTZ Schreiben (WritingTrainer.jsx).
+// Words without a card can be looked up in 📖 Wiktionary (online); the
+// check then knows them too (their gender, plural, verb forms).
 
 const ACCENT = "#e0833b";
 const RED = "#e07b6f";
@@ -29,6 +31,7 @@ const lex = () => {
   return lexicon;
 };
 let lastRound = { text: null, i: 0 }; // back from a 📖 grammar topic: same round
+const looked = new Map(); // text → { lex, found, missing } from Wiktionary (kept while the app is open)
 
 const chipBtn = (on, color = ACCENT) => ({
   minHeight: 34, padding: "5px 10px", borderRadius: 10, fontSize: 12, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap",
@@ -40,7 +43,24 @@ function TextCheck({ text, grammarLinks = true }) {
   const [weak, setWeak] = useState(readWeak);
   const [i, setI] = useState(lastRound.text === text ? lastRound.i : 0);
   const [ownText, setOwnText] = useState("");
-  const marks = useMemo(() => checkText(text, lex()), [text]);
+  const [dict, setDict] = useState(() => looked.get(text) || null);
+  const [busy, setBusy] = useState(false);
+  const [dictErr, setDictErr] = useState(false);
+  const activeLex = dict ? dict.lex : lex();
+  const marks = useMemo(() => checkText(text, activeLex), [text, activeLex]);
+  const unknown = useMemo(() => (dict ? [] : unknownWords(text, lex())), [text, dict]);
+  const lookUp = async () => {
+    setBusy(true);
+    setDictErr(false);
+    try {
+      const r = await lookUpUnknown(unknown, lex());
+      looked.set(text, r);
+      setDict(r);
+    } catch {
+      setDictErr(true);
+    }
+    setBusy(false);
+  };
   const rounds = [...weakOrder(weak).map((r) => ({ ...r, auto: true })), ...weak.own.map((o) => ({ key: `own:${o}`, de: o, own: true }))];
   const idx = Math.min(i, rounds.length - 1);
   const round = rounds[idx];
@@ -58,6 +78,24 @@ function TextCheck({ text, grammarLinks = true }) {
 
   return (
     <div>
+      {(unknown.length > 0 || dict) && (
+        <div style={{ fontSize: 12, color: "#9ab0c2", lineHeight: 1.45, border: "1px solid #2c3a47", borderRadius: 12, padding: "8px 10px", marginBottom: 8, background: "#121a21" }}>
+          {dict ? (
+            <>
+              📖 Wörterbuch (Wiktionary): {dict.found.length ? <span style={{ color: "#5fa85f" }}>✓ {dict.found.join(", ")}</span> : "nichts gefunden"}
+              {dict.missing.length > 0 && <span> · ✗ {dict.missing.join(", ")}</span>}
+              <div style={{ color: "#7d8d9c" }}>The found words are checked now too (gender, plural, verb forms).</div>
+            </>
+          ) : (
+            <>
+              📖 {unknown.length} {unknown.length === 1 ? "Wort kennt" : "Wörter kennt"} die App nicht: <b style={{ color: "#cdd8e2" }}>{unknown.join(", ")}</b>
+              <div style={{ color: "#7d8d9c" }}>Mistakes with these words can&apos;t be marked yet.</div>
+              <button type="button" disabled={busy} onClick={lookUp} style={{ ...chipBtn(!busy), marginTop: 6 }}>{busy ? "⏳ Suche im Wörterbuch …" : "🌐 Im Wörterbuch nachschlagen"}</button>
+              {dictErr && <div style={{ color: RED, marginTop: 4 }}>Offline? Das Wörterbuch ist nicht erreichbar.</div>}
+            </>
+          )}
+        </div>
+      )}
       <div role="tablist" aria-label="Runden" style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 6 }}>
         {rounds.map((r, n) => (
           <button key={r.key} type="button" role="tab" aria-selected={n === idx} onClick={() => go(n)} style={chipBtn(n === idx)}>

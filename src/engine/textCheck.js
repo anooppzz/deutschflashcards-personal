@@ -9,6 +9,7 @@
 // Used by components/TextCheck.jsx (✍️ Text prüfen and DTZ Schreiben).
 import { conjugate, formText, parseVerb } from "./conjugate";
 import { STORAGE_KEYS } from "../constants";
+import { lookupWiktionary } from "./wiktionary";
 
 export const ROUNDS = [
   {
@@ -39,12 +40,12 @@ export const ROUNDS = [
   {
     key: "kasus", grammar: "kasus-ueberblick", extra: true,
     de: "Stimmt der Kasus?", en: "Is the case right (dative / accusative)?",
-    rule: { de: "mit, nach, bei, seit, von, zu, aus + Dativ (mit dem Bus); für, ohne, gegen, um, durch + Akkusativ (für den Chef); helfen, gefallen, danken … + Dativ (Das gefällt mir).", en: "Some prepositions and verbs always take the dative, others the accusative – the article (or pronoun) shows it." },
+    rule: { de: "mit, nach, bei, seit, von, zu, aus + Dativ (mit dem Bus); für, ohne, gegen, um, durch + Akkusativ (für den Chef); in, an, auf … Wo? + Dativ (Ich bin im Kino), Wohin? + Akkusativ (Ich gehe ins Kino); helfen, gefallen, danken … + Dativ (Das gefällt mir).", en: "Some prepositions and verbs always take the dative, others the accusative; in/an/auf … take the dative for a place (where?) and the accusative for a movement (where to?)." },
   },
   {
     key: "adj-endung", grammar: "adjektivendungen", extra: true,
     de: "Stimmen die Adjektivendungen?", en: "Are the adjective endings right?",
-    rule: { de: "Nach der/die/das: -e oder -en (der neue Tisch, mit dem neuen Tisch). Nach ein/kein/mein: -er/-es/-e/-en (ein neuer Tisch, ein neues Bett).", en: "An adjective before a noun needs an ending; it depends on the article, the gender and the case." },
+    rule: { de: "Nach der/die/das: -e oder -en (der neue Tisch, mit dem neuen Tisch). Nach ein/kein/mein: -er/-es/-e/-en (ein neuer Tisch, ein neues Bett). Ohne Artikel zeigt das Adjektiv den Kasus: gutes Wetter, mit kaltem Wasser, liebe Grüße.", en: "An adjective before a noun needs an ending; it depends on the article, the gender and the case. Without an article, the adjective takes the article's ending (dem → kaltem)." },
   },
 ];
 
@@ -120,96 +121,156 @@ export const inflect = (base, end) => {
   return base + end;
 };
 
+// ---- the lexicon: what the checks know about words ----
+// nouns: "kaffee" → "Kaffee" · nounInfo: "tisch" → { gender, form } ·
+// plurals: "blumen" → { gender, singular, form } · adjectives: "neuen" →
+// { base, ending } · persons: finite form → persons it fits (0 ich … 5 sie) ·
+// present / sameTense: a form → the six forms (to suggest the right one) ·
+// participle: "gefällt" → "gefallen" · lemma: "fuhr" → "fahren" ·
+// dativeForms: every form of helfen, gefallen … · notNouns: words that are
+// never nouns
+const emptyLexicon = () => ({
+  nouns: new Map(), nounInfo: new Map(), plurals: new Map(), adjectives: new Map(), notNouns: new Set(FUNCTION_WORDS),
+  persons: new Map(), present: new Map(), sameTense: new Map(), participle: new Map(), participles: new Set(),
+  lemma: new Map(), dativeForms: new Set(),
+});
+// a copy to add to (Wiktionary words for one text)
+const copyLexicon = (lex) => Object.fromEntries(Object.entries(lex).map(([k, v]) => [k, v instanceof Map ? new Map(v) : new Set(v)]));
+
+const setOnce = (map, key, value) => { if (!map.has(key)) map.set(key, value); };
+
+// form: "Tisch"; plural: "Tische" | "" (none) | null (unknown); pluralOnly: die Eltern
+const addNoun = (lex, form, gender, plural, pluralOnly = false) => {
+  const lo = form.toLowerCase();
+  setOnce(lex.nouns, lo, form);
+  if (pluralOnly) { setOnce(lex.plurals, lo, { gender: null, singular: null, form }); return; }
+  if (!["der", "die", "das"].includes(gender)) return;
+  setOnce(lex.nounInfo, lo, { gender, form });
+  if (plural) {
+    setOnce(lex.plurals, plural.toLowerCase(), { gender, singular: form, form: plural });
+    setOnce(lex.nouns, plural.toLowerCase(), plural);
+  }
+};
+
+const addAdjective = (lex, base) => {
+  if (!/^[a-zäöüß]+$/.test(base) || NO_DECLINE.has(base)) return;
+  for (const end of ["", "e", "en", "er", "es", "em"]) setOnce(lex.adjectives, inflect(base, end), { base, ending: end });
+};
+
+// front: "ab·fahren", forms: { praes, praet, perf } (VERB_FORMS)
+const addVerb = (lex, front, forms, dative = false) => {
+  const c = conjugate(front, forms);
+  if (!c) return;
+  const praes = c.tenses.find((t) => t.key === "praesens").rows.map((r) => formText(r.segs).split(" ")[0]);
+  const v = parseVerb(front, forms);
+  const part = v && v.perf ? v.perf.part.toLowerCase() : null;
+  const verb = c.verb.toLowerCase();
+  const isDative = dative && c.head !== "stehen";
+  const forms6 = (word) => {
+    const lo = word.toLowerCase();
+    setOnce(lex.lemma, lo, verb);
+    if (part) setOnce(lex.participle, lo, part);
+    if (isDative) lex.dativeForms.add(lo);
+  };
+  forms6(verb);
+  if (part) { lex.participles.add(part); setOnce(lex.lemma, part, verb); if (isDative) lex.dativeForms.add(part); }
+  const add = (form, i) => {
+    const lo = form.toLowerCase();
+    if (!lex.persons.has(lo)) lex.persons.set(lo, new Set());
+    lex.persons.get(lo).add(i);
+    lex.notNouns.add(lo);
+    setOnce(lex.present, lo, praes);
+  };
+  for (const t of c.tenses) {
+    if (t.key === "praesens" || t.key === "praeteritum") {
+      const six = t.rows.map((r) => formText(r.segs).split(" ")[0]);
+      for (const f of six) { setOnce(lex.sameTense, f.toLowerCase(), six); forms6(f); }
+    }
+    if (["praesens", "praeteritum", "konj2"].includes(t.key)) {
+      t.rows.forEach((r, i) => {
+        const words = formText(r.segs).split(" ");
+        if (t.key === "konj2" && words.length > 1 && words[0].startsWith("würd")) { add(words[0], i); return; }
+        add(words[0], i);
+        // a separable verb in a subordinate clause: …, weil ich früh aufstehe
+        if (c.particle && words[words.length - 1] === c.particle) { add(c.particle + words[0], i); forms6(c.particle + words[0]); }
+      });
+    }
+    for (const r of t.rows) for (const w of formText(r.segs).split(" ")) lex.notNouns.add(w.toLowerCase());
+  }
+};
+
 // cards: ALL_CARDS; verbForms: VERB_FORMS (card id → forms); opts.pluralOf:
 // a noun card's plural (modes/forms/buildForms.js); opts.dativeIds: verbs
 // that take the dative (📋 "Verben mit Dativ", group Dativ)
 export const buildLexicon = (cards, verbForms, opts = {}) => {
   const { pluralOf = () => null, dativeIds = new Set() } = opts;
-  const nouns = new Map(); // "kaffee" → "Kaffee"
-  const nounInfo = new Map(); // "tisch" → { gender: "der", form: "Tisch" }
-  const plurals = new Map(); // "blumen" → { gender: "die", singular: "Blume" }
-  const adjectives = new Map(); // "neuen" → { base: "neu", ending: "en" }
-  const notNouns = new Set(FUNCTION_WORDS);
+  const lex = emptyLexicon();
   for (const c of cards) {
     if (c.type === "n") {
       const m = c.front.match(/^(?:der\/die|der|die|das)\s+([\p{Lu}][\p{L}-]*)$/u);
-      if (m) nouns.set(m[1].toLowerCase(), m[1]);
-      if (m && /^nur Plural/.test(c.sub || "")) {
-        // die Eltern, die Möbel, die Ferien: plural only
-        if (!plurals.has(m[1].toLowerCase())) plurals.set(m[1].toLowerCase(), { gender: null, singular: null, form: m[1] });
-      } else if (m && ["der", "die", "das"].includes(c.gender)) {
-        if (!nounInfo.has(m[1].toLowerCase())) nounInfo.set(m[1].toLowerCase(), { gender: c.gender, form: m[1] });
-        const pl = pluralOf(c);
-        if (pl && !plurals.has(pl.toLowerCase())) {
-          plurals.set(pl.toLowerCase(), { gender: c.gender, singular: m[1], form: pl });
-          nouns.set(pl.toLowerCase(), pl);
-        }
-      }
+      if (m) addNoun(lex, m[1], c.gender, pluralOf(c), /^nur Plural/.test(c.sub || "")); // die Eltern, die Möbel: plural only
     } else {
-      if (c.type === "adj" && /^[a-zäöüß]+$/.test(c.front) && !NO_DECLINE.has(c.front)) {
-        for (const end of ["", "e", "en", "er", "es", "em"]) {
-          const f = inflect(c.front, end);
-          if (!adjectives.has(f)) adjectives.set(f, { base: c.front, ending: end });
-        }
-      }
-      for (const w of c.front.replace(/·/g, "").match(WORD) || []) if (!/^\p{Lu}/u.test(w)) notNouns.add(w.toLowerCase());
+      if (c.type === "adj") addAdjective(lex, c.front);
+      for (const w of c.front.replace(/·/g, "").match(WORD) || []) if (!/^\p{Lu}/u.test(w)) lex.notNouns.add(w.toLowerCase());
     }
   }
-  // finite verb form → the persons it fits (0 ich … 5 sie/Sie), and the
-  // verb's Präsens to suggest the right form
-  const persons = new Map();
-  const present = new Map();
-  const sameTense = new Map(); // "hat" → [habe, hast, hat, haben, habt, haben]
-  const participle = new Map(); // "gefällt" → "gefallen"
-  const participles = new Set();
-  const dativeForms = new Set(); // every form of helfen, gefallen, danken …
-  const add = (form, i, praes) => {
-    const lo = form.toLowerCase();
-    if (!persons.has(lo)) persons.set(lo, new Set());
-    persons.get(lo).add(i);
-    notNouns.add(lo);
-    if (praes && !present.has(lo)) present.set(lo, praes);
-  };
-  const all = [...BASE_VERBS.map(([inf, praes, praet, perf]) => [`base::${inf}`, { praes, praet, perf }]), ...verbForms];
-  for (const [id, forms] of all) {
-    const c = conjugate(id.slice(id.indexOf("::") + 2), forms);
-    if (!c) continue;
-    const praesT = c.tenses.find((t) => t.key === "praesens");
-    const praes = praesT.rows.map((r) => formText(r.segs).split(" ")[0]);
-    const v = parseVerb(id.slice(id.indexOf("::") + 2), forms);
-    const part = v && v.perf ? v.perf.part.toLowerCase() : null;
-    const dative = dativeIds.has(id) && c.head !== "stehen";
-    if (part) {
-      participles.add(part);
-      if (!participle.has(c.verb.toLowerCase())) participle.set(c.verb.toLowerCase(), part);
-      if (dative) dativeForms.add(part);
-    }
-    if (dative) dativeForms.add(c.verb.toLowerCase());
-    for (const t of c.tenses) {
-      if (t.key !== "praesens" && t.key !== "praeteritum") continue;
-      const six = t.rows.map((r) => formText(r.segs).split(" ")[0]);
-      for (const f of six) {
-        const lo = f.toLowerCase();
-        if (!sameTense.has(lo)) sameTense.set(lo, six);
-        if (part && !participle.has(lo)) participle.set(lo, part);
-        if (dative) dativeForms.add(lo);
-      }
-    }
-    for (const t of c.tenses) {
-      if (!["praesens", "praeteritum", "konj2"].includes(t.key)) continue;
-      t.rows.forEach((r, i) => {
-        const words = formText(r.segs).split(" ");
-        if (t.key === "konj2" && words.length > 1 && words[0].startsWith("würd")) { add(words[0], i); return; }
-        add(words[0], i, praes);
-        // a separable verb in a subordinate clause: …, weil ich früh aufstehe
-        if (c.particle && words[words.length - 1] === c.particle) add(c.particle + words[0], i);
-      });
-    }
-    for (const t of c.tenses) for (const r of t.rows) for (const w of formText(r.segs).split(" ")) notNouns.add(w.toLowerCase());
-  }
-  return { nouns, nounInfo, plurals, adjectives, notNouns, persons, present, sameTense, participle, participles, dativeForms };
+  for (const [inf, praes, praet, perf] of BASE_VERBS) addVerb(lex, inf, { praes, praet, perf });
+  for (const [id, forms] of verbForms) addVerb(lex, id.slice(id.indexOf("::") + 2), forms, dativeIds.has(id));
+  return lex;
 };
 
+// ---- words the app has no card for (📖 Wiktionary) ----
+
+// the words in a text the lexicon doesn't know – to look up
+export const unknownWords = (text, lex, max = 15) => {
+  const seen = new Set();
+  const out = [];
+  wordsOf(text).forEach((w, i, all) => {
+    const lo = w.lo;
+    if (seen.has(lo) || lo.length < 3) return;
+    seen.add(lo);
+    const known = lex.nouns.has(lo) || lex.notNouns.has(lo) || lex.adjectives.has(lo) || lex.persons.has(lo) || lex.lemma.has(lo) || isDeterminer(lo) || W_WORDS.has(lo) || SUBORD.has(lo);
+    // a capital word after „Liebe/Lieber/Frau/Herr“ is a name
+    const prev = all[i - 1];
+    if (known || (prev && /^(liebe[rs]?|frau|herr|hallo|hi)$/i.test(prev.t))) return;
+    out.push(w.t);
+  });
+  return out.slice(0, max);
+};
+
+// Look the unknown words up in Wiktionary (cached per word) – an inflected
+// form („Häuser“) is followed to its base word („Haus“). Throws when the
+// first lookup fails (offline). → { lex, found: [word], missing: [word] }
+const useful = (e) => (e.articles && e.articles.length) || e.verb || e.adjective || e.pos === "Adjektiv";
+export const lookUpUnknown = async (words, lex, lookup = lookupWiktionary) => {
+  const entries = [];
+  const found = [];
+  const missing = [];
+  for (const [n, w] of words.entries()) {
+    let es;
+    try { es = await lookup(w); } catch (err) { if (n === 0) throw err; missing.push(w); continue; }
+    let got = es.filter(useful);
+    for (const base of [...new Set(es.map((e) => e.lemma).filter(Boolean))].slice(0, 2)) {
+      try { got = got.concat((await lookup(base)).filter(useful)); } catch { /* offline now */ }
+    }
+    if (got.length) { entries.push(...got); found.push(w); } else missing.push(w);
+  }
+  return { lex: extendLexicon(lex, entries), found, missing };
+};
+
+// Wiktionary entries (engine/wiktionary.js) → a lexicon that knows them too
+export const extendLexicon = (lex, entries) => {
+  const next = copyLexicon(lex);
+  for (const e of entries) {
+    if (e.articles && e.articles.length === 1 && e.pos === "Substantiv") addNoun(next, e.title, e.articles[0], e.plural || null);
+    if (e.verb && e.verb.er && e.verb.praeteritum && e.verb.partizip && /^[a-zäöüß]+$/.test(e.title)) {
+      const aux = /^sein/.test(e.verb.hilfsverb || "") ? "ist" : "hat";
+      addVerb(next, e.title, { praes: e.verb.er, praet: e.verb.praeteritum, perf: `${aux} ${e.verb.partizip}` });
+    }
+    if (e.adjective || e.pos === "Adjektiv") addAdjective(next, e.title);
+  }
+  return next;
+};
 // ---- the five rounds ----
 
 const mark = (words, from, to, kind, de, en, fix) => ({ start: words[from].start, end: words[to].end, kind, de, en, fix });
@@ -480,9 +541,98 @@ const CONTRACTIONS = {
   ins: { ok: ["n"], m: "in den", f: "in die" }, ans: { ok: ["n"], m: "an den", f: "an die" },
 };
 const ACC_TO_DAT = { mich: "mir", dich: "dir", ihn: "ihm" };
+
+// Wechselpräpositionen: Wohin? (movement) → Akkusativ, Wo? (place) → Dativ.
+// The clause's verb decides; time words (in der Woche, vor einem Jahr) are Dativ.
+const TWO_WAY = new Set(["in", "an", "auf", "hinter", "neben", "über", "unter", "vor", "zwischen"]);
+const TWO_WAY_CONTRACTED = { im: ["in", "dat"], am: ["an", "dat"], ins: ["in", "acc"], ans: ["an", "acc"] };
+// putting something somewhere: always Wohin? (Ich lege das Buch auf den Tisch)
+const PLACING = new Set([
+  "legen", "stellen", "setzen", "bringen", "mitbringen", "werfen", "wegwerfen", "schicken", "abschicken", "packen",
+  "einpacken", "tun", "gießen", "kleben", "aufkleben", "stecken",
+]);
+// going somewhere: usually Wohin?, but moving inside a place is Wo? (im Park spazieren gehen)
+const GOING = new Set([
+  "gehen", "fahren", "fliegen", "rennen", "ziehen", "umziehen", "einziehen", "steigen", "einsteigen", "umsteigen",
+  "springen", "zurückkommen", "zurückfahren", "hinfahren", "mitkommen",
+]);
+// a particle at the end makes it another verb: „Die Sonne geht im Osten auf“
+const PARTICLES = new Set(["auf", "unter", "an", "aus", "ein", "mit", "zurück", "los", "weg", "vor", "nach", "zu", "ab", "um"]);
+const LOCATION = new Set([
+  "sein", "wohnen", "leben", "liegen", "stehen", "sitzen", "bleiben", "arbeiten", "schlafen", "studieren", "essen", "trinken",
+  "spielen", "lernen", "kaufen", "einkaufen", "treffen", "frühstücken", "feiern", "parken", "stattfinden", "tanzen", "singen",
+  "duschen", "baden", "kochen", "übernachten", "warten", "sprechen",
+]);
+// verbs with a fixed preposition: warten auf, denken an, sich freuen über … – no Wo?/Wohin?
+const FIXED_PREP = new Set([
+  "warten", "denken", "freuen", "ärgern", "erinnern", "achten", "aufpassen", "antworten", "gewöhnen", "reden", "sprechen",
+  "lachen", "nachdenken", "hoffen", "teilnehmen", "glauben", "schreiben", "bestehen", "verlieben", "vorbereiten", "kümmern", "wundern",
+  "beschweren", "informieren", "diskutieren", "streiten",
+]);
+const TIME_NOUNS = new Set([
+  "jahr", "monat", "woche", "tag", "stunde", "minute", "nacht", "abend", "morgen", "mittag", "nachmittag", "vormittag",
+  "wochenende", "moment", "zeit", "sommer", "winter", "frühling", "herbst", "anfang", "ende",
+  "januar", "februar", "märz", "april", "mai", "juni", "juli", "august", "september", "oktober", "november", "dezember",
+  "montag", "dienstag", "mittwoch", "donnerstag", "freitag", "samstag", "sonntag",
+]);
+// Wo? or Wohin? for a two-way preposition in this part of a clause:
+// { want: "dat" | "acc", sure } or null. clauseWords: the words up to the
+// next und/oder/aber („… in einem Café und fahren zurück“ are two parts)
+const wantedTwoWay = (prep, nounLo, clauseWords, lex) => {
+  if (TIME_NOUNS.has(nounLo)) return prep === "über" ? null : { want: "dat", sure: true }; // über das Wochenende
+  if (nounLo === "ferien" || nounLo === "urlaub") return null; // in den Ferien (time) / in die Ferien (fahren): both right
+  // verbs only: a capital word inside the clause is a noun (das Essen, die Reise)
+  let lemmas = clauseWords.filter((w, k) => k === 0 || !/^\p{Lu}/u.test(w.t)).map((w) => lex.lemma.get(w.lo)).filter(Boolean);
+  // „ist … gelaufen“: sein/haben next to another verb is only the helper verb
+  if (lemmas.some((l) => l !== "sein" && l !== "haben")) lemmas = lemmas.filter((l) => l !== "sein" && l !== "haben");
+  if (["an", "auf", "über", "vor"].includes(prep) && lemmas.some((l) => FIXED_PREP.has(l))) return null;
+  const last = clauseWords[clauseWords.length - 1];
+  if (lemmas.some((l) => PLACING.has(l))) return { want: "acc", sure: true };
+  if (lemmas.some((l) => GOING.has(l))) {
+    if (clauseWords.some((w) => w.lo === "spazieren") || (last && PARTICLES.has(last.lo))) return null;
+    return { want: "acc", sure: false };
+  }
+  if (lemmas.some((l) => LOCATION.has(l))) return { want: "dat", sure: true };
+  return null;
+};
+// the case a determiner + noun shows: "dat" | "acc" | null (could be both)
+const caseShown = (slots) => {
+  const dat = slots.some((sl) => sl.startsWith("dat"));
+  const acc = slots.some((sl) => sl.startsWith("acc") || sl.startsWith("nom"));
+  return dat && !acc ? "dat" : acc && !dat ? "acc" : null;
+};
+const TWO_WAY_EN = {
+  acc: "Wohin? (movement to a place) → Akkusativ. If you move inside the place (im Park laufen), Dativ is right.",
+  dat: "Wo? (place, no movement) → Dativ.",
+};
+
 const caseErrors = (text, words, clauses, lex) => {
   const out = [];
+  // each word → the words of its clause part (split at und/oder/aber)
+  const clauseOf = new Map();
+  for (const c of clauses.flat()) {
+    let part = [];
+    const parts = [part];
+    for (const wi of c) {
+      if (COORD.has(words[wi].lo) && part.length) { part = []; parts.push(part); }
+      part.push(wi);
+    }
+    for (const pt of parts) for (const wi of pt) clauseOf.set(wi, pt.map((x) => words[x]));
+  }
   words.forEach((w, i) => {
+    if (TWO_WAY.has(w.lo)) {
+      const p = phraseAt(text, words, lex, i + 1);
+      if (!p) return;
+      const slots = fitting(p);
+      const shown = slots.length ? caseShown(slots) : null;
+      const wanted = shown && wantedTwoWay(w.lo, words[p.noun].lo, clauseOf.get(i) || [], lex);
+      if (!wanted || wanted.want === shown) return;
+      const { want } = wanted;
+      const g = slots[0].split("-")[1];
+      const fixed = `${w.t} ${withDet(text, words, p, detFor(p.d, `${want}-${g}`, words[i + 1].t))}`;
+      out.push(mark(words, i, p.noun, wanted.sure ? "error" : "check", `${w.t} ${phraseText(text, words, p)} → ${fixed}`, TWO_WAY_EN[want], fixed));
+      return;
+    }
     const want = DAT_PREPS.has(w.lo) ? "dat" : ACC_PREPS.has(w.lo) ? "acc" : null;
     if (want) {
       const p = phraseAt(text, words, lex, i + 1);
@@ -505,9 +655,22 @@ const caseErrors = (text, words, clauses, lex) => {
       const sg = lex.nounInfo.get(next.lo);
       if (!sg || lex.plurals.has(next.lo)) return;
       const g = GENDER[sg.gender];
-      if (con.ok.includes(g) || !con[g]) return;
-      const fix = /^\p{Lu}/u.test(w.t) ? con[g][0].toUpperCase() + con[g].slice(1) : con[g];
-      out.push(mark(words, i, i + 1, "error", `${w.t} ${next.t} → ${fix} ${next.t}`, `It's „${sg.gender} ${sg.form}“ (${GENDER_EN[sg.gender]}).`, `${fix} ${next.t}`));
+      if (!con.ok.includes(g) && con[g]) {
+        const fix = /^\p{Lu}/u.test(w.t) ? con[g][0].toUpperCase() + con[g].slice(1) : con[g];
+        out.push(mark(words, i, i + 1, "error", `${w.t} ${next.t} → ${fix} ${next.t}`, `It's „${sg.gender} ${sg.form}“ (${GENDER_EN[sg.gender]}).`, `${fix} ${next.t}`));
+        return;
+      }
+      // im/am = Wo? (Dativ), ins/ans = Wohin? (Akkusativ)
+      const two = TWO_WAY_CONTRACTED[w.lo];
+      if (!two) return;
+      const wanted = wantedTwoWay(two[0], next.lo, clauseOf.get(i) || [], lex);
+      if (!wanted || wanted.want === two[1]) return;
+      const { want } = wanted;
+      const det = want === "dat" ? DEF_FORM[`dat-${g}`] : DEF_FORM[`acc-${g}`];
+      const short = { "in dem": "im", "an dem": "am", "in das": "ins", "an das": "ans" }[`${two[0]} ${det}`];
+      const fixWord = short || `${two[0]} ${det}`;
+      const fix = /^\p{Lu}/u.test(w.t) ? fixWord[0].toUpperCase() + fixWord.slice(1) : fixWord;
+      out.push(mark(words, i, i + 1, wanted.sure ? "error" : "check", `${w.t} ${next.t} → ${fix} ${next.t}`, TWO_WAY_EN[want], `${fix} ${next.t}`));
     }
   });
   for (const c of clauses.flat()) {
@@ -519,6 +682,47 @@ const caseErrors = (text, words, clauses, lex) => {
       out.push(mark(words, wi, wi, "error", `${words[wi].t} → ${fix}`, `„${words[verb].t}“ takes the dative: mir, dir, ihm (not mich, dich, ihn).`, fix));
     });
   }
+  return out;
+};
+
+// round 7 without an article: „gut Wetter“ → „gutes Wetter“, „mit kalte Wasser“ → „kaltem“
+const STRONG = {
+  "nom-m": "er", "acc-m": "en", "dat-m": "em", "nom-f": "e", "acc-f": "e", "dat-f": "er",
+  "nom-n": "es", "acc-n": "es", "dat-n": "em", "nom-pl": "e", "acc-pl": "e", "dat-pl": "en",
+};
+// before these the adjective has no article of its own (zwei neue Autos)
+const COUNT_WORDS = /^(zwei|drei|vier|fünf|sechs|sieben|acht|neun|zehn|hundert|tausend|viele|einige|mehrere|pro)$/;
+const LANGUAGES = /^(deutsch|englisch|französisch|spanisch|italienisch|arabisch|türkisch|russisch)$/; // „Er spricht gut Deutsch“
+const strongAdjectiveErrors = (text, words, clauses, lex) => {
+  const out = [];
+  const starts = new Set(clauses.flat().map((c) => c[0]));
+  const isAdj = (k) => words[k] && lex.adjectives.has(words[k].lo) && (/^\p{Ll}/u.test(words[k].t) || starts.has(k));
+  words.forEach((w, i) => {
+    if (!isAdj(i) || isAdj(i - 1)) return;
+    const prev = starts.has(i) ? null : words[i - 1];
+    if (prev && (detOf(prev.lo) || (isDeterminer(prev.lo) && !COUNT_WORDS.test(prev.lo)))) return;
+    let j = i;
+    while (isAdj(j)) j += 1;
+    const noun = words[j];
+    if (!noun || !/^\p{Lu}/u.test(noun.t) || LANGUAGES.test(noun.lo) || /[,.!?;:\n]/.test(text.slice(words[i].end, noun.start))) return;
+    const readings = readingsOf(lex, noun.lo);
+    if (!readings.length) return;
+    const cases = prev && DAT_PREPS.has(prev.lo) ? ["dat"]
+      : prev && ACC_PREPS.has(prev.lo) ? ["acc"]
+        : prev && TWO_WAY.has(prev.lo) ? ["dat", "acc"] : ["nom", "acc"];
+    const wanted = [...new Set(cases.flatMap((cs) => readings.map((g) => STRONG[`${cs}-${g}`])))];
+    // a bare adjective is often an adverb („Ich mache regelmäßig Sport“): only
+    // after a preposition or ist/sind is it surely missing its ending
+    const surelyAttributive = prev && (ALL_PREPS.has(prev.lo) || /^(ist|sind|war|waren)$/.test(prev.lo));
+    for (let a = i; a < j; a += 1) {
+      const info = lex.adjectives.get(words[a].lo);
+      if (wanted.includes(info.ending)) continue;
+      if (!info.ending && !surelyAttributive) continue;
+      let fix = inflect(info.base, wanted[0]);
+      if (/^\p{Lu}/u.test(words[a].t)) fix = fix[0].toUpperCase() + fix.slice(1);
+      out.push(mark(words, a, a, "error", `${words[a].t} → ${fix}`, `No article before „${noun.t}“: the adjective shows the case – -${wanted[0]}${wanted.length > 1 ? ` (or -${wanted.slice(1).join(", -")})` : ""}.`, fix));
+    }
+  });
   return out;
 };
 
@@ -548,7 +752,7 @@ export const checkText = (text, lex) => {
     "verb-ende": verbAtEnd(words, clauses, lex),
     artikel: [...genderErrors(text, words, clauses, lex), ...articles(text, words, lex)],
     kasus: caseErrors(text, words, clauses, lex),
-    "adj-endung": adjectiveErrors(text, words, lex),
+    "adj-endung": [...adjectiveErrors(text, words, lex), ...strongAdjectiveErrors(text, words, clauses, lex)],
   };
 };
 

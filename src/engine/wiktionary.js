@@ -94,6 +94,9 @@ const parseBlock = (title, heading, text) => {
   const pos = (heading.match(/\{\{Wortart\|([^|}]+)\|Deutsch\}\}/) || [])[1];
   if (!pos) return null;
   const entry = { title, pos, meanings: numbered(text, "Bedeutungen", 3), examples: numbered(text, "Beispiele", 2), en: englishOf(text) };
+  // an inflected form („Häuser“, „gekauft“) points to its base word: {{Grundformverweis Dekl|Haus}}
+  const base = text.match(/\{\{Grundformverweis[^|}]*\|([^|}#]+)/);
+  if (base) entry.lemma = base[1].trim();
   const noun = templateFields(text, "Deutsch Substantiv Übersicht");
   if (noun) {
     const genders = [noun.Genus, noun["Genus 1"], noun["Genus 2"], noun["Genus 3"]].filter((g) => ARTICLE[g]);

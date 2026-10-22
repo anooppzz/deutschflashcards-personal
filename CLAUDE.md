@@ -178,7 +178,9 @@ src/engine/textCheck.js    🔍 Fehler-Check (Menschen A2 tip: one read per mist
                            book's five rounds (Nomen groß, Verbform, Position 2, Verb am
                            Ende, Artikel) + extra Kasus and Adjektivendungen, from the cards
                            (genders, plurals, adjectives), conjugate.js and 📋 Verben mit
-                           Dativ; keep 0 errors on the app's own sentences (see the log);
+                           Dativ, Wechselpräpositionen by the clause's verb, endings with
+                           and without article; unknown words → 🌐 de.wiktionary lookup
+                           (lookUpUnknown); a test keeps 0 errors on the app's own sentences;
                            ⭐ "Das mache ich oft falsch" (WRITING_WEAK). UI components/TextCheck.jsx, used
                            in ☰ Mehr → ✍️ Text prüfen (modes/textcheck/TextCheckView.jsx)
                            and DTZ Schreiben after "Abgeben"
