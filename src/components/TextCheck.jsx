@@ -1,6 +1,7 @@
 import { useContext, useMemo, useState } from "react";
 import PropTypes from "prop-types";
-import { ALL_CARDS, VERB_FORMS } from "../data";
+import { ALL_CARDS, VERB_FORMS, LIST_BY_KEY } from "../data";
+import { pluralOf } from "../modes/forms/buildForms";
 import { ROUNDS, buildLexicon, checkText, pieces, weakOrder, readWeak, saveWeak } from "../engine/textCheck";
 import { GrammarNavCtx } from "../context/GrammarNavCtx";
 
@@ -12,11 +13,19 @@ import { GrammarNavCtx } from "../context/GrammarNavCtx";
 
 const ACCENT = "#e0833b";
 const RED = "#e07b6f";
-const SHORT = { "nomen-gross": "Nomen groß", "verb-konjugiert": "Verbform", "verb-position2": "Position 2", "verb-ende": "Verb am Ende", artikel: "Artikel" };
+const SHORT = {
+  "nomen-gross": "Nomen groß", "verb-konjugiert": "Verbform", "verb-position2": "Position 2", "verb-ende": "Verb am Ende",
+  artikel: "Artikel", kasus: "Kasus", "adj-endung": "Adj.-Endung",
+};
 
 let lexicon = null; // built on first use: the app's nouns and verb forms
 const lex = () => {
-  if (!lexicon) lexicon = buildLexicon(ALL_CARDS, VERB_FORMS);
+  if (!lexicon) {
+    // verbs that always take the dative: 📋 Verben mit Dativ, group "Dativ"
+    const list = LIST_BY_KEY["ga-verben-dativ"];
+    const dativeIds = new Set(list ? list.rows.filter((r) => r.group === "Dativ").flatMap((r) => r.cards) : []);
+    lexicon = buildLexicon(ALL_CARDS, VERB_FORMS, { pluralOf, dativeIds });
+  }
   return lexicon;
 };
 let lastRound = { text: null, i: 0 }; // back from a 📖 grammar topic: same round
@@ -59,7 +68,7 @@ function TextCheck({ text, grammarLinks = true }) {
       </div>
 
       <div style={{ border: `1px solid ${starred(round) ? ACCENT : "#2c3a47"}`, borderRadius: 12, padding: "10px 12px", background: "#121a21", margin: "6px 0 10px" }}>
-        <div style={{ fontSize: 12, color: "#7d8d9c" }}>Runde {idx + 1} von {rounds.length}{starred(round) ? " · ⭐ machst du oft falsch" : ""}</div>
+        <div style={{ fontSize: 12, color: "#7d8d9c" }}>Runde {idx + 1} von {rounds.length}{round.extra ? " · Extra (nicht im Buch)" : ""}{starred(round) ? " · ⭐ machst du oft falsch" : ""}</div>
         <div style={{ fontSize: 16, fontWeight: 800, color: "#f2f5f8", marginTop: 2 }}>{round.own ? `Achte nur auf: ${round.de}` : round.de}</div>
         {round.auto ? (
           <>

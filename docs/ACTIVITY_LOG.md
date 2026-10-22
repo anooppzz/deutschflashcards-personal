@@ -8,8 +8,7 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 - [ ] **📊 Alle Formen – learner review (asked 2026-10-22):** show the learner where the
   buttons are (card back, 🔁 Formen after an answer, 📋 Wortlisten row) and adjust.
-  Data question found while checking: `um·ziehen` (Feste) has "hat/ist umgezogen" – the
-  table uses the first (hat); for moving house it is **ist** umgezogen. Ask before changing.
+  (`um·ziehen`: done 2026-10-22, the learner chose "ist umgezogen".)
 
 - [ ] **📋 Wortlisten – more from Grammatik aktiv:** "Wichtige Verben mit Präpositionen"
   (the next page after the dative verbs, not photographed yet). New lists go into
@@ -171,6 +170,31 @@ was done, newest first. Every change adds a log entry here in the same commit
   trainer, Reverse articles, 12 grammar topics, ✏️ Üben, data cleanup, code tidying).
 
 ## Log
+
+### 2026-10-22 – 🔍 Fehler-Check: noun subjects, Perfekt, articles, cases, endings; ist umgezogen
+- `um·ziehen`: the 📋 Grammatik-aktiv row said "hat/ist umgezogen" and overrode the
+  card's "ist umgezogen"; now "ist/hat umgezogen" (learner's choice: ist first, the
+  book's hat kept as the 2nd form, like ausziehen).
+- The learner asked to catch „Die Blumen hat mich sehr gefällt“ and to check cases and
+  endings. engine/textCheck.js now also knows each noun's gender and plural
+  (pluralOf from modes/forms/buildForms.js; "nur Plural" cards = plural), adjectives
+  (with their endings) and the dative verbs (📋 Verben mit Dativ, group "Dativ"):
+  - round 2 Verbform + noun subjects („Die Blumen hat“ → haben, „Der Tisch sind“ → ist;
+    object first like „Die Blumen kaufe ich“ is left alone) + Perfekt with a wrong
+    form at the end („hat … gefällt“ → gefallen, „bin … gehen“ → gegangen);
+  - round 5 Artikel + wrong gender („Die Tisch“ → Der Tisch, „einen Lampe“ → eine);
+  - NEW round 6 Kasus (extra, not in the book): mit/nach/bei/seit/von/zu/aus + Dativ,
+    für/ohne/gegen/um/durch + Akkusativ („mit das Auto“ → mit dem Auto), zum/zur/im …
+    by gender („zur Bahnhof“ → zum), dative plural -n, helfen/gefallen/danken … + mir/
+    dir/ihm („mich“ → mir);
+  - NEW round 7 Adjektivendungen (extra): after der/die/das and ein/kein/mein
+    („mit dem neu Auto“ → neuen, „ein schöne Geschenk“ → schönes).
+- False-alarm test: all 1,676 correct sentences in the app (📰 Lesen, 🧱 Sätze, DTZ model
+  letters, card examples) give 0 errors; that run fixed plural-only nouns, „ein paar“,
+  adjectives that look like nouns (eine junge Frau), „…, wann ich will“, numbers between
+  article and noun, „weiß“ (white vs. wissen), „es sind“.
+- Still not checked: adjective endings without an article, two-way prepositions
+  (in/an/auf … Wo? or Wohin?), words the app has no card for – the 🤖 AI check covers those.
 
 ### 2026-10-22 – 🔍 Fehler-Check: read your text once per mistake (Menschen A2 tip)
 - From the learner's photo (Menschen A2, „Fehler in eigenen Texten finden“): the five

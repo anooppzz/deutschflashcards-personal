@@ -111,7 +111,7 @@
       {"inf": "übertragen", "praes": "überträgt", "praet": "übertrug", "perf": "hat übertragen", "cards": ["irregular::übertragen"]},
       {"inf": "überweisen", "praes": "überweist", "praet": "überwies", "perf": "hat überwiesen", "cards": ["irregular::überweisen"]},
       {"inf": "umsteigen", "praes": "steigt um", "praet": "stieg um", "perf": "ist umgestiegen", "cards": ["reisen::umsteigen"]},
-      {"inf": "umziehen", "praes": "zieht um", "praet": "zog um", "perf": "hat/ist umgezogen", "cards": ["feste-glueckwuensche::um·ziehen"]},
+      {"inf": "umziehen", "praes": "zieht um", "praet": "zog um", "perf": "ist/hat umgezogen", "cards": ["feste-glueckwuensche::um·ziehen"]},
       {"inf": "unterhalten", "praes": "unterhält", "praet": "unterhielt", "perf": "hat unterhalten", "cards": ["firma-produkte::unterhalten (sich)"]},
       {"inf": "unternehmen", "praes": "unternimmt", "praet": "unternahm", "perf": "hat unternommen", "cards": ["irregular::unternehmen"]},
       {"inf": "unterschreiben", "praes": "unterschreibt", "praet": "unterschrieb", "perf": "hat unterschrieben", "cards": ["post-pakete::unterschreiben"]},

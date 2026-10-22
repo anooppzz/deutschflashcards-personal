@@ -174,10 +174,12 @@ src/engine/conjugate.js    📊 Alle Formen: a verb's whole conjugation from VER
                            components/ConjugationSheet.jsx (A2 open, B1 folded, 🙈 Selbst
                            testen), opened via context/ConjugationCtx.js openConjugation(id)
                            from the card back, 🔁 Formen and 📋 Wortlisten; App.jsx conjStack
-src/engine/textCheck.js    🔍 Fehler-Check (Menschen A2 tip: one read per mistake type): five
-                           rounds of marks (Nomen groß, Verbform, Position 2, Verb am
-                           Ende, Artikel) from the cards + conjugate.js; ⭐ "Das mache ich
-                           oft falsch" (WRITING_WEAK). UI components/TextCheck.jsx, used
+src/engine/textCheck.js    🔍 Fehler-Check (Menschen A2 tip: one read per mistake type): the
+                           book's five rounds (Nomen groß, Verbform, Position 2, Verb am
+                           Ende, Artikel) + extra Kasus and Adjektivendungen, from the cards
+                           (genders, plurals, adjectives), conjugate.js and 📋 Verben mit
+                           Dativ; keep 0 errors on the app's own sentences (see the log);
+                           ⭐ "Das mache ich oft falsch" (WRITING_WEAK). UI components/TextCheck.jsx, used
                            in ☰ Mehr → ✍️ Text prüfen (modes/textcheck/TextCheckView.jsx)
                            and DTZ Schreiben after "Abgeben"
 src/engine/mistakes.js     📕 Fehlerheft: every wrong answer (App.jsx reviewResult +
