@@ -91,7 +91,8 @@ export const modelText = (task) => [task.model.anrede, ...task.model.parts, task
 
 // The request for an AI to rate the text like a DTZ examiner (in-app chat or
 // a website link). English explanations, German corrections.
-export const writingReviewPrompt = (task, text) => [
+// weak: the learner's "Das mache ich oft falsch" lines (engine/textCheck.js weakLines)
+export const writingReviewPrompt = (task, text, weak = []) => [
   "I'm preparing for the DTZ exam (Deutsch-Test für Zuwanderer, A2–B1), part Schreiben. Please rate my text like a DTZ examiner.",
   "",
   `Task (${task.register === "formal" ? "formal, Sie" : "informal, du"}): ${task.situation} ${task.instruction}`,
@@ -105,5 +106,6 @@ export const writingReviewPrompt = (task, text) => [
   "",
   "Rate the four official criteria with 0–5 points each (5 = B1 well done, 4 = B1, 3 = A2 well done, 2 = A2, 1 = A1, 0 = not done):",
   "Aufgabenbewältigung (were the 4 Leitpunkte covered?), Kommunikative Gestaltung (greeting, sign-off, register, linking sentences), Korrektheit (grammar, spelling), Wortschatz.",
+  ...(weak.length ? ["I often make these mistakes – look at them first:", ...weak.map((l) => `- ${l}`)] : []),
   "Then give: the total out of 20 and the level (A2 from 7, B1 from 15); which Leitpunkte are missing or unclear; my 5 most important mistakes as a table „my text → correct → why“ (why in simple English); a corrected version of my text that keeps my ideas; 2 tips to reach the next level.",
 ].join("\n");

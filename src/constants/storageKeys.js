@@ -27,6 +27,8 @@ export const STORAGE_KEYS = {
   DTZ_WRITING: "dtzWriting:v1", // ✍️ DTZ Schreiben: draft text + ticked Leitpunkte per task
   DTZ_STT: "dtzSpeechToText:v1", // 🗣 Sprechen: "on" = 📝 Mitschrift with Google speech recognition (off by default)
   AI_INBOX: "aiInbox:v1", // 📥 KI-Eingang: AI answers to add to the app later (engine/aiInbox.js)
+  WRITING_WEAK: "writingWeak:v1", // 🔍 Fehler-Check: "Das mache ich oft falsch" { ticked: [round keys], own: [text] }
+  TEXT_CHECK: "textCheck:v1", // ✍️ Text prüfen: the text being checked (draft)
 };
 
 // Keys that stay on this device only. They are deliberately NOT in

@@ -62,6 +62,7 @@ import { ProgressCtx } from "./context/ProgressCtx";
 import { GrammarNavCtx } from "./context/GrammarNavCtx";
 import { AiCtx } from "./context/AiCtx";
 import { ConjugationCtx } from "./context/ConjugationCtx";
+import TextCheckView from "./modes/textcheck/TextCheckView";
 import ConjugationSheet from "./components/ConjugationSheet";
 import AiChat from "./components/AiChat";
 import AiSettingsModal from "./components/AiSettingsModal";
@@ -497,6 +498,7 @@ function App() {
   const [showMistakes, setShowMistakes] = useState(false);
   // 📋 Wortlisten layer (modes/lists): null = closed, else { key } (key null: the lists)
   const [listsView, setListsView] = useState(null);
+  const [textCheckOpen, setTextCheckOpen] = useState(false); // ✍️ Text prüfen (☰ Mehr)
   // 🎓 DTZ trainer (modes/exam): null = closed, else { kind: "home" | "teil" | "sim", … }
   const [dtzView, setDtzView] = useState(null);
   // On a phone the mode tabs sit at the bottom of the first screen, so what
@@ -661,9 +663,10 @@ function App() {
     fromCardRef.current = fromCard;
     const layer = scrollLayer();
     scrollBackRef.current = { win: window.scrollY, layer: layer ? layer.scrollTop : null };
-    const inGrammar = mode === MODE.GRAMMAR && !home && !showMistakes && !listsView;
-    setGrammarFrom(inGrammar ? null : { mode, home, mistakes: showMistakes, lists: listsView });
+    const inGrammar = mode === MODE.GRAMMAR && !home && !showMistakes && !listsView && !textCheckOpen;
+    setGrammarFrom(inGrammar ? null : { mode, home, mistakes: showMistakes, lists: listsView, textCheck: textCheckOpen });
     setListsView(null);
+    setTextCheckOpen(false);
     setShowMistakes(false);
     setHome(false);
     setGrammarFocus({ key, n: Date.now() });
@@ -671,7 +674,7 @@ function App() {
     setMode(MODE.GRAMMAR);
     setGrammarFromSearch(searchOpen);
     setSearchOpen(false);
-  }, [mode, home, showMistakes, searchOpen, listsView]);
+  }, [mode, home, showMistakes, searchOpen, listsView, textCheckOpen]);
   const grammarNav = useMemo(() => ({ openGrammar, linksFor: grammarLinksById, returnCard }), [openGrammar, returnCard]);
   // 📊 Alle Formen: the verbs opened, the top one shown ("Geht wie …" opens
   // another on top; back returns to the one before)
@@ -693,6 +696,7 @@ function App() {
       setHome(grammarFrom.home);
       setShowMistakes(grammarFrom.mistakes);
       if (grammarFrom.lists) setListsView(grammarFrom.lists);
+      if (grammarFrom.textCheck) setTextCheckOpen(true);
     }
     setGrammarFrom(null);
     setGrammarFocus(null);
@@ -1222,6 +1226,7 @@ function App() {
     : langOpen ? () => setLangOpen(false)
     : searchOpen ? closeSearch
     : listsView ? () => setListsView(listsView.key ? { key: null } : null)
+    : textCheckOpen ? () => setTextCheckOpen(false)
     : mode === MODE.GRAMMAR && (grammarFrom || grammarFromSearch) ? backFromGrammar
     : mode === MODE.GRAMMAR && grammarTopic ? () => { setGrammarTopic(null); setGrammarFocus(null); }
     : review ? () => setReview(null)
@@ -1307,6 +1312,7 @@ function App() {
   const moreItems = [
     { key: "lesen", icon: "📰", label: "Lesen", detail: "Ein kurzer Text pro Kapitel", onClick: fromMore(() => goSection("lesen")) },
     { key: "lists", icon: "📋", label: "Wortlisten", detail: WORD_LISTS.map((l) => l.label).join(" · "), onClick: fromMore(() => setListsView({ key: null })) },
+    { key: "textcheck", icon: "✍️", label: "Text prüfen", detail: "Fehler in eigenen Texten finden", onClick: fromMore(() => setTextCheckOpen(true)) },
     { key: "dtz", icon: "🎓", label: "DTZ-Prüfungstraining", detail: "Hören · Lesen · Schreiben · Sprechen", onClick: fromMore(() => { goSection("heute"); setDtzView({ kind: "home" }); }) },
     { key: "backup", icon: "💾", label: "Fortschritt sichern & App", detail: lastBackupAt ? `Zuletzt gesichert vor ${Math.floor((Date.now() - lastBackupAt) / DAY_MS)} Tagen` : "Noch nie gesichert", accent: backupDue ? "#e0833b" : undefined, onClick: fromMore(() => setShowBackup(true)) },
     { key: "ai", icon: "🤖", label: "KI-Assistent", detail: aiSettings.enabled ? "an" : "aus", accent: aiSettings.enabled ? "#5fa85f" : undefined, onClick: fromMore(() => setAiSettingsOpen(true)) },
@@ -1364,6 +1370,11 @@ function App() {
             deckMeta={DECK_META}
             lang={lang}
           />
+        </ErrorBoundary>
+      )}
+      {textCheckOpen && (
+        <ErrorBoundary resetKey="textcheck" label="textcheck">
+          <TextCheckView onClose={() => setTextCheckOpen(false)} />
         </ErrorBoundary>
       )}
       {searchOpen && (

@@ -172,6 +172,28 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 ## Log
 
+### 2026-10-22 – 🔍 Fehler-Check: read your text once per mistake (Menschen A2 tip)
+- From the learner's photo (Menschen A2, „Fehler in eigenen Texten finden“): the five
+  checks + "Das mache ich oft falsch" + TIPP: read the text once per error type.
+- `engine/textCheck.js`: five rounds, each marks places in the text –
+  1 Nomen groß (known noun in lower case → error), 2 Verben konjugiert (pronoun + verb
+  form that doesn't fit, with the right form from engine/conjugate.js), 3 Verb
+  Position 2 („Heute ich gehe“, „Weil …, ich bleibe“), 4 Verb am Ende („weil ich habe
+  keine Zeit“ → „weil ich keine Zeit habe“), 5 Artikel (hint only). It knows the
+  app's cards + sein/haben/werden/wissen/modal verbs; unknown words are never marked.
+  Checked against the DTZ model letters for false alarms.
+- `components/TextCheck.jsx`: rounds as tabs (count of marks), rule de/en, 📖 link,
+  the text with only that round's marks, the list with fixes; **⭐ Das mache ich oft
+  falsch** (STORAGE_KEYS.WRITING_WEAK, in backups): ticked rounds come first, own
+  points become extra rounds; both go into the AI requests.
+- Where: **☰ Mehr → ✍️ Text prüfen** (`modes/textcheck/TextCheckView.jsx`, full-screen
+  layer, draft kept in STORAGE_KEYS.TEXT_CHECK, 🤖 "korrigieren lassen" via
+  textCorrectionPrompt; 📖 → back returns to the same round) and **DTZ Schreiben**
+  after "Abgeben" (folded "🔍 Fehler-Check", no 📖 links there; the DTZ AI request now
+  lists the ⭐ points too).
+- Not caught: mistakes with a noun subject („Die Blumen hat mich gefällt“ – should be
+  „Die Blumen haben mir gefallen“); cases/endings – that's what the AI check is for.
+
 ### 2026-10-22 – Back button, second fix: one guard per tap
 - The learner: still closing after two backs. The earlier test used Playwright's
   goBack (no Chrome skipping) and page.evaluate (counts as a user gesture), so it

@@ -4,6 +4,8 @@ import { STORAGE_KEYS } from "../../constants";
 import { AiCtx } from "../../context/AiCtx";
 import { aiSiteLinks } from "../../engine/lookup";
 import { formatClock } from "./dtz";
+import TextCheck from "../../components/TextCheck";
+import { readWeak, weakLines } from "../../engine/textCheck";
 import {
   WRITING_MINUTES, WRITING_A2_FROM, WRITING_B1_FROM, CRITERIA, POINT_STEPS,
   writingChecks, wordCount, writingLevel, suggestTaskPoints, writingReviewPrompt,
@@ -198,7 +200,7 @@ function WritingTrainer({ pair, onResult, toTop }) {
 
   const checks = writingChecks(text, task.register);
   const words = wordCount(text);
-  const prompt = writingReviewPrompt(task, text);
+  const prompt = writingReviewPrompt(task, text, weakLines(readWeak()));
   const copyPrompt = (site) => {
     try { navigator.clipboard.writeText(prompt).then(() => setCopied(site), () => {}); } catch { /* no clipboard */ }
   };
@@ -211,6 +213,15 @@ function WritingTrainer({ pair, onResult, toTop }) {
         <div style={{ ...card, whiteSpace: "pre-wrap", fontSize: 14, color: "#f2f5f8", lineHeight: 1.6, overflowWrap: "anywhere" }}>{text.trim() || <i style={{ color: "#7d8d9c" }}>(leer)</i>}</div>
         <div style={label}>Checkliste</div>
         <div style={card}><Checklist checks={checks} /></div>
+
+        {text.trim() && (
+          <details style={card}>
+            <summary style={{ cursor: "pointer", fontWeight: 800, color: "#f2f5f8" }}>🔍 Fehler-Check: Lies deinen Text 5-mal</summary>
+            <p style={{ ...instr, margin: "8px 0 10px" }}>One round per kind of mistake (Menschen A2): nouns capitalised, verb forms, verb in position 2, verb at the end, articles.</p>
+            {/* no 📖 links here: the Grammatik tab would close this task */}
+            <TextCheck text={text.trim()} grammarLinks={false} />
+          </details>
+        )}
 
         <div style={label}>Bewerten lassen</div>
         <div style={card}>
