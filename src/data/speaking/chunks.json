@@ -873,5 +873,110 @@
     ]
    }
   ]
+ },
+ {
+  "key": "medien",
+  "deck": "medien",
+  "icon": "📺",
+  "title": "Fernsehgewohnheiten",
+  "en": "Talking about TV habits",
+  "sentences": [
+   {
+    "de": "Ich sehe am liebsten Krimis.",
+    "en": "I like watching crime dramas best."
+   },
+   {
+    "de": "Ich sehe meistens Serien im Internet.",
+    "en": "I mostly watch series online."
+   },
+   {
+    "de": "Am Sonntag treffe ich mich mit meinen Freunden.",
+    "en": "On Sundays I meet up with my friends."
+   },
+   {
+    "de": "Wir treffen uns bei Anna oder im Café.",
+    "en": "We meet at Anna's or in the café."
+   },
+   {
+    "de": "Manchmal gucke ich allein zu Hause, aber meistens zusammen mit meiner Familie.",
+    "en": "Sometimes I watch alone at home, but mostly together with my family."
+   },
+   {
+    "de": "Ich sehe oft Nachrichten, aber ich habe keine feste Gewohnheit.",
+    "en": "I often watch the news, but I don't have a fixed habit."
+   },
+   {
+    "de": "Wenn ich am Abend keine Zeit habe, gucke ich die Sendung später in der Mediathek.",
+    "en": "When I have no time in the evening, I watch the programme later on the catch-up service."
+   },
+   {
+    "de": "Dazu gibt's immer Chips und etwas zu trinken.",
+    "en": "There are always crisps and something to drink with it."
+   },
+   {
+    "de": "Dann kochen wir zusammen und anschließend sehen wir den Film.",
+    "en": "Then we cook together and afterwards we watch the film."
+   },
+   {
+    "de": "Danach sprechen wir noch über die Folge.",
+    "en": "After that we talk about the episode."
+   },
+   {
+    "de": "Meine Lieblingssendung ist der Tatort.",
+    "en": "My favourite programme is the Tatort."
+   },
+   {
+    "de": "Ich habe keine Lieblingssendung.",
+    "en": "I don't have a favourite programme."
+   }
+  ],
+  "dialogues": [
+   {
+    "title": "Was guckst du gern?",
+    "en": "What do you like watching?",
+    "lines": [
+     {
+      "who": "A",
+      "de": "Was siehst du am liebsten im Fernsehen?",
+      "en": "What do you like watching most on TV?"
+     },
+     {
+      "who": "B",
+      "de": "Am liebsten sehe ich Krimis. Meine Lieblingssendung ist der Tatort.",
+      "en": "I like crime dramas best. My favourite programme is the Tatort."
+     },
+     {
+      "who": "A",
+      "de": "Guckst du allein oder mit anderen?",
+      "en": "Do you watch alone or with others?"
+     },
+     {
+      "who": "B",
+      "de": "Meistens treffe ich mich am Sonntag mit Freunden. Wir gucken bei Tom.",
+      "en": "Mostly I meet up with friends on Sunday. We watch at Tom's."
+     },
+     {
+      "who": "A",
+      "de": "Und wenn du am Sonntag keine Zeit hast?",
+      "en": "And if you have no time on Sunday?"
+     },
+     {
+      "who": "B",
+      "de": "Dann gucke ich den Krimi später in der Mediathek.",
+      "en": "Then I watch the crime drama later on the catch-up service."
+     },
+     {
+      "who": "A",
+      "de": "Kannst du mir eine gute Serie empfehlen?",
+      "en": "Can you recommend a good series to me?"
+     },
+     {
+      "who": "B",
+      "de": "Klar! Ich schicke dir morgen den Link.",
+      "en": "Sure! I'll send you the link tomorrow."
+     }
+    ]
+   }
+  ]
  }
 ]

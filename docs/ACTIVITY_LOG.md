@@ -171,6 +171,22 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 ## Log
 
+### 2026-11-02 – Einheit 15 Grammatik + Kommunikation (book p. 86): Dativ + Akkusativ
+- From a photo of p. 86 (Modul 5): new grammar topic **`verben-dativ-akkusativ`** "Verben mit
+  Dativ und Akkusativ: Wem? Was?" (group Verben, after `verben-dativ`): the book's verb list
+  (schenken, geben, empfehlen, schicken, wegnehmen, leihen, bringen, erzählen, zeigen, holen,
+  schreiben, kaufen) with one example each, the book's **Stellung der Objekte** table (Der
+  Tatort gibt den Zuschauern/ihnen Abwechslung → gibt sie den Zuschauern/ihnen), two ⚠ (es ihm,
+  no „zu“ for "to"), 10 ✏️ Üben questions. `verben-dativ` points to it.
+- Tagged the existing verb cards with the topic (schenken, geben, empfehlen, leihen, schicken,
+  bringen, erzählen, zeigen, holen, schreiben, kaufen, erklären).
+- 📺 Medien: 5 new cards from the page – weg·nehmen, die Abwechslung, die Mediathek, die
+  Lieblingssendung, anschließend (`card-ids.json` updated).
+- Kommunikation "über Fernsehgewohnheiten sprechen" → new 🧱 Sätze set `medien`
+  "Fernsehgewohnheiten": 12 sentences filled in from the box + one dialogue.
+- Unsure readings: none; plural -en for Abwechslung/Mediathek/Lieblingssendung is the
+  dictionary form (not on this page).
+
 ### 2026-10-22 – 🔍 Fehler-Check: two-way prepositions, endings without article, 📖 unknown words
 - **Wechselpräpositionen** (round 6 Kasus): in/an/auf/hinter/neben/über/unter/vor/zwischen
   and im/am/ins/ans. The verb of the clause part (split at und/oder/aber) decides:

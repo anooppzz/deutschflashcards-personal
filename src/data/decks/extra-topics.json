@@ -2100,7 +2100,8 @@
         "grammar": [
           "fragewoerter-kasus",
           "kasus-ueberblick",
-          "verben-dativ"
+          "verben-dativ",
+          "verben-dativ-akkusativ"
         ]
       },
       {
@@ -4625,7 +4626,10 @@
         "forms": {
           "praes": "kauft",
           "praet": "kaufte"
-        }
+        },
+        "grammar": [
+          "verben-dativ-akkusativ"
+        ]
       },
       {
         "type": "v",
@@ -6426,7 +6430,8 @@
         "grammar": [
           "fragewoerter-kasus",
           "kasus-ueberblick",
-          "verben-dativ"
+          "verben-dativ",
+          "verben-dativ-akkusativ"
         ]
       },
       {
@@ -6483,7 +6488,8 @@
         "grammar": [
           "fragewoerter-kasus",
           "kasus-ueberblick",
-          "verben-dativ"
+          "verben-dativ",
+          "verben-dativ-akkusativ"
         ],
         "forms": {
           "praes": "schickt",
@@ -7593,7 +7599,8 @@
         "grammar": [
           "fragewoerter-kasus",
           "kasus-ueberblick",
-          "verben-dativ"
+          "verben-dativ",
+          "verben-dativ-akkusativ"
         ],
         "forms": {
           "praes": "schenkt",
@@ -8805,7 +8812,8 @@
         "grammar": [
           "fragewoerter-kasus",
           "kasus-ueberblick",
-          "verben-dativ"
+          "verben-dativ",
+          "verben-dativ-akkusativ"
         ],
         "forms": {
           "praes": "zeigt",
@@ -9617,7 +9625,8 @@
         "grammar": [
           "fragewoerter-kasus",
           "kasus-ueberblick",
-          "verben-dativ"
+          "verben-dativ",
+          "verben-dativ-akkusativ"
         ]
       },
       {
@@ -9632,7 +9641,8 @@
         "grammar": [
           "fragewoerter-kasus",
           "kasus-ueberblick",
-          "verben-dativ"
+          "verben-dativ",
+          "verben-dativ-akkusativ"
         ]
       },
       {
@@ -10677,7 +10687,8 @@
         "grammar": [
           "fragewoerter-kasus",
           "kasus-ueberblick",
-          "verben-dativ"
+          "verben-dativ",
+          "verben-dativ-akkusativ"
         ],
         "forms": {
           "praes": "erklärt",
@@ -12115,7 +12126,10 @@
         "forms": {
           "praes": "holt",
           "praet": "holte"
-        }
+        },
+        "grammar": [
+          "verben-dativ-akkusativ"
+        ]
       },
       {
         "type": "v",
@@ -13610,6 +13624,74 @@
         "note": "Regie führen = to direct · der Regisseur = director",
         "level": "A2",
         "source": "KI-Eingang · 2026-10-21"
+      },
+      {
+        "type": "v",
+        "front": "weg·nehmen",
+        "sub": "hat weggenommen",
+        "english": "to take away",
+        "example": "Die Mutter nimmt dem Kind das Handy weg.",
+        "exampleEn": "The mother takes the phone away from the child.",
+        "note": "trennbar · jemandem (Dativ) etwas (Akk.) wegnehmen",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 15",
+        "grammar": [
+          "verben-dativ-akkusativ",
+          "trennbare-verben"
+        ],
+        "forms": {
+          "praes": "nimmt weg",
+          "praet": "nahm weg"
+        }
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Abwechslung",
+        "sub": "Pl. -en",
+        "english": "variety, change (of routine)",
+        "example": "Der Tatort gibt den Zuschauern Abwechslung.",
+        "exampleEn": "The Tatort gives the viewers variety.",
+        "note": "zur Abwechslung = for a change",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 15"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Mediathek",
+        "sub": "Pl. -en",
+        "english": "(TV channel's) online library, catch-up service",
+        "example": "Ich gucke die Sendung später in der Mediathek.",
+        "exampleEn": "I'll watch the programme later on the catch-up service.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 15"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Lieblingssendung",
+        "sub": "Pl. -en",
+        "english": "favourite programme",
+        "example": "Meine Lieblingssendung ist der Tatort.",
+        "exampleEn": "My favourite programme is the Tatort.",
+        "note": "Lieblings- + Nomen: der Lieblingsfilm, die Lieblingsserie",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 15"
+      },
+      {
+        "type": "sonst",
+        "front": "anschließend",
+        "sub": "auch: danach",
+        "english": "afterwards, then",
+        "example": "Wir kochen zusammen und anschließend sehen wir den Krimi.",
+        "exampleEn": "We cook together and afterwards we watch the crime drama.",
+        "note": "Position 1 → Verb gleich danach: Anschließend sehen wir …",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 15",
+        "grammar": [
+          "konnektoren-adverbien"
+        ]
       }
     ]
   },

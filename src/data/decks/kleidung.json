@@ -216,7 +216,10 @@
     "forms": {
       "praes": "erzählt",
       "praet": "erzählte"
-    }
+    },
+    "grammar": [
+      "verben-dativ-akkusativ"
+    ]
   },
   {
     "type": "adj",

@@ -172,6 +172,18 @@
     {"q": "Wie geht es ___?", "options": ["dir", "dich", "du"], "answer": "dir", "en": "How are you?", "why": {"de": "Es geht + Dativ: dir.", "en": "Es geht + dative: dir."}},
     {"q": "Das Buch gehört ___ Kind.", "options": ["dem", "das", "den"], "answer": "dem", "en": "The book belongs to the child.", "why": {"de": "gehören + Dativ; neutral: dem.", "en": "gehören + dative; neuter: dem."}}
   ],
+  "verben-dativ-akkusativ": [
+    {"q": "Ich schenke ___ Vater eine Uhr.", "options": ["meinem", "meinen", "mein"], "answer": "meinem", "en": "I'm giving my father a watch.", "why": {"de": "Wem schenke ich? → Person im Dativ: meinem Vater.", "en": "To whom? → person in the dative: meinem Vater."}},
+    {"q": "Kannst du ___ ein gutes Buch empfehlen?", "options": ["mir", "mich", "ich"], "answer": "mir", "en": "Can you recommend a good book to me?", "why": {"de": "empfehlen: wem? (Dativ) + was? (Akkusativ) → mir.", "en": "empfehlen: to whom? (dative) + what? (accusative) → mir."}},
+    {"q": "Er schickt ___ Chefin eine E-Mail.", "options": ["der", "die", "den"], "answer": "der", "en": "He sends the boss an email.", "why": {"de": "Wem? → Dativ feminin: der Chefin.", "en": "To whom? → dative feminine: der Chefin."}},
+    {"q": "Die Lehrerin erzählt ___ Kindern ein Märchen.", "options": ["den", "die", "das"], "answer": "den", "en": "The teacher tells the children a fairy tale.", "why": {"de": "Dativ Plural: den Kinder**n**.", "en": "Dative plural: den Kinder**n**."}},
+    {"q": "Der Kellner bringt ___ die Speisekarte.", "options": ["uns", "wir", "unser"], "answer": "uns", "en": "The waiter brings us the menu.", "why": {"de": "Wem bringt er sie? → Dativ: uns.", "en": "To whom? → dative: uns."}},
+    {"q": "Ich gebe meinem Bruder ___ Buch.", "options": ["das", "dem", "der"], "answer": "das", "en": "I give the book to my brother.", "why": {"de": "Was gebe ich? → Sache im Akkusativ: das Buch.", "en": "What do I give? → thing in the accusative: das Buch."}},
+    {"q": "Das Fahrrad? Ich leihe ___ dir gern.", "options": ["es", "ihm", "sein"], "answer": "es", "en": "The bike? I'm happy to lend it to you.", "why": {"de": "das Fahrrad → es (Akkusativ-Pronomen), es steht vor dir.", "en": "das Fahrrad → es (accusative pronoun); it comes before dir."}},
+    {"q": "Wo ist der Schlüssel? Ich zeige ___.", "options": ["ihn dir", "dir ihn", "ihn dich"], "answer": "ihn dir", "en": "Where is the key? I'll show it to you.", "why": {"de": "Zwei Pronomen: Akkusativ vor Dativ → ihn dir.", "en": "Two pronouns: accusative before dative → ihn dir."}},
+    {"q": "Die Kinder haben Durst. Ich hole ___ Wasser.", "options": ["ihnen", "sie", "ihre"], "answer": "ihnen", "en": "The children are thirsty. I'll get them some water.", "why": {"de": "Wem hole ich Wasser? → Dativ Plural: ihnen.", "en": "For whom? → dative plural: ihnen."}},
+    {"q": "Ich gebe ___ das Geld morgen.", "options": ["dir", "zu dir", "dich"], "answer": "dir", "en": "I'll give you the money tomorrow.", "why": {"de": "Kein „zu“: die Person steht einfach im Dativ → dir.", "en": "No „zu“ (to): the person is simply in the dative → dir."}}
+  ],
   "verben-praeposition": [
     {"q": "Wir warten ___ den Zug.", "options": ["auf", "für", "an"], "answer": "auf", "en": "We're waiting for the train.", "why": {"de": "warten auf + Akk. (English \"for\" ≠ für).", "en": "warten auf + acc. (English \"for\" ≠ für)."}},
     {"q": "Ich denke oft ___ dich.", "options": ["an", "über", "von"], "answer": "an", "en": "I often think of you.", "why": {"de": "denken an + Akkusativ.", "en": "denken an + accusative."}},

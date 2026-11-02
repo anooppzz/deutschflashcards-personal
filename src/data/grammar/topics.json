@@ -1824,8 +1824,8 @@
             "en": "**gefallen, schmecken, fehlen, gehören**: back to front compared with English! Das gefällt **mir** = I like it. Du fehlst **mir** = I miss you."
           },
           {
-            "de": "Zwei Objekte: Person (Dativ) vor Sache (Akkusativ): Ich gebe **dir das Buch**. Pronomen-Sache zuerst: Ich gebe **es dir**.",
-            "en": "Two objects: person (dative) before thing (accusative): Ich gebe **dir das Buch**. A pronoun thing comes first: Ich gebe **es dir**."
+            "de": "Zwei Objekte: Person (Dativ) vor Sache (Akkusativ): Ich gebe **dir das Buch**. Pronomen-Sache zuerst: Ich gebe **es dir**. (siehe „Verben mit Dativ und Akkusativ“)",
+            "en": "Two objects: person (dative) before thing (accusative): Ich gebe **dir das Buch**. A pronoun thing comes first: Ich gebe **es dir**. (see \"Verbs with Dative and Accusative\")"
           },
           {
             "de": "Fragewort: **Wem** hilfst du? **Wem** gehört das? (siehe „Fragewörter“)",
@@ -1853,6 +1853,139 @@
       {"de": "Die Jacke gefällt mir sehr gut.", "en": "I really like the jacket."},
       {"de": "Wem gehört der Schlüssel?", "en": "Whose key is this?"},
       {"de": "Ich schenke meiner Mutter Blumen.", "en": "I'm giving my mother flowers."}
+    ]
+  },
+  {
+    "key": "verben-dativ-akkusativ",
+    "level": "A2",
+    "group": {"de": "Verben", "en": "Verbs"},
+    "title": {"de": "Verben mit Dativ und Akkusativ: Wem? Was?", "en": "Verbs with Dative and Accusative: to whom? what?"},
+    "intro": {
+      "what": {
+        "de": "Viele Verben haben zwei Objekte: eine **Person** im Dativ (wem?) und eine **Sache** im Akkusativ (was?).",
+        "en": "Many verbs have two objects: a **person** in the dative (wem? – to whom?) and a **thing** in the accusative (was? – what?)."
+      },
+      "when": {
+        "de": "Immer wenn du jemandem etwas gibst, schenkst, zeigst, leihst oder empfiehlst.",
+        "en": "Whenever you give, give as a present, show, lend or recommend something to someone."
+      },
+      "english": {
+        "de": "Wie im Englischen: I give **my friend** the book. Im Deutschen zeigt der Artikel den Fall: **dem** Freund **das** Buch. Kein „zu“ für „to“!",
+        "en": "Like English: I give **my friend** the book. In German the article shows the case: **dem** Freund **das** Buch. No „zu“ for \"to\"!"
+      },
+      "remember": {"de": "Kannst du mir das Buch leihen?", "en": "Can you lend me the book?"}
+    },
+    "summary": {
+      "de": "Person im **Dativ** (wem?), Sache im **Akkusativ** (was?). Dativ vor Akkusativ – aber ein Akkusativ-**Pronomen** kommt zuerst: Ich gebe **es ihm**.",
+      "en": "Person in the **dative** (wem?), thing in the **accusative** (was?). Dative before accusative – but an accusative **pronoun** comes first: Ich gebe **es ihm** (I give it to him)."
+    },
+    "sections": [
+      {
+        "type": "table",
+        "title": {"de": "Wem? (Person, Dativ) – Was? (Sache, Akkusativ)", "en": "To whom? (person, dative) – What? (thing, accusative)"},
+        "head": ["Verb", {"de": "Beispiel", "en": "Example"}],
+        "rows": [
+          [
+            {"t": "kaufen", "en": "buy"},
+            {"t": "Sie können **Ihren Freunden** auch Tatortsendungen kaufen.", "en": "You can also buy your friends Tatort episodes."}
+          ],
+          [
+            {"t": "schenken", "en": "give (as a present)"},
+            {"t": "Ich schenke **meiner Mutter** eine DVD.", "en": "I'm giving my mother a DVD."}
+          ],
+          [{"t": "geben", "en": "give"}, {"t": "Gib **mir** bitte die Zeitung!", "en": "Please give me the newspaper!"}],
+          [
+            {"t": "empfehlen", "en": "recommend"},
+            {"t": "Kannst du **mir** eine Serie empfehlen?", "en": "Can you recommend a series to me?"}
+          ],
+          [{"t": "schicken", "en": "send"}, {"t": "Ich schicke **dir** den Link.", "en": "I'll send you the link."}],
+          [
+            {"t": "weg·nehmen", "en": "take away"},
+            {"t": "Die Mutter nimmt **dem Kind** das Handy weg.", "en": "The mother takes the phone away from the child."}
+          ],
+          [{"t": "leihen", "en": "lend"}, {"t": "Leihst du **mir** dein Fahrrad?", "en": "Will you lend me your bike?"}],
+          [{"t": "bringen", "en": "bring"}, {"t": "Der Kellner bringt **uns** die Rechnung.", "en": "The waiter brings us the bill."}],
+          [
+            {"t": "erzählen", "en": "tell"},
+            {"t": "Opa erzählt **den Kindern** eine Geschichte.", "en": "Grandpa tells the children a story."}
+          ],
+          [{"t": "zeigen", "en": "show"}, {"t": "Ich zeige **dir** meine Wohnung.", "en": "I'll show you my flat."}],
+          [{"t": "holen", "en": "fetch, get"}, {"t": "Holst du **mir** ein Glas Wasser?", "en": "Will you get me a glass of water?"}],
+          [
+            {"t": "schreiben", "en": "write"},
+            {"t": "Ich schreibe **meiner Freundin** eine Nachricht.", "en": "I'm writing my friend a message."}
+          ]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Stellung der Objekte", "en": "Order of the objects"},
+        "head": [{"de": "Satz", "en": "Sentence"}, {"de": "Reihenfolge", "en": "Order"}],
+        "rows": [
+          [
+            {"t": "Der Tatort gibt **den Zuschauern** Abwechslung.", "en": "The Tatort gives the viewers variety."},
+            {"de": "Dativ → Akkusativ", "en": "dative → accusative"}
+          ],
+          [
+            {"t": "Der Tatort gibt **ihnen** Abwechslung.", "en": "The Tatort gives them variety."},
+            {"de": "Dativ → Akkusativ", "en": "dative → accusative"}
+          ],
+          [
+            {"t": "Der Tatort gibt **sie** den Zuschauern.", "en": "The Tatort gives it to the viewers."},
+            {"de": "Akk.-Pronomen → Dativ", "en": "acc. pronoun → dative"}
+          ],
+          [
+            {"t": "Der Tatort gibt **sie** ihnen.", "en": "The Tatort gives it to them."},
+            {"de": "Akk.-Pronomen → Dativ", "en": "acc. pronoun → dative"}
+          ]
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "So merkst du es dir", "en": "How to remember"},
+        "items": [
+          {
+            "de": "Frag: **Wem?** → die Person (Dativ). **Was?** → die Sache (Akkusativ).",
+            "en": "Ask: **Wem?** (to whom?) → the person (dative). **Was?** (what?) → the thing (accusative)."
+          },
+          {
+            "de": "Normal: **Dativ vor Akkusativ** – erst die Person, dann die Sache: Ich gebe **dem Kind den Ball**.",
+            "en": "Normally: **dative before accusative** – first the person, then the thing: Ich gebe **dem Kind den Ball** (I give the child the ball)."
+          },
+          {
+            "de": "Ist die Sache ein **Pronomen** (ihn, sie, es), steht sie **zuerst**: Ich gebe **ihn** dem Kind. Ich gebe **ihn ihm**.",
+            "en": "If the thing is a **pronoun** (ihn, sie, es – it/them), it comes **first**: Ich gebe **ihn** dem Kind (I give it to the child). Ich gebe **ihn ihm** (I give it to him)."
+          },
+          {
+            "de": "Im Satz oben ist **sie** = die Abwechslung (die → sie).",
+            "en": "In the sentence above, **sie** = die Abwechslung (variety; die → sie, so \"it\")."
+          },
+          {
+            "de": "Auch so: schenken, geben, empfehlen, schicken, wegnehmen, leihen, bringen, erzählen, zeigen, holen, schreiben, kaufen, erklären.",
+            "en": "Also like this: schenken (give as a present), geben (give), empfehlen (recommend), schicken (send), wegnehmen (take away), leihen (lend), bringen (bring), erzählen (tell), zeigen (show), holen (fetch), schreiben (write), kaufen (buy), erklären (explain)."
+          }
+        ]
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "❌ Ich gebe ihm es. ✅ Ich gebe **es ihm**. – ❌ Ich schenke meine Mutter Blumen. ✅ Ich schenke **meiner** Mutter Blumen.",
+          "en": "❌ Ich gebe ihm es. ✅ Ich gebe **es ihm** (the pronoun \"it\" comes first). – ❌ Ich schenke meine Mutter Blumen. ✅ Ich schenke **meiner** Mutter Blumen (to whom? → dative)."
+        }
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "Kein „zu“ wie im Englischen „to“: ❌ Ich gebe das Buch zu dir. ✅ Ich gebe **dir** das Buch.",
+          "en": "No „zu“ for English \"to\": ❌ Ich gebe das Buch zu dir. ✅ Ich gebe **dir** das Buch (I give the book to you)."
+        }
+      }
+    ],
+    "examples": [
+      {"de": "Kannst du mir einen guten Krimi empfehlen?", "en": "Can you recommend a good crime drama to me?"},
+      {"de": "Ich habe meinem Bruder mein Auto geliehen.", "en": "I lent my brother my car."},
+      {"de": "Wo ist das Foto? Ich zeige es dir.", "en": "Where is the photo? I'll show it to you."},
+      {"de": "Die Bücher? Ich bringe sie dir morgen.", "en": "The books? I'll bring them to you tomorrow."}
     ]
   },
   {
