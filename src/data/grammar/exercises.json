@@ -171,6 +171,18 @@
     {"q": "Ich kaufe ___ einen neuen Mantel.", "options": ["mir", "mich", "sich"], "answer": "mir", "en": "I'm buying myself a new coat.", "why": {"de": "Es gibt schon ein Akkusativobjekt (einen Mantel) → Dativ: mir.", "en": "There is already an accusative object (einen Mantel) → dative: mir."}},
     {"q": "Ihr müsst ___ beeilen!", "options": ["euch", "sich", "uns"], "answer": "euch", "en": "You have to hurry!", "why": {"de": "ihr → euch.", "en": "ihr → euch."}}
   ],
+  "verben-akkusativ": [
+    {"q": "Ich kaufe ___ Tisch für die Küche.", "options": ["einen", "ein", "einem"], "answer": "einen", "en": "I'm buying a table for the kitchen.", "why": {"de": "der Tisch ist maskulin → Akkusativ: einen.", "en": "der Tisch is masculine → accusative: einen."}},
+    {"q": "Siehst du ___ Frau dort?", "options": ["die", "der", "den"], "answer": "die", "en": "Can you see the woman over there?", "why": {"de": "feminin ändert sich nicht: die Frau.", "en": "feminine doesn't change: die Frau."}},
+    {"q": "Wir besuchen ___ morgen.", "options": ["ihn", "ihm", "er"], "answer": "ihn", "en": "We're visiting him tomorrow.", "why": {"de": "besuchen + Akkusativ: er → ihn.", "en": "besuchen + accusative: er → ihn."}},
+    {"q": "Kennst du ___ neuen Kollegen?", "options": ["den", "dem", "der"], "answer": "den", "en": "Do you know the new colleague?", "why": {"de": "Wen kennst du? → Akkusativ, maskulin: den.", "en": "Whom do you know? → accusative, masculine: den."}},
+    {"q": "Ich habe heute ___ Zeit.", "options": ["keine", "keinen", "kein"], "answer": "keine", "en": "I have no time today.", "why": {"de": "die Zeit ist feminin → keine (keine Änderung).", "en": "die Zeit is feminine → keine (no change)."}},
+    {"q": "Er bestellt ___ Bier.", "options": ["ein", "einen", "einem"], "answer": "ein", "en": "He orders a beer.", "why": {"de": "das Bier ist neutral → ein (keine Änderung).", "en": "das Bier is neuter → ein (no change)."}},
+    {"q": "Kannst du ___ heute Abend anrufen?", "options": ["mich", "mir", "ich"], "answer": "mich", "en": "Can you call me this evening?", "why": {"de": "anrufen + Akkusativ: mich.", "en": "anrufen + accusative: mich."}},
+    {"q": "Ich frage ___ Verkäufer.", "options": ["den", "dem", "der"], "answer": "den", "en": "I'll ask the shop assistant.", "why": {"de": "fragen + Akkusativ; der Verkäufer → den.", "en": "fragen + accusative; der Verkäufer → den."}},
+    {"q": "Sie liebt ___ Hund sehr.", "options": ["ihren", "ihrem", "ihr"], "answer": "ihren", "en": "She loves her dog very much.", "why": {"de": "Possessivartikel wie kein: der Hund → ihren.", "en": "Possessive like kein: der Hund → ihren."}},
+    {"q": "Ich gehe ___ Tag joggen.", "options": ["jeden", "jedem", "jeder"], "answer": "jeden", "en": "I go jogging every day.", "why": {"de": "Zeit ohne Präposition → Akkusativ: jeden Tag.", "en": "Time without a preposition → accusative: jeden Tag."}}
+  ],
   "verben-dativ": [
     {"q": "Kannst du ___ helfen?", "options": ["mir", "mich", "ich"], "answer": "mir", "en": "Can you help me?", "why": {"de": "helfen + Dativ: mir.", "en": "helfen + dative: mir."}},
     {"q": "Die Suppe schmeckt ___ nicht.", "options": ["mir", "mich", "ich"], "answer": "mir", "en": "I don't like the soup.", "why": {"de": "schmecken + Dativ – die Suppe ist das Subjekt.", "en": "schmecken + dative – the soup is the subject."}},

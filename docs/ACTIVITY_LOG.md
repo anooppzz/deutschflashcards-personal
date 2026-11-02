@@ -171,6 +171,18 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 ## Log
 
+### 2026-11-02 – New topic: Verben mit Akkusativ (the learner's wish: Akk · Dat · Dat+Akk)
+- The learner wanted a matching trio in Grammatik → Verben: **Verben mit Akkusativ** (new,
+  `verben-akkusativ`, A1) · Verben mit Dativ · Verben mit Dativ und Akkusativ.
+- Content: Grammatik aktiv Kap. 17 (Der Kellner trinkt einen Saft, Der Mann isst den Fisch,
+  Ich liebe mein Kind; table der/ein/kein → den/einen/keinen; Possessivartikel like kein) –
+  moved here from `kasus-ueberblick` (that topic now points to the three verb topics); plus
+  pronouns in the accusative, 20 common verbs with examples, wen?/was?, V tr., es gibt,
+  time in the accusative (jeden Tag), Akk. prepositions, "no accusative here" (intransitive,
+  sein/werden/heißen, dative verbs), ⚠ ein/einen, ⚠ anrufen/fragen/besuchen. 10 Üben.
+- `match` links 27 verb cards by frontPattern (bekommen and mögen left out: the Perfekt
+  tests use them as samples that link only to Perfekt).
+
 ### 2026-11-02 – Grammatik aktiv Kap. 17 (Akkusativ) + Kap. 23 (Verben mit Dativ)
 - Two photos of Grammatik aktiv. Both topics already existed, so the books' parts were added
   to them (no new topic, no new cards – every Kap. 23 verb already has a card and a row in

@@ -624,39 +624,6 @@
       },
       {
         "type": "table",
-        "title": {"de": "Nominativ → Akkusativ (Grammatik aktiv, Kap. 17)", "en": "Nominative → accusative (Grammatik aktiv, ch. 17)"},
-        "head": [{"de": "Genus", "en": "Gender"}, "Nominativ", "Akkusativ"],
-        "rows": [
-          [{"de": "maskulin", "en": "masculine"}, "der · ein · kein Mann", "**den · einen · keinen** Mann"],
-          [{"de": "neutral", "en": "neuter"}, "das · ein · kein Kind", "das · ein · kein Kind"],
-          [{"de": "feminin", "en": "feminine"}, "die · eine · keine Frau", "die · eine · keine Frau"],
-          ["Plural", "die · – · keine Leute", "die · – · keine Leute"]
-        ]
-      },
-      {
-        "type": "points",
-        "title": {"de": "Das Akkusativ-Objekt", "en": "The accusative object"},
-        "items": [
-          {
-            "de": "Fragen: **wer?** (Person) / **was?** (Sache) → Nominativ. **wen?** (Person) / **was?** (Sache) → Akkusativ.",
-            "en": "Questions: **wer?** (who – person) / **was?** (what – thing) → nominative. **wen?** (whom – person) / **was?** (what – thing) → accusative."
-          },
-          {
-            "de": "Das Objekt kann eine Person oder eine Sache sein: Der Kellner trinkt **einen Saft**. Ich liebe **mein Kind**.",
-            "en": "The object can be a person or a thing: Der Kellner trinkt **einen Saft** (the waiter drinks a juice). Ich liebe **mein Kind** (I love my child)."
-          },
-          {
-            "de": "Nur **maskuline** Nomen haben im Akkusativ eine extra Form: **den / einen / keinen**.",
-            "en": "Only **masculine** nouns have an extra accusative form: **den / einen / keinen**."
-          },
-          {
-            "de": "Possessivartikel funktionieren wie **kein**: Ich liebe **meinen** Mann. (siehe „Possessivartikel“)",
-            "en": "Possessive articles work like **kein**: Ich liebe **meinen** Mann (I love my husband). (see \"Possessive Articles\")"
-          }
-        ]
-      },
-      {
-        "type": "table",
         "title": {"de": "ein, kein, mein – gleiche Endungen", "en": "ein, kein, mein – same endings"},
         "head": ["", {"de": "m", "en": "m"}, {"de": "f", "en": "f"}, {"de": "n", "en": "n"}, {"de": "Pl.", "en": "pl."}],
         "rows": [
@@ -703,6 +670,10 @@
           {
             "de": "Person bekommt etwas → **Dativ**, die Sache → **Akkusativ**: Ich gebe **dem Kind** (wem?) **den Ball** (was?).",
             "en": "The person who receives → **dative**, the thing → **accusative**: Ich gebe **dem Kind** (to whom?) **den Ball** (what?)."
+          },
+          {
+            "de": "Welche Verben welchen Fall brauchen: siehe „Verben mit Akkusativ“, „Verben mit Dativ“ und „Verben mit Dativ und Akkusativ“.",
+            "en": "Which verbs need which case: see \"Verbs with the Accusative\", \"Verbs with the Dative\" and \"Verbs with Dative and Accusative\"."
           }
         ]
       },
@@ -1867,6 +1838,178 @@
       }
     ],
     "match": [{"type": "v", "subPattern": "(^|[·,] )hat sich "}]
+  },
+  {
+    "key": "verben-akkusativ",
+    "level": "A1",
+    "group": {"de": "Verben", "en": "Verbs"},
+    "title": {"de": "Verben mit Akkusativ: haben, sehen, kaufen", "en": "Verbs with the Accusative: haben, sehen, kaufen"},
+    "intro": {
+      "what": {
+        "de": "Die meisten Verben haben ein **Objekt im Akkusativ** (wen? was?): Ich sehe **den** Film.",
+        "en": "Most verbs have an **object in the accusative** (wen? was? – whom? what?): Ich sehe **den** Film (I'm watching the film)."
+      },
+      "when": {
+        "de": "Fast immer: beim Einkaufen, Bestellen, bei Terminen und wenn du über Familie und Freunde sprichst.",
+        "en": "Almost always: shopping, ordering, appointments, talking about family and friends."
+      },
+      "english": {
+        "de": "Wie im Englischen: I see **him** = Ich sehe **ihn**. Neu: Auch der Artikel ändert sich, aber nur maskulin: **der** Film → **den** Film.",
+        "en": "Like English: I see **him** = Ich sehe **ihn**. New: the article changes too, but only for masculine: **der** Film → **den** Film (the film)."
+      },
+      "remember": {"de": "Ich habe einen Bruder und eine Schwester.", "en": "I have a brother and a sister."}
+    },
+    "summary": {
+      "de": "Subjekt im **Nominativ** (wer?), Objekt im **Akkusativ** (wen? was?). Nur maskulin ändert sich: der → **den**, ein → **einen**, er → **ihn**.",
+      "en": "Subject in the **nominative** (wer? – who?), object in the **accusative** (wen? was? – whom? what?). Only masculine changes: der → **den**, ein → **einen**, er → **ihn**."
+    },
+    "sections": [
+      {
+        "type": "table",
+        "title": {"de": "Subjekt + Verb + Objekt (Grammatik aktiv, Kap. 17)", "en": "Subject + verb + object (Grammatik aktiv, ch. 17)"},
+        "head": [{"de": "Satz", "en": "Sentence"}, {"de": "Objekt ist …", "en": "Object is …"}],
+        "rows": [
+          [
+            {"t": "**Der Kellner** trinkt **einen Saft**.", "en": "The waiter drinks a juice."},
+            {"de": "eine Sache (was?)", "en": "a thing (was? – what?)"}
+          ],
+          [
+            {"t": "**Der Mann** isst **den Fisch**.", "en": "The man eats the fish."},
+            {"de": "eine Sache (was?)", "en": "a thing (was? – what?)"}
+          ],
+          [
+            {"t": "**Ich** liebe **mein Kind**.", "en": "I love my child."},
+            {"de": "eine Person (wen?)", "en": "a person (wen? – whom?)"}
+          ]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Artikel: nur maskulin ändert sich", "en": "Articles: only masculine changes"},
+        "head": [{"de": "Genus", "en": "Gender"}, "Nominativ", "Akkusativ"],
+        "rows": [
+          [{"de": "maskulin", "en": "masculine"}, "der · ein · kein Mann", "**den · einen · keinen** Mann"],
+          [{"de": "neutral", "en": "neuter"}, "das · ein · kein Kind", "das · ein · kein Kind"],
+          [{"de": "feminin", "en": "feminine"}, "die · eine · keine Frau", "die · eine · keine Frau"],
+          ["Plural", "die · – · keine Leute", "die · – · keine Leute"]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Pronomen im Akkusativ", "en": "Pronouns in the accusative"},
+        "head": ["Nominativ", "Akkusativ", {"de": "Beispiel", "en": "Example"}],
+        "rows": [
+          ["ich", "**mich**", {"t": "Besuchst du **mich**?", "en": "Will you visit me?"}],
+          ["du", "**dich**", {"t": "Ich liebe **dich**.", "en": "I love you."}],
+          ["er", "**ihn**", {"t": "Ich kenne **ihn**.", "en": "I know him."}],
+          ["sie", "sie", {"t": "Ich frage **sie**.", "en": "I'll ask her."}],
+          ["es", "es", {"t": "Ich nehme **es**.", "en": "I'll take it."}],
+          ["wir", "uns", {"t": "Holst du **uns** ab?", "en": "Will you pick us up?"}],
+          ["ihr", "euch", {"t": "Wir sehen **euch** morgen.", "en": "We'll see you tomorrow."}],
+          ["sie / Sie", "sie / Sie", {"t": "Ich verstehe **Sie** nicht.", "en": "I don't understand you."}]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Häufige Verben mit Akkusativ", "en": "Common verbs with the accusative"},
+        "head": ["Verb", {"de": "Beispiel", "en": "Example"}],
+        "rows": [
+          [{"t": "haben", "en": "have"}, {"t": "Hast du **einen** Stift?", "en": "Do you have a pen?"}],
+          [{"t": "brauchen", "en": "need"}, {"t": "Wir brauchen **einen** Termin.", "en": "We need an appointment."}],
+          [{"t": "kaufen", "en": "buy"}, {"t": "Ich kaufe **den** Mantel.", "en": "I'll buy the coat."}],
+          [{"t": "nehmen", "en": "take"}, {"t": "Ich nehme **den** Bus.", "en": "I'll take the bus."}],
+          [{"t": "bestellen", "en": "order"}, {"t": "Ich bestelle **einen** Salat.", "en": "I'll order a salad."}],
+          [{"t": "möchten", "en": "would like"}, {"t": "Ich möchte **einen** Kaffee.", "en": "I'd like a coffee."}],
+          [{"t": "essen, trinken", "en": "eat, drink"}, {"t": "Er trinkt **keinen** Alkohol.", "en": "He doesn't drink alcohol."}],
+          [{"t": "sehen", "en": "see"}, {"t": "Siehst du **den** Hund?", "en": "Can you see the dog?"}],
+          [{"t": "kennen", "en": "know (a person, a place)"}, {"t": "Kennst du **meinen** Bruder?", "en": "Do you know my brother?"}],
+          [{"t": "besuchen", "en": "visit"}, {"t": "Ich besuche **meinen** Opa.", "en": "I'm visiting my grandpa."}],
+          [{"t": "an·rufen", "en": "call"}, {"t": "Ruf **mich** bitte an!", "en": "Please call me!"}],
+          [{"t": "fragen", "en": "ask"}, {"t": "Frag doch **den** Lehrer!", "en": "Just ask the teacher!"}],
+          [{"t": "suchen, finden", "en": "look for, find"}, {"t": "Ich finde **meine** Brille nicht.", "en": "I can't find my glasses."}],
+          [{"t": "verstehen", "en": "understand"}, {"t": "Verstehst du **den** Text?", "en": "Do you understand the text?"}],
+          [{"t": "treffen", "en": "meet"}, {"t": "Ich treffe **einen** Freund.", "en": "I'm meeting a friend."}],
+          [{"t": "ein·laden", "en": "invite"}, {"t": "Wir laden **euch** zum Essen ein.", "en": "We're inviting you to dinner."}],
+          [{"t": "ab·holen", "en": "pick up"}, {"t": "Ich hole **das** Paket ab.", "en": "I'll pick up the parcel."}],
+          [{"t": "vergessen", "en": "forget"}, {"t": "Ich habe **den** Termin vergessen.", "en": "I forgot the appointment."}],
+          [{"t": "bezahlen", "en": "pay (for)"}, {"t": "Ich bezahle **die** Rechnung.", "en": "I'll pay the bill."}],
+          [{"t": "mögen", "en": "like"}, {"t": "Magst du **den** Film?", "en": "Do you like the film?"}]
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "So merkst du es dir", "en": "How to remember"},
+        "items": [
+          {
+            "de": "Frag: **wer?** → Nominativ (Subjekt). **wen?** (Person) / **was?** (Sache) → Akkusativ (Objekt).",
+            "en": "Ask: **wer?** (who?) → nominative (subject). **wen?** (whom? – person) / **was?** (what? – thing) → accusative (object)."
+          },
+          {
+            "de": "Possessivartikel funktionieren wie **kein**: Ich liebe **meinen** Mann. (siehe „Possessivartikel“)",
+            "en": "Possessive articles work like **kein**: Ich liebe **meinen** Mann (I love my husband). (see \"Possessive Articles\")"
+          },
+          {
+            "de": "Im Wörterbuch: **V tr.** (transitiv) = Verb mit Akkusativ.",
+            "en": "In the dictionary: **V tr.** (transitive) = verb with an accusative."
+          },
+          {
+            "de": "Auch **es gibt** braucht Akkusativ: Hier gibt es **einen** Supermarkt.",
+            "en": "**es gibt** (there is) takes the accusative too: Hier gibt es **einen** Supermarkt (there's a supermarket here)."
+          },
+          {
+            "de": "Zeit ohne Präposition steht im Akkusativ: **jeden** Tag, **nächsten** Montag, **den ganzen** Abend.",
+            "en": "Time without a preposition is accusative: **jeden** Tag (every day), **nächsten** Montag (next Monday), **den ganzen** Abend (the whole evening)."
+          },
+          {
+            "de": "Nach **für, ohne, gegen, durch, um** auch Akkusativ (siehe „Präpositionen mit Akkusativ“).",
+            "en": "After **für, ohne, gegen, durch, um** (for, without, against, through, around) also accusative (see \"Prepositions with the Accusative\")."
+          }
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Hier gibt es keinen Akkusativ", "en": "No accusative here"},
+        "head": [{"de": "Verb", "en": "Verb"}, {"de": "Beispiel", "en": "Example"}],
+        "rows": [
+          [
+            {"de": "ohne Objekt (intransitiv): lachen, schlafen, kommen, gehen", "en": "no object (intransitive): lachen (laugh), schlafen (sleep), kommen (come), gehen (go)"},
+            {"t": "Das Baby schläft.", "en": "The baby is sleeping."}
+          ],
+          [
+            {"de": "sein, werden, heißen: Nominativ", "en": "sein (be), werden (become), heißen (be called): nominative"},
+            {"t": "Das ist **ein** guter Film.", "en": "That's a good film."}
+          ],
+          [
+            {"de": "Dativ-Verben: helfen, danken, gefallen", "en": "dative verbs: helfen (help), danken (thank), gefallen (please)"},
+            {"t": "Ich helfe **dem** Mann.", "en": "I'm helping the man."}
+          ]
+        ]
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "**ein** oder **einen**? Nur maskulin bekommt -en: ❌ Ich kaufe einen Auto. ✅ Ich kaufe **ein** Auto (das Auto). ✅ Ich kaufe **einen** Tisch (der Tisch).",
+          "en": "**ein** or **einen**? Only masculine gets -en: ❌ Ich kaufe einen Auto. ✅ Ich kaufe **ein** Auto (das Auto). ✅ Ich kaufe **einen** Tisch (der Tisch)."
+        }
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "**an·rufen**, **fragen**, **besuchen** nehmen Akkusativ: Ich rufe **dich** an. ❌ Ich rufe dir an.",
+          "en": "**an·rufen** (call), **fragen** (ask), **besuchen** (visit) take the accusative: Ich rufe **dich** an (I'll call you). ❌ Ich rufe dir an."
+        }
+      }
+    ],
+    "examples": [
+      {"de": "Ich habe einen Hund und eine Katze.", "en": "I have a dog and a cat."},
+      {"de": "Hast du den Schlüssel gesehen?", "en": "Have you seen the key?"},
+      {"de": "Wir besuchen am Wochenende unsere Oma.", "en": "We're visiting our grandma at the weekend."},
+      {"de": "Ich kenne ihn nicht.", "en": "I don't know him."}
+    ],
+    "match": {
+      "type": "v",
+      "frontPattern": "^(haben|brauchen|kaufen|sehen|besuchen|fragen|an·?rufen|lieben|kennen|suchen|finden|nehmen|essen|trinken|bestellen|verstehen|treffen|ab·?holen|ein·?laden|vergessen|lesen|möchten|bezahlen|benutzen|putzen|besichtigen|verlieren)$"
+    }
   },
   {
     "key": "verben-dativ",
