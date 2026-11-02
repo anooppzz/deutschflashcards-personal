@@ -171,6 +171,17 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 ## Log
 
+### 2026-11-02 – 🔍 Search from the Grammatik tab
+- The learner couldn't search from a grammar topic. Checked every area: the 🔍 search button
+  was only on 🏠 Heute and 🃏 Lernen – none in 📖 Grammatik (list or open topic) and none
+  in 📕 Fehlerheft.
+- 📖 Grammatik now has it: a "🔍 Suchen: Wörter & Grammatik" box above the group chips, and
+  a 🔍 button in the sticky bar of an open topic (next to ‹ ›), so it stays on screen while
+  scrolling. GrammarView `onSearch` → App.jsx `setSearchOpen(true)`. Opening a grammar
+  result from there works, and "← Zurück zur Suche" returns to the search.
+- Checked at 360/390px: no sideways scroll.
+- Still without search: 📕 Fehlerheft (not asked; offered to the learner).
+
 ### 2026-11-02 – Possessivartikel: Akkusativ + Dativ, 3-step method (Arbeitsbuch p. 116)
 - The learner was stuck on Arbeitsbuch p. 116, 3a (Possessivartikel im Dativ: "Ich bringe
   meiner Schwester …"). The topic `possessivartikel` only had nominative endings. Rewritten:

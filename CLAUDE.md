@@ -112,6 +112,7 @@ src/modes/                 one folder per study mode (cards, article, quiz, reve
                            grammar/GrammarView.jsx: list + sticky group chips, or one
                            topic as a page (tabs Regel · Üben · Wörter); the open topic
                            is App.jsx `grammarTopic`
+                           🔍 search: box on the list + button in a topic's bar (onSearch)
                            + review ("Heute fällig" session)
                            + forms (🔁 Formen: Perfekt + Plural from each card's sub
                            line – keep `sub` formats as below; Präsens (er) +

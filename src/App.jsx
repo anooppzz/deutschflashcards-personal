@@ -1336,6 +1336,7 @@ function App() {
       onExerciseAnswer={(key, item, correct) => recordMistake(grammarMistakeId(key, item.q), correct)}
       dueKeys={grammarDueKeys}
       onExerciseDone={finishGrammarRound}
+      onSearch={() => setSearchOpen(true)}
     />
   );
 

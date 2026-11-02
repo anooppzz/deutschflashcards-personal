@@ -121,7 +121,7 @@ const navBtn = {
 // the exercise where it was. ‹ › step to the previous/next topic.
 // words: the learner's cards this topic covers (see buildGrammarIndex)
 // exercises: this topic's ✏️ Üben questions; best: best score so far
-function GrammarTopicPage({ topic, words = [], lang, exercises = [], best, due, onClose, closeLabel, prev, next, onGo, onScore, onAnswer, onOpenChapter }) {
+function GrammarTopicPage({ topic, words = [], lang, exercises = [], best, due, onClose, closeLabel, prev, next, onGo, onScore, onAnswer, onOpenChapter, onSearch }) {
   const [audioErr, setAudioErr] = useState(false);
   const [tab, setTab] = useState("regel");
   const rootRef = useRef(null);
@@ -152,6 +152,9 @@ function GrammarTopicPage({ topic, words = [], lang, exercises = [], best, due, 
             </div>
             <h2 style={{ margin: "2px 0 0", fontSize: 15, fontWeight: 800, color: "#f2f5f8", lineHeight: 1.25, overflow: "hidden", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical" }}>{title}</h2>
           </div>
+          {onSearch && (
+            <button type="button" onClick={onSearch} aria-label="Suchen in allen Wörtern und der Grammatik" title="Suchen" style={{ ...navBtn, fontSize: 15 }}>🔍</button>
+          )}
           <button type="button" onClick={() => prev && onGo(prev.key)} disabled={!prev} aria-label={prev ? `Vorheriges Thema: ${localize(prev.title, lang)}` : "Kein vorheriges Thema"} style={{ ...navBtn, opacity: prev ? 1 : 0.35 }}>‹</button>
           <button type="button" onClick={() => next && onGo(next.key)} disabled={!next} aria-label={next ? `Nächstes Thema: ${localize(next.title, lang)}` : "Kein nächstes Thema"} style={{ ...navBtn, opacity: next ? 1 : 0.35 }}>›</button>
         </div>
@@ -287,6 +290,7 @@ GrammarTopicPage.propTypes = {
   onScore: PropTypes.func,
   onAnswer: PropTypes.func,
   onOpenChapter: PropTypes.func,
+  onSearch: PropTypes.func,
 };
 
 // one line of the topic list: level, title, and what's there (📅 due,
@@ -347,7 +351,8 @@ const readScores = () => {
 // onExerciseAnswer(topicKey, item, correct): every ✏️ Üben answer (Fehlerheft).
 // dueKeys: topics whose review is due (engine/grammarReview.js);
 // onExerciseDone(topicKey, right, total): a finished ✏️ Üben round.
-function GrammarView({ topics, words = {}, lang = "en", openKey = null, onOpenTopic, focus, onBack, backLabel = "← Zurück", onOpenChapter, onExerciseAnswer, dueKeys = [], onExerciseDone }) {
+// onSearch: opens the app-wide 🔍 search (a button on the list and on a topic page).
+function GrammarView({ topics, words = {}, lang = "en", openKey = null, onOpenTopic, focus, onBack, backLabel = "← Zurück", onOpenChapter, onExerciseAnswer, dueKeys = [], onExerciseDone, onSearch }) {
   const [scores, setScores] = useState(readScores);
   const [filter, setFilter] = useState("all"); // all | due | a group's German name
   const saveScore = (key, score) => {
@@ -401,6 +406,7 @@ function GrammarView({ topics, words = {}, lang = "en", openKey = null, onOpenTo
           onScore={(score) => { saveScore(open.key, score); if (onExerciseDone) onExerciseDone(open.key, score, (GRAMMAR_EXERCISES[open.key] || []).length); }}
           onOpenChapter={onOpenChapter}
           onAnswer={onExerciseAnswer ? (item, correct) => onExerciseAnswer(open.key, item, correct) : undefined}
+          onSearch={onSearch}
         />
       </div>
     );
@@ -439,6 +445,21 @@ function GrammarView({ topics, words = {}, lang = "en", openKey = null, onOpenTo
         📖 Grammatik · {topics.length} Themen
         {dueKeys.length > 0 && <span style={{ color: ACCENT, fontWeight: 700 }}> · 📅 {dueKeys.length} heute fällig</span>}
       </div>
+      {onSearch && (
+        <button
+          type="button"
+          onClick={onSearch}
+          aria-label="Suchen in allen Wörtern und der Grammatik"
+          style={{
+            display: "flex", width: "100%", alignItems: "center", gap: 10, margin: "8px 0 4px", minHeight: 44,
+            padding: "0 14px", borderRadius: 12, border: "1px solid #2c3a47", background: "#161d24",
+            color: "#7d8d9c", fontSize: 15, cursor: "text", textAlign: "left", font: "inherit",
+          }}
+        >
+          <span aria-hidden="true" style={{ fontSize: 14 }}>🔍</span>
+          <span>Suchen: Wörter & Grammatik</span>
+        </button>
+      )}
       <div style={{ position: "sticky", top: 0, zIndex: 3, background: "#0e1419", margin: "0 -16px 8px", padding: "8px 0" }}>
         <div role="tablist" aria-label="Gruppen" className="no-scrollbar" style={{ display: "flex", gap: 6, overflowX: "auto", padding: "0 16px" }}>
           {chips.map(([key, label, n]) => {
@@ -487,6 +508,7 @@ GrammarView.propTypes = {
   onExerciseAnswer: PropTypes.func,
   dueKeys: PropTypes.arrayOf(PropTypes.string),
   onExerciseDone: PropTypes.func,
+  onSearch: PropTypes.func,
 };
 
 export default GrammarView;
