@@ -171,6 +171,20 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 ## Log
 
+### 2026-11-02 – Grammatik aktiv Kap. 17 (Akkusativ) + Kap. 23 (Verben mit Dativ)
+- Two photos of Grammatik aktiv. Both topics already existed, so the books' parts were added
+  to them (no new topic, no new cards – every Kap. 23 verb already has a card and a row in
+  📋 Wortlisten → Verben mit Dativ).
+- `kasus-ueberblick` ← Kap. 17 "Der Mann isst den Fisch": table Nominativ → Akkusativ per
+  gender (der/ein/kein → den/einen/keinen), points wer?/wen?/was?, object = person or thing,
+  only masculine changes, Possessivartikel like kein (Ich liebe meinen Mann). +3 Üben (13).
+- `verben-dativ` ← Kap. 23 "Ich helfe dir, du dankst mir": stehen added to "Nur Dativ";
+  table "Zwei Gruppen" (subject a person: antworten, gratulieren, helfen, zuhören, glauben,
+  danken / subject a thing: gefallen, gehören, passen, schmecken, stehen, wehtun / es: Es tut
+  mir leid, Wie geht es Ihnen?), points "Nur Nominativ und Dativ". +3 Üben (13).
+- Reading note: Kap. 23 says "nicht logisch wie die Verben in Kapitel 21" – the photo reads
+  21, though the dative + accusative verbs are Kap. 22; left out of the app.
+
 ### 2026-11-02 – Grammatik aktiv Kap. 22 (p. 56): verb types → Verben mit Dativ und Akkusativ
 - Photo of Grammatik aktiv, Kapitel 22 "Ich kaufe meinem Sohn einen Ball – Verben mit
   Akkusativ und Dativ". Added to the existing topic `verben-dativ-akkusativ` (no new topic):

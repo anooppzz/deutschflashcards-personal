@@ -65,7 +65,10 @@
     {"q": "Der Mann hilft ___ Frau.", "options": ["der", "die", "den"], "answer": "der", "en": "The man helps the woman.", "why": {"de": "helfen + Dativ; feminin im Dativ: der.", "en": "helfen + dative; feminine dative: der."}},
     {"q": "___ Hund spielt im Garten.", "options": ["Der", "Den", "Dem"], "answer": "Der", "en": "The dog is playing in the garden.", "why": {"de": "Der Hund ist das Subjekt → Nominativ: der.", "en": "The dog is the subject → nominative: der."}},
     {"q": "Ich schreibe ___ Freund eine E-Mail.", "options": ["meinem", "meinen", "mein"], "answer": "meinem", "en": "I'm writing my friend an email.", "why": {"de": "Wem schreibe ich? → Dativ, maskulin: meinem.", "en": "To whom? → dative, masculine: meinem."}},
-    {"q": "Hast du ___ Bruder?", "options": ["einen", "ein", "einem"], "answer": "einen", "en": "Do you have a brother?", "why": {"de": "haben + Akkusativ; maskulin: einen.", "en": "haben + accusative; masculine: einen."}}
+    {"q": "Hast du ___ Bruder?", "options": ["einen", "ein", "einem"], "answer": "einen", "en": "Do you have a brother?", "why": {"de": "haben + Akkusativ; maskulin: einen.", "en": "haben + accusative; masculine: einen."}},
+    {"q": "Kennst du ___ Mann dort?", "options": ["den", "der", "dem"], "answer": "den", "en": "Do you know the man over there?", "why": {"de": "Wen kennst du? → Akkusativ, maskulin: den.", "en": "Whom do you know? → accusative, masculine: den."}},
+    {"q": "Wir haben leider ___ Auto.", "options": ["kein", "keinen", "keine"], "answer": "kein", "en": "Unfortunately we don't have a car.", "why": {"de": "das Auto ist neutral → im Akkusativ keine extra Form: kein.", "en": "das Auto is neuter → no extra accusative form: kein."}},
+    {"q": "Ich brauche ___ Löffel.", "options": ["einen", "ein", "eine"], "answer": "einen", "en": "I need a spoon.", "why": {"de": "der Löffel ist maskulin → Akkusativ: einen.", "en": "der Löffel is masculine → accusative: einen."}}
   ],
   "praesens-regelmaessig": [
     {"q": "Du ___ in Berlin. (wohnen)", "options": ["wohnst", "wohnt", "wohnen"], "answer": "wohnst", "en": "You live in Berlin.", "why": {"de": "du → -st.", "en": "du → -st."}},
@@ -178,7 +181,10 @@
     {"q": "Ich danke ___ für die Hilfe.", "options": ["Ihnen", "Sie", "Ihr"], "answer": "Ihnen", "en": "Thank you for the help.", "why": {"de": "danken + Dativ: Sie → Ihnen.", "en": "danken + dative: Sie → Ihnen."}},
     {"q": "Kannst du ___ Mutter helfen?", "options": ["deiner", "deine", "deinen"], "answer": "deiner", "en": "Can you help your mother?", "why": {"de": "helfen + Dativ; feminin: deiner.", "en": "helfen + dative; feminine: deiner."}},
     {"q": "Wie geht es ___?", "options": ["dir", "dich", "du"], "answer": "dir", "en": "How are you?", "why": {"de": "Es geht + Dativ: dir.", "en": "Es geht + dative: dir."}},
-    {"q": "Das Buch gehört ___ Kind.", "options": ["dem", "das", "den"], "answer": "dem", "en": "The book belongs to the child.", "why": {"de": "gehören + Dativ; neutral: dem.", "en": "gehören + dative; neuter: dem."}}
+    {"q": "Das Buch gehört ___ Kind.", "options": ["dem", "das", "den"], "answer": "dem", "en": "The book belongs to the child.", "why": {"de": "gehören + Dativ; neutral: dem.", "en": "gehören + dative; neuter: dem."}},
+    {"q": "Der rote Pullover steht ___ gut.", "options": ["dir", "dich", "du"], "answer": "dir", "en": "The red jumper suits you.", "why": {"de": "stehen (Stil, Farbe) + Dativ: dir.", "en": "stehen (suit) + dative: dir."}},
+    {"q": "Es tut ___ leid, ich komme zu spät.", "options": ["mir", "mich", "ich"], "answer": "mir", "en": "I'm sorry, I'm late.", "why": {"de": "Es tut + Dativ + leid: mir.", "en": "Es tut + dative + leid: mir."}},
+    {"q": "Die Kinder hören ___ Lehrerin gut zu.", "options": ["der", "die", "den"], "answer": "der", "en": "The children listen carefully to the teacher.", "why": {"de": "zuhören + Dativ; die Lehrerin → der.", "en": "zuhören + dative; die Lehrerin → der."}}
   ],
   "verben-dativ-akkusativ": [
     {"q": "Ich schenke ___ Vater eine Uhr.", "options": ["meinem", "meinen", "mein"], "answer": "meinem", "en": "I'm giving my father a watch.", "why": {"de": "Wem schenke ich? → Person im Dativ: meinem Vater.", "en": "To whom? → person in the dative: meinem Vater."}},
