@@ -171,6 +171,16 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 ## Log
 
+### 2026-11-02 – Possessivartikel: Akkusativ + Dativ, 3-step method (Arbeitsbuch p. 116)
+- The learner was stuck on Arbeitsbuch p. 116, 3a (Possessivartikel im Dativ: "Ich bringe
+  meiner Schwester …"). The topic `possessivartikel` only had nominative endings. Rewritten:
+  Schritt 1 Wer besitzt? → Schritt 2 Welcher Fall? (Wer/Wen/Wem + dative signals) →
+  Schritt 3 Endung (Nom/Akk/Dat × der/die/das/Pl.), trick "ending = end of the article"
+  (dem → meinem), all dative forms per person, 5 worked examples, ⚠ "Ihr schenkt euren",
+  ⚠ owner decides (Hans → seiner Schwester), ⚠ eur- / Dativ Plural -n.
+- ✏️ Üben: 8 new questions (dative/accusative) → 18. The book's own sentences are not used,
+  so the workbook page stays a real test. Answers given in chat.
+
 ### 2026-11-02 – Einheit 15 Grammatik + Kommunikation (book p. 86): Dativ + Akkusativ
 - From a photo of p. 86 (Modul 5): new grammar topic **`verben-dativ-akkusativ`** "Verben mit
   Dativ und Akkusativ: Wem? Was?" (group Verben, after `verben-dativ`): the book's verb list

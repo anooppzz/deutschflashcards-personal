@@ -405,33 +405,33 @@
     "key": "possessivartikel",
     "level": "A1",
     "group": {"de": "Nomen & Artikel", "en": "Nouns & Articles"},
-    "title": {"de": "Possessivartikel", "en": "Possessive Articles"},
+    "title": {"de": "Possessivartikel: mein, meinen, meinem", "en": "Possessive Articles: mein, meinen, meinem"},
     "intro": {
       "what": {
         "de": "Wörter für „Wem gehört es?“: **mein**, **dein**, **sein**, **ihr**, **unser**, **euer**. Sie bekommen dieselben Endungen wie ein/eine.",
         "en": "Words that say whose something is: **mein** (my), **dein** (your), **sein** (his), **ihr** (her/their), **unser** (our), **euer** (your, plural). They take the same endings as ein/eine."
       },
       "when": {
-        "de": "Wenn du über deine Familie, deine Wohnung und deine Sachen sprichst.",
-        "en": "Talking about your family, your flat and your things."
+        "de": "Wenn du über deine Familie, deine Wohnung und deine Sachen sprichst – und wenn du jemandem etwas gibst: Ich schenke **meiner** Mutter Blumen.",
+        "en": "Talking about your family, your flat and your things – and giving something to someone: Ich schenke **meiner** Mutter Blumen (I give my mother flowers)."
       },
       "english": {
-        "de": "Wie my, your, his, her – aber mit Endungen (mein**e** Mutter). Achtung: **ihr** = her **oder** their, **Ihr** (groß) = your (höflich).",
-        "en": "Like my, your, his, her – but with endings (mein**e** Mutter, my mother). Careful: **ihr** = her **or** their, **Ihr** (capital I) = your (polite)."
+        "de": "Wie my, your, his, her – aber mit Endungen (mein**e** Mutter, mein**em** Bruder). Achtung: **ihr** = her **oder** their, **Ihr** (groß) = your (höflich).",
+        "en": "Like my, your, his, her – but with endings (mein**e** Mutter, mein**em** Bruder). Careful: **ihr** = her **or** their, **Ihr** (capital I) = your (polite)."
       },
       "remember": {
-        "de": "Das ist meine Schwester und das ist mein Bruder.",
-        "en": "This is my sister and this is my brother."
+        "de": "Ich schenke meiner Schwester ein Buch.",
+        "en": "I'm giving my sister a book."
       }
     },
     "summary": {
-      "de": "Possessivartikel zeigen, **wem** etwas gehört: mein Buch, deine Tasche.",
-      "en": "Possessive articles show **who owns** something: mein Buch (my book), deine Tasche (your bag)."
+      "de": "Zwei Fragen: **Wer besitzt?** → das Wort (mein, sein, ihr …). **Welcher Fall, welches Nomen?** → die Endung (mein**em** Bruder, mein**er** Schwester).",
+      "en": "Two questions: **Who owns it?** → the word (mein, sein, ihr …). **Which case, which noun?** → the ending (mein**em** Bruder – to my brother, mein**er** Schwester – to my sister)."
     },
     "sections": [
       {
         "type": "table",
-        "title": {"de": "Wer besitzt?", "en": "Who owns it?"},
+        "title": {"de": "Schritt 1: Wer besitzt?", "en": "Step 1: Who owns it?"},
         "head": ["Person", {"de": "Artikel", "en": "Article"}, {"de": "Englisch", "en": "English"}],
         "rows": [
           ["ich", "mein", "my"],
@@ -445,37 +445,122 @@
         ]
       },
       {
+        "type": "points",
+        "title": {"de": "Schritt 2: Welcher Fall?", "en": "Step 2: Which case?"},
+        "items": [
+          {
+            "de": "**Wer?** – das Subjekt → Nominativ: **Mein** Bruder kommt.",
+            "en": "**Wer?** (who?) – the subject → nominative: **Mein** Bruder kommt (my brother is coming)."
+          },
+          {
+            "de": "**Wen? Was?** – die Sache / das direkte Objekt → Akkusativ: Ich verliere oft **meinen** Schlüssel.",
+            "en": "**Wen? Was?** (whom? what?) – the thing / direct object → accusative: Ich verliere oft **meinen** Schlüssel (I often lose my key)."
+          },
+          {
+            "de": "**Wem?** – die Person, die etwas bekommt → Dativ: Ich gebe **meinem** Bruder das Buch.",
+            "en": "**Wem?** (to whom?) – the person who receives something → dative: Ich gebe **meinem** Bruder das Buch (I give my brother the book)."
+          },
+          {
+            "de": "Signale für Dativ: geben, schenken, schicken, bringen, kaufen, leihen, empfehlen, zeigen + Person; helfen, danken, gehören; mit, bei, zu, von, aus, nach, seit.",
+            "en": "Dative signals: geben (give), schenken (give as a present), schicken (send), bringen (bring), kaufen (buy), leihen (lend), empfehlen (recommend), zeigen (show) + a person; helfen (help), danken (thank), gehören (belong to); mit, bei, zu, von, aus, nach, seit."
+          }
+        ]
+      },
+      {
         "type": "table",
-        "title": {"de": "Endungen im Nominativ – wie bei ein", "en": "Nominative endings – just like ein"},
-        "head": ["", "ein", "mein", "unser"],
+        "title": {"de": "Schritt 3: Die Endung (Genus + Fall)", "en": "Step 3: The ending (gender + case)"},
+        "head": ["", "Nom.", "Akk.", "Dat."],
         "rows": [
-          [{"de": "maskulin", "en": "masculine"}, "ein", "mein", "unser"],
-          [{"de": "feminin", "en": "feminine"}, "ein**e**", "mein**e**", "unser**e**"],
-          [{"de": "neutral", "en": "neuter"}, "ein", "mein", "unser"],
-          [{"de": "Plural", "en": "plural"}, "–", "mein**e**", "unser**e**"]
+          [{"de": "der (m)", "en": "der (m)"}, "mein", "mein**en**", "mein**em**"],
+          [{"de": "die (f)", "en": "die (f)"}, "mein**e**", "mein**e**", "mein**er**"],
+          [{"de": "das (n)", "en": "das (n)"}, "mein", "mein", "mein**em**"],
+          [{"de": "die (Pl.)", "en": "die (pl.)"}, "mein**e**", "mein**e**", "mein**en** + -n"]
         ]
       },
       {
         "type": "points",
+        "title": {"de": "Trick: die Endung = das Ende vom Artikel", "en": "Trick: the ending = the end of the article"},
         "items": [
           {
-            "de": "Der **Besitzer** bestimmt das Wort, das **Nomen** die Endung: sein**e** Mutter – sein, weil es seine ist; -e, weil die Mutter.",
-            "en": "The **owner** picks the word, the **noun** picks the ending: sein**e** Mutter (his mother) – sein because it's his, -e because die Mutter."
+            "de": "d**em** Bruder → mein**em** Bruder · d**er** Schwester (Dativ) → mein**er** Schwester · d**en** Kindern → mein**en** Kindern · d**en** Schlüssel (Akk.) → mein**en** Schlüssel.",
+            "en": "d**em** Bruder → mein**em** Bruder (to my brother) · d**er** Schwester (dative) → mein**er** Schwester (to my sister) · d**en** Kindern → mein**en** Kindern (to my children) · d**en** Schlüssel (acc.) → mein**en** Schlüssel (my key)."
+          },
+          {
+            "de": "Das gilt für alle: sein**em**, ihr**er**, unser**en**, eur**en** … Nur der Anfang ändert sich (Schritt 1).",
+            "en": "This works for all of them: sein**em**, ihr**er**, unser**en**, eur**en** … Only the start changes (step 1)."
           }
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Alle Formen im Dativ (wem?)", "en": "All forms in the dative (to whom?)"},
+        "head": ["Person", {"de": "der / das", "en": "der / das"}, "die", "Plural"],
+        "rows": [
+          ["ich", "mein**em**", "mein**er**", "mein**en**"],
+          ["du", "dein**em**", "dein**er**", "dein**en**"],
+          ["er / es", "sein**em**", "sein**er**", "sein**en**"],
+          ["sie (her)", "ihr**em**", "ihr**er**", "ihr**en**"],
+          ["wir", "unser**em**", "unser**er**", "unser**en**"],
+          ["ihr", "eur**em**", "eur**er**", "eur**en**"],
+          ["sie (their)", "ihr**em**", "ihr**er**", "ihr**en**"],
+          ["Sie", "Ihr**em**", "Ihr**er**", "Ihr**en**"]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "So denkst du: Beispiele Schritt für Schritt", "en": "How to think: examples step by step"},
+        "head": [{"de": "Satz", "en": "Sentence"}, {"de": "Warum?", "en": "Why?"}],
+        "rows": [
+          [
+            {"t": "Tom schenkt **seiner** Mutter Blumen.", "en": "Tom gives his mother flowers."},
+            {"de": "Tom = er → sein · wem? die Mutter → -er", "en": "Tom = he → sein · to whom? die Mutter → -er"}
+          ],
+          [
+            {"t": "Anna zeigt **ihrem** Vater die Fotos.", "en": "Anna shows her father the photos."},
+            {"de": "Anna = sie → ihr · wem? der Vater → -em", "en": "Anna = she → ihr · to whom? der Vater → -em"}
+          ],
+          [
+            {"t": "Wir bringen **unserem** Kind ein Eis.", "en": "We bring our child an ice cream."},
+            {"de": "wir → unser · wem? das Kind → -em", "en": "we → unser · to whom? das Kind → -em"}
+          ],
+          [
+            {"t": "Ihr kauft **euren** Eltern ein Geschenk.", "en": "You (all) buy your parents a present."},
+            {"de": "ihr → euer · wem? die Eltern (Pl.) → -en", "en": "ihr (you all) → euer · to whom? die Eltern (pl.) → -en"}
+          ],
+          [
+            {"t": "Lisa sucht **ihren** Schlüssel.", "en": "Lisa is looking for her key."},
+            {"de": "Lisa = sie → ihr · was? der Schlüssel, Akk. → -en", "en": "Lisa = she → ihr · what? der Schlüssel, acc. → -en"}
+          ]
         ]
       },
       {
         "type": "warning",
         "text": {
-          "de": "euer + -e → **eure** (das zweite e fällt weg): eure Tochter.",
-          "en": "euer + -e → **eure** (the second e drops out): eure Tochter (your daughter)."
+          "de": "**Ihr** am Satzanfang kann „ihr“ (= you all) sein: **Ihr** schenkt **euren** Kindern Spielsachen. ❌ ihren Kindern – das wäre „her/their children“.",
+          "en": "**Ihr** at the start of a sentence can be „ihr“ (= you all): **Ihr** schenkt **euren** Kindern Spielsachen (you give your children toys). ❌ ihren Kindern – that would mean \"her/their children\"."
+        }
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "Der Besitzer bestimmt das Wort, **nicht** die Person im Dativ: Hans leiht **seiner** Schwester ein Buch (Hans = er → sein, auch wenn die Schwester eine Frau ist).",
+          "en": "The owner picks the word, **not** the person in the dative: Hans leiht **seiner** Schwester ein Buch (Hans lends his sister a book – Hans = he → sein, even though the sister is a woman)."
+        }
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "euer + Endung → das zweite e fällt weg: **eure** Tochter, **eurem** Sohn, **euren** Kindern. Dativ Plural: das Nomen bekommt **-n**: meinen Kinder**n**.",
+          "en": "euer + ending → the second e drops out: **eure** Tochter (your daughter), **eurem** Sohn, **euren** Kindern. Dative plural: the noun gets **-n**: meinen Kinder**n**."
         }
       }
     ],
     "examples": [
       {"de": "Das ist mein Bruder.", "en": "That is my brother."},
       {"de": "Wie heißt deine Schwester?", "en": "What is your sister's name?"},
-      {"de": "Ihr Auto ist neu.", "en": "Her car is new."}
+      {"de": "Ich rufe meinen Vater an.", "en": "I'm calling my father."},
+      {"de": "Sie hilft ihrer Oma im Garten.", "en": "She helps her grandma in the garden."},
+      {"de": "Wir fahren mit unseren Freunden ans Meer.", "en": "We're going to the sea with our friends."}
     ]
   },
   {
