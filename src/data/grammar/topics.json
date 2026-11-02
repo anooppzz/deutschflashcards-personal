@@ -141,6 +141,16 @@
             {"t": "Ich sehe **den Hund**.", "en": "I see the dog."}
           ],
           [
+            "transitiv",
+            {"de": "Verb mit Akkusativ-Objekt (Wörterbuch: V tr.)", "en": "transitive – verb with an accusative object (dictionary: V tr.)"},
+            {"t": "Ich trinke **einen Saft**.", "en": "I'm drinking a juice."}
+          ],
+          [
+            "intransitiv",
+            {"de": "Verb ohne Objekt (Wörterbuch: V itr.)", "en": "intransitive – verb without an object (dictionary: V itr.)"},
+            {"t": "Das Baby lacht.", "en": "The baby is laughing."}
+          ],
+          [
             "Hauptsatz",
             {"de": "steht allein, Verb auf Position 2", "en": "main clause – stands alone, verb in position 2"},
             {"t": "Ich **bin** müde.", "en": "I'm tired."}
@@ -1967,6 +1977,51 @@
     "sections": [
       {
         "type": "table",
+        "title": {"de": "Welche Fälle braucht das Verb? (Grammatik aktiv, Kap. 22)", "en": "Which cases does the verb need? (Grammatik aktiv, ch. 22)"},
+        "head": [{"de": "Verb-Typ", "en": "Verb type"}, {"de": "Beispiel", "en": "Example"}],
+        "rows": [
+          [
+            {"de": "nur Nominativ (intransitiv)", "en": "nominative only (intransitive)"},
+            {"t": "**Der Mann** lacht.", "en": "The man laughs."}
+          ],
+          [
+            {"de": "+ Akkusativ (transitiv)", "en": "+ accusative (transitive)"},
+            {"t": "**Der Kellner** trinkt **einen Saft**.", "en": "The waiter drinks a juice."}
+          ],
+          [
+            {"de": "+ Dativ + Akkusativ", "en": "+ dative + accusative"},
+            {"t": "**Der Kellner** bringt **dem Mann den Fisch**.", "en": "The waiter brings the man the fish."}
+          ],
+          [
+            {"de": "nur Dativ (Kap. 23)", "en": "dative only (ch. 23)"},
+            {"t": "**Ich** helfe **dir**.", "en": "I help you."}
+          ]
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "Subjekt, Objekt, Person", "en": "Subject, object, person"},
+        "items": [
+          {
+            "de": "Jeder Satz hat ein **Subjekt** im Nominativ (wer?). Viele Verben brauchen dazu ein **Objekt** im Akkusativ (wen? was?).",
+            "en": "Every sentence has a **subject** in the nominative (wer? – who?). Many verbs also need an **object** in the accusative (wen? was? – whom? what?)."
+          },
+          {
+            "de": "Subjekt und Akkusativ können eine Person oder eine Sache sein: Ich liebe **mein Kind**. **Die Sonne** scheint.",
+            "en": "The subject and the accusative can be a person or a thing: Ich liebe **mein Kind** (I love my child). **Die Sonne** scheint (the sun is shining)."
+          },
+          {
+            "de": "Der **Dativ ohne Präposition** ist fast immer eine **Person** oder ein Lebewesen: dem Mann, der Freundin, dem Hund.",
+            "en": "The **dative without a preposition** is almost always a **person** or a living being: dem Mann (the man), der Freundin (the friend), dem Hund (the dog)."
+          },
+          {
+            "de": "Im Wörterbuch: **V tr.** = transitiv (mit Akkusativ), **V itr.** = intransitiv (ohne Objekt).",
+            "en": "In the dictionary: **V tr.** = transitive (with an accusative), **V itr.** = intransitive (no object)."
+          }
+        ]
+      },
+      {
+        "type": "table",
         "title": {"de": "Wem? (Person, Dativ) – Was? (Sache, Akkusativ)", "en": "To whom? (person, dative) – What? (thing, accusative)"},
         "head": ["Verb", {"de": "Beispiel", "en": "Example"}],
         "rows": [
@@ -2022,6 +2077,14 @@
           [
             {"t": "Der Tatort gibt **sie** ihnen.", "en": "The Tatort gives it to them."},
             {"de": "Akk.-Pronomen → Dativ", "en": "acc. pronoun → dative"}
+          ],
+          [
+            {"t": "Die Kellnerin serviert **den Leuten** die Getränke.", "en": "The waitress serves the people the drinks."},
+            {"de": "Nom. → Verb → Dat. → Akk.", "en": "nom. → verb → dat. → acc."}
+          ],
+          [
+            {"t": "Heute bringt der Chef **den Gästen** das Frühstück.", "en": "Today the boss brings the guests breakfast."},
+            {"de": "Heute → Verb → Nom. → Dat. → Akk.", "en": "Heute → verb → nom. → dat. → acc."}
           ]
         ]
       },

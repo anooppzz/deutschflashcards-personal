@@ -171,6 +171,18 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 ## Log
 
+### 2026-11-02 – Grammatik aktiv Kap. 22 (p. 56): verb types → Verben mit Dativ und Akkusativ
+- Photo of Grammatik aktiv, Kapitel 22 "Ich kaufe meinem Sohn einen Ball – Verben mit
+  Akkusativ und Dativ". Added to the existing topic `verben-dativ-akkusativ` (no new topic):
+  table "Welche Fälle braucht das Verb?" (nur Nominativ / intransitiv: Der Mann lacht ·
+  + Akkusativ / transitiv: Der Kellner trinkt einen Saft · + Dativ + Akkusativ: Der Kellner
+  bringt dem Mann den Fisch · nur Dativ → Kap. 23), points (subject/object person or thing,
+  dative without preposition = a person/living being, V tr. / V itr.), and the book's
+  "Wortposition bei Nomen" sentences in the order table.
+- 📘 Grammatik-Wörter: new rows transitiv, intransitiv.
+- ✏️ Üben: 4 new questions (14). The book's exercise 1 sentences are not used.
+- Cards verkaufen, servieren, kochen linked to the topic.
+
 ### 2026-11-02 – 🔍 Search from the Grammatik tab
 - The learner couldn't search from a grammar topic. Checked every area: the 🔍 search button
   was only on 🏠 Heute and 🃏 Lernen – none in 📖 Grammatik (list or open topic) and none

@@ -2596,7 +2596,10 @@
         "forms": {
           "praes": "kocht",
           "praet": "kochte"
-        }
+        },
+        "grammar": [
+          "verben-dativ-akkusativ"
+        ]
       },
       {
         "type": "v",
@@ -13746,7 +13749,8 @@
         "level": "A2",
         "source": "Grammatik aktiv",
         "grammar": [
-          "verben-dativ"
+          "verben-dativ",
+          "verben-dativ-akkusativ"
         ],
         "forms": {
           "praes": "serviert",
@@ -13763,7 +13767,8 @@
         "level": "A2",
         "source": "Grammatik aktiv",
         "grammar": [
-          "verben-dativ"
+          "verben-dativ",
+          "verben-dativ-akkusativ"
         ],
         "note": "↔ kaufen",
         "forms": {
