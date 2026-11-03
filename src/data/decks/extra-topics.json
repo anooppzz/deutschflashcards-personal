@@ -1540,7 +1540,8 @@
         "grammar": [
           "fragewoerter-kasus",
           "kasus-ueberblick",
-          "verben-dativ"
+          "verben-dativ",
+          "verben-dativ-akkusativ"
         ],
         "forms": {
           "praes": "sagt",
@@ -2598,7 +2599,8 @@
           "praet": "kochte"
         },
         "grammar": [
-          "verben-dativ-akkusativ"
+          "verben-dativ-akkusativ",
+          "verben-dativ"
         ]
       },
       {
@@ -4470,7 +4472,8 @@
         "grammar": [
           "fragewoerter-kasus",
           "kasus-ueberblick",
-          "verben-dativ"
+          "verben-dativ",
+          "verben-dativ-akkusativ"
         ]
       },
       {
@@ -4631,7 +4634,8 @@
           "praet": "kaufte"
         },
         "grammar": [
-          "verben-dativ-akkusativ"
+          "verben-dativ-akkusativ",
+          "verben-dativ"
         ]
       },
       {
@@ -6232,7 +6236,11 @@
         "forms": {
           "praes": "bezahlt",
           "praet": "bezahlte"
-        }
+        },
+        "grammar": [
+          "verben-dativ",
+          "verben-dativ-akkusativ"
+        ]
       },
       {
         "type": "v",
@@ -6478,7 +6486,11 @@
         "forms": {
           "praes": "repariert",
           "praet": "reparierte"
-        }
+        },
+        "grammar": [
+          "verben-dativ",
+          "verben-dativ-akkusativ"
+        ]
       },
       {
         "type": "v",
@@ -8162,7 +8174,11 @@
         "forms": {
           "praes": "bestellt",
           "praet": "bestellte"
-        }
+        },
+        "grammar": [
+          "verben-dativ",
+          "verben-dativ-akkusativ"
+        ]
       },
       {
         "type": "v",
@@ -8331,7 +8347,11 @@
         "example": "Das Hotel bietet ein kostenloses Frühstück an.",
         "exampleEn": "The hotel offers a free breakfast.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 3"
+        "source": "Menschen A2 · Einheit 3",
+        "grammar": [
+          "verben-dativ",
+          "verben-dativ-akkusativ"
+        ]
       },
       {
         "type": "v",
@@ -10858,7 +10878,11 @@
         "forms": {
           "praes": "reserviert",
           "praet": "reservierte"
-        }
+        },
+        "grammar": [
+          "verben-dativ",
+          "verben-dativ-akkusativ"
+        ]
       },
       {
         "type": "v",
@@ -11419,7 +11443,11 @@
         "forms": {
           "praes": "wünscht",
           "praet": "wünschte"
-        }
+        },
+        "grammar": [
+          "verben-dativ",
+          "verben-dativ-akkusativ"
+        ]
       },
       {
         "type": "n",
@@ -12131,7 +12159,8 @@
           "praet": "holte"
         },
         "grammar": [
-          "verben-dativ-akkusativ"
+          "verben-dativ-akkusativ",
+          "verben-dativ"
         ]
       },
       {
@@ -13715,7 +13744,8 @@
         "level": "A2",
         "source": "Grammatik aktiv",
         "grammar": [
-          "verben-dativ"
+          "verben-dativ",
+          "verben-dativ-akkusativ"
         ],
         "forms": {
           "praes": "liefert",
@@ -13732,7 +13762,8 @@
         "level": "A2",
         "source": "Grammatik aktiv",
         "grammar": [
-          "verben-dativ"
+          "verben-dativ",
+          "verben-dativ-akkusativ"
         ],
         "forms": {
           "praes": "renoviert",

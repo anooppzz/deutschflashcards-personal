@@ -171,6 +171,17 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 ## Log
 
+### 2026-11-03 – Grammar links for all 41 verbs of 📋 Verben mit Dativ (Grammatik aktiv p. 259)
+- The learner asked whether the grammar topics link these verbs. Only some did (hand tags
+  had been added in bits), e.g. reservieren, reparieren, wünschen, anbieten had no link.
+- Rule now, by the book's two groups: the 26 "Akkusativ und Dativ" cards carry
+  `verben-dativ` + `verben-dativ-akkusativ` (the dative topic has a Dativ + Akkusativ table
+  too); the 15 "Dativ" cards carry `verben-dativ`. 25 tags added (extra-topics.json,
+  irregular-verbs.json, kleidung.json). Existing `verben-akkusativ` links (kaufen,
+  bezahlen, bestellen) stay.
+- gehen and stehen get `verben-dativ` for the book's idioms (Wie geht es dir? Das Kleid
+  steht ihr gut.), though their cards show the motion/position meaning.
+
 ### 2026-11-03 – Grammatik aktiv Kap. 18 (Dativ), 19 (Possessivartikel), 21 (Personalpronomen)
 - Three photos; all three were partly in the app, so only the missing parts were added.
 - `kasus-ueberblick` ← Kap. 18 "Ich fahre mit dem Auto": table Nominativ → Dativ per gender

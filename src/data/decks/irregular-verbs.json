@@ -299,7 +299,9 @@
     "example": "Ich habe einen Brief geschrieben.",
     "level": "A1",
     "grammar": [
-      "fragewoerter-kasus"
+      "fragewoerter-kasus",
+      "verben-dativ",
+      "verben-dativ-akkusativ"
     ]
   },
   {
@@ -330,7 +332,10 @@
     "partizip": "gestanden",
     "english": "to stand",
     "example": "Das Auto hat an der Wiese gestanden.",
-    "level": "A1"
+    "level": "A1",
+    "grammar": [
+      "verben-dativ"
+    ]
   },
   {
     "group": "Mischverben",
@@ -340,7 +345,10 @@
     "partizip": "gegangen",
     "english": "to go / walk",
     "example": "Ich bin zu Fuß gegangen.",
-    "level": "A1"
+    "level": "A1",
+    "grammar": [
+      "verben-dativ"
+    ]
   },
   {
     "group": "ie – o – o",
@@ -697,7 +705,8 @@
     "source": "Grammatik aktiv",
     "note": "auch mit Dativ: Der Friseur hat ihr die Haare geschnitten.",
     "grammar": [
-      "verben-dativ"
+      "verben-dativ",
+      "verben-dativ-akkusativ"
     ]
   },
   {
