@@ -137,7 +137,6 @@
     "grammar": [
       "fragewoerter-kasus",
       "kasus-ueberblick",
-      "verben-dativ",
       "verben-dativ-akkusativ"
     ]
   },
@@ -300,7 +299,6 @@
     "level": "A1",
     "grammar": [
       "fragewoerter-kasus",
-      "verben-dativ",
       "verben-dativ-akkusativ"
     ]
   },
@@ -705,7 +703,6 @@
     "source": "Grammatik aktiv",
     "note": "auch mit Dativ: Der Friseur hat ihr die Haare geschnitten.",
     "grammar": [
-      "verben-dativ",
       "verben-dativ-akkusativ"
     ]
   },

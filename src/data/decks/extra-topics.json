@@ -1540,7 +1540,6 @@
         "grammar": [
           "fragewoerter-kasus",
           "kasus-ueberblick",
-          "verben-dativ",
           "verben-dativ-akkusativ"
         ],
         "forms": {
@@ -2101,7 +2100,6 @@
         "grammar": [
           "fragewoerter-kasus",
           "kasus-ueberblick",
-          "verben-dativ",
           "verben-dativ-akkusativ"
         ]
       },
@@ -2599,8 +2597,7 @@
           "praet": "kochte"
         },
         "grammar": [
-          "verben-dativ-akkusativ",
-          "verben-dativ"
+          "verben-dativ-akkusativ"
         ]
       },
       {
@@ -4472,7 +4469,6 @@
         "grammar": [
           "fragewoerter-kasus",
           "kasus-ueberblick",
-          "verben-dativ",
           "verben-dativ-akkusativ"
         ]
       },
@@ -4634,8 +4630,7 @@
           "praet": "kaufte"
         },
         "grammar": [
-          "verben-dativ-akkusativ",
-          "verben-dativ"
+          "verben-dativ-akkusativ"
         ]
       },
       {
@@ -6238,7 +6233,6 @@
           "praet": "bezahlte"
         },
         "grammar": [
-          "verben-dativ",
           "verben-dativ-akkusativ"
         ]
       },
@@ -6441,7 +6435,6 @@
         "grammar": [
           "fragewoerter-kasus",
           "kasus-ueberblick",
-          "verben-dativ",
           "verben-dativ-akkusativ"
         ]
       },
@@ -6488,7 +6481,6 @@
           "praet": "reparierte"
         },
         "grammar": [
-          "verben-dativ",
           "verben-dativ-akkusativ"
         ]
       },
@@ -6503,7 +6495,6 @@
         "grammar": [
           "fragewoerter-kasus",
           "kasus-ueberblick",
-          "verben-dativ",
           "verben-dativ-akkusativ"
         ],
         "forms": {
@@ -7614,7 +7605,6 @@
         "grammar": [
           "fragewoerter-kasus",
           "kasus-ueberblick",
-          "verben-dativ",
           "verben-dativ-akkusativ"
         ],
         "forms": {
@@ -8176,7 +8166,6 @@
           "praet": "bestellte"
         },
         "grammar": [
-          "verben-dativ",
           "verben-dativ-akkusativ"
         ]
       },
@@ -8349,7 +8338,6 @@
         "level": "A2",
         "source": "Menschen A2 · Einheit 3",
         "grammar": [
-          "verben-dativ",
           "verben-dativ-akkusativ"
         ]
       },
@@ -8835,7 +8823,6 @@
         "grammar": [
           "fragewoerter-kasus",
           "kasus-ueberblick",
-          "verben-dativ",
           "verben-dativ-akkusativ"
         ],
         "forms": {
@@ -9648,7 +9635,6 @@
         "grammar": [
           "fragewoerter-kasus",
           "kasus-ueberblick",
-          "verben-dativ",
           "verben-dativ-akkusativ"
         ]
       },
@@ -9664,7 +9650,6 @@
         "grammar": [
           "fragewoerter-kasus",
           "kasus-ueberblick",
-          "verben-dativ",
           "verben-dativ-akkusativ"
         ]
       },
@@ -10710,7 +10695,6 @@
         "grammar": [
           "fragewoerter-kasus",
           "kasus-ueberblick",
-          "verben-dativ",
           "verben-dativ-akkusativ"
         ],
         "forms": {
@@ -10880,7 +10864,6 @@
           "praet": "reservierte"
         },
         "grammar": [
-          "verben-dativ",
           "verben-dativ-akkusativ"
         ]
       },
@@ -11445,7 +11428,6 @@
           "praet": "wünschte"
         },
         "grammar": [
-          "verben-dativ",
           "verben-dativ-akkusativ"
         ]
       },
@@ -12159,8 +12141,7 @@
           "praet": "holte"
         },
         "grammar": [
-          "verben-dativ-akkusativ",
-          "verben-dativ"
+          "verben-dativ-akkusativ"
         ]
       },
       {
@@ -13744,7 +13725,6 @@
         "level": "A2",
         "source": "Grammatik aktiv",
         "grammar": [
-          "verben-dativ",
           "verben-dativ-akkusativ"
         ],
         "forms": {
@@ -13762,7 +13742,6 @@
         "level": "A2",
         "source": "Grammatik aktiv",
         "grammar": [
-          "verben-dativ",
           "verben-dativ-akkusativ"
         ],
         "forms": {
@@ -13780,7 +13759,6 @@
         "level": "A2",
         "source": "Grammatik aktiv",
         "grammar": [
-          "verben-dativ",
           "verben-dativ-akkusativ"
         ],
         "forms": {
@@ -13798,7 +13776,6 @@
         "level": "A2",
         "source": "Grammatik aktiv",
         "grammar": [
-          "verben-dativ",
           "verben-dativ-akkusativ"
         ],
         "note": "↔ kaufen",

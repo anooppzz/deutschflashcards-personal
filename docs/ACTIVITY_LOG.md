@@ -171,10 +171,23 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 ## Log
 
+### 2026-11-03 – Correction: dative + accusative verbs only under "Verben mit Dativ und Akkusativ"
+- The learner asked if the 26 verbs really belong to both dative topics. They don't: the
+  book splits them ("Verben mit Akkusativ und Dativ" / "Verben mit Dativ"). In the 26 the
+  accusative thing is the main object and the dative person is extra, often optional
+  (Ich kaufe einen Laptop.); dative-only verbs have just the dative (Ich helfe dir.).
+  A "Verben mit Dativ" chip on kaufen suggested it works like helfen.
+- Removed `verben-dativ` from all 26 (27 cards, schreiben twice), including tags older
+  than today (bringen, geben, schenken, zeigen …). **Rule:** 26 → `verben-dativ-akkusativ`
+  only; 15 → `verben-dativ` only; `verben-akkusativ` on kaufen/bezahlen/bestellen stays.
+  Outside the list: vertrauen, raten, einfallen (dative) and wegnehmen (Dat + Akk) were
+  already right. The dative topic's small "Dativ + Akkusativ" table stays as a pointer.
+
 ### 2026-11-03 – Grammar links for all 41 verbs of 📋 Verben mit Dativ (Grammatik aktiv p. 259)
 - The learner asked whether the grammar topics link these verbs. Only some did (hand tags
   had been added in bits), e.g. reservieren, reparieren, wünschen, anbieten had no link.
-- Rule now, by the book's two groups: the 26 "Akkusativ und Dativ" cards carry
+- (Corrected in the entry above: the 26 now carry only `verben-dativ-akkusativ`.)
+  First rule, by the book's two groups: the 26 "Akkusativ und Dativ" cards carry
   `verben-dativ` + `verben-dativ-akkusativ` (the dative topic has a Dativ + Akkusativ table
   too); the 15 "Dativ" cards carry `verben-dativ`. 25 tags added (extra-topics.json,
   irregular-verbs.json, kleidung.json). Existing `verben-akkusativ` links (kaufen,
