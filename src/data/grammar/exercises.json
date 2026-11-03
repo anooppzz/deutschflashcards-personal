@@ -53,7 +53,9 @@
     {"q": "Die Eltern kaufen ___ Sohn ein Fahrrad.", "options": ["ihrem", "seinem", "ihren"], "answer": "ihrem", "en": "The parents buy their son a bike.", "why": {"de": "die Eltern = sie (Plural) → ihr; wem? der Sohn → -em.", "en": "the parents = they → ihr; to whom? der Sohn → -em."}},
     {"q": "Wir fahren mit ___ Auto in den Urlaub.", "options": ["unserem", "unser", "unseren"], "answer": "unserem", "en": "We're going on holiday in our car.", "why": {"de": "mit + Dativ; das Auto → unserem.", "en": "mit + dative; das Auto → unserem."}},
     {"q": "Hast du ___ Tante schon geantwortet?", "options": ["deiner", "deine", "deinem"], "answer": "deiner", "en": "Have you answered your aunt yet?", "why": {"de": "antworten + Dativ; die Tante → -er.", "en": "antworten + dative; die Tante → -er."}},
-    {"q": "Er besucht am Wochenende ___ Großeltern.", "options": ["seine", "seinen", "seiner"], "answer": "seine", "en": "He visits his grandparents at the weekend.", "why": {"de": "besuchen + Akkusativ (wen?); Plural → seine.", "en": "besuchen + accusative (whom?); plural → seine."}}
+    {"q": "Er besucht am Wochenende ___ Großeltern.", "options": ["seine", "seinen", "seiner"], "answer": "seine", "en": "He visits his grandparents at the weekend.", "why": {"de": "besuchen + Akkusativ (wen?); Plural → seine.", "en": "besuchen + accusative (whom?); plural → seine."}},
+    {"q": "Lisa besucht ___ Vater.", "options": ["ihren", "seinen", "ihrem"], "answer": "ihren", "en": "Lisa visits her father.", "why": {"de": "Lisa = sie → ihr; besuchen + Akkusativ, der Vater → ihren.", "en": "Lisa = she → ihr; besuchen + accusative, der Vater → ihren."}},
+    {"q": "Tom ruft ___ Mutter an.", "options": ["seine", "ihre", "seiner"], "answer": "seine", "en": "Tom calls his mother.", "why": {"de": "Tom = er → sein; anrufen + Akkusativ, die Mutter → seine.", "en": "Tom = he → sein; anrufen + accusative, die Mutter → seine."}}
   ],
   "kasus-ueberblick": [
     {"q": "Ich sehe ___ Mann.", "options": ["der", "den", "dem"], "answer": "den", "en": "I see the man.", "why": {"de": "Akkusativ maskulin: der → den.", "en": "Accusative masculine: der → den."}},
@@ -68,7 +70,11 @@
     {"q": "Hast du ___ Bruder?", "options": ["einen", "ein", "einem"], "answer": "einen", "en": "Do you have a brother?", "why": {"de": "haben + Akkusativ; maskulin: einen.", "en": "haben + accusative; masculine: einen."}},
     {"q": "Kennst du ___ Mann dort?", "options": ["den", "der", "dem"], "answer": "den", "en": "Do you know the man over there?", "why": {"de": "Wen kennst du? → Akkusativ, maskulin: den.", "en": "Whom do you know? → accusative, masculine: den."}},
     {"q": "Wir haben leider ___ Auto.", "options": ["kein", "keinen", "keine"], "answer": "kein", "en": "Unfortunately we don't have a car.", "why": {"de": "das Auto ist neutral → im Akkusativ keine extra Form: kein.", "en": "das Auto is neuter → no extra accusative form: kein."}},
-    {"q": "Ich brauche ___ Löffel.", "options": ["einen", "ein", "eine"], "answer": "einen", "en": "I need a spoon.", "why": {"de": "der Löffel ist maskulin → Akkusativ: einen.", "en": "der Löffel is masculine → accusative: einen."}}
+    {"q": "Ich brauche ___ Löffel.", "options": ["einen", "ein", "eine"], "answer": "einen", "en": "I need a spoon.", "why": {"de": "der Löffel ist maskulin → Akkusativ: einen.", "en": "der Löffel is masculine → accusative: einen."}},
+    {"q": "Ich spiele gern mit ___ Kind.", "options": ["dem", "den", "das"], "answer": "dem", "en": "I like playing with the child.", "why": {"de": "mit + Dativ; neutral = maskulin: dem Kind.", "en": "mit + dative; neuter = masculine: dem Kind."}},
+    {"q": "Wir helfen ___ Leuten.", "options": ["den", "die", "der"], "answer": "den", "en": "We help the people.", "why": {"de": "helfen + Dativ Plural: den Leute**n**.", "en": "helfen + dative plural: den Leute**n**."}},
+    {"q": "Siehst du die Frau? Ja, ich sehe ___.", "options": ["sie", "ihr", "ihn"], "answer": "sie", "en": "Do you see the woman? Yes, I see her.", "why": {"de": "sehen + Akkusativ: die Frau → sie.", "en": "sehen + accusative: die Frau → sie."}},
+    {"q": "Wo ist Peter? Ich gehe mit ___ ins Kino.", "options": ["ihm", "ihn", "er"], "answer": "ihm", "en": "Where's Peter? I'm going to the cinema with him.", "why": {"de": "mit + Dativ: dem → ihm.", "en": "mit + dative: dem → ihm."}}
   ],
   "praesens-regelmaessig": [
     {"q": "Du ___ in Berlin. (wohnen)", "options": ["wohnst", "wohnt", "wohnen"], "answer": "wohnst", "en": "You live in Berlin.", "why": {"de": "du → -st.", "en": "du → -st."}},

@@ -171,6 +171,19 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 ## Log
 
+### 2026-11-03 – Grammatik aktiv Kap. 18 (Dativ), 19 (Possessivartikel), 21 (Personalpronomen)
+- Three photos; all three were partly in the app, so only the missing parts were added.
+- `kasus-ueberblick` ← Kap. 18 "Ich fahre mit dem Auto": table Nominativ → Dativ per gender
+  (dem/einem/keinem · der/einer/keiner · den/–/keinen …-n), points (m = n in the dative,
+  plural -n, no -n after -s: mit zwei Autos, Possessiv like kein: mit meinem Auto).
+- `kasus-ueberblick` ← Kap. 21 "Nur mit dir – nie ohne dich": the pronoun table was already
+  there; added the book's noun → pronoun sentences (liebt den Mann → liebt ihn …) and the
+  title sentence as an example. +4 Üben (17).
+- `possessivartikel` ← Kap. 19 "Mein, dein, unser": table sein oder ihr? (er → sein Vater /
+  seine Mutter, sie → ihr Vater / ihre Mutter), points (same ending as kein, Ist das Ihr
+  Koffer?). +2 Üben (20).
+- The learner's note on Kap. 21 ("only with you – never without you") is right.
+
 ### 2026-11-02 – New topic: Verben mit Akkusativ (the learner's wish: Akk · Dat · Dat+Akk)
 - The learner wanted a matching trio in Grammatik → Verben: **Verben mit Akkusativ** (new,
   `verben-akkusativ`, A1) · Verben mit Dativ · Verben mit Dativ und Akkusativ.

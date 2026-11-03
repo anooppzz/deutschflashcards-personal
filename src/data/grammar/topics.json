@@ -518,6 +518,33 @@
       },
       {
         "type": "table",
+        "title": {"de": "sein oder ihr? (Grammatik aktiv, Kap. 19)", "en": "sein or ihr? (Grammatik aktiv, ch. 19)"},
+        "head": [{"de": "Besitzer", "en": "Owner"}, "der Vater", "die Mutter"],
+        "rows": [
+          [{"de": "er (Tom)", "en": "he (Tom)"}, "**sein** Vater", "**seine** Mutter"],
+          [{"de": "sie (Anna)", "en": "she (Anna)"}, "**ihr** Vater", "**ihre** Mutter"]
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "Wie kein", "en": "Like kein"},
+        "items": [
+          {
+            "de": "Maskulinum (er) hat immer **sein**, Femininum (sie) hat immer **ihr** – egal, ob es Vater oder Mutter ist.",
+            "en": "A masculine owner (er) always has **sein**, a feminine owner (sie) always **ihr** – whether it's the father or the mother."
+          },
+          {
+            "de": "Der Possessivartikel hat die gleiche Endung wie **kein**: kein**e** Bücher, sein**e** Bücher, ihr**e** Bücher.",
+            "en": "The possessive article has the same ending as **kein**: kein**e** Bücher (no books), sein**e** Bücher (his books), ihr**e** Bücher (her/their books)."
+          },
+          {
+            "de": "Höflich mit **Sie** → **Ihr** (groß): Ist das **Ihr** Koffer?",
+            "en": "Polite with **Sie** → **Ihr** (capital I): Ist das **Ihr** Koffer? (Is that your suitcase?)"
+          }
+        ]
+      },
+      {
+        "type": "table",
         "title": {"de": "So denkst du: Beispiele Schritt für Schritt", "en": "How to think: examples step by step"},
         "head": [{"de": "Satz", "en": "Sentence"}, {"de": "Warum?", "en": "Why?"}],
         "rows": [
@@ -634,6 +661,39 @@
       },
       {
         "type": "table",
+        "title": {"de": "Nominativ → Dativ (Grammatik aktiv, Kap. 18)", "en": "Nominative → dative (Grammatik aktiv, ch. 18)"},
+        "head": [{"de": "Genus", "en": "Gender"}, "Nominativ", "Dativ (wem?)"],
+        "rows": [
+          [{"de": "maskulin", "en": "masculine"}, "der · ein · kein Mann", "**dem · einem · keinem** Mann"],
+          [{"de": "neutral", "en": "neuter"}, "das · ein · kein Kind", "**dem · einem · keinem** Kind"],
+          [{"de": "feminin", "en": "feminine"}, "die · eine · keine Frau", "**der · einer · keiner** Frau"],
+          ["Plural", "die · – · keine Leute", "**den · – · keinen** Leute**n**"]
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "Dativ: das musst du wissen", "en": "Dative: what you need to know"},
+        "items": [
+          {
+            "de": "Im Dativ sind **maskulin und neutral gleich**: de**m** Mann, de**m** Kind.",
+            "en": "In the dative **masculine and neuter are the same**: de**m** Mann (the man), de**m** Kind (the child)."
+          },
+          {
+            "de": "Dativ Plural: Das Nomen bekommt ein **-n**: mit den Leute**n**, mit den Kinder**n**.",
+            "en": "Dative plural: the noun gets an **-n**: mit den Leute**n** (with the people), mit den Kinder**n** (with the children)."
+          },
+          {
+            "de": "Kein -n bei Plural auf **-s** (und wenn schon -n da ist): Wir fahren mit zwei Auto**s**. Mit den Fraue**n**.",
+            "en": "No extra -n with plurals in **-s** (or when there is already an -n): Wir fahren mit zwei Auto**s** (we're going in two cars). Mit den Fraue**n** (with the women)."
+          },
+          {
+            "de": "Possessivartikel wie kein: Ich fahre mit **meinem** Auto. (siehe „Possessivartikel“)",
+            "en": "Possessive articles like kein: Ich fahre mit **meinem** Auto (I drive my car). (see \"Possessive Articles\")"
+          }
+        ]
+      },
+      {
+        "type": "table",
         "title": {"de": "Personalpronomen", "en": "Personal pronouns"},
         "head": ["Nominativ", "Akkusativ", "Dativ"],
         "rows": [
@@ -645,6 +705,29 @@
           ["wir", "uns", "uns"],
           ["ihr", "euch", "euch"],
           ["sie / Sie", "sie / Sie", "**ihnen / Ihnen**"]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Nomen → Pronomen (Grammatik aktiv, Kap. 21)", "en": "Noun → pronoun (Grammatik aktiv, ch. 21)"},
+        "head": [{"de": "Mit Nomen", "en": "With a noun"}, {"de": "Mit Pronomen", "en": "With a pronoun"}],
+        "rows": [
+          [
+            {"t": "Die Frau liebt **den** Mann.", "en": "The woman loves the man."},
+            {"t": "Sie liebt **ihn**.", "en": "She loves him."}
+          ],
+          [
+            {"t": "Der Mann liebt **die** Frau.", "en": "The man loves the woman."},
+            {"t": "Er liebt **sie**.", "en": "He loves her."}
+          ],
+          [
+            {"t": "Die Frau geht mit **dem** Mann.", "en": "The woman goes with the man."},
+            {"t": "Sie geht mit **ihm**.", "en": "She goes with him."}
+          ],
+          [
+            {"t": "Der Mann geht mit **der** Frau.", "en": "The man goes with the woman."},
+            {"t": "Er geht mit **ihr**.", "en": "He goes with her."}
+          ]
         ]
       },
       {
@@ -729,7 +812,8 @@
       {"de": "Der Mann schenkt dem Kind einen Ball.", "en": "The man gives the child a ball."},
       {"de": "Ich sehe den Bus.", "en": "I see the bus."},
       {"de": "Das Buch gehört mir.", "en": "The book belongs to me."},
-      {"de": "Hast du einen Stift für mich?", "en": "Do you have a pen for me?"}
+      {"de": "Hast du einen Stift für mich?", "en": "Do you have a pen for me?"},
+      {"de": "Nur mit dir, nie ohne dich.", "en": "Only with you, never without you."}
     ]
   },
   {
