@@ -978,5 +978,105 @@
     ]
    }
   ]
+ },
+ {
+  "key": "hotel2",
+  "deck": "hotel2",
+  "icon": "🛎️",
+  "title": "Im Hotel einchecken",
+  "en": "Checking in at a hotel",
+  "sentences": [
+   {
+    "de": "Ich habe ein Zimmer reserviert.",
+    "en": "I've booked a room."
+   },
+   {
+    "de": "Haben Sie noch ein Doppelzimmer frei?",
+    "en": "Do you still have a double room available?"
+   },
+   {
+    "de": "Ich hätte gern ein Einzelzimmer für zwei Nächte.",
+    "en": "I'd like a single room for two nights."
+   },
+   {
+    "de": "Wie viel kostet das Zimmer pro Nacht?",
+    "en": "How much is the room per night?"
+   },
+   {
+    "de": "Ist das Frühstück im Preis inbegriffen?",
+    "en": "Is breakfast included in the price?"
+   },
+   {
+    "de": "Wir möchten Halbpension, bitte.",
+    "en": "We'd like half board, please."
+   },
+   {
+    "de": "Ich hätte gern ein Nichtraucherzimmer.",
+    "en": "I'd like a non-smoking room."
+   },
+   {
+    "de": "Wann gibt es Frühstück?",
+    "en": "When is breakfast?"
+   },
+   {
+    "de": "Gibt es einen Parkplatz am Hotel?",
+    "en": "Is there parking at the hotel?"
+   },
+   {
+    "de": "Können Sie mich bitte um sieben Uhr wecken?",
+    "en": "Could you wake me at seven, please?"
+   },
+   {
+    "de": "Wo ist der Fitnessraum?",
+    "en": "Where is the gym?"
+   },
+   {
+    "de": "Die Heizung in meinem Zimmer funktioniert nicht.",
+    "en": "The heating in my room doesn't work."
+   }
+  ],
+  "dialogues": [
+   {
+    "title": "An der Rezeption",
+    "en": "At reception",
+    "lines": [
+     {
+      "who": "A",
+      "de": "Guten Abend! Kann ich Ihnen helfen?",
+      "en": "Good evening! Can I help you?"
+     },
+     {
+      "who": "B",
+      "de": "Guten Abend! Haben Sie noch ein Einzelzimmer frei?",
+      "en": "Good evening! Do you still have a single room available?"
+     },
+     {
+      "who": "A",
+      "de": "Ja, für wie viele Nächte?",
+      "en": "Yes, for how many nights?"
+     },
+     {
+      "who": "B",
+      "de": "Für zwei Nächte. Was kostet das?",
+      "en": "For two nights. How much is it?"
+     },
+     {
+      "who": "A",
+      "de": "89 Euro pro Nacht, mit Frühstück.",
+      "en": "89 euros per night, with breakfast."
+     },
+     {
+      "who": "B",
+      "de": "Gut, ich nehme es. Wo ist der Frühstücksraum?",
+      "en": "Good, I'll take it. Where is the breakfast room?"
+     },
+     {
+      "who": "A",
+      "de": "Gegenüber der Rezeption. Hier ist Ihr Schlüssel. Einen schönen Aufenthalt!",
+      "en": "Opposite reception. Here's your key. Enjoy your stay!"
+     }
+    ]
+   }
+  ]
  }
 ]

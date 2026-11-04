@@ -13709,6 +13709,301 @@
     ]
   },
   {
+    "key": "hotel2",
+    "icon": "🛎️",
+    "label": "Hotel 2",
+    "added": "2026-11-04",
+    "note": "Im Hotel, Zimmer, durch / gegenüber / an … vorbei",
+    "alsoCards": [
+      "persoenlich::angenehm"
+    ],
+    "cards": [
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Aufenthalt",
+        "sub": "Pl. -e",
+        "english": "stay",
+        "example": "Wir wünschen Ihnen einen schönen Aufenthalt in unserem Hotel.",
+        "exampleEn": "We wish you a pleasant stay at our hotel.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 16"
+      },
+      {
+        "type": "n",
+        "gender": "das",
+        "front": "das Doppelzimmer",
+        "sub": "Pl. -",
+        "english": "double room",
+        "example": "Ich möchte ein Doppelzimmer für zwei Nächte reservieren.",
+        "exampleEn": "I'd like to book a double room for two nights.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 16"
+      },
+      {
+        "type": "n",
+        "gender": "das",
+        "front": "das Einzelzimmer",
+        "sub": "Pl. -",
+        "english": "single room",
+        "example": "Ein Einzelzimmer kostet 79 Euro pro Nacht.",
+        "exampleEn": "A single room costs 79 euros per night.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 16"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Empfangshalle",
+        "sub": "Pl. -n",
+        "english": "lobby, entrance hall",
+        "example": "Wir treffen uns um neun Uhr in der Empfangshalle.",
+        "exampleEn": "We'll meet in the lobby at nine o'clock.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 16"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Fitnessraum",
+        "sub": "Pl. ¨-e",
+        "english": "gym, fitness room",
+        "example": "Der Fitnessraum ist im Keller.",
+        "exampleEn": "The gym is in the basement.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 16"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Frühstücksraum",
+        "sub": "Pl. ¨-e",
+        "english": "breakfast room",
+        "example": "Das Frühstück gibt es von 7 bis 10 Uhr im Frühstücksraum.",
+        "exampleEn": "Breakfast is served in the breakfast room from 7 to 10.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 16"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Halbpension",
+        "sub": "kein Plural",
+        "english": "half board (breakfast + dinner)",
+        "example": "Wir haben ein Zimmer mit Halbpension gebucht.",
+        "exampleEn": "We booked a room with half board.",
+        "note": "Halbpension = Frühstück + Abendessen",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 16"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Kiosk",
+        "sub": "Pl. -e · A: die Trafik, -en",
+        "english": "kiosk, newsstand",
+        "example": "Zeitungen gibt es am Kiosk neben dem Hotel.",
+        "exampleEn": "You can get newspapers at the kiosk next to the hotel.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 16",
+        "acceptableAlternates": [
+          "Trafik"
+        ]
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Konferenz",
+        "sub": "Pl. -en",
+        "english": "conference",
+        "example": "Herr Weber ist drei Tage auf einer Konferenz in Wien.",
+        "exampleEn": "Mr Weber is at a conference in Vienna for three days.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 16"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Konferenzraum",
+        "sub": "Pl. ¨-e",
+        "english": "conference room",
+        "example": "Der Konferenzraum hat Platz für 50 Personen.",
+        "exampleEn": "The conference room has space for 50 people.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 16"
+      },
+      {
+        "type": "n",
+        "gender": "das",
+        "front": "das Nichtraucherzimmer",
+        "sub": "Pl. -",
+        "english": "non-smoking room",
+        "example": "Haben Sie noch ein Nichtraucherzimmer frei?",
+        "exampleEn": "Do you still have a non-smoking room available?",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 16"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Parkplatz",
+        "sub": "Pl. ¨-e",
+        "english": "parking space; car park",
+        "example": "Hat das Hotel einen Parkplatz?",
+        "exampleEn": "Does the hotel have a car park?",
+        "note": "A1",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 16"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Rezeption",
+        "sub": "Pl. -en",
+        "english": "reception (desk)",
+        "example": "Den Schlüssel bekommen Sie an der Rezeption.",
+        "exampleEn": "You get the key at reception.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 16"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Vollpension",
+        "sub": "kein Plural",
+        "english": "full board (all meals)",
+        "example": "Mit Vollpension sind alle drei Mahlzeiten im Preis.",
+        "exampleEn": "With full board, all three meals are included in the price.",
+        "note": "Vollpension = Frühstück + Mittagessen + Abendessen",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 16"
+      },
+      {
+        "type": "v",
+        "front": "wecken",
+        "sub": "hat geweckt",
+        "english": "to wake (someone) up",
+        "example": "Können Sie mich bitte um sechs Uhr wecken?",
+        "exampleEn": "Could you wake me at six, please?",
+        "note": "aufwachen = wake up yourself; jemanden wecken = wake someone else",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 16",
+        "forms": {
+          "praes": "weckt",
+          "praet": "weckte"
+        }
+      },
+      {
+        "type": "adj",
+        "front": "frei",
+        "sub": "↔ besetzt",
+        "english": "free, available (seat, room)",
+        "example": "Ist der Platz hier noch frei?",
+        "exampleEn": "Is this seat still free?",
+        "note": "frei can also mean free of charge: Der Eintritt ist frei.",
+        "level": "A1",
+        "source": "Menschen A2 · Einheit 16"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Ärger",
+        "sub": "kein Plural",
+        "english": "trouble; annoyance",
+        "example": "Mit dem Zimmer hatten wir nur Ärger.",
+        "exampleEn": "We had nothing but trouble with the room.",
+        "note": "sich ärgern = to get annoyed",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 16"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Raucher",
+        "sub": "Pl. -",
+        "english": "smoker",
+        "example": "Für Raucher gibt es eine Terrasse.",
+        "exampleEn": "There's a terrace for smokers.",
+        "note": "die Raucherin, Pl. -nen · ↔ der Nichtraucher",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 16"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Spaß",
+        "sub": "Pl. ¨-e",
+        "english": "fun",
+        "example": "Viel Spaß im Urlaub!",
+        "exampleEn": "Have fun on holiday!",
+        "note": "Viel Spaß! = Have fun! · Spaß machen = to be fun",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 16"
+      },
+      {
+        "type": "sonst",
+        "front": "durch",
+        "sub": "+ Akkusativ",
+        "english": "through",
+        "example": "Wir fahren mit dem Rad durch den Wald.",
+        "exampleEn": "We cycle through the forest.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 16",
+        "grammar": [
+          "praep-akkusativ"
+        ]
+      },
+      {
+        "type": "sonst",
+        "front": "gegenüber",
+        "sub": "+ Dativ",
+        "english": "opposite",
+        "example": "Der Kiosk ist gegenüber dem Hotel.",
+        "exampleEn": "The kiosk is opposite the hotel.",
+        "note": "Often after a pronoun: mir gegenüber",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 16",
+        "grammar": [
+          "praep-dativ"
+        ]
+      },
+      {
+        "type": "sonst",
+        "front": "vorbei",
+        "sub": "",
+        "english": "over, past; finished",
+        "example": "Der Urlaub ist leider schon vorbei.",
+        "exampleEn": "Unfortunately the holiday is already over.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 16"
+      },
+      {
+        "type": "sonst",
+        "front": "an … vorbei",
+        "sub": "+ Dativ",
+        "english": "past (something)",
+        "example": "Wir fahren am Dom vorbei.",
+        "exampleEn": "We ride past the cathedral.",
+        "note": "an + dem = am: am Hotel vorbei",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 16",
+        "grammar": [
+          "praep-dativ"
+        ]
+      },
+      {
+        "type": "sonst",
+        "front": "überall",
+        "sub": "",
+        "english": "everywhere",
+        "example": "Im Hotel gibt es überall kostenloses WLAN.",
+        "exampleEn": "There's free Wi-Fi everywhere in the hotel.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 16"
+      }
+    ]
+  },
+  {
     "key": "andere-quellen",
     "icon": "📚",
     "label": "Andere Quellen",

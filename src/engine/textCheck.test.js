@@ -108,6 +108,9 @@ describe("two-way prepositions and endings without an article", () => {
     expect(fixes("Ich bin ins Kino.", "kasus")).toEqual(["im Kino"]);
     expect(fixes("Ich fahre im Kino.", "kasus")).toEqual(["ins Kino"]);
     expect(fixes("Ich wohne in der Stadt. Ich gehe in die Schule. Ich warte auf den Bus. In der Woche arbeite ich.", "kasus")).toEqual([]);
+    // an … vorbei is always Dativ, also after fahren/gehen
+    expect(fixes("Wir fahren am Dom vorbei. Er geht an der Kirche vorbei.", "kasus")).toEqual([]);
+    expect(fixes("Wir fahren an den Dom vorbei.", "kasus")).toEqual(["an dem Dom"]);
   });
   it("adjective endings without an article", () => {
     expect(fixes("Heute ist schön Wetter.", "adj-endung")).toEqual(["schönes"]);

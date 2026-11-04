@@ -581,6 +581,8 @@ const TIME_NOUNS = new Set([
 const wantedTwoWay = (prep, nounLo, clauseWords, lex) => {
   if (TIME_NOUNS.has(nounLo)) return prep === "über" ? null : { want: "dat", sure: true }; // über das Wochenende
   if (nounLo === "ferien" || nounLo === "urlaub") return null; // in den Ferien (time) / in die Ferien (fahren): both right
+  // an … vorbei (past something) is always Dativ: Wir fahren am Dom vorbei
+  if (prep === "an" && clauseWords.some((w) => w.lo === "vorbei")) return { want: "dat", sure: true };
   // verbs only: a capital word inside the clause is a noun (das Essen, die Reise)
   let lemmas = clauseWords.filter((w, k) => k === 0 || !/^\p{Lu}/u.test(w.t)).map((w) => lex.lemma.get(w.lo)).filter(Boolean);
   // „ist … gelaufen“: sein/haben next to another verb is only the helper verb

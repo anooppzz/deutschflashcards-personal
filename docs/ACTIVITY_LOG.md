@@ -171,6 +171,23 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 ## Log
 
+### 2026-11-04 – Einheit 16 Lernwortschatz (book p. 133): new chapter 🛎️ Hotel 2
+- From a photo of p. 133 (Modul 6): new chapter **`hotel2`** "Hotel 2" (`added` 2026-11-04 → 🆕
+  banner), 24 cards: der Aufenthalt, das Doppel-/Einzelzimmer, die Empfangshalle, der Fitness-/
+  Frühstücks-/Konferenzraum, die Halb-/Vollpension, der Kiosk (A: die Trafik), die Konferenz,
+  das Nichtraucherzimmer, der Parkplatz, die Rezeption, wecken, frei, der Ärger, der Raucher,
+  der Spaß (Viel Spaß! in the note), durch (+Akk), gegenüber (+Dat), vorbei, an … vorbei (+Dat),
+  überall. `angenehm` already existed in ⭐ Meine Wörter → linked with `alsoCards`.
+  `der Spaß` is new (only `Spaß machen` existed in Freizeit); the old A1 🏨 Hotel chapter had
+  none of these words. `card-ids.json` updated.
+- 📰 Lesen "Mit dem Rad an der Donau" and 🧱 Sätze set "Im Hotel einchecken" (12 sentences +
+  a reception dialogue).
+- 🔍 Fehler-Check: `an … vorbei` is always Dativ – "Wir fahren am Dom vorbei" was marked as a
+  possible Akkusativ mistake (fahren = going verb). Fixed in `wantedTwoWay` + tests.
+- Unsure readings: none. Halbpension/Vollpension/Ärger have no plural on the page → "kein
+  Plural". The grammar of Einheit 16 (durch, gegenüber, an … vorbei, um … herum …) is not
+  photographed yet – existing topics praep-akkusativ / praep-dativ are linked.
+
 ### 2026-11-03 – Correction: dative + accusative verbs only under "Verben mit Dativ und Akkusativ"
 - The learner asked if the 26 verbs really belong to both dative topics. They don't: the
   book splits them ("Verben mit Akkusativ und Dativ" / "Verben mit Dativ"). In the 26 the

@@ -1290,5 +1290,43 @@
     "answer": "Oma"
    }
   ]
+ },
+ {
+  "key": "hotel2",
+  "level": "A2",
+  "deck": "hotel2",
+  "title": "Mit dem Rad an der Donau",
+  "paragraphs": [
+   "Jana und Tom machen Urlaub mit dem Rad. Am Abend kommen sie in Passau an. An der [[Rezeption|die Rezeption]] fragt Tom: „Haben Sie noch ein [[Doppelzimmer|das Doppelzimmer]] [[frei]]?“ Die Frau sagt: „Leider nur noch zwei [[Einzelzimmer|das Einzelzimmer]].“ Tom nimmt sie. Die Zimmer sind klein, aber sehr [[angenehm]] – und es sind [[Nichtraucherzimmer|das Nichtraucherzimmer]].",
+   "Das Hotel hat einen [[Fitnessraum|der Fitnessraum]] und einen großen [[Frühstücksraum|der Frühstücksraum]]. Jana und Tom haben [[Halbpension|die Halbpension]] gebucht, also gibt es Frühstück und Abendessen. [[Gegenüber|gegenüber]] dem Hotel ist ein [[Kiosk|der Kiosk]]. Dort kauft Jana eine Karte von der Region.",
+   "Am Morgen [[weckt|wecken]] die Rezeption die beiden um sieben Uhr. Dann fahren sie [[durch]] die Altstadt und [[am Dom vorbei|an … vorbei]]. Leider regnet es [[überall]]. Aber Jana lacht: „Kein [[Ärger|der Ärger]]! Radfahren macht auch im Regen [[Spaß|der Spaß]].“ Nach zwei Tagen ist ihr [[Aufenthalt|der Aufenthalt]] in Passau [[vorbei]]."
+  ],
+  "en": [
+   "Jana and Tom are on a cycling holiday. In the evening they arrive in Passau. At reception Tom asks: “Do you still have a double room free?” The woman says: “Unfortunately only two single rooms.” Tom takes them. The rooms are small but very pleasant – and they are non-smoking rooms.",
+   "The hotel has a gym and a big breakfast room. Jana and Tom booked half board, so they get breakfast and dinner. Opposite the hotel there's a kiosk. Jana buys a map of the region there.",
+   "In the morning reception wakes the two of them at seven. Then they cycle through the old town and past the cathedral. Unfortunately it's raining everywhere. But Jana laughs: “No problem! Cycling is fun in the rain too.” After two days their stay in Passau is over."
+  ],
+  "questions": [
+   {
+    "q": "Jana und Tom bekommen ein Doppelzimmer.",
+    "en": "Jana and Tom get a double room.",
+    "answer": "falsch"
+   },
+   {
+    "q": "Mit Halbpension gibt es Frühstück und Abendessen.",
+    "en": "With half board there's breakfast and dinner.",
+    "answer": "richtig"
+   },
+   {
+    "q": "Wo ist der Kiosk?",
+    "en": "Where is the kiosk?",
+    "options": [
+     "gegenüber dem Hotel",
+     "im Frühstücksraum",
+     "am Dom"
+    ],
+    "answer": "gegenüber dem Hotel"
+   }
+  ]
  }
 ]
