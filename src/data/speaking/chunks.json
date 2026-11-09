@@ -1078,5 +1078,105 @@
     ]
    }
   ]
+ },
+ {
+  "key": "hotel2-info",
+  "deck": "hotel2",
+  "icon": "🧭",
+  "title": "Im Hotel: höflich fragen und Wege beschreiben",
+  "en": "At the hotel: polite questions and directions",
+  "sentences": [
+   {
+    "de": "Ich möchte ein Zimmer buchen.",
+    "en": "I'd like to book a room."
+   },
+   {
+    "de": "Ich brauche ein Doppelzimmer für drei Nächte.",
+    "en": "I need a double room for three nights."
+   },
+   {
+    "de": "Ich würde gern wissen, ob Sie noch ein Zimmer frei haben.",
+    "en": "I'd like to know whether you still have a room available."
+   },
+   {
+    "de": "Können Sie mir sagen, wann das Schwimmbad geöffnet hat?",
+    "en": "Can you tell me when the swimming pool is open?"
+   },
+   {
+    "de": "Wissen Sie, ob es hier eine Sauna gibt?",
+    "en": "Do you know if there's a sauna here?"
+   },
+   {
+    "de": "Können Sie mir sagen, wo der Frühstücksraum ist?",
+    "en": "Can you tell me where the breakfast room is?"
+   },
+   {
+    "de": "Darf ich fragen, ob ich mit Kreditkarte zahlen kann?",
+    "en": "May I ask whether I can pay by credit card?"
+   },
+   {
+    "de": "Am besten gehen Sie geradeaus und dann nach links.",
+    "en": "It's best to go straight on and then left."
+   },
+   {
+    "de": "Gehen Sie am Restaurant vorbei und durch die Empfangshalle.",
+    "en": "Go past the restaurant and through the lobby."
+   },
+   {
+    "de": "Nehmen Sie die Treppe nach unten.",
+    "en": "Take the stairs down."
+   },
+   {
+    "de": "Die Sauna liegt gegenüber vom Schwimmbad.",
+    "en": "The sauna is opposite the swimming pool."
+   },
+   {
+    "de": "Ich wünsche Ihnen einen angenehmen Aufenthalt.",
+    "en": "I wish you a pleasant stay."
+   }
+  ],
+  "dialogues": [
+   {
+    "title": "Nach dem Schwimmbad fragen",
+    "en": "Asking about the swimming pool",
+    "lines": [
+     {
+      "who": "A",
+      "de": "Guten Tag, kann ich Ihnen helfen?",
+      "en": "Hello, can I help you?"
+     },
+     {
+      "who": "B",
+      "de": "Ja, ich möchte gern wissen, wann das Schwimmbad geöffnet hat.",
+      "en": "Yes, I'd like to know when the swimming pool is open."
+     },
+     {
+      "who": "A",
+      "de": "Das Schwimmbad hat von Montag bis Freitag von 7 bis 22 Uhr geöffnet und am Wochenende von 8 bis 20 Uhr.",
+      "en": "The pool is open Monday to Friday from 7 am to 10 pm and at the weekend from 8 am to 8 pm."
+     },
+     {
+      "who": "B",
+      "de": "Sehr gut, vielen Dank. Und können Sie mir sagen, wo das Schwimmbad ist?",
+      "en": "Very good, thank you. And can you tell me where the pool is?"
+     },
+     {
+      "who": "A",
+      "de": "Gehen Sie am Frühstücksraum vorbei und dann durch die Glastür. Nehmen Sie dort die Treppe nach unten.",
+      "en": "Go past the breakfast room and then through the glass door. Take the stairs down there."
+     },
+     {
+      "who": "B",
+      "de": "Vielen Dank!",
+      "en": "Thank you very much!"
+     },
+     {
+      "who": "A",
+      "de": "Gern. Ich wünsche Ihnen viel Spaß!",
+      "en": "You're welcome. Have fun!"
+     }
+    ]
+   }
+  ]
  }
 ]

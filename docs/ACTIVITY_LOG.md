@@ -171,6 +171,22 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 ## Log
 
+### 2026-11-09 – Indirekte Fragen (Grammatik aktiv Kap. 72) + Einheit 16 Grammatik/Kommunikation (book p. 94)
+- New grammar topic **`indirekte-fragen`** "Indirekte Fragen" (Satz & Fragen, after Fragewörter;
+  level A2 because Menschen A2 Einheit 16 teaches it – Grammatik aktiv marks it B1): direkte →
+  indirekte Frage, word-order table from Kap. 72, openers (Können Sie mir sagen, Wissen Sie, Darf
+  ich fragen, Ich würde gern wissen …), rules (ob for yes/no, separable verbs, modal/Perfekt last,
+  gibt es, ? or .), warning (verb not in front; ob not wenn). 10 Üben questions. Glossary row
+  "indirekte Frage"; the Nebensatz topic's "Höflich fragen" points to it.
+- `praep-ort` ← p. 94: table gegenüber von / an … vorbei + Dativ, durch + Akkusativ
+  (Frühstücksraum, Restaurant, Bar, Konferenzräume), "Einen Weg beschreiben" phrases, warning
+  (an … vorbei always Dativ). +3 Üben (13). `praep-dativ`: gegenüber (von) … vom Bahnhof.
+  Hotel 2 cards durch, gegenüber, vorbei, an … vorbei also link `praep-ort`.
+- 🧱 Sätze: new set `hotel2-info` "Im Hotel: höflich fragen und Wege beschreiben" (12 sentences
+  from the Kommunikation boxes + a dialogue asking about the Schwimmbad).
+- Not added as cards: Sauna, Glastür, Treppenhaus, Keller, Öffnungszeiten (Kommunikation page,
+  not Lernwortschatz). Unsure readings: none.
+
 ### 2026-11-04 – Einheit 16 Lernwortschatz (book p. 133): new chapter 🛎️ Hotel 2
 - From a photo of p. 133 (Modul 6): new chapter **`hotel2`** "Hotel 2" (`added` 2026-11-04 → 🆕
   banner), 24 cards: der Aufenthalt, das Doppel-/Einzelzimmer, die Empfangshalle, der Fitness-/

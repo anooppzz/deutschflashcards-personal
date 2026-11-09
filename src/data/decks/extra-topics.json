@@ -13950,7 +13950,8 @@
         "level": "A2",
         "source": "Menschen A2 · Einheit 16",
         "grammar": [
-          "praep-akkusativ"
+          "praep-akkusativ",
+          "praep-ort"
         ]
       },
       {
@@ -13964,7 +13965,8 @@
         "level": "A2",
         "source": "Menschen A2 · Einheit 16",
         "grammar": [
-          "praep-dativ"
+          "praep-dativ",
+          "praep-ort"
         ]
       },
       {
@@ -13975,7 +13977,10 @@
         "example": "Der Urlaub ist leider schon vorbei.",
         "exampleEn": "Unfortunately the holiday is already over.",
         "level": "A2",
-        "source": "Menschen A2 · Einheit 16"
+        "source": "Menschen A2 · Einheit 16",
+        "grammar": [
+          "praep-ort"
+        ]
       },
       {
         "type": "sonst",
@@ -13988,7 +13993,8 @@
         "level": "A2",
         "source": "Menschen A2 · Einheit 16",
         "grammar": [
-          "praep-dativ"
+          "praep-dativ",
+          "praep-ort"
         ]
       },
       {

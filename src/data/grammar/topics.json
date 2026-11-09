@@ -164,6 +164,14 @@
             {"t": "Ich schlafe, weil ich müde **bin**.", "en": "I'm sleeping because I'm tired."}
           ],
           [
+            "indirekte Frage",
+            {
+              "de": "Frage als Nebensatz, mit w-Wort oder ob – Verb am Ende",
+              "en": "indirect question – a question inside a sentence, with a question word or ob; verb at the end"
+            },
+            {"t": "Wissen Sie, wo der Bahnhof **ist**?", "en": "Do you know where the station is?"}
+          ],
+          [
             "Position 2",
             {"de": "der Platz des Verbs im Hauptsatz", "en": "place 2 – where the verb goes in a main clause"},
             {"t": "Heute **gehe** ich ins Kino.", "en": "Today I'm going to the cinema."}
@@ -3211,6 +3219,132 @@
     ]
   },
   {
+    "key": "indirekte-fragen",
+    "level": "A2",
+    "group": {"de": "Satz & Fragen", "en": "Sentences & Questions"},
+    "title": {"de": "Indirekte Fragen", "en": "Indirect Questions"},
+    "intro": {
+      "what": {
+        "de": "Eine Frage in einem Satz: **Wissen Sie, wo** der Bahnhof **ist**? Sie ist ein Nebensatz, das Verb steht am Ende.",
+        "en": "A question inside a sentence: **Wissen Sie, wo** der Bahnhof **ist**? (Do you know where the station is?) It's a subordinate clause, so the verb goes to the end."
+      },
+      "when": {
+        "de": "Wenn du höflich fragen willst: an der Rezeption, auf der Straße, am Telefon, im Amt.",
+        "en": "When you want to ask politely: at reception, in the street, on the phone, at an office."
+      },
+      "english": {
+        "de": "Englisch macht es fast genauso: Where **is** it? → Do you know where it **is**? Deutsch schiebt das Verb nur weiter, **ans Ende**. Und **if / whether** heißt hier **ob**, nicht wenn.",
+        "en": "English does almost the same: Where **is** it? → Do you know where it **is**? German just moves the verb further, **to the end**. And **if / whether** is **ob** here, not wenn."
+      },
+      "remember": {"de": "Wissen Sie, ob es noch weit zum Bahnhof ist?", "en": "Do you know if it's still far to the station?"}
+    },
+    "summary": {
+      "de": "W-Frage → **w-Wort**, Ja/Nein-Frage → **ob**. Danach Subjekt und Rest, das Verb steht **am Ende**.",
+      "en": "W-question → **question word**, yes/no question → **ob** (whether). Then subject and the rest, the verb goes **to the end**."
+    },
+    "sections": [
+      {
+        "type": "table",
+        "title": {"de": "Direkte Frage → indirekte Frage", "en": "Direct question → indirect question"},
+        "head": [{"de": "Direkte Frage", "en": "Direct question"}, {"de": "Indirekte Frage", "en": "Indirect question"}],
+        "rows": [
+          [
+            {"t": "Wo **ist** der Bahnhof?", "en": "Where is the station?"},
+            {"t": "Wissen Sie, **wo** der Bahnhof **ist**?", "en": "Do you know where the station is?"}
+          ],
+          [
+            {"t": "**Ist** es noch weit zum Bahnhof?", "en": "Is it still far to the station?"},
+            {"t": "Können Sie mir sagen, **ob** es noch weit zum Bahnhof **ist**?", "en": "Can you tell me if it's still far to the station?"}
+          ],
+          [
+            {"t": "**Haben** Sie noch ein Zimmer frei?", "en": "Do you still have a room available?"},
+            {"t": "Ich würde gern wissen, **ob** Sie noch ein Zimmer frei **haben**.", "en": "I'd like to know whether you still have a room available."}
+          ],
+          [
+            {"t": "Wie lange **möchten** Sie bleiben?", "en": "How long would you like to stay?"},
+            {"t": "Darf ich fragen, **wie lange** Sie bleiben **möchten**?", "en": "May I ask how long you'd like to stay?"}
+          ]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Satzbau: das Verb am Ende", "en": "Word order: the verb at the end"},
+        "head": [
+          {"de": "Hauptsatz", "en": "Main clause"},
+          {"de": "w-Wort / ob", "en": "Question word / ob"},
+          {"de": "Subjekt … Verb", "en": "Subject … verb"}
+        ],
+        "rows": [
+          [{"t": "Können Sie mir sagen,", "en": "Can you tell me where the station is?"}, "**wo**", {"t": "der Bahnhof **ist**?", "en": "the station is"}],
+          [{"t": "Ich möchte gerne wissen,", "en": "I'd like to know why the taxi hasn't come."}, "**warum**", {"t": "das Taxi nicht **gekommen ist**.", "en": "the taxi hasn't come"}],
+          [{"t": "Hast du eine Idee,", "en": "Do you have any idea which platform the train leaves from today?"}, "**auf welchem Gleis**", {"t": "der Zug heute **abfährt**?", "en": "the train leaves today"}],
+          [{"t": "Wissen Sie,", "en": "Do you know if it's still far to the station?"}, "**ob**", {"t": "es noch weit zum Bahnhof **ist**?", "en": "it's still far to the station"}],
+          [{"t": "Ich habe keine Ahnung,", "en": "I have no idea whether we'll still catch the train."}, "**ob**", {"t": "wir den Zug noch **erreichen**.", "en": "we'll still catch the train"}]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "So fängst du an", "en": "How to start"},
+        "head": [{"de": "Satzanfang", "en": "Opener"}, {"de": "Englisch", "en": "English"}],
+        "rows": [
+          ["Können Sie mir sagen / erklären,", "Can you tell me / explain"],
+          ["Wissen Sie, · Weißt du,", "Do you know"],
+          ["Darf ich fragen,", "May I ask"],
+          ["Ich würde / möchte gern wissen,", "I'd like to know"],
+          ["Hast du eine Idee / Ahnung,", "Do you have any idea"],
+          ["Ich weiß nicht, · Ich habe keine Ahnung,", "I don't know · I have no idea"]
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "So geht's", "en": "How it works"},
+        "items": [
+          {
+            "de": "W-Frage: Das Fragewort bleibt (wo, wann, wie viel, von wann bis wann, auf welchem Gleis). Wie viel kostet das Frühstück? → Können Sie mir sagen, **wie viel** das Frühstück **kostet**?",
+            "en": "W-question: the question word stays (wo, wann, wie viel, von wann bis wann, auf welchem Gleis). Wie viel kostet das Frühstück? → Können Sie mir sagen, **wie viel** das Frühstück **kostet**? (Can you tell me how much breakfast costs?)"
+          },
+          {
+            "de": "Ja/Nein-Frage: **ob** kommt dazu. Liegt das Hotel zentral? → Wissen Sie, **ob** das Hotel zentral **liegt**?",
+            "en": "Yes/no question: add **ob** (whether). Liegt das Hotel zentral? → Wissen Sie, **ob** das Hotel zentral **liegt**? (Do you know whether the hotel is central?)"
+          },
+          {
+            "de": "Trennbare Verben stehen zusammen am Ende: Wann fährt der Zug ab? → Weißt du, wann der Zug **abfährt**?",
+            "en": "Separable verbs join up at the end: Wann fährt der Zug ab? → Weißt du, wann der Zug **abfährt**? (Do you know when the train leaves?)"
+          },
+          {
+            "de": "Mit Modalverb oder Perfekt steht das konjugierte Verb ganz hinten: Wo kann ich parken? → Wissen Sie, wo ich **parken kann**? · warum er nicht **gekommen ist**",
+            "en": "With a modal verb or the Perfekt the conjugated verb comes last: Wo kann ich parken? → Wissen Sie, wo ich **parken kann**? (Do you know where I can park?) · warum er nicht **gekommen ist** (why he hasn't come)"
+          },
+          {
+            "de": "**Gibt es** wird zu **ob es** + Rest + **gibt**: Gibt es einen Swimmingpool? → Darf ich fragen, ob es einen Swimmingpool **gibt**?",
+            "en": "**Gibt es** (is there) becomes **ob es** + rest + **gibt**: Gibt es einen Swimmingpool? → Darf ich fragen, ob es einen Swimmingpool **gibt**? (May I ask whether there's a pool?)"
+          },
+          {
+            "de": "Satzzeichen: Ist der Anfang eine Frage (Wissen Sie, Können Sie), kommt am Ende **?**. Ist er eine Aussage (Ich weiß nicht, Ich möchte gern wissen), kommt **.** – und immer ein **Komma** vor dem w-Wort oder ob.",
+            "en": "Punctuation: if the opener is a question (Wissen Sie, Können Sie), end with **?**. If it's a statement (Ich weiß nicht, Ich möchte gern wissen), end with **.** – and always a **comma** before the question word or ob."
+          },
+          {
+            "de": "Indirekte Fragen sind **höflich**: Wo ist die Toilette? ist direkt, Können Sie mir sagen, wo die Toilette ist? ist freundlicher.",
+            "en": "Indirect questions are **polite**: Wo ist die Toilette? is direct, Können Sie mir sagen, wo die Toilette ist? (Could you tell me where the toilet is?) is friendlier."
+          }
+        ]
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "Verb nicht vorne lassen: ❌ Können Sie mir sagen, wo ist der Bahnhof? ✅ Können Sie mir sagen, wo der Bahnhof **ist**? Und für Ja/Nein-Fragen **ob**, nicht wenn: ❌ Ich weiß nicht, wenn er kommt. ✅ Ich weiß nicht, **ob** er kommt.",
+          "en": "Don't leave the verb in front: ❌ Können Sie mir sagen, wo ist der Bahnhof? ✅ Können Sie mir sagen, wo der Bahnhof **ist**? And for yes/no questions use **ob**, not wenn (if = whether → ob): ❌ Ich weiß nicht, wenn er kommt. ✅ Ich weiß nicht, **ob** er kommt. (I don't know if he's coming.)"
+        }
+      }
+    ],
+    "examples": [
+      {"de": "Können Sie mir sagen, wie viel ein Doppelzimmer kostet?", "en": "Can you tell me how much a double room costs?"},
+      {"de": "Wissen Sie, ob das Hotel einen Parkplatz hat?", "en": "Do you know whether the hotel has a car park?"},
+      {"de": "Ich möchte gern wissen, wann das Schwimmbad geöffnet hat.", "en": "I'd like to know when the swimming pool is open."},
+      {"de": "Weißt du, ob Aaron auch eingeladen ist?", "en": "Do you know if Aaron is invited too?"}
+    ]
+  },
+  {
     "key": "konnektoren-ueberblick",
     "level": "A2",
     "group": {"de": "Konnektoren", "en": "Connectors"},
@@ -3653,8 +3787,8 @@
             "en": "Feeling: **Gut / Schön / Schade**, dass du da bist (good / nice / a pity that you're here). · Guessing: **Kann es sein**, dass der Bus heute nicht fährt? (Could it be that the bus isn't running today?)"
           },
           {
-            "de": "Höflich fragen: **Können Sie mir sagen**, wo der Bahnhof **ist**? · Ich weiß nicht, **ob** der Laden noch offen ist.",
-            "en": "Asking politely: **Können Sie mir sagen**, wo der Bahnhof **ist**? (Can you tell me where the station is?) · Ich weiß nicht, **ob** der Laden noch offen ist (I don't know whether the shop is still open)."
+            "de": "Höflich fragen: **Können Sie mir sagen**, wo der Bahnhof **ist**? · Ich weiß nicht, **ob** der Laden noch offen ist. (Mehr: „Indirekte Fragen“)",
+            "en": "Asking politely: **Können Sie mir sagen**, wo der Bahnhof **ist**? (Can you tell me where the station is?) · Ich weiß nicht, **ob** der Laden noch offen ist (I don't know whether the shop is still open). (More: \"Indirect Questions\")"
           }
         ]
       },
@@ -4229,7 +4363,7 @@
           ["seit", "since; for (until now)", "seit **einem** Jahr"],
           ["von", "from; of; by", "von **der** Arbeit · von 9 bis 5"],
           ["zu", "to (people, places)", "zu**m** Arzt · zu**r** Schule"],
-          ["gegenüber", "opposite", "gegenüber **dem** Bahnhof"],
+          ["gegenüber (von)", "opposite", "gegenüber **dem** Bahnhof · gegenüber **vom** Bahnhof"],
           ["ab", "from (a time on)", "ab Montag · ab **dem** 1. Mai"],
           ["außer", "except", "alle außer **mir**"]
         ]
@@ -4714,6 +4848,58 @@
             "en": "**in** + accusative when you go inside: ins Kino, in die Stadt."
           }
         ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Im Haus: gegenüber von, an … vorbei, durch", "en": "In a building: opposite, past, through"},
+        "head": [
+          {"de": "Nomen", "en": "Noun"},
+          {"de": "Dativ: gegenüber von, an … vorbei", "en": "Dative: opposite, past"},
+          {"de": "Akkusativ: durch", "en": "Accusative: through"}
+        ],
+        "rows": [
+          ["der Frühstücksraum", "einem / **dem**", "einen / **den**"],
+          ["das Restaurant", "einem / **dem**", "ein / **das**"],
+          ["die Bar", "einer / **der**", "eine / **die**"],
+          ["die Konferenzräume (Pl.)", "zwei + -**n**", "zwei"]
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "Einen Weg beschreiben", "en": "Giving directions"},
+        "items": [
+          {
+            "de": "Am besten gehen Sie **geradeaus** / **nach rechts** / **nach links**.",
+            "en": "It's best to go **straight on** / **right** / **left**."
+          },
+          {
+            "de": "Gehen Sie **am** Frühstücksraum **vorbei** und dann **durch die** Empfangshalle.",
+            "en": "Go **past** the breakfast room and then **through** the lobby."
+          },
+          {
+            "de": "Dann gehen Sie **durch die** Glastür / **ins** Treppenhaus / **in den** Keller.",
+            "en": "Then go **through** the glass door / **into** the stairwell / **down to** the basement."
+          },
+          {
+            "de": "Nehmen Sie die Treppe nach **unten** / nach **oben**.",
+            "en": "Take the stairs **down** / **up**."
+          },
+          {
+            "de": "Die Sauna liegt **gegenüber vom** Schwimmbad / **neben dem** Fitnessraum / **zwischen der** Bar und **dem** Restaurant.",
+            "en": "The sauna is **opposite** the swimming pool / **next to** the gym / **between** the bar and the restaurant."
+          },
+          {
+            "de": "**gegenüber von** = **gegenüber**, beide mit Dativ: gegenüber **vom** Bahnhof = gegenüber **dem** Bahnhof (von + dem = **vom**).",
+            "en": "**gegenüber von** = **gegenüber** (opposite), both with the dative: gegenüber **vom** Bahnhof = gegenüber **dem** Bahnhof (von + dem = **vom**)."
+          }
+        ]
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "**an … vorbei** ist immer Dativ, auch mit gehen: ❌ Gehen Sie an das Restaurant vorbei. ✅ Gehen Sie **am** Restaurant **vorbei**. **durch** ist immer Akkusativ: ✅ durch **den** Park.",
+          "en": "**an … vorbei** (past) always takes the dative, even with gehen: ❌ Gehen Sie an das Restaurant vorbei. ✅ Gehen Sie **am** Restaurant **vorbei**. (Go past the restaurant.) **durch** (through) always takes the accusative: ✅ durch **den** Park."
+        }
       },
       {
         "type": "warning",
