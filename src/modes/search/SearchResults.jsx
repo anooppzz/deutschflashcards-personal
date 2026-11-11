@@ -129,11 +129,11 @@ function SearchResults({ query, cards, topics, lang, onOpenTopic, onOpenChapter,
       {showTopics.length > 0 && (
         <>
           <div style={sectionTitle}>📖 Grammatik</div>
-          {showTopics.map(({ topic, snippet }) => {
+          {showTopics.map(({ topic, snippet, section }) => {
             const title = localize(topic.title, lang);
             const showSnippet = snippet && snippet !== title && !snippet.startsWith(title);
             return (
-              <button key={topic.key} type="button" onClick={() => onOpenTopic(topic.key)} style={{ ...rowStyle, flexDirection: "column", alignItems: "stretch", gap: 4 }}>
+              <button key={topic.key} type="button" onClick={() => onOpenTopic(topic.key, section)} style={{ ...rowStyle, flexDirection: "column", alignItems: "stretch", gap: 4 }}>
                 <span style={{ display: "flex", gap: 8, alignItems: "baseline", justifyContent: "space-between" }}>
                   <span style={{ fontSize: 14, fontWeight: 700 }}><Marked text={title} q={q} /></span>
                   {topic.group && <span style={chipStyle}>{localize(topic.group, lang)}</span>}
@@ -225,6 +225,7 @@ SearchResults.propTypes = {
   topics: PropTypes.arrayOf(PropTypes.shape({
     topic: PropTypes.shape({ key: PropTypes.string.isRequired, title: textShape, group: textShape }).isRequired,
     snippet: PropTypes.string,
+    section: PropTypes.number, // the section that matched: the topic opens there
   })).isRequired,
   lang: PropTypes.string,
   onOpenTopic: PropTypes.func.isRequired,

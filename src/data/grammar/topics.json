@@ -3245,6 +3245,7 @@
     "sections": [
       {
         "type": "table",
+        "book": "Menschen A2 · Einheit 16 · S. 94",
         "title": {"de": "Direkte Frage → indirekte Frage", "en": "Direct question → indirect question"},
         "head": [{"de": "Direkte Frage", "en": "Direct question"}, {"de": "Indirekte Frage", "en": "Indirect question"}],
         "rows": [
@@ -4851,7 +4852,9 @@
       },
       {
         "type": "table",
-        "title": {"de": "Im Haus: gegenüber von, an … vorbei, durch", "en": "In a building: opposite, past, through"},
+        "id": "im-haus",
+        "book": "Menschen A2 · Einheit 16 · S. 93–94",
+        "title": {"de": "Lokale Präpositionen: gegenüber von, an … vorbei + Dativ, durch + Akkusativ", "en": "Local prepositions: gegenüber von (opposite), an … vorbei (past) + dative, durch (through) + accusative"},
         "head": [
           {"de": "Nomen", "en": "Noun"},
           {"de": "Dativ: gegenüber von, an … vorbei", "en": "Dative: opposite, past"},
@@ -4866,6 +4869,8 @@
       },
       {
         "type": "points",
+        "id": "weg-beschreiben",
+        "book": "Menschen A2 · Einheit 16 · S. 94",
         "title": {"de": "Einen Weg beschreiben", "en": "Giving directions"},
         "items": [
           {

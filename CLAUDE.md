@@ -18,6 +18,8 @@ handoff between chat sessions: a new session should be able to continue from the
 - **"Bitte den KI-Eingang einarbeiten" / a `ki-eingang-*.md` file?** Follow
   `docs/ai-inbox/README.md`: AI answers are unchecked suggestions – verify, dedupe, add
   in the app's formats, report per entry, archive in `docs/ai-inbox/done/`.
+- **After every import:** end the reply with a short **📍 Where to find it** table (book
+  box → app place) and put it in the log entry too.
 - **New chapter?** Give it `"added": "YYYY-MM-DD"` (today). For three weeks the start
   screen shows "🆕 Neues Kapitel … Öffnen →", because new chapters are not ticked
   under 📚 Themen automatically and are easy to miss. Also write its 📰 Lesen text
@@ -85,8 +87,9 @@ npm run ids:update  # after adding/renaming/removing cards (see rule 6b)
 
 ```
 src/data/decks/            vocabulary
-  extra-topics.json        the textbook chapters: [{ key, icon, label, added, note, cards: [...] }]
-                           (added: "YYYY-MM-DD" when created – drives the 🆕 banner)
+  extra-topics.json        the textbook chapters: [{ key, icon, label, added, note, grammarTopics, cards: [...] }]
+                           (added: "YYYY-MM-DD" when created – drives the 🆕 banner;
+                           grammarTopics: see "Chapter grammar" below)
   haushalt|kleidung|verkehr.json, irregular-verbs.json, inseparable-verbs.json
   _deck-manifest.json      labels/icons for the five non-chapter decks
 src/data/grammar/topics.json   grammar reference (the Grammatik tab)
@@ -321,6 +324,24 @@ found in the example are left out of Cloze, which is fine for phrases).
 - `src/modes/grammar/grammarContent.test.js` checks both languages, table row
   lengths, balanced `**`, groups; `src/engine/grammarLinks.test.js` checks that every
   `grammar` tag names an existing topic.
+
+## Chapter grammar (📌 Zu diesem Kapitel) and section links
+
+The learner studies two ways: chapter by chapter, and later by topic (🔍). Both land on
+the **part** of a topic that matters, not its top:
+
+- A chapter names the grammar it teaches: `"grammarTopics": ["indirekte-fragen",
+  "praep-ort#im-haus"]` – a topic key, or `key#section-id` for one part of a long topic.
+  The Grammatik tab shows them in a 📌 box for the selected chapters. Pick by hand (the
+  book's grammar boxes for that Einheit), not from the automatic card links.
+- A section can have `"id": "im-haus"` (slug, unique in its topic) and
+  `"book": "Menschen A2 · Einheit 16 · S. 93–94"` (shown as 📗 under it, searchable).
+- Use the **book's own box title** as the section title when a box goes into an existing
+  topic, so searching the words the learner saw in the book finds it.
+- 🔍 search opens a topic at the section that matched and lights it up (`engine/
+  globalSearch.js` returns `section`; `engine/chapterGrammar.js`; `GrammarView` focus).
+- `src/engine/chapterGrammar.test.js` checks refs, ids and book labels. Renaming a
+  section id: update the chapters' `grammarTopics` too.
 
 ## Grammar exercises (`exercises.json`)
 

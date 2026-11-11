@@ -10,6 +10,10 @@ was done, newest first. Every change adds a log entry here in the same commit
   buttons are (card back, 🔁 Formen after an answer, 📋 Wortlisten row) and adjust.
   (`um·ziehen`: done 2026-10-22, the learner chose "ist umgezogen".)
 
+- [ ] **📌 grammarTopics for older chapters:** only Hotel 2 has them (2026-11-11). Add
+  them when the learner works on a chapter or sends its grammar page – from the book's
+  boxes, not guessed. Add `id`/`book` to the sections they point at.
+
 - [ ] **📋 Wortlisten – more from Grammatik aktiv:** "Wichtige Verben mit Präpositionen"
   (the next page after the dative verbs, not photographed yet). New lists go into
   `src/data/lists/lists.json` (see CLAUDE.md "Word lists").
@@ -170,6 +174,22 @@ was done, newest first. Every change adds a log entry here in the same commit
   trainer, Reverse articles, 12 grammar topics, ✏️ Üben, data cleanup, code tidying).
 
 ## Log
+
+### 2026-11-11 – 📌 Chapter grammar + 🔍 jump to the matching section (learner's wish)
+- The learner: "one book page ends up in different topics – how do I find it?" They study
+  both by chapter (right after class) and later by topic. Agreed fix, three pieces:
+  1. **Jump to the part:** a 🔍 grammar result opens the topic **at the section that
+     matched** and lights it up (`globalSearch.js` returns `section`; `GrammarSections.jsx`
+     anchors every section; `GrammarView` focus.section; `.grammar-flash` in index.css).
+  2. **Book wording:** sections can carry `id` and `book` ("📗 Menschen A2 · Einheit 16 ·
+     S. 94", searchable – "Einheit 16" finds them). `praep-ort` "Im Haus …" renamed to the
+     book's box title "Lokale Präpositionen: gegenüber von, an … vorbei + Dativ, durch +
+     Akkusativ".
+  3. **📌 Zu diesem Kapitel:** chapters list their grammar (`grammarTopics`, `key#section`);
+     the Grammatik tab shows a 📌 box for the selected chapters (folded when > 2).
+     First: Hotel 2 → Indirekte Fragen, Lokale Präpositionen, Einen Weg beschreiben.
+- CLAUDE.md: new "Chapter grammar" section + rule to end each import with "📍 Where to
+  find it". Tests: `engine/chapterGrammar.test.js`, 3 new search tests.
 
 ### 2026-11-11 – Check of Menschen A2 p. 93–94 (Einheit 16): two small gaps filled
 - The learner sent p. 93 (Übung 6a + grammar box) and p. 94 (Grammatik/Kommunikation) again.

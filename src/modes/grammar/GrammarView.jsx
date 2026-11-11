@@ -12,6 +12,7 @@ import LookupLinks from "../../components/LookupLinks";
 import { topicLinks, topicQuestion, topicSubject } from "../../engine/lookup";
 import TopicBody, { GLOSSARY_KEY } from "./GrammarSections";
 import { localize } from "./richText";
+import { sectionIndex, sectionDomId } from "../../engine/chapterGrammar";
 
 // Grammar reference - a static, hand-curated table (same authoring
 // philosophy as the vocabulary data: real content work, not a live guess).
@@ -121,7 +122,7 @@ const navBtn = {
 // the exercise where it was. ‹ › step to the previous/next topic.
 // words: the learner's cards this topic covers (see buildGrammarIndex)
 // exercises: this topic's ✏️ Üben questions; best: best score so far
-function GrammarTopicPage({ topic, words = [], lang, exercises = [], best, due, onClose, closeLabel, prev, next, onGo, onScore, onAnswer, onOpenChapter, onSearch }) {
+function GrammarTopicPage({ topic, words = [], lang, exercises = [], best, due, onClose, closeLabel, prev, next, onGo, onScore, onAnswer, onOpenChapter, onSearch, highlight = null }) {
   const [audioErr, setAudioErr] = useState(false);
   const [tab, setTab] = useState("regel");
   const rootRef = useRef(null);
@@ -182,7 +183,7 @@ function GrammarTopicPage({ topic, words = [], lang, exercises = [], best, due, 
       </div>
 
       <div {...panel("regel")}>
-        <TopicBody topic={topic} lang={lang} onGlossary={topic.key !== GLOSSARY_KEY ? () => onGo(GLOSSARY_KEY) : null} />
+        <TopicBody topic={topic} lang={lang} onGlossary={topic.key !== GLOSSARY_KEY ? () => onGo(GLOSSARY_KEY) : null} highlight={highlight} />
         <div style={{ ...sectionLabel, margin: "16px 0 8px" }}>BEISPIELE</div>
         {topic.examples.map((ex, i) => (
           <div key={i} style={{ marginBottom: i === topic.examples.length - 1 ? 0 : 10, padding: "8px 12px", borderRadius: 10, background: "#161d24" }}>
@@ -291,6 +292,56 @@ GrammarTopicPage.propTypes = {
   onAnswer: PropTypes.func,
   onOpenChapter: PropTypes.func,
   onSearch: PropTypes.func,
+  highlight: PropTypes.number,
+};
+
+// 📌 "Zu diesem Kapitel": the grammar of the selected chapters (engine/
+// chapterGrammar.js), each link opening a topic - or the part of it the
+// chapter teaches. Folded when many chapters are selected.
+function ChapterGrammar({ chapters, lang, onOpen }) {
+  const many = chapters.length > 2;
+  const body = chapters.map(({ chapter, items }) => (
+    <div key={chapter.key} style={{ marginTop: 8 }}>
+      <div style={{ fontSize: 12, fontWeight: 700, color: "#cdd8e2", marginBottom: 6 }}>{chapter.icon} {chapter.label}</div>
+      {items.map((it) => (
+        <button
+          key={it.ref}
+          type="button"
+          onClick={() => onOpen(it.key, it.section)}
+          style={{ display: "flex", width: "100%", alignItems: "center", gap: 8, minHeight: 44, marginBottom: 6, padding: "6px 10px", borderRadius: 10, border: "1px solid #2c3a47", background: "#0e1419", cursor: "pointer", textAlign: "left" }}
+        >
+          <span style={{ flex: 1, minWidth: 0 }}>
+            <span style={{ display: "block", fontSize: 13, fontWeight: 700, color: "#f2f5f8", lineHeight: 1.3 }}>{localize(it.label, lang)}</span>
+            {it.section != null && <span style={{ display: "block", fontSize: 11, color: "#7d8d9c", marginTop: 2 }}>in: {localize(it.topic.title, lang)}</span>}
+          </span>
+          <span aria-hidden="true" style={{ flexShrink: 0, color: "#7d8d9c", fontSize: 18 }}>›</span>
+        </button>
+      ))}
+    </div>
+  ));
+  const head = <>📌 Zu {many ? `deinen Kapiteln (${chapters.length})` : chapters.length === 1 ? "diesem Kapitel" : "deinen Kapiteln"}</>;
+  const box = { margin: "8px 0 4px", padding: "8px 12px 4px", borderRadius: 12, border: "1px solid #3a4a2c", background: "#161d24" };
+  const headStyle = { fontSize: 13, fontWeight: 800, color: "#9fd07e", minHeight: 28, display: "flex", alignItems: "center", cursor: many ? "pointer" : undefined };
+  return many ? (
+    <details style={box}>
+      <summary style={headStyle}>{head} ▸</summary>
+      {body}
+    </details>
+  ) : (
+    <div style={box}>
+      <div style={headStyle}>{head}</div>
+      {body}
+    </div>
+  );
+}
+
+ChapterGrammar.propTypes = {
+  chapters: PropTypes.arrayOf(PropTypes.shape({
+    chapter: PropTypes.shape({ key: PropTypes.string.isRequired, icon: PropTypes.string, label: PropTypes.string }).isRequired,
+    items: PropTypes.arrayOf(PropTypes.shape({ ref: PropTypes.string.isRequired, key: PropTypes.string.isRequired, section: PropTypes.number })).isRequired,
+  })).isRequired,
+  lang: PropTypes.string,
+  onOpen: PropTypes.func.isRequired,
 };
 
 // one line of the topic list: level, title, and what's there (📅 due,
@@ -352,7 +403,9 @@ const readScores = () => {
 // dueKeys: topics whose review is due (engine/grammarReview.js);
 // onExerciseDone(topicKey, right, total): a finished ✏️ Üben round.
 // onSearch: opens the app-wide 🔍 search (a button on the list and on a topic page).
-function GrammarView({ topics, words = {}, lang = "en", openKey = null, onOpenTopic, focus, onBack, backLabel = "← Zurück", onOpenChapter, onExerciseAnswer, dueKeys = [], onExerciseDone, onSearch }) {
+// focus.section: open the topic at that section (index or id) and light it up.
+// chapterGrammar / onOpenSection(key, section): the 📌 box above the list.
+function GrammarView({ topics, words = {}, lang = "en", openKey = null, onOpenTopic, focus, onBack, backLabel = "← Zurück", onOpenChapter, onExerciseAnswer, dueKeys = [], onExerciseDone, onSearch, chapterGrammar = [], onOpenSection }) {
   const [scores, setScores] = useState(readScores);
   const [filter, setFilter] = useState("all"); // all | due | a group's German name
   const saveScore = (key, score) => {
@@ -364,18 +417,38 @@ function GrammarView({ topics, words = {}, lang = "en", openKey = null, onOpenTo
     });
   };
   const topRef = useRef(null);
-  // A topic opens at its top; closing it returns to its row in the list.
+  // the section a link opened the topic at: { key, index } (lit up briefly)
+  const [flash, setFlash] = useState(null);
+  const focusTopic = focus && openKey && focus.key === openKey ? topics.find((t) => t.key === openKey) : null;
+  const focusIndex = focusTopic ? sectionIndex(focusTopic, focus.section) : null;
+  useEffect(() => {
+    if (!flash) return undefined;
+    const t = setTimeout(() => setFlash(null), 2600);
+    return () => clearTimeout(t);
+  }, [flash]);
+  // A topic opens at its top - or at the section a link names; closing it
+  // returns to its row in the list.
   const lastOpen = useRef(openKey);
+  const appliedFocus = useRef(null);
   useEffect(() => {
     const closed = lastOpen.current;
     lastOpen.current = openKey;
+    if (focusIndex != null && appliedFocus.current !== focus.n) {
+      appliedFocus.current = focus.n;
+      const sec = document.getElementById(sectionDomId(openKey, focusIndex));
+      if (sec) {
+        sec.scrollIntoView({ block: "start" });
+        setFlash({ key: openKey, index: focusIndex, n: focus.n });
+        return;
+      }
+    }
     const el = openKey ? topRef.current : closed && document.getElementById(`grammar-topic-${closed}`);
     if (!el) return;
     const top = el.getBoundingClientRect().top;
     if (openKey && top >= 0 && top < window.innerHeight * 0.3) return;
     if (openKey) window.scrollTo({ top: Math.max(0, window.scrollY + top - 8) });
     else el.scrollIntoView({ block: "center" });
-  }, [openKey, focus]);
+  }, [openKey, focus, focusIndex]);
 
   const groups = [];
   for (const t of topics) {
@@ -391,7 +464,8 @@ function GrammarView({ topics, words = {}, lang = "en", openKey = null, onOpenTo
     return (
       <div ref={topRef}>
         <GrammarTopicPage
-          key={open.key}
+          key={focusIndex != null ? `${open.key}@${focus.n}` : open.key}
+          highlight={flash && flash.key === open.key ? flash.index : null}
           topic={open}
           words={words[open.key]}
           lang={lang}
@@ -460,6 +534,9 @@ function GrammarView({ topics, words = {}, lang = "en", openKey = null, onOpenTo
           <span>Suchen: Wörter & Grammatik</span>
         </button>
       )}
+      {chapterGrammar.length > 0 && onOpenSection && (
+        <ChapterGrammar chapters={chapterGrammar} lang={lang} onOpen={onOpenSection} />
+      )}
       <div style={{ position: "sticky", top: 0, zIndex: 3, background: "#0e1419", margin: "0 -16px 8px", padding: "8px 0" }}>
         <div role="tablist" aria-label="Gruppen" className="no-scrollbar" style={{ display: "flex", gap: 6, overflowX: "auto", padding: "0 16px" }}>
           {chips.map(([key, label, n]) => {
@@ -501,7 +578,7 @@ GrammarView.propTypes = {
   lang: PropTypes.string,
   openKey: PropTypes.string,
   onOpenTopic: PropTypes.func.isRequired,
-  focus: PropTypes.shape({ key: PropTypes.string.isRequired, n: PropTypes.number }),
+  focus: PropTypes.shape({ key: PropTypes.string.isRequired, n: PropTypes.number, section: PropTypes.oneOfType([PropTypes.number, PropTypes.string]) }),
   onBack: PropTypes.func,
   backLabel: PropTypes.string,
   onOpenChapter: PropTypes.func,
@@ -509,6 +586,8 @@ GrammarView.propTypes = {
   dueKeys: PropTypes.arrayOf(PropTypes.string),
   onExerciseDone: PropTypes.func,
   onSearch: PropTypes.func,
+  chapterGrammar: PropTypes.array,
+  onOpenSection: PropTypes.func,
 };
 
 export default GrammarView;

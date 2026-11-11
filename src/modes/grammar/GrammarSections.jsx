@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { STORAGE_KEYS } from "../../constants";
 import { speak } from "../../engine/speech";
 import { localize, parseHighlights, isGloss } from "./richText";
+import { sectionDomId } from "../../engine/chapterGrammar";
 
 // Renders a grammar topic's body so it can be scanned rather than read:
 // a one-line summary, then sections - tables for forms that change by
@@ -209,7 +210,10 @@ function TopicIntro({ intro, lang, onGlossary }) {
 
 export const GLOSSARY_KEY = "grammatik-woerter";
 
-function TopicBody({ topic, lang, onGlossary }) {
+// highlight: index of the section just jumped to (🔍 result, 📌 chapter link)
+// - it lights up for a moment. Every section has an anchor (sectionDomId);
+// a section with "book" shows where it is in the textbook.
+function TopicBody({ topic, lang, onGlossary, highlight = null }) {
   // older/free-text topics without structure still render as a paragraph
   if (!topic.summary && !topic.sections) {
     return topic.explanation ? (
@@ -227,7 +231,13 @@ function TopicBody({ topic, lang, onGlossary }) {
       )}
       {(topic.sections || []).map((section, i) => {
         const Section = SECTIONS[section.type];
-        return Section ? <Section key={i} section={section} lang={lang} /> : null;
+        if (!Section) return null;
+        return (
+          <div key={i} id={sectionDomId(topic.key, i)} className={highlight === i ? "grammar-flash" : undefined} style={{ scrollMarginTop: 132, borderRadius: 10 }}>
+            <Section section={section} lang={lang} />
+            {section.book && <div style={{ marginTop: 4, fontSize: 11, color: "#8fb8d8", textAlign: "right" }}>📗 {section.book}</div>}
+          </div>
+        );
       })}
     </>
   );
@@ -242,6 +252,8 @@ const sectionShape = PropTypes.shape({
   rows: PropTypes.arrayOf(PropTypes.arrayOf(textShape)),
   items: PropTypes.arrayOf(textShape),
   text: textShape,
+  id: PropTypes.string, // anchor for 📌 chapter links ("topic#id")
+  book: PropTypes.string, // where it is in the textbook
 });
 
 const introShape = PropTypes.shape({
@@ -257,9 +269,11 @@ TopicBody.propTypes = {
     summary: textShape,
     sections: PropTypes.arrayOf(sectionShape),
     explanation: textShape,
+    key: PropTypes.string,
   }).isRequired,
   lang: PropTypes.string,
   onGlossary: PropTypes.func,
+  highlight: PropTypes.number,
 };
 TableSection.propTypes = { section: sectionShape.isRequired, lang: PropTypes.string };
 PointsSection.propTypes = { section: sectionShape.isRequired, lang: PropTypes.string };

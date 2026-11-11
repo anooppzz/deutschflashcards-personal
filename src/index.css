@@ -42,3 +42,13 @@ button:not(.inline-tap)::after, a.tap::after {
   left: min(0px, calc(50% - 22px));
   right: min(0px, calc(50% - 22px));
 }
+
+/* a grammar section jumped to (🔍 result, 📌 chapter link) lights up briefly */
+@keyframes grammar-flash {
+  0%, 60% { outline-color: #e0833b; background: rgba(224, 131, 59, 0.1); }
+  100% { outline-color: transparent; background: transparent; }
+}
+.grammar-flash { outline: 2px solid transparent; outline-offset: 5px; animation: grammar-flash 2.4s ease-out; }
+@media (prefers-reduced-motion: reduce) {
+  .grammar-flash { animation: none; outline-color: #e0833b; }
+}

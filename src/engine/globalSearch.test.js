@@ -86,3 +86,27 @@ describe("searchGrammar", () => {
     expect(fold(hit.snippet)).toContain("konnte");
   });
 });
+
+describe("searchGrammar: the matching section", () => {
+  const sectionOf = (q, key) => {
+    const hit = searchGrammar(GRAMMAR, q, "de").find((r) => r.topic.key === key);
+    const topic = GRAMMAR_TOPICS.find((t) => t.key === key);
+    return hit && hit.section != null ? topic.sections[hit.section].id : hit && hit.section;
+  };
+
+  it("names the section a result should open at", () => {
+    expect(sectionOf("Konferenzräume", "praep-ort")).toBe("im-haus");
+    expect(sectionOf("lokale Präpositionen", "praep-ort")).toBe("im-haus");
+    expect(sectionOf("Treppe nach unten", "praep-ort")).toBe("weg-beschreiben");
+  });
+
+  it("finds the book's sections by unit", () => {
+    expect(topicKeys("Einheit 16", "de")).toEqual(expect.arrayContaining(["praep-ort", "indirekte-fragen"]));
+  });
+
+  it("a title match opens the topic at its top", () => {
+    const [hit] = searchGrammar(GRAMMAR, "Indirekte Fragen", "de");
+    expect(hit.topic.key).toBe("indirekte-fragen");
+    expect(hit.section).toBeNull();
+  });
+});

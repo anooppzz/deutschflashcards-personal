@@ -25,6 +25,7 @@
 
 import React, { useState, useCallback, useEffect, useLayoutEffect, useMemo, useRef } from "react";
 import { quietScroll, scrollLayer } from "./engine/scrollBack";
+import { chapterGrammarFor } from "./engine/chapterGrammar";
 import {
   STORAGE_KEYS,
   TYPE_META,
@@ -659,7 +660,9 @@ function App() {
     const layer = scrollLayer();
     if (layer && restoreScroll.layer != null) layer.scrollTop = restoreScroll.layer;
   }, [restoreScroll]);
-  const openGrammar = useCallback((key, fromCard = null) => {
+  // section: a part of the topic to open at (its index or id, see
+  // engine/chapterGrammar.js) - from a 🔍 result or a 📌 chapter link
+  const openGrammar = useCallback((key, fromCard = null, section = null) => {
     fromCardRef.current = fromCard;
     const layer = scrollLayer();
     scrollBackRef.current = { win: window.scrollY, layer: layer ? layer.scrollTop : null };
@@ -669,7 +672,7 @@ function App() {
     setTextCheckOpen(false);
     setShowMistakes(false);
     setHome(false);
-    setGrammarFocus({ key, n: Date.now() });
+    setGrammarFocus({ key, n: Date.now(), section });
     setGrammarTopic(key);
     setMode(MODE.GRAMMAR);
     setGrammarFromSearch(searchOpen);
@@ -1321,6 +1324,8 @@ function App() {
     { key: "help", icon: "❓", label: "Hilfe & Übersicht", onClick: fromMore(() => setShowHelp(true)) },
   ];
 
+  // 📌 the grammar of the selected chapters, above the Grammatik list
+  const chapterGrammar = useMemo(() => chapterGrammarFor(tabs, EXTRA_BY_KEY, GRAMMAR_TOPICS), [tabs]);
   // the Grammatik tab: a list of topics, or one topic as its own page
   const grammarView = (
     <GrammarView
@@ -1337,6 +1342,8 @@ function App() {
       dueKeys={grammarDueKeys}
       onExerciseDone={finishGrammarRound}
       onSearch={() => setSearchOpen(true)}
+      chapterGrammar={chapterGrammar}
+      onOpenSection={(key, section) => openGrammar(key, null, section)}
     />
   );
 
@@ -1386,7 +1393,7 @@ function App() {
               cards={searchCardResults}
               topics={searchTopicResults}
               lang={lang}
-              onOpenTopic={openGrammar}
+              onOpenTopic={(key, section) => openGrammar(key, null, section)}
               onOpenChapter={openChapterAt}
               onSuggestCard={(entry) => changeInbox((items) => addInboxItem(items, entry))}
             />

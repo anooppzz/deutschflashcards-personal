@@ -13714,6 +13714,11 @@
     "label": "Hotel 2",
     "added": "2026-11-04",
     "note": "Im Hotel, Zimmer, durch / gegenüber / an … vorbei",
+    "grammarTopics": [
+      "indirekte-fragen",
+      "praep-ort#im-haus",
+      "praep-ort#weg-beschreiben"
+    ],
     "alsoCards": [
       "persoenlich::angenehm"
     ],

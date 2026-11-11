@@ -107,15 +107,18 @@ const plain = (s) => s.replace(/\*\*/g, "");
 export const buildGrammarSearchIndex = (topics) =>
   topics.map((t) => {
     const entries = [];
-    const add = (field, weight) => textsOf(field).forEach((text) => entries.push({ text: plain(text), folded: fold(plain(text)), weight }));
+    // section: the index of the section the text sits in (null: title,
+    // summary, examples) - a result opens its topic at that section
+    const add = (field, weight, section = null) => textsOf(field).forEach((text) => entries.push({ text: plain(text), folded: fold(plain(text)), weight, section }));
     add(t.title, 100);
     add(t.summary, 60);
-    (t.sections || []).forEach((s) => {
-      add(s.title, 50);
-      (s.head || []).forEach((h) => add(h, 30));
-      (s.rows || []).forEach((row) => row.forEach((cell) => add(cell, 30)));
-      (s.items || []).forEach((item) => add(item, 30));
-      add(s.text, 30);
+    (t.sections || []).forEach((s, si) => {
+      add(s.title, 50, si);
+      add(s.book, 40, si);
+      (s.head || []).forEach((h) => add(h, 30, si));
+      (s.rows || []).forEach((row) => row.forEach((cell) => add(cell, 30, si)));
+      (s.items || []).forEach((item) => add(item, 30, si));
+      add(s.text, 30, si);
     });
     (t.examples || []).forEach((ex) => add(ex, 20));
     return { topic: t, entries };
@@ -135,15 +138,15 @@ export const searchGrammar = (index, q, lang = "en") => {
       if (e.folded.includes(fq)) score = e.weight + (startsWord(e.folded, fq) ? 5 : 0);
       else if (words.length > 1 && words.every((w) => e.folded.includes(w))) score = e.weight / 2;
       if (!score) continue;
-      if (!best || score > best.score) best = { score, text: e.text };
+      if (!best || score > best.score) best = { score, text: e.text, section: e.section };
     }
-    if (best) results.push({ topic, score: best.score, snippet: best.text });
+    if (best) results.push({ topic, score: best.score, snippet: best.text, section: best.section });
   }
   // a snippet in the reader's language reads better: re-pick among the
   // matching texts of the same weight, preferring that language's version
   return results
     .map((r) => {
-      const localized = localizedSnippet(r.topic, fq, lang, r.score);
+      const localized = localizedSnippet(r.topic, fq, lang, r.score, r.section);
       return localized ? { ...r, snippet: localized } : r;
     })
     .sort((a, b) => b.score - a.score);
@@ -151,21 +154,25 @@ export const searchGrammar = (index, q, lang = "en") => {
 
 // Same search over one language's texts only; null when nothing in that
 // language matches as well as the best match did.
-const localizedSnippet = (topic, fq, lang, score) => {
+// Only texts of the same section count, so the snippet is from the part the
+// result opens at.
+const localizedSnippet = (topic, fq, lang, score, section = null) => {
   const pick = (field) => (typeof field === "string" ? field : field && (field.t ?? (field[lang] || field.en)));
   const texts = [];
-  const add = (field, weight) => { const s = pick(field); if (s) texts.push({ text: plain(s), weight }); };
+  const add = (field, weight, si = null) => { const s = pick(field); if (s) texts.push({ text: plain(s), weight, si }); };
   add(topic.title, 100);
   add(topic.summary, 60);
-  (topic.sections || []).forEach((s) => {
-    add(s.title, 50);
-    (s.head || []).forEach((h) => add(h, 30));
-    (s.rows || []).forEach((row) => row.forEach((c) => add(c, 30)));
-    (s.items || []).forEach((i) => add(i, 30));
-    add(s.text, 30);
+  (topic.sections || []).forEach((s, si) => {
+    add(s.title, 50, si);
+    add(s.book, 40, si);
+    (s.head || []).forEach((h) => add(h, 30, si));
+    (s.rows || []).forEach((row) => row.forEach((c) => add(c, 30, si)));
+    (s.items || []).forEach((i) => add(i, 30, si));
+    add(s.text, 30, si);
   });
   (topic.examples || []).forEach((ex) => add(ex, 20));
   const hit = texts.find((t) => {
+    if (t.si !== section) return false;
     const f = fold(t.text);
     return f.includes(fq) && t.weight + (startsWord(f, fq) ? 5 : 0) >= score;
   });
