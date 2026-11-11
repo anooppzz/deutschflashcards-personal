@@ -36,6 +36,40 @@ const sectionTitleStyle = {
   color: "#7d8d9c", textTransform: "uppercase",
 };
 
+// A section's heading: always the German one, as in the textbook, and the
+// heading in the reader's language small underneath.
+function SectionTitle({ title, lang, style }) {
+  const de = localize(title, "de");
+  const own = lang === "de" ? null : localize(title, lang);
+  return (
+    <div style={{ ...sectionTitleStyle, ...style }}>
+      <span lang="de">{de}</span>
+      {own && own !== de && <span style={{ display: "block", marginTop: 1, fontSize: 11, fontWeight: 500, letterSpacing: 0, textTransform: "none", fontStyle: "italic", color: "#6f8193" }}>{own}</span>}
+    </div>
+  );
+}
+
+SectionTitle.propTypes = {
+  title: PropTypes.oneOfType([PropTypes.string, PropTypes.objectOf(PropTypes.string)]).isRequired,
+  lang: PropTypes.string,
+  style: PropTypes.object,
+};
+
+// "🇬🇧 English" above a table or list with German sentences: shows all their
+// meanings at once
+function GlossToggle({ on, onToggle, lang }) {
+  return (
+    <button
+      type="button"
+      onClick={onToggle}
+      aria-pressed={on}
+      style={{ flex: "none", margin: "0 0 4px", padding: "2px 8px", borderRadius: 999, border: "1px solid #2c3a47", background: on ? "#24313c" : "none", color: "#9ab0c2", fontSize: 11, fontWeight: 700, cursor: "pointer" }}
+    >{localize(on ? GLOSS_TEXT.hide : GLOSS_TEXT.show, lang)}</button>
+  );
+}
+
+GlossToggle.propTypes = { on: PropTypes.bool, onToggle: PropTypes.func.isRequired, lang: PropTypes.string };
+
 // Short cells (forms, pronouns) stay on one line so columns line up; long
 // ones (explanations, sentences) wrap instead of making the table wider
 // than a phone screen.
@@ -45,19 +79,29 @@ const wrapStyle = (text) => (text.replace(/\*\*/g, "").length <= 12 ? { whiteSpa
 const GLOSS_TEXT = { show: { de: "🇬🇧 Englisch", en: "🇬🇧 English" }, hide: { de: "🇬🇧 ausblenden", en: "🇬🇧 Hide" } };
 
 // a German cell with its meaning: tap the German to show / hide the English
-function GlossCell({ cell, showAll }) {
+// inline: inside running text (a bullet). A <button> is always an inline
+// block (the bullet would sit at its last line), so there it's a span that
+// acts as a button.
+function GlossCell({ cell, showAll, inline = false }) {
   const [open, setOpen] = useState(false);
   const shown = open || showAll;
+  const toggle = () => setOpen((o) => !o);
+  const style = { border: "none", background: "none", padding: 0, margin: 0, font: "inherit", color: "inherit", textAlign: "left", cursor: "pointer", textDecoration: "underline dotted #4b5d6d", textUnderlineOffset: 3 };
   return (
     <>
-      <button
-        type="button"
-        className="inline-tap"
-        onClick={() => setOpen((o) => !o)}
-        aria-expanded={shown}
-        style={{ border: "none", background: "none", padding: 0, margin: 0, font: "inherit", color: "inherit", textAlign: "left", cursor: "pointer", textDecoration: "underline dotted #4b5d6d", textUnderlineOffset: 3 }}
-      ><Rich text={cell.t} /></button>
-      {shown && <div style={{ marginTop: 2, fontSize: 11, fontWeight: 400, fontStyle: "italic", color: "#8fa3b5", whiteSpace: "normal" }}>{cell.en}</div>}
+      {inline ? (
+        <span
+          role="button"
+          tabIndex={0}
+          onClick={toggle}
+          onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); } }}
+          aria-expanded={shown}
+          style={style}
+        ><Rich text={cell.t} /></span>
+      ) : (
+        <button type="button" className="inline-tap" onClick={toggle} aria-expanded={shown} style={style}><Rich text={cell.t} /></button>
+      )}
+      {shown && <div style={{ marginTop: 2, fontSize: inline ? 12 : 11, fontWeight: 400, fontStyle: "italic", color: "#8fa3b5", whiteSpace: "normal" }}>{cell.en.replace(/\*\*/g, "")}</div>}
     </>
   );
 }
@@ -72,15 +116,8 @@ function TableSection({ section, lang }) {
     <>
       {(section.title || hasGloss) && (
         <div style={{ display: "flex", alignItems: "flex-end", gap: 8, marginTop: section.title ? 0 : 12 }}>
-          <div style={{ ...sectionTitleStyle, flex: 1, minWidth: 0 }}>{section.title ? localize(section.title, lang) : ""}</div>
-          {hasGloss && (
-            <button
-              type="button"
-              onClick={() => setShowAll((v) => !v)}
-              aria-pressed={showAll}
-              style={{ flex: "none", margin: "0 0 4px", padding: "2px 8px", borderRadius: 999, border: "1px solid #2c3a47", background: showAll ? "#24313c" : "none", color: "#9ab0c2", fontSize: 11, fontWeight: 700, cursor: "pointer" }}
-            >{localize(showAll ? GLOSS_TEXT.hide : GLOSS_TEXT.show, lang)}</button>
-          )}
+          {section.title ? <SectionTitle title={section.title} lang={lang} style={{ flex: 1, minWidth: 0 }} /> : <div style={{ flex: 1 }} />}
+          {hasGloss && <GlossToggle on={showAll} onToggle={() => setShowAll((v) => !v)} lang={lang} />}
         </div>
       )}
       <div style={{ overflowX: "auto", borderRadius: 10, border: "1px solid #2c3a47", marginTop: section.title || hasGloss ? 0 : 12 }}>
@@ -115,13 +152,25 @@ function TableSection({ section, lang }) {
   );
 }
 
+// Bullets: an explanation is { de, en } (shown in the reader's language); a
+// German sentence to learn is { t, en } - the German always shows, its
+// English on tap (or "🇬🇧 English" for all of them), as in the tables.
 function PointsSection({ section, lang }) {
+  const hasGloss = section.items.some(isGloss);
+  const [showAll, setShowAll] = useState(false);
   return (
     <>
-      {section.title && <div style={sectionTitleStyle}>{localize(section.title, lang)}</div>}
-      <ul style={{ margin: section.title ? 0 : "12px 0 0", paddingLeft: 18, color: "#cdd8e2", fontSize: 13, lineHeight: 1.5 }}>
+      {(section.title || hasGloss) && (
+        <div style={{ display: "flex", alignItems: "flex-end", gap: 8 }}>
+          {section.title ? <SectionTitle title={section.title} lang={lang} style={{ flex: 1, minWidth: 0 }} /> : <div style={{ flex: 1, marginTop: 12 }} />}
+          {hasGloss && <GlossToggle on={showAll} onToggle={() => setShowAll((v) => !v)} lang={lang} />}
+        </div>
+      )}
+      <ul style={{ margin: section.title || hasGloss ? 0 : "12px 0 0", paddingLeft: 18, color: "#cdd8e2", fontSize: 13, lineHeight: 1.5 }}>
         {section.items.map((item, i) => (
-          <li key={i} style={{ marginBottom: 6 }}><Rich text={localize(item, lang)} /></li>
+          <li key={i} style={{ marginBottom: 6 }}>
+            {isGloss(item) ? <span lang="de" style={{ color: "#f2f5f8" }}><GlossCell cell={item} showAll={showAll} inline /></span> : <Rich text={localize(item, lang)} />}
+          </li>
         ))}
       </ul>
     </>
@@ -281,7 +330,7 @@ WarningSection.propTypes = { section: sectionShape.isRequired, lang: PropTypes.s
 Rich.propTypes = { text: PropTypes.string.isRequired };
 HowToTip.propTypes = { lang: PropTypes.string };
 IntroRow.propTypes = { icon: PropTypes.string.isRequired, label: PropTypes.string.isRequired, children: PropTypes.node };
-GlossCell.propTypes = { cell: PropTypes.shape({ t: PropTypes.string.isRequired, en: PropTypes.string.isRequired }).isRequired, showAll: PropTypes.bool };
+GlossCell.propTypes = { cell: PropTypes.shape({ t: PropTypes.string.isRequired, en: PropTypes.string.isRequired }).isRequired, showAll: PropTypes.bool, inline: PropTypes.bool };
 TopicIntro.propTypes = { intro: introShape.isRequired, lang: PropTypes.string, onGlossary: PropTypes.func };
 
 export default TopicBody;

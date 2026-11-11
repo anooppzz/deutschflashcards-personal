@@ -42,7 +42,7 @@ const textsOf = (topic) => {
       // a German cell with its meaning ({ t, en }) counts as German + English
       s.rows.forEach((row, r) => row.forEach((cell, c) => out.push([`${at}.rows[${r}][${c}]`, isGloss(cell) ? { de: cell.t, en: cell.en } : cell])));
     }
-    if (s.type === "points") s.items.forEach((item, j) => out.push([`${at}.items[${j}]`, item]));
+    if (s.type === "points") s.items.forEach((item, j) => out.push([`${at}.items[${j}]`, isGloss(item) ? { de: item.t, en: item.en } : item]));
     if (s.type === "warning") out.push([`${at}.text`, s.text]);
   });
   return out;
@@ -209,6 +209,36 @@ describe("✏️ Üben doesn't give the answer away", () => {
         if (filled.length > 12 && texts.some((t) => t.includes(filled))) bad.push(`${topic.key}[${i}]: ${e.q}`);
       });
     }
+    expect(bad).toEqual([]);
+  });
+});
+
+// A bullet that is a German sentence to learn must be { t, en }: the German
+// always shows, the English on tap. As { de, en } a reader with English (or
+// another language) set sees only the translation - the German is hidden.
+// Heuristic: the English shares no German word (4+ letters) with the German.
+describe("German sentences in bullets stay visible", () => {
+  const words = (s) => new Set((s.replace(/\*\*/g, "").match(/[A-Za-zÄÖÜäöüß]{4,}/g) || []).map((w) => w.toLowerCase()));
+  const hidden = GRAMMAR_TOPICS.flatMap((t) => (t.sections || [])
+    .filter((s) => s.type === "points")
+    .flatMap((s) => s.items
+      .filter((it) => typeof it === "object" && it.t == null && it.de && it.en)
+      .filter((it) => { const en = words(it.en); return ![...words(it.de)].some((w) => en.has(w)); })
+      .map((it) => `${t.key}: ${it.de}`)));
+  // topics already converted: no hidden German at all
+  const DONE = ["praep-ort", "indirekte-fragen"];
+
+  it("converted topics show every German sentence", () => {
+    expect(hidden.filter((h) => DONE.some((k) => h.startsWith(`${k}: `)))).toEqual([]);
+  });
+
+  it("the rest only gets fewer (convert a topic, then add it to DONE and lower the number)", () => {
+    expect(hidden.length).toBeLessThanOrEqual(19);
+  });
+
+  it("{ t, en } bullets have both texts", () => {
+    const bad = GRAMMAR_TOPICS.flatMap((t) => (t.sections || []).filter((s) => s.type === "points")
+      .flatMap((s) => s.items.filter((it) => it && it.t != null && !(it.t.trim() && it.en && it.en.trim())).map(() => t.key)));
     expect(bad).toEqual([]);
   });
 });

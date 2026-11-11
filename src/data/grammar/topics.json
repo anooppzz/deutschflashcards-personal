@@ -4854,7 +4854,7 @@
         "type": "table",
         "id": "im-haus",
         "book": "Menschen A2 · Einheit 16 · S. 93–94",
-        "title": {"de": "Lokale Präpositionen: gegenüber von, an … vorbei + Dativ, durch + Akkusativ", "en": "Local prepositions: gegenüber von (opposite), an … vorbei (past) + dative, durch (through) + accusative"},
+        "title": {"de": "Lokale Präpositionen: gegenüber von, an … vorbei + Dativ, durch + Akkusativ", "en": "Local prepositions: opposite, past + dative; through + accusative"},
         "head": [
           {"de": "Nomen", "en": "Noun"},
           {"de": "Dativ: gegenüber von, an … vorbei", "en": "Dative: opposite, past"},
@@ -4874,23 +4874,23 @@
         "title": {"de": "Einen Weg beschreiben", "en": "Giving directions"},
         "items": [
           {
-            "de": "Am besten gehen Sie **geradeaus** / **nach rechts** / **nach links**.",
+            "t": "Am besten gehen Sie **geradeaus** / **nach rechts** / **nach links**.",
             "en": "It's best to go **straight on** / **right** / **left**."
           },
           {
-            "de": "Gehen Sie **am** Frühstücksraum **vorbei** und dann **durch die** Empfangshalle.",
+            "t": "Gehen Sie **am** Frühstücksraum **vorbei** und dann **durch die** Empfangshalle.",
             "en": "Go **past** the breakfast room and then **through** the lobby."
           },
           {
-            "de": "Dann gehen Sie **durch die** Glastür / **ins** Treppenhaus / **in den** Keller.",
+            "t": "Dann gehen Sie **durch die** Glastür / **ins** Treppenhaus / **in den** Keller.",
             "en": "Then go **through** the glass door / **into** the stairwell / **down to** the basement."
           },
           {
-            "de": "Nehmen Sie die Treppe nach **unten** / nach **oben**.",
+            "t": "Nehmen Sie die Treppe nach **unten** / nach **oben**.",
             "en": "Take the stairs **down** / **up**."
           },
           {
-            "de": "Die Sauna liegt **gegenüber vom** Schwimmbad / **neben dem** Fitnessraum / **zwischen der** Bar und **dem** Restaurant.",
+            "t": "Die Sauna liegt **gegenüber vom** Schwimmbad / **neben dem** Fitnessraum / **zwischen der** Bar und **dem** Restaurant.",
             "en": "The sauna is **opposite** the swimming pool / **next to** the gym / **between** the bar and the restaurant."
           },
           {

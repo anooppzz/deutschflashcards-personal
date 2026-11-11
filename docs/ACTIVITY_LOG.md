@@ -10,6 +10,11 @@ was done, newest first. Every change adds a log entry here in the same commit
   buttons are (card back, 🔁 Formen after an answer, 📋 Wortlisten row) and adjust.
   (`um·ziehen`: done 2026-10-22, the learner chose "ist umgezogen".)
 
+- [ ] **Grammar bullets with hidden German (19 left, 2026-11-12):** convert German sentences
+  in `{de, en}` bullets to `{t, en}`, topic by topic (see the ratchet test's DONE list).
+  Then piece 3 the learner agreed to: tap a German word in grammar text → its meaning
+  right there (cards, like 📰 Lesen links), first for praep-ort and indirekte-fragen.
+
 - [ ] **📌 grammarTopics for older chapters:** only Hotel 2 has them (2026-11-11). Add
   them when the learner works on a chapter or sends its grammar page – from the book's
   boxes, not guessed. Add `id`/`book` to the sections they point at.
@@ -174,6 +179,20 @@ was done, newest first. Every change adds a log entry here in the same commit
   trainer, Reverse articles, 12 grammar topics, ✏️ Üben, data cleanup, code tidying).
 
 ## Log
+
+### 2026-11-12 – Grammar: German headings + German sentences visible in bullets
+- The learner (screenshot of Woher? Wo? Wohin?): headings were English only, and "Giving
+  directions" showed only English sentences – why, and where is the German? Cause: with
+  English as the translation language every `{de, en}` text showed its English only, so
+  the book's direction sentences were hidden.
+- **Headings:** every section heading now shows the German title (as in the book) with
+  the English small underneath (`SectionTitle` in GrammarSections.jsx) – all topics.
+- **Bullets:** a points item can be `{t, en}` like a table cell: the German shows, the
+  English on tap, "🇬🇧 English" shows all. Converted: praep-ort "Einen Weg beschreiben"
+  (5 sentences); Indirekte Fragen already showed its German. The English under a tapped
+  sentence no longer shows raw `**`.
+- Test (grammarContent.test.js): converted topics may hide no German sentence; the other
+  topics still have 19 such bullets – the number may only go down.
 
 ### 2026-11-11 – 📌 Chapter grammar + 🔍 jump to the matching section (learner's wish)
 - The learner: "one book page ends up in different topics – how do I find it?" They study
