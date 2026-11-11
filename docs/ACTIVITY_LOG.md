@@ -171,6 +171,15 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 ## Log
 
+### 2026-11-11 – Check of Menschen A2 p. 93–94 (Einheit 16): two small gaps filled
+- The learner sent p. 93 (Übung 6a + grammar box) and p. 94 (Grammatik/Kommunikation) again.
+  Almost everything was already in the app (2026-11-09 entry). Added:
+  - `praep-ort` "Einen Weg beschreiben": the p. 93 box "von dem = vom, an dem = am" as its own
+    point (am Frühstücksraum vorbei, gegenüber vom Schwimmbad; no short form with die).
+  - 🧱 Sätze `hotel2-info`: second dialogue "Ein Zimmer buchen", the book's "im Hotel: ein
+    Zimmer buchen" box line by line (Darf ich fragen, wie lange …, Möchten Sie es buchen? …).
+- The learner's answers in 6a (am … vorbei, durch, gegenüber vom) are all correct.
+
 ### 2026-11-09 – Indirekte Fragen (Grammatik aktiv Kap. 72) + Einheit 16 Grammatik/Kommunikation (book p. 94)
 - New grammar topic **`indirekte-fragen`** "Indirekte Fragen" (Satz & Fragen, after Fragewörter;
   level A2 because Menschen A2 Einheit 16 teaches it – Grammatik aktiv marks it B1): direkte →

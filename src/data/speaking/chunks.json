@@ -1176,6 +1176,52 @@
       "en": "You're welcome. Have fun!"
      }
     ]
+   },
+   {
+    "title": "Ein Zimmer buchen",
+    "en": "Booking a room",
+    "lines": [
+     {
+      "who": "A",
+      "de": "Guten Tag, kann ich Ihnen helfen?",
+      "en": "Hello, can I help you?"
+     },
+     {
+      "who": "B",
+      "de": "Ja, ich möchte ein Zimmer buchen. Haben Sie noch ein Zimmer frei?",
+      "en": "Yes, I'd like to book a room. Do you still have a room available?"
+     },
+     {
+      "who": "A",
+      "de": "Darf ich fragen, wie lange Sie bleiben möchten? Möchten Sie ein Einzel- oder ein Doppelzimmer?",
+      "en": "May I ask how long you'd like to stay? Would you like a single or a double room?"
+     },
+     {
+      "who": "B",
+      "de": "Ich brauche ein Einzelzimmer für zwei Nächte.",
+      "en": "I need a single room for two nights."
+     },
+     {
+      "who": "A",
+      "de": "Wir haben noch ein Einzelzimmer mit Frühstück. Möchten Sie es buchen?",
+      "en": "We still have a single room with breakfast. Would you like to book it?"
+     },
+     {
+      "who": "B",
+      "de": "Ja, gern.",
+      "en": "Yes, please."
+     },
+     {
+      "who": "A",
+      "de": "Hier ist Ihr Schlüssel. Ich wünsche Ihnen einen angenehmen Aufenthalt.",
+      "en": "Here is your key. I wish you a pleasant stay."
+     },
+     {
+      "who": "B",
+      "de": "Vielen Dank.",
+      "en": "Thank you very much."
+     }
+    ]
    }
   ]
  }
