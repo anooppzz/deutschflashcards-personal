@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useState, useContext, useCallback } from "react";
 import PropTypes from "prop-types";
 import { STORAGE_KEYS } from "../../constants";
 import { speak } from "../../engine/speech";
 import { localize, parseHighlights, isGloss } from "./richText";
 import { sectionDomId } from "../../engine/chapterGrammar";
+import { splitGrammarWords } from "../../engine/grammarWords";
+import { GrammarWordCtx } from "./wordCtx";
+import WordPopover from "./WordPopover";
 
 // Renders a grammar topic's body so it can be scanned rather than read:
 // a one-line summary, then sections - tables for forms that change by
@@ -24,12 +27,59 @@ import { sectionDomId } from "../../engine/chapterGrammar";
 
 const ACCENT = "#e0833b";
 
-function Rich({ text }) {
-  return parseHighlights(text).map((p, i) =>
-    // a short highlight (an ending like -keit) never breaks across lines
-    p.hl ? <strong key={i} style={{ color: ACCENT, fontWeight: 700, whiteSpace: p.text.length <= 16 ? "nowrap" : undefined }}>{p.text}</strong> : <span key={i}>{p.text}</span>
+// a grammar word (nach, woher, zum …): tap for its meaning (WordPopover)
+function WordLink({ text, entry }) {
+  const open = useContext(GrammarWordCtx);
+  if (!open) return text;
+  const show = (e) => { e.stopPropagation(); e.preventDefault(); open(entry, e.currentTarget); };
+  return (
+    <span
+      role="button"
+      tabIndex={0}
+      onClick={show}
+      onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") show(e); }}
+      aria-label={`${text}: Bedeutung zeigen`}
+      style={{ cursor: "pointer", borderBottom: "1px dashed #5d7a93" }}
+    >{text}</span>
   );
 }
+
+WordLink.propTypes = { text: PropTypes.string.isRequired, entry: PropTypes.object.isRequired };
+
+const linked = (text, german, highlighted) => splitGrammarWords(text, { german, highlighted })
+  .map((w, j) => (w.entry ? <WordLink key={j} text={w.text} entry={w.entry} /> : w.text));
+
+// german: the text is German - every grammar word in it links; in English
+// text only words that can't be English do (see engine/grammarWords.js)
+function Rich({ text, german = false }) {
+  return parseHighlights(text).map((p, i) =>
+    // a short highlight (an ending like -keit) never breaks across lines
+    p.hl ? <strong key={i} style={{ color: ACCENT, fontWeight: 700, whiteSpace: p.text.length <= 16 ? "nowrap" : undefined }}>{linked(p.text, german, true)}</strong> : <span key={i}>{linked(p.text, german, false)}</span>
+  );
+}
+
+// a {de, en} text or a plain (German) string, shown in the reader's language
+const isGerman = (field, lang) => lang === "de" || typeof field === "string" || isGloss(field);
+function LocalRich({ field, lang }) {
+  return <Rich text={localize(field, lang)} german={isGerman(field, lang)} />;
+}
+
+LocalRich.propTypes = { field: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired, lang: PropTypes.string };
+
+// a table's column heading: German (as in the book), the reader's language
+// small underneath
+function HeadCell({ h, lang }) {
+  const de = localize(h, "de");
+  const own = lang === "de" ? null : localize(h, lang);
+  return (
+    <>
+      <span lang="de"><Rich text={de} german /></span>
+      {own && own !== de && <span style={{ display: "block", marginTop: 1, fontSize: 10, fontWeight: 500, fontStyle: "italic", color: "#6f8193", whiteSpace: "normal" }}>{own.replace(/\*\*/g, "")}</span>}
+    </>
+  );
+}
+
+HeadCell.propTypes = { h: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired, lang: PropTypes.string };
 
 const sectionTitleStyle = {
   margin: "14px 0 6px", fontSize: 11, fontWeight: 700, letterSpacing: 0.5,
@@ -97,9 +147,9 @@ function GlossCell({ cell, showAll, inline = false }) {
           onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); } }}
           aria-expanded={shown}
           style={style}
-        ><Rich text={cell.t} /></span>
+        ><Rich text={cell.t} german /></span>
       ) : (
-        <button type="button" className="inline-tap" onClick={toggle} aria-expanded={shown} style={style}><Rich text={cell.t} /></button>
+        <button type="button" className="inline-tap" onClick={toggle} aria-expanded={shown} style={style}><Rich text={cell.t} german /></button>
       )}
       {shown && <div style={{ marginTop: 2, fontSize: inline ? 12 : 11, fontWeight: 400, fontStyle: "italic", color: "#8fa3b5", whiteSpace: "normal" }}>{cell.en.replace(/\*\*/g, "")}</div>}
     </>
@@ -111,7 +161,7 @@ function TableSection({ section, lang }) {
   const cellPad = wide ? "6px 5px" : "6px 7px";
   const hasGloss = section.rows.some((row) => row.some(isGloss));
   const [showAll, setShowAll] = useState(false);
-  const content = (cell) => (isGloss(cell) ? <GlossCell cell={cell} showAll={showAll} /> : <Rich text={localize(cell, lang)} />);
+  const content = (cell) => (isGloss(cell) ? <GlossCell cell={cell} showAll={showAll} /> : <LocalRich field={cell} lang={lang} />);
   return (
     <>
       {(section.title || hasGloss) && (
@@ -125,8 +175,8 @@ function TableSection({ section, lang }) {
           <thead>
             <tr>
               {section.head.map((h, i) => (
-                <th key={i} scope="col" style={{ padding: cellPad, textAlign: "left", fontSize: 11, fontWeight: 700, color: "#7d8d9c", background: "#0e1419", ...wrapStyle(localize(h, lang)) }}>
-                  <Rich text={localize(h, lang)} />
+                <th key={i} scope="col" style={{ padding: cellPad, textAlign: "left", fontSize: 11, fontWeight: 700, color: "#7d8d9c", background: "#0e1419", ...wrapStyle(localize(h, "de")) }}>
+                  <HeadCell h={h} lang={lang} />
                 </th>
               ))}
             </tr>
@@ -169,7 +219,7 @@ function PointsSection({ section, lang }) {
       <ul style={{ margin: section.title || hasGloss ? 0 : "12px 0 0", paddingLeft: 18, color: "#cdd8e2", fontSize: 13, lineHeight: 1.5 }}>
         {section.items.map((item, i) => (
           <li key={i} style={{ marginBottom: 6 }}>
-            {isGloss(item) ? <span lang="de" style={{ color: "#f2f5f8" }}><GlossCell cell={item} showAll={showAll} inline /></span> : <Rich text={localize(item, lang)} />}
+            {isGloss(item) ? <span lang="de" style={{ color: "#f2f5f8" }}><GlossCell cell={item} showAll={showAll} inline /></span> : <LocalRich field={item} lang={lang} />}
           </li>
         ))}
       </ul>
@@ -181,7 +231,7 @@ function WarningSection({ section, lang }) {
   return (
     <div style={{ marginTop: 12, display: "flex", gap: 8, padding: "8px 12px", borderRadius: 10, border: "1px solid rgba(224,131,59,.35)", background: "rgba(224,131,59,.08)", fontSize: 13, lineHeight: 1.5, color: "#cdd8e2" }}>
       <span aria-hidden="true">⚠️</span>
-      <span><Rich text={localize(section.text, lang)} /></span>
+      <span><LocalRich field={section.text} lang={lang} /></span>
     </div>
   );
 }
@@ -240,9 +290,9 @@ function TopicIntro({ intro, lang, onGlossary }) {
       <summary style={{ fontSize: 14, fontWeight: 700, color: "#f2f5f8", cursor: "pointer", minHeight: 28, display: "flex", alignItems: "center" }}>
         {localize(INTRO_TEXT.head, lang)} ▸
       </summary>
-      <IntroRow icon="🧭" label={localize(INTRO_TEXT.what, lang)}><Rich text={localize(intro.what, lang)} /></IntroRow>
-      <IntroRow icon="🗓" label={localize(INTRO_TEXT.when, lang)}><Rich text={localize(intro.when, lang)} /></IntroRow>
-      <IntroRow icon="🇬🇧" label={localize(INTRO_TEXT.english, lang)}><Rich text={localize(intro.english, lang)} /></IntroRow>
+      <IntroRow icon="🧭" label={localize(INTRO_TEXT.what, lang)}><LocalRich field={intro.what} lang={lang} /></IntroRow>
+      <IntroRow icon="🗓" label={localize(INTRO_TEXT.when, lang)}><LocalRich field={intro.when} lang={lang} /></IntroRow>
+      <IntroRow icon="🇬🇧" label={localize(INTRO_TEXT.english, lang)}><LocalRich field={intro.english} lang={lang} /></IntroRow>
       <IntroRow icon="💬" label={localize(INTRO_TEXT.remember, lang)}>
         <em style={{ color: "#f2f5f8", fontSize: 14 }}>{intro.remember.de}</em>{" "}
         <button type="button" onClick={() => speak(intro.remember.de)} aria-label={`Aussprechen: ${intro.remember.de}`} className="inline-tap" style={{ border: "none", background: "none", fontSize: 12, cursor: "pointer", padding: 0 }}>🔊</button>
@@ -262,7 +312,12 @@ export const GLOSSARY_KEY = "grammatik-woerter";
 // highlight: index of the section just jumped to (🔍 result, 📌 chapter link)
 // - it lights up for a moment. Every section has an anchor (sectionDomId);
 // a section with "book" shows where it is in the textbook.
-function TopicBody({ topic, lang, onGlossary, highlight = null }) {
+// onTopic(key): open another topic (the 📖 link in a word's meaning box)
+function TopicBody({ topic, lang, onGlossary, highlight = null, onTopic }) {
+  // the tapped grammar word: { entry, anchor } (WordPopover)
+  const [word, setWord] = useState(null);
+  const openWord = useCallback((entry, anchor) => setWord((w) => (w && w.anchor === anchor ? null : { entry, anchor })), []);
+  const closeWord = useCallback(() => setWord(null), []);
   // older/free-text topics without structure still render as a paragraph
   if (!topic.summary && !topic.sections) {
     return topic.explanation ? (
@@ -270,12 +325,13 @@ function TopicBody({ topic, lang, onGlossary, highlight = null }) {
     ) : null;
   }
   return (
-    <>
+    <GrammarWordCtx.Provider value={openWord}>
+      {word && <WordPopover entry={word.entry} anchor={word.anchor} lang={lang} topicKey={topic.key} onTopic={onTopic} onClose={closeWord} />}
       {topic.intro && <HowToTip lang={lang} />}
       {topic.intro && <TopicIntro intro={topic.intro} lang={lang} onGlossary={onGlossary} />}
       {topic.summary && (
         <div style={{ padding: "10px 12px", borderRadius: 8, borderLeft: `3px solid ${ACCENT}`, background: "#1e2a36", fontSize: 14, fontWeight: 600, color: "#f2f5f8", lineHeight: 1.5 }}>
-          <Rich text={localize(topic.summary, lang)} />
+          <LocalRich field={topic.summary} lang={lang} />
         </div>
       )}
       {(topic.sections || []).map((section, i) => {
@@ -288,7 +344,7 @@ function TopicBody({ topic, lang, onGlossary, highlight = null }) {
           </div>
         );
       })}
-    </>
+    </GrammarWordCtx.Provider>
   );
 }
 
@@ -323,6 +379,7 @@ TopicBody.propTypes = {
   lang: PropTypes.string,
   onGlossary: PropTypes.func,
   highlight: PropTypes.number,
+  onTopic: PropTypes.func,
 };
 TableSection.propTypes = { section: sectionShape.isRequired, lang: PropTypes.string };
 PointsSection.propTypes = { section: sectionShape.isRequired, lang: PropTypes.string };

@@ -310,8 +310,14 @@ found in the example are left out of Cloze, which is fine for phrases).
   `{de, en}` – the app shows `{de, en}` in the reader's language only, so with English set
   the German disappears. `{de, en}` is for explanations. A ratchet test in
   `grammarContent.test.js` lists converted topics (DONE) and the number still left.
-- **Section headings** always show in German (the book's wording), with the reader's
-  language small underneath – write a real German title, not a translation of the English.
+- **Section and column headings** always show in German (the book's wording), with the
+  reader's language small underneath – write a real German title, not a translation.
+- **Tappable grammar words:** prepositions, question words, short forms (zum, vom …),
+  connectors and directions in grammar text open a small meaning box on tap
+  (`src/data/grammar/words.json`, `engine/grammarWords.js`, `modes/grammar/WordPopover.jsx`).
+  Each entry: `{ w, group, case?, forms?, englishWord?, topic?, meanings: [{ en, ex, exEn }] }`
+  – several meanings for words like nach. `englishWord: true` (in, an, am, um, links) links
+  in English text only when highlighted. New small word in a topic → add it here.
 - Every text is `{de, en}`; a table cell may be a plain string (German forms).
   `**x**` highlights x (use it for endings: `wohn**st**`). Use ❌/✅ for wrong/right.
 - Topics of one `group` must sit together; groups are headings in the Grammatik tab:

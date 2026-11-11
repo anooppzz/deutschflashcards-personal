@@ -183,7 +183,7 @@ function GrammarTopicPage({ topic, words = [], lang, exercises = [], best, due, 
       </div>
 
       <div {...panel("regel")}>
-        <TopicBody topic={topic} lang={lang} onGlossary={topic.key !== GLOSSARY_KEY ? () => onGo(GLOSSARY_KEY) : null} highlight={highlight} />
+        <TopicBody topic={topic} lang={lang} onGlossary={topic.key !== GLOSSARY_KEY ? () => onGo(GLOSSARY_KEY) : null} highlight={highlight} onTopic={onGo} />
         <div style={{ ...sectionLabel, margin: "16px 0 8px" }}>BEISPIELE</div>
         {topic.examples.map((ex, i) => (
           <div key={i} style={{ marginBottom: i === topic.examples.length - 1 ? 0 : 10, padding: "8px 12px", borderRadius: 10, background: "#161d24" }}>

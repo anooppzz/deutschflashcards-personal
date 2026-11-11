@@ -12,8 +12,8 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 - [ ] **Grammar bullets with hidden German (19 left, 2026-11-12):** convert German sentences
   in `{de, en}` bullets to `{t, en}`, topic by topic (see the ratchet test's DONE list).
-  Then piece 3 the learner agreed to: tap a German word in grammar text → its meaning
-  right there (cards, like 📰 Lesen links), first for praep-ort and indirekte-fragen.
+  (Piece 3, tap a grammar word for its meaning: done 2026-11-12, words.json. Possible next:
+  the same in 🧱 Sätze and 📰 Lesen; more words as topics need them.)
 
 - [ ] **📌 grammarTopics for older chapters:** only Hotel 2 has them (2026-11-11). Add
   them when the learner works on a chapter or sends its grammar page – from the book's
@@ -179,6 +179,22 @@ was done, newest first. Every change adds a log entry here in the same commit
   trainer, Reverse articles, 12 grammar topics, ✏️ Üben, data cleanup, code tidying).
 
 ## Log
+
+### 2026-11-12 – German column headings + tap a grammar word for its meaning
+- The learner: table column headings were still English; prepositions and question words
+  (woher, wohin, nach …) should show their meanings on tap – several meanings for nach.
+- **Column headings** show German with the reader's language small underneath (HeadCell,
+  all topics) – e.g. "Ort · Place".
+- **Tap a word:** 53 grammar words (question words, prepositions with case, short forms
+  zum/zur/vom/beim/im/ins/am/ans, weil/dass/wenn/ob/obwohl/deshalb/trotzdem, geradeaus/
+  links/rechts/oben/unten) in `src/data/grammar/words.json`. In every grammar topic they
+  have a dashed underline; a tap opens a small box next to the word (WordPopover): meanings,
+  each with a German example + English, 🔊, case, and a 📖 link to the word's topic. Closes
+  on ✕, tap elsewhere, scroll, Esc. A tap on a word inside a German sentence doesn't open
+  the sentence's English. Words that are also English (in, an, am, um, links) link in
+  English text only when highlighted.
+- Tests: `engine/grammarWords.test.js` (format, examples use the word, topics exist,
+  linking rules).
 
 ### 2026-11-12 – Grammar: German headings + German sentences visible in bullets
 - The learner (screenshot of Woher? Wo? Wohin?): headings were English only, and "Giving

@@ -1,0 +1,802 @@
+[
+  {
+    "w": "wo",
+    "group": "Fragewort",
+    "topic": "praep-ort",
+    "meanings": [
+      {
+        "en": "where (a place – no movement)",
+        "ex": "Wo wohnst du?",
+        "exEn": "Where do you live?"
+      }
+    ]
+  },
+  {
+    "w": "woher",
+    "group": "Fragewort",
+    "topic": "praep-ort",
+    "meanings": [
+      {
+        "en": "where from (origin)",
+        "ex": "Woher kommst du?",
+        "exEn": "Where are you from?"
+      }
+    ]
+  },
+  {
+    "w": "wohin",
+    "group": "Fragewort",
+    "topic": "praep-ort",
+    "meanings": [
+      {
+        "en": "where to (movement towards a place)",
+        "ex": "Wohin fährst du im Urlaub?",
+        "exEn": "Where are you going on holiday?"
+      }
+    ]
+  },
+  {
+    "w": "wann",
+    "group": "Fragewort",
+    "topic": "fragewoerter-kasus",
+    "meanings": [
+      {
+        "en": "when",
+        "ex": "Wann beginnt der Kurs?",
+        "exEn": "When does the course start?"
+      }
+    ]
+  },
+  {
+    "w": "warum",
+    "group": "Fragewort",
+    "topic": "fragewoerter-kasus",
+    "meanings": [
+      {
+        "en": "why",
+        "ex": "Warum kommst du nicht?",
+        "exEn": "Why aren't you coming?"
+      }
+    ]
+  },
+  {
+    "w": "wie",
+    "group": "Fragewort",
+    "topic": "fragewoerter-kasus",
+    "meanings": [
+      {
+        "en": "how",
+        "ex": "Wie heißt du?",
+        "exEn": "What's your name?"
+      },
+      {
+        "en": "wie lange / wie viel: how long / how much",
+        "ex": "Wie viel kostet das?",
+        "exEn": "How much does that cost?"
+      }
+    ]
+  },
+  {
+    "w": "wer",
+    "group": "Fragewort",
+    "topic": "fragewoerter-kasus",
+    "meanings": [
+      {
+        "en": "who",
+        "ex": "Wer ist das?",
+        "exEn": "Who is that?"
+      }
+    ]
+  },
+  {
+    "w": "welche",
+    "group": "Fragewort",
+    "forms": [
+      "welcher",
+      "welches",
+      "welchen",
+      "welchem"
+    ],
+    "topic": "fragewoerter-kasus",
+    "meanings": [
+      {
+        "en": "which (welcher, welches, welchen, welchem …: the ending changes like der/die/das)",
+        "ex": "Welche Farbe magst du?",
+        "exEn": "Which colour do you like?"
+      }
+    ]
+  },
+  {
+    "w": "aus",
+    "group": "Präposition",
+    "case": "Dativ",
+    "topic": "praep-dativ",
+    "meanings": [
+      {
+        "en": "from (origin: cities, countries, buildings)",
+        "ex": "Ich komme aus Indien.",
+        "exEn": "I'm from India."
+      },
+      {
+        "en": "out of",
+        "ex": "Er kommt aus dem Haus.",
+        "exEn": "He comes out of the house."
+      },
+      {
+        "en": "made of",
+        "ex": "Der Tisch ist aus Holz.",
+        "exEn": "The table is made of wood."
+      }
+    ]
+  },
+  {
+    "w": "von",
+    "group": "Präposition",
+    "case": "Dativ",
+    "topic": "praep-dativ",
+    "meanings": [
+      {
+        "en": "from (people, and places like home)",
+        "ex": "Ich komme gerade vom Arzt.",
+        "exEn": "I've just come from the doctor's."
+      },
+      {
+        "en": "of / by",
+        "ex": "Das ist ein Freund von mir.",
+        "exEn": "That's a friend of mine."
+      },
+      {
+        "en": "von … bis: from … to (time)",
+        "ex": "Ich arbeite von 8 bis 16 Uhr.",
+        "exEn": "I work from 8 to 4."
+      }
+    ]
+  },
+  {
+    "w": "nach",
+    "group": "Präposition",
+    "case": "Dativ",
+    "topic": "praep-ort",
+    "meanings": [
+      {
+        "en": "to (cities, countries without article)",
+        "ex": "Ich fahre nach Berlin.",
+        "exEn": "I'm going to Berlin."
+      },
+      {
+        "en": "nach Hause: (going) home",
+        "ex": "Ich gehe nach Hause.",
+        "exEn": "I'm going home."
+      },
+      {
+        "en": "after (time)",
+        "ex": "Nach dem Essen trinke ich Kaffee.",
+        "exEn": "After the meal I drink coffee."
+      },
+      {
+        "en": "direction: nach links / rechts / oben / unten",
+        "ex": "Gehen Sie nach links.",
+        "exEn": "Go left."
+      }
+    ]
+  },
+  {
+    "w": "zu",
+    "group": "Präposition",
+    "case": "Dativ",
+    "topic": "praep-ort",
+    "meanings": [
+      {
+        "en": "to (people, and places you go to)",
+        "ex": "Ich gehe zum Arzt.",
+        "exEn": "I'm going to the doctor."
+      },
+      {
+        "en": "zu Hause: at home",
+        "ex": "Ich bin zu Hause.",
+        "exEn": "I'm at home."
+      },
+      {
+        "en": "too (before an adjective – not a preposition here)",
+        "ex": "Das ist zu teuer.",
+        "exEn": "That's too expensive."
+      }
+    ]
+  },
+  {
+    "w": "in",
+    "group": "Präposition",
+    "case": "Wo? Dativ · Wohin? Akkusativ",
+    "englishWord": true,
+    "topic": "wechselpraepositionen",
+    "meanings": [
+      {
+        "en": "in (Wo? + Dativ)",
+        "ex": "Ich bin im Kino.",
+        "exEn": "I'm at the cinema."
+      },
+      {
+        "en": "into / to (Wohin? + Akkusativ)",
+        "ex": "Ich gehe ins Kino.",
+        "exEn": "I'm going to the cinema."
+      },
+      {
+        "en": "in (time: from now)",
+        "ex": "Der Zug kommt in zehn Minuten.",
+        "exEn": "The train comes in ten minutes."
+      }
+    ]
+  },
+  {
+    "w": "an",
+    "group": "Präposition",
+    "case": "Wo? Dativ · Wohin? Akkusativ",
+    "englishWord": true,
+    "topic": "wechselpraepositionen",
+    "meanings": [
+      {
+        "en": "at / on (edge, side, wall – Wo? + Dativ)",
+        "ex": "Das Bild hängt an der Wand.",
+        "exEn": "The picture hangs on the wall."
+      },
+      {
+        "en": "to (Wohin? + Akkusativ)",
+        "ex": "Wir fahren ans Meer.",
+        "exEn": "We're going to the seaside."
+      },
+      {
+        "en": "an … vorbei: past (+ Dativ)",
+        "ex": "Gehen Sie am Café vorbei.",
+        "exEn": "Go past the café."
+      }
+    ]
+  },
+  {
+    "w": "auf",
+    "group": "Präposition",
+    "case": "Wo? Dativ · Wohin? Akkusativ",
+    "topic": "wechselpraepositionen",
+    "meanings": [
+      {
+        "en": "on (top of – Wo? + Dativ)",
+        "ex": "Das Buch liegt auf dem Tisch.",
+        "exEn": "The book is on the table."
+      },
+      {
+        "en": "onto / to (Wohin? + Akkusativ)",
+        "ex": "Ich gehe auf die Party.",
+        "exEn": "I'm going to the party."
+      }
+    ]
+  },
+  {
+    "w": "bei",
+    "group": "Präposition",
+    "case": "Dativ",
+    "topic": "praep-dativ",
+    "meanings": [
+      {
+        "en": "at (someone's place, a doctor, a company)",
+        "ex": "Ich bin beim Arzt.",
+        "exEn": "I'm at the doctor's."
+      },
+      {
+        "en": "near",
+        "ex": "Potsdam liegt bei Berlin.",
+        "exEn": "Potsdam is near Berlin."
+      }
+    ]
+  },
+  {
+    "w": "mit",
+    "group": "Präposition",
+    "case": "Dativ",
+    "topic": "praep-dativ",
+    "meanings": [
+      {
+        "en": "with",
+        "ex": "Ich wohne mit meiner Schwester.",
+        "exEn": "I live with my sister."
+      },
+      {
+        "en": "by (transport)",
+        "ex": "Ich fahre mit dem Bus.",
+        "exEn": "I go by bus."
+      }
+    ]
+  },
+  {
+    "w": "seit",
+    "group": "Präposition",
+    "case": "Dativ",
+    "topic": "praep-zeit",
+    "meanings": [
+      {
+        "en": "for / since (from the past up to now)",
+        "ex": "Ich lerne seit einem Jahr Deutsch.",
+        "exEn": "I've been learning German for a year."
+      }
+    ]
+  },
+  {
+    "w": "ab",
+    "group": "Präposition",
+    "case": "Dativ",
+    "topic": "praep-zeit",
+    "meanings": [
+      {
+        "en": "from … on (starting point)",
+        "ex": "Ab Montag arbeite ich.",
+        "exEn": "I start work on Monday."
+      },
+      {
+        "en": "from (departure)",
+        "ex": "Der Zug fährt ab Gleis 3.",
+        "exEn": "The train leaves from platform 3."
+      }
+    ]
+  },
+  {
+    "w": "bis",
+    "group": "Präposition",
+    "case": "Akkusativ",
+    "topic": "praep-zeit",
+    "meanings": [
+      {
+        "en": "until / by (time)",
+        "ex": "Ich warte bis 5 Uhr.",
+        "exEn": "I'll wait until 5."
+      },
+      {
+        "en": "to / as far as (place, often bis zum / zur)",
+        "ex": "Gehen Sie bis zur Ampel.",
+        "exEn": "Go as far as the traffic lights."
+      }
+    ]
+  },
+  {
+    "w": "durch",
+    "group": "Präposition",
+    "case": "Akkusativ",
+    "topic": "praep-akkusativ",
+    "meanings": [
+      {
+        "en": "through",
+        "ex": "Gehen Sie durch den Park.",
+        "exEn": "Go through the park."
+      }
+    ]
+  },
+  {
+    "w": "für",
+    "group": "Präposition",
+    "case": "Akkusativ",
+    "topic": "praep-akkusativ",
+    "meanings": [
+      {
+        "en": "for",
+        "ex": "Das Geschenk ist für dich.",
+        "exEn": "The present is for you."
+      }
+    ]
+  },
+  {
+    "w": "gegen",
+    "group": "Präposition",
+    "case": "Akkusativ",
+    "topic": "praep-akkusativ",
+    "meanings": [
+      {
+        "en": "against",
+        "ex": "Ich bin gegen den Plan.",
+        "exEn": "I'm against the plan."
+      },
+      {
+        "en": "around / about (time)",
+        "ex": "Ich komme gegen 8 Uhr.",
+        "exEn": "I'll come around 8."
+      }
+    ]
+  },
+  {
+    "w": "ohne",
+    "group": "Präposition",
+    "case": "Akkusativ",
+    "topic": "praep-akkusativ",
+    "meanings": [
+      {
+        "en": "without",
+        "ex": "Ich trinke Kaffee ohne Zucker.",
+        "exEn": "I drink coffee without sugar."
+      }
+    ]
+  },
+  {
+    "w": "um",
+    "group": "Präposition",
+    "case": "Akkusativ",
+    "englishWord": true,
+    "topic": "praep-akkusativ",
+    "meanings": [
+      {
+        "en": "at (clock time)",
+        "ex": "Der Kurs beginnt um 9 Uhr.",
+        "exEn": "The course starts at 9."
+      },
+      {
+        "en": "around (a place, often um … herum)",
+        "ex": "Wir gehen um den See.",
+        "exEn": "We walk around the lake."
+      }
+    ]
+  },
+  {
+    "w": "gegenüber",
+    "group": "Präposition",
+    "case": "Dativ",
+    "topic": "praep-ort",
+    "meanings": [
+      {
+        "en": "opposite (gegenüber von = gegenüber)",
+        "ex": "Die Bank ist gegenüber vom Bahnhof.",
+        "exEn": "The bank is opposite the station."
+      }
+    ]
+  },
+  {
+    "w": "vorbei",
+    "group": "Präposition",
+    "case": "Dativ",
+    "topic": "praep-ort",
+    "meanings": [
+      {
+        "en": "past (an … vorbei + Dativ)",
+        "ex": "Gehen Sie am Restaurant vorbei.",
+        "exEn": "Go past the restaurant."
+      }
+    ]
+  },
+  {
+    "w": "neben",
+    "group": "Präposition",
+    "case": "Wo? Dativ · Wohin? Akkusativ",
+    "topic": "wechselpraepositionen",
+    "meanings": [
+      {
+        "en": "next to",
+        "ex": "Die Post ist neben der Bank.",
+        "exEn": "The post office is next to the bank."
+      }
+    ]
+  },
+  {
+    "w": "zwischen",
+    "group": "Präposition",
+    "case": "Wo? Dativ · Wohin? Akkusativ",
+    "topic": "wechselpraepositionen",
+    "meanings": [
+      {
+        "en": "between",
+        "ex": "Die Apotheke liegt zwischen der Bank und dem Café.",
+        "exEn": "The pharmacy is between the bank and the café."
+      }
+    ]
+  },
+  {
+    "w": "über",
+    "group": "Präposition",
+    "case": "Wo? Dativ · Wohin? Akkusativ",
+    "topic": "wechselpraepositionen",
+    "meanings": [
+      {
+        "en": "over / above",
+        "ex": "Die Lampe hängt über dem Tisch.",
+        "exEn": "The lamp hangs above the table."
+      },
+      {
+        "en": "about (a topic, + Akkusativ)",
+        "ex": "Wir sprechen über das Wetter.",
+        "exEn": "We're talking about the weather."
+      }
+    ]
+  },
+  {
+    "w": "unter",
+    "group": "Präposition",
+    "case": "Wo? Dativ · Wohin? Akkusativ",
+    "topic": "wechselpraepositionen",
+    "meanings": [
+      {
+        "en": "under / below",
+        "ex": "Die Katze liegt unter dem Bett.",
+        "exEn": "The cat is lying under the bed."
+      }
+    ]
+  },
+  {
+    "w": "vor",
+    "group": "Präposition",
+    "case": "Wo? Dativ · Wohin? Akkusativ",
+    "topic": "wechselpraepositionen",
+    "meanings": [
+      {
+        "en": "in front of",
+        "ex": "Ich warte vor dem Kino.",
+        "exEn": "I'm waiting in front of the cinema."
+      },
+      {
+        "en": "before (time)",
+        "ex": "Vor dem Essen wasche ich die Hände.",
+        "exEn": "Before the meal I wash my hands."
+      },
+      {
+        "en": "ago",
+        "ex": "Ich war vor zwei Tagen in Köln.",
+        "exEn": "I was in Cologne two days ago."
+      }
+    ]
+  },
+  {
+    "w": "hinter",
+    "group": "Präposition",
+    "case": "Wo? Dativ · Wohin? Akkusativ",
+    "topic": "wechselpraepositionen",
+    "meanings": [
+      {
+        "en": "behind",
+        "ex": "Der Garten ist hinter dem Haus.",
+        "exEn": "The garden is behind the house."
+      }
+    ]
+  },
+  {
+    "w": "zum",
+    "group": "Kurzform",
+    "case": "Dativ",
+    "topic": "praep-ort",
+    "meanings": [
+      {
+        "en": "zu + dem (der/das words)",
+        "ex": "Ich gehe zum Bahnhof.",
+        "exEn": "I'm going to the station."
+      }
+    ]
+  },
+  {
+    "w": "zur",
+    "group": "Kurzform",
+    "case": "Dativ",
+    "topic": "praep-ort",
+    "meanings": [
+      {
+        "en": "zu + der (die words)",
+        "ex": "Ich gehe zur Bank.",
+        "exEn": "I'm going to the bank."
+      }
+    ]
+  },
+  {
+    "w": "vom",
+    "group": "Kurzform",
+    "case": "Dativ",
+    "topic": "praep-ort",
+    "meanings": [
+      {
+        "en": "von + dem (der/das words)",
+        "ex": "Ich komme vom Arzt.",
+        "exEn": "I'm coming from the doctor's."
+      }
+    ]
+  },
+  {
+    "w": "beim",
+    "group": "Kurzform",
+    "case": "Dativ",
+    "topic": "praep-ort",
+    "meanings": [
+      {
+        "en": "bei + dem (der/das words)",
+        "ex": "Ich bin beim Arzt.",
+        "exEn": "I'm at the doctor's."
+      }
+    ]
+  },
+  {
+    "w": "im",
+    "group": "Kurzform",
+    "case": "Dativ",
+    "topic": "wechselpraepositionen",
+    "meanings": [
+      {
+        "en": "in + dem: in the (Wo?)",
+        "ex": "Ich bin im Kino.",
+        "exEn": "I'm at the cinema."
+      }
+    ]
+  },
+  {
+    "w": "ins",
+    "group": "Kurzform",
+    "case": "Akkusativ",
+    "topic": "wechselpraepositionen",
+    "meanings": [
+      {
+        "en": "in + das: into / to the (Wohin?)",
+        "ex": "Ich gehe ins Kino.",
+        "exEn": "I'm going to the cinema."
+      }
+    ]
+  },
+  {
+    "w": "am",
+    "group": "Kurzform",
+    "case": "Dativ",
+    "englishWord": true,
+    "topic": "wechselpraepositionen",
+    "meanings": [
+      {
+        "en": "an + dem: at / on the (Wo?); with days: on",
+        "ex": "Wir treffen uns am Montag.",
+        "exEn": "We're meeting on Monday."
+      }
+    ]
+  },
+  {
+    "w": "ans",
+    "group": "Kurzform",
+    "case": "Akkusativ",
+    "topic": "wechselpraepositionen",
+    "meanings": [
+      {
+        "en": "an + das: to the (Wohin?)",
+        "ex": "Wir fahren ans Meer.",
+        "exEn": "We're going to the seaside."
+      }
+    ]
+  },
+  {
+    "w": "weil",
+    "group": "Konnektor",
+    "topic": "nebensatz",
+    "meanings": [
+      {
+        "en": "because (the verb goes to the end)",
+        "ex": "Ich komme nicht, weil ich krank bin.",
+        "exEn": "I'm not coming because I'm ill."
+      }
+    ]
+  },
+  {
+    "w": "dass",
+    "group": "Konnektor",
+    "topic": "nebensatz",
+    "meanings": [
+      {
+        "en": "that (the verb goes to the end)",
+        "ex": "Ich glaube, dass er kommt.",
+        "exEn": "I think that he's coming."
+      }
+    ]
+  },
+  {
+    "w": "wenn",
+    "group": "Konnektor",
+    "topic": "nebensatz",
+    "meanings": [
+      {
+        "en": "if / when (each time, or in the future; verb at the end)",
+        "ex": "Wenn es regnet, bleibe ich zu Hause.",
+        "exEn": "If it rains, I stay at home."
+      }
+    ]
+  },
+  {
+    "w": "ob",
+    "group": "Konnektor",
+    "topic": "indirekte-fragen",
+    "meanings": [
+      {
+        "en": "whether / if (yes-no question inside a sentence; verb at the end)",
+        "ex": "Ich weiß nicht, ob er kommt.",
+        "exEn": "I don't know whether he's coming."
+      }
+    ]
+  },
+  {
+    "w": "obwohl",
+    "group": "Konnektor",
+    "topic": "nebensatz",
+    "meanings": [
+      {
+        "en": "although (the verb goes to the end)",
+        "ex": "Ich gehe spazieren, obwohl es regnet.",
+        "exEn": "I'm going for a walk although it's raining."
+      }
+    ]
+  },
+  {
+    "w": "deshalb",
+    "group": "Konnektor",
+    "topic": "konnektoren-adverbien",
+    "meanings": [
+      {
+        "en": "that's why / so (the verb comes right after it)",
+        "ex": "Ich bin krank, deshalb bleibe ich zu Hause.",
+        "exEn": "I'm ill, so I'm staying at home."
+      }
+    ]
+  },
+  {
+    "w": "trotzdem",
+    "group": "Konnektor",
+    "topic": "konnektoren-adverbien",
+    "meanings": [
+      {
+        "en": "anyway / nevertheless (the verb comes right after it)",
+        "ex": "Es regnet, trotzdem gehe ich spazieren.",
+        "exEn": "It's raining, but I'm going for a walk anyway."
+      }
+    ]
+  },
+  {
+    "w": "geradeaus",
+    "group": "Richtung",
+    "topic": "praep-ort",
+    "meanings": [
+      {
+        "en": "straight on",
+        "ex": "Gehen Sie geradeaus.",
+        "exEn": "Go straight on."
+      }
+    ]
+  },
+  {
+    "w": "links",
+    "group": "Richtung",
+    "englishWord": true,
+    "topic": "praep-ort",
+    "meanings": [
+      {
+        "en": "left / on the left (nach links: to the left)",
+        "ex": "Das Hotel ist links.",
+        "exEn": "The hotel is on the left."
+      }
+    ]
+  },
+  {
+    "w": "rechts",
+    "group": "Richtung",
+    "topic": "praep-ort",
+    "meanings": [
+      {
+        "en": "right / on the right (nach rechts: to the right)",
+        "ex": "Biegen Sie rechts ab.",
+        "exEn": "Turn right."
+      }
+    ]
+  },
+  {
+    "w": "oben",
+    "group": "Richtung",
+    "topic": "praep-ort",
+    "meanings": [
+      {
+        "en": "up / upstairs (nach oben: up)",
+        "ex": "Das Zimmer ist oben.",
+        "exEn": "The room is upstairs."
+      }
+    ]
+  },
+  {
+    "w": "unten",
+    "group": "Richtung",
+    "topic": "praep-ort",
+    "meanings": [
+      {
+        "en": "down / downstairs (nach unten: down)",
+        "ex": "Die Sauna ist unten.",
+        "exEn": "The sauna is downstairs."
+      }
+    ]
+  }
+]
