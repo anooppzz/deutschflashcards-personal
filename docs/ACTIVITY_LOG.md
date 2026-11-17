@@ -15,7 +15,11 @@ was done, newest first. Every change adds a log entry here in the same commit
   (Piece 3, tap a grammar word for its meaning: done 2026-11-12, words.json. Possible next:
   the same in 🧱 Sätze and 📰 Lesen; more words as topics need them.)
 
-- [ ] **📌 grammarTopics for older chapters:** only Hotel 2 has them (2026-11-11). Add
+- [ ] **Einheit 17 page numbers (2026-11-17):** the photos of the Einheit 17 grammar pages
+  showed no page number except p. 97 (Kommunikation box). The `book` labels say only
+  "Menschen A2 · Einheit 17" – add the pages if the learner tells us.
+
+- [ ] **📌 grammarTopics for older chapters:** Hotel 2 (2026-11-11) and Unterwegs (2026-11-17) have them. Add
   them when the learner works on a chapter or sends its grammar page – from the book's
   boxes, not guessed. Add `id`/`book` to the sections they point at.
 
@@ -179,6 +183,42 @@ was done, newest first. Every change adds a log entry here in the same commit
   trainer, Reverse articles, 12 grammar topics, ✏️ Üben, data cleanup, code tidying).
 
 ## Log
+
+### 2026-11-17 – Einheit 17 Lernwortschatz + Lokale Präpositionen (Menschen A2 + Grammatik aktiv Kap. 37–38)
+- **New chapter `unterwegs`** "Unterwegs" 🛣️ (`added` 2026-11-17 → 🆕 banner), 30 cards from the
+  Lernwortschatz page: die Abfahrt, Ankunft, Autobahn, Fähre, das Gebirge, die Grenze, Insel,
+  das Kraftfahrzeug (Kfz · CH: Motorfahrzeug), die Küste, der Motor, die Panne, Region, der
+  Reifen, die Tankstelle, tanken, überqueren, der Bauer (n-Deklination note), das Feld, die
+  Kassette, das Pech, die Seite, der Zufall, jemand, niemand, ärgerlich, bekannt, insgesamt,
+  mitten, plötzlich, Nicht zu glauben! (A: Nicht zu fassen!). Already in the app → `alsoCards`:
+  `tourismus2::wechseln`, `meintag::müde`. Not made into cards: words that are only on the
+  Kommunikation page (Sandstraße, Friedhof …).
+- **Grammar** (`grammarTopics`: praep-ort#urlaub-orte, praep-ort#wohin-wo, indefinitpronomen):
+  - `praep-ort` ← Menschen A2 grammar box "Lokale Präpositionen: Wohin? + Akkusativ (außer bei
+    nach) / Wo? + Dativ" (ans Meer / am Meer, an die Küste, auf eine Insel, aufs Land, in die
+    Berge / in den Bergen, ins Gebirge, nach Rumänien / in Rumänien, ⚠ in die Schweiz) + points
+    "Urlaub: an, auf oder in?" (with the Kettenübung "Wo warst du im Urlaub?").
+  - `praep-ort` ← Grammatik aktiv Kap. 37–38 table "Lokale Präpositionen: Wohin? und Wo?" (in /
+    nach / an / auf / zu–bei with the book's rules: Länder mit Artikel, Räume und Orte, ⚠ Garten,
+    Park …, vertikaler / horizontaler Kontakt, „Wasser“, Personen, Aktivitäten, Firmennamen),
+    points ans/am/ins/im/auf dem Wasser, nach Hause / zu Hause, Kurzformen; warning (auf einer
+    Insel, nicht nach die Schweiz). +7 Üben (20).
+  - New topic **`indefinitpronomen`** "jemand, niemand, etwas, nichts" (Nomen & Artikel) from the
+    INFO box (etwas ↔ nichts, einer ↔ keiner, jemand ↔ niemand): Q&A table, jemanden/jemandem,
+    warning "only one negative". 10 Üben.
+- 📰 Lesen "Eine Reise mit Pannen"; 🧱 Sätze set `unterwegs-kommentieren` (the "etwas
+  kommentieren" box: Nicht zu glauben!, So ein Zufall!, Das hat sicher Spaß gemacht, So ein
+  Pech! … + a dialogue "Nach dem Urlaub").
+- Unsure readings: none in the words. Page numbers of the grammar photos weren't visible
+  (see Pending).
+
+| Book box | In the app |
+|---|---|
+| Lernwortschatz Einheit 17 | 🃏 Lernen → 📚 Themen → 🛣️ Unterwegs |
+| Grammatik: Lokale Präpositionen (Wohin?/Wo?) | 📖 Grammatik → Woher? Wo? Wohin? – Orte (📌 under Unterwegs) |
+| Grammatik aktiv Kap. 37–38 | same topic, table "Lokale Präpositionen: Wohin? und Wo?" |
+| INFO etwas/nichts, jemand/niemand | 📖 Grammatik → jemand, niemand, etwas, nichts |
+| Kommunikation: etwas kommentieren | 🧱 Sätze → Unterwegs: etwas kommentieren |
 
 ### 2026-11-12 – German column headings + tap a grammar word for its meaning
 - The learner: table column headings were still English; prepositions and question words

@@ -1328,5 +1328,43 @@
     "answer": "gegenüber dem Hotel"
    }
   ]
+ },
+ {
+  "key": "unterwegs",
+  "level": "A2",
+  "deck": "unterwegs",
+  "title": "Eine Reise mit Pannen",
+  "paragraphs": [
+   "Lena und Marek fahren im Sommer mit dem Auto nach Rumänien. Die [[Abfahrt|die Abfahrt]] ist um sechs Uhr morgens. Zuerst geht es lange über die [[Autobahn|die Autobahn]]. Am Mittag [[überqueren]] sie die [[Grenze|die Grenze]] nach Ungarn. An einer [[Tankstelle|die Tankstelle]] [[tanken]] sie und trinken einen Kaffee.",
+   "Am Abend sind sie [[mitten]] auf dem Land. Links und rechts sieht man nur [[Felder|das Feld]]. [[Plötzlich|plötzlich]] macht der [[Motor|der Motor]] komische Geräusche – eine [[Panne|die Panne]]! Und ein [[Reifen|der Reifen]] ist auch kaputt. „So ein [[Pech|das Pech]]!“, sagt Lena. „Das ist wirklich [[ärgerlich]].“ Es ist schon spät und [[niemand]] ist auf der Straße.",
+   "Nach einer halben Stunde kommt doch [[jemand]]: ein [[Bauer|der Bauer]] mit seinem Traktor. Er hilft Marek, den Reifen zu [[wechseln]]. Und dann – [[Nicht zu glauben!]] – kennt der Bauer Lenas Onkel. „So ein [[Zufall|der Zufall]]!“, lacht Lena. [[Insgesamt|insgesamt]] sind sie zwei Wochen unterwegs. Am Ende fahren sie noch an die [[Küste|die Küste]] und mit der [[Fähre|die Fähre]] auf eine [[Insel|die Insel]]."
+  ],
+  "en": [
+   "Lena and Marek are driving to Romania in the summer. Departure is at six in the morning. First they drive on the motorway for a long time. At midday they cross the border into Hungary. At a petrol station they fill up and have a coffee.",
+   "In the evening they are in the middle of the countryside. Left and right you can only see fields. Suddenly the engine makes strange noises – a breakdown! And a tyre is broken too. “What bad luck!” says Lena. “That's really annoying.” It's already late and nobody is on the road.",
+   "After half an hour somebody does come: a farmer with his tractor. He helps Marek change the tyre. And then – unbelievable! – the farmer knows Lena's uncle. “What a coincidence!” laughs Lena. Altogether they are on the road for two weeks. At the end they also drive to the coast and take the ferry to an island."
+  ],
+  "questions": [
+   {
+    "q": "Lena und Marek fahren mit dem Zug nach Rumänien.",
+    "en": "Lena and Marek take the train to Romania.",
+    "answer": "falsch"
+   },
+   {
+    "q": "Ein Bauer hilft beim Reifenwechsel.",
+    "en": "A farmer helps change the tyre.",
+    "answer": "richtig"
+   },
+   {
+    "q": "Wie kommen sie auf die Insel?",
+    "en": "How do they get to the island?",
+    "options": [
+     "mit der Fähre",
+     "mit dem Traktor",
+     "über die Autobahn"
+    ],
+    "answer": "mit der Fähre"
+   }
+  ]
  }
 ]

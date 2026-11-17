@@ -825,6 +825,111 @@
     ]
   },
   {
+    "key": "indefinitpronomen",
+    "level": "A2",
+    "group": {"de": "Nomen & Artikel", "en": "Nouns & Articles"},
+    "title": {"de": "jemand, niemand, etwas, nichts", "en": "Somebody, nobody, something, nothing"},
+    "intro": {
+      "what": {
+        "de": "Wörter für eine unbekannte Person oder Sache: **jemand**, **etwas** – und das Gegenteil **niemand**, **nichts**.",
+        "en": "Words for an unknown person or thing: **jemand** (somebody), **etwas** (something) – and the opposites **niemand** (nobody), **nichts** (nothing)."
+      },
+      "when": {
+        "de": "Im Alltag beim Fragen und Antworten: Hat jemand angerufen? Nein, niemand.",
+        "en": "Everyday questions and answers: Hat jemand angerufen? (did anyone call?) Nein, niemand (no, nobody)."
+      },
+      "english": {
+        "de": "jemand = somebody / anybody, etwas = something / anything. Im Deutschen nur **ein** Nein im Satz: niemand, nichts.",
+        "en": "jemand = somebody / anybody, etwas = something / anything. German has only **one** negative per sentence: niemand, nichts (not \"nicht nichts\")."
+      },
+      "remember": {"de": "Ist hier jemand? Nein, hier ist niemand.", "en": "Is anybody here? No, nobody is here."}
+    },
+    "summary": {
+      "de": "Für Sachen: **etwas** ↔ **nichts**. Für Personen: **jemand** ↔ **niemand**, **einer** ↔ **keiner**.",
+      "en": "For things: **etwas** (something) ↔ **nichts** (nothing). For people: **jemand** (somebody) ↔ **niemand** (nobody), **einer** (someone) ↔ **keiner** (no one)."
+    },
+    "sections": [
+      {
+        "type": "table",
+        "id": "info-box",
+        "book": "Menschen A2 · Einheit 17",
+        "title": {"de": "Für Sachen und für Personen", "en": "For things and for people"},
+        "head": [
+          {"de": "für", "en": "for"},
+          {"de": "positiv", "en": "positive"},
+          {"de": "negativ", "en": "negative"}
+        ],
+        "rows": [
+          [{"de": "Sachen", "en": "things"}, {"t": "etwas", "en": "something"}, {"t": "nichts", "en": "nothing"}],
+          [{"de": "Personen", "en": "people"}, {"t": "jemand", "en": "somebody"}, {"t": "niemand", "en": "nobody"}],
+          [
+            {"de": "Personen", "en": "people"},
+            {"t": "einer", "en": "someone, one of them"},
+            {"t": "keiner", "en": "no one, none of them"}
+          ]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "Frage und Antwort", "en": "Question and answer"},
+        "head": [{"de": "Frage", "en": "Question"}, {"de": "Antwort", "en": "Answer"}],
+        "rows": [
+          [
+            {"t": "Hast du **etwas** gekauft?", "en": "Did you buy anything?"},
+            {"t": "Nein, ich habe **nichts** gekauft.", "en": "No, I didn't buy anything."}
+          ],
+          [
+            {"t": "Hat **jemand** angerufen?", "en": "Did anybody call?"},
+            {"t": "Nein, **niemand** hat angerufen.", "en": "No, nobody called."}
+          ],
+          [
+            {"t": "War **einer** von euch schon in Rom?", "en": "Has one of you been to Rome?"},
+            {"t": "Nein, **keiner**.", "en": "No, none of us."}
+          ]
+        ]
+      },
+      {
+        "type": "table",
+        "title": {"de": "jemand und niemand im Satz", "en": "jemand and niemand in the sentence"},
+        "head": [{"de": "Fall", "en": "Case"}, "jemand", "niemand"],
+        "rows": [
+          ["Nominativ", "jemand", "niemand"],
+          ["Akkusativ", "jemand**en**", "niemand**en**"],
+          ["Dativ", "jemand**em**", "niemand**em**"]
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "So benutzt man es", "en": "How to use it"},
+        "items": [
+          {"t": "Ich habe am Strand **niemanden** gesehen.", "en": "I didn't see anybody on the beach."},
+          {"t": "Ich habe es **niemandem** erzählt.", "en": "I didn't tell anybody."},
+          {
+            "de": "**etwas** und **nichts** ändern sich nie. **einer** und **keiner** ändern sich wie der Artikel: einer, eine, eins · keiner, keine, keins.",
+            "en": "**etwas** and **nichts** never change. **einer** and **keiner** change like the article: einer, eine, eins · keiner, keine, keins."
+          },
+          {
+            "de": "Im Gespräch sagt man oft **was** für etwas:",
+            "en": "In speech people often say **was** for etwas:"
+          },
+          {"t": "Hast du **was** gegessen?", "en": "Have you eaten something?"}
+        ]
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "Nur **ein** Nein im Satz: ❌ Ich habe nicht niemanden gesehen. ✅ Ich habe **niemanden** gesehen. ❌ Ich habe nicht nichts gekauft. ✅ Ich habe **nichts** gekauft.",
+          "en": "Only **one** negative per sentence: ❌ Ich habe nicht niemanden gesehen. ✅ Ich habe **niemanden** gesehen (I didn't see anybody). ❌ Ich habe nicht nichts gekauft. ✅ Ich habe **nichts** gekauft (I didn't buy anything)."
+        }
+      }
+    ],
+    "examples": [
+      {"de": "Kann mir bitte jemand helfen?", "en": "Can somebody help me, please?"},
+      {"de": "Im Kühlschrank ist nichts mehr.", "en": "There's nothing left in the fridge."},
+      {"de": "Am Abend war niemand mehr im Büro.", "en": "In the evening nobody was left in the office."}
+    ]
+  },
+  {
     "key": "praesens-regelmaessig",
     "level": "A1",
     "group": {"de": "Verben", "en": "Verbs"},
@@ -4902,6 +5007,199 @@
             "en": "Short forms with **der** and **das** words: von dem = **vom**, an dem = **am**. Gehen Sie **am** Frühstücksraum vorbei (go past the breakfast room). Die Sauna liegt gegenüber **vom** Schwimmbad (the sauna is opposite the pool). With **die** there's no short form: an **der** Bar vorbei (past the bar)."
           }
         ]
+      },
+      {
+        "type": "table",
+        "id": "urlaub-orte",
+        "book": "Menschen A2 · Einheit 17",
+        "title": {
+          "de": "Lokale Präpositionen: Wohin? + Akkusativ (außer bei nach), Wo? + Dativ",
+          "en": "Local prepositions: where to? + accusative (except nach), where? + dative"
+        },
+        "head": [
+          {"de": "Präposition", "en": "Preposition"},
+          {"de": "Wohin? + Akkusativ", "en": "Where to? + accusative"},
+          {"de": "Wo? + Dativ", "en": "Where? + dative"}
+        ],
+        "rows": [
+          ["**an**", {"t": "**ans** Meer", "en": "to the seaside"}, {"t": "**am** Meer", "en": "at the seaside"}],
+          [
+            "**an**",
+            {"t": "an **die** Küste", "en": "to the coast"},
+            {"t": "an **der** Küste", "en": "on the coast"}
+          ],
+          [
+            "**an**",
+            {"t": "an **den** Bodensee / Strand", "en": "to Lake Constance / the beach"},
+            {"t": "**am** Bodensee / Strand", "en": "at Lake Constance / on the beach"}
+          ],
+          [
+            "**auf**",
+            {"t": "auf **eine** Insel", "en": "to an island"},
+            {"t": "auf **einer** Insel", "en": "on an island"}
+          ],
+          [
+            "**auf**",
+            {"t": "**aufs** Land", "en": "to the countryside"},
+            {"t": "auf **dem** Land", "en": "in the countryside"}
+          ],
+          [
+            "**in**",
+            {"t": "in **die** Wüste / Berge", "en": "to the desert / mountains"},
+            {"t": "in **der** Wüste / in **den** Bergen", "en": "in the desert / mountains"}
+          ],
+          [
+            "**in**",
+            {"t": "in **den** Süden / Wald", "en": "to the south / woods"},
+            {"t": "**im** Süden / Wald", "en": "in the south / woods"}
+          ],
+          [
+            "**in**",
+            {"t": "**ins** Gebirge", "en": "to the mountains"},
+            {"t": "**im** Gebirge", "en": "in the mountains"}
+          ],
+          [
+            "**nach** / **in**",
+            {"t": "**nach** Rumänien / Berlin", "en": "to Romania / Berlin"},
+            {"t": "**in** Rumänien / Berlin", "en": "in Romania / Berlin"}
+          ],
+          [
+            "⚠ **in**",
+            {"t": "in **die** Schweiz", "en": "to Switzerland"},
+            {"t": "in **der** Schweiz", "en": "in Switzerland"}
+          ]
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "Urlaub: an, auf oder in?", "en": "Holidays: an, auf or in?"},
+        "items": [
+          {
+            "de": "**an**: am Wasser – Meer, Küste, See, Strand. **auf**: Insel, Land (= nicht in der Stadt). **in**: Wüste, Berge, Wald, Gebirge, Süden / Norden.",
+            "en": "**an**: by the water – sea, coast, lake, beach. **auf**: island, Land (the countryside, not the town). **in**: desert, mountains, woods, mountain range, south / north."
+          },
+          {
+            "de": "**nach** nur bei Städten und Ländern ohne Artikel – Wo? heißt dann **in**: nach Berlin → in Berlin.",
+            "en": "**nach** only with cities and countries without an article – for where? use **in**: nach Berlin → in Berlin."
+          },
+          {
+            "t": "Wo warst du im Urlaub? – Ich war **in den** Bergen. Und du?",
+            "en": "Where were you on holiday? – I was in the mountains. And you?"
+          },
+          {
+            "t": "Ich war **auf einer** Insel und bin dann **ans** Meer gefahren.",
+            "en": "I was on an island and then went to the seaside."
+          }
+        ]
+      },
+      {
+        "type": "table",
+        "id": "wohin-wo",
+        "book": "Grammatik aktiv · Kap. 37–38",
+        "title": {"de": "Lokale Präpositionen: Wohin? und Wo?", "en": "Local prepositions: where to? and where?"},
+        "head": [{"de": "Wann?", "en": "When?"}, {"de": "Wohin?", "en": "Where to?"}, {"de": "Wo?", "en": "Where?"}],
+        "rows": [
+          [
+            {"de": "**in** · Land mit Artikel", "en": "**in** · country with an article"},
+            {"t": "in **die** Schweiz", "en": "to Switzerland"},
+            {"t": "in **der** Schweiz", "en": "in Switzerland"}
+          ],
+          [
+            {"de": "**in** · Räume und Orte", "en": "**in** · rooms and places"},
+            {"t": "in **den** Supermarkt", "en": "to the supermarket"},
+            {"t": "**im** Supermarkt", "en": "in the supermarket"}
+          ],
+          [
+            {"de": "**in** · Räume und Orte", "en": "**in** · rooms and places"},
+            {"t": "**ins** Internet", "en": "onto the internet"},
+            {"t": "**im** Internet", "en": "on the internet"}
+          ],
+          [
+            {
+              "de": "⚠ **in** · Garten, Park, Schwimmbad, Wald, Berge (Pl.)",
+              "en": "⚠ **in** · garden, park, pool, woods, mountains (pl.)"
+            },
+            {"t": "in **die** Berge", "en": "to the mountains"},
+            {"t": "in **den** Bergen", "en": "in the mountains"}
+          ],
+          [
+            {"de": "**nach** · Länder ohne Artikel, Städte", "en": "**nach** · countries without an article, cities"},
+            {"t": "**nach** Rom / Italien", "en": "to Rome / Italy"},
+            {"t": "**in** Rom / Italien", "en": "in Rome / Italy"}
+          ],
+          [
+            {"de": "**an** · vertikaler Kontakt", "en": "**an** · vertical contact (at the side)"},
+            {"t": "an **den** Computer", "en": "to the computer"},
+            {"t": "**am** Computer", "en": "at the computer"}
+          ],
+          [
+            {"de": "**an** · vertikaler Kontakt", "en": "**an** · vertical contact (at the side)"},
+            {"t": "an **die** Haltestelle", "en": "to the bus stop"},
+            {"t": "an **der** Haltestelle", "en": "at the bus stop"}
+          ],
+          [
+            {"de": "**an** · „Wasser“", "en": "**an** · water"},
+            {"t": "**ans** Meer / an **den** Strand", "en": "to the sea / the beach"},
+            {"t": "**am** Meer / **am** Strand", "en": "at the sea / on the beach"}
+          ],
+          [
+            {"de": "**auf** · horizontaler Kontakt", "en": "**auf** · horizontal contact (on top)"},
+            {"t": "auf **den** Platz / Berg", "en": "onto the square / up the mountain"},
+            {"t": "auf **dem** Platz / Berg", "en": "on the square / mountain"}
+          ],
+          [
+            {"de": "**auf** · horizontaler Kontakt", "en": "**auf** · horizontal contact (on top)"},
+            {"t": "auf **die** Straße", "en": "onto the street"},
+            {"t": "auf **der** Straße", "en": "on the street"}
+          ],
+          [
+            {"de": "**zu** / **bei** · Personen", "en": "**zu** / **bei** · people"},
+            {"t": "**zu** Thomas", "en": "to Thomas's"},
+            {"t": "**bei** Thomas", "en": "at Thomas's"}
+          ],
+          [
+            {"de": "**zu** / **bei** · Aktivitäten", "en": "**zu** / **bei** · activities"},
+            {"t": "**zum** Essen", "en": "to the meal"},
+            {"t": "**beim** Essen", "en": "at the meal"}
+          ],
+          [
+            {"de": "**zu** / **bei** · Personen", "en": "**zu** / **bei** · people"},
+            {"t": "**zum** Arzt", "en": "to the doctor"},
+            {"t": "**beim** Arzt", "en": "at the doctor's"}
+          ],
+          [
+            {"de": "**zu** / **bei** · Firmennamen", "en": "**zu** / **bei** · company names"},
+            {"t": "**zu** Ikea", "en": "to Ikea"},
+            {"t": "**bei** Ikea", "en": "at Ikea"}
+          ]
+        ]
+      },
+      {
+        "type": "points",
+        "title": {"de": "Wasser, Kurzformen und Hause", "en": "Water, short forms and home"},
+        "items": [
+          {
+            "t": "Er geht **ans** Wasser. – Er liegt **am** Wasser.",
+            "en": "He goes down to the water. – He's lying by the water."
+          },
+          {
+            "t": "Sie springt **ins** Wasser. – Sie schwimmt **im** Wasser.",
+            "en": "She jumps into the water. – She's swimming in the water."
+          },
+          {"t": "Das Boot ist **auf dem** Wasser.", "en": "The boat is on the water."},
+          {"t": "Ich gehe **nach** Hause. – Ich bin **zu** Hause.", "en": "I'm going home. – I'm at home."},
+          {
+            "de": "Kurzformen Wohin?: in + das = **ins**, an + das = **ans**, auf + das = **aufs**, zu + dem = **zum**, zu + der = **zur**. Wo?: in + dem = **im**, an + dem = **am**, bei + dem = **beim**.",
+            "en": "Short forms for where to: in + das = **ins**, an + das = **ans**, auf + das = **aufs**, zu + dem = **zum**, zu + der = **zur**. For where: in + dem = **im**, an + dem = **am**, bei + dem = **beim**."
+          }
+        ]
+      },
+      {
+        "type": "warning",
+        "text": {
+          "de": "❌ Ich war in einer Insel. ✅ Ich war **auf einer** Insel. ❌ Wir fahren nach die Schweiz. ✅ Wir fahren **in die** Schweiz. **nach** nie mit Artikel!",
+          "en": "❌ Ich war in einer Insel. ✅ Ich war **auf einer** Insel (I was on an island). ❌ Wir fahren nach die Schweiz. ✅ Wir fahren **in die** Schweiz (we're going to Switzerland). **nach** never takes an article!"
+        }
       },
       {
         "type": "warning",

@@ -14015,6 +14015,379 @@
     ]
   },
   {
+    "key": "unterwegs",
+    "icon": "🛣️",
+    "label": "Unterwegs",
+    "added": "2026-11-17",
+    "note": "Auf Reisen: Autobahn, Panne, Küste, Insel · ans Meer / am Meer",
+    "grammarTopics": [
+      "praep-ort#urlaub-orte",
+      "praep-ort#wohin-wo",
+      "indefinitpronomen"
+    ],
+    "alsoCards": [
+      "tourismus2::wechseln",
+      "meintag::müde"
+    ],
+    "cards": [
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Abfahrt",
+        "sub": "Pl. -en",
+        "english": "departure",
+        "example": "Die Abfahrt ist um 7 Uhr am Bahnhof.",
+        "exampleEn": "Departure is at 7 o'clock at the station.",
+        "note": "↔ die Ankunft",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 17"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Ankunft",
+        "sub": "Pl. ¨-e",
+        "english": "arrival",
+        "example": "Nach der Ankunft sind wir sofort an den Strand gegangen.",
+        "exampleEn": "After we arrived we went straight to the beach.",
+        "note": "↔ die Abfahrt",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 17"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Autobahn",
+        "sub": "Pl. -en",
+        "english": "motorway, highway",
+        "example": "Auf der Autobahn gab es einen langen Stau.",
+        "exampleEn": "There was a long traffic jam on the motorway.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 17"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Fähre",
+        "sub": "Pl. -n",
+        "english": "ferry",
+        "example": "Wir sind mit der Fähre auf die Insel gefahren.",
+        "exampleEn": "We took the ferry to the island.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 17"
+      },
+      {
+        "type": "n",
+        "gender": "das",
+        "front": "das Gebirge",
+        "sub": "Pl. -",
+        "english": "mountains, mountain range",
+        "example": "Im Sommer wandern wir gern im Gebirge.",
+        "exampleEn": "In summer we like hiking in the mountains.",
+        "note": "Wohin? ins Gebirge · Wo? im Gebirge",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 17",
+        "grammar": [
+          "praep-ort"
+        ]
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Grenze",
+        "sub": "Pl. -n",
+        "english": "border",
+        "example": "An der Grenze mussten wir unsere Pässe zeigen.",
+        "exampleEn": "At the border we had to show our passports.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 17"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Insel",
+        "sub": "Pl. -n",
+        "english": "island",
+        "example": "Wir haben eine Woche auf einer Insel Urlaub gemacht.",
+        "exampleEn": "We spent a week's holiday on an island.",
+        "note": "Wohin? auf eine Insel · Wo? auf einer Insel",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 17",
+        "grammar": [
+          "praep-ort"
+        ]
+      },
+      {
+        "type": "n",
+        "gender": "das",
+        "front": "das Kraftfahrzeug",
+        "sub": "Pl. -e · CH: das Motorfahrzeug, -e",
+        "english": "motor vehicle",
+        "example": "Für ein Kraftfahrzeug braucht man einen Führerschein.",
+        "exampleEn": "You need a driving licence for a motor vehicle.",
+        "note": "kurz: das Kfz – im Alltag sagt man meistens das Auto",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 17"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Küste",
+        "sub": "Pl. -n",
+        "english": "coast",
+        "example": "Wir sind an die Küste gefahren und haben dort gezeltet.",
+        "exampleEn": "We drove to the coast and camped there.",
+        "note": "Wohin? an die Küste · Wo? an der Küste",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 17",
+        "grammar": [
+          "praep-ort"
+        ]
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Motor",
+        "sub": "Pl. -en",
+        "english": "engine, motor",
+        "example": "Plötzlich ist der Motor ausgegangen.",
+        "exampleEn": "Suddenly the engine stopped.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 17"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Panne",
+        "sub": "Pl. -n",
+        "english": "breakdown (car)",
+        "example": "Mitten auf der Autobahn hatten wir eine Panne.",
+        "exampleEn": "We broke down in the middle of the motorway.",
+        "note": "eine Panne haben = to break down",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 17"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Region",
+        "sub": "Pl. -en",
+        "english": "region",
+        "example": "Die Region an der Küste ist bei Touristen sehr beliebt.",
+        "exampleEn": "The region on the coast is very popular with tourists.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 17"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Reifen",
+        "sub": "Pl. -",
+        "english": "tyre, tire",
+        "example": "Wir müssen den Reifen wechseln, er ist kaputt.",
+        "exampleEn": "We have to change the tyre – it's flat.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 17"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Tankstelle",
+        "sub": "Pl. -n",
+        "english": "petrol station, gas station",
+        "example": "Wir müssen an der nächsten Tankstelle tanken.",
+        "exampleEn": "We need to fill up at the next petrol station.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 17"
+      },
+      {
+        "type": "v",
+        "front": "tanken",
+        "sub": "hat getankt",
+        "english": "to fill up (with fuel)",
+        "example": "Ich muss noch tanken, der Tank ist fast leer.",
+        "exampleEn": "I still have to fill up – the tank is almost empty.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 17",
+        "forms": {
+          "praes": "tankt",
+          "praet": "tankte"
+        }
+      },
+      {
+        "type": "v",
+        "front": "überqueren",
+        "sub": "hat überquert",
+        "english": "to cross (a road, a border)",
+        "example": "Wir haben die Grenze nach Rumänien am Abend überquert.",
+        "exampleEn": "We crossed the border into Romania in the evening.",
+        "note": "kein ge-: hat überquert",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 17",
+        "forms": {
+          "praes": "überquert",
+          "praet": "überquerte"
+        }
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Bauer",
+        "sub": "Pl. -n",
+        "english": "farmer",
+        "example": "Der Bauer verkauft Eier und Käse auf dem Markt.",
+        "exampleEn": "The farmer sells eggs and cheese at the market.",
+        "note": "n-Deklination: den / dem / des Bauern",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 17"
+      },
+      {
+        "type": "n",
+        "gender": "das",
+        "front": "das Feld",
+        "sub": "Pl. -er",
+        "english": "field",
+        "example": "Neben der Straße waren nur Felder und Wälder.",
+        "exampleEn": "Next to the road there were only fields and woods.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 17"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Kassette",
+        "sub": "Pl. -n",
+        "english": "cassette (tape)",
+        "example": "Im alten Auto haben wir eine Kassette mit Musik gehört.",
+        "exampleEn": "In the old car we listened to a cassette of music.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 17"
+      },
+      {
+        "type": "n",
+        "gender": "das",
+        "front": "das Pech",
+        "sub": "kein Plural",
+        "english": "bad luck",
+        "example": "So ein Pech! Jetzt regnet es schon wieder.",
+        "exampleEn": "What bad luck! Now it's raining again.",
+        "note": "Pech haben = to be unlucky · ↔ Glück",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 17"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Seite",
+        "sub": "Pl. -n",
+        "english": "side; page",
+        "example": "Auf dieser Seite der Straße gibt es keine Tankstelle.",
+        "exampleEn": "There's no petrol station on this side of the road.",
+        "note": "auch: page – Lesen Sie Seite 165.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 17"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Zufall",
+        "sub": "Pl. ¨-e",
+        "english": "coincidence, chance",
+        "example": "So ein Zufall! Ich war auch schon in dieser Stadt.",
+        "exampleEn": "What a coincidence! I've been to that town too.",
+        "note": "zufällig = by chance",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 17"
+      },
+      {
+        "type": "sonst",
+        "front": "jemand",
+        "sub": "↔ niemand",
+        "english": "somebody, someone",
+        "example": "Hat jemand meinen Schlüssel gesehen?",
+        "exampleEn": "Has anyone seen my key?",
+        "note": "Akk. jemanden, Dat. jemandem",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 17",
+        "grammar": [
+          "indefinitpronomen"
+        ]
+      },
+      {
+        "type": "sonst",
+        "front": "niemand",
+        "sub": "↔ jemand",
+        "english": "nobody, no one",
+        "example": "Am Abend war niemand mehr am Strand.",
+        "exampleEn": "In the evening there was nobody left on the beach.",
+        "note": "Akk. niemanden, Dat. niemandem",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 17",
+        "grammar": [
+          "indefinitpronomen"
+        ]
+      },
+      {
+        "type": "adj",
+        "front": "ärgerlich",
+        "english": "annoying; annoyed",
+        "example": "Die Panne war wirklich ärgerlich.",
+        "exampleEn": "The breakdown was really annoying.",
+        "note": "der Ärger = trouble, annoyance",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 17"
+      },
+      {
+        "type": "adj",
+        "front": "bekannt",
+        "sub": "↔ unbekannt",
+        "english": "well-known; familiar",
+        "example": "Die Stadt ist für ihren bunten Friedhof bekannt.",
+        "exampleEn": "The town is well known for its colourful cemetery.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 17"
+      },
+      {
+        "type": "sonst",
+        "front": "insgesamt",
+        "english": "altogether, in total",
+        "example": "Wir waren insgesamt drei Wochen unterwegs.",
+        "exampleEn": "We were on the road for three weeks altogether.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 17"
+      },
+      {
+        "type": "sonst",
+        "front": "mitten",
+        "english": "in the middle (of)",
+        "example": "Wir hatten mitten in der Nacht eine Panne.",
+        "exampleEn": "We broke down in the middle of the night.",
+        "note": "mitten in / auf + Dativ",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 17"
+      },
+      {
+        "type": "sonst",
+        "front": "plötzlich",
+        "english": "suddenly",
+        "example": "Plötzlich hat es angefangen zu regnen.",
+        "exampleEn": "Suddenly it started to rain.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 17"
+      },
+      {
+        "type": "sonst",
+        "front": "Nicht zu glauben!",
+        "sub": "A: Nicht zu fassen!",
+        "english": "Unbelievable! / I can't believe it!",
+        "example": "Nicht zu glauben! Es gibt noch Sandstraßen in Europa.",
+        "exampleEn": "Unbelievable! There are still dirt roads in Europe.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 17"
+      }
+    ]
+  },
+  {
     "key": "andere-quellen",
     "icon": "📚",
     "label": "Andere Quellen",

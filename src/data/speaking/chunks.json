@@ -1224,5 +1224,100 @@
     ]
    }
   ]
+ },
+ {
+  "key": "unterwegs-kommentieren",
+  "deck": "unterwegs",
+  "icon": "💬",
+  "title": "Unterwegs: etwas kommentieren",
+  "en": "On the road: commenting on something",
+  "sentences": [
+   {
+    "de": "Nicht zu glauben! Es gibt noch Sandstraßen in Europa.",
+    "en": "Unbelievable! There are still dirt roads in Europe."
+   },
+   {
+    "de": "So ein Zufall! Ich war auch schon einmal auf dem Friedhof in Săpânța.",
+    "en": "What a coincidence! I've been to the cemetery in Săpânța too."
+   },
+   {
+    "de": "Der Markt sieht toll aus.",
+    "en": "The market looks great."
+   },
+   {
+    "de": "Die Straßen sehen schrecklich aus.",
+    "en": "The roads look terrible."
+   },
+   {
+    "de": "Ist das nicht spannend?",
+    "en": "Isn't that exciting?"
+   },
+   {
+    "de": "Ich finde das prima.",
+    "en": "I think that's great."
+   },
+   {
+    "de": "Das hat sicher Spaß gemacht.",
+    "en": "That must have been fun."
+   },
+   {
+    "de": "Das war bestimmt anstrengend.",
+    "en": "That must have been tiring."
+   },
+   {
+    "de": "So ein Pech! Das ist wirklich ärgerlich.",
+    "en": "What bad luck! That's really annoying."
+   },
+   {
+    "de": "Wir hatten mitten auf der Autobahn eine Panne.",
+    "en": "We broke down in the middle of the motorway."
+   },
+   {
+    "de": "Wo ist die nächste Tankstelle?",
+    "en": "Where is the nearest petrol station?"
+   },
+   {
+    "de": "Wo warst du im Urlaub? Ich war am Meer.",
+    "en": "Where were you on holiday? I was at the seaside."
+   }
+  ],
+  "dialogues": [
+   {
+    "title": "Nach dem Urlaub",
+    "en": "After the holiday",
+    "lines": [
+     {
+      "who": "A",
+      "de": "Wo warst du im Urlaub?",
+      "en": "Where were you on holiday?"
+     },
+     {
+      "who": "B",
+      "de": "Ich war zwei Wochen auf einer Insel in Griechenland.",
+      "en": "I was on an island in Greece for two weeks."
+     },
+     {
+      "who": "A",
+      "de": "Toll! Wie bist du auf die Insel gekommen?",
+      "en": "Great! How did you get to the island?"
+     },
+     {
+      "who": "B",
+      "de": "Mit der Fähre. Aber auf dem Weg zum Hafen hatten wir eine Panne.",
+      "en": "By ferry. But on the way to the port we broke down."
+     },
+     {
+      "who": "A",
+      "de": "So ein Pech! Das war sicher ärgerlich.",
+      "en": "What bad luck! That must have been annoying."
+     },
+     {
+      "who": "B",
+      "de": "Ja, aber ein Bauer hat uns geholfen. Und dann war es wunderschön.",
+      "en": "Yes, but a farmer helped us. And then it was wonderful."
+     }
+    ]
+   }
+  ]
  }
 ]
