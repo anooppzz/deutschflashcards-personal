@@ -199,7 +199,7 @@ was done, newest first. Every change adds a log entry here in the same commit
 - `grammarTopics: ["verben-praeposition"]` – chosen because the page lists those pairs; no grammar
   photo yet. 📰 Lesen "Hitze und Kälte". The picture captions (weather maps, thermometers) were
   not made into cards.
-- Unsure readings: Hauptstadt's plural mark looked like "¨-e" (read as Pl. ¨-e).
+- Unsure readings: none – the learner confirmed Hauptstadt = "¨-e" (Pl. Hauptstädte).
 
 | Book box | In the app |
 |---|---|
