@@ -184,6 +184,29 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 ## Log
 
+### 2026-11-24 – Einheit 18 Lernwortschatz (Menschen A2, S. 145)
+- **New chapter `wetter-klima`** "Wetter & Klima" 🌡️ (`added` 2026-11-24 → 🆕 banner), 28 cards:
+  das Gebiet, die Hauptstadt, Hitze, Jahreszeit, Kälte, der Kontinent, die Temperatur, Trockenheit,
+  der Tropfen, Regentropfen, die Wärme, das Gegenteil; eisig, feucht, heiß, hoch, niedrig, trocken,
+  typisch, mittler-; Lust haben (auf), träumen (von), treffen (sich) (mit), zufrieden sein (mit);
+  weit, normalerweise, Im Gegenteil!, Quatsch!. The book's TIPP "Nomen und Adjektiv zusammen"
+  (die Hitze – heiß, die Kälte – kalt) is in the notes of those cards.
+- Already in the app → `alsoCards`: essen::das Eis (english now "ice cream; ice"),
+  tourismus2::ärgern (sich) / freuen (sich) / interessieren (sich), meintag::denken (note now
+  "denken an + Akk."). `sprechen über/mit` and `treffen` are in 🎵 Irregular (not linkable).
+- Verb phrases are stored as `Lust haben`, `träumen`, `zufrieden sein` with the preposition in the
+  note (a front like "träumen von" breaks conjugate.js / the text checker).
+- `grammarTopics: ["verben-praeposition"]` – chosen because the page lists those pairs; no grammar
+  photo yet. 📰 Lesen "Hitze und Kälte". The picture captions (weather maps, thermometers) were
+  not made into cards.
+- Unsure readings: none – the learner confirmed Hauptstadt = "¨-e" (Pl. Hauptstädte).
+
+| Book box | In the app |
+|---|---|
+| Lernwortschatz Einheit 18 | 🃏 Lernen → 📚 Themen → 🌡️ Wetter & Klima |
+| Verben mit Präposition | same chapter (📌 → Verben mit Präposition) |
+| Lesetext | ☰ Mehr → 📰 Lesen → Hitze und Kälte |
+
 ### 2026-11-17 – Einheit 17 Lernwortschatz + Lokale Präpositionen (Menschen A2 + Grammatik aktiv Kap. 37–38)
 - **New chapter `unterwegs`** "Unterwegs" 🛣️ (`added` 2026-11-17 → 🆕 banner), 30 cards from the
   Lernwortschatz page: die Abfahrt, Ankunft, Autobahn, Fähre, das Gebirge, die Grenze, Insel,
