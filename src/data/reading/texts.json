@@ -1366,5 +1366,43 @@
     "answer": "mit der Fähre"
    }
   ]
+ },
+ {
+  "key": "wetter-klima",
+  "level": "A2",
+  "deck": "wetter-klima",
+  "title": "Hitze und Kälte",
+  "paragraphs": [
+   "Mia kommt aus Finnland, aber jetzt wohnt sie in Spanien. Ihr Land liegt im Norden, ihr neues [[Gebiet|das Gebiet]] im Süden von [[Europa|der Kontinent]]. [[Normalerweise|normalerweise]] ist die [[Temperatur|die Temperatur]] im Sommer sehr [[hoch]]. Dann ist es [[heiß]], und die [[Hitze|die Hitze]] ist für Mia ein Problem.",
+   "In Finnland gibt es im Winter [[Kälte|die Kälte]] und [[eisige|eisig]] Winde. Die [[Jahreszeit|die Jahreszeit]] Winter ist dort lang, und die Temperaturen sind [[niedrig]]. In Spanien ist es im Sommer [[trocken]], im Herbst oft [[feucht|feucht]]. Die ersten [[Regentropfen|der Regentropfen]] sind für Mia immer eine Freude.",
+   "„Ich bin mit dem Wetter nicht [[zufrieden|zufrieden sein]]“, sagt Mia. „Ich träume von Schnee!“ Ihre Freundin lacht: „[[Quatsch!]] Hier ist es doch schön!“ – „[[Im Gegenteil!|Im Gegenteil!]] Ich habe Lust auf Kälte!“"
+  ],
+  "en": [
+   "Mia comes from Finland, but now she lives in Spain. Her country is in the north, her new area in the south of Europe. Normally the temperature is very high in summer. Then it is hot, and the heat is a problem for Mia.",
+   "In Finland there is cold and icy wind in winter. The season winter is long there, and temperatures are low. In Spain it is dry in summer, and often humid in autumn. The first raindrops are always a joy for Mia.",
+   "“I'm not satisfied with the weather,” says Mia. “I dream of snow!” Her friend laughs: “Nonsense! It's lovely here!” – “On the contrary! I feel like cold weather!”"
+  ],
+  "questions": [
+   {
+    "q": "Mia wohnt jetzt in Finnland.",
+    "en": "Mia now lives in Finland.",
+    "answer": "falsch"
+   },
+   {
+    "q": "In Spanien ist es im Sommer sehr heiß.",
+    "en": "In Spain it is very hot in summer.",
+    "answer": "richtig"
+   },
+   {
+    "q": "Wovon träumt Mia?",
+    "en": "What does Mia dream of?",
+    "options": [
+     "von Schnee",
+     "von Hitze",
+     "von Regen"
+    ],
+    "answer": "von Schnee"
+   }
+  ]
  }
 ]

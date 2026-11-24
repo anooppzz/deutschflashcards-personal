@@ -3736,10 +3736,11 @@
         "gender": "das",
         "front": "das Eis",
         "sub": "kein Plural · eine Kugel Eis",
-        "english": "ice cream",
+        "english": "ice cream; ice",
         "example": "Die Kinder lieben Eis im Sommer.",
         "exampleEn": "The children love ice cream in summer.",
-        "level": "A1"
+        "level": "A1",
+        "note": "auch: Eis = ice (Einheit 18: eisig)"
       },
       {
         "type": "n",
@@ -4815,7 +4816,7 @@
           "nebensatz",
           "verben-praeposition"
         ],
-        "note": "denken an + Akk. · über etwas nachdenken = think about"
+        "note": "denken an + Akk. = think of · nachdenken über = think about"
       },
       {
         "type": "v",
@@ -14384,6 +14385,363 @@
         "exampleEn": "Unbelievable! There are still dirt roads in Europe.",
         "level": "A2",
         "source": "Menschen A2 · Einheit 17"
+      }
+    ]
+  },
+  {
+    "key": "wetter-klima",
+    "icon": "🌡️",
+    "label": "Wetter & Klima",
+    "added": "2026-11-24",
+    "note": "Hitze, Kälte, Jahreszeiten, Temperatur · Verben mit Präposition (denken an, träumen von …)",
+    "grammarTopics": [
+      "verben-praeposition"
+    ],
+    "alsoCards": [
+      "essen::das Eis",
+      "tourismus2::ärgern (sich)",
+      "meintag::denken",
+      "tourismus2::freuen (sich)",
+      "tourismus2::interessieren (sich)"
+    ],
+    "cards": [
+      {
+        "type": "n",
+        "gender": "das",
+        "front": "das Gebiet",
+        "sub": "Pl. -e",
+        "english": "area, region",
+        "example": "In diesem Gebiet regnet es selten.",
+        "exampleEn": "It rarely rains in this area.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 18"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Hauptstadt",
+        "sub": "Pl. ¨-e",
+        "english": "capital (city)",
+        "example": "Berlin ist die Hauptstadt von Deutschland.",
+        "exampleEn": "Berlin is the capital of Germany.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 18"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Hitze",
+        "sub": "kein Plural",
+        "english": "heat (great heat)",
+        "example": "Bei dieser Hitze bleibe ich zu Hause.",
+        "exampleEn": "In this heat I'm staying at home.",
+        "note": "Nomen + Adjektiv zusammen lernen: die Hitze – heiß",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 18"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Jahreszeit",
+        "sub": "Pl. -en",
+        "english": "season (of the year)",
+        "example": "Meine Lieblingsjahreszeit ist der Herbst.",
+        "exampleEn": "My favourite season is autumn.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 18"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Kälte",
+        "sub": "kein Plural",
+        "english": "cold (low temperature)",
+        "example": "Die Kälte im Winter mag ich nicht.",
+        "exampleEn": "I don't like the cold in winter.",
+        "note": "Nomen + Adjektiv zusammen lernen: die Kälte – kalt",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 18"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Kontinent",
+        "sub": "Pl. -e",
+        "english": "continent",
+        "example": "Europa ist ein Kontinent.",
+        "exampleEn": "Europe is a continent.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 18"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Temperatur",
+        "sub": "Pl. -en",
+        "english": "temperature",
+        "example": "Die Temperatur liegt heute bei 25 Grad.",
+        "exampleEn": "The temperature today is 25 degrees.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 18"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Trockenheit",
+        "sub": "kein Plural",
+        "english": "dryness; drought",
+        "example": "Im Sommer gab es lange Trockenheit.",
+        "exampleEn": "In summer there was a long drought.",
+        "note": "↔ die Feuchtigkeit · trocken",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 18"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Tropfen",
+        "sub": "Pl. -",
+        "english": "drop",
+        "example": "Ein Tropfen Wasser fiel auf meine Hand.",
+        "exampleEn": "A drop of water fell on my hand.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 18"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Regentropfen",
+        "sub": "Pl. -",
+        "english": "raindrop",
+        "example": "Die ersten Regentropfen fallen schon.",
+        "exampleEn": "The first raindrops are already falling.",
+        "note": "der Regen + der Tropfen",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 18"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Wärme",
+        "sub": "kein Plural",
+        "english": "warmth",
+        "example": "Ich genieße die Wärme der Sonne.",
+        "exampleEn": "I enjoy the warmth of the sun.",
+        "note": "die Wärme – warm",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 18"
+      },
+      {
+        "type": "adj",
+        "front": "eisig",
+        "sub": "↔ heiß",
+        "english": "icy, freezing cold",
+        "example": "Heute weht ein eisiger Wind.",
+        "exampleEn": "An icy wind is blowing today.",
+        "note": "das Eis → eisig",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 18"
+      },
+      {
+        "type": "adj",
+        "front": "feucht",
+        "sub": "↔ trocken",
+        "english": "damp, humid",
+        "example": "Im Sommer ist die Luft hier oft feucht.",
+        "exampleEn": "In summer the air here is often humid.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 18"
+      },
+      {
+        "type": "adj",
+        "front": "heiß",
+        "sub": "↔ kalt",
+        "english": "hot",
+        "example": "Im August ist es hier sehr heiß.",
+        "exampleEn": "In August it's very hot here.",
+        "note": "die Hitze – heiß",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 18"
+      },
+      {
+        "type": "adj",
+        "front": "hoch",
+        "sub": "↔ niedrig",
+        "english": "high",
+        "example": "Im Sommer sind die Temperaturen hoch.",
+        "exampleEn": "In summer the temperatures are high.",
+        "note": "vor Nomen: hoh- (ein hoher Berg)",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 18"
+      },
+      {
+        "type": "adj",
+        "front": "niedrig",
+        "sub": "↔ hoch",
+        "english": "low",
+        "example": "Im Winter sind die Temperaturen niedrig.",
+        "exampleEn": "In winter the temperatures are low.",
+        "note": "niedrig = Zahlen/Höhe (Temperatur, Preis) · klein = Größe",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 18"
+      },
+      {
+        "type": "adj",
+        "front": "trocken",
+        "sub": "↔ feucht",
+        "english": "dry",
+        "example": "Der Sommer war sehr trocken.",
+        "exampleEn": "The summer was very dry.",
+        "note": "die Trockenheit – trocken",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 18"
+      },
+      {
+        "type": "adj",
+        "front": "typisch",
+        "sub": "typisch für …",
+        "english": "typical",
+        "example": "Regen im April ist typisch für Deutschland.",
+        "exampleEn": "Rain in April is typical for Germany.",
+        "note": "typisch für + Akk.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 18"
+      },
+      {
+        "type": "adj",
+        "front": "mittler-",
+        "sub": "mittlere, mittlerer …",
+        "english": "middle; average",
+        "example": "Die mittlere Temperatur im Juli liegt bei 22 Grad.",
+        "exampleEn": "The average temperature in July is 22 degrees.",
+        "note": "immer mit Endung: mittlere Temperatur, mittlerer Preis",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 18"
+      },
+      {
+        "type": "v",
+        "front": "Lust haben",
+        "sub": "hat Lust gehabt",
+        "english": "to feel like (doing/having)",
+        "example": "Ich habe Lust auf ein Eis.",
+        "exampleEn": "I feel like having an ice cream.",
+        "note": "Lust haben auf + Akk. (Ich habe Lust auf ein Eis) · Lust haben zu + Inf.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 18",
+        "grammar": [
+          "verben-praeposition"
+        ],
+        "forms": {
+          "praes": "hat Lust",
+          "praet": "hatte Lust"
+        }
+      },
+      {
+        "type": "v",
+        "front": "träumen",
+        "sub": "hat geträumt",
+        "english": "to dream of",
+        "example": "Sie träumt von einem Urlaub am Meer.",
+        "exampleEn": "She dreams of a holiday by the sea.",
+        "note": "träumen von + Dat. (Sie träumt von einem Urlaub)",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 18",
+        "grammar": [
+          "verben-praeposition"
+        ],
+        "forms": {
+          "praes": "träumt",
+          "praet": "träumte"
+        }
+      },
+      {
+        "type": "v",
+        "front": "treffen (sich)",
+        "sub": "hat sich getroffen",
+        "english": "to meet (up)",
+        "example": "Ich treffe mich am Samstag mit meiner Freundin.",
+        "exampleEn": "I'm meeting my friend on Saturday.",
+        "note": "sich treffen mit + Dat. · du triffst dich, er trifft sich",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 18",
+        "grammar": [
+          "verben-praeposition"
+        ],
+        "forms": {
+          "praes": "trifft sich",
+          "praet": "traf sich"
+        }
+      },
+      {
+        "type": "v",
+        "front": "zufrieden sein",
+        "sub": "ist zufrieden gewesen",
+        "english": "to be satisfied with",
+        "example": "Ich bin mit dem Wetter nicht zufrieden.",
+        "exampleEn": "I'm not satisfied with the weather.",
+        "note": "zufrieden sein mit + Dat. (Ich bin mit dem Wetter zufrieden)",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 18",
+        "grammar": [
+          "verben-praeposition"
+        ],
+        "forms": {
+          "praes": "ist zufrieden",
+          "praet": "war zufrieden"
+        }
+      },
+      {
+        "type": "sonst",
+        "front": "weit",
+        "sub": "↔ nah",
+        "english": "far; wide",
+        "example": "Der Weg zum Strand ist nicht weit.",
+        "exampleEn": "The way to the beach isn't far.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 18"
+      },
+      {
+        "type": "sonst",
+        "front": "normalerweise",
+        "sub": "",
+        "english": "normally, usually",
+        "example": "Normalerweise regnet es im Mai oft.",
+        "exampleEn": "Normally it often rains in May.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 18"
+      },
+      {
+        "type": "n",
+        "gender": "das",
+        "front": "das Gegenteil",
+        "sub": "Pl. -e",
+        "english": "opposite",
+        "example": "Er sagt immer das Gegenteil.",
+        "exampleEn": "He always says the opposite.",
+        "note": "Im Gegenteil! = on the contrary",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 18"
+      },
+      {
+        "type": "sonst",
+        "front": "Im Gegenteil!",
+        "sub": "",
+        "english": "on the contrary!",
+        "example": "Ist es dort kalt? – Im Gegenteil, es ist sehr heiß!",
+        "exampleEn": "Is it cold there? – On the contrary, it's very hot!",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 18",
+        "note": "das Gegenteil = the opposite"
+      },
+      {
+        "type": "sonst",
+        "front": "Quatsch!",
+        "sub": "umgangssprachlich",
+        "english": "Nonsense! Rubbish!",
+        "example": "Quatsch! Das stimmt doch nicht.",
+        "exampleEn": "Nonsense! That isn't true.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 18"
       }
     ]
   },
