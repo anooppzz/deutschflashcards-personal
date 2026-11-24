@@ -2577,6 +2577,307 @@
     },
     "sections": [
       {
+        "id": "verben-mit-praepositionen",
+        "book": "Menschen A2 · Einheit 18 · S. 102",
+        "type": "table",
+        "title": {
+          "de": "Verben mit Präpositionen",
+          "en": "Verbs with prepositions"
+        },
+        "head": [
+          "mit Akkusativ",
+          "mit Dativ"
+        ],
+        "rows": [
+          [
+            {
+              "t": "Sie freuen sich **auf** einen heißen Tee.",
+              "en": "You're looking forward to a hot tea."
+            },
+            {
+              "t": "Sind Sie zufrieden **mit** diesem schönen Sommertag?",
+              "en": "Are you satisfied with this lovely summer day?"
+            }
+          ],
+          [
+            {
+              "t": "Lust haben **auf**",
+              "en": "feel like (having)"
+            },
+            {
+              "t": "sprechen **mit**",
+              "en": "talk to"
+            }
+          ],
+          [
+            {
+              "t": "sich interessieren **für**",
+              "en": "be interested in"
+            },
+            {
+              "t": "träumen **von**",
+              "en": "dream of"
+            }
+          ],
+          [
+            {
+              "t": "sich ärgern **über**",
+              "en": "get annoyed about"
+            },
+            ""
+          ],
+          [
+            {
+              "t": "sprechen **über**",
+              "en": "talk about"
+            },
+            ""
+          ]
+        ]
+      },
+      {
+        "type": "points",
+        "title": {
+          "de": "Der Kasus nach der Präposition",
+          "en": "The case after the preposition"
+        },
+        "items": [
+          {
+            "t": "**auf** + Akkusativ: Ich ärgere mich über die Hitze. Ich freue mich auf einen heißen Tee.",
+            "en": "Ich ärgere mich über die Hitze = I'm annoyed about the heat."
+          },
+          {
+            "t": "**mit** + Dativ: Sind Sie zufrieden mit diesem schönen Sommertag? Sprechen Sie mit mir?",
+            "en": "Are you satisfied with this lovely summer day? Are you talking to me?"
+          },
+          {
+            "de": "Lerne das Verb mit seiner Präposition – sie ändert sich nicht, nur der Kasus des Nomens.",
+            "en": "Learn the verb with its Präposition (preposition) – it doesn't change, only the case of the noun does."
+          }
+        ]
+      },
+      {
+        "id": "fragen-praeposition",
+        "book": "Menschen A2 · Einheit 18 · S. 102",
+        "type": "table",
+        "title": {
+          "de": "Fragen und Präpositionaladverbien: Sachen",
+          "en": "Questions and prepositional adverbs: things"
+        },
+        "head": [
+          "Verb",
+          {
+            "de": "Frage",
+            "en": "Question"
+          },
+          {
+            "de": "Antwort",
+            "en": "Answer"
+          }
+        ],
+        "rows": [
+          [
+            {
+              "t": "sich freuen **auf**",
+              "en": "look forward to"
+            },
+            {
+              "t": "**Worauf** freust du dich?",
+              "en": "What are you looking forward to?"
+            },
+            {
+              "t": "**Darauf** freue ich mich.",
+              "en": "I'm looking forward to it."
+            }
+          ],
+          [
+            {
+              "t": "sich ärgern **über**",
+              "en": "get annoyed about"
+            },
+            {
+              "t": "**Worüber** ärgerst du dich?",
+              "en": "What are you annoyed about?"
+            },
+            {
+              "t": "**Darüber** ärgere ich mich.",
+              "en": "I'm annoyed about it."
+            }
+          ],
+          [
+            {
+              "t": "sich interessieren **für**",
+              "en": "be interested in"
+            },
+            {
+              "t": "**Wofür** interessierst du dich?",
+              "en": "What are you interested in?"
+            },
+            {
+              "t": "**Dafür** interessiere ich mich.",
+              "en": "I'm interested in it."
+            }
+          ]
+        ]
+      },
+      {
+        "type": "points",
+        "items": [
+          {
+            "de": "Sachen: **wo(r)-** + Präposition (Frage), **da(r)-** + Präposition (Antwort).",
+            "en": "Sachen (things): **wo(r)-** + Präposition (preposition) for the Frage (question), **da(r)-** + Präposition for the Antwort (answer)."
+          },
+          {
+            "de": "Bei Präpositionen mit Vokal kommt ein **r** dazu: auf → wo**r**auf / da**r**auf, über → wo**r**über / da**r**über.",
+            "en": "If the Präposition (preposition) starts with a vowel, add an **r**: auf → worauf / darauf, über → worüber / darüber."
+          },
+          {
+            "t": "auch so: mit → **womit** / **damit**; von → **wovon** / **davon**; für → **wofür** / **dafür**",
+            "en": "also: with → womit / damit; of, from → wovon / davon; for → wofür / dafür"
+          }
+        ]
+      },
+      {
+        "type": "table",
+        "title": {
+          "de": "Fragen und Präpositionaladverbien: Personen",
+          "en": "Questions and prepositional adverbs: people"
+        },
+        "head": [
+          "Verb",
+          {
+            "de": "Frage",
+            "en": "Question"
+          },
+          {
+            "de": "Antwort",
+            "en": "Answer"
+          }
+        ],
+        "rows": [
+          [
+            {
+              "t": "sich freuen **auf**",
+              "en": "look forward to"
+            },
+            {
+              "t": "**Auf wen** freust du dich?",
+              "en": "Who are you looking forward to?"
+            },
+            {
+              "t": "Ich freue mich **auf ihn** / **sie**.",
+              "en": "To him / her."
+            }
+          ],
+          [
+            {
+              "t": "sich ärgern **über**",
+              "en": "get annoyed about"
+            },
+            {
+              "t": "**Über wen** ärgerst du dich?",
+              "en": "Who are you annoyed about?"
+            },
+            {
+              "t": "Ich ärgere mich **über ihn** / **sie**.",
+              "en": "About him / her."
+            }
+          ],
+          [
+            {
+              "t": "sich interessieren **für**",
+              "en": "be interested in"
+            },
+            {
+              "t": "**Für wen** interessierst du dich?",
+              "en": "Who are you interested in?"
+            },
+            {
+              "t": "Ich interessiere mich **für ihn** / **sie**.",
+              "en": "In him / her."
+            }
+          ]
+        ]
+      },
+      {
+        "id": "worauf-freuen-sie-sich",
+        "book": "Menschen A2 · Einheit 18 · S. 100",
+        "type": "table",
+        "title": {
+          "de": "Und worauf freuen Sie sich?",
+          "en": "And what are you looking forward to?"
+        },
+        "head": [
+          "",
+          {
+            "de": "Sachen",
+            "en": "Things"
+          },
+          {
+            "de": "Personen",
+            "en": "People"
+          }
+        ],
+        "rows": [
+          [
+            {
+              "t": "**sich freuen auf**: Frage",
+              "en": "look forward to: question"
+            },
+            {
+              "t": "**Worauf** freust du dich?",
+              "en": "What are you looking forward to?"
+            },
+            {
+              "t": "**Auf wen** freust du dich?",
+              "en": "Who are you looking forward to?"
+            }
+          ],
+          [
+            {
+              "t": "Antwort",
+              "en": "answer"
+            },
+            {
+              "t": "Auf den Sommer! **Darauf** freue ich mich.",
+              "en": "The summer! I'm looking forward to it."
+            },
+            {
+              "t": "Auf dich.",
+              "en": "To you."
+            }
+          ],
+          [
+            {
+              "t": "**sich ärgern über**: Frage",
+              "en": "get annoyed about: question"
+            },
+            {
+              "t": "**Worüber** ärgerst du dich?",
+              "en": "What are you annoyed about?"
+            },
+            {
+              "t": "**Über wen** ärgerst du dich?",
+              "en": "Who are you annoyed about?"
+            }
+          ],
+          [
+            {
+              "t": "Antwort",
+              "en": "answer"
+            },
+            {
+              "t": "Über den Schnee! **Darüber** ärgere ich mich.",
+              "en": "The snow! I'm annoyed about it."
+            },
+            {
+              "t": "Über dich.",
+              "en": "About you."
+            }
+          ]
+        ]
+      },
+      {
         "type": "table",
         "title": {"de": "Häufige Verben", "en": "Common verbs"},
         "head": ["Verb", {"de": "Kasus", "en": "Case"}, {"de": "Englisch", "en": "English"}],
@@ -2594,7 +2895,9 @@
           ["sich interessieren **für**", "Akk.", "be interested in"],
           ["sich kümmern **um**", "Akk.", "take care of"],
           ["sich erinnern **an**", "Akk.", "remember"],
-          ["sich ärgern **über**", "Akk.", "be annoyed about"]
+          ["sich ärgern **über**", "Akk.", "be annoyed about"],
+          ["Lust haben **auf**", "Akk.", "feel like (having)"],
+          ["zufrieden sein **mit**", "Dat.", "be satisfied with"]
         ]
       },
       {
@@ -3077,6 +3380,33 @@
           [{"t": "gut", "en": "good"}, "**besser**", "am **besten**"],
           [{"t": "viel", "en": "much, a lot"}, "**mehr**", "am **meisten**"],
           [{"t": "gern", "en": "gladly (like doing)"}, "**lieber**", "am **liebsten**"]
+        ]
+      },
+      {
+        "id": "wetter-vergleichen",
+        "book": "Menschen A2 · Einheit 18 · S. 101",
+        "type": "points",
+        "title": {
+          "de": "Über das Wetter sprechen",
+          "en": "Talking about the weather"
+        },
+        "items": [
+          {
+            "t": "Die Temperaturen sind sonst nicht niedriger **als** heute.",
+            "en": "The temperatures are not usually lower than today."
+          },
+          {
+            "t": "Es ist sonst wärmer / stürmischer / feuchter **als** heute.",
+            "en": "It is usually warmer / stormier / more humid than today."
+          },
+          {
+            "t": "Zurzeit ist es kälter **als** sonst.",
+            "en": "At the moment it is colder than usual."
+          },
+          {
+            "t": "Normalerweise ist das Wetter in Norddeutschland kühler.",
+            "en": "Normally the weather in northern Germany is cooler."
+          }
         ]
       },
       {

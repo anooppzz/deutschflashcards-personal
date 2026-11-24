@@ -1319,5 +1319,100 @@
     ]
    }
   ]
+ },
+ {
+  "key": "wetter-klima-sprechen",
+  "deck": "wetter-klima",
+  "icon": "🌡️",
+  "title": "Über das Wetter sprechen",
+  "en": "Talking about the weather",
+  "sentences": [
+   {
+    "de": "Wie ist das Wetter heute?",
+    "en": "What's the weather like today?"
+   },
+   {
+    "de": "Es ist kalt, windig und trocken.",
+    "en": "It's cold, windy and dry."
+   },
+   {
+    "de": "Heute ist es eisig.",
+    "en": "Today it's freezing."
+   },
+   {
+    "de": "Es regnet schon seit Stunden.",
+    "en": "It's been raining for hours."
+   },
+   {
+    "de": "Im Winter schneit es hier oft.",
+    "en": "In winter it often snows here."
+   },
+   {
+    "de": "Ist das Wetter typisch für die Jahreszeit?",
+    "en": "Is the weather typical for the time of year?"
+   },
+   {
+    "de": "Im Sommer sind Schauer typisch.",
+    "en": "Showers are typical in summer."
+   },
+   {
+    "de": "Die Temperaturen sind sonst nicht niedriger als heute.",
+    "en": "The temperatures are usually not lower than today."
+   },
+   {
+    "de": "Es ist sonst wärmer als zurzeit.",
+    "en": "It's usually warmer than at the moment."
+   },
+   {
+    "de": "Normalerweise ist das Wetter im Mai schön.",
+    "en": "Normally the weather is nice in May."
+   },
+   {
+    "de": "Ich bin mit dem Wetter nicht zufrieden.",
+    "en": "I'm not satisfied with the weather."
+   },
+   {
+    "de": "Ich freue mich auf den Sommer.",
+    "en": "I'm looking forward to the summer."
+   }
+  ],
+  "dialogues": [
+   {
+    "title": "Wie ist das Wetter?",
+    "en": "What's the weather like?",
+    "lines": [
+     {
+      "who": "A",
+      "de": "Wie ist das Wetter heute bei dir?",
+      "en": "What's the weather like at your place today?"
+     },
+     {
+      "who": "B",
+      "de": "Es ist kalt und windig, und es regnet.",
+      "en": "It's cold and windy, and it's raining."
+     },
+     {
+      "who": "A",
+      "de": "Ist das Wetter typisch für die Jahreszeit?",
+      "en": "Is the weather typical for the time of year?"
+     },
+     {
+      "who": "B",
+      "de": "Nein, im November ist es sonst wärmer als heute.",
+      "en": "No, in November it's usually warmer than today."
+     },
+     {
+      "who": "A",
+      "de": "Worauf freust du dich dann?",
+      "en": "What are you looking forward to, then?"
+     },
+     {
+      "who": "B",
+      "de": "Ich freue mich auf den Sommer. Dann ist es heiß und trocken.",
+      "en": "I'm looking forward to the summer. Then it's hot and dry."
+     }
+    ]
+   }
+  ]
  }
 ]
