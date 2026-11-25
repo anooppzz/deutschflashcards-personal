@@ -14393,16 +14393,25 @@
     "icon": "🌡️",
     "label": "Wetter & Klima",
     "added": "2026-11-24",
-    "note": "Hitze, Kälte, Jahreszeiten, Temperatur · Verben mit Präposition (denken an, träumen von …)",
+    "note": "Hitze, Kälte, Jahreszeiten, Temperatur · über das Wetter sprechen · Verben mit Präposition",
     "grammarTopics": [
-      "verben-praeposition"
+      "verben-praeposition#verben-mit-praepositionen",
+      "verben-praeposition#fragen-praeposition",
+      "verben-praeposition#worauf-freuen-sie-sich",
+      "komparativ-superlativ#wetter-vergleichen"
     ],
     "alsoCards": [
       "essen::das Eis",
       "tourismus2::ärgern (sich)",
       "meintag::denken",
       "tourismus2::freuen (sich)",
-      "tourismus2::interessieren (sich)"
+      "tourismus2::interessieren (sich)",
+      "wetter::der Wind",
+      "wetter::windig",
+      "wetter::regnen",
+      "wetter::schneien",
+      "essen-mengen::durchschnittlich",
+      "persoenlich::sonst"
     ],
     "cards": [
       {
@@ -14740,6 +14749,73 @@
         "english": "Nonsense! Rubbish!",
         "example": "Quatsch! Das stimmt doch nicht.",
         "exampleEn": "Nonsense! That isn't true.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 18"
+      },
+      {
+        "type": "adj",
+        "front": "stürmisch",
+        "sub": "↔ ruhig",
+        "english": "stormy",
+        "example": "Heute ist es stürmisch und kalt.",
+        "exampleEn": "Today it's stormy and cold.",
+        "note": "der Sturm → stürmisch",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 18"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Niederschlag",
+        "sub": "Pl. ¨-e",
+        "english": "precipitation (rain, snow)",
+        "example": "Im Sommer gibt es hier viele Niederschläge.",
+        "exampleEn": "In summer there is a lot of precipitation here.",
+        "note": "meist Plural: die Niederschläge",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 18"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Schauer",
+        "sub": "Pl. -",
+        "english": "shower",
+        "example": "Am Nachmittag gibt es einzelne Schauer.",
+        "exampleEn": "In the afternoon there will be scattered showers.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 18"
+      },
+      {
+        "type": "sonst",
+        "front": "zurzeit",
+        "sub": "",
+        "english": "at the moment, currently",
+        "example": "Zurzeit ist es kälter als sonst.",
+        "exampleEn": "At the moment it is colder than usual.",
+        "note": "auch: zur Zeit (zwei Wörter)",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 18"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Westwind",
+        "sub": "Pl. -e",
+        "english": "west wind",
+        "example": "Bei Westwind regnet es oft.",
+        "exampleEn": "With a west wind it often rains.",
+        "level": "A2",
+        "source": "Menschen A2 · Einheit 18"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Ostwind",
+        "sub": "Pl. -e",
+        "english": "east wind",
+        "example": "Der Ostwind bringt trockene Luft.",
+        "exampleEn": "The east wind brings dry air.",
         "level": "A2",
         "source": "Menschen A2 · Einheit 18"
       }

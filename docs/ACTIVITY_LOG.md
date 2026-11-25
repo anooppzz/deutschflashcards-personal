@@ -184,6 +184,28 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 ## Log
 
+### 2026-11-24 – Einheit 18 Grammatik + Kommunikation (Menschen A2 S. 100–102)
+- **`verben-praeposition`** gets the book's boxes (each with `id` + 📗 `book`): "Verben mit Präpositionen"
+  (mit Akkusativ / mit Dativ, auch so: Lust haben auf, sprechen mit/über, träumen von …), "Fragen und
+  Präpositionaladverbien" for Sachen (wo(r)-/da(r)-, auch so: womit/damit, wovon/davon) and Personen
+  (Auf wen …? Auf ihn/sie), and the S. 100 box "Und worauf freuen Sie sich?". Common-verbs table +
+  Lust haben auf, zufrieden sein mit. +7 Üben (17).
+- **`komparativ-superlativ`** section `wetter-vergleichen`: the Kommunikation sentences with "nicht
+  niedriger als", "sonst wärmer als heute", normalerweise.
+- Chapter `wetter-klima`: `grammarTopics` now names those four sections; +6 cards (stürmisch, der
+  Niederschlag, der Schauer, zurzeit, der Westwind, der Ostwind); `alsoCards` + der Wind, windig, regnen,
+  schneien, durchschnittlich, sonst. 🧱 Sätze set `wetter-klima-sprechen` ("über das Wetter sprechen").
+- Unsure reading: "Auf ihn/-/sie." in the book (the middle "-" is unclear) – written "auf ihn / sie".
+- The sentence-completion exercise (S. 99/100 Übung b) was not copied; the page numbers are read from
+  the photos (grammar box S. 102, Kommunikation S. 101/102, Übung 4 S. 100).
+
+| Book box | In the app |
+|---|---|
+| Grammatik: Verben mit Präpositionen (S. 102) | 📖 Grammatik → Verben mit Präposition → first box (📌 under Wetter & Klima) |
+| Fragen und Präpositionaladverbien | same topic, "Sachen" and "Personen" tables |
+| Und worauf freuen Sie sich? (S. 100) | same topic, last of the new boxes |
+| Kommunikation: über das Wetter sprechen | 🧱 Sätze → Über das Wetter sprechen; 📖 Vergleich → "Über das Wetter sprechen" |
+
 ### 2026-11-24 – Einheit 18 Lernwortschatz (Menschen A2, S. 145)
 - **New chapter `wetter-klima`** "Wetter & Klima" 🌡️ (`added` 2026-11-24 → 🆕 banner), 28 cards:
   das Gebiet, die Hauptstadt, Hitze, Jahreszeit, Kälte, der Kontinent, die Temperatur, Trockenheit,
