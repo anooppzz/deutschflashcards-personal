@@ -184,6 +184,14 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 ## Log
 
+### 2026-11-25 – Streak bar showed yesterday's count (37/10)
+- The learner's screenshot: "37/10 heute" on a new day. The saved streak data only rolled over to
+  the new day with the first answer, and the bar showed the saved `count` regardless of its date.
+- Fix: `engine/streak.js effectiveCount` – the bar shows 0 unless the saved data is from today; the
+  app also re-renders when it comes back to the front (visibilitychange), so a day that changes while
+  it stays open is handled. The streak itself was already right (`effectiveStreakDisplay`).
+  Test `engine/streak.test.js`; reproduced and checked in Chromium (37/10 → 0/10).
+
 ### 2026-11-24 – Einheit 18 Grammatik + Kommunikation (Menschen A2 S. 100–102)
 - **`verben-praeposition`** gets the book's boxes (each with `id` + 📗 `book`): "Verben mit Präpositionen"
   (mit Akkusativ / mit Dativ, auch so: Lust haben auf, sprechen mit/über, träumen von …), "Fragen und

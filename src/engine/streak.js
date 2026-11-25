@@ -31,3 +31,7 @@ export const effectiveStreakDisplay = (data) => {
   if (data.date === yesterday && data.count >= data.goal) return data.streak; // still valid, hasn't acted today yet
   return 0;
 };
+
+// Today's review count. The saved data only rolls over to a new day with the
+// first answer, so on a new day the old count (e.g. 37 of 10) must show as 0.
+export const effectiveCount = (data, today = localDateStr()) => (data && data.date === today ? data.count : 0);

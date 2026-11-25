@@ -43,7 +43,7 @@ import {
   idOf, saveProgress,
   reviewFsrsCard, knownFsrsCard, reviewNowFsrsCard,
   isKnownStability, migrateBoxEntry,
-  localDateStr, addDaysStr, saveStreak, effectiveStreakDisplay,
+  localDateStr, addDaysStr, saveStreak, effectiveStreakDisplay, effectiveCount,
   weightedSample, shuffled,
   checkReverseAnswer, checkDictation, isDictatable, isArticleCorrect,
   recordAnswer, sortedEntries, grammarMistakeId, isGrammarMistakeId, newTopicsOf, textsForDecks, setsForDecks,
@@ -448,7 +448,16 @@ function App() {
       return next;
     });
   }, []);
+  // re-render when the app comes back to the front, so a day that changed while it
+  // stayed open (past midnight) shows 0 instead of yesterday's count
+  const [, setDayTick] = useState(0);
+  useEffect(() => {
+    const onShow = () => { if (document.visibilityState === "visible") setDayTick((n) => n + 1); };
+    document.addEventListener("visibilitychange", onShow);
+    return () => document.removeEventListener("visibilitychange", onShow);
+  }, []);
   const displayStreak = effectiveStreakDisplay(streakData);
+  const displayCount = effectiveCount(streakData);
 
   // 🎯 Heute lernen (engine/dailyPlan.js): what was done today
   const [daily, setDaily] = useState(() => freshDaily(readSaved(STORAGE_KEYS.DAILY), localDateStr()));
@@ -1491,7 +1500,7 @@ function App() {
         )}
         <div style={{ height: 14 }} />
 
-        <StreakBar streak={displayStreak} count={streakData.count} goal={streakData.goal} recordStreak={streakData.recordStreak} onCycleGoal={cycleGoal} />
+        <StreakBar streak={displayStreak} count={displayCount} goal={streakData.goal} recordStreak={streakData.recordStreak} onCycleGoal={cycleGoal} />
 
         {/* SEARCH - looks like a search box near the top; a tap opens the
             full-screen search layer (SearchOverlay) */}
