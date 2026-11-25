@@ -5267,6 +5267,21 @@
         "example": "Gestern war ein schöner Tag.",
         "exampleEn": "Yesterday was a nice day.",
         "level": "A1"
+      },
+      {
+        "type": "v",
+        "front": "verkleiden (sich)",
+        "sub": "hat sich verkleidet",
+        "english": "to dress up (in a costume)",
+        "example": "Zu Karneval verkleiden sich viele Kinder.",
+        "exampleEn": "At carnival many children dress up.",
+        "note": "sich verkleiden als + Nom. (Ich verkleide mich als Clown.)",
+        "level": "A2",
+        "source": "KI-Eingang · 2026-11-25",
+        "forms": {
+          "praes": "verkleidet sich",
+          "praet": "verkleidete sich"
+        }
       }
     ]
   },
@@ -8597,6 +8612,17 @@
         "exampleEn": "The train goes directly to the airport.",
         "level": "A1",
         "source": "Menschen A2 · Einheit 3"
+      },
+      {
+        "type": "n",
+        "gender": "das",
+        "front": "das Pferd",
+        "sub": "Pl. -e",
+        "english": "horse",
+        "example": "Auf dem Bauernhof gibt es drei Pferde.",
+        "exampleEn": "There are three horses on the farm.",
+        "level": "A2",
+        "source": "KI-Eingang · 2026-11-25"
       }
     ]
   },
@@ -12249,6 +12275,18 @@
         "grammar": [
           "nebensatz"
         ]
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Vorbereitung",
+        "sub": "Pl. -en",
+        "english": "preparation",
+        "example": "Die Vorbereitung für das Fest dauert lange.",
+        "exampleEn": "The preparation for the party takes a long time.",
+        "note": "vor·bereiten → die Vorbereitung",
+        "level": "A2",
+        "source": "KI-Eingang · 2026-11-25"
       }
     ]
   },
@@ -14385,6 +14423,18 @@
         "exampleEn": "Unbelievable! There are still dirt roads in Europe.",
         "level": "A2",
         "source": "Menschen A2 · Einheit 17"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Reifenpanne",
+        "sub": "Pl. -n",
+        "english": "flat tyre, puncture",
+        "example": "Auf der Autobahn hatten wir eine Reifenpanne.",
+        "exampleEn": "We had a flat tyre on the motorway.",
+        "note": "der Reifen + die Panne",
+        "level": "A2",
+        "source": "KI-Eingang · 2026-11-25"
       }
     ]
   },
@@ -14818,6 +14868,155 @@
         "exampleEn": "The east wind brings dry air.",
         "level": "A2",
         "source": "Menschen A2 · Einheit 18"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Wüste",
+        "sub": "Pl. -n",
+        "english": "desert",
+        "example": "In der Wüste ist es tagsüber heiß und nachts kalt.",
+        "exampleEn": "In the desert it's hot by day and cold at night.",
+        "level": "A2",
+        "source": "KI-Eingang · 2026-11-25"
+      }
+    ]
+  },
+  {
+    "key": "ki-eingang",
+    "icon": "📥",
+    "label": "Aus dem KI-Eingang",
+    "added": "2026-11-25",
+    "note": "Wörter, die du gesucht und vorgeschlagen hast",
+    "cards": [
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Zutritt",
+        "sub": "kein Plural",
+        "english": "entry, access",
+        "example": "Kein Zutritt für Kinder unter 12 Jahren!",
+        "exampleEn": "No entry for children under 12!",
+        "note": "auf Schildern: „Zutritt verboten“",
+        "level": "A2",
+        "source": "KI-Eingang · 2026-11-25"
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Geschichte",
+        "sub": "Pl. -n",
+        "english": "history; story",
+        "example": "Ich lese gern Geschichten und interessiere mich für Geschichte.",
+        "exampleEn": "I like reading stories and I'm interested in history.",
+        "note": "Pl. Geschichten = stories · kein Plural = history (als Fach)",
+        "level": "A2",
+        "source": "KI-Eingang · 2026-11-25"
+      },
+      {
+        "type": "v",
+        "front": "bewerten",
+        "sub": "hat bewertet",
+        "english": "to rate, to evaluate",
+        "example": "Die Gäste bewerten das Hotel im Internet.",
+        "exampleEn": "The guests rate the hotel online.",
+        "level": "A2",
+        "source": "KI-Eingang · 2026-11-25",
+        "forms": {
+          "praes": "bewertet",
+          "praet": "bewertete"
+        }
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Träne",
+        "sub": "Pl. -n",
+        "english": "tear",
+        "example": "Sie hatte Tränen in den Augen.",
+        "exampleEn": "She had tears in her eyes.",
+        "note": "meist Plural: die Tränen",
+        "level": "A2",
+        "source": "KI-Eingang · 2026-11-25"
+      },
+      {
+        "type": "v",
+        "front": "weinen",
+        "sub": "hat geweint",
+        "english": "to cry, to weep",
+        "example": "Das Baby weint, weil es Hunger hat.",
+        "exampleEn": "The baby is crying because it's hungry.",
+        "level": "A2",
+        "source": "KI-Eingang · 2026-11-25",
+        "forms": {
+          "praes": "weint",
+          "praet": "weinte"
+        }
+      },
+      {
+        "type": "n",
+        "gender": "die",
+        "front": "die Sache",
+        "sub": "Pl. -n",
+        "english": "thing, matter",
+        "example": "Das ist eine wichtige Sache.",
+        "exampleEn": "That is an important matter.",
+        "note": "Pl. Sachen = Dinge, Kleidung (Pack deine Sachen!)",
+        "level": "A2",
+        "source": "KI-Eingang · 2026-11-25"
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Ablauf",
+        "sub": "Pl. ¨-e",
+        "english": "procedure, sequence, course",
+        "example": "Der Ablauf des Kurses ist klar geplant.",
+        "exampleEn": "The course of the class is clearly planned.",
+        "note": "Pl. auch: die Abläufe",
+        "level": "A2",
+        "source": "KI-Eingang · 2026-11-25"
+      },
+      {
+        "type": "v",
+        "front": "auf·bauen",
+        "sub": "hat aufgebaut",
+        "english": "to build up, to set up",
+        "example": "Wir bauen das Zelt am See auf.",
+        "exampleEn": "We're putting up the tent by the lake.",
+        "note": "trennbar: Ich baue das Regal auf.",
+        "level": "A2",
+        "source": "KI-Eingang · 2026-11-25",
+        "forms": {
+          "praes": "baut auf",
+          "praet": "baute auf"
+        }
+      },
+      {
+        "type": "v",
+        "front": "sammeln",
+        "sub": "hat gesammelt",
+        "english": "to collect",
+        "example": "Mein Bruder sammelt Briefmarken.",
+        "exampleEn": "My brother collects stamps.",
+        "level": "A2",
+        "source": "KI-Eingang · 2026-11-25",
+        "forms": {
+          "praes": "sammelt",
+          "praet": "sammelte"
+        }
+      },
+      {
+        "type": "n",
+        "gender": "der",
+        "front": "der Anschluss",
+        "sub": "Pl. ¨-e",
+        "english": "connection; (gas, water) supply",
+        "example": "In der Küche gibt es einen Gasanschluss.",
+        "exampleEn": "There is a gas connection in the kitchen.",
+        "note": "auch: Anschluss an den Zug · der Gasanschluss, ¨-e",
+        "level": "A2",
+        "source": "KI-Eingang · 2026-11-25"
       }
     ]
   },

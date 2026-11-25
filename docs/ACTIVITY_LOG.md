@@ -184,6 +184,19 @@ was done, newest first. Every change adds a log entry here in the same commit
 
 ## Log
 
+### 2026-11-25 – KI-Eingang 2026-11-25: 16 new cards
+- 18 searched words → 16 new cards (Geschichte ×2 and Gasanschlüsse/anschlüsse merged; plötzlich was
+  already there). Into chapters: die Reifenpanne (Unterwegs), die Wüste (Wetter & Klima), das Pferd
+  (Natur & Tourismus), die Vorbereitung (Essen & Mengen), verkleiden (sich) (Jahr & Feste). New chapter
+  📥 `ki-eingang` "Aus dem KI-Eingang" (added 2026-11-25): Zutritt, Geschichte, bewerten, Träne, weinen,
+  Sache, Ablauf, auf·bauen, sammeln, Anschluss. Wrong automatic translations corrected
+  (Plötzlich, Ablauf, Sammeln …). Report archived in `docs/ai-inbox/done/ki-eingang-2026-11-25.md`.
+
+| Where | In the app |
+|---|---|
+| 10 words | 🃏 Lernen → 📚 Themen → 📥 Aus dem KI-Eingang |
+| Reifenpanne / Wüste / Pferd / Vorbereitung / verkleiden | Unterwegs / Wetter & Klima / Natur & Tourismus / Essen & Mengen / Jahr & Feste |
+
 ### 2026-11-25 – Streak bar showed yesterday's count (37/10)
 - The learner's screenshot: "37/10 heute" on a new day. The saved streak data only rolled over to
   the new day with the first answer, and the bar showed the saved `count` regardless of its date.
